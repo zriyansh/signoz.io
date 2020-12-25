@@ -43,3 +43,9 @@
 .configSnippets {
   margin: 10px 0;
 }
+
+.menu__list {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+}

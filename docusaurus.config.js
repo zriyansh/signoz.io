@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'You are losing revenue every time your applications go down. Here’s how to fix it in a few hours',
+  title: 'SigNoz',
   tagline: 'Software infra is getting more complex. Don’t just be reactive to issues but detect issues proactively. Great customer experience implies better customer satisfaction & retention',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
@@ -59,7 +59,7 @@ module.exports = {
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/SigNozHQ',
             },
           ],
         },

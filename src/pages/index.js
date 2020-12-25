@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState, useCallback} from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -7,7 +7,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 import CodeSnippet from "@site/src/theme/CodeSnippet";
 import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import TabItem from '@theme/TabItem';//in markdown features
+import Button from "@site/src/theme/Button"
+
+import styled from 'styled-components'
+
+import prCss from "../css/property.module.css"
+import seCss from "../css/section.module.css"
+import meCss from "../css/index/menu.module.css"
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
 
 const snippets = [
   {
@@ -82,6 +95,153 @@ output:
             algorithm: gzip`,
   },
 ];
+
+const WhySigNoz = () => {
+
+  const [feature, setFeature] = useState('privacy');
+
+  const handlePricing =()=>{
+    setFeature('pricing');
+    console.log(feature);
+  }
+
+  const handlePrivacy =()=>{
+    setFeature('privacy');
+    console.log(feature);
+  }
+
+  const handleExtendibility =()=>{
+    setFeature('extendibility');
+    console.log(feature);
+  }
+
+  return(
+
+  <div className='container'>
+      <div className="container">
+          <div className='row'>
+              <div className={clsx('col col--4', styles.menu__list)}>
+                  <button onClick={handlePricing} class="button button--primary button--lg " style={{marginBottom: 20, marginTop:20}}>Pricing</button>
+                  <button onClick={handlePrivacy} class="button button--primary button--lg" style={{marginBottom: 20, marginTop:20}} >Privacy</button>
+                  <button onClick={handleExtendibility} class="button button--primary button--lg" style={{marginBottom: 20, marginTop:20}} >Extendibility</button>
+              </div>
+              <div className='col col--8'>
+              <div className="hero__screenshot" style={{display:feature==='pricing'?'block':'none'}}>
+                <img src={useBaseUrl("img/SigNoz-hero-shot.jpg")} alt="SigNoz screenshot" />
+              </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  )
+
+  
+
+
+}
+
+const Why = () => {
+  const [opened, setOpened] = useState(
+    "digital",
+  )
+  const handleClickIs = useCallback(() => {
+    setOpened("digital")
+  }, [])
+  const handleClickGoodFor = useCallback(() => {
+    setOpened("realtime")
+  }, [])
+  const handleClickIsNot = useCallback(() => {
+    setOpened("integration")
+  }, [])
+
+  return (
+    <section className={clsx(seCss.section, seCss["section--odd"])}>
+      <div className={clsx(seCss["section--inner"], seCss["section--center"])}>
+        <h2
+          className={clsx(
+            seCss.section__title,
+            seCss["section__title--wide"],
+            "text--center",
+          )}
+        >
+          Why QuestDB?
+        </h2>
+
+        <div
+          className={clsx(seCss.section__footer, seCss["section__footer--why"])}
+        >
+          <div className={meCss.menu__list}>
+            <Button
+              className={meCss.menu__button}
+              onClick={handleClickIs}
+              size="small"
+              variant={opened === "digital" ? "primary" : "tertiary"}
+            >
+              Digital transformation
+            </Button>
+            <Button
+              className={meCss.menu__button}
+              onClick={handleClickGoodFor}
+              size="small"
+              variant={opened === "realtime" ? "primary" : "tertiary"}
+            >
+              Real-time insights
+            </Button>
+            <Button
+              className={meCss.menu__button}
+              onClick={handleClickIsNot}
+              size="small"
+              variant={opened === "integration" ? "primary" : "tertiary"}
+            >
+              Enterprise integration
+            </Button>
+          </div>
+
+          <div className={meCss.menu__content}>
+            <div
+              className={clsx(meCss.menu__panel, {
+                [meCss["menu__panel--active"]]: opened === "digital",
+              })}
+            >
+              <p className={prCss.property}>Reduce hardware costs</p>
+              <p className={prCss.property}>Contain operational complexity</p>
+              <p className={prCss.property}>Decrease development costs</p>
+              <p className={prCss.property}>Cloud native (AWS, Azure, GCP)</p>
+              <p className={prCss.property}>On premises or embedded</p>
+            </div>
+
+            <div
+              className={clsx(meCss.menu__panel, {
+                [meCss["menu__panel--active"]]: opened === "realtime",
+              })}
+            >
+              <p className={prCss.property}>Streaming</p>
+              <p className={prCss.property}>Operational analytics / OLAP</p>
+              <p className={prCss.property}>Monitoring and observability</p>
+              <p className={prCss.property}>Predictive analytics</p>
+            </div>
+
+            <div
+              className={clsx(meCss.menu__panel, {
+                [meCss["menu__panel--active"]]: opened === "integration",
+              })}
+            >
+              <p className={prCss.property}>Active directory</p>
+              <p className={prCss.property}>High performance replication</p>
+              <p className={prCss.property}>High availability</p>
+              <p className={prCss.property}>Clustering</p>
+              <p className={prCss.property}>Enterprise security</p>
+              <p className={prCss.property}>Postgres compatible/API</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
 
 function Snippet({label, config}) {
   return (
@@ -202,8 +362,19 @@ function Home() {
         </p>
       </div>
 
-        {/* Tab Switcher component */}
+        
+        <Title> Why SigNoz! </Title>
+      <div className="container">
+        <ul class="pills pills--block">
+          <li class="pills__item pills__item--active">Alpha</li>
+          <li class="pills__item">Beta</li>
+          <li class="pills__item">Gamma</li>
+          <li class="pills__item">Zeta</li>
+        </ul>
+      </div>
 
+        {/* Tab Switcher component */}
+    <div className="container">
       <div className={'col col--6'}>
       {snippets && snippets.length && (
                   <section className={styles.configSnippets}>
@@ -226,6 +397,7 @@ function Home() {
                   </section>
                 )}  
       </div>
+    </div>
 
 
       <div
@@ -240,6 +412,11 @@ function Home() {
         Is the clunky, overpriced application monitoring tool you're using today honestly worth it?
         </p>
       </div>
+
+      <Why />
+
+      <WhySigNoz />
+
       </main>
     </Layout>
   );
