@@ -13,7 +13,7 @@ module.exports = {
       title: 'SigNoz',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/SigNozLogo-200x200.svg',
       },
       items: [
         {

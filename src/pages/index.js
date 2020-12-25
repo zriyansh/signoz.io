@@ -326,12 +326,12 @@ function Home() {
                 scrolling="0"
                 width="160"
                 height="30"
-                title="Star Infracost on GitHub">
+                title="Star SigNoz on GitHub">
               </iframe>
             </div>
             <div className="col col--8">
               <div className="hero__screenshot">
-                <img src={useBaseUrl("img/SigNoz-hero-shot.jpg")} alt="SigNoz screenshot" />
+                <img src={useBaseUrl("img/hero-recording.gif")} alt="SigNoz screenshot" />
               </div>
             </div>
           </div>
@@ -413,7 +413,7 @@ function Home() {
         </p>
       </div>
 
-      <Why />
+    
 
       <WhySigNoz />
 
