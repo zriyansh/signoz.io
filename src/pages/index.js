@@ -251,32 +251,30 @@ function Snippet({label, config}) {
 
 const features = [
   {
-    title: 'Easy to Use',
+    title: 'Your data in your boundary',
     imageUrl: 'img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        No need to worry about GDPR and other data protection laws. 
+        All your tracing and monitoring data is now in YOUR infra.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Forget HUGE SaaS bills',
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        No abrupt pricing changes. No unexpected month-end bills. Get transparent usage data.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Take Control',
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        No need to spend weeks in vendor slack for that one small feature. Extend SigNoz to suit your needs.
       </>
     ),
   },
@@ -291,7 +289,7 @@ function Feature({imageUrl, title, description}) {
           <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
       )}
-      <h3 className="text--center">{title}</h3>
+      <h3 >{title}</h3>
       <p>{description}</p>
     </div>
   );
@@ -349,7 +347,7 @@ function Home() {
             </div>
           </section>
         )}
-        <div
+        {/* <div
         style={{
           display: 'flex',
           justifyContent: 'center',
@@ -360,10 +358,10 @@ function Home() {
         <p>
           Edit <code>pages/hello.js</code> and save to reload.
         </p>
-      </div>
+      </div> */}
 
         
-        <Title> Why SigNoz! </Title>
+        {/* <Title> Why SigNoz! </Title>
       <div className="container">
         <ul class="pills pills--block">
           <li class="pills__item pills__item--active">Alpha</li>
@@ -371,10 +369,10 @@ function Home() {
           <li class="pills__item">Gamma</li>
           <li class="pills__item">Zeta</li>
         </ul>
-      </div>
+      </div> */}
 
         {/* Tab Switcher component */}
-    <div className="container">
+    {/* <div className="container">
       <div className={'col col--6'}>
       {snippets && snippets.length && (
                   <section className={styles.configSnippets}>
@@ -397,25 +395,153 @@ function Home() {
                   </section>
                 )}  
       </div>
-    </div>
+    </div> */}
 
 
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '20vh',
-          fontSize: '28px',
-        }}>
-        <p>
-        Is the clunky, overpriced application monitoring tool you're using today honestly worth it?
-        </p>
+    <section>
+      <div className="container">
+        <h1 class="text--center">
+        A single pane for complete metrics and traces, no need to shift to different system
+        </h1>
+        <h4 class="text--center">Integrated UI. Run OLAP queries</h4>
       </div>
-
-    
+    </section>
 
       <WhySigNoz />
+    
+    <section>
+      <div className="container margin-vert--md">
+        <h1 class="text--center margin-vert--lg"> Why is SigNoz better than Prometheus/Jaeger?</h1>
+        <div class="row"> 
+          <div class="col col--4">
+            <div class="card-demo margin--md">
+              <div class="card">
+                <div class="card__header">
+                  <h3>Lorem Ipsum 1</h3>
+                </div>
+                <div class="card__body">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                    suspendisse ultrices gravida.
+                  </p>
+                </div>
+                <div class="card__footer">
+                  <button class="button button--secondary button--block">See All</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col--4">
+            <div class="card-demo margin--md">
+              <div class="card">
+                <div class="card__header">
+                  <h3>Lorem Ipsum 2</h3>
+                </div>
+                <div class="card__body">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                    suspendisse ultrices gravida.
+                  </p>
+                </div>
+                <div class="card__footer">
+                  <button class="button button--secondary button--block">See All</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col--4">
+            <div class="card-demo margin--md">
+              <div class="card">
+                <div class="card__header">
+                  <h3>Lorem Ipsum 3</h3>
+                </div>
+                <div class="card__body">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                    suspendisse ultrices gravida.
+                  </p>
+                </div>
+                <div class="card__footer">
+                  <button class="button button--secondary button--block">See All</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  
+
+
+    {/* Next Section */}
+    <section>
+      <div className="container margin-vert--md">
+        <h1 class="text--center margin-vert--lg"> Why is SigNoz better than SaaS solutions?</h1>
+        <div class="row"> 
+          <div class="col col--6">
+            <div class="card-demo margin--md">
+              <div class="card">
+                <div class="card__body padding--md">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                    suspendisse ultrices gravida.
+                  </p>
+                </div>
+              </div>  
+            </div>
+          </div>
+
+          <div class="col col--6">
+            <div class="card-demo margin--md">
+              <div class="card">
+                <div class="card__body padding--md">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                    suspendisse ultrices gravida.
+                  </p>
+                </div>
+              </div>  
+            </div>
+          </div>
+
+          <div class="col col--6">
+            <div class="card-demo margin--md">
+              <div class="card">
+                <div class="card__body padding--md">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                    suspendisse ultrices gravida.
+                  </p>
+                </div>
+              </div>  
+            </div>
+          </div>
+
+          <div class="col col--6">
+            <div class="card-demo margin--md">
+              <div class="card">
+                <div class="card__body padding--md">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                    suspendisse ultrices gravida.
+                  </p>
+                </div>
+              </div>  
+            </div>
+          </div>
+          
+
+        </div>
+      </div>
+    </section>
+
+      
 
       </main>
     </Layout>
