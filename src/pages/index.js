@@ -1,4 +1,4 @@
-import React,{useState, useCallback} from 'react';
+import React,{useState} from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -8,13 +8,10 @@ import styles from './styles.module.css';
 import CodeSnippet from "@site/src/theme/CodeSnippet";
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';//in markdown features
-import Button from "@site/src/theme/Button"
 
 import styled from 'styled-components'
 
-import prCss from "../css/property.module.css"
-import seCss from "../css/section.module.css"
-import meCss from "../css/index/menu.module.css"
+
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -143,105 +140,6 @@ const WhySigNoz = () => {
 
 }
 
-const Why = () => {
-  const [opened, setOpened] = useState(
-    "digital",
-  )
-  const handleClickIs = useCallback(() => {
-    setOpened("digital")
-  }, [])
-  const handleClickGoodFor = useCallback(() => {
-    setOpened("realtime")
-  }, [])
-  const handleClickIsNot = useCallback(() => {
-    setOpened("integration")
-  }, [])
-
-  return (
-    <section className={clsx(seCss.section, seCss["section--odd"])}>
-      <div className={clsx(seCss["section--inner"], seCss["section--center"])}>
-        <h2
-          className={clsx(
-            seCss.section__title,
-            seCss["section__title--wide"],
-            "text--center",
-          )}
-        >
-          Why QuestDB?
-        </h2>
-
-        <div
-          className={clsx(seCss.section__footer, seCss["section__footer--why"])}
-        >
-          <div className={meCss.menu__list}>
-            <Button
-              className={meCss.menu__button}
-              onClick={handleClickIs}
-              size="small"
-              variant={opened === "digital" ? "primary" : "tertiary"}
-            >
-              Digital transformation
-            </Button>
-            <Button
-              className={meCss.menu__button}
-              onClick={handleClickGoodFor}
-              size="small"
-              variant={opened === "realtime" ? "primary" : "tertiary"}
-            >
-              Real-time insights
-            </Button>
-            <Button
-              className={meCss.menu__button}
-              onClick={handleClickIsNot}
-              size="small"
-              variant={opened === "integration" ? "primary" : "tertiary"}
-            >
-              Enterprise integration
-            </Button>
-          </div>
-
-          <div className={meCss.menu__content}>
-            <div
-              className={clsx(meCss.menu__panel, {
-                [meCss["menu__panel--active"]]: opened === "digital",
-              })}
-            >
-              <p className={prCss.property}>Reduce hardware costs</p>
-              <p className={prCss.property}>Contain operational complexity</p>
-              <p className={prCss.property}>Decrease development costs</p>
-              <p className={prCss.property}>Cloud native (AWS, Azure, GCP)</p>
-              <p className={prCss.property}>On premises or embedded</p>
-            </div>
-
-            <div
-              className={clsx(meCss.menu__panel, {
-                [meCss["menu__panel--active"]]: opened === "realtime",
-              })}
-            >
-              <p className={prCss.property}>Streaming</p>
-              <p className={prCss.property}>Operational analytics / OLAP</p>
-              <p className={prCss.property}>Monitoring and observability</p>
-              <p className={prCss.property}>Predictive analytics</p>
-            </div>
-
-            <div
-              className={clsx(meCss.menu__panel, {
-                [meCss["menu__panel--active"]]: opened === "integration",
-              })}
-            >
-              <p className={prCss.property}>Active directory</p>
-              <p className={prCss.property}>High performance replication</p>
-              <p className={prCss.property}>High availability</p>
-              <p className={prCss.property}>Clustering</p>
-              <p className={prCss.property}>Enterprise security</p>
-              <p className={prCss.property}>Postgres compatible/API</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
 
 function Snippet({label, config}) {
   return (
@@ -372,7 +270,7 @@ function Home() {
       </div> */}
 
         {/* Tab Switcher component */}
-    {/* <div className="container">
+    <div className="container">
       <div className={'col col--6'}>
       {snippets && snippets.length && (
                   <section className={styles.configSnippets}>
@@ -394,8 +292,8 @@ function Home() {
                     </Tabs>
                   </section>
                 )}  
+        </div>
       </div>
-    </div> */}
 
 
     <section>
@@ -446,8 +344,11 @@ function Home() {
                   </p>
                 </div>
                 <div class="card__footer">
-                  <button class="button button--secondary button--block">See All</button>
-                </div>
+                <Link
+                  className="button button--primary button--lg"
+                  to={useBaseUrl('docs/')}>
+                  Get Started
+                </Link>                </div>
               </div>
             </div>
           </div>
