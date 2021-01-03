@@ -22,7 +22,9 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {href: 'blog/', label: 'Blog', position: 'left'},
+        //docusaurus expects href elements to be full links
+        //https://stackoverflow.com/questions/63268853/how-do-i-link-to-non-docusaurus-defined-routes-from-a-docusuarus-footer
+        {href: 'https://signoz.io/blog/', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/SigNoz/signoz',
           label: 'GitHub',
@@ -68,7 +70,7 @@ module.exports = {
           items: [
             {
               label: 'Blog',
-              to: 'blog',
+              href: 'https://signoz.io/blog/',
             },
             {
               label: 'GitHub',
