@@ -22,7 +22,7 @@ const Title = styled.h1`
 const snippets = [
   {
     label: 'Mapping',
-    further: '/docs/guides/bloblang/about',
+    further: '/docs/',
     config: `input:
   gcp_pubsub:
     project: foo
@@ -41,7 +41,7 @@ output:
   },
   {
     label: 'Multiplexing',
-    further: '/docs/components/outputs/about#multiplexing-outputs',
+    further: '/docs/',
     config: `input:
   kafka:
     addresses: [ TODO ]
@@ -63,7 +63,7 @@ output:
   },
   {
     label: 'Enrichments',
-    further: '/cookbooks/enrichments',
+    further: '/docs',
     config: `input:
   mqtt:
     urls: [ tcp://TODO:1883 ]
