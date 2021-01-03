@@ -124,7 +124,7 @@ const WhySigNoz = () => {
               </div>
               <div className='col col--8'>
               <div className="hero__screenshot" style={{display:feature==='pricing'?'block':'none'}}>
-                <img src={useBaseUrl("img/SigNoz-hero-shot.jpg")} alt="SigNoz screenshot" />
+                <img src={useBaseUrl("img/SigNoz-Hero-shot.jpg")} alt="SigNoz screenshot" />
               </div>
 
               </div>
