@@ -1,13 +1,13 @@
 module.exports = {
   title: 'SigNoz',
   tagline: 'Software infra is getting more complex. Don’t just be reactive to issues but detect issues proactively. Great customer experience implies better customer satisfaction & retention',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://signoz.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'SigNoz', // Usually your GitHub org/user name.
+  projectName: 'signoz', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'SigNoz',
@@ -24,7 +24,7 @@ module.exports = {
         },
         {href: 'blog/', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/SigNoz/signoz',
           label: 'GitHub',
           position: 'right',
         },
@@ -51,11 +51,11 @@ module.exports = {
           items: [
             {
               label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              href: 'https://stackoverflow.com/questions/tagged/signoz',
             },
             {
               label: 'Slack',
-              href: 'https://discordapp.com/invite/docusaurus',
+              href: 'https://signoz-community.slack.com/join/shared_invite/zt-kj26gm1u-Xe3CYxCu0bGXCrCqKipjOA#/',
             },
             {
               label: 'Twitter',
@@ -72,7 +72,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/SigNoz/signoz',
             },
           ],
         },
