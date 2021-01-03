@@ -215,7 +215,7 @@ function Home() {
               </div>
               <p className="open-source-label">SigNoz is <strong>free</strong> and <strong>open-source</strong></p>
              
-              <iframe
+              {/* <iframe
                 className="display--tablet"
                 src={`https://ghbtns.com/github-btn.html?user=infracost&repo=infracost&type=star&count=true&size=large`}
                 frameBorder="0"
@@ -223,7 +223,7 @@ function Home() {
                 width="160"
                 height="30"
                 title="Star SigNoz on GitHub">
-              </iframe>
+              </iframe> */}
             </div>
             <div className="col col--8">
               <div className="hero__screenshot">
@@ -270,7 +270,7 @@ function Home() {
       </div> */}
 
         {/* Tab Switcher component */}
-    <div className="container">
+    {/* <div className="container">
       <div className={'col col--6'}>
       {snippets && snippets.length && (
                   <section className={styles.configSnippets}>
@@ -293,7 +293,7 @@ function Home() {
                   </section>
                 )}  
         </div>
-      </div>
+      </div> */}
 
 
     <section>
@@ -307,7 +307,7 @@ function Home() {
 
       <WhySigNoz />
     
-    <section>
+    {/* <section>
       <div className="container margin-vert--md">
         <h1 class="text--center margin-vert--lg"> Why is SigNoz better than Prometheus/Jaeger?</h1>
         <div class="row"> 
@@ -373,11 +373,11 @@ function Home() {
           </div>
         </div>
       </div>
-    </section>  
+    </section>   */}
 
 
     {/* Next Section */}
-    <section>
+    {/* <section>
       <div className="container margin-vert--md">
         <h1 class="text--center margin-vert--lg"> Why is SigNoz better than SaaS solutions?</h1>
         <div class="row"> 
@@ -440,7 +440,7 @@ function Home() {
 
         </div>
       </div>
-    </section>
+    </section> */}
 
       
 
