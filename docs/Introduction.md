@@ -1,6 +1,7 @@
 ---
 id: introduction
 title: What is SigNoz?
+slug: /
 ---
 
 Pronounced as sig.noz
