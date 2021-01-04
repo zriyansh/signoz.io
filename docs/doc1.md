@@ -2,6 +2,7 @@
 id: doc1
 title: How to Guides
 sidebar_label: How to Guides
+#slug: /
 ---
 
 You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).

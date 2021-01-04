@@ -1,6 +1,7 @@
 ---
 id: introduction
 title: What is SigNoz?
+sidebar_label: Introduction
 slug: /
 ---
 
