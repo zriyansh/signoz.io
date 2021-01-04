@@ -1,6 +1,6 @@
 module.exports = {
   someSidebar: {
-    SigNoz: ['installation', 'doc1', 'doc2', 'doc3'],
+    SigNoz: ['introduction','installation', 'architecture','instrumentation','contributing','community','roadmap','faq'],
     Features: ['mdx'],
   },
 };
