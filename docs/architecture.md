@@ -5,6 +5,8 @@ title: Technical Architecture
 
 Applications are instrumented (manually or automatically) to send traces to OpenTelemetry Collector.
 
+![acrhitecture-diagram](../static/img/architecture-signoz-dark.svg)
+
 # Architecture Components
 
 - OpenTelemetry Collector
