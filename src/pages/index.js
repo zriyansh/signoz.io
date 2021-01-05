@@ -5,9 +5,9 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
-import CodeSnippet from "@site/src/theme/CodeSnippet";
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';//in markdown features
+// import CodeSnippet from "@site/src/theme/CodeSnippet";
+// import Tabs from '@theme/Tabs';
+// import TabItem from '@theme/TabItem';//in markdown features
 
 import styled from 'styled-components'
 
@@ -95,7 +95,7 @@ output:
 
 const WhySigNoz = () => {
 
-  const [feature, setFeature] = useState('privacy');
+  const [feature, setFeature] = useState('pricing');
 
   const handlePricing =()=>{
     setFeature('pricing');
@@ -103,12 +103,12 @@ const WhySigNoz = () => {
   }
 
   const handlePrivacy =()=>{
-    setFeature('privacy');
+    setFeature('olap');
     console.log(feature);
   }
 
   const handleExtendibility =()=>{
-    setFeature('extendibility');
+    setFeature('tag-filtering');
     console.log(feature);
   }
 
@@ -118,12 +118,20 @@ const WhySigNoz = () => {
       <div className="container">
           <div className='row'>
               <div className={clsx('col col--4', styles.menu__list)}>
-                  <button onClick={handlePricing} class="button button--primary button--lg " style={{marginBottom: 20, marginTop:20}}>Pricing</button>
-                  <button onClick={handlePrivacy} class="button button--primary button--lg" style={{marginBottom: 20, marginTop:20}} >Privacy</button>
-                  <button onClick={handleExtendibility} class="button button--primary button--lg" style={{marginBottom: 20, marginTop:20}} >Extendibility</button>
+                  <button onClick={handlePricing} class="button button--primary button--lg " style={{marginBottom: 20, marginTop:0, whiteSpace: 'normal'}}>Integrated UI for metrics and traces</button>
+                  <button onClick={handlePrivacy} class="button button--primary button--lg" style={{marginBottom: 20, marginTop:20, whiteSpace: 'normal'}} >Run business specific queries (e.g. customer types)</button>
+                  <button onClick={handleExtendibility} class="button button--primary button--lg" style={{marginBottom: 0, marginTop:20 , whiteSpace: 'normal'}} >Run aggregates on custom tags</button>
+
+
               </div>
               <div className='col col--8'>
               <div className="hero__screenshot" style={{display:feature==='pricing'?'block':'none'}}>
+                <img src={useBaseUrl("img/metrics-traces.jpg")} alt="SigNoz screenshot" />
+              </div>
+              <div className="hero__screenshot" style={{display:feature==='olap'?'block':'none'}}>
+                <img src={useBaseUrl("img/business-query.jpg")} alt="SigNoz screenshot" />
+              </div>
+              <div className="hero__screenshot" style={{display:feature==='tag-filtering'?'block':'none'}}>
                 <img src={useBaseUrl("img/SigNoz-Hero-shot.jpg")} alt="SigNoz screenshot" />
               </div>
 
@@ -141,11 +149,11 @@ const WhySigNoz = () => {
 }
 
 
-function Snippet({label, config}) {
-  return (
-    <CodeSnippet className={styles.configSnippet}  snippet={config}></CodeSnippet>
-  );
-}
+// function Snippet({label, config}) {
+//   return (
+//     <CodeSnippet className={styles.configSnippet}  snippet={config}></CodeSnippet>
+//   );
+// }
 
 const features = [
   {
@@ -204,8 +212,8 @@ function Home() {
         <div className="container">
           <div className="row">
           <div className="col col--4">
-              <p className="hero__title">Observability of your application</p>
-              <p className="hero__subtitle">with deep filtering of traces</p>
+              <p className="hero__title " style={{"font-weight": "bold"}}>Open-source Observability platform</p>
+              <p className="hero__subtitle">Understand issues in your deployed applications & solve them quickly</p>
               <div style={{"margin": "2rem 0"}}>
                 <Link
                   className="button button--primary button--lg"
@@ -298,97 +306,89 @@ function Home() {
 
     <section>
       <div className="container">
+        {/* <p className="hero__title ">Single pane for complete metrics and traces, no need to shift to different systems</p> */}
         <h1 class="text--center">
-        A single pane for complete metrics and traces, no need to shift to different system
-        </h1>
-        <h4 class="text--center">Integrated UI. Run OLAP queries</h4>
+        Single pane for complete metrics and traces, no need to shift to different systems </h1>
+        <p className="hero__subtitle text--center">No disparate UI for Prometheus & Jaeger</p>
       </div>
     </section>
 
       <WhySigNoz />
     
-    {/* <section>
+    <section>
       <div className="container margin-vert--md">
-        <h1 class="text--center margin-vert--lg"> Why is SigNoz better than Prometheus/Jaeger?</h1>
+        <h1 class="text--center margin-vert--lg"> Why get locked-in with SaaS vendors like DataDog when you can use Open source?</h1>
         <div class="row"> 
           <div class="col col--4">
             <div class="card-demo margin--md">
               <div class="card">
-                <div class="card__header">
+                {/* <div class="card__header">
                   <h3>Lorem Ipsum 1</h3>
-                </div>
+                </div> */}
                 <div class="card__body">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-                    suspendisse ultrices gravida.
+                  No fear of SaaS service getting hacked and your customer’s data getting compromised. Have complete control on your data.
                   </p>
                 </div>
-                <div class="card__footer">
+                {/* <div class="card__footer">
                   <button class="button button--secondary button--block">See All</button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
           <div class="col col--4">
             <div class="card-demo margin--md">
               <div class="card">
-                <div class="card__header">
+                {/* <div class="card__header">
                   <h3>Lorem Ipsum 2</h3>
-                </div>
+                </div> */}
                 <div class="card__body">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-                    suspendisse ultrices gravida.
+                  Your data strorage cost is only depended on your application load, rather than arcane things like number of nodes.
                   </p>
                 </div>
-                <div class="card__footer">
+                {/* <div class="card__footer">
                 <Link
                   className="button button--primary button--lg"
                   to={useBaseUrl('docs/')}>
                   Get Started
-                </Link>                </div>
+                </Link>                </div> */}
               </div>
             </div>
           </div>
           <div class="col col--4">
             <div class="card-demo margin--md">
               <div class="card">
-                <div class="card__header">
+                {/* <div class="card__header">
                   <h3>Lorem Ipsum 3</h3>
-                </div>
+                </div> */}
                 <div class="card__body">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-                    suspendisse ultrices gravida.
+                    No compliance needed to use SigNoz. No need to go through multiple rounds with legal/security teams just for trying it out. 
                   </p>
                 </div>
-                <div class="card__footer">
+                {/* <div class="card__footer">
                   <button class="button button--secondary button--block">See All</button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>   */}
+    </section>  
 
 
     {/* Next Section */}
-    {/* <section>
+    <section>
       <div className="container margin-vert--md">
-        <h1 class="text--center margin-vert--lg"> Why is SigNoz better than SaaS solutions?</h1>
+        <h1 class="text--center margin-vert--lg"> Why SigNoz?</h1>
         <div class="row"> 
           <div class="col col--6">
             <div class="card-demo margin--md">
               <div class="card">
                 <div class="card__body padding--md">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-                    suspendisse ultrices gravida.
+                    Native support for OpenTelemetry
                   </p>
                 </div>
               </div>  
@@ -400,9 +400,7 @@ function Home() {
               <div class="card">
                 <div class="card__body padding--md">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-                    suspendisse ultrices gravida.
+                  Monitor your usage & set your own retention period 
                   </p>
                 </div>
               </div>  
@@ -414,9 +412,7 @@ function Home() {
               <div class="card">
                 <div class="card__body padding--md">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-                    suspendisse ultrices gravida.
+                  Industry trusted Kafka & Druid to handle enterprise scale
                   </p>
                 </div>
               </div>  
@@ -428,9 +424,7 @@ function Home() {
               <div class="card">
                 <div class="card__body padding--md">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-                    suspendisse ultrices gravida.
+                  Built on latest stack - Golang & React-Typescript
                   </p>
                 </div>
               </div>  
@@ -440,7 +434,7 @@ function Home() {
 
         </div>
       </div>
-    </section> */}
+    </section>
 
       
 

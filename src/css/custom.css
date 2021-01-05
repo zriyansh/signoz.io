@@ -17,7 +17,7 @@
   --ifm-code-font-size: 95%;
   --ifm-button-color: white;
   /* --ifm-font-family-base: "Space Grotesk"; */
-  /* --ifm-font-family-base: arial; */
+  --ifm-font-family-base: arial;
 }
 
 .docusaurus-highlight-code-line {
