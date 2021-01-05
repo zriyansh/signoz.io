@@ -16,7 +16,7 @@ The easiest way to get started with SigNoz is to install using helm charts, this
 ### Steps to Deploy SigNoz
 
 ```console
-git clone https://gitlab.com/signoz-oss/signoz.git && cd signoz
+git clone https://github.com/SigNoz/signoz.git && cd signoz
 
 helm dependency update deploy/kubernetes/platform
 
@@ -45,10 +45,9 @@ kubectl -n sample-application run strzal --image=djbingham/curl
 'locust_count=6' -F 'hatch_rate=2' http://locust-master:8089/swarm
 ```
 
-
 ### See UI
-`kubectl -n platform port-forward svc/signoz-frontend 3000:3000`
 
+`kubectl -n platform port-forward svc/signoz-frontend 3000:3000`
 
 ### How to stop load
 
