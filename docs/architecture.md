@@ -3,7 +3,7 @@ id: architecture
 title: Technical Architecture
 ---
 
-Applications are instrumented (manually or automatically) to send traces to OpenTelemetry Collector.
+SigNoz uses industry proven Kafka and Druid to power highly scalable data ingestion and realtime data analysis.
 
 ![acrhitecture-diagram](../static/img/architecture-signoz-dark.svg)
 
@@ -28,7 +28,7 @@ OpenTelemetry Collector then exports those traces to a kafka topic, `otlp_spans`
 
 **Apache Kafka is a distributed streaming platform** that can be used as message-driven backbone of communication. Applications can send messages between its components in the form of records that can be produced to Kafka topics and consumed from Kafka topics.
 
-## _Stream Processing_ decentralizes and decouples the infrastructure.
+### _Stream Processing_ decentralizes and decouples the infrastructure.
 
 You produce at whatever rate you want to into Kafka, scaling the brokers out to accommodate the ingest rate. You then consume as you want to; Kafka persists the data and tracks the offset of the consumers as they work their way through the data they read.
 This behavior enables applications to be able to recover from outages, enables decoupling between application components, and encourages the use of backpressure within reactive application
@@ -38,14 +38,14 @@ Our stream processing applications read from `otlp_spans` kafka topic and flatte
 We can easily build other processors for any processing we may want to do. For example:
 
 - Remove PII data from spans
-- Send input to anomaly detection frame
+- Send input to anomaly detection framework
 
 The flattened data is then ingested to **Druid** _which is a real-time analytics database_ designed for fast slice-and-dice analytics ([OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing) queries) on large data sets. We use streaming ingestion from Kafka to Druid.
 
-- Add supervisor to druid to ingest from kafka at realtime
-- Add retention policy in druid. By default, we set 3 days of data retention
-- Add AWS S3 bucket credentials for deep storage of data in druid
+- We then add supervisor in druid to ingest from kafka at realtime
+- We then add retention policy in druid. By default, we set 3 days of data retention
+- We have option to add AWS S3 bucket credentials for deep storage of data in druid. By default, we use `storage: local` in helm `values.yaml`
 
-**Query Service** is the interface between Frontend and Druid. It provides APIs to be consumed by frontend application and queries Druid to fetch data and processes before responding back to the frontend.
+**Query Service** is the interface between Frontend and Druid. It provides APIs to be consumed by frontend application and queries Druid to fetch data and processes data before responding back to the frontend.
 
 **Frontend** is the UI, built in ReactJS and Typescript and provides advanced trace/span filtering capabilities and plot metrics to give service overviews.
