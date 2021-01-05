@@ -18,6 +18,7 @@
   --ifm-button-color: white;
   /* --ifm-font-family-base: "Space Grotesk"; */
   --ifm-font-family-base: arial;
+  --ifm-font-size-base: 14pt;
 }
 
 .docusaurus-highlight-code-line {
@@ -42,10 +43,10 @@ hero__screenshot {
     padding: 4rem 2rem;
   }
   .hero__title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   .hero__subtitle {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 }
 @media (min-width: 997px) {
@@ -80,4 +81,11 @@ hero__screenshot {
 .open-source-label strong {
   color: var(--ifm-color-gray-200);
   font-weight: normal;
+}
+
+.faq_left_panel {
+  font-size: 2.2rem;
+  padding: 0.5rem;
+  margin: 2rem;
+  font-weight: 500;
 }

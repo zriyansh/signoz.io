@@ -4,6 +4,9 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { Collapse } from 'antd';
+import { CaretRightOutlined } from '@ant-design/icons';
+
 import styles from './styles.module.css';
 // import CodeSnippet from "@site/src/theme/CodeSnippet";
 // import Tabs from '@theme/Tabs';
@@ -11,7 +14,13 @@ import styles from './styles.module.css';
 
 import styled from 'styled-components'
 
+const { Panel } = Collapse;
 
+const text = `
+  A dog is a type of domesticated animal.
+  Known for its loyalty and faithfulness,
+  it can be found as a welcome guest in many households across the world.
+`;
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -119,20 +128,20 @@ const WhySigNoz = () => {
           <div className='row'>
               <div className={clsx('col col--4', styles.menu__list)}>
                   <button onClick={handlePricing} class="button button--primary button--lg " style={{marginBottom: 20, marginTop:0, whiteSpace: 'normal'}}>Integrated UI for metrics and traces</button>
-                  <button onClick={handlePrivacy} class="button button--primary button--lg" style={{marginBottom: 20, marginTop:20, whiteSpace: 'normal'}} >Run business specific queries (e.g. customer types)</button>
-                  <button onClick={handleExtendibility} class="button button--primary button--lg" style={{marginBottom: 0, marginTop:20 , whiteSpace: 'normal'}} >Run aggregates on custom tags</button>
+                  <button onClick={handlePrivacy} class="button button--primary button--lg" style={{marginBottom: 20, marginTop:20, whiteSpace: 'normal'}} >Run business specific queries </button>
+                  <button onClick={handleExtendibility} class="button button--primary button--lg" style={{marginBottom: 20, marginTop:20 , whiteSpace: 'normal'}} >Run aggregates on custom tags</button>
 
 
               </div>
               <div className='col col--8'>
               <div className="hero__screenshot" style={{display:feature==='pricing'?'block':'none'}}>
-                <img src={useBaseUrl("img/metrics-traces.jpg")} alt="SigNoz screenshot" />
+                <img src={useBaseUrl("img/metrics-tooltip-traces.jpg")} alt="SigNoz screenshot" />
               </div>
               <div className="hero__screenshot" style={{display:feature==='olap'?'block':'none'}}>
-                <img src={useBaseUrl("img/business-query.jpg")} alt="SigNoz screenshot" />
+                <img src={useBaseUrl("img/business-metrics-light.jpg")} alt="SigNoz screenshot" />
               </div>
               <div className="hero__screenshot" style={{display:feature==='tag-filtering'?'block':'none'}}>
-                <img src={useBaseUrl("img/SigNoz-Hero-shot.jpg")} alt="SigNoz screenshot" />
+                <img src={useBaseUrl("img/custom-aggregates.jpg")} alt="SigNoz screenshot" />
               </div>
 
               </div>
@@ -158,7 +167,7 @@ const WhySigNoz = () => {
 const features = [
   {
     title: 'Your data in your boundary',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    imageUrl: 'img/Vector_1.svg',
     description: (
       <>
         No need to worry about GDPR and other data protection laws. 
@@ -168,7 +177,7 @@ const features = [
   },
   {
     title: 'Forget HUGE SaaS bills',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    imageUrl: 'img/Vector_2.svg',
     description: (
       <>
         No abrupt pricing changes. No unexpected month-end bills. Get transparent usage data.
@@ -177,7 +186,7 @@ const features = [
   },
   {
     title: 'Take Control',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    imageUrl: 'img/Vector_3.svg',
     description: (
       <>
         No need to spend weeks in vendor slack for that one small feature. Extend SigNoz to suit your needs.
@@ -217,7 +226,7 @@ function Home() {
               <div style={{"margin": "2rem 0"}}>
                 <Link
                   className="button button--primary button--lg"
-                  to={useBaseUrl('docs/')}>
+                  to={useBaseUrl('docs/installation')}>
                   Get Started
                 </Link>
               </div>
@@ -244,7 +253,7 @@ function Home() {
       <main>
         {features && features.length > 0 && (
           <section className={styles.features}>
-            <div className="container">
+            <div className="container" style={{marginTop: '4rem', marginBottom:'4rem'}}>
               <div className="row">
                 {features.map((props, idx) => (
                   <Feature key={idx} {...props} />
@@ -305,7 +314,7 @@ function Home() {
 
 
     <section>
-      <div className="container">
+      <div className="container" style={{marginTop: '4rem', marginBottom:'4rem'}}>
         {/* <p className="hero__title ">Single pane for complete metrics and traces, no need to shift to different systems</p> */}
         <h1 class="text--center">
         Single pane for complete metrics and traces, no need to shift to different systems </h1>
@@ -316,7 +325,7 @@ function Home() {
       <WhySigNoz />
     
     <section>
-      <div className="container margin-vert--md">
+      <div className="container" style={{marginTop: '8rem', marginBottom:'4rem'}}>
         <h1 class="text--center margin-vert--lg"> Why get locked-in with SaaS vendors like DataDog when you can use Open source?</h1>
         <div class="row"> 
           <div class="col col--4">
@@ -344,7 +353,7 @@ function Home() {
                 </div> */}
                 <div class="card__body">
                   <p>
-                  Your data strorage cost is only depended on your application load, rather than arcane things like number of nodes.
+                  Your data strorage cost is only depended on your application load, rather than factors like number of nodes, which is an architectural preference.
                   </p>
                 </div>
                 {/* <div class="card__footer">
@@ -380,7 +389,7 @@ function Home() {
 
     {/* Next Section */}
     <section>
-      <div className="container margin-vert--md">
+      <div className="container" style={{marginTop: '8rem', marginBottom:'4rem'}}>
         <h1 class="text--center margin-vert--lg"> Why SigNoz?</h1>
         <div class="row"> 
           <div class="col col--6">
@@ -388,7 +397,7 @@ function Home() {
               <div class="card">
                 <div class="card__body padding--md">
                   <p>
-                    Native support for OpenTelemetry
+                    Native support for OpenTelemetry, emerging industry standard for instrumentation
                   </p>
                 </div>
               </div>  
@@ -400,7 +409,7 @@ function Home() {
               <div class="card">
                 <div class="card__body padding--md">
                   <p>
-                  Monitor your usage & set your own retention period 
+                  Monitor your usage & set your own retention period and sampling rate based on your needs
                   </p>
                 </div>
               </div>  
@@ -412,7 +421,7 @@ function Home() {
               <div class="card">
                 <div class="card__body padding--md">
                   <p>
-                  Industry trusted Kafka & Druid to handle enterprise scale
+                  Industry trusted Kafka & Druid to handle enterprise scale. No scaling pains. Ever.
                   </p>
                 </div>
               </div>  
@@ -424,7 +433,7 @@ function Home() {
               <div class="card">
                 <div class="card__body padding--md">
                   <p>
-                  Built on latest stack - Golang & React-Typescript
+                  Built on latest stack - Golang & React-Typescript loved by developers
                   </p>
                 </div>
               </div>  
@@ -436,7 +445,58 @@ function Home() {
       </div>
     </section>
 
+    <section>
+      <div className="container" style={{marginTop: '6rem', marginBottom:'6rem'}}>
+        <div class="row">
+          <div class="col col--4">
+            <p className="faq_left_panel text--center margin--md" >Open source & free for unlimited users</p>
+          </div>
+          
+          <div class="col col--8">
+            <p className="hero__subtitle margin--md">Frequently Asked Questions</p>
+            <div class="card-demo margin--md">
+            <Collapse
+              bordered={false}
+              // defaultActiveKey={['1']}
+              expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
+              className="site-collapse-custom-collapse"
+            >
+              <Panel header=" I am looking for an application monitoring tool, is SigNoz an APM?" key="1" className="card" style={{marginTop:'1rem', marginBottom:'1rem', padding:'1rem'}}>
+                <div class="card__body">
+                  <p>
+                      SigNoz is more than an APM. We provide all features like 
+                      metrics and request traces which APMs provide. On top 
+                      of that. we provide advanced filtering on trace data and 
+                      custom aggregation on it
+                  </p>
+                </div>
+              </Panel>
+
+              <Panel header="How does SigNoz compare to Jaeger?" key="2" className="card" style={{marginTop:'1rem', marginBottom:'1rem', padding:'1rem'}}>
+                <div class="card__body">
+                  <p>
+                      Few ways in which SigNoz is more advanced than Jaeger : Jaeger UI doesn’t show any metrics on traces 
+                      or on filtered traces, and Jaeger can’t get aggregates on filtered traces. For example, Cassandra doesn’t 
+                      support Group By, Max, etc.</p>
+                </div>
+              </Panel>
+
+              <Panel header="What will be your paid plan like?" key="3" className="card" style={{marginTop:'1rem', marginBottom:'1rem', padding:'1rem'}}>
+                <div class="card__body">
+                  <p>
+                  SigNoz will be always open-source and free for smaller teams. We will have role based pricing for our enterprise 
+                  edition which will have advanced features needed by bigger teams.</p>
+                </div>
+              </Panel>
+
+            </Collapse>
+
+            </div>
+          </div>
       
+        </div>
+      </div>
+    </section>
 
       </main>
     </Layout>
