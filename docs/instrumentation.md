@@ -3,6 +3,17 @@ id: instrumentation
 title: Instrumenting your applications for SigNoz
 ---
 
+**OpenTelemetry** is a single, vendor-agnostic instrumentation library per language with support for both automatic and manual instrumentation. It provides open-standard semantic conventions to ensure vendor-agnostic data collection.
+
+Follow instrumentation using OpenTelemetry at https://opentelemetry.io/docs/concepts/instrumenting.
+Also, extend OpenTelemetry using various plugins, libraries and integrations avaiable at https://opentelemetry.io/registry/
+
+
+**You can instrument using any open-standard library and SigNoz will be your best Observability backend to ingest, analyse and visualize data*
+
+
+#### Sample manual instrumentation using OpenTelemetry
+
 As owners of applications we like to know where our application spends time whenever another application calls our service. We would like to know atleast below basic details about our API calls
 
 - HTTP responses from web services

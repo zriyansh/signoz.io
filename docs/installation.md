@@ -9,7 +9,9 @@ The easiest way to get started with SigNoz is to install using helm charts, this
 
 - Kafka
 - Druid
-- Web UI application in React
+- Flattener Processor (Streaming data processor)
+- Query Service
+- Web UI
 
 ### Steps to Deploy SigNoz
 
@@ -42,6 +44,11 @@ kubectl -n sample-application run strzal --image=djbingham/curl
 --restart='OnFailure' -i --tty --rm --command -- curl -X POST -F
 'locust_count=6' -F 'hatch_rate=2' http://locust-master:8089/swarm
 ```
+
+
+### See UI
+`kubectl -n platform port-forward svc/signoz-frontend 3000:3000`
+
 
 ### How to stop load
 
