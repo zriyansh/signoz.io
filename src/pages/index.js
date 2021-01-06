@@ -215,8 +215,11 @@ function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      // title={`Hello from ${siteConfig.title}`}
+      title={`Open source Observability platform`}
+      description="SigNoz is an opensource observability platform to help you find issues in your deployed applications & solve them quickly. 
+      It provides an integrated UI for metrics and traces with deep filtering and aggregation to pin down specific issues very quickly. 
+      Built on Kafka and Druid, it is designed to handle enterprise scale.">
       <header className="hero hero--dark">
         <div className="container">
           <div className="row">

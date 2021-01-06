@@ -1,6 +1,6 @@
 module.exports = {
   title: 'SigNoz',
-  tagline: 'Software infra is getting more complex. Don’t just be reactive to issues but detect issues proactively. Great customer experience implies better customer satisfaction & retention',
+  tagline: 'Open source Observability platform',
   url: 'https://signoz.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -9,6 +9,7 @@ module.exports = {
   organizationName: 'SigNoz', // Usually your GitHub org/user name.
   projectName: 'signoz', // Usually your repo name.
   themeConfig: {
+    image: 'img/HeroShot-3.jpg',
     colorMode: {
       // "light" | "dark"
       defaultMode: 'dark',
