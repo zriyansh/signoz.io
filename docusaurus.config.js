@@ -9,6 +9,11 @@ module.exports = {
   organizationName: 'SigNoz', // Usually your GitHub org/user name.
   projectName: 'signoz', // Usually your repo name.
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'UA-152867655-1',
+      // Optional fields.
+      // anonymizeIP: true, // Should IPs be anonymized?
+    },
     image: 'img/HeroShot-3.jpg',
     colorMode: {
       // "light" | "dark"
@@ -109,4 +114,17 @@ module.exports = {
       },
     ],
   ],
+  plugins: ['@docusaurus/plugin-google-analytics'],
+  plugins: [
+    [
+      '@docusaurus/plugin-sitemap',
+      {
+        cacheTime: 600 * 1000, // 600 sec - cache purge period
+        changefreq: 'weekly',
+        priority: 0.5,
+        trailingSlash: false,
+      },
+    ],
+  ],
+  
 };

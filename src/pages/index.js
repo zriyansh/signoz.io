@@ -6,6 +6,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Collapse } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons';
+// import ReactGA from 'react-ga';
+
 
 import styles from './styles.module.css';
 // import CodeSnippet from "@site/src/theme/CodeSnippet";
@@ -15,6 +17,9 @@ import styles from './styles.module.css';
 import styled from 'styled-components'
 
 const { Panel } = Collapse;
+
+// ReactGA.initialize('UA-152867655-1');// How to make it appear only for production?
+// ReactGA.pageview(window.location.pathname + window.location.search);
 
 const text = `
   A dog is a type of domesticated animal.
