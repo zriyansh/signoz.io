@@ -9,11 +9,11 @@ module.exports = {
   organizationName: 'SigNoz', // Usually your GitHub org/user name.
   projectName: 'signoz', // Usually your repo name.
   themeConfig: {
-    googleAnalytics: {
-      trackingID: 'UA-152867655-1',
-      // Optional fields.
-      // anonymizeIP: true, // Should IPs be anonymized?
-    },
+    // googleAnalytics: {
+    //   trackingID: 'UA-152867655-1',
+    //   // Optional fields.
+    //   // anonymizeIP: true, // Should IPs be anonymized?
+    // },
     image: 'img/HeroShot-3.jpg',
     colorMode: {
       // "light" | "dark"
@@ -23,7 +23,7 @@ module.exports = {
       title: 'SigNoz',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/SigNozLogo-200x200.svg',
+        src: 'img/SigNozLogo-orange.svg',
       },
       items: [
         {
@@ -35,6 +35,16 @@ module.exports = {
         //docusaurus expects href elements to be full links
         //https://stackoverflow.com/questions/63268853/how-do-i-link-to-non-docusaurus-defined-routes-from-a-docusuarus-footer
         {href: 'https://signoz.io/blog/', label: 'Blog', position: 'left'},
+        {
+          to: 'about-us/',
+          label: 'About',
+          position: 'right',
+        },
+        {
+          href: 'https://signoz-community.slack.com/join/shared_invite/zt-kj26gm1u-Xe3CYxCu0bGXCrCqKipjOA#/',
+          label: 'Slack',
+          position: 'right',
+        },
         {
           href: 'https://github.com/SigNoz/signoz',
           label: 'GitHub',
@@ -61,10 +71,10 @@ module.exports = {
         {
           title: 'Community',
           items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/signoz',
-            },
+            // {
+            //   label: 'Stack Overflow',
+            //   href: 'https://stackoverflow.com/questions/tagged/signoz',
+            // },
             {
               label: 'Slack',
               href: 'https://signoz-community.slack.com/join/shared_invite/zt-kj26gm1u-Xe3CYxCu0bGXCrCqKipjOA#/',
@@ -72,6 +82,10 @@ module.exports = {
             {
               label: 'Twitter',
               href: 'https://twitter.com/SigNozHQ',
+            },
+            {
+              label: 'hello@signoz.io',
+              href: 'mailto:hello@signoz.io',
             },
           ],
         },
@@ -85,6 +99,10 @@ module.exports = {
             {
               label: 'GitHub',
               href: 'https://github.com/SigNoz/signoz',
+            },
+            {
+              label: 'About',
+              to: 'about-us/',
             },
           ],
         },
@@ -114,17 +132,17 @@ module.exports = {
       },
     ],
   ],
-  plugins: ['@docusaurus/plugin-google-analytics'],
-  plugins: [
-    [
-      '@docusaurus/plugin-sitemap',
-      {
-        cacheTime: 600 * 1000, // 600 sec - cache purge period
-        changefreq: 'weekly',
-        priority: 0.5,
-        trailingSlash: false,
-      },
-    ],
-  ],
+  // plugins: ['@docusaurus/plugin-google-analytics'],
+  // plugins: [
+  //   [
+  //     '@docusaurus/plugin-sitemap',
+  //     {
+  //       cacheTime: 600 * 1000, // 600 sec - cache purge period
+  //       changefreq: 'weekly',
+  //       priority: 0.5,
+  //       trailingSlash: false,
+  //     },
+  //   ],
+  // ],
   
 };
