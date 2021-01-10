@@ -38,6 +38,18 @@ hero__screenshot {
   border-radius: 8px;
 }
 
+@media (max-width: 420px) {
+  .hero {
+    padding: 0.5rem 0.5rem;
+  }
+  .hero__title {
+    font-size: 1.8rem;
+  }
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+}
+
 @media (min-width: 769px) {
   .hero {
     padding: 4rem 2rem;
