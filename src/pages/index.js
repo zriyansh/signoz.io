@@ -1,4 +1,5 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
+import { Router } from 'react-router-dom';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -6,7 +7,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { Collapse } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons';
-// import ReactGA from 'react-ga';
+import ReactGA from 'react-ga';
+// import createHistory from 'history/createBrowserHistory';
 
 
 import styles from './styles.module.css';
@@ -18,8 +20,33 @@ import styled from 'styled-components'
 
 const { Panel } = Collapse;
 
-// ReactGA.initialize('UA-152867655-1');// How to make it appear only for production?
-// ReactGA.pageview(window.location.pathname + window.location.search);
+// const history = createHistory();
+ReactGA.initialize('UA-152867655-1');// How to make it appear only for production?
+// useEffect(() => {
+ReactGA.pageview('Home Page')
+// }, [])
+// history.listen((location, action) => {
+//   ReactGA.pageview(location.pathname + location.search);
+//   console.log(location.pathname)
+// });
+ReactGA.event({
+  category: 'User',
+  action: 'Opened Main page'
+})
+
+const getStartedClicked = () => {
+  ReactGA.event({
+    category: 'User',
+    action: 'Clicked get started button'
+  })
+}
+
+const requestDemoClicked = () => {
+  ReactGA.event({
+    category: 'User',
+    action: 'Request Demo Clicked'
+  })
+}
 
 const text = `
   A dog is a type of domesticated animal.
@@ -219,23 +246,31 @@ function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   return (
+    
     <Layout
       // title={`Hello from ${siteConfig.title}`}
+     
       title={`Open source Observability platform`}
       description="SigNoz is an opensource observability platform to help you find issues in your deployed applications & solve them quickly. 
       It provides an integrated UI for metrics and traces with deep filtering and aggregation to pin down specific issues very quickly. 
       Built on Kafka and Druid, it is designed to handle enterprise scale.">
       <header className="hero hero--dark">
+      {/* {console.log(window)} */}
         <div className="container">
           <div className="row">
           <div className="col col--4">
-              <p className="hero__title " style={{"font-weight": "bold"}}>Open-source Observability platform</p>
+              <p className="hero__title " style={{"fontWeight": "bold"}}>Open-source Observability platform</p>
               <p className="hero__subtitle">Understand issues in your deployed applications & solve them quickly</p>
-              <div style={{"margin": "2rem 0"}}>
-                <Link
-                  className="button button--primary button--lg"
-                  to={useBaseUrl('docs/installation')}>
+              <div style={{"margin": "1rem 0"}}>
+                <Link style={{"margin": "6px"}}
+                  className="button button--secondary"
+                  to={useBaseUrl('docs/installation')} onClick={getStartedClicked}>
                   Get Started
+                </Link>
+                <Link style={{"margin": "6px"}}
+                  className="button button--primary "
+                  href={'https://v6fhsfo1g0y.typeform.com/to/wTs4Mbzi'} onClick={requestDemoClicked}>
+                  Request Demo
                 </Link>
               </div>
               <p className="open-source-label">SigNoz is <strong>free</strong> and <strong>open-source</strong></p>
@@ -508,6 +543,7 @@ function Home() {
 
       </main>
     </Layout>
+   
   );
 }
 
