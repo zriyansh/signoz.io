@@ -3,6 +3,17 @@ id: faq
 title: Frequently Asked Questions
 ---
 
+import ReactGA from 'react-ga';
+
+export const Logger = ({children}) => (
+<>
+<span>{ReactGA.initialize('UA-152867655-1')}</span>
+<span>{ReactGA.pageview('FAQ')}</span>
+</>
+);
+
+<Logger> Hi, I am logger</Logger>
+
 <!-- - I am using Prometheus, can I use SigNoz?
 - I am using Jaeger, can I use SigNoz?
 - How does SigNoz compare with DataDog?

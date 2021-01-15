@@ -3,6 +3,17 @@ id: architecture
 title: Technical Architecture
 ---
 
+import ReactGA from 'react-ga';
+
+export const Logger = ({children}) => (
+<>
+<span>{ReactGA.initialize('UA-152867655-1')}</span>
+<span>{ReactGA.pageview('Technical Architecture')}</span>
+</>
+);
+
+<Logger> Hi, I am logger</Logger>
+
 SigNoz uses industry proven Kafka and Druid to power highly scalable data ingestion and realtime data analysis.
 
 ![acrhitecture-diagram](../static/img/architecture-signoz-dark.svg)
