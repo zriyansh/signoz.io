@@ -5,6 +5,17 @@ sidebar_label: Introduction
 slug: /
 ---
 
+import ReactGA from 'react-ga';
+
+export const Logger = ({children}) => (
+<>
+<span>{ReactGA.initialize('UA-152867655-1')}</span>
+<span>{ReactGA.pageview('Introduction')}</span>
+</>
+);
+
+<Logger> Hi, I am logger</Logger>
+
 Pronounced as sig.noz
 
 Trained in EECS, we are obsessed with the idea of signal vs noise. How do devops engineers find signals which they can act on from the various sources of noise they encounter from their observability systems?

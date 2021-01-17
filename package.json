@@ -18,6 +18,7 @@
     "@mdx-js/react": "^1.6.21",
     "antd": "^4.10.0",
     "clsx": "^1.1.1",
+    "posthog-docusaurus": "^1.0.3",
     "prism-react-renderer": "^1.1.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",

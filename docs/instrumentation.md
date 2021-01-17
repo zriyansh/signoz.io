@@ -3,14 +3,22 @@ id: instrumentation
 title: Instrumenting your applications for SigNoz
 ---
 
+import ReactGA from 'react-ga';
+
+export const Logger = ({children}) => (
+<>
+<span>{ReactGA.initialize('UA-152867655-1')}</span>
+<span>{ReactGA.pageview('Instrumentation')}</span>
+</>
+);
+
+<Logger> Hi, I am logger</Logger>
 **OpenTelemetry** is a single, vendor-agnostic instrumentation library per language with support for both automatic and manual instrumentation. It provides open-standard semantic conventions to ensure vendor-agnostic data collection.
 
 Follow instrumentation using OpenTelemetry at https://opentelemetry.io/docs/concepts/instrumenting.
 Also, extend OpenTelemetry using various plugins, libraries and integrations avaiable at https://opentelemetry.io/registry/
 
-
-**You can instrument using any open-standard library and SigNoz will be your best Observability backend to ingest, analyse and visualize data*
-
+\*_You can instrument using any open-standard library and SigNoz will be your best Observability backend to ingest, analyse and visualize data_
 
 #### Sample manual instrumentation using OpenTelemetry
 

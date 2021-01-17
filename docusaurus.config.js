@@ -14,6 +14,11 @@ module.exports = {
     //   // Optional fields.
     //   // anonymizeIP: true, // Should IPs be anonymized?
     // },
+    posthog: {
+      apiKey: "H-htDCae7CR3RV57gUzmol6IAKtm5IMCvbcm_fwnL-w",
+      appUrl: "https://app.posthog.com",  // optional
+      enableInDevelopment: true  // optional
+    },
     image: 'img/HeroShot-3.jpg',
     colorMode: {
       // "light" | "dark"
@@ -132,6 +137,8 @@ module.exports = {
       },
     ],
   ],
+  plugins: ["posthog-docusaurus"],
+  
   // plugins: ['@docusaurus/plugin-google-analytics'],
   // plugins: [
   //   [
