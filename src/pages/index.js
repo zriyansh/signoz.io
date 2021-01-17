@@ -264,7 +264,7 @@ function Home() {
               <div style={{"margin": "1rem 0"}}>
                 <Link style={{"margin": "6px"}}
                   className="button button--secondary"
-                  to={useBaseUrl('docs/installation')} onClick={getStartedClicked}>
+                  to={useBaseUrl('docs/deployment/docker')} onClick={getStartedClicked}>
                   Get Started
                 </Link>
                 <Link style={{"margin": "6px"}}
