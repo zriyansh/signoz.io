@@ -28,6 +28,7 @@ kubectl -n platform apply -Rf deploy/kubernetes/jobs
 
 kubectl -n platform apply -f deploy/kubernetes/otel-collector
 ```
+**If you choose a different namespace, you need to point your applications to correct address to send traces. In our sample application just change the `JAEGER_ENDPOINT` environment variable in `sample-apps/hotrod/deployment.yaml`*
 
 ### Test HotROD application with SigNoz
 
@@ -40,21 +41,25 @@ kubectl -n sample-application apply -Rf sample-apps/hotrod/
 ### How to generate load
 
 ```console
-kubectl -n sample-application run strzal --image=djbingham/curl
---restart='OnFailure' -i --tty --rm --command -- curl -X POST -F
+kubectl -n sample-application run strzal --image=djbingham/curl \
+--restart='OnFailure' -i --tty --rm --command -- curl -X POST -F \
 'locust_count=6' -F 'hatch_rate=2' http://locust-master:8089/swarm
 ```
 
 ### See UI
-
-`kubectl -n platform port-forward svc/signoz-frontend 3000:3000`
+```console
+kubectl -n platform port-forward svc/signoz-frontend 3000:3000
+```
 
 ### How to stop load
 
 ```console
-kubectl -n sample-application run strzal --image=djbingham/curl
- --restart='OnFailure' -i --tty --rm --command -- curl
+kubectl -n sample-application run strzal --image=djbingham/curl \
+ --restart='OnFailure' -i --tty --rm --command -- curl \
  http://locust-master:8089/stop
 ```
 
+
+### How to instrument your own applications
+[Checkout Instrumentation Section](/docs/instrumentation/python)
 <!-- Supported Markdown languages - Highlight.js https://github.com/highlightjs/highlight.js/blob/master/SUPPORTED_LANGUAGES.md -->
