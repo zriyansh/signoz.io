@@ -30,7 +30,7 @@ sdk.start().then(() => {
 
 You just need to export 2 environment variables `OTEL_EXPORTER_OTLP_SPAN_ENDPOINT` and `LS_SERVICE_NAME` and run application like below:
 ```console
-OTEL_EXPORTER_OTLP_SPAN_ENDPOINT=<IP of SigNoz Backend> LS_SERVICE_NAME=<service name> npm start
+OTEL_EXPORTER_OTLP_SPAN_ENDPOINT="http://<IP of SigNoz Backend>:55681/v1/trace" LS_SERVICE_NAME=<service name> npm start
 ```
 
 ### Troubleshooting your installation
