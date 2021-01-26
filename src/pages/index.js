@@ -396,7 +396,7 @@ function Home() {
                 </div> */}
                 <div class="card__body">
                   <p>
-                  Your data strorage cost is only depended on your application load, rather than factors like number of nodes, which is an architectural preference.
+                  Your data storage cost is only dependent on your application load, rather than factors like number of nodes, which is an architectural preference.
                   </p>
                 </div>
                 {/* <div class="card__footer">
@@ -527,8 +527,9 @@ function Home() {
               <Panel header="What will be your paid plan like?" key="3" className="card" style={{marginTop:'1rem', marginBottom:'1rem', padding:'1rem'}}>
                 <div class="card__body">
                   <p>
-                  SigNoz will be always open-source and free for smaller teams. We will have role based pricing for our enterprise 
-                  edition which will have advanced features needed by bigger teams.</p>
+                  SigNoz will be always open-source and free for standard features needed by smaller teams. 
+                  We plan to make money by charging a license fee for features needed by enterprises like advanced security, single sign-on, advanced integrations and support.
+                  </p>
                 </div>
               </Panel>
 
