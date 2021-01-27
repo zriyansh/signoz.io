@@ -32,6 +32,12 @@ module.exports = {
       },
       items: [
         {
+          to: 'pricing/',
+          activeBasePath: 'pricing',
+          label: 'Pricing',
+          position: 'left',
+        },
+        {
           to: 'docs/',
           activeBasePath: 'docs',
           label: 'Docs',
