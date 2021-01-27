@@ -1,23 +1,20 @@
-import React,{useState,useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactModal from "react-modal";
-import { Router } from 'react-router-dom';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { Collapse } from 'antd';
-import { CaretRightOutlined } from '@ant-design/icons';
+import {Collapse} from 'antd';
+import {CaretRightOutlined} from '@ant-design/icons';
 import ReactGA from 'react-ga';
 // import createHistory from 'history/createBrowserHistory';
-
-
 import styles from './styles.module.css';
 // import CodeSnippet from "@site/src/theme/CodeSnippet";
 // import Tabs from '@theme/Tabs';
 // import TabItem from '@theme/TabItem';//in markdown features
-
 import styled from 'styled-components'
+import {InstrumentationModal} from "../components/InstrumentationModal";
 
 const { Panel } = Collapse;
 
@@ -300,6 +297,7 @@ function TrySignozModal(props){
   )
 }
 
+
 function Home() {
   const[showTrySignozModal, setShowTrySignozModal] = useState(false);
 
@@ -324,6 +322,7 @@ function Home() {
       It provides an integrated UI for metrics and traces with deep filtering and aggregation to pin down specific issues very quickly.
       Built on Kafka and Druid, it is designed to handle enterprise scale.">
       <TrySignozModal isOpen={showTrySignozModal} onClose={closeTrySignozModal}/>
+      {/*<InstrumentationModal isOpen={showTrySignozModal} onClose={closeTrySignozModal}/>*/}
       <header className="hero hero--dark">
       {/* {console.log(window)} */}
         <div className="container">
