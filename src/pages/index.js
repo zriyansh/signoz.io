@@ -591,7 +591,7 @@ function Home() {
               <Panel header="What will be your paid plan like?" key="3" className="card" style={{marginTop:'1rem', marginBottom:'1rem', padding:'1rem'}}>
                 <div class="card__body">
                   <p>
-                  SigNoz will be always open-source and free for smaller teams. We will have role based pricing for our enterprise
+                  SigNoz will be always open-source and free for smaller teams. We will have role based Pricing for our enterprise
                   edition which will have advanced features needed by bigger teams.</p>
                 </div>
               </Panel>

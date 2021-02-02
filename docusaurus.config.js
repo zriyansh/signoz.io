@@ -35,7 +35,7 @@ module.exports = {
           to: 'pricing/',
           activeBasePath: 'pricing',
           label: 'Pricing',
-          position: 'left',
+          position: 'right',
         },
         {
           to: 'docs/',
