@@ -70,11 +70,10 @@ function OpenSourceCard(props) {
         return (<li key={feature}>{feature}</li>);
     })
 
-    const onButtonClick = ()=>{
-        window.location = `https://app.signoz.io?plan_type=${title.toLowerCase()}`
-    }
+
 
     return (
+
         <div className="card-demo" style={{background: "#fff", color: "#333333", borderRadius: "0.4rem", height: "100%"}}>
             <div className="card" style={{background: "#fff", color: "#333333", height: "100%"}}>
                 <div className="card__header">
@@ -97,7 +96,10 @@ function OpenSourceCard(props) {
                     </ul>
                 </div>
                 <div className="card__footer">
-                    <button style={{background: "#2D9CDB", borderWidth: 0}} className="button button--primary button--block" onClick={onButtonClick}>{buttonText}</button>
+                    <Link href={"/docs"}>
+                        <button style={{background: "#2D9CDB", borderWidth: 0}} className="button button--primary button--block" >{buttonText}</button>
+                    </Link>
+
                 </div>
             </div>
         </div>
