@@ -258,7 +258,6 @@ function ModalCard(props) {
       </div>
       {button}
     </div>
-
   </div>);
 }
 
@@ -285,7 +284,7 @@ function TrySignozModal(props){
               </Link>
             </div>
             <div className={"col col--6"} style={{display: "flex", justifyContent: "center"}}>
-              <Link style={{textDecoration: "none"}} href={"/docs"}>
+              <Link style={{textDecoration: "none"}} href={"/docs/deployment/docker"}>
               <ModalCard title={"Open source"} desc={"Want to use our free open-source product?"} info={<div>Deploy SigNoz to your infrastructure. Free <div>forever</div></div>}/>
               </Link>
               </div>
