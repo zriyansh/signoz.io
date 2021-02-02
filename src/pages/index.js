@@ -1,22 +1,20 @@
-import React,{useState,useEffect} from 'react';
-import { Router } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import ReactModal from "react-modal";
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { Collapse } from 'antd';
-import { CaretRightOutlined } from '@ant-design/icons';
+import {Collapse} from 'antd';
+import {CaretRightOutlined} from '@ant-design/icons';
 import ReactGA from 'react-ga';
 // import createHistory from 'history/createBrowserHistory';
-
-
 import styles from './styles.module.css';
 // import CodeSnippet from "@site/src/theme/CodeSnippet";
 // import Tabs from '@theme/Tabs';
 // import TabItem from '@theme/TabItem';//in markdown features
-
 import styled from 'styled-components'
+import {InstrumentationModal} from "../components/InstrumentationModal";
 
 const { Panel } = Collapse;
 
@@ -154,7 +152,6 @@ const WhySigNoz = () => {
   }
 
   return(
-
   <div className='container'>
       <div className="container">
           <div className='row'>
@@ -184,7 +181,7 @@ const WhySigNoz = () => {
 
   )
 
-  
+
 
 
 }
@@ -202,7 +199,7 @@ const features = [
     imageUrl: 'img/Vector_1.svg',
     description: (
       <>
-        No need to worry about GDPR and other data protection laws. 
+        No need to worry about GDPR and other data protection laws.
         All your tracing and monitoring data is now in YOUR infra.
       </>
     ),
@@ -242,20 +239,88 @@ function Feature({imageUrl, title, description}) {
   );
 }
 
+function ModalCard(props) {
+  const {title, desc, info, link, button} = props;
+
+  return (
+  <div className="card-demo" style={{width: "100%",  marginTop: "1.5rem", maxWidth: "14rem"}}>
+    <div className="card"style={{ color: "#000", height: "15rem"}}>
+      <div className="card__header">
+        <h3 style={{color: "#333333"}}>{title}</h3>
+      </div>
+      <div className="card__body">
+        <p>
+          {desc}
+        </p>
+      </div>
+      <div className="card__footer" style={{color: "#2F80ED"}}>
+        {info}
+      </div>
+      {button}
+    </div>
+
+  </div>);
+}
+
+function TrySignozModal(props){
+  const {isOpen, onClose} = props;
+
+  return (
+      <ReactModal
+          isOpen={isOpen}
+          contentLabel="onRequestClose Example"
+          onRequestClose={onClose}
+          className="Modal try-signoz-modal"
+          overlayClassName="Overlay"
+      >
+       <h1 style={{marginTop: "2rem", textAlign: "center", color: "#333333"}}>Try SigNoz for free</h1>
+       <div className={"container"}>
+          <div className={"row"}>
+            <div className={"col col--6"} style={{display: "flex", justifyContent: "center"}}>
+              <Link style={{textDecoration: "none"}}
+                    href={"/pricing"}>
+                <ModalCard
+                    title={"Cloud"} desc={"Small business or low volume & don’t want hassle?"} info={"This is the simplest way to get started. Create an account"}/>
+
+              </Link>
+            </div>
+            <div className={"col col--6"} style={{display: "flex", justifyContent: "center"}}>
+              <Link style={{textDecoration: "none"}} href={"/docs"}>
+              <ModalCard title={"Open source"} desc={"Want to use our free open-source product?"} info={<div>Deploy SigNoz to your infrastructure. Free <div>forever</div></div>}/>
+              </Link>
+              </div>
+          </div>
+       </div>
+      </ReactModal>
+  )
+}
+
+
 function Home() {
+  const[showTrySignozModal, setShowTrySignozModal] = useState(false);
+
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
+
+  useEffect(() => {
+    ReactModal.setAppElement("#modal-root");
+  }, []);
+
+  const closeTrySignozModal = () => {
+    setShowTrySignozModal(false);
+  };
+
   return (
-    
+    <>
     <Layout
       // title={`Hello from ${siteConfig.title}`}
-     
+
       title={`Open source Observability platform`}
-      description="SigNoz is an opensource observability platform to help you find issues in your deployed applications & solve them quickly. 
-      It provides an integrated UI for metrics and traces with deep filtering and aggregation to pin down specific issues very quickly. 
+      description="SigNoz is an opensource observability platform to help you find issues in your deployed applications & solve them quickly.
+      It provides an integrated UI for metrics and traces with deep filtering and aggregation to pin down specific issues very quickly.
       Built on Kafka and Druid, it is designed to handle enterprise scale.">
+      <TrySignozModal isOpen={showTrySignozModal} onClose={closeTrySignozModal}/>
       <header className="hero hero--dark">
-      {/* {console.log(window)} */}
         <div className="container">
           <div className="row">
           <div className="col col--4">
@@ -264,7 +329,8 @@ function Home() {
               <div style={{"margin": "1rem 0"}}>
                 <Link style={{"margin": "6px"}}
                   className="button button--secondary"
-                  to={useBaseUrl('docs/deployment/docker')} onClick={getStartedClicked}>
+                      onClick={setShowTrySignozModal.bind(this,true)}>
+
                   Get Started
                 </Link>
                 <Link style={{"margin": "6px"}}
@@ -274,7 +340,7 @@ function Home() {
                 </Link>
               </div>
               <p className="open-source-label">SigNoz is <strong>free</strong> and <strong>open-source</strong></p>
-             
+
               {/* <iframe
                 className="display--tablet"
                 src={`https://ghbtns.com/github-btn.html?user=infracost&repo=infracost&type=star&count=true&size=large`}
@@ -318,7 +384,7 @@ function Home() {
         </p>
       </div> */}
 
-        
+
         {/* <Title> Why SigNoz! </Title>
       <div className="container">
         <ul class="pills pills--block">
@@ -348,10 +414,10 @@ function Home() {
                           </Link>
                           </>
                         </TabItem>))}
-                      
+
                     </Tabs>
                   </section>
-                )}  
+                )}
         </div>
       </div> */}
 
@@ -366,11 +432,11 @@ function Home() {
     </section>
 
       <WhySigNoz />
-    
+
     <section>
       <div className="container" style={{marginTop: '8rem', marginBottom:'4rem'}}>
         <h1 class="text--center margin-vert--lg"> Why get locked-in with SaaS vendors like DataDog when you can use Open source?</h1>
-        <div class="row"> 
+        <div class="row">
           <div class="col col--4">
             <div class="card-demo margin--md">
               <div class="card">
@@ -396,7 +462,7 @@ function Home() {
                 </div> */}
                 <div class="card__body">
                   <p>
-                  Your data storage cost is only dependent on your application load, rather than factors like number of nodes, which is an architectural preference.
+                  Your data strorage cost is only depended on your application load, rather than factors like number of nodes, which is an architectural preference.
                   </p>
                 </div>
                 {/* <div class="card__footer">
@@ -416,7 +482,7 @@ function Home() {
                 </div> */}
                 <div class="card__body">
                   <p>
-                    No compliance needed to use SigNoz. No need to go through multiple rounds with legal/security teams just for trying it out. 
+                    No compliance needed to use SigNoz. No need to go through multiple rounds with legal/security teams just for trying it out.
                   </p>
                 </div>
                 {/* <div class="card__footer">
@@ -427,14 +493,14 @@ function Home() {
           </div>
         </div>
       </div>
-    </section>  
+    </section>
 
 
     {/* Next Section */}
     <section>
       <div className="container" style={{marginTop: '8rem', marginBottom:'4rem'}}>
         <h1 class="text--center margin-vert--lg"> Why SigNoz?</h1>
-        <div class="row"> 
+        <div class="row">
           <div class="col col--6">
             <div class="card-demo margin--md">
               <div class="card">
@@ -443,7 +509,7 @@ function Home() {
                     Native support for OpenTelemetry, emerging industry standard for instrumentation
                   </p>
                 </div>
-              </div>  
+              </div>
             </div>
           </div>
 
@@ -455,7 +521,7 @@ function Home() {
                   Monitor your usage & set your own retention period and sampling rate based on your needs
                   </p>
                 </div>
-              </div>  
+              </div>
             </div>
           </div>
 
@@ -467,7 +533,7 @@ function Home() {
                   Industry trusted Kafka & Druid to handle enterprise scale. No scaling pains. Ever.
                   </p>
                 </div>
-              </div>  
+              </div>
             </div>
           </div>
 
@@ -479,11 +545,9 @@ function Home() {
                   Built on latest stack - Golang & React-Typescript loved by developers
                   </p>
                 </div>
-              </div>  
+              </div>
             </div>
           </div>
-          
-
         </div>
       </div>
     </section>
@@ -494,7 +558,7 @@ function Home() {
           <div class="col col--4">
             <p className="faq_left_panel text--center margin--md" >Open source and free </p>
           </div>
-          
+
           <div class="col col--8">
             <p className="hero__subtitle margin--md">Frequently Asked Questions</p>
             <div class="card-demo margin--md">
@@ -507,9 +571,9 @@ function Home() {
               <Panel header=" I am looking for an application monitoring tool, is SigNoz an APM?" key="1" className="card" style={{marginTop:'1rem', marginBottom:'1rem', padding:'1rem'}}>
                 <div class="card__body">
                   <p>
-                      SigNoz is more than an APM. We provide all features like 
-                      metrics and request traces which APMs provide. On top 
-                      of that. we provide advanced filtering on trace data and 
+                      SigNoz is more than an APM. We provide all features like
+                      metrics and request traces which APMs provide. On top
+                      of that. we provide advanced filtering on trace data and
                       custom aggregation on it
                   </p>
                 </div>
@@ -518,8 +582,8 @@ function Home() {
               <Panel header="How does SigNoz compare to Jaeger?" key="2" className="card" style={{marginTop:'1rem', marginBottom:'1rem', padding:'1rem'}}>
                 <div class="card__body">
                   <p>
-                      Few ways in which SigNoz is more advanced than Jaeger : Jaeger UI doesn’t show any metrics on traces 
-                      or on filtered traces, and Jaeger can’t get aggregates on filtered traces. For example, Cassandra doesn’t 
+                      Few ways in which SigNoz is more advanced than Jaeger : Jaeger UI doesn’t show any metrics on traces
+                      or on filtered traces, and Jaeger can’t get aggregates on filtered traces. For example, Cassandra doesn’t
                       support Group By, Max, etc.</p>
                 </div>
               </Panel>
@@ -527,9 +591,8 @@ function Home() {
               <Panel header="What will be your paid plan like?" key="3" className="card" style={{marginTop:'1rem', marginBottom:'1rem', padding:'1rem'}}>
                 <div class="card__body">
                   <p>
-                  SigNoz will be always open-source and free for standard features needed by smaller teams. 
-                  We plan to make money by charging a license fee for features needed by enterprises like advanced security, single sign-on, advanced integrations and support.
-                  </p>
+                  SigNoz will be always open-source and free for smaller teams. We will have role based pricing for our enterprise
+                  edition which will have advanced features needed by bigger teams.</p>
                 </div>
               </Panel>
 
@@ -537,14 +600,30 @@ function Home() {
 
             </div>
           </div>
-      
+
         </div>
       </div>
     </section>
+        <section>
+          <div className={"padding--md"} style={{background: "#030201"}}>
+            <div style={{display: "flex"}}>
+              <div style={{display: "flex", alignItems: "center"}}>
+                <img src={"/img/yc-logo.png"}/>
+              </div>
+              <div  style={{color: "#F2F2F2", display: "flex", alignItems: "center", padding: 0, marginLeft: "2rem", fontWeight: 700}}>
+                Backed by Y Combinator
+              </div>
+              <div style={{display: "flex", alignItems: "center", marginLeft: "auto", width: "4rem", height: "4rem", background: "#C4C4C4", borderRadius: "2rem", color: "#000", fontSize: 14, justifyContent: "center", fontWeight: 600}}>
+                <div><div>Join us</div><div>on slack</div></div>
+              </div>
+            </div>
+          </div>
+        </section>
 
       </main>
     </Layout>
-   
+      <div id={"modal-root"}></div>
+</>
   );
 }
 
