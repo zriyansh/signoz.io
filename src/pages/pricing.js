@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Layout from '@theme/Layout';
 import {Conditional} from "../components/conditional";
+import Link from "@docusaurus/core/lib/client/exports/Link";
 
 const TABS = {
     CLOUD: "Cloud",
@@ -11,9 +12,9 @@ function TabsHeader(props){
 
      const items = (<>
                 <li className={"tabs__item tabs__item--active"}>Cloud</li>
-                <a href="https://google.com" target="_blank">
+                <Link href={"/docs"}>
                     <li className={"tabs__item"}>Open Source</li>
-                </a>
+                </Link>
                 </>)
 
     return (
@@ -24,12 +25,14 @@ function TabsHeader(props){
 }
 
 function PricingCard(props) {
-
-    const {title, image, price, buttonText, onButtonClick, features} = props;
-
+    const {title, image, price, buttonText, features} = props;
     const featuresListItems = features.map(feature => {
         return (<li key={feature}>{feature}</li>);
     })
+
+    const onButtonClick = ()=>{
+        window.location = `https://app.signoz.io?plan_type=${title.toLowerCase()}`
+    }
 
     return (
         <div className="card-demo" style={{background: "#fff", color: "#333333", borderRadius: "0.4rem", height: "100%"}}>
@@ -67,16 +70,13 @@ const PROFESSIONAL_FEATURES = ["3 day retention - USD 0.1/mn spans", "7 day rete
 
 function pricing() {
     const [selectedTab, setSelectedTab] = useState(TABS.CLOUD);
-
-
     const handleSelectTab = (tab) => {
         setSelectedTab(tab);
     };
-
     return (
         <Layout title="Pricing">
             <section>
-                <div className="container" style={{marginTop: '8rem', marginBottom:'4rem'}}>
+                <div className="container" style={{marginTop: '2rem', marginBottom:'4rem'}}>
                     <div className={"row"}>
                         <div className={"pricingTabsContainer col col--12"} style={{display: "flex", justifyContent:"center"}}>
                             <TabsHeader onSelectTab={handleSelectTab} selectedTab={selectedTab}/>
@@ -96,19 +96,6 @@ function pricing() {
                             </div>
                         </div>
                     </Conditional>
-                        <Conditional If={selectedTab === TABS.OPEN_SOURCE}>
-                            <div className={"row"}>
-                                <div className={"col col--4 margin-vert--md"}>
-                                    <PricingCard title={"Hobby(O)"} image={"/img/hobby-pricing.png"} price={"Free"} features={HOBBY_FEATURES} buttonText={"Create free account"}/>
-                                </div>
-                                <div className={"col col--4 margin-vert--md"}>
-                                    <PricingCard title={"Starter(O)"} image={"/img/hobby-pricing.png"} price={"USD 19/month"} features={STARTER_FEATURES} buttonText={"Start free trial"}/>
-                                </div>
-                                <div className={"col col--4 margin-vert--md "}>
-                                    <PricingCard title={"Professional(O)"} image={"/img/professional-pricing.png"} features={PROFESSIONAL_FEATURES} buttonText={"Start free trial"}/>
-                                </div>
-                            </div>
-                        </Conditional>
                     </div>
                 </div>
             </section>

@@ -277,20 +277,18 @@ function TrySignozModal(props){
        <div className={"container"}>
           <div className={"row"}>
             <div className={"col col--6"} style={{display: "flex", justifyContent: "center"}}>
+              <Link style={{textDecoration: "none"}}
+                    href={"/pricing"}>
                 <ModalCard
-                    button={(
-                        <Link style={{"margin": "6px", marginTop:20, marginBottom:20}}
-                              className="button button--primary "
-                              href={"https://app.signoz.io"}>
-                          Continue
-                        </Link>
-                    )}
                     title={"Cloud"} desc={"Small business or low volume & don’t want hassle?"} info={"This is the simplest way to get started. Create an account"}/>
 
+              </Link>
             </div>
             <div className={"col col--6"} style={{display: "flex", justifyContent: "center"}}>
+              <Link style={{textDecoration: "none"}} href={"/docs"}>
               <ModalCard title={"Open source"} desc={"Want to use our free open-source product?"} info={<div>Deploy SigNoz to your infrastructure. Free <div>forever</div></div>}/>
-            </div>
+              </Link>
+              </div>
           </div>
        </div>
       </ReactModal>
@@ -322,9 +320,7 @@ function Home() {
       It provides an integrated UI for metrics and traces with deep filtering and aggregation to pin down specific issues very quickly.
       Built on Kafka and Druid, it is designed to handle enterprise scale.">
       <TrySignozModal isOpen={showTrySignozModal} onClose={closeTrySignozModal}/>
-      {/*<InstrumentationModal isOpen={showTrySignozModal} onClose={closeTrySignozModal}/>*/}
       <header className="hero hero--dark">
-      {/* {console.log(window)} */}
         <div className="container">
           <div className="row">
           <div className="col col--4">
