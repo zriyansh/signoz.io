@@ -82,7 +82,7 @@ module.exports = {
             // },
             {
               label: 'Slack',
-              href: 'https://signoz-community.slack.com/join/shared_invite/zt-kj26gm1u-Xe3CYxCu0bGXCrCqKipjOA#/',
+              href: 'https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA',
             },
             {
               label: 'Twitter',
