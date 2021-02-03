@@ -20,7 +20,7 @@ We have an active slack community with engineers eager to answer your queries on
 
 We are always there to help you in any issues you may have while running SigNoz. Just drop by and say Hi 👋!
 
-Get your invite for the slack community [here](https://signoz-community.slack.com/join/shared_invite/zt-kj26gm1u-Xe3CYxCu0bGXCrCqKipjOA#/)
+Get your invite for the slack community [here](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA)
 
 ## Github
 
