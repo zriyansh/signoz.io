@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Layout from '@theme/Layout';
 import {Conditional} from "../components/conditional";
 import Link from "@docusaurus/core/lib/client/exports/Link";
+import {IS_PRODUCTION} from "../utils/env";
 
 const TABS = {
     CLOUD: "Cloud",
@@ -29,7 +30,7 @@ function PricingCard(props) {
     })
 
     const onButtonClick = ()=>{
-        window.location = `https://app.signoz.io?plan_type=${title.toLowerCase()}`
+        window.location = `https://${IS_PRODUCTION?"app.signoz.io":"staging.signoz.io"}?plan_type=${title.toLowerCase()}`
     }
 
     return (
