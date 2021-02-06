@@ -189,3 +189,35 @@ hero__screenshot {
   font-size: 19px;
   font-weight: 600;
 }
+
+@media only screen and (max-width: 600px) {
+  .footer-container{
+    display: block !important;
+    padding: 0 20px !important;
+  }
+
+  .footer__links{
+    margin-left: -10px !important;
+  }
+
+  .footer-yc-logo{
+    margin-bottom: 40px;
+  }
+}
+.footer-container{
+  padding: 40px 80px;
+}
+
+.footer__col{
+  margin-right: 80px;
+  margin-left: 80px;
+}
+
+.footer__copyright{
+  text-align: center;
+}
+
+.footer__links{
+
+  margin-left: -200px;
+}
