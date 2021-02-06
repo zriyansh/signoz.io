@@ -22,6 +22,13 @@ git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/docker
 
 6. **To run SigNoz**:
 
+There are 2 ways to run SigNoz in Docker
+
+1. Tiny Instance setting ( runs with 3GB of memory)
+2. Standard setting (needs 8GB of memory)
+
+## Tiny Instance setting
+
 We have a tiny instance setting which runs with **3GB of memory**. This is just for demo/testing purpose and not to be used in production
 
 1. Choose the Docker menu whale menu > Preferences from the menu bar and configure the runtime options described below.
@@ -38,13 +45,19 @@ Below command will bring up SigNoz services
 docker-compose -f docker-compose-tiny.yaml up -d
 ```
 
+## Standard setting
+
 A standard instance of SigNoz needs around **8GB of memory**. Below command will bring up a standard instance.
 
 ```console
 docker-compose up -d
 ```
 
-7. The UI should be accessible at port 3000 on the domain you set up or the IP of your instance.
+:::note
+If you face any issues here, don't worry - just check out the troubleshooting steps in the section below
+:::
+
+7. Once `docker-compose` runs successfully, the UI should be accessible at port 3000 on the domain you set up or the IP of your instance.
 
 :::info
 Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3000`
@@ -52,9 +65,9 @@ Wait for 2-3 mins for the data to be available to frontend. If you are running o
 
 ### Troubleshooting
 
-1. `docker ps` will show all containers created by SigNoz. Check if `broker` and `historical` containers are running. They do not come up if there is a memory problem.
-2. Try re-running `docker-compose -f docker-compose-tiny.yaml up -d`, this will retry installing containers which failed the first time.
-3. Open `http://localhost:8888` (This is druid console) and check if **Datasource** named `flattened_spans` has come up. If there is no **Ingestion Supervsor** running, then run `docker-compose -f docker-compose-tiny.yaml up -d create-supervisor set-retention`
+1. `docker ps` will show all containers created by SigNoz. Check if `broker`, `otel-collector` and `historical` containers are running. They do not come up if there is a memory problem.
+2. If you are still facing issues, try re-running `docker-compose -f docker-compose.yaml up -d` or `docker-compose -f docker-compose-tiny.yaml up -d` based on setup you are following. This will retry installing containers which failed the first time.
+3. If you are still facing issues like `Request failed with status code 400` Open `http://localhost:8888` or port 8888 on your IP .This is druid console. Check if **Datasource** named `flattened_spans` has come up. If there is no **Ingestion Supervsor** running, then run `docker-compose -f docker-compose-tiny.yaml up -d create-supervisor set-retention`
 4. If you couldn't spot issues, feel free to join our slack community or shoot an email at ankit@signoz.io. We are generally always there.
 
 ### Configure docker-compose.yml
