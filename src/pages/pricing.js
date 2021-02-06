@@ -12,9 +12,7 @@ function TabsHeader({selectedTab, onSelectTab}){
 
      const items = (<>
                 <li className={`tabs__item ${selectedTab === TABS.CLOUD ? "tabs__item--active" : ""}`} onClick={onSelectTab.bind(this,TABS.CLOUD)}>Cloud</li>
-
                     <li className={`tabs__item ${selectedTab === TABS.OPEN_SOURCE ? "tabs__item--active" : ""}`} onClick={onSelectTab.bind(this,TABS.OPEN_SOURCE)}>Open Source</li>
-
                 </>)
 
     return (

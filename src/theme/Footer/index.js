@@ -57,11 +57,11 @@ function Footer() {
     'footer--dark': footer.style === 'dark'
   })}>
     <div style={{display: "flex", justifyContent: "space-between"}} className={"footer-container"}>
-      <div  style={{display: "flex"}} className={"footer-yc-logo"}>
+      <div  style={{display: "block"}} className={"footer-yc-logo"}>
         <div style={{display: "flex", alignItems: "center"}}>
           <img src={"/img/yc-logo.png"}/>
         </div>
-        <div  style={{color: "#F2F2F2", display: "flex", alignItems: "center", padding: 0, marginLeft: "2rem", fontWeight: 700}}>
+        <div  style={{color: "#F2F2F2", display: "flex", alignItems: "center", padding: 0, fontSize: 18, marginTop: 24, fontWeight: 700}}>
           Backed by Y Combinator
         </div>
       </div>
@@ -79,6 +79,10 @@ function Footer() {
                   </ul> : null}
               </div>)}
           </div>}
+
+          <div>
+
+          </div>
         {/*{(logo || copyright) && <div className="footer__bottom text--center">*/}
         {/*    {logo && logo.src && <div className="margin-bottom--sm">*/}
         {/*        {logo.href ? <a href={logo.href} target="_blank" rel="noopener noreferrer" className={styles.footerLogoLink}>*/}

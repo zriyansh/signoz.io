@@ -196,6 +196,10 @@ hero__screenshot {
     padding: 0 20px !important;
   }
 
+  .footer__links{
+    margin-left: -10px !important;
+  }
+
   .footer-yc-logo{
     margin-bottom: 40px;
   }
@@ -205,9 +209,15 @@ hero__screenshot {
 }
 
 .footer__col{
-  margin-right: 100px;
+  margin-right: 80px;
+  margin-left: 80px;
 }
 
 .footer__copyright{
   text-align: center;
+}
+
+.footer__links{
+
+  margin-left: -200px;
 }

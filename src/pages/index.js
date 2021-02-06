@@ -603,21 +603,7 @@ function Home() {
         </div>
       </div>
     </section>
-        <section>
-          <div className={"padding--md"} style={{background: "#030201"}}>
-            <div style={{display: "flex"}}>
-              <div style={{display: "flex", alignItems: "center"}}>
-                <img src={"/img/yc-logo.png"}/>
-              </div>
-              <div  style={{color: "#F2F2F2", display: "flex", alignItems: "center", padding: 0, marginLeft: "2rem", fontWeight: 700}}>
-                Backed by Y Combinator
-              </div>
-              <div style={{display: "flex", alignItems: "center", marginLeft: "auto", width: "4rem", height: "4rem", background: "#C4C4C4", borderRadius: "2rem", color: "#000", fontSize: 14, justifyContent: "center", fontWeight: 600}}>
-                <div><div>Join us</div><div>on slack</div></div>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
       </main>
     </Layout>
