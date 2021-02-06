@@ -30,7 +30,7 @@ function PricingCard(props) {
     })
 
     const onButtonClick = ()=>{
-        window.location = `https://${IS_PRODUCTION?"app.signoz.io":"staging.signoz.io"}?plan_type=${title.toLowerCase()}`
+        window.location = `https://${IS_PRODUCTION?"app.signoz.io":"stagingapp.signoz.io"}?plan_type=${title.toLowerCase()}`
     }
 
     return (
