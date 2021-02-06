@@ -1,1 +1,1 @@
-export const IS_PRODUCTION = window.location.origin === "https://signoz.io"
+export const IS_PRODUCTION = typeof (window) !=="undefined" && window.location.origin === "https://signoz.io"
