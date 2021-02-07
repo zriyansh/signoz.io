@@ -580,7 +580,7 @@ function Home() {
       <div className="container" style={{marginTop: '6rem', marginBottom:'6rem'}}>
         <div class="row">
           <div class="col col--4">
-            <p className="faq_left_panel text--center margin--md" >Open source and free </p>
+            <p className="faq_left_panel text--center margin--md" >Open source and Free to self-host </p>
           </div>
 
           <div class="col col--8">
