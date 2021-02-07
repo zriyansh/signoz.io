@@ -3,6 +3,10 @@ import Layout from '@theme/Layout';
 import {Conditional} from "../components/conditional";
 import Link from "@docusaurus/core/lib/client/exports/Link";
 import {IS_PRODUCTION} from "../utils/env";
+import {CaretRightOutlined} from '@ant-design/icons';
+import {Collapse} from 'antd';
+
+const { Panel } = Collapse;
 
 const TABS = {
     CLOUD: "Cloud",
@@ -24,7 +28,7 @@ function TabsHeader({selectedTab, onSelectTab}){
 }
 
 function PricingCard(props) {
-    const {title, image, price, buttonText, features} = props;
+    const {title, image, price, buttonText, features, info} = props;
     const featuresListItems = features.map(feature => {
         return (<li key={feature}>{feature}</li>);
     })
@@ -50,6 +54,9 @@ function PricingCard(props) {
                 <div className="card__body margin-vert--lg">
                     <Conditional If={price}>
                         <h4 style={{textAlign: "center"}}>{price}</h4>
+                    </Conditional>
+                    <Conditional If={info}>
+                        <h6 style={{textAlign: "center"}}>{info}</h6>
                     </Conditional>
                     <ul>
                         {featuresListItems}
@@ -141,9 +148,9 @@ function OpenSourceCard(props) {
 
 
 const HOBBY_FEATURES = ["Upto 100 mn events", "3 day retention", "Community Support"];
-const STARTER_FEATURES = ["Upto 100 mn events", "3 day retention", "Community Support"];
-const PROFESSIONAL_FEATURES = ["3 day retention - USD 0.1/mn spans", "7 day retention - USD 0.25/mn spans", "14 day retention - USD 0.45/mn spans", "30 day retention - USD 0.8/mn spans"];
-const OPEN_SOURCE = ["For people happy to manage their own infrastructure", "Community support"];
+const STARTER_FEATURES = ["Upto 300 mn events", "3 day retention", "Email Support"];
+const PROFESSIONAL_FEATURES = ["3 day retention - USD 0.1/mn events", "7 day retention - USD 0.25/mn events", "14 day retention - USD 0.45/mn events", "30 day retention - USD 0.8/mn events", "Email Support"];
+const OPEN_SOURCE = ["For companies with large volumes & enterprise workloads", "Community support"];
 
 function Pricing() {
     const [selectedTab, setSelectedTab] = useState(TABS.CLOUD);
@@ -167,7 +174,7 @@ function Pricing() {
                                 <PricingCard title={"Starter"} image={"/img/hobby-pricing.png"} price={"USD 19/month"} features={STARTER_FEATURES} buttonText={"Start free trial"}/>
                             </div>
                             <div className={"col col--4 margin-vert--md "}>
-                                <PricingCard title={"Professional"} image={"/img/professional-pricing.png"} features={PROFESSIONAL_FEATURES} buttonText={"Start free trial"}/>
+                                <PricingCard title={"Professional"} image={"/img/professional-pricing.png"} price={"Billed monthly"} info={"For >300mn spans or >3 day retention"} features={PROFESSIONAL_FEATURES} buttonText={"Start free trial"}/>
                             </div>
                         </div>
                     </Conditional>
@@ -181,16 +188,53 @@ function Pricing() {
                         </Conditional>
                     </div>
                 </div>
-
-                <div className={"row"} style={{display: 'flex', justifyContent: 'center'}}>
-                    <div className={"col col--4 margin-vert--md "}>
-                        <DescriptionCard title={"Professional"} image={"/img/professional-pricing.png"} features={PROFESSIONAL_FEATURES} buttonText={"Start free trial"}/>
-                    </div>
-                    <div className={"col col--4 margin-vert--md "}>
-                        <DescriptionCard title={"Professional"} image={"/img/professional-pricing.png"} features={PROFESSIONAL_FEATURES} buttonText={"Start free trial"}/>
-                    </div>
-                </div>
             </section>
+
+
+            <section>
+                    <div className="container" style={{marginTop: '4rem', marginBottom:'4rem'}}>
+                        {/* <p className="hero__title ">Single pane for complete metrics and traces, no need to shift to different systems</p> */}
+                        <h1 class="text--center" style={{padding:'1rem'}}>Frequently Asked Questions</h1>
+
+                        <div class="card-demo margin--md">
+                            <Collapse
+                            bordered={false}
+                            defaultActiveKey={['1']}
+                            expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
+                            className="site-collapse-custom-collapse"
+                            >
+                                <Panel header=" When should one chose cloud version and when open source version?" key="1" className="card" style={{marginTop:'1rem', marginBottom:'1rem', padding:'1rem'}}>
+                                    <div class="card__body">
+                                    <p> Cloud version is suited if you want to get up and running quickly and have smaller volume. For bigger enterprises and higher workloads, we 
+                                        recommend to self-host open-source version. Self-hosted version will be installed in your infrastructure.
+                                    </p>
+                                    </div>
+                                </Panel>
+
+                                <Panel header=" What is an event?" key="2" className="card" style={{marginTop:'1rem', marginBottom:'1rem', padding:'1rem'}}>
+                                    <div class="card__body">
+                                    <p> An event represents an individual unit of work done in a distributed system. If you are aware of distributed tracing, what we call 'events' are called 'spans' in distributed tracing. 
+                                    Each component of the distributed system contributes a span - a named, timed operation representing a piece of the workflow. 
+                                    </p>
+                                    </div>
+                                </Panel>
+
+                                <Panel header=" How many events will I use in a month?" key="3" className="card" style={{marginTop:'1rem', marginBottom:'1rem', padding:'1rem'}}>
+                                    <div class="card__body">
+                                    <p> The exact number of events depends on your traffic and archiecture. Typically a single request generates around 10 to 30 spans, based on your archiecture.
+                                        So, if you serve 5 request per sec on an average - that is approx. 5*24*60*60*30*20 spans = ~259 mn spans in a month. This can be reduced by factors if you sample the traces you send.
+                                    </p>
+                                    </div>
+                                </Panel>
+
+                            </Collapse>
+                        </div>
+                    </div>
+                </section>
+
+              
+
+                
         </Layout>
     );
 }
