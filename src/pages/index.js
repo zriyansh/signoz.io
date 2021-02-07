@@ -15,6 +15,7 @@ import styles from './styles.module.css';
 // import TabItem from '@theme/TabItem';//in markdown features
 import styled from 'styled-components'
 import {InstrumentationModal} from "../components/InstrumentationModal";
+import {PlaySVG} from "../svgs/common";
 
 const { Panel } = Collapse;
 
@@ -297,7 +298,7 @@ function TrySignozModal(props){
 
 function Home() {
   const[showTrySignozModal, setShowTrySignozModal] = useState(false);
-
+  const [showVideo, setShowVideo] = useState(false);
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
 
@@ -352,7 +353,31 @@ function Home() {
             </div>
             <div className="col col--8">
               <div className="hero__screenshot">
-                <img src={useBaseUrl("img/hero-recording.gif")} alt="SigNoz screenshot" />
+                <div style={{ width: "100%"}}>
+                  {
+                    showVideo === false ? (
+                        <div id={"demo-video-cover"} onClick={setShowVideo.bind(this, true)} style={{
+                          background: "url('/videos/demo_cover.png')",
+                          height: 426,
+                          width: "100%"
+                        }}>
+                          <div id={"demo-overlay"}></div>
+                          <div id={"demo-content"}>
+                            <div style={{fontSize: 22, fontWeight: 600, marginBottom: 20}}>SigNoz - Quick Intro</div>
+                            <PlaySVG/>
+                          </div>
+                        </div>
+                    ) : (
+                        <div>
+                          <video width="100%" height="420" autoPlay controls id={"demo-video-player"}>
+                            <source src="/videos/demo.mp4" type="video/mp4"/>
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                    )
+                  }
+
+                </div>
               </div>
             </div>
           </div>

@@ -63,6 +63,43 @@ function PricingCard(props) {
     )
 }
 
+function DescriptionCard(props) {
+    const {title, image, price, buttonText, features} = props;
+    const featuresListItems = features.map(feature => {
+        return (<li key={feature}>{feature}</li>);
+    })
+
+    const onButtonClick = ()=>{
+        window.location = `https://${IS_PRODUCTION?"app.signoz.io":"stagingapp.signoz.io"}?plan_type=${title.toLowerCase()}`
+    }
+
+    return (
+        <div className="card-demo" style={{background: "#fff", color: "#333333", borderRadius: "0.4rem", height: "100%"}}>
+            <div className="card" style={{background: "#fff", color: "#333333", height: "100%"}}>
+                <div className="card__header">
+                    <h3 style={{textAlign: "center"}}>{title}</h3>
+                </div>
+                <div className="card__image" style={{display: "flex", justifyContent: "center"}}>
+                    <img
+                        src={image}
+                        style={{height: "5.25rem"}}
+                        alt="Image alt text"
+                        title="Logo Title Text 1"
+                    />
+                </div>
+                <div className="card__body margin-vert--lg">
+                    <Conditional If={price}>
+                        <h4 style={{textAlign: "center"}}>{price}</h4>
+                    </Conditional>
+                    <ul>
+                        {featuresListItems}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    )
+}
+
 function OpenSourceCard(props) {
     const {title, image, price, buttonText, features} = props;
     const featuresListItems = features.map(feature => {
@@ -142,6 +179,15 @@ function Pricing() {
                                 </div>
                             </div>
                         </Conditional>
+                    </div>
+                </div>
+
+                <div className={"row"} style={{display: 'flex', justifyContent: 'center'}}>
+                    <div className={"col col--4 margin-vert--md "}>
+                        <DescriptionCard title={"Professional"} image={"/img/professional-pricing.png"} features={PROFESSIONAL_FEATURES} buttonText={"Start free trial"}/>
+                    </div>
+                    <div className={"col col--4 margin-vert--md "}>
+                        <DescriptionCard title={"Professional"} image={"/img/professional-pricing.png"} features={PROFESSIONAL_FEATURES} buttonText={"Start free trial"}/>
                     </div>
                 </div>
             </section>
