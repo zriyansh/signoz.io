@@ -227,6 +227,13 @@ function Pricing() {
                                     </div>
                                 </Panel>
 
+
+                                <Panel header=" I have a few questions. How do I reach out to you?" key="4" className="card" style={{marginTop:'1rem', marginBottom:'1rem', padding:'1rem'}}>
+                                    <div class="card__body">
+                                    <p> Please write to us at <a href="mailto:support@signoz.io">support@signoz.io</a> or join our <a href="https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA">Slack Community</a></p>
+                                    </div>
+                                </Panel>
+
                             </Collapse>
                         </div>
                     </div>
