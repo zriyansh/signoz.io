@@ -276,7 +276,14 @@ function TrySignozModal(props){
        <h1 style={{marginTop: "2rem", textAlign: "center", color: "#333333"}}>Try SigNoz for free</h1>
        <div className={"container"}>
           <div className={"row"}>
+            
             <div className={"col col--6"} style={{display: "flex", justifyContent: "center"}}>
+              <Link style={{textDecoration: "none"}} href={"/docs/deployment/docker"}>
+              <ModalCard title={"Open source"} desc={"Want to use our free open-source product?"} info={<div>Deploy SigNoz to your infrastructure. Free <div>forever</div></div>}/>
+              </Link>
+              </div>
+            
+              <div className={"col col--6"} style={{display: "flex", justifyContent: "center"}}>
               <Link style={{textDecoration: "none"}}
                     href={"/pricing"}>
                 <ModalCard
@@ -284,11 +291,6 @@ function TrySignozModal(props){
 
               </Link>
             </div>
-            <div className={"col col--6"} style={{display: "flex", justifyContent: "center"}}>
-              <Link style={{textDecoration: "none"}} href={"/docs/deployment/docker"}>
-              <ModalCard title={"Open source"} desc={"Want to use our free open-source product?"} info={<div>Deploy SigNoz to your infrastructure. Free <div>forever</div></div>}/>
-              </Link>
-              </div>
           </div>
        </div>
       </ReactModal>
@@ -343,7 +345,7 @@ function Home() {
 
               {/* <iframe
                 className="display--tablet"
-                src={`https://ghbtns.com/github-btn.html?user=infracost&repo=infracost&type=star&count=true&size=large`}
+                src={`https://ghbtns.com/github-btn.html?user=SigNoz&repo=signoz&type=star&count=true&size=large`}
                 frameBorder="0"
                 scrolling="0"
                 width="160"
@@ -451,7 +453,7 @@ function Home() {
         {/* <p className="hero__title ">Single pane for complete metrics and traces, no need to shift to different systems</p> */}
         <h1 class="text--center">
         Single pane for complete metrics and traces, no need to shift to different systems </h1>
-        <p className="hero__subtitle text--center">No disparate UI for Prometheus & Jaeger</p>
+        <p className="hero__subtitle text--center">No disparate UI like Prometheus & Jaeger</p>
       </div>
     </section>
 
