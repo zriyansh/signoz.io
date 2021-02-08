@@ -221,8 +221,8 @@ function Pricing() {
 
                                 <Panel header=" How many events will I use in a month?" key="3" className="card" style={{marginTop:'1rem', marginBottom:'1rem', padding:'1rem'}}>
                                     <div class="card__body">
-                                    <p> The exact number of events depends on your traffic and archiecture. Typically a single request generates around 10 to 30 spans, based on your archiecture.
-                                        So, if you serve 5 request per sec on an average - that is approx. 5*24*60*60*30*20 spans = ~259 mn spans in a month. This can be reduced by factors if you sample the traces you send.
+                                    <p> The exact number of events depends on your traffic and architecture. Typically a single request generates around 10 to 30 spans, based on your archiecture.
+                                        So, if you serve 5 request per sec on an average - that is approx. 5x24x60x60x30x20 spans = ~259 mn spans in a month. This can be reduced by factors if you sample the traces you send.
                                     </p>
                                     </div>
                                 </Panel>
