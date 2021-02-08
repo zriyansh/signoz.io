@@ -139,17 +139,14 @@ const WhySigNoz = () => {
 
   const handlePricing =()=>{
     setFeature('pricing');
-    console.log(feature);
   }
 
   const handlePrivacy =()=>{
     setFeature('olap');
-    console.log(feature);
   }
 
   const handleExtendibility =()=>{
     setFeature('tag-filtering');
-    console.log(feature);
   }
 
   return(
@@ -157,9 +154,9 @@ const WhySigNoz = () => {
       <div className="container">
           <div className='row'>
               <div className={clsx('col col--4', styles.menu__list)}>
-                  <button onClick={handlePricing} class="button button--primary button--lg " style={{marginBottom: 20, marginTop:0, whiteSpace: 'normal'}}>Integrated UI for metrics and traces</button>
-                  <button onClick={handlePrivacy} class="button button--primary button--lg" style={{marginBottom: 20, marginTop:20, whiteSpace: 'normal'}} >Run business specific queries </button>
-                  <button onClick={handleExtendibility} class="button button--primary button--lg" style={{marginBottom: 20, marginTop:20 , whiteSpace: 'normal'}} >Run aggregates on custom tags</button>
+                  <button onClick={handlePricing} className={`button button--lg ${feature === "pricing"? "feature-tab-css__selected":"feature-tab-css"}`}  style={{marginBottom: 20, marginTop:0, whiteSpace: 'normal'}}>Integrated UI for metrics and traces</button>
+                  <button onClick={handlePrivacy} className={`button button--lg ${feature === "olap"? "feature-tab-css__selected":"feature-tab-css"}`} style={{marginBottom: 20, marginTop:20, whiteSpace: 'normal'}} >Run business specific queries </button>
+                  <button onClick={handleExtendibility} className={`button button--lg ${feature === "tag-filtering"? "feature-tab-css__selected":"feature-tab-css"}`}  style={{marginBottom: 20, marginTop:20 , whiteSpace: 'normal'}} >Run aggregates on custom tags</button>
 
 
               </div>
