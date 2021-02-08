@@ -369,7 +369,7 @@ function Home() {
                     ) : (
                         <div>
                           <video width="100%" height="420" autoPlay controls id={"demo-video-player"}>
-                            <source src="/videos/demo.mp4" type="video/mp4"/>
+                            <source src="https://demo-video-1.s3.us-east-2.amazonaws.com/demo.mp4" type="video/mp4"/>
                             Your browser does not support the video tag.
                           </video>
                         </div>
