@@ -3,6 +3,9 @@ id: python
 title: OpenTelemetry Python Instrumentation
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 Get up and running with OpenTelemetry in just a few quick steps! The setup process consists of two phases--getting OpenTelemetry installed and configured, and then validating that configuration to ensure that data is being sent as expected. This guide explains how to download, install, and run OpenTelemetry in Python.
 
 **Requirements**
@@ -28,15 +31,57 @@ This commands inspects the active Python site-packages and figures out which ins
 
 #### opentelemetry-instrument
 
-```console
-OTEL_SERVICE_NAME=<service name> OTEL_EXPORTER_JAEGER_ENDPOINT="http://<IP of SigNoz Backend>:14268/api/traces" opentelemetry-instrument -e jaeger python program.py
+<Tabs
+  defaultValue="self-hosted"
+  groupId="hosting-options"
+  values={[
+    { label: "Self Hosted", value: "self-hosted" },
+    { label: "Cloud", value: "cloud" },
+  ]}
+>
+  <TabItem value="self-hosted">
+
+```bash
+OTEL_SERVICE_NAME='service name' OTEL_EXPORTER_JAEGER_ENDPOINT="http://IP of SigNoz Backend:14268/api/traces" opentelemetry-instrument -e jaeger python program.py
 ```
+
+</TabItem>
+  <TabItem value="cloud">
+
+```bash
+OTEL_SERVICE_NAME='service name' OTEL_EXPORTER_JAEGER_ENDPOINT="http://IP of SigNoz Backend:14268/api/traces" opentelemetry-instrument -e jaeger python program.py
+```
+
+</TabItem>
+
+</Tabs>
 
 Basically keep your run command after `-e jaeger` part:
 
-```
+<Tabs
+  defaultValue="self-hosted"
+  groupId="hosting-options"
+  values={[
+    { label: "Self Hosted", value: "self-hosted" },
+    { label: "Cloud", value: "cloud" },
+  ]}
+>
+  <TabItem value="self-hosted">
+
+```bash
 OTEL_SERVICE_NAME=<service name> OTEL_EXPORTER_JAEGER_ENDPOINT="http://<IP of SigNoz Backend>:14268/api/traces" opentelemetry-instrument -e jaeger <your run command>
 ```
+
+</TabItem>
+  <TabItem value="cloud">
+
+```bash
+OTEL_SERVICE_NAME=<service name> OTEL_EXPORTER_JAEGER_ENDPOINT="http://<IP of SigNoz Backend>:14268/api/traces" opentelemetry-instrument -e jaeger <your run command>
+```
+
+</TabItem>
+
+</Tabs>
 
 :::caution
 Remember to allow incoming requests to port 14268 of machine where SigNoz backend is hosted
