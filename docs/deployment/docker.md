@@ -76,4 +76,4 @@ The current `docker-compose.yaml` includes sample application ([HotR.O.D](https:
 
 ### How to instrument your own applications
 
-[Checkout Instrumentation Section](/docs/instrumentation/python)
+[Checkout Instrumentation Section](/docs/instrumentation/overview)

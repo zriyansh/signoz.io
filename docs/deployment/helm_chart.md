@@ -26,7 +26,8 @@ kubectl -n platform apply -Rf deploy/kubernetes/jobs
 
 kubectl -n platform apply -f deploy/kubernetes/otel-collector
 ```
-**If you choose a different namespace, you need to point your applications to correct address to send traces. In our sample application just change the `JAEGER_ENDPOINT` environment variable in `sample-apps/hotrod/deployment.yaml`*
+
+\*_If you choose a different namespace, you need to point your applications to correct address to send traces. In our sample application just change the `JAEGER_ENDPOINT` environment variable in `sample-apps/hotrod/deployment.yaml`_
 
 ### Test HotROD application with SigNoz
 
@@ -45,6 +46,7 @@ kubectl -n sample-application run strzal --image=djbingham/curl \
 ```
 
 ### See UI
+
 ```console
 kubectl -n platform port-forward svc/signoz-frontend 3000:3000
 ```
@@ -57,7 +59,8 @@ kubectl -n sample-application run strzal --image=djbingham/curl \
  http://locust-master:8089/stop
 ```
 
-
 ### How to instrument your own applications
-[Checkout Instrumentation Section](/docs/instrumentation/python)
+
+[Checkout Instrumentation Section](/docs/instrumentation/overview)
+
 <!-- Supported Markdown languages - Highlight.js https://github.com/highlightjs/highlight.js/blob/master/SUPPORTED_LANGUAGES.md -->
