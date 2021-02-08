@@ -149,7 +149,7 @@ function OpenSourceCard(props) {
 
 const HOBBY_FEATURES = ["Upto 100 mn events", "3 day retention", "Community Support"];
 const STARTER_FEATURES = ["Upto 300 mn events", "3 day retention", "Email Support"];
-const PROFESSIONAL_FEATURES = ["3 day retention - USD 0.1/mn events", "7 day retention - USD 0.25/mn events", "14 day retention - USD 0.45/mn events", "30 day retention - USD 0.8/mn events", "Email Support"];
+const PROFESSIONAL_FEATURES = ["3 day retention : $0.1/mn events", "7 day  : $0.25/mn events", "14 day : $0.45/mn events", "30 day : $0.8/mn events", "Email Support"];
 const OPEN_SOURCE = ["For companies with large volumes & enterprise workloads", "Community support"];
 
 function Pricing() {
@@ -168,7 +168,7 @@ function Pricing() {
                     <Conditional If={selectedTab === TABS.CLOUD}>
                         <div className={"row"}>
                             <div className={"col col--4 margin-vert--md"}>
-                                <PricingCard title={"Hobby"} image={"/img/hobby-pricing.png"} price={"Free"} features={HOBBY_FEATURES} buttonText={"Create free account"}/>
+                                <PricingCard title={"Hobby"} image={"/img/hobby-new.png"} price={"Free"} features={HOBBY_FEATURES} buttonText={"Create free account"}/>
                             </div>
                             <div className={"col col--4 margin-vert--md"}>
                                 <PricingCard title={"Starter"} image={"/img/hobby-pricing.png"} price={"USD 19/month"} features={STARTER_FEATURES} buttonText={"Start free trial"}/>
