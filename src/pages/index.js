@@ -213,7 +213,7 @@ const features = [
   },
   {
     title: 'Take Control',
-    imageUrl: 'img/Vector_3.svg',
+    imageUrl: 'img/Vector_3v5.svg',
     description: (
       <>
         No need to spend weeks in vendor slack for that one small feature. Extend SigNoz to suit your needs.
