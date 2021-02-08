@@ -330,14 +330,14 @@ function Home() {
               <p className="hero__subtitle">Understand issues in your deployed applications & solve them quickly</p>
               <div style={{"margin": "1rem 0"}}>
                 <Link style={{"margin": "6px"}}
-                  className="button button--secondary"
+                  className="button button--primary "
                       onClick={setShowTrySignozModal.bind(this,true)}>
 
                   Get Started
                 </Link>
                 <Link style={{"margin": "6px"}}
-                  className="button button--primary "
-                  href={'https://v6fhsfo1g0y.typeform.com/to/wTs4Mbzi'} onClick={requestDemoClicked}>
+                  className="button button--secondary "
+                  href={'https://calendly.com/pranay-signoz/signoz-demo'} onClick={requestDemoClicked}>
                   Request Demo
                 </Link>
               </div>
