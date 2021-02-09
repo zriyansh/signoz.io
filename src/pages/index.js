@@ -340,15 +340,15 @@ function Home() {
               </div>
               <p className="open-source-label">SigNoz is <strong>free</strong> and <strong>open-source</strong></p>
 
-              {/* <iframe
+              <iframe
                 className="display--tablet"
                 src={`https://ghbtns.com/github-btn.html?user=SigNoz&repo=signoz&type=star&count=true&size=large`}
                 frameBorder="0"
                 scrolling="0"
-                width="160"
+                width="200"
                 height="30"
                 title="Star SigNoz on GitHub">
-              </iframe> */}
+              </iframe> 
             </div>
             <div className="col col--8">
               <div className="hero__screenshot">
@@ -576,7 +576,7 @@ function Home() {
     </section>
 
     <section>
-      <div className="container" style={{marginTop: '6rem', marginBottom:'6rem'}}>
+      <div className="container" style={{marginTop: '6rem', marginBottom:'3rem'}}>
         <div class="row">
           <div class="col col--4">
             <p className="faq_left_panel text--center margin--md" >Open source and Free to self-host </p>
@@ -629,6 +629,31 @@ function Home() {
       </div>
     </section>
 
+    <section>
+      <div className="container" style={{ marginBottom:'2rem'}} >
+
+      <div class="row">
+          <div class="col col--6">
+          <p className="bottom_cta_interested text--center margin--md">Interested in trying out SigNoz? </p>
+          </div>
+            <div class="col col--6">
+              <div>
+                        <Link 
+                          className="button button--primary margin--md "
+                              onClick={setShowTrySignozModal.bind(this,true)}>
+
+                          Get Started
+                        </Link>
+                        <Link 
+                          className="button button--secondary margin--md"
+                          href={'https://calendly.com/pranay-signoz/signoz-demo'} onClick={requestDemoClicked}>
+                          Request Demo
+                        </Link>
+                      </div>
+              </div>
+            </div>
+      </div>
+    </section>
 
       </main>
     </Layout>
