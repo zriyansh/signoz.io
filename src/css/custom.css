@@ -19,6 +19,7 @@
   /* --ifm-font-family-base: "Space Grotesk"; */
   --ifm-font-family-base: arial;
   --ifm-font-size-base: 14pt;
+
 }
 
 .docusaurus-highlight-code-line {
@@ -48,6 +49,14 @@ hero__screenshot {
   .hero__subtitle {
     font-size: 1rem;
   }
+
+    .hero {
+      padding: 0.5rem 0 !important;
+    }
+
+    .hero--dark .col--8{
+      padding: 0 12px !important;
+    }
 }
 
 @media (min-width: 769px) {
@@ -233,7 +242,7 @@ hero__screenshot {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 12px;
+  border-radius: 6px;
 }
 
 #demo-video-cover #play-icon path{
@@ -251,15 +260,22 @@ hero__screenshot {
   #demo-video-cover{
     cursor: pointer;
     position: relative;
-    height: 300px !important;
+    height: 200px !important;
     width: 100%  !important;
+    margin-bottom: 40px;
   }
 
   #demo-video-player{
     cursor: pointer;
     position: relative;
-    height: 300px !important;
+    height: 200px !important;
     width: 100%  !important;
+  }
+
+  #play-icon{
+    height: 48px;
+    width: 48px;
+    margin-top: -4px;
   }
 
 
@@ -274,7 +290,7 @@ hero__screenshot {
   height: 100%;
   width: 100%;
   background: rgba(0,0,0,.50);
-  border-radius: 12px;
+  border-radius: 6px;
 }
 
 #demo-content{
@@ -286,7 +302,7 @@ hero__screenshot {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 12px;
+  border-radius: 6px;
   z-index: 2;
 }
 

@@ -362,7 +362,7 @@ function Home() {
                         }}>
                           <div id={"demo-overlay"}></div>
                           <div id={"demo-content"}>
-                            <div style={{fontSize: 22, fontWeight: 600, marginBottom: 20}}>SigNoz - Quick Intro</div>
+                            <div style={{fontSize: 18, fontWeight: 600, marginBottom: 20}}>SigNoz - Quick Intro</div>
                             <PlaySVG/>
                           </div>
                         </div>
