@@ -112,8 +112,8 @@ module.exports = {
               href: 'https://github.com/SigNoz/signoz',
             },
             {
-              label: 'About',
-              to: 'about-us/',
+              label: 'Support',
+              to: 'support/',
             },
           ],
         },
