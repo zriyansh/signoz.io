@@ -29,7 +29,7 @@ opentelemetry-bootstrap --action=install
 
 This commands inspects the active Python site-packages and figures out which instrumentation packages the user might want to install and installs them for you.
 
-#### opentelemetry-instrument
+#### Run Command
 
 <Tabs
   defaultValue="self-hosted"
@@ -55,6 +55,9 @@ Remember to allow incoming requests to port 14268 of machine where SigNoz backen
 OTEL_SERVICE_NAME=<service name> OTEL_EXPORTER_JAEGER_ENDPOINT="https://ingest.signoz.io:14268/api/traces" LS_ACCESS_TOKEN=<access_token> opentelemetry-instrument -e jaeger <your run command>
 ```
 
+You will find the access token in your settings page as shown in below image
+
+![access_token_settings_page](../../static/img/access_token_settings_page.png)
 </TabItem>
 
 </Tabs>
