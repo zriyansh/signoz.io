@@ -2,7 +2,11 @@
 id: helm_chart
 title: Deploying with Helm Chart
 ---
+### Steps:
+1. Install SigNoz backend as instructed in this page
+2. Instrument your application as instructed in [Instructions Page](/docs/instrumentation/overview)
 
+### Getting Started
 The easiest way to get started with SigNoz is to install using helm charts, this will install
 
 - Kafka

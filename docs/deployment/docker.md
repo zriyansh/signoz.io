@@ -3,6 +3,10 @@ id: docker
 title: Deploying with Docker
 ---
 
+### Steps:
+1. Install SigNoz backend as instructed in this page
+2. Instrument your application as instructed in [Instructions Page](/docs/instrumentation/overview)
+
 ### Generic Docker Installation Tutorial
 
 1. Install [Docker Engine](https://docs.docker.com/engine/install/ubuntu)

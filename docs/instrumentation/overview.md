@@ -17,5 +17,6 @@ SigNoz currently provides simple ways to instrument NodeJS and Python applicatio
 
 1. [OpenTelemetry Python Instrumentation](/docs/instrumentation/python)
 2. [OpenTelemetry NodeJS Instrumentation](/docs/instrumentation/nodejs)
+3. [OpenTelemetry Java Instrumentation](/docs/instrumentation/java)
 
 If you need assistance instrumenting applications in other languages, please write to us at [support@signoz.io](mailto:support@signoz.io) or reach out to us on [Slack Community](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA)
