@@ -4,28 +4,30 @@ title: Deploying with Docker
 ---
 
 ### Steps:
+
 1. Install SigNoz backend as instructed in this page
 2. Instrument your application as instructed in [Instructions Page](/docs/instrumentation/overview)
 
 ### Docker Installation Tutorial
 
-
 1. To clone the SigNoz repository and enter the new directory, run:
 
 ```console
-git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/docker
+git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
 ```
 
 2. **To run SigNoz**:
 
-Check that you are in `signoz/docker` folder. Now run
+Check that you are in `signoz/deploy` folder. Now run
+
 ```
 ./install.sh
 ```
 
-This should install a tiny instance setting which runs with **4GB of memory**. This is just for demo/testing purpose and not to be used in production. 
+This should install a tiny instance setting which runs with **4GB of memory**. This is just for demo/testing purpose and not to be used in production.
 
 To test if everything is fine, run the following command
+
 ```
 docker ps
 ```
@@ -50,11 +52,10 @@ c38e34c3f272   postgres:latest                                "docker-entrypoint
 b939dd7dcc47   bitnami/zookeeper:3.6.2-debian-10-r100         "/opt/bitnami/script…"   4 minutes ago   Up 4 minutes             2888/tcp, 3888/tcp, 0.0.0.0:2181->2181/tcp, 8080/tcp                                                                                                                               docker_zookeeper_1
 ```
 
-
-Once `./install.sh` runs successfully, the UI should be accessible at port 3000 on the domain you set up or the IP of your instance. 
+Once `./install.sh` runs successfully, the UI should be accessible at port 3000 on the domain you set up or the IP of your instance.
 
 :::info
-Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3000`. 
+Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3000`.
 You would want to open port 3000 to be accessible from outside world if you want to use public url of machine.
 :::
 
@@ -66,7 +67,6 @@ If you face any issues here, don't worry - just check out the [troubleshooting s
 
 A standard instance of SigNoz needs around **8GB of memory**. The `docker-compose.yaml` file at `deploy/docker/` can handle around 100RPS or 5K events/sec. Email at ankit@signoz.io or join [Slack](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA) for help in setting this up.
 
-
 ### Troubleshooting of common issues
 
 1. `docker ps` will show all containers created by SigNoz. Check if `broker`, `otel-collector` and `historical` containers are running. They do not come up if there is a memory problem. You may want to increase alloted memory.
@@ -75,6 +75,7 @@ A standard instance of SigNoz needs around **8GB of memory**. The `docker-compos
 4. If you couldn't spot issues, feel free to join our [slack community](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA) or shoot an email at ankit@signoz.io. We are generally always there.
 
 ### Troubleshooting for Mac users
+
 You need to check the memory allocated to docker. Follow below steps:
 
 a) Choose the Docker menu whale menu > Preferences from the menu bar and configure the runtime options described below.
@@ -84,7 +85,6 @@ a) Choose the Docker menu whale menu > Preferences from the menu bar and configu
 b) Choose Resources from Preferences Menu and change Memory to 3GB
 
 ![Docker Resource Preferences](../../static/img/docker_preferences.png)
-
 
 ### Configure docker-compose.yml
 
