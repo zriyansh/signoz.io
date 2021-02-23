@@ -47,9 +47,9 @@ function NewsletterSignup() {
     }
 
     fetch(`https://api.telegram.org/bot1641579317:AAGHqzQKOT9R3Wcxx7ZgHZcI0Vi6CzjmncY/sendMessage?chat_id=521831111&text=${email}`).then(()=>{
-      alert("Subscribed successfully")
+      alert("Subscribed successfully.")
     }).catch((e)=>{
-      alert("Some error occurred. Please try again")
+      alert("Some error occurred. Please try again.")
     })
 
   }
