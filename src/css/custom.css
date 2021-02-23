@@ -322,7 +322,7 @@ hero__screenshot {
   border: 1px solid var(--ifm-color-primary);
 }
 
-.footer-newsletter-modal{
+.footer-newsletter-modal {
   padding: 12px 12px;
   width: 100%;
   margin-bottom: 20px;
@@ -332,15 +332,28 @@ hero__screenshot {
   border: none;
 }
 
-.display--tablet{
+.nearfold-newsletter {
+  padding: 12px 12px;
+  width: 80%;
+  margin-bottom: 20px;
+  margin-top: 12px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.display--tablet {
   margin-right: -0px;
 }
 
 @media (max-width: 600px) {
-  .display--tablet{
+  .display--tablet {
     margin-right: 0px;
   }
-  .footer-newsletter-modal{
+  .footer-newsletter-modal {
+    width: 95%;
+  }
+  .nearfold-newsletter {
     width: 95%;
   }
 }

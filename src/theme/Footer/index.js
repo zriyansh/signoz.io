@@ -42,16 +42,17 @@ function NewsletterSignup() {
   const [email, setEmail] = useState('')
 
   const onSubscribe = ()=>{
-    if(email.length<2){
-      alert("Please add an correct email")
-    }
+    if(email.length<4){
+      setEmail("Please add an correct email")
+    } else {
 
-
-    fetch(`https://api.telegram.org/bot1641579317:AAGHqzQKOT9R3Wcxx7ZgHZcI0Vi6CzjmncY/sendMessage?chat_id=521831111&text=Email subscription - ${email}`).then(()=>{
-      alert("Subscribed successfully.")
+      fetch(`https://api.telegram.org/bot1641579317:AAGHqzQKOT9R3Wcxx7ZgHZcI0Vi6CzjmncY/sendMessage?chat_id=521831111&text=Email subscription - ${email}`).then(()=>{
+      setEmail("Subscribed successfully.")
     }).catch((e)=>{
-      alert("Some error occurred. Please try again.")
+      setEmail("Some error occurred. Please try again.")
     })
+
+    } 
 
   }
   return <div>

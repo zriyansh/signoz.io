@@ -295,6 +295,52 @@ function TrySignozModal(props){
 }
 
 
+function SubscribeNearFold() {
+  const [nemail, setNEmail] = useState('')
+
+  const onSubscribeN = ()=>{
+    if(nemail.length<4){
+      // alert("Please add correct email")
+      setNEmail('Please add correct email')
+    }else{
+      fetch(`https://api.telegram.org/bot1641579317:AAGHqzQKOT9R3Wcxx7ZgHZcI0Vi6CzjmncY/sendMessage?chat_id=521831111&text=Email subscription - ${nemail}`).then(()=>{
+        // alert("Subscribed successfully.")
+        setNEmail('Thanks, you are on the list!')
+      }).catch((e)=>{
+        // alert("Some error occurred. Please try again.")
+        setNEmail("Some error occurred. Please try again.")
+      })
+    }
+
+  
+
+  }
+
+  return (
+  <section style={{background:'black'}}>
+  <div className="container" style={{paddingTop: '1rem', paddingBottom:'1rem',}}>
+  <div class="row">
+    <div class="col col--8"   style={{
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'}}>
+      <input placeholder="Interested? Add your email to get updates about the project" className={"nearfold-newsletter"} value={nemail} onChange={(e)=>{
+        setNEmail(e.target.value);console.log(e.target.value)
+      }}/>
+    </div>
+    <div class="col col--4"
+    style={{
+      display: 'flex',
+      alignItems: 'center'}}>
+      <button className={"button button--secondary"} style={{marginBottom:'20px', marginTop:'12px'}} onClick={onSubscribeN} >Subscribe</button>
+    </div>
+  </div>
+  </div>
+</section>)
+
+
+}
+
 function Home() {
   const[showTrySignozModal, setShowTrySignozModal] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
@@ -379,6 +425,10 @@ function Home() {
         </div>
       </header>
       <main>
+        
+        
+        <SubscribeNearFold />
+
         {features && features.length > 0 && (
           <section className={styles.features}>
             <div className="container" style={{marginTop: '2rem', marginBottom:'2rem'}}>
