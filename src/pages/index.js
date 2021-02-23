@@ -317,7 +317,7 @@ function SubscribeNearFold() {
   }
 
   return (
-  <section style={{background:'black'}}>
+  <section style={{background:'#151515'}}>
   <div className="container" style={{paddingTop: '1rem', paddingBottom:'1rem',}}>
   <div class="row">
     <div class="col col--8"   style={{
