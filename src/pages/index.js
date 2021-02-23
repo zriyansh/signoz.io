@@ -326,22 +326,22 @@ function Home() {
               <p className="hero__title " style={{"fontWeight": "bold"}}>Open-source Observability platform</p>
               <p className="hero__subtitle">Understand issues in your deployed applications & solve them quickly</p>
               <div style={{"margin": "1rem 0"}}>
-                <Link style={{"margin": "6px"}}
+                <Link style={{"margin": "6px","paddingLeft":"16px","paddingRight":"16px"}}
                   className="button button--primary "
                       onClick={setShowTrySignozModal.bind(this,true)}>
 
-                  Get Started
+                  Get Started free
                 </Link>
-                <Link style={{"margin": "6px"}}
-                  className="button button--secondary "
-                  href={'https://calendly.com/pranay-signoz/signoz-demo'} onClick={requestDemoClicked}>
-                  Request Demo
+                <Link style={{"margin": "6px", "paddingLeft":"16px","paddingRight":"16px"}}
+                  className="button button--outline button--secondary "
+                  href={'https://v6fhsfo1g0y.typeform.com/to/wTs4Mbzi'} onClick={requestDemoClicked}>
+                  Request Demo 
                 </Link>
               </div>
 
 
-              <p className="open-source-label">SigNoz is <strong>free</strong> and <strong>open-source</strong></p>
-            <div style={{display: "flex", alignItems: "center"}}>
+              {/* <p className="open-source-label">SigNoz is <strong>free</strong> and <strong>open-source</strong></p> */}
+            <div style={{display: "flex", alignItems: "center", "marginBottom": "4px"}}>
               <img src={"/img/yc-logo-white.svg"} height={24} style={{marginRight: 16}}/> Backed by Y Combinator
             </div>
 
@@ -349,13 +349,28 @@ function Home() {
             <div className="col col--8">
               <div className="hero__screenshot">
                 <div style={{ width: "100%"}}>
-                  <div id={"demo-video-cover"} style={{
-                    background: "url('/img/hero-recording.gif')",
-                    height: 426,
-                    backgroundSize: 'cover',
-                    width: "100%"
-                  }}>
-                  </div>
+                  {
+                    showVideo === false ? (
+                        <div id={"demo-video-cover"} onClick={setShowVideo.bind(this, true)} style={{
+                          background: "url('/videos/demo_cover.png')",
+                          height: 426,
+                          width: "100%"
+                        }}>
+                          <div id={"demo-overlay"}></div>
+                          <div id={"demo-content"}>
+                            <div style={{fontSize: 18, fontWeight: 600, marginBottom: 20}}>SigNoz - Quick Intro</div>
+                            <PlaySVG/>
+                          </div>
+                        </div>
+                    ) : (
+                        <div>
+                          <video width="100%" height="420" autoPlay controls id={"demo-video-player"}>
+                            <source src="https://demo-video-1.s3.us-east-2.amazonaws.com/demo.mp4" type="video/mp4"/>
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                    )
+                  }
 
                 </div>
               </div>
@@ -366,7 +381,9 @@ function Home() {
       <main>
         {features && features.length > 0 && (
           <section className={styles.features}>
-            <div className="container" style={{marginTop: '4rem', marginBottom:'4rem'}}>
+            <div className="container" style={{marginTop: '2rem', marginBottom:'2rem'}}>
+            {/* <div className="container" class="margin--md">  */}
+
               <div className="row">
                 {features.map((props, idx) => (
                   <Feature key={idx} {...props} />
@@ -427,7 +444,7 @@ function Home() {
 
 
     <section>
-      <div className="container" style={{marginTop: '4rem', marginBottom:'4rem'}}>
+      <div className="container" style={{marginTop: '2rem', marginBottom:'2rem'}}>
         {/* <p className="hero__title ">Single pane for complete metrics and traces, no need to shift to different systems</p> */}
         <h1 class="text--center">
         Single pane for complete metrics and traces, no need to shift to different systems </h1>
@@ -557,7 +574,7 @@ function Home() {
     </section>
 
 
-        <section style={{width: '70%', margin: '0px auto -30px auto',}}>
+        {/* <section style={{width: '70%', margin: '0px auto -30px auto',}}>
           <div className="row">
             <div className="col col--3" style={{textAlign: 'center'}}>
               <img src={"/img/partners/aws1.png"} width={60}/>
@@ -572,7 +589,7 @@ function Home() {
               <img src={"/img/partners/opentelemetry-stacked-color1.png"}  width={100}/>
             </div>
           </div>
-        </section>
+        </section> */}
 
 
         <section>

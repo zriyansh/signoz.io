@@ -64,8 +64,8 @@ function PricingCard(props) {
                 </div>
                 <div className="card__footer">
                     {isFreeTrial && (
-                        <div>
-                            30 day free trial, No credit card required
+                        <div style={{fontSize:"0.8rem",textAlign: "center"}}>
+                            30 day free trial. No credit card required
                         </div>
                     )}
                     <button style={{background: "#2D9CDB", borderWidth: 0}} className="button button--primary button--block" onClick={onButtonClick}>{buttonText}</button>
