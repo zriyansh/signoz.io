@@ -333,7 +333,7 @@ hero__screenshot {
 }
 
 .display--tablet{
-  margin-right: -50px;
+  margin-right: -0px;
 }
 
 @media (max-width: 600px) {
