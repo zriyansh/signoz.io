@@ -342,7 +342,7 @@ function Home() {
 
               <p className="open-source-label">SigNoz is <strong>free</strong> and <strong>open-source</strong></p>
             <div style={{display: "flex", alignItems: "center"}}>
-              <img src={"/img/yc-logo.png"} height={24} style={{marginRight: 16}}/> Backed by Y Combinator
+              <img src={"/img/yc-logo-white.svg"} height={24} style={{marginRight: 16}}/> Backed by Y Combinator
             </div>
 
             </div>
@@ -556,7 +556,26 @@ function Home() {
       </div>
     </section>
 
-    <section>
+
+        <section style={{width: '70%', margin: '0px auto -30px auto',}}>
+          <div className="row">
+            <div className="col col--3" style={{textAlign: 'center'}}>
+              <img src={"/img/partners/aws1.png"} width={60}/>
+            </div>
+            <div className="col col--3" style={{textAlign: 'center'}} >
+              <img src={"/img/partners/druid1.png"}  width={120}/>
+            </div>
+            <div className="col col--3" style={{textAlign: 'center'}}>
+              <img src={"/img/partners/google-cloud1.png"}  width={140}/>
+            </div>
+            <div className="col col--3" style={{textAlign: 'center'}}>
+              <img src={"/img/partners/opentelemetry-stacked-color1.png"}  width={100}/>
+            </div>
+          </div>
+        </section>
+
+
+        <section>
       <div className="container" style={{marginTop: '6rem', marginBottom:'3rem'}}>
         <div class="row">
           <div class="col col--4">
@@ -610,22 +629,6 @@ function Home() {
       </div>
     </section>
 
-        <section style={{width: '70%', margin: '0px auto 40px auto'}}>
-          <div className="row">
-            <div className="col col--3" style={{textAlign: 'center'}}>
-              <img src={"/img/partners/aws1.png"}/>
-            </div>
-            <div className="col col--3" style={{textAlign: 'center'}}>
-              <img src={"/img/partners/druid1.png"}/>
-            </div>
-            <div className="col col--3" style={{textAlign: 'center'}}>
-              <img src={"/img/partners/google-cloud1.png"}/>
-            </div>
-            <div className="col col--3" style={{textAlign: 'center'}}>
-              <img src={"/img/partners/opentelemetry-stacked-color1.png"}/>
-            </div>
-          </div>
-        </section>
 
     <section>
       <div className="container" style={{ marginBottom:'2rem'}} >
