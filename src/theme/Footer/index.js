@@ -46,6 +46,7 @@ function NewsletterSignup() {
       alert("Please add an correct email")
     }
 
+
     fetch(`https://api.telegram.org/bot1641579317:AAGHqzQKOT9R3Wcxx7ZgHZcI0Vi6CzjmncY/sendMessage?chat_id=521831111&text=${email}`).then(()=>{
       alert("Subscribed successfully.")
     }).catch((e)=>{
@@ -54,7 +55,7 @@ function NewsletterSignup() {
 
   }
   return <div>
-    Signup to received updates
+    Signup to receive updates
     <div>
       <input placeholder="mike@netflix.com" className={"footer-newsletter-modal"} value={email} onChange={(e)=>{
         setEmail(e.target.value)
