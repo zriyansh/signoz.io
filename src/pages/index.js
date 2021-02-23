@@ -338,43 +338,24 @@ function Home() {
                   Request Demo
                 </Link>
               </div>
-              <p className="open-source-label">SigNoz is <strong>free</strong> and <strong>open-source</strong></p>
 
-              <iframe
-                className="display--tablet"
-                src={`https://ghbtns.com/github-btn.html?user=SigNoz&repo=signoz&type=star&count=true&size=large`}
-                frameBorder="0"
-                scrolling="0"
-                width="200"
-                height="30"
-                title="Star SigNoz on GitHub">
-              </iframe> 
+
+              <p className="open-source-label">SigNoz is <strong>free</strong> and <strong>open-source</strong></p>
+            <div style={{display: "flex", alignItems: "center"}}>
+              <img src={"/img/yc-logo-white.svg"} height={24} style={{marginRight: 16}}/> Backed by Y Combinator
+            </div>
+
             </div>
             <div className="col col--8">
               <div className="hero__screenshot">
                 <div style={{ width: "100%"}}>
-                  {
-                    showVideo === false ? (
-                        <div id={"demo-video-cover"} onClick={setShowVideo.bind(this, true)} style={{
-                          background: "url('/videos/demo_cover.png')",
-                          height: 426,
-                          width: "100%"
-                        }}>
-                          <div id={"demo-overlay"}></div>
-                          <div id={"demo-content"}>
-                            <div style={{fontSize: 18, fontWeight: 600, marginBottom: 20}}>SigNoz - Quick Intro</div>
-                            <PlaySVG/>
-                          </div>
-                        </div>
-                    ) : (
-                        <div>
-                          <video width="100%" height="420" autoPlay controls id={"demo-video-player"}>
-                            <source src="https://demo-video-1.s3.us-east-2.amazonaws.com/demo.mp4" type="video/mp4"/>
-                            Your browser does not support the video tag.
-                          </video>
-                        </div>
-                    )
-                  }
+                  <div id={"demo-video-cover"} style={{
+                    background: "url('/img/hero-recording.gif')",
+                    height: 426,
+                    backgroundSize: 'cover',
+                    width: "100%"
+                  }}>
+                  </div>
 
                 </div>
               </div>
@@ -575,7 +556,26 @@ function Home() {
       </div>
     </section>
 
-    <section>
+
+        <section style={{width: '70%', margin: '0px auto -30px auto',}}>
+          <div className="row">
+            <div className="col col--3" style={{textAlign: 'center'}}>
+              <img src={"/img/partners/aws1.png"} width={60}/>
+            </div>
+            <div className="col col--3" style={{textAlign: 'center'}} >
+              <img src={"/img/partners/druid1.png"}  width={120}/>
+            </div>
+            <div className="col col--3" style={{textAlign: 'center'}}>
+              <img src={"/img/partners/google-cloud1.png"}  width={140}/>
+            </div>
+            <div className="col col--3" style={{textAlign: 'center'}}>
+              <img src={"/img/partners/opentelemetry-stacked-color1.png"}  width={100}/>
+            </div>
+          </div>
+        </section>
+
+
+        <section>
       <div className="container" style={{marginTop: '6rem', marginBottom:'3rem'}}>
         <div class="row">
           <div class="col col--4">
@@ -628,6 +628,7 @@ function Home() {
         </div>
       </div>
     </section>
+
 
     <section>
       <div className="container" style={{ marginBottom:'2rem'}} >
