@@ -148,8 +148,8 @@ function OpenSourceCard(props) {
 
 
 const HOBBY_FEATURES = ["Upto 100 mn events", "3 day retention", "Community Support"];
-const STARTER_FEATURES = ["Upto 300 mn events", "3 day retention", "Email Support"];
-const PROFESSIONAL_FEATURES = ["3 day retention : $0.1/mn events", "7 day  : $0.25/mn events", "14 day : $0.45/mn events", "30 day : $0.8/mn events", "Email Support"];
+const STARTER_FEATURES = ["Upto 300 mn events", "3 day retention", "Email Support","30 day free trial, No credit card required "];
+const PROFESSIONAL_FEATURES = ["3 day retention : $0.1/mn events", "7 day  : $0.25/mn events", "14 day : $0.45/mn events", "30 day : $0.8/mn events", "Email Support","30 day free trial, No credit card required "];
 const OPEN_SOURCE = ["For companies with large volumes & enterprise workloads", "Community support"];
 
 function Pricing() {
