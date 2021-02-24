@@ -317,14 +317,22 @@ function SubscribeNearFold() {
   }
 
   return (
-  <section style={{background:'#151515'}}>
+  <section style={{background:'#060606'}}>
   <div className="container" style={{paddingTop: '1rem', paddingBottom:'1rem',}}>
+  <div class="row">
+      <div class="col col--12"   style={{
+      display: 'flex',
+      justifyContent: 'left',
+      alignItems: 'center'}}>
+        Interested?
+      </div>
+  </div>
   <div class="row">
     <div class="col col--8"   style={{
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'left',
   alignItems: 'center'}}>
-      <input placeholder="Interested? Add your email to get updates about the project" className={"nearfold-newsletter"} value={nemail} onChange={(e)=>{
+      <input placeholder="Add your email to get updates about the project" className={"nearfold-newsletter"} value={nemail} onChange={(e)=>{
         setNEmail(e.target.value);console.log(e.target.value)
       }}/>
     </div>
@@ -372,13 +380,13 @@ function Home() {
               <p className="hero__title " style={{"fontWeight": "bold"}}>Open-source Observability platform</p>
               <p className="hero__subtitle">Understand issues in your deployed applications & solve them quickly</p>
               <div style={{"margin": "1rem 0"}}>
-                <Link style={{"margin": "6px","paddingLeft":"16px","paddingRight":"16px"}}
+                <Link style={{"margin": "6px","paddingLeft":"12px","paddingRight":"12px"}}
                   className="button button--primary "
                       onClick={setShowTrySignozModal.bind(this,true)}>
 
-                  Get Started free
+                  Get Started for free
                 </Link>
-                <Link style={{"margin": "6px", "paddingLeft":"16px","paddingRight":"16px"}}
+                <Link style={{"margin": "6px", "paddingLeft":"12px","paddingRight":"12px"}}
                   className="button button--outline button--secondary "
                   href={'https://v6fhsfo1g0y.typeform.com/to/wTs4Mbzi'} onClick={requestDemoClicked}>
                   Request Demo 
