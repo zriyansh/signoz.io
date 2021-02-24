@@ -380,13 +380,13 @@ function Home() {
               <p className="hero__title " style={{"fontWeight": "bold"}}>Open-source Observability platform</p>
               <p className="hero__subtitle">Understand issues in your deployed applications & solve them quickly</p>
               <div style={{"margin": "1rem 0"}}>
-                <Link style={{"margin": "6px","paddingLeft":"12px","paddingRight":"12px"}}
+                <Link style={{"margin": "6px","paddingLeft":"10px","paddingRight":"10px"}}
                   className="button button--primary "
                       onClick={setShowTrySignozModal.bind(this,true)}>
 
                   Get Started for free
                 </Link>
-                <Link style={{"margin": "6px", "paddingLeft":"12px","paddingRight":"12px"}}
+                <Link style={{"margin": "6px", "paddingLeft":"10px","paddingRight":"10px"}}
                   className="button button--outline button--secondary "
                   href={'https://v6fhsfo1g0y.typeform.com/to/wTs4Mbzi'} onClick={requestDemoClicked}>
                   Request Demo 
@@ -395,7 +395,7 @@ function Home() {
 
 
               {/* <p className="open-source-label">SigNoz is <strong>free</strong> and <strong>open-source</strong></p> */}
-            <div style={{display: "flex", alignItems: "center", "marginBottom": "4px"}}>
+            <div style={{display: "flex", alignItems: "center", "marginBottom": "16px"}}>
               <img src={"/img/yc-logo-white.svg"} height={24} style={{marginRight: 16}}/> Backed by Y Combinator
             </div>
 
