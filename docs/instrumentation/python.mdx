@@ -16,18 +16,30 @@ Get up and running with OpenTelemetry in just a few quick steps! The setup proce
 We follow [OpenTelemetry python instrumentation library](https://github.com/open-telemetry/opentelemetry-python/tree/master/opentelemetry-instrumentation). **We shall be exporting data in Jaeger Thrift protocol.**
 
 ```console
-pip install opentelemetry-distro
-pip install opentelemetry-instrumentation
-pip install opentelemetry-exporter-jaeger
+pip3 install opentelemetry-distro
+pip3 install opentelemetry-instrumentation
+pip3 install opentelemetry-exporter-otlp
 ```
+:::caution
+  If it hangs while installing `grpcio` during **pip3 install opentelemetry-exporter-otlp** then follow below steps as suggested in **[this stackoverflow link](https://stackoverflow.com/a/62500932/3243212)**
+  - pip3 install --upgrade pip
+  - python3 -m pip install --upgrade setuptools
+  - pip3 install --no-cache-dir  --force-reinstall -Iv grpcio
 
-This package provides a couple of commands that help automatically instruments a program:
+  
+:::
+
 
 ```console
 opentelemetry-bootstrap --action=install
 ```
+The above command inspects the active Python site-packages and figures out which instrumentation packages the user might want to install and installs them for you.
 
-This commands inspects the active Python site-packages and figures out which instrumentation packages the user might want to install and installs them for you.
+:::caution
+If it says cannot find command `opentelemetry-bootstrap` then you need to specify the path of the file. In ubuntu, it is at `/home/ubuntu/.local/bin/opentelemetry-bootstrap`. So your command becomes,
+`/home/ubuntu/.local/bin/opentelemetry-bootstrap --action=install`
+:::
+
 
 #### Run Command
 
@@ -42,22 +54,37 @@ This commands inspects the active Python site-packages and figures out which ins
   <TabItem value="self-hosted">
 
 ```bash
-OTEL_SERVICE_NAME=<service name> OTEL_EXPORTER_JAEGER_ENDPOINT="http://<IP of SigNoz Backend>:14268/api/traces"  opentelemetry-instrument -e jaeger <your run command>
+OTEL_SERVICE_NAME=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="<IP of SigNoz Backend>:4317"  opentelemetry-instrument <your run command>
 ```
+*<service_name>* is the name of service you want
+
+*<your_run_command>* can be `python3 app.py` or `flask run`
+
 :::caution
-Remember to allow incoming requests to port 14268 of machine where SigNoz backend is hosted
+ - If *opentelemetry-instrument* command is not found then use full path of executable. In ubuntu it is at */home/ubuntu/.local/bin/opentelemetry-instrument*
+ - Remember to allow incoming requests to port **4317** of machine where SigNoz backend is hosted
+
 :::
 
 </TabItem>
   <TabItem value="cloud">
 
 ```bash
-OTEL_SERVICE_NAME=<service name> OTEL_EXPORTER_JAEGER_ENDPOINT="https://ingest.signoz.io:14268/api/traces" LS_ACCESS_TOKEN=<access_token> opentelemetry-instrument -e jaeger <your run command>
+OTEL_PYTHON_SERVICE_NAME=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="ingest.signoz.io:443" OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=<access_token>" opentelemetry-instrument <your_run_command>
 ```
+*<service_name>* is the name of service you want
 
-You will find the access token in your settings page as shown in below image
+*<your_run_command>* can be `python3 app.py` or `flask run`
+
+*<access_token>* cabn be found in your settings page as shown in below image
 
 ![access_token_settings_page](../../static/img/access_token_settings_page.png)
+
+:::caution
+ - If *opentelemetry-instrument* command is not found then use full path of executable. In ubuntu it is at */home/ubuntu/.local/bin/opentelemetry-instrument*
+
+:::
+
 </TabItem>
 
 </Tabs>
