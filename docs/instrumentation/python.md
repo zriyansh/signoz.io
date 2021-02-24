@@ -15,7 +15,7 @@ Get up and running with OpenTelemetry in just a few quick steps! The setup proce
 
 We follow [OpenTelemetry python instrumentation library](https://github.com/open-telemetry/opentelemetry-python/tree/master/opentelemetry-instrumentation). **We shall be exporting data in Jaeger Thrift protocol.**
 
-```console
+```bash
 pip3 install opentelemetry-distro
 pip3 install opentelemetry-instrumentation
 pip3 install opentelemetry-exporter-otlp
@@ -30,7 +30,7 @@ pip3 install opentelemetry-exporter-otlp
 :::
 
 
-```console
+```bash
 opentelemetry-bootstrap --action=install
 ```
 The above command inspects the active Python site-packages and figures out which instrumentation packages the user might want to install and installs them for you.
@@ -51,7 +51,7 @@ If it says cannot find command `opentelemetry-bootstrap` then you need to specif
     { label: "Cloud", value: "cloud" },
   ]}
 >
-  <TabItem value="self-hosted">
+<TabItem value="self-hosted">
 
 ```bash
 OTEL_SERVICE_NAME=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="<IP of SigNoz Backend>:4317"  opentelemetry-instrument <your run command>
@@ -67,7 +67,7 @@ OTEL_SERVICE_NAME=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="<IP of SigNoz Back
 :::
 
 </TabItem>
-  <TabItem value="cloud">
+<TabItem value="cloud">
 
 ```bash
 OTEL_PYTHON_SERVICE_NAME=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="ingest.signoz.io:443" OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=<access_token>" opentelemetry-instrument <your_run_command>
@@ -76,7 +76,7 @@ OTEL_PYTHON_SERVICE_NAME=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="ingest.sign
 
 *<your_run_command>* can be `python3 app.py` or `flask run`
 
-*<access_token>* cabn be found in your settings page as shown in below image
+*<access_token>* can be found in your settings page as shown in below image
 
 ![access_token_settings_page](../../static/img/access_token_settings_page.png)
 
@@ -98,7 +98,7 @@ If spans are not being reported to SigNoz, try running in debug mode by setting 
 
 The debug log level will print out the configuration information. It will also emit every span to the console, which should look something like:
 
-```
+```bash
 Span {
   attributes: {},
   links: [],

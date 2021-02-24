@@ -59,7 +59,8 @@ If spans are not being reported to SigNoz, try running in debug mode by setting 
 
 The debug log level will print out the configuration information. It will also emit every span to the console, which should look something like:
 
-```
+```bash
+
 Span {
   attributes: {},
   links: [],
