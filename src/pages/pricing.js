@@ -28,7 +28,7 @@ function TabsHeader({selectedTab, onSelectTab}){
 }
 
 function PricingCard(props) {
-    const {title, image, price, buttonText, features, info} = props;
+    const {title, image, price, buttonText, features, info, isFreeTrial} = props;
     const featuresListItems = features.map(feature => {
         return (<li key={feature}>{feature}</li>);
     })
@@ -63,6 +63,11 @@ function PricingCard(props) {
                     </ul>
                 </div>
                 <div className="card__footer">
+                    {isFreeTrial && (
+                        <div style={{fontSize:"0.8rem",textAlign: "center"}}>
+                            30 day free trial. No credit card required
+                        </div>
+                    )}
                     <button style={{background: "#2D9CDB", borderWidth: 0}} className="button button--primary button--block" onClick={onButtonClick}>{buttonText}</button>
                 </div>
             </div>
@@ -148,7 +153,7 @@ function OpenSourceCard(props) {
 
 
 const HOBBY_FEATURES = ["Upto 100 mn events", "3 day retention", "Community Support"];
-const STARTER_FEATURES = ["Upto 300 mn events", "3 day retention", "Email Support"];
+const STARTER_FEATURES = ["Upto 300 mn events", "3 day retention", "Email Support",];
 const PROFESSIONAL_FEATURES = ["3 day retention : $0.1/mn events", "7 day  : $0.25/mn events", "14 day : $0.45/mn events", "30 day : $0.8/mn events", "Email Support"];
 const OPEN_SOURCE = ["For companies with large volumes & enterprise workloads", "Community support"];
 
@@ -171,10 +176,10 @@ function Pricing() {
                                 <PricingCard title={"Hobby"} image={"/img/hobby-new.png"} price={"Free"} features={HOBBY_FEATURES} buttonText={"Create free account"}/>
                             </div>
                             <div className={"col col--4 margin-vert--md"}>
-                                <PricingCard title={"Starter"} image={"/img/hobby-pricing.png"} price={"USD 19/month"} features={STARTER_FEATURES} buttonText={"Start free trial"}/>
+                                <PricingCard isFreeTrial={true} title={"Starter"} image={"/img/hobby-pricing.png"} price={"USD 19/month"} features={STARTER_FEATURES} buttonText={"Start free trial"}/>
                             </div>
                             <div className={"col col--4 margin-vert--md "}>
-                                <PricingCard title={"Professional"} image={"/img/professional-pricing.png"} price={"Billed monthly"} info={"For >300mn spans or >3 day retention"} features={PROFESSIONAL_FEATURES} buttonText={"Start free trial"}/>
+                                <PricingCard isFreeTrial={true} title={"Professional"} image={"/img/professional-pricing.png"} price={"Billed monthly"} info={"For >300mn spans or >3 day retention"} features={PROFESSIONAL_FEATURES} buttonText={"Start free trial"}/>
                             </div>
                         </div>
                     </Conditional>

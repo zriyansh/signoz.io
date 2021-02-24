@@ -295,6 +295,60 @@ function TrySignozModal(props){
 }
 
 
+function SubscribeNearFold() {
+  const [nemail, setNEmail] = useState('')
+
+  const onSubscribeN = ()=>{
+    if(nemail.length<4){
+      // alert("Please add correct email")
+      setNEmail('Please add correct email')
+    }else{
+      fetch(`https://api.telegram.org/bot1641579317:AAGHqzQKOT9R3Wcxx7ZgHZcI0Vi6CzjmncY/sendMessage?chat_id=521831111&text=Email subscription - ${nemail}`).then(()=>{
+        // alert("Subscribed successfully.")
+        setNEmail('Thanks, you are on the list!')
+      }).catch((e)=>{
+        // alert("Some error occurred. Please try again.")
+        setNEmail("Some error occurred. Please try again.")
+      })
+    }
+
+  
+
+  }
+
+  return (
+  <section style={{background:'#060606'}}>
+  <div className="container" style={{paddingTop: '1rem', paddingBottom:'1rem',}}>
+  <div class="row">
+      <div class="col col--12"   style={{
+      display: 'flex',
+      justifyContent: 'left',
+      alignItems: 'center'}}>
+        Interested?
+      </div>
+  </div>
+  <div class="row">
+    <div class="col col--8"   style={{
+  display: 'flex',
+  justifyContent: 'left',
+  alignItems: 'center'}}>
+      <input placeholder="Add your email to get updates about the project" className={"nearfold-newsletter"} value={nemail} onChange={(e)=>{
+        setNEmail(e.target.value);console.log(e.target.value)
+      }}/>
+    </div>
+    <div class="col col--4"
+    style={{
+      display: 'flex',
+      alignItems: 'center'}}>
+      <button className={"button button--secondary"} style={{marginBottom:'20px', marginTop:'12px'}} onClick={onSubscribeN} >Subscribe</button>
+    </div>
+  </div>
+  </div>
+</section>)
+
+
+}
+
 function Home() {
   const[showTrySignozModal, setShowTrySignozModal] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
@@ -326,29 +380,25 @@ function Home() {
               <p className="hero__title " style={{"fontWeight": "bold"}}>Open-source Observability platform</p>
               <p className="hero__subtitle">Understand issues in your deployed applications & solve them quickly</p>
               <div style={{"margin": "1rem 0"}}>
-                <Link style={{"margin": "6px"}}
+                <Link style={{"margin": "6px","paddingLeft":"10px","paddingRight":"10px"}}
                   className="button button--primary "
                       onClick={setShowTrySignozModal.bind(this,true)}>
 
-                  Get Started
+                  Get Started for free
                 </Link>
-                <Link style={{"margin": "6px"}}
-                  className="button button--secondary "
-                  href={'https://calendly.com/pranay-signoz/signoz-demo'} onClick={requestDemoClicked}>
-                  Request Demo
+                <Link style={{"margin": "6px", "paddingLeft":"10px","paddingRight":"10px"}}
+                  className="button button--outline button--secondary "
+                  href={'https://v6fhsfo1g0y.typeform.com/to/wTs4Mbzi'} onClick={requestDemoClicked}>
+                  Request Demo 
                 </Link>
               </div>
-              <p className="open-source-label">SigNoz is <strong>free</strong> and <strong>open-source</strong></p>
 
-              <iframe
-                className="display--tablet"
-                src={`https://ghbtns.com/github-btn.html?user=SigNoz&repo=signoz&type=star&count=true&size=large`}
-                frameBorder="0"
-                scrolling="0"
-                width="200"
-                height="30"
-                title="Star SigNoz on GitHub">
-              </iframe> 
+
+              {/* <p className="open-source-label">SigNoz is <strong>free</strong> and <strong>open-source</strong></p> */}
+            <div style={{display: "flex", alignItems: "center", "marginBottom": "16px"}}>
+              <img src={"/img/yc-logo-white.svg"} height={24} style={{marginRight: 16}}/> Backed by Y Combinator
+            </div>
+
             </div>
             <div className="col col--8">
               <div className="hero__screenshot">
@@ -383,9 +433,15 @@ function Home() {
         </div>
       </header>
       <main>
+        
+        
+        <SubscribeNearFold />
+
         {features && features.length > 0 && (
           <section className={styles.features}>
-            <div className="container" style={{marginTop: '4rem', marginBottom:'4rem'}}>
+            <div className="container" style={{marginTop: '2rem', marginBottom:'2rem'}}>
+            {/* <div className="container" class="margin--md">  */}
+
               <div className="row">
                 {features.map((props, idx) => (
                   <Feature key={idx} {...props} />
@@ -446,7 +502,7 @@ function Home() {
 
 
     <section>
-      <div className="container" style={{marginTop: '4rem', marginBottom:'4rem'}}>
+      <div className="container" style={{marginTop: '2rem', marginBottom:'2rem'}}>
         {/* <p className="hero__title ">Single pane for complete metrics and traces, no need to shift to different systems</p> */}
         <h1 class="text--center">
         Single pane for complete metrics and traces, no need to shift to different systems </h1>
@@ -575,7 +631,26 @@ function Home() {
       </div>
     </section>
 
-    <section>
+
+        {/* <section style={{width: '70%', margin: '0px auto -30px auto',}}>
+          <div className="row">
+            <div className="col col--3" style={{textAlign: 'center'}}>
+              <img src={"/img/partners/aws1.png"} width={60}/>
+            </div>
+            <div className="col col--3" style={{textAlign: 'center'}} >
+              <img src={"/img/partners/druid1.png"}  width={120}/>
+            </div>
+            <div className="col col--3" style={{textAlign: 'center'}}>
+              <img src={"/img/partners/google-cloud1.png"}  width={140}/>
+            </div>
+            <div className="col col--3" style={{textAlign: 'center'}}>
+              <img src={"/img/partners/opentelemetry-stacked-color1.png"}  width={100}/>
+            </div>
+          </div>
+        </section> */}
+
+
+        <section>
       <div className="container" style={{marginTop: '6rem', marginBottom:'3rem'}}>
         <div class="row">
           <div class="col col--4">
@@ -628,6 +703,7 @@ function Home() {
         </div>
       </div>
     </section>
+
 
     <section>
       <div className="container" style={{ marginBottom:'2rem'}} >

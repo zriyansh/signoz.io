@@ -49,6 +49,10 @@ And, hence the name Sig.Noz ( Signal vs Noise) 🤓
                   Twitter
                 </Link>
 
+                <a class="button button--link" style={{color:'white'}}  href="mailto:pranay@signoz.io">
+                pranay at signoz dot io
+                </a>
+
                   {/* <button class="button button--secondary button--outline button--link" href="https://twitter.com/pranay01">Twitter</button> */}
                 </div>
               </div>
@@ -79,7 +83,13 @@ And, hence the name Sig.Noz ( Signal vs Noise) 🤓
                   className="button button--secondary button--outline"
                   href={'https://twitter.com/ankitnayan'}>
                   Twitter
-                </Link>            </div>
+                </Link>  
+                
+                <a class="button button--link" style={{color:'white'}} href="mailto:pranay@signoz.io">
+                ankit at signoz dot io
+                </a>
+
+                </div>
               </div>
             </div>
           </div>

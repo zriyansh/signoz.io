@@ -31,12 +31,7 @@ module.exports = {
         src: 'img/SigNozLogo-orange.svg',
       },
       items: [
-        {
-          to: 'pricing/',
-          activeBasePath: 'pricing',
-          label: 'Pricing',
-          position: 'right',
-        },
+        
         {
           to: 'docs/',
           activeBasePath: 'docs',
@@ -46,9 +41,11 @@ module.exports = {
         //docusaurus expects href elements to be full links
         //https://stackoverflow.com/questions/63268853/how-do-i-link-to-non-docusaurus-defined-routes-from-a-docusuarus-footer
         {href: 'https://signoz.io/blog/', label: 'Blog', position: 'left'},
+        
+        
         {
-          to: 'about-us/',
-          label: 'About',
+          href: 'https://github.com/SigNoz/signoz',
+          label: 'GitHub',
           position: 'right',
         },
         {
@@ -57,10 +54,18 @@ module.exports = {
           position: 'right',
         },
         {
-          href: 'https://github.com/SigNoz/signoz',
-          label: 'GitHub',
+          to: 'pricing/',
+          activeBasePath: 'pricing',
+          label: 'Pricing',
           position: 'right',
         },
+        {
+          to: 'about-us/',
+          label: 'About',
+          position: 'right',
+        },
+       
+
       ],
     },
     footer: {

@@ -229,7 +229,7 @@ hero__screenshot {
 }
 
 .footer__links {
-  margin-left: -200px;
+  margin-left: 0px;
 }
 
 #play-icon {
@@ -320,4 +320,40 @@ hero__screenshot {
   background: var(--ifm-color-primary);
   color: #ffffff;
   border: 1px solid var(--ifm-color-primary);
+}
+
+.footer-newsletter-modal {
+  padding: 12px 12px;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 12px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.nearfold-newsletter {
+  padding: 12px 12px;
+  width: 95%;
+  margin-bottom: 20px;
+  margin-top: 12px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.display--tablet {
+  margin-right: -0px;
+}
+
+@media (max-width: 600px) {
+  .display--tablet {
+    margin-right: 0px;
+  }
+  .footer-newsletter-modal {
+    width: 95%;
+  }
+  .nearfold-newsletter {
+    width: 95%;
+  }
 }
