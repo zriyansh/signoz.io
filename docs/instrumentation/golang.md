@@ -36,9 +36,9 @@ The full list of configuration options can be found in the [README](https://gith
     func main() {
     otelLauncher := launcher.ConfigureOpentelemetry(
         launcher.WithServiceName("service-123"),
-        launcher.WithSpanExporterEndpoint("<<IP of SigNoz Backend>:4317>")
+        launcher.WithSpanExporterEndpoint("<IP of SigNoz Backend>:4317>")
         launcher.WithSpanExporterInsecure("true")
-        launcher.WithMetricExporterEndpoint("<<IP of SigNoz Backend>:4317>")
+        launcher.WithMetricExporterEndpoint("<IP of SigNoz Backend>:4317>")
         launcher.WithMetricExporterInsecure("true")
     )
     defer otelLauncher.Shutdown()
