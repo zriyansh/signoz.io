@@ -44,7 +44,10 @@ Remember to allow incoming requests to port 4317 of machine where SigNoz backend
 </TabItem>
   <TabItem value="cloud">
 
-    Coming soon... Request in slack channel or raise a github issue.
+```bash
+OTEL_EXPORTER_OTLP_ENDPOINT="ingest.signoz.io:443" OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name> java -javaagent:/path/to/opentelemetry-javaagent-all.jar -jar  <myapp>.jar
+```
+where <app_name> is the name you want to set for your application
 
 </TabItem>
 
