@@ -45,10 +45,14 @@ Remember to allow incoming requests to port 4317 of machine where SigNoz backend
   <TabItem value="cloud">
 
 ```bash
-OTEL_EXPORTER_OTLP_ENDPOINT="ingest.signoz.io:443" OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name> java -javaagent:/path/to/opentelemetry-javaagent-all.jar -jar  <myapp>.jar
+OTEL_EXPORTER_OTLP_ENDPOINT="ingest.signoz.io:443" OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name> OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=<access_token>" java -javaagent:/path/to/opentelemetry-javaagent-all.jar -jar  <myapp>.jar
 ```
-where <app_name> is the name you want to set for your application
 
+*<app_name>* is the name you want to set for your application
+
+*<access_token>* can be found in your settings page as shown in below image
+
+![access_token_settings_page](../../static/img/access_token_settings_page.png)
 </TabItem>
 
 </Tabs>
