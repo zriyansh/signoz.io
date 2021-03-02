@@ -7,15 +7,8 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 
-To install OpenTelemetry, we recommend handy [OTel-Launcher](https://github.com/lightstep/otel-launcher-go), which simplifies the process.
-```bash
-go get "github.com/lightstep/otel-launcher-go/launcher"
-```
-Once you've downloaded the launcher, you can run OpenTelemetry using the following basic configuration.
 
-The full list of configuration options can be found in the [README](https://github.com/lightstep/otel-launcher-go).
-
-### Run Command
+### Configuring to send data to SigNoz
 
 <Tabs
   defaultValue="self-hosted"
@@ -51,24 +44,163 @@ The full list of configuration options can be found in the [README](https://gith
     // main.go
     package main
 
-    import "github.com/lightstep/otel-launcher-go/launcher"
+    import (
+      "context"
+      "log"
+      "google.golang.org/grpc/credentials"
+      "go.opentelemetry.io/otel"
+      "go.opentelemetry.io/otel/exporters/otlp"
+      "go.opentelemetry.io/otel/exporters/otlp/otlpgrpc"
+      "go.opentelemetry.io/otel/label"
 
-    func main() {
-    otelLauncher := launcher.ConfigureOpentelemetry(
-        launcher.WithServiceName("service-123"),
-        launcher.WithAccessToken("<access_token>"),
-        launcher.WithSpanExporterEndpoint("ingest.signoz.io:443")
-        launcher.WithMetricExporterEndpoint("ingest.signoz.io:443")
+      "go.opentelemetry.io/otel/sdk/resource"
+      sdktrace "go.opentelemetry.io/otel/sdk/trace"
     )
-    defer otelLauncher.Shutdown()
+
+    var (
+      serviceName = os.Getenv("SERVICE_NAME")
+      signozToken = os.Getenv("SIGNOZ_ACCESS_TOKEN")
+    )
+
+    func initTracer() func(context.Context) error {
+
+      headers := map[string]string{
+        "signoz-access-token": signozToken,
+      }
+
+      secureOption := otlpgrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
+      exporter, err := otlp.NewExporter(
+        context.Background(),
+        otlpgrpc.NewDriver(
+          secureOption,
+          otlpgrpc.WithEndpoint("ingest.signoz.io:443"),
+          otlpgrpc.WithHeaders(headers),
+        ),
+      )
+
+      if err != nil {
+        log.Fatal(err)
+      }
+      resources, err := resource.New(
+        context.Background(),
+        resource.WithAttributes(
+          label.String("service.name", serviceName),
+          label.String("library.language", "go"),
+        ),
+      )
+      if err != nil {
+        log.Printf("Could not set resources: ", err)
+      }
+
+      otel.SetTracerProvider(
+        sdktrace.NewTracerProvider(
+          sdktrace.WithConfig(sdktrace.Config{DefaultSampler: sdktrace.AlwaysSample()}),
+          sdktrace.WithSpanProcessor(sdktrace.NewBatchSpanProcessor(exporter)),
+          sdktrace.WithSyncer(exporter),
+          sdktrace.WithResource(resources),
+        ),
+      )
+      return exporter.Shutdown
+    }
+    func main() {
+
+      cleanup := initTracer()
+      defer cleanup(context.Background())
+
+      // rest of initialization, including creating HTTP and gRPC servers/handlers...
     }
 ``` 
+### Run Command
+
+```bash
+SERVICE_NAME=<service_name> SIGNOZ_ACCESS_TOKEN=<access_token> go run main.go
+```
+*<service_name>* is the name of the service
 
 *<access_token>* can be found in your settings page as shown in below image
 
 ![access_token_settings_page](../../static/img/access_token_settings_page.png)
 </TabItem>
 </Tabs>
+
+### Automatically create traces/spans on HTTP requests
+OpenTelemetry can help you jumpstart your way to observability by providing automatic instrumentation for HTTP requests. You have your choice of request routers in OpenTelemetry or you can use the standard HTTP handler. You should pick the mux that’s right for your framework.
+
+#### Automatic instrumentation with request routers
+
+**If you are using gin/gonic: **
+```bash
+# Add one line to your import() stanza depending upon your request router:
+middleware "go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
+```
+and then inject OpenTelemetry middleware
+```bash
+router.Use(middleware.Middleware(serviceName))
+```
+*serviceName is found from the env variable. If this line is in main.go then it is already there*
+
+**If you are using gorillamux: **
+```bash
+# Add one line to your import() stanza depending upon your request router:
+middleware "go.opentelemetry.io/contrib/instrumentation/github.com/gorilla/mux/otelmux"
+```
+and then inject OpenTelemetry middleware
+```bash
+router.Use(middleware.Middleware(serviceName))
+```
+
+**If you are using echo: **
+```bash
+# Add one line to your import() stanza depending upon your request router:
+middleware "go.opentelemetry.io/contrib/instrumentation/github.com/labstack/echo/otelecho"
+```
+and then inject OpenTelemetry middleware
+```bash
+router.Use(middleware.Middleware(serviceName))
+```
+
+
+### If you don’t use a request router
+
+```bash
+import (
+  "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+)
+
+```
+In each place where you pass an http.Handler to a ServeMux, you’ll wrap the handler function. For instance, you’ll make the following replacements:
+
+```bash
+- mux.Handle("/path", h)
++ mux.Handle("/path", otelhttp.NewHandler(h, "description of path"))
+```
+
+```bash
+- mux.Handle("/path", http.HandlerFunc(f))
++ mux.Handle("/path", otelhttp.NewHandler(http.HandlerFunc(f), "description of path"))
+```
+
+In this fashion, you can ensure that every function you wrap with othttp will automatically have its metadata collected and a corresponding trace started.
+
+### Automatically create traces/spans on gRPC server requests
+Similarly, OpenTelemetry can also help you automatically instrument gRPC requests. To instrument any gRPC servers you have, add an Interceptor to the instantiation of the server.
+
+```bash
+import (
+  grpcotel "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
+)
+
+func main() {
+  [...]
+
+	s := grpc.NewServer(
+		grpc.UnaryInterceptor(otelgrpc.UnaryServerInterceptor()),
+		grpc.StreamInterceptor(otelgrpc.StreamServerInterceptor()),
+	)
+
+}
+
+```
 
 #### Validate installation by checking for traces
 With your application running, you can now verify that you’ve installed OpenTelemetry correctly by confirming that telemetry data is being reported to your observability backend.
