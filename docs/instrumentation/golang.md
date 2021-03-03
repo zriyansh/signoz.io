@@ -24,26 +24,6 @@ import TabItem from "@theme/TabItem";
     // main.go
     package main
 
-    import "github.com/lightstep/otel-launcher-go/launcher"
-
-    func main() {
-    otelLauncher := launcher.ConfigureOpentelemetry(
-        launcher.WithServiceName("service-123"),
-        launcher.WithSpanExporterEndpoint("<IP of SigNoz Backend>:4317>")
-        launcher.WithSpanExporterInsecure("true")
-        launcher.WithMetricExporterEndpoint("<IP of SigNoz Backend>:4317>")
-        launcher.WithMetricExporterInsecure("true")
-    )
-    defer otelLauncher.Shutdown()
-    }
-```
-</TabItem>
-<TabItem value="cloud">
-
-```bash
-    // main.go
-    package main
-
     import (
       "context"
       "log"
@@ -57,9 +37,12 @@ import TabItem from "@theme/TabItem";
       sdktrace "go.opentelemetry.io/otel/sdk/trace"
     )
 
+
     var (
-      serviceName = os.Getenv("SERVICE_NAME")
-      signozToken = os.Getenv("SIGNOZ_ACCESS_TOKEN")
+      serviceName  = os.Getenv("SERVICE_NAME")
+      signozToken  = os.Getenv("SIGNOZ_ACCESS_TOKEN")
+      collectorURL = os.Getenv("OTEL_EXPORTER_OTLP_ENDPOINT")
+      insecure     = os.Getenv("INSECURE_MODE")
     )
 
     func initTracer() func(context.Context) error {
@@ -69,11 +52,15 @@ import TabItem from "@theme/TabItem";
       }
 
       secureOption := otlpgrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
+      if len(insecure) > 0 {
+        secureOption = otlpgrpc.WithInsecure()
+      }
+
       exporter, err := otlp.NewExporter(
         context.Background(),
         otlpgrpc.NewDriver(
           secureOption,
-          otlpgrpc.WithEndpoint("ingest.signoz.io:443"),
+          otlpgrpc.WithEndpoint(collectorURL),
           otlpgrpc.WithHeaders(headers),
         ),
       )
@@ -102,6 +89,7 @@ import TabItem from "@theme/TabItem";
       )
       return exporter.Shutdown
     }
+
     func main() {
 
       cleanup := initTracer()
@@ -113,7 +101,97 @@ import TabItem from "@theme/TabItem";
 ### Run Command
 
 ```bash
-SERVICE_NAME=<service_name> SIGNOZ_ACCESS_TOKEN=<access_token> go run main.go
+SERVICE_NAME=<service_name> INSECURE_MODE=true OTEL_EXPORTER_OTLP_ENDPOINT=<IP of SigNoz backend:4317> go run main.go
+```
+
+*<service_name>* is the name of the service
+
+
+</TabItem>
+<TabItem value="cloud">
+
+```bash
+    // main.go
+    package main
+
+    import (
+      "context"
+      "log"
+      "google.golang.org/grpc/credentials"
+      "go.opentelemetry.io/otel"
+      "go.opentelemetry.io/otel/exporters/otlp"
+      "go.opentelemetry.io/otel/exporters/otlp/otlpgrpc"
+      "go.opentelemetry.io/otel/label"
+
+      "go.opentelemetry.io/otel/sdk/resource"
+      sdktrace "go.opentelemetry.io/otel/sdk/trace"
+    )
+
+
+    var (
+      serviceName  = os.Getenv("SERVICE_NAME")
+      signozToken  = os.Getenv("SIGNOZ_ACCESS_TOKEN")
+      collectorURL = os.Getenv("OTEL_EXPORTER_OTLP_ENDPOINT")
+      insecure     = os.Getenv("INSECURE_MODE")
+    )
+
+    func initTracer() func(context.Context) error {
+
+      headers := map[string]string{
+        "signoz-access-token": signozToken,
+      }
+
+      secureOption := otlpgrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
+      if len(insecure) > 0 {
+        secureOption = otlpgrpc.WithInsecure()
+      }
+
+      exporter, err := otlp.NewExporter(
+        context.Background(),
+        otlpgrpc.NewDriver(
+          secureOption,
+          otlpgrpc.WithEndpoint(collectorURL),
+          otlpgrpc.WithHeaders(headers),
+        ),
+      )
+
+      if err != nil {
+        log.Fatal(err)
+      }
+      resources, err := resource.New(
+        context.Background(),
+        resource.WithAttributes(
+          label.String("service.name", serviceName),
+          label.String("library.language", "go"),
+        ),
+      )
+      if err != nil {
+        log.Printf("Could not set resources: ", err)
+      }
+
+      otel.SetTracerProvider(
+        sdktrace.NewTracerProvider(
+          sdktrace.WithConfig(sdktrace.Config{DefaultSampler: sdktrace.AlwaysSample()}),
+          sdktrace.WithSpanProcessor(sdktrace.NewBatchSpanProcessor(exporter)),
+          sdktrace.WithSyncer(exporter),
+          sdktrace.WithResource(resources),
+        ),
+      )
+      return exporter.Shutdown
+    }
+
+    func main() {
+
+      cleanup := initTracer()
+      defer cleanup(context.Background())
+
+      // rest of initialization, including creating HTTP and gRPC servers/handlers...
+    }
+``` 
+### Run Command
+
+```bash
+SERVICE_NAME=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT=ingest.signoz.io:443 SIGNOZ_ACCESS_TOKEN=<access_token> go run main.go
 ```
 *<service_name>* is the name of the service
 
