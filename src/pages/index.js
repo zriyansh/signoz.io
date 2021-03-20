@@ -541,7 +541,7 @@ function Home() {
                 </div> */}
                 <div class="card__body">
                   <p>
-                  Your data storage cost is only depended on your application load, rather than factors like number of nodes, which is an architectural preference.
+                  Your data storage cost is only dependent on your application load, rather than factors like number of nodes, which is an architectural preference.
                   </p>
                 </div>
                 {/* <div class="card__footer">
