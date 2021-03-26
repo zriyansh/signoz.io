@@ -21,7 +21,7 @@ git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
 Check that you are in `signoz/deploy` folder. Now run
 
 ```
-sudo ./install.sh
+./install.sh
 ```
 
 This should install a tiny instance setting which runs with **4GB of memory**. This is just for demo/testing purpose and not to be used in production.
