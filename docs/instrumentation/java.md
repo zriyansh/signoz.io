@@ -33,12 +33,12 @@ Enable the instrumentation agent using the -javaagent flag to the JVM.
   <TabItem value="self-hosted">
 
 ```bash
-OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz Backend>:4317" OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name> java -javaagent:/path/to/opentelemetry-javaagent-all.jar -jar  <myapp>.jar
+OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz Backend>:55680" OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name> java -javaagent:/path/to/opentelemetry-javaagent-all.jar -jar  <myapp>.jar
 ```
 where <app_name> is the name you want to set for your application
 
 :::caution
-Remember to allow incoming requests to port 4317 of machine where SigNoz backend is hosted
+Remember to allow incoming requests to port 55680 of machine where SigNoz backend is hosted
 :::
 
 </TabItem>
