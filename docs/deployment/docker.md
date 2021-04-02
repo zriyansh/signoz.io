@@ -71,8 +71,14 @@ A standard instance of SigNoz needs around **8GB of memory**. The `docker-compos
 
 1. `docker ps` will show all containers created by SigNoz. Check if `broker`, `otel-collector` and `historical` containers are running. They do not come up if there is a memory problem. You may want to increase alloted memory.
 2. If you are still facing issues, try re-running `./install.sh`. This will retry installing containers which failed the first time.
-3. If you are facing issues like `Request failed with status code 400` in frontend, then open `http://localhost:8888` or port 8888 on your IP .This is druid console. Check if **Datasource** named `flattened_spans` has come up. If there is no **Ingestion Supervsor** running, then run `./install.sh` again to bring them up.
-4. If you couldn't spot issues, feel free to join our [slack community](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA) or shoot an email at ankit@signoz.io. We are generally always there.
+3. Try reinstall SigNoz by first bringing down the existing containers by running 
+`sudo docker-compose -f docker/docker-compose-tiny.yaml down -v` and then running `./install.sh`
+4. If you are facing issues like `Request failed with status code 400` in frontend, then open `http://localhost:8888` or port 8888 on your IP .This is druid console. Check if **Datasource** named `flattened_spans` has come up. If there is no **Ingestion Supervsor** running, then run `./install.sh` again to bring them up.
+5. If you couldn't spot issues, feel free to join our [slack community](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA) or shoot an email at ankit@signoz.io. We are generally always there.
+
+### Re-installing SigNoz
+1. `sudo docker-compose -f docker/docker-compose-tiny.yaml down -v`
+2. `./install.sh`
 
 ### Troubleshooting for Mac users
 
