@@ -13,26 +13,67 @@ import TabItem from "@theme/TabItem";
 
 To install OpenTelemetry, we recommend [LightStep's handy OTel-Launcher](https://github.com/lightstep/otel-launcher-node), which simplifies the process.
 
+## Sample Express Application
+
+For this tutorial, we’re going to make a very, very simple application: an express service that responds to `http://localhost:9000/hello` with "Hello World". It’s as basic as it is original!
+
+First, make a directory to contain your project, and install express:
 ```bash
-npm install lightstep-opentelemetry-launcher-node --save
+npm i express
 ```
 
-We shall use OTLP HTTP exporter to send data to SigNoz
-
-Once you've downloaded the launcher, you can run OpenTelemetry using the following basic configuration.
-
+Once we have that, let’s get to coding. Make a file called `server.js` and serve up some hello world:
 ```bash
-const { lightstep, opentelemetry } = require('lightstep-opentelemetry-launcher-node');
+const express = require('express');
 
-const sdk = lightstep.configureOpenTelemetry();
+const app = express();
 
-sdk.start().then(() => {
-  // All of your application code and any imports that should leverage
-  // OpenTelemetry automatic instrumentation must go here.
+app.get('/hello', (req, res) => {
+ res.status(200).send('Hello World');
 });
+
+app.listen(9000);
+```
+Boot up server by
+```bash
+node server.js
+```
+and check that it works by visiting `http://localhost:9000/hello`
+
+## Setting up OpenTelemetry
+Installing the OpenTelemetry Launcher package will also install OpenTelemetry, plus all currently available [instrumentation](https://github.com/open-telemetry/opentelemetry-js#plugins).
+
+```bash
+npm install lightstep-opentelemetry-launcher-node
 ```
 
-#### Run Command
+Create a file called `server_init.js`. This will serve as your new entry point. You can copy and paste the below code.
+
+```bash
+const {
+    lightstep,
+    opentelemetry,
+   } = require('lightstep-opentelemetry-launcher-node');
+   
+   const sdk = lightstep.configureOpenTelemetry();
+   
+   sdk.start().then(() => {
+    require('./server');
+   });
+   
+   function shutdown() {
+    sdk.shutdown().then(
+      () => console.log("SDK shut down successfully"),
+      (err) => console.log("Error shutting down SDK", err),
+    ).finally(() => process.exit(0))
+   };
+   
+   process.on('exit', shutdown);
+   process.on('SIGINT', shutdown);
+   process.on('SIGTERM', shutdown);
+```
+
+## Run Command
 
 
 <Tabs
@@ -47,14 +88,14 @@ sdk.start().then(() => {
 
 
 ```bash
-OTEL_EXPORTER_OTLP_SPAN_ENDPOINT="http://<IP of SigNoz Backend>:55681/v1/trace" LS_SERVICE_NAME=<service name> npm start
+OTEL_EXPORTER_OTLP_SPAN_ENDPOINT="http://<IP of SigNoz Backend>:55681/v1/trace" LS_SERVICE_NAME=<service name> node server_init.js
 ```
 
 </TabItem>
   <TabItem value="cloud">
 
 ```bash
-OTEL_EXPORTER_OTLP_SPAN_ENDPOINT="https://ingest.signoz.io:55681/v1/trace" LS_SERVICE_NAME=<App Name> LS_ACCESS_TOKEN=<access_token> npm start
+OTEL_EXPORTER_OTLP_SPAN_ENDPOINT="https://ingest.signoz.io:55681/v1/trace" LS_SERVICE_NAME=<App Name> LS_ACCESS_TOKEN=<access_token> node server_init.js
 ```
 You will find the access token in your settings page as shown in below image
 
