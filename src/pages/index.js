@@ -720,8 +720,8 @@ function Home() {
               <div>
                         <Link 
                           className="button button--primary margin--md "
-                             onClick={setShowTrySignozModal.bind(this,true)}>
-                                href={'https://github.com/SigNoz/signoz'}
+                            //  onClick={setShowTrySignozModal.bind(this,true)}>
+                            href={"/docs/deployment/docker"}>
 
                           Get Started
                         </Link>
