@@ -47,6 +47,8 @@ const requestDemoClicked = () => {
   })
 }
 
+
+
 const text = `
   A dog is a type of domesticated animal.
   Known for its loyalty and faithfulness,
@@ -382,14 +384,16 @@ function Home() {
               <div style={{"margin": "1rem 0"}}>
                 <Link style={{"margin": "6px","paddingLeft":"10px","paddingRight":"10px"}}
                   className="button button--primary "
-                      onClick={setShowTrySignozModal.bind(this,true)}>
+                     // onClick={setShowTrySignozModal.bind(this,true)}
+                  href={"/docs/deployment/docker"}
+                  onClick={getStartedClicked}>
 
                   Get Started for free
                 </Link>
                 <Link style={{"margin": "6px", "paddingLeft":"10px","paddingRight":"10px"}}
                   className="button button--outline button--secondary "
-                  href={'https://v6fhsfo1g0y.typeform.com/to/wTs4Mbzi'} onClick={requestDemoClicked}>
-                  Request Demo 
+                  href={'https://github.com/SigNoz/signoz'} onClick={requestDemoClicked}>
+                  GitHub Repo 
                 </Link>
               </div>
 
@@ -716,14 +720,15 @@ function Home() {
               <div>
                         <Link 
                           className="button button--primary margin--md "
-                              onClick={setShowTrySignozModal.bind(this,true)}>
+                             onClick={setShowTrySignozModal.bind(this,true)}>
+                                href={'https://github.com/SigNoz/signoz'}
 
                           Get Started
                         </Link>
                         <Link 
                           className="button button--secondary margin--md"
-                          href={'https://calendly.com/pranay-signoz/signoz-demo'} onClick={requestDemoClicked}>
-                          Request Demo
+                          href={'https://github.com/SigNoz/signoz'} onClick={requestDemoClicked}>
+                          GitHub Repo
                         </Link>
                       </div>
               </div>

@@ -56,7 +56,7 @@ module.exports = {
         {
           to: 'pricing/',
           activeBasePath: 'pricing',
-          label: 'Pricing',
+          label: 'Cloud',
           position: 'right',
         },
         {
