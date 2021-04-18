@@ -176,7 +176,7 @@ function Pricing() {
                                 <PricingCard title={"Hobby"} image={"/img/hobby-new.png"} price={"Free"} features={HOBBY_FEATURES} buttonText={"Create free account"}/>
                             </div>
                             <div className={"col col--4 margin-vert--md"}>
-                                <PricingCard isFreeTrial={true} title={"Starter"} image={"/img/hobby-pricing.png"} price={"USD 19/month"} features={STARTER_FEATURES} buttonText={"Start free trial"}/>
+                                <PricingCard isFreeTrial={true} title={"Starter"} image={"/img/hobby-pricing.png"} price={"$19/month"} features={STARTER_FEATURES} buttonText={"Start free trial"}/>
                             </div>
                             <div className={"col col--4 margin-vert--md "}>
                                 <PricingCard isFreeTrial={true} title={"Professional"} image={"/img/professional-pricing.png"} price={"Billed monthly"} info={"For >300mn spans or >3 day retention"} features={PROFESSIONAL_FEATURES} buttonText={"Start free trial"}/>
