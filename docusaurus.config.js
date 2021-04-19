@@ -14,6 +14,14 @@ module.exports = {
     //   // Optional fields.
     //   // anonymizeIP: true, // Should IPs be anonymized?
     // },
+    announcementBar: {
+      id: 'support_us', // Any value that will identify this message.
+      content:
+        '⭐️ If you like SigNoz, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/SigNoz/signoz">GitHub</a>! ⭐️ ',
+      backgroundColor: '#ca4127', // #151515, #dddddd Defaults to `#fff`.
+      textColor: '#eeeeee', // Defaults to `#000`.
+      isCloseable: false, // Defaults to `true`.
+    },
     posthog: {
       apiKey: "H-htDCae7CR3RV57gUzmol6IAKtm5IMCvbcm_fwnL-w",
       appUrl: "https://app.posthog.com",  // optional
