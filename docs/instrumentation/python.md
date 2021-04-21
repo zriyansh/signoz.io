@@ -54,7 +54,7 @@ If it says cannot find command `opentelemetry-bootstrap` then you need to specif
 <TabItem value="self-hosted">
 
 ```bash
-OTEL_SERVICE_NAME=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="<IP of SigNoz Backend>:4317"  opentelemetry-instrument <your run command>
+OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz Backend>:4317"  opentelemetry-instrument <your run command>
 ```
 *<service_name>* is the name of service you want
 
@@ -70,7 +70,7 @@ OTEL_SERVICE_NAME=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="<IP of SigNoz Back
 <TabItem value="cloud">
 
 ```bash
-OTEL_PYTHON_SERVICE_NAME=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="ingest.signoz.io:443" OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=<access_token>" opentelemetry-instrument <your_run_command>
+OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="ingest.signoz.io:443" OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=<access_token>" opentelemetry-instrument <your_run_command>
 ```
 *<service_name>* is the name of service you want
 
