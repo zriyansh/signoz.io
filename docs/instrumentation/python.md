@@ -89,6 +89,10 @@ OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT
 
 </Tabs>
 
+### Instrumentation of a sample Flask application
+We have included a sample flask application with `README.md` at https://github.com/SigNoz/sample-flask-app.
+
+Feel free to use this repo to test out OpenTelemetry instrumentation and how to send telemetry data to SigNoz.
 
 
 ### Troubleshooting your installation

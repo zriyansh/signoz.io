@@ -280,7 +280,13 @@ func main() {
 
 ```
 
-#### Validate installation by checking for traces
+### Instrumentation of a sample Golang application
+We have included a sample gin/gonic application with `README.md` at https://github.com/SigNoz/sample-golang-app.
+
+Feel free to use this repo to test out OpenTelemetry instrumentation and how to send telemetry data to SigNoz.
+
+
+### Validate installation by checking for traces
 With your application running, you can now verify that you’ve installed OpenTelemetry correctly by confirming that telemetry data is being reported to your observability backend.
 
 To do this, you need to make sure that your application is actually generating data. Applications will generally not produce traces unless they are being interacted with, and opentelemetry will often buffer data before sending it. So it may take some amount of time and interaction before your application data begins to appear in your backend.

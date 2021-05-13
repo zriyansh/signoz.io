@@ -13,7 +13,7 @@ import TabItem from "@theme/TabItem";
 
 To install OpenTelemetry, we recommend [LightStep's handy OTel-Launcher](https://github.com/lightstep/otel-launcher-node), which simplifies the process.
 
-## Sample Express Application
+### Sample Express Application
 
 For this tutorial, we’re going to make a very, very simple application: an express service that responds to `http://localhost:9000/hello` with "Hello World". It’s as basic as it is original!
 
@@ -40,7 +40,7 @@ node server.js
 ```
 and check that it works by visiting `http://localhost:9000/hello`
 
-## Setting up OpenTelemetry
+### Setting up OpenTelemetry
 Installing the OpenTelemetry Launcher package will also install OpenTelemetry, plus all currently available [instrumentation](https://github.com/open-telemetry/opentelemetry-js#plugins).
 
 ```bash
@@ -73,7 +73,7 @@ const {
    process.on('SIGTERM', shutdown);
 ```
 
-## Run Command
+### Run Command
 
 
 <Tabs
@@ -104,6 +104,13 @@ You will find the access token in your settings page as shown in below image
 </TabItem>
 
 </Tabs>
+
+
+### Instrumentation of a sample NodeJs application
+We have included a sample Express application with `README.md` at https://github.com/SigNoz/sample-nodejs-app.
+
+Feel free to use this repo to test out OpenTelemetry instrumentation and how to send telemetry data to SigNoz.
+
 
 
 ### Troubleshooting your installation
