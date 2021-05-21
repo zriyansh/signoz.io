@@ -11,7 +11,15 @@ For local storage to work, the historical and the middle manager must have the s
 Local storage does not work in containers. Must setup other deep storage systems like S3
 :::
 
+## For docker-compose setup
+1. Uncomment the S3 config section and comment the local storage section in below file
+`signoz/deploy/docker/environment_tiny/common`
 
+2. Provide the needed details in the file to configure S3 setup.
+
+3. Re-install SigNoz by running `./install.sh` again at `signoz/deploy/` folder.
+
+## For Helm Chart setup
 To set up S3, confiigure below params in `druid.configVars` section in `deploy/kubernetes/platform/values.yaml`:
 ```
     druid_storage_type: s3
