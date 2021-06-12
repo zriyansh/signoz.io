@@ -20,19 +20,20 @@ pip3 install opentelemetry-distro
 pip3 install opentelemetry-instrumentation
 pip3 install opentelemetry-exporter-otlp
 ```
+
 :::caution
-  If it hangs while installing `grpcio` during **pip3 install opentelemetry-exporter-otlp** then follow below steps as suggested in **[this stackoverflow link](https://stackoverflow.com/a/62500932/3243212)**
-  - pip3 install --upgrade pip
-  - python3 -m pip install --upgrade setuptools
-  - pip3 install --no-cache-dir  --force-reinstall -Iv grpcio
+If it hangs while installing `grpcio` during **pip3 install opentelemetry-exporter-otlp** then follow below steps as suggested in **[this stackoverflow link](https://stackoverflow.com/a/62500932/3243212)**
 
-  
+- pip3 install --upgrade pip
+- python3 -m pip install --upgrade setuptools
+- pip3 install --no-cache-dir --force-reinstall -Iv grpcio
+
 :::
-
 
 ```bash
 opentelemetry-bootstrap --action=install
 ```
+
 The above command inspects the active Python site-packages and figures out which instrumentation packages the user might want to install and installs them for you.
 
 :::caution
@@ -40,10 +41,9 @@ If it says cannot find command `opentelemetry-bootstrap` then you need to specif
 `/home/ubuntu/.local/bin/opentelemetry-bootstrap --action=install`
 :::
 
-
 #### Run Command
 
-<Tabs
+<!-- <Tabs
   defaultValue="self-hosted"
   groupId="hosting-options"
   values={[
@@ -51,54 +51,57 @@ If it says cannot find command `opentelemetry-bootstrap` then you need to specif
     { label: "Cloud", value: "cloud" },
   ]}
 >
-<TabItem value="self-hosted">
+<TabItem value="self-hosted"> -->
 
 ```bash
 OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz Backend>:4317"  opentelemetry-instrument <your run command>
 ```
-*<service_name>* is the name of service you want
 
-*<your_run_command>* can be `python3 app.py` or `flask run`
+_<service_name>_ is the name of service you want
+
+_<your_run_command>_ can be `python3 app.py` or `flask run`
 
 :::caution
- - If *opentelemetry-instrument* command is not found then use full path of executable. In ubuntu it is at */home/ubuntu/.local/bin/opentelemetry-instrument*
- - Remember to allow incoming requests to port **4317** of machine where SigNoz backend is hosted
+
+- If _opentelemetry-instrument_ command is not found then use full path of executable. In ubuntu it is at _/home/ubuntu/.local/bin/opentelemetry-instrument_
+- Remember to allow incoming requests to port **4317** of machine where SigNoz backend is hosted
 
 :::
 
-</TabItem>
-<TabItem value="cloud">
+<!-- </TabItem> -->
+<!-- <TabItem value="cloud">
 
 ```bash
 OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="ingest.signoz.io:443" OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=<access_token>" opentelemetry-instrument <your_run_command>
 ```
-*<service_name>* is the name of service you want
 
-*<your_run_command>* can be `python3 app.py` or `flask run`
+_<service_name>_ is the name of service you want
 
-*<access_token>* can be found in your settings page as shown in below image
+_<your_run_command>_ can be `python3 app.py` or `flask run`
+
+_<access_token>_ can be found in your settings page as shown in below image
 
 ![access_token_settings_page](../../static/img/access_token_settings_page.png)
 
 :::caution
- - If *opentelemetry-instrument* command is not found then use full path of executable. In ubuntu it is at */home/ubuntu/.local/bin/opentelemetry-instrument*
+
+- If _opentelemetry-instrument_ command is not found then use full path of executable. In ubuntu it is at _/home/ubuntu/.local/bin/opentelemetry-instrument_
 
 :::
 
 </TabItem>
 
-</Tabs>
+</Tabs> -->
 
 ### Instrumentation of a sample Flask application
+
 We have included a sample flask application with `README.md` at https://github.com/SigNoz/sample-flask-app.
 
 Feel free to use this repo to test out OpenTelemetry instrumentation and how to send telemetry data to SigNoz.
 
-
 ### Troubleshooting your installation
 
 If spans are not being reported to SigNoz, try running in debug mode by setting `OTEL_LOG_LEVEL=debug`:
-
 
 The debug log level will print out the configuration information. It will also emit every span to the console, which should look something like:
 

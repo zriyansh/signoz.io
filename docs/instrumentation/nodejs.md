@@ -18,11 +18,13 @@ To install OpenTelemetry, we recommend [LightStep's handy OTel-Launcher](https:/
 For this tutorial, we’re going to make a very, very simple application: an express service that responds to `http://localhost:9000/hello` with "Hello World". It’s as basic as it is original!
 
 First, make a directory to contain your project, and install express:
+
 ```bash
 npm i express
 ```
 
 Once we have that, let’s get to coding. Make a file called `server.js` and serve up some hello world:
+
 ```bash
 const express = require('express');
 
@@ -34,13 +36,17 @@ app.get('/hello', (req, res) => {
 
 app.listen(9000);
 ```
+
 Boot up server by
+
 ```bash
 node server.js
 ```
+
 and check that it works by visiting `http://localhost:9000/hello`
 
 ### Setting up OpenTelemetry
+
 Installing the OpenTelemetry Launcher package will also install OpenTelemetry, plus all currently available [instrumentation](https://github.com/open-telemetry/opentelemetry-js#plugins).
 
 ```bash
@@ -54,20 +60,20 @@ const {
     lightstep,
     opentelemetry,
    } = require('lightstep-opentelemetry-launcher-node');
-   
+
    const sdk = lightstep.configureOpenTelemetry();
-   
+
    sdk.start().then(() => {
     require('./server');
    });
-   
+
    function shutdown() {
     sdk.shutdown().then(
       () => console.log("SDK shut down successfully"),
       (err) => console.log("Error shutting down SDK", err),
     ).finally(() => process.exit(0))
    };
-   
+
    process.on('exit', shutdown);
    process.on('SIGINT', shutdown);
    process.on('SIGTERM', shutdown);
@@ -75,8 +81,7 @@ const {
 
 ### Run Command
 
-
-<Tabs
+<!-- <Tabs
   defaultValue="self-hosted"
   groupId="hosting-options-node"
   values={[
@@ -84,14 +89,13 @@ const {
     { label: "Cloud", value: "cloud" },
   ]}
 >
-  <TabItem value="self-hosted">
-
+  <TabItem value="self-hosted"> -->
 
 ```bash
 OTEL_EXPORTER_OTLP_SPAN_ENDPOINT="http://<IP of SigNoz Backend>:55681/v1/trace" LS_SERVICE_NAME=<service name> node server_init.js
 ```
 
-</TabItem>
+<!-- </TabItem>
   <TabItem value="cloud">
 
 ```bash
@@ -103,15 +107,13 @@ You will find the access token in your settings page as shown in below image
 
 </TabItem>
 
-</Tabs>
-
+</Tabs> -->
 
 ### Instrumentation of a sample NodeJs application
+
 We have included a sample Express application with `README.md` at https://github.com/SigNoz/sample-nodejs-app.
 
 Feel free to use this repo to test out OpenTelemetry instrumentation and how to send telemetry data to SigNoz.
-
-
 
 ### Troubleshooting your installation
 

@@ -8,8 +8,6 @@ import TabItem from "@theme/TabItem";
 
 Get up and running with OpenTelemetry in just a few quick steps! The setup process consists of two phases--getting OpenTelemetry installed and configured, and then validating that configuration to ensure that data is being sent as expected. This guide explains how to download, install, and run OpenTelemetry in Java.
 
-
-
 We follow [OpenTelemetry java instrumentation library](https://github.com/open-telemetry/opentelemetry-java-instrumentation). **We shall be exporting data in OTLP format.**
 
 ## Getting Started
@@ -22,7 +20,7 @@ Enable the instrumentation agent using the -javaagent flag to the JVM.
 
 #### Run Command
 
-<Tabs
+<!-- <Tabs
   defaultValue="self-hosted"
   groupId="hosting-options"
   values={[
@@ -30,39 +28,37 @@ Enable the instrumentation agent using the -javaagent flag to the JVM.
     { label: "Cloud", value: "cloud" },
   ]}
 >
-  <TabItem value="self-hosted">
+  <TabItem value="self-hosted"> -->
 
 ```bash
 OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz Backend>:55680" OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name> java -javaagent:/path/to/opentelemetry-javaagent-all.jar -jar  <myapp>.jar
 ```
+
 where <app_name> is the name you want to set for your application
 
 :::caution
 Remember to allow incoming requests to port 55680 of machine where SigNoz backend is hosted
 :::
 
-</TabItem>
+<!-- </TabItem>
   <TabItem value="cloud">
 
 ```bash
 OTEL_EXPORTER_OTLP_ENDPOINT="ingest.signoz.io:443" OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name> OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=<access_token>" java -javaagent:/path/to/opentelemetry-javaagent-all.jar -jar  <myapp>.jar
 ```
 
-*<app_name>* is the name you want to set for your application
+_<app_name>_ is the name you want to set for your application
 
-*<access_token>* can be found in your settings page as shown in below image
+_<access_token>_ can be found in your settings page as shown in below image
 
 ![access_token_settings_page](../../static/img/access_token_settings_page.png)
 </TabItem>
 
-</Tabs>
-
-
+</Tabs> -->
 
 ### Troubleshooting your installation
 
 If spans are not being reported to SigNoz, try running in debug mode by setting `OTEL_LOG_LEVEL=debug`:
-
 
 The debug log level will print out the configuration information. It will also emit every span to the console, which should look something like:
 
