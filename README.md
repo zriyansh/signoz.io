@@ -1,3 +1,6 @@
+
+This is source for signoz.io website and docs at signoz.io/docs built on docusaurus 2
+
 # Website
 
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
