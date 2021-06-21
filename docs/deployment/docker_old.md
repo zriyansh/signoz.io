@@ -4,6 +4,7 @@ title: Deploying with Docker
 ---
 
 ### Steps:
+
 1. Install SigNoz backend as instructed in this page
 2. Instrument your application as instructed in [Instructions Page](/docs/instrumentation/overview)
 
@@ -41,7 +42,7 @@ We have a tiny instance setting which runs with **3GB of memory**. This is just 
 
 2. Choose Resources from Preferences Menu and change Memory to 3GB
 
-![Docker Resource Preferences](../../static/img/docker_preferences.png)
+![Docker Resource Preferences](../../static/img/docker_preferences.jpeg)
 
 Below command will bring up SigNoz services
 
@@ -61,10 +62,10 @@ docker-compose up -d
 If you face any issues here, don't worry - just check out the troubleshooting steps in the section below
 :::
 
-7. Once `docker-compose` runs successfully, the UI should be accessible at port 3000 on the domain you set up or the IP of your instance. 
+7. Once `docker-compose` runs successfully, the UI should be accessible at port 3000 on the domain you set up or the IP of your instance.
 
 :::info
-Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3000`. 
+Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3000`.
 You would want to open port 3000 to be accessible from outside world if you want to use public url of machine.
 :::
 
