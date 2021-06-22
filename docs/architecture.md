@@ -3,22 +3,26 @@ id: architecture
 title: Technical Architecture
 ---
 
-import ReactGA from 'react-ga';
+SigNoz supports two storage setups, one based on ClickHouse and another based on Kafka + Druid. Depending upon your preference you can choose any of the two
 
-export const Logger = ({children}) => (
-<>
-<span>{ReactGA.initialize('UA-152867655-1')}</span>
-<span>{ReactGA.pageview('Technical Architecture')}</span>
-</>
-);
+## ClickHouse setup Architecture
 
-<Logger> Hi, I am logger</Logger>
+![acrhitecture-diagram-clickhouse](../static/img/architecture-signoz-clickhouse.svg)
+
+### Architecture Components
+
+- OpenTelemetry Collector
+- ClickHouse
+- Query Service
+- Frontend
+
+## Kafka + Druid Setup Architecture
 
 SigNoz uses industry proven Kafka and Druid to power highly scalable data ingestion and realtime data analysis.
 
 ![acrhitecture-diagram](../static/img/architecture-signoz-dark.svg)
 
-# Architecture Components
+### Architecture Components
 
 - OpenTelemetry Collector
 - Kafka
