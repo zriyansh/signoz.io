@@ -17,9 +17,11 @@ Local storage does not work in containers. Must setup other deep storage systems
 
 2. Provide the needed details in the file to configure S3 setup.
 
-3. For S3 permission settings, check this [link](https://druid.apache.org/docs/latest/development/extensions-core/s3.html#s3-permissions-settings).
+3. Re-install SigNoz by running `./install.sh` again at `signoz/deploy/` folder.
 
-4. Re-install SigNoz by running `./install.sh` again at `signoz/deploy/` folder.
+:::note
+For S3 permission settings for Kafka + Druid setup - check this [link](https://druid.apache.org/docs/latest/development/extensions-core/s3.html#s3-permissions-settings)
+:::
 
 ## For Helm Chart setup
 To set up S3, confiigure below params in `druid.configVars` section in `deploy/kubernetes/platform/values.yaml`:
