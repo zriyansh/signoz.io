@@ -3,17 +3,6 @@ id: installation
 title: Installation Instructions
 ---
 
-import ReactGA from 'react-ga';
-
-export const Logger = ({children}) => (
-<>
-<span>{ReactGA.initialize('UA-152867655-1')}</span>
-<span>{ReactGA.pageview('Installation instruction')}</span>
-</>
-);
-
-<Logger> Hi, I am logger</Logger>
-
 ## Install using Helm Charts
 
 The easiest way to get started with SigNoz is to install using helm charts, this will install

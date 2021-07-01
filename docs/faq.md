@@ -3,22 +3,6 @@ id: faq
 title: Frequently Asked Questions
 ---
 
-import ReactGA from 'react-ga';
-
-export const Logger = ({children}) => (
-<>
-<span>{ReactGA.initialize('UA-152867655-1')}</span>
-<span>{ReactGA.pageview('FAQ')}</span>
-</>
-);
-
-<Logger> Hi, I am logger</Logger>
-
-<!-- - I am using Prometheus, can I use SigNoz?
-- I am using Jaeger, can I use SigNoz?
-- How does SigNoz compare with DataDog?
-- How does SigNoz compare with SaaS observability tools like Honeycomb? -->
-
 ## I am looking for an application monitoring tool, is SigNoz an APM?
 
 SigNoz is more than an APM. We provide all features like

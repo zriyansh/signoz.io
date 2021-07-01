@@ -3,17 +3,6 @@ id: community
 title: Community
 ---
 
-import ReactGA from 'react-ga';
-
-export const Logger = ({children}) => (
-<>
-<span>{ReactGA.initialize('UA-152867655-1')}</span>
-<span>{ReactGA.pageview('Community')}</span>
-</>
-);
-
-<Logger> Hi, I am logger</Logger>
-
 ## Slack
 
 We have an active slack community with engineers eager to answer your queries on observability, tracing and monitoring. Would love to hear your thoughts and any questions if you have.

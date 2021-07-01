@@ -3,17 +3,6 @@ id: contributing
 title: Contribution Guidelines
 ---
 
-import ReactGA from 'react-ga';
-
-export const Logger = ({children}) => (
-<>
-<span>{ReactGA.initialize('UA-152867655-1')}</span>
-<span>{ReactGA.pageview('Contributing')}</span>
-</>
-);
-
-<Logger> Hi, I am logger</Logger>
-
 # How to Contribute
 
 You can always reach out to ankit@signoz.io to understand more about the repo and product. We are very responsive over email and [slack](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA).

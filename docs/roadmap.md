@@ -3,17 +3,6 @@ id: roadmap
 title: Product Roadmap
 ---
 
-import ReactGA from 'react-ga';
-
-export const Logger = ({children}) => (
-<>
-<span>{ReactGA.initialize('UA-152867655-1')}</span>
-<span>{ReactGA.pageview('Roadmap')}</span>
-</>
-);
-
-<Logger> Hi, I am logger</Logger>
-
 We are focused on building an integrated observability tool which can be a superior alternative to current SaaS products like DataDog
 
 The following items are in our roadmap currently
