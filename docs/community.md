@@ -2,7 +2,6 @@
 id: community
 title: Community
 ---
-
 ## Slack
 
 We have an active slack community with engineers eager to answer your queries on observability, tracing and monitoring. Would love to hear your thoughts and any questions if you have.
