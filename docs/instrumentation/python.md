@@ -28,6 +28,9 @@ If it hangs while installing `grpcio` during **pip3 install opentelemetry-export
 - python3 -m pip install --upgrade setuptools
 - pip3 install --no-cache-dir --force-reinstall -Iv grpcio
 
+Retry installing `opentelemetry-exporter-otlp` by doing
+- pip3 install opentelemetry-exporter-otlp
+
 :::
 
 ```bash
