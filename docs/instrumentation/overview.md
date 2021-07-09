@@ -7,7 +7,7 @@ SigNoz supports [OpenTelemetry](https://opentelemetry.io/) as the primary way fo
 
 **OpenTelemetry** is a single, vendor-agnostic instrumentation library per language with support for both automatic and manual instrumentation. It provides open-standard semantic conventions to ensure vendor-agnostic data collection.
 
-This [guide](https://opentelemetry.io/docs/concepts/instrumenting) introduces the basic concepts of instrumentation using OpenTelemetry. Opentelemtry also has an ecosystem of libraries, plugins, integrations, and other useful tools which extend it. You can find these resources at Otel Registry [here](https://opentelemetry.io/registry/).
+This [guide](https://opentelemetry.io/docs/concepts/instrumenting) introduces the basic concepts of instrumentation using OpenTelemetry. Opentelemetry also has an ecosystem of libraries, plugins, integrations, and other useful tools which extend it. You can find these resources at Otel Registry [here](https://opentelemetry.io/registry/).
 
 _You can instrument using any open-standard library and SigNoz will be your best observability backend to ingest, analyse and visualize data_
 
