@@ -11,6 +11,8 @@ For local storage to work, the historical and the middle manager must have the s
 Local storage does not work in containers. Must setup other deep storage systems like S3
 :::
 
+<br></br>
+
 ## For docker-compose setup (Kafka + Druid)
 1. Uncomment the S3 config section and comment the local storage section in below file
 `signoz/deploy/docker/druid-kafka-setup/environment_tiny/common`
@@ -23,6 +25,8 @@ Local storage does not work in containers. Must setup other deep storage systems
 For S3 permission settings for Kafka + Druid setup - check this [link](https://druid.apache.org/docs/latest/development/extensions-core/s3.html#s3-permissions-settings)
 :::
 
+<br></br>
+
 ## For Helm Chart setup (Kafka + Druid)
 To set up S3, confiigure below params in `druid.configVars` section in `deploy/kubernetes/platform/values.yaml`:
 ```
@@ -34,6 +38,12 @@ To set up S3, confiigure below params in `druid.configVars` section in `deploy/k
     AWS_REGION: <your region>
 ```
 
+<br></br>
+
+## S3 config for ClickHouse setup
+
+Coming Soon..
+  
 :::info
 We are still testing the S3 config for Clickhouse, please ping us on [Slack](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA) if you are interested to test it
 :::

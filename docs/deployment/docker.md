@@ -68,16 +68,17 @@ You would want to open port 3000 to be accessible from outside world if you want
 ### 2. Using Docker Compose
 
 
-To clone the SigNoz repository and enter the new directory, run:
+1. To clone the SigNoz repository and enter the new directory, run:
 
 ```console
 git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
 ```
+<br></br>
 
-You can chose either ClickHouse or Druid as the datastore
+2. You can chose either ClickHouse or Druid as the datastore. You need to have docker-compose correctly setup before running this.
 
 <Tabs
-  defaultValue="ClickHouse"
+  defaultValue="clickHouse"
   groupId="datastore-options"
   values={[
     { label: "ClickHouse Setup", value: "clickhouse" },
@@ -106,7 +107,10 @@ sudo docker-compose -f ./docker/druid-kafka-setup/docker-compose-tiny.yaml up -d
 
 ### Production Settings for Kafka + Druid setup
 
-A standard instance of SigNoz needs around **8GB of memory**. The `docker-compose.yaml` file at `deploy/docker/druid-kafka-setup` can handle around 100RPS or 5K events/sec. Email at ankit@signoz.io or join [Slack](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA) for help in setting this up.
+A standard instance of SigNoz needs around **8GB of memory**. The setup uses `docker-compose.yaml` file at `deploy/docker/druid-kafka-setup`
+  
+  
+If you are interested in configuring S3 deep storage for production usage, check out [this section](/docs/configuration/deep_storage)
 
 
 <br></br>
@@ -119,10 +123,12 @@ The current `docker-compose.yaml` includes sample application ([HotR.O.D](https:
 
 <br></br>
 
-### Deep Storage with S3
+### Having issues running SigNoz?
+[Checkout Troubleshooting Section](/docs/deployment/troubleshooting)
+
+  
+
+### Deep Storage with S3 for Kafka+Druid Setup
 [Checkout Configuration Section](/docs/configuration/deep_storage)
 
 <br></br>
-
-### Having issues running SigNoz?
-[Checkout Troubleshooting Section](/docs/deployment/troubleshooting)
