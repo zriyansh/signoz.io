@@ -317,6 +317,10 @@
   <lastmod>2021-07-27T16:46:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
-
+<url>
+  <loc>https://signoz.io/blog/opentelemetry-spring-boot/</loc>
+  <lastmod>2021-08-02T16:46:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
 
 </urlset>
