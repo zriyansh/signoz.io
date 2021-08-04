@@ -156,7 +156,28 @@ module.exports = {
       },
     ],
   ],
-  plugins: ["posthog-docusaurus"],
+  plugins:["posthog-docusaurus"],
+  plugins:[
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: 'opentelemetry',
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: 'opentelemetry',
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: './opentelemetry',
+      },
+    ],
+  ],
+
   
   // plugins: ['@docusaurus/plugin-google-analytics'],
   // plugins: [

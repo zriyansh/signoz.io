@@ -10,7 +10,7 @@ Get up and running with OpenTelemetry in just a few quick steps! The setup proce
 
 We follow [OpenTelemetry java instrumentation library](https://github.com/open-telemetry/opentelemetry-java-instrumentation). **We shall be exporting data in OTLP format.**
 
-## Getting Started
+### Getting Started
 
 Download the [latest version](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent-all.jar).
 
@@ -18,7 +18,12 @@ This package includes the instrumentation agent as well as instrumentations for 
 
 Enable the instrumentation agent using the -javaagent flag to the JVM.
 
-#### Run Command
+  
+<p>&nbsp;</p>
+
+### For Java applications packages as JAR files
+
+If you run your Java application as a JAR file, please follow the below instruction
 
 <!-- <Tabs
   defaultValue="self-hosted"
@@ -36,7 +41,7 @@ OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz Bac
 
 where <app_name> is the name you want to set for your application
 
-:::caution
+:::note
 Remember to allow incoming requests to port 4317 of machine where SigNoz backend is hosted
 :::
 
@@ -55,6 +60,30 @@ _<access_token>_ can be found in your settings page as shown in below image
 </TabItem>
 
 </Tabs> -->
+  
+<p>&nbsp;</p>
+
+### Tomcat Instrumentation
+
+For Tomcat application, you need to make sure the following environment variables set up.
+
+If you run your `.war` package by putting in `webapps` folder, just add `setenv.sh` in your Tomcat `bin` folder.
+  
+
+This should set these environment variables and start sending telemetry data to SigNoz backend specified in the IP
+
+```bash
+
+export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/path/to/opentelemetry-javaagent-all.jar"
+export OTEL_METRICS_EXPORTER=none
+export OTEL_EXPORTER_OTLP_ENDPOINT=<IP of SigNoz Backend>:4317
+export OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name>
+
+```
+where `app_name` is the name you want to set for your application
+and `IP of SigNoz Backend` is the IP where SigNoz backend is accessible
+  
+<p>&nbsp;</p>
 
 ### Troubleshooting your installation
 

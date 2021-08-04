@@ -78,6 +78,8 @@ const {
    process.on('SIGINT', shutdown);
    process.on('SIGTERM', shutdown);
 ```
+  
+<p>&nbsp;</p>
 
 ### Run Command
 
@@ -94,6 +96,14 @@ const {
 ```bash
 OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_SPAN_ENDPOINT="http://<IP of SigNoz Backend>:55681/v1/trace" LS_SERVICE_NAME=<service name> node server_init.js
 ```
+:::note
+
+- Remember to allow incoming requests to port **55681** of machine where SigNoz backend is hosted
+
+:::
+  
+<p>&nbsp;</p>
+
 
 <!-- </TabItem>
   <TabItem value="cloud">
@@ -123,7 +133,7 @@ Set an environment variable to run the OpenTelemetry launcher in debug mode, whe
 export OTEL_LOG_LEVEL=debug
 ```
 
-The output may be very verbose with some benign errors. Early in the console output, look for logs about the configuration and check that your access token is correct. Next, look for lines like the ones below, which are emitted when spans are emitted to SigNoz.
+The output may be very verbose with some benign errors. Early in the console output, look for logs about the configuration. Next, look for lines like the ones below, which are emitted when spans are emitted to SigNoz.
 
 ```bash
 {
