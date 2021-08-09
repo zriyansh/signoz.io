@@ -8,7 +8,7 @@ author_image_url: https://avatars.githubusercontent.com/u/504541?v=4
 tags: [opentelemetry, monitoring]
 ---
 
-OpenTelemetry is vendor neutral instrumentation library. SigNoz natively supports OpenTelemetry. You can use Opentelemetry to instrument your applications and visualise the metrics and traces in SigNoz.
+OpenTelemetry is a newendor neutral instrumentation library. SigNoz natively supports OpenTelemetry. You can use Opentelemetry to instrument your applications and visualise the metrics and traces in SigNoz.
 
 Here are a few guides on monitoring popular application frameworks
 
