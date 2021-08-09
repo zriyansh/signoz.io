@@ -12,9 +12,8 @@ In this blog, I will discuss about how to set up Prometheus and Grafana in EKS a
 
 ### *Create cluster in EKS*
 
-Configure aws cli and eksctl using this [link](link)
 
-Create cluster using this [link](link)  and the command is:
+Create cluster and the command is:
 `eksctl create cluster --name prod --version 1.13 --nodegroup-name standard-workers --node-type t3.medium --nodes 3 --nodes-min 1 --nodes-max 4 --node-ami auto`
 
 ### *Setup Prometheus and Grafana using Helm*
@@ -119,7 +118,7 @@ We can run statsd-exporter as a side-car to django application container in each
 ![](/img/blog/2019/08/Screenshot-2019-08-30-at-11.08.32-AM.png)
 Or we can run 1 statsd-exporter per node. All applications in a node shall push to a common statsd server of that node. 
 ![](/img/blog/2019/08/Screenshot-2019-08-30-at-11.38.11-AM.png)
-**I have used side-car pattern to deploy statsd-exporter (check [django-deployment.yml](django-deployment.yml)).**
+**I have used side-car pattern to deploy statsd-exporter (check `django-deployment.yml`).**
 ![](/img/blog/2019/08/Screenshot-2019-08-30-at-11.55.49-AM.png)
 Now, deploy the pods and services using
 `kubectl create namespace django-with-statsd`
@@ -149,7 +148,7 @@ SigNoz helps developers monitor their applications & troubleshoot problems, an o
 I am using locustio to generate some traffic to the application and then shall verify them in prom expression browser.
 pip3 install locustio in any environment (can be your localhost)
 
-[load-test/profile1.py](load-test/profile1.py) will call the application endpoints with the given load:
+`load-test/profile1.py` will call the application endpoints with the given load:
 
 1. /polls/2xx_success/       with a weight of 2
 2. /polls/4xx_not_found/ with a weight of 1
@@ -285,7 +284,7 @@ SigNoz helps developers monitor their applications & troubleshoot problems, an o
 
 ![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
 ](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
-**For any Prometheus related query reach me out on [Twitter](https://twitter.com/ankitnayan) or mail me at **[ankit@signoz.io](ankit@signoz.io)
+**For any Prometheus related query reach me out on [Twitter](https://twitter.com/ankitnayan) or mail me at `ankit@signoz.io`**
 
 #### Below blogs were helpful in understanding and implementing the concepts:
 

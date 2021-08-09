@@ -31,7 +31,7 @@ Flamegraphs and Gantt charts make a champion combo for debugging latency issues 
 
 We recently conducted a [deep dive](/blog/getting-to-know-our-4000-plus-stargazers-on-github/) into our stargazers and found out that the top 5 countries where our stargazers belong are from US, India, Brazil, China, and Germany.
 
-To make our GitHub repo more accessible, we raised requests for getting our [readme.md](http://readme.md) translated to different languages. [Tony Qu](https://github.com/tonyqus), a 15+ year .NET veteran, helped translate our [readme.md](https://github.com/SigNoz/signoz/blob/main/README.zh-cn.md) to Chinese, and we couldn't be happier. 🤓
+To make our GitHub repo more accessible, we raised requests for getting our [readme.md](https://github.com/SigNoz/signoz/blob/main/README.md) translated to different languages. [Tony Qu](https://github.com/tonyqus), a 15+ year .NET veteran, helped translate our [Readme](https://github.com/SigNoz/signoz/blob/main/README.zh-cn.md) to Chinese, and we couldn't be happier. 🤓
 ![Countries from which our stargazers belong](/img/blog/2021/08/stargazers_countries_hc.png)SigNoz's stargazers belong to nations worldwide
 ## Featured Issue
 

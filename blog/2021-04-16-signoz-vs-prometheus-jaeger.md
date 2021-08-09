@@ -21,7 +21,7 @@ Open source Observability Platform. 👉 SigNoz helps developers find issues in 
 - [The 3 pillars of Observability](#the-3-pillars-of-observability)
 - [The Easy and hard things about Prometheus ](#the-easy-and-hard-things-about-prometheus)
 - [The need for Distributed Tracing](#the-need-for-distributed-tracing)
-- [Running Metrics + Traces together. How complex can it go?](/blog/signoz-vs-prometheus-jaeger/metrics-and-tracing-together)
+- [Running Metrics + Traces together. How complex can it go?](#metrics-and-tracing-together)
 - [Need for Jaeger++](#need-for-jaeger-)
 - [Why we built SigNoz?](#why-we-built-signoz)
 - [Architecture of SigNoz](#architecture-of-signoz)
