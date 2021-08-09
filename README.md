@@ -1,4 +1,6 @@
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/957ec329-4bd8-4a8d-abb2-69c63f6f0388/deploy-status)](https://app.netlify.com/sites/adoring-bell-f729e6/deploys)
+
 This is source for signoz.io website and docs at signoz.io/docs built on docusaurus 2
 
 # Website
