@@ -2,7 +2,11 @@
 title: Cost benchmarking - Self hosting SigNoz vs using a SaaS vendor
 slug: signoz-benchmarks
 date: 2021-02-02
-tags: [Benchmarks, Distributed Tracing, monitoring]
+tags: [benchmarks, distributed-tracing, application-monitoring]
+author: Ankit Nayan
+author_title: SigNoz Team
+author_url: https://github.com/ankitnayan
+author_image_url: https://avatars.githubusercontent.com/u/12460410?v=4
 
 ---
 In this post we want to lay out typical price which someone would incur in running SigNoz. This would give potential users an idea of what resources they would need to provision & typical monthly cost at different application load and sampling rates.

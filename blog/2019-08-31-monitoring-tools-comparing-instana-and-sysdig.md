@@ -3,7 +3,10 @@ title: "Monitoring Tools: Comparing Instana and Sysdig"
 slug: monitoring-tools-comparing-instana-and-sysdig
 date: 2019-08-30
 tags: [monitoring, Instana, Sysdig, WeaveWorks, RED metrics]
-
+author: Ankit Nayan
+author_title: SigNoz Team
+author_url: https://github.com/ankitnayan
+author_image_url: https://avatars.githubusercontent.com/u/12460410?v=4
 ---
 In this blog, we compare Instana and Sysdig - two popular monitoring tools which claim to show APM metrics without need to instrument code
 <!--truncate-->

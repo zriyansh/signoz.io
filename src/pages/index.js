@@ -8,26 +8,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import {Collapse} from 'antd';
 import {CaretRightOutlined} from '@ant-design/icons';
 import ReactGA from 'react-ga';
-// import createHistory from 'history/createBrowserHistory';
 import styles from './styles.module.css';
-// import CodeSnippet from "@site/src/theme/CodeSnippet";
-// import Tabs from '@theme/Tabs';
-// import TabItem from '@theme/TabItem';//in markdown features
 import styled from 'styled-components'
-import {InstrumentationModal} from "../components/InstrumentationModal";
 import {PlaySVG} from "../svgs/common";
 
 const { Panel } = Collapse;
 
-// const history = createHistory();
 ReactGA.initialize('UA-152867655-1');// How to make it appear only for production?
-// useEffect(() => {
 ReactGA.pageview('Home Page')
-// }, [])
-// history.listen((location, action) => {
-//   ReactGA.pageview(location.pathname + location.search);
-//   console.log(location.pathname)
-// });
 ReactGA.event({
   category: 'User',
   action: 'Opened Main page'
@@ -60,80 +48,6 @@ const Title = styled.h1`
   text-align: center;
   color: palevioletred;
 `;
-
-const snippets = [
-  {
-    label: 'Mapping',
-    further: '/docs/',
-    config: `input:
-  gcp_pubsub:
-    project: foo
-    subscription: bar
-pipeline:
-  processors:
-    - bloblang: |
-        root.message = this
-        root.meta.link_count = this.links.length()
-        root.user.age = this.user.age.number()
-output:
-  redis_streams:
-    url: tcp://TODO:6379
-    stream: baz
-    max_in_flight: 20`,
-  },
-  {
-    label: 'Multiplexing',
-    further: '/docs/',
-    config: `input:
-  kafka:
-    addresses: [ TODO ]
-    topics: [ foo, bar ]
-    consumer_group: foogroup
-output:
-  switch:
-    cases:
-      - check: doc.tags.contains("AWS")
-        output:
-          aws_sqs:
-            url: https://sqs.us-west-2.amazonaws.com/TODO/TODO
-            max_in_flight: 20
-      - output:
-          redis_pubsub:
-            url: tcp://TODO:6379
-            channel: baz
-            max_in_flight: 20`,
-  },
-  {
-    label: 'Enrichments',
-    further: '/docs',
-    config: `input:
-  mqtt:
-    urls: [ tcp://TODO:1883 ]
-    topics: [ foo ]
-pipeline:
-  processors:
-    - branch:
-        request_map: |
-          root.id = this.doc.id
-          root.content = this.doc.body
-        processors:
-          - aws_lambda:
-              function: sentiment_analysis
-        result_map: root.results.sentiment = this
-output:
-  aws_s3:
-    bucket: TODO
-    path: '\${! meta("partition") }/\${! timestamp_unix_nano() }.tar.gz'
-    batching:
-      count: 100
-      period: 10s
-      processors:
-        - archive:
-            format: tar
-        - compress:
-            algorithm: gzip`,
-  },
-];
 
 const WhySigNoz = () => {
 
@@ -185,13 +99,6 @@ const WhySigNoz = () => {
 
 
 }
-
-
-// function Snippet({label, config}) {
-//   return (
-//     <CodeSnippet className={styles.configSnippet}  snippet={config}></CodeSnippet>
-//   );
-// }
 
 const features = [
   {
@@ -296,35 +203,6 @@ function TrySignozModal(props){
   )
 }
 
-// function ShowCompanyLogos() {
-//   return (
-    
-//     <section style={{background:'#060606'}}>
-//       <div className="container" style={{paddingTop: '1rem', paddingBottom:'1rem',}}>
-
-//       <div class="card-demo">
-//         <div class="card">
-          
-//           <div class="card__image">
-//             <img
-//               src="https://res.cloudinary.com/dcv3epinx/image/upload/v1620972288/solv_essbxw.png"
-//               alt="Image alt text"
-//               title="Solv"
-//             />
-//           </div>
-
-      
-
-//         </div>
-//       </div>
-           
-//       </div>
-
-//     </section>)
-
-
-// }
-
 function ShowCompanyLogos() {
   return (
     <section className={styles.used_by}>
@@ -353,10 +231,9 @@ function ShowCompanyLogos() {
               />
             </li>
             <li>
-            <img src="https://res.cloudinary.com/dcv3epinx/image/upload/v1621059423/wpromote_white_1_njjebt.svg" alt='wpromote logo' />
-              {/* <img src="https://res.cloudinary.com/dcv3epinx/image/upload/v1620977641/wpromote_tounbh.svg"
-              alt="GitLab logo"
-              /> */}
+            <img src="https://res.cloudinary.com/dcv3epinx/image/upload/v1621059423/wpromote_white_1_njjebt.svg" 
+            alt='wpromote logo' 
+            />
             </li>
           </ul>
       </div>
@@ -364,116 +241,6 @@ function ShowCompanyLogos() {
     </section>
   )
 }
-
-// function ShowCompanyLogos2() {
-//   return (
-    
-//     <section style={{background:'#060606'}}>
-//       <div className="container" style={{marginTop: '1rem', marginBottom:'1rem'}}>
-//         {/* <h1 class="text--center margin-vert--lg"> Why get locked-in with SaaS vendors like DataDog when you can use Open source?</h1> */}
-//         <div class="row">
-//           <div class="col col--2">
-//             <div class="card-demo margin--md">
-//               <div class="card">
-//                 <div class="card__image">
-//                   <img
-//                     src="https://res.cloudinary.com/dcv3epinx/image/upload/c_scale,w_100/v1620972288/solv_essbxw.png"
-//                     alt="Image alt text"
-//                     title="Solv"
-//                   />
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//           <div class="col col--2">
-//             <div class="card-demo margin--md">
-//               <div class="card">
-//               <div class="card__image">
-//                   <img
-//                     src="https://res.cloudinary.com/dcv3epinx/image/upload/v1620972288/solv_essbxw.png"
-//                     alt="Image alt text"
-//                     title="Solv"
-//                   />
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//           <div class="col col--2">
-//             <div class="card-demo margin--md">
-//               <div class="card">
-//               <div class="card__image">
-//                   <img
-//                     src="https://res.cloudinary.com/dcv3epinx/image/upload/v1620972288/solv_essbxw.png"
-//                     alt="Image alt text"
-//                     title="Solv"
-//                   />
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-
-//     )
-
-
-// }
-
-
-// function SubscribeNearFold() {
-//   const [nemail, setNEmail] = useState('')
-
-//   const onSubscribeN = ()=>{
-//     if(nemail.length<4){
-//       // alert("Please add correct email")
-//       setNEmail('Please add correct email')
-//     }else{
-//       fetch(`https://api.telegram.org/bot1641579317:AAGHqzQKOT9R3Wcxx7ZgHZcI0Vi6CzjmncY/sendMessage?chat_id=521831111&text=Email subscription - ${nemail}`).then(()=>{
-//         // alert("Subscribed successfully.")
-//         setNEmail('Thanks, you are on the list!')
-//       }).catch((e)=>{
-//         // alert("Some error occurred. Please try again.")
-//         setNEmail("Some error occurred. Please try again.")
-//       })
-//     }
-
-  
-
-//   }
-
-//   return (
-//   <section style={{background:'#060606'}}>
-//   <div className="container" style={{paddingTop: '1rem', paddingBottom:'1rem',}}>
-//   <div class="row">
-//       <div class="col col--12"   style={{
-//       display: 'flex',
-//       justifyContent: 'left',
-//       alignItems: 'center'}}>
-//         Interested?
-//       </div>
-//   </div>
-//   <div class="row">
-//     <div class="col col--8"   style={{
-//   display: 'flex',
-//   justifyContent: 'left',
-//   alignItems: 'center'}}>
-//       <input placeholder="Add your email to get updates about the project" className={"nearfold-newsletter"} value={nemail} onChange={(e)=>{
-//         setNEmail(e.target.value);console.log(e.target.value)
-//       }}/>
-//     </div>
-//     <div class="col col--4"
-//     style={{
-//       display: 'flex',
-//       alignItems: 'center'}}>
-//       <button className={"button button--secondary"} style={{marginBottom:'20px', marginTop:'12px'}} onClick={onSubscribeN} >Subscribe</button>
-//     </div>
-//   </div>
-//   </div>
-// </section>)
-
-
-// }
 
 function Home() {
   const[showTrySignozModal, setShowTrySignozModal] = useState(false);
@@ -870,24 +637,6 @@ function Home() {
         </div>
       </div>
     </section>
-
-
-        {/* <section style={{width: '70%', margin: '0px auto -30px auto',}}>
-          <div className="row">
-            <div className="col col--3" style={{textAlign: 'center'}}>
-              <img src={"/img/partners/aws1.png"} width={60}/>
-            </div>
-            <div className="col col--3" style={{textAlign: 'center'}} >
-              <img src={"/img/partners/druid1.png"}  width={120}/>
-            </div>
-            <div className="col col--3" style={{textAlign: 'center'}}>
-              <img src={"/img/partners/google-cloud1.png"}  width={140}/>
-            </div>
-            <div className="col col--3" style={{textAlign: 'center'}}>
-              <img src={"/img/partners/opentelemetry-stacked-color1.png"}  width={100}/>
-            </div>
-          </div>
-        </section> */}
 
 
         <section>

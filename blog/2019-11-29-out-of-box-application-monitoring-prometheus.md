@@ -3,6 +3,10 @@ title: Bringing out of the box application monitoring to Prometheus
 slug: out-of-box-application-monitoring-prometheus
 date: 2019-11-29
 tags: [Grafana, Prometheus, monitoring, Kubernetes, Observability]
+author: Ankit Nayan
+author_title: SigNoz Team
+author_url: https://github.com/ankitnayan
+author_image_url: https://avatars.githubusercontent.com/u/12460410?v=4
 ---
 Prometheus is undoubtedly growing as the native monitoring tool for Kubernetes. We have been using Prometheus to collect metrics about our infrastructure for a long, but setting it of the box is still painful
 <!--truncate-->

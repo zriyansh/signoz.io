@@ -3,7 +3,10 @@ title: My 7 key takeaways from PromCon 2019
 slug: 7-takeaways-prometheus-conference-2019
 date: 2019-11-19
 tags: [Prometheus, Grafana, AlertManager, Kubernetes, monitoring]
-
+author: Pranay Prateek
+author_title: SigNoz Team
+author_url: https://github.com/pranay01
+author_image_url: https://avatars.githubusercontent.com/u/504541?v=4
 ---
 PromCon is one of the premier conference on Prometheus and related tools like Grafana. This is held every year where developers from around the world gather to learn the latest in monitoring technologies
 <!--truncate-->

@@ -3,6 +3,9 @@ title: Getting started with OpenTelemetry on Kubernetes
 slug: opentelemetry-kubernetes
 date: 2020-07-23
 tags: [OpenTelemetry, Kubernetes, Distributed Tracing]
+author: Joy Bhattacharjee
+author_url: https://twitter.com/hashfyre
+author_image_url: https://pbs.twimg.com/profile_images/1298796024664743937/5ZPWaLTu_400x400.jpg
 ---
 OpenTelemetry is an instrumentation standard for application monitoring - both for monitoring metrics & distributed tracing. In this blog, we take you through a hands on guide on how to run this on Kubernetes.
 <!--truncate-->

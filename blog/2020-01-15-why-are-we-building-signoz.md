@@ -2,7 +2,11 @@
 title: Why are we building SigNoz?
 slug: why-are-we-building-signoz
 date: 2020-01-15
-tags: [founders  post, Observability]
+tags: [founders-post, observability]
+author: Pranay Prateek
+author_title: SigNoz Team
+author_url: https://github.com/pranay01
+author_image_url: https://avatars.githubusercontent.com/u/504541?v=4
 ---
 I am sure most of you have come across this situation. You liked something on the Internet, decided to buy it and made the payment at the payment gateway. After that you expect to come to the original website and see a confirmation message. Something of the sort 👇
 <!--truncate-->

@@ -2,7 +2,11 @@
 title: Self-hosting software & why it may be worth considering again now
 slug: self-hosting-software-observability
 date: 2021-04-16
-tags: [Self Hosting]
+tags: [self-hosting]
+author: Pranay Prateek
+author_title: SigNoz Team
+author_url: https://github.com/pranay01
+author_image_url: https://avatars.githubusercontent.com/u/504541?v=4
 
 
 ---
