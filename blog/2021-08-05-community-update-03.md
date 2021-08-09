@@ -2,7 +2,11 @@
 title: A major release, tons of bug fixes and amazing new contributors - Signal #03
 slug: community-update-03
 date: 2021-08-05
-tags: [Product Update, Signal, Community]
+tags: [product, community]
+author: Ankit Anand
+author_title: SigNoz Team
+author_url: https://github.com/ankit01-oss
+author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 
 ---
 It's time for monthly product updates aka Signal #03. This month's release hit  a major milestones with PRs from 10+ contributors. Let's see what humans of SigNoz have been upto 🙌

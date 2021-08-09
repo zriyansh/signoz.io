@@ -2,6 +2,12 @@
 title: How to set up Golang application performance monitoring with open source monitoring tool - SigNoz
 slug: monitoring-your-go-application-with-signoz
 date: 2021-06-15
+tags: [application-monitoring, golang]
+author: Ankit Anand
+author_title: SigNoz Team
+author_url: https://github.com/ankit01-oss
+author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+
 ---
 In this article, learn how to setup application monitoring for Golang apps using an open-source solution, SigNoz.
 <!--truncate-->

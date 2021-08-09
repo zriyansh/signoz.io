@@ -4,6 +4,7 @@ slug: self-hosting-software-observability
 date: 2021-04-16
 tags: [Self Hosting]
 
+
 ---
 Not all industries are the same in terms of the sensitivity of data they handle. And as you mature as a company, you need to be more careful of how you handle your critical data. With the advent of modern cloud native technologies & Kubernetes, on-prem software is more viable now
 <!--truncate-->

@@ -2,7 +2,12 @@
 title: Monitor your Spring Boot application with OpenTelemetry and SigNoz
 slug: opentelemetry-spring-boot
 date: 2021-08-02
-tags: [OpenTelemetry, Spring Boot, Application Monitoring, Java Monitoring]
+tags: [ spring-boot, application-monitoring, java-monitoring]
+author: Ankit Anand
+author_title: SigNoz Team
+author_url: https://github.com/ankit01-oss
+author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+
 
 ---
 OpenTelemetry can auto instrument your Spring Boot application to capture telemetry data from a number of popular libraries and frameworks. Let's learn how it works.

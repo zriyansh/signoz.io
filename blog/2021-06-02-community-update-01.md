@@ -2,7 +2,12 @@
 title: Our first community update - Signal #01
 slug: community-update-01
 date: 2021-06-02
-tags: [Community]
+tags: [community]
+author: Ankit Anand
+author_title: SigNoz Team
+author_url: https://github.com/ankit01-oss
+author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+
 
 ---
 Excited to launch our first newsletter. We are delighted to have crossed 1.6k stars on GitHub, growing more than 30% last month. Catch up on what we're upto at SigNoz!

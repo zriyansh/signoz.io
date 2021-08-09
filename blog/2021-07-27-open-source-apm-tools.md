@@ -2,7 +2,11 @@
 title: Top 13 open source APM tools in 2021
 slug: open-source-apm-tools
 date: 2021-07-27
-tags: [APM tools, Application Monitoring, Open Source]
+tags: [apm-tools, application-monitoring, open-source]
+author: Ankit Anand
+author_title: SigNoz Team
+author_url: https://github.com/ankit01-oss
+author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 
 ---
 Choosing the right APM tool is critical. How do you know which is the right one for you? Here are the top 13 open source application performance monitoring(APM) tools which can solve your monitoring needs.

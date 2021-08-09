@@ -2,7 +2,12 @@
 title: The genesis of SigNoz - A full-stack open source observability platform
 slug: signoz-vs-prometheus-jaeger
 date: 2021-04-16
-tags: [Observability, Distributed Tracing, Cortex, OpenTelemetry]
+tags: [observability, distributed-tracing]
+author: Ankit Nayan
+author_title: SigNoz Team
+author_url: https://github.com/ankitnayan
+author_image_url: https://avatars.githubusercontent.com/u/12460410?v=4
+
 ---
 Why we felt there was a need for a full-stack open source observability platform and how we went about building it.
 <!--truncate-->
