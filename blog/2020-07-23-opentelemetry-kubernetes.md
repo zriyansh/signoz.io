@@ -20,7 +20,7 @@ OpenTelemetry is an instrumentation standard for application monitoring - both f
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/07/SigNoz-OpenTelemetry-k8s.png)
+![Cover Image](/img/blog/2021/07/SigNoz-Opentelemetry-k8s.png)
 
 At [SigNoz](https://signoz.io), we support OpenTelemetry as an instrumentation standard - and provide an easy way to accomplish application monitoring leveraging the same. As a first step, we are sharing a detailed guide for developers/devops/SRE folks who want to get started with OpenTelemetry stack on Kubernetes.
 
