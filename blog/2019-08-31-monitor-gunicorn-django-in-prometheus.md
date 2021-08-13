@@ -2,25 +2,35 @@
 title: Monitoring OpenMetrics for Gunicorn and Django application in Prometheus
 slug: monitor-gunicorn-django-in-prometheus
 date: 2019-08-30
-tags: [monitoring, Prometheus, Grafana, Gunicorn, Helm, Python, Django, Kubernetes]
+tags: [application-monitoring, prometheus, grafana, python-monitoring]
 author: Ankit Nayan
 author_title: SigNoz Team
 author_url: https://github.com/ankitnayan
 author_image_url: https://avatars.githubusercontent.com/u/12460410?v=4
+description: In this blog, let's see how to set up Prometheus and Grafana in EKS and how to monitor Python based applications using Prometheus.
+image: /img/blog/2019/08/Python-Prometheus-2.png
+keywords:
+  - Prometheus
+  - Grafana
+  - kubernetes
+  - Application Monitoring
+  - python monitoring
 ---
 
 In this blog, I will discuss about how to set up Prometheus and Grafana in EKS and how to monitor Python based applications using Prometheus.
+
 <!--truncate-->
+
+![Cover Image](/img/blog/2019/08/Python-Prometheus-2.png)
 
 ## Setting up Prometheus and Grafana in EKS
 
-### *Create cluster in EKS*
-
+### _Create cluster in EKS_
 
 Create cluster and the command is:
 `eksctl create cluster --name prod --version 1.13 --nodegroup-name standard-workers --node-type t3.medium --nodes 3 --nodes-min 1 --nodes-max 4 --node-ami auto`
 
-### *Setup Prometheus and Grafana using Helm*
+### _Setup Prometheus and Grafana using Helm_
 
 Follow this [link](https://eksworkshop.com/monitoring/) to set up prometheus and grafana in EKS cluster
 
@@ -35,13 +45,13 @@ SigNoz helps developers monitor their applications & troubleshoot problems, an o
 
 ![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
 ](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+
 **Grafana is exposed to public using Service type LoadBalancer.** You can get the External IP by running: `kubectl get svc -n grafana grafana -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'` which runs on port 80. Just visit the result the above command and you should see your grafana dashboard.
 
-**Prometheus server by default is not exposed to public** and you can access the prometheus expression browser by running below commands in your localhost/environment: 
+**Prometheus server by default is not exposed to public** and you can access the prometheus expression browser by running below commands in your localhost/environment:
 
     $ PROM_SERVER_POD=$(kubectl -n prometheus get pod -l component=server -o jsonpath="{.items[0].metadata.name}")
     $ kubectl -n prometheus port-forward $PROM_SERVER_POD 9090
-    
 
 Now you can access the prometheus expression browser at `http://localhost:9090`
 
@@ -60,17 +70,15 @@ We shall be deploying our web application using kubernetes deployment. However, 
 Run following command at project root directory
 
     $ git clone https://github.com/ankitnayan/django_sample_project.git
-    
+
     $ cd django_sample_project
-    
+
     $ pip3 install -r requirements.txt
-    
+
     $ gunicorn django_sample_project.wsgi:application --bind 0.0.0.0:8000 --workers 3 --access-logfile='-' --statsd-host=localhost:9125 --access-logformat='%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(p)s" "%(D)s"'
-    
-    
 
 `--statsd-host` parameter enables gunicorn to send metrics to statsd-server
-Also, I have changed the access log format of gunicorn to log ***worker pid*** and ***response time (in microseconds)*** . This format later helps to debug request count and latency by worker processes.
+Also, I have changed the access log format of gunicorn to log **_worker pid_** and **_response time (in microseconds)_** . This format later helps to debug request count and latency by worker processes.
 
 Run `curl http://localhost:8000/polls/2xx_success/` from your terminal to check the response
 The application also logs `Error sending message to statsd` because we have not run statsd server till now but the django application runs perfectly.
@@ -109,28 +117,32 @@ Instead of Prometheus scraping our Python web application directly, we will let 
 
 **Multi Process Mode of python client**[Link](https://github.com/prometheus/client_python#multiprocess-mode-gunicorn)
 The prometheus python client has a multi-processing mode which essentially creates a shared prometheus registry and shares it among all the processes and hence the [aggregation](https://github.com/prometheus/client_python/blob/master/prometheus_client/multiprocess.py) happens at the application level. When, prometheus scrapes the application instance, no matter which worker responds to the scraping request, the metrics reported back describes the application’s behaviour, rather than the worker responding.
-This [blog](blog) from MetricFire  explains how to set up native python client for *nginx + uwsgi + Flask* apps
+This [blog](blog) from MetricFire  explains how to set up native python client for _nginx + uwsgi + Flask_ apps
 
 **Django Prometheus** library [Link](https://github.com/korfuri/django-prometheus)
 The Django prometheus client adopts an approach where you basically have each [worker listening](https://github.com/korfuri/django-prometheus/blob/master/documentation/exports.md) on a unique port for prometheus’s scraping requests. Thus, for prometheus, each of these workers are different targets as if they were running on different instances of the application.
 
 ## Running gunicorn with statsd
 
----
+We can run statsd-exporter as a side-car to django application container in each pod. The number of scraping targets for prometheus will be equal to number of pods running.
 
-We can run statsd-exporter as a side-car to django application container in each pod. The number of scraping targets for prometheus will be equal to number of pods running. 
 ![](/img/blog/2019/08/Screenshot-2019-08-30-at-11.08.32-AM.png)
-Or we can run 1 statsd-exporter per node. All applications in a node shall push to a common statsd server of that node. 
+
+Or we can run 1 statsd-exporter per node. All applications in a node shall push to a common statsd server of that node.
+
 ![](/img/blog/2019/08/Screenshot-2019-08-30-at-11.38.11-AM.png)
+
 **I have used side-car pattern to deploy statsd-exporter (check `django-deployment.yml`).**
+
 ![](/img/blog/2019/08/Screenshot-2019-08-30-at-11.55.49-AM.png)
+
 Now, deploy the pods and services using
 `kubectl create namespace django-with-statsd`
 `kubectl -n django-with-statsd apply -f k8s/` (see k8s folder inside the repo)
 
 > Don't forget to open port 8000 for that security group in AWS
 
-Run below command to get the External IP of the service which exposes your application to the public world. 
+Run below command to get the External IP of the service which exposes your application to the public world.
 
 `kubectl get svc -n django-with-statsd django-with-statsd -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'`
 
@@ -147,6 +159,7 @@ SigNoz helps developers monitor their applications & troubleshoot problems, an o
 
 ![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
 ](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+
 ## Load testing to check RPS and latency metrics
 
 I am using locustio to generate some traffic to the application and then shall verify them in prom expression browser.
@@ -174,10 +187,14 @@ Those who are wondering what RED metrics mean.
 - D -> Duration -> Time each request takes
 
 ### Request Rate: `sum(rate(gunicorn_requests[1m]))`
+
 ![](/img/blog/2019/08/Screenshot-2019-08-30-at-1.24.00-PM.png)
+
 The RPS is around 4 which is confirmed from the locust web portal.
+
 ![](/img/blog/2019/08/Screenshot-2019-08-30-at-1.25.41-PM.png)
-Similarly we can get other rates by: 
+
+Similarly we can get other rates by:
 
 - Rate of 200: `sum(rate(gunicorn_request_status_200[1m]))`
 - Rate of 500: `sum(rate(gunicorn_request_status_500[1m]))`
@@ -189,6 +206,7 @@ Similarly we can get other rates by:
 
 This will generate the below graph
 ![](/img/blog/2019/08/Screenshot-2019-08-30-at-1.17.50-PM.png)
+
 - 2 lines in graph because we have 2 pods in the deployment and hence 2 statsd-exporter since they are sidecars
 - Gap in graph because I stopped the load generator for some time
 - You should also get a value close to `0.4s`. I have written application logic to sleep for some time based on normal distribution so that we have an average of `0.8s` for every 2xx request. Since the weight in load generator is 2 for 2xx requests, 1 for 4xx request and 1 for 5xx request, it averages to `2*0.8/4` which equals `0.4s`.
@@ -215,35 +233,42 @@ Our middleware class must implement 1 of the below methods:
 
 Called during request:
 
-- ****`process_request(request)`****
-- ****`process_view(request, view_func, view_args, view_kwargs)`****
+- \***\*`process_request(request)`\*\***
+- \***\*`process_view(request, view_func, view_args, view_kwargs)`\*\***
 
 Called during response:
 
-- ****`process_exception(request, exception)`**** (only if the view raised an exception)
-- ****`process_template_response(request, response)`**** (only for template responses)
-- ****`process_response(request, response)`****
+- \***\*`process_exception(request, exception)`\*\*** (only if the view raised an exception)
+- \***\*`process_template_response(request, response)`\*\*** (only for template responses)
+- \***\*`process_response(request, response)`\*\***
 
 We shall implement `process_request` and `process_response` methods for our case. Have a look at the `[middlewares/collect_statsd_metrics.py](https://github.com/ankitnayan/django_sample_project/blob/master/middlewares/collect_statsd_metrics.py)`
+
 ![](/img/blog/2019/08/Screenshot-2019-08-30-at-3.59.20-PM.png)
+
 > If you notice, we are using DogStatsd library to include tags in the metrics which correspond to prometheus labels.
 
 As you can see, we have labels of status codes, endpoint, method and service for  `REQUEST_COUNT_METRIC_NAME` and service, endpoint labels for `REQUEST_LATENCY_METRIC_NAME`.
 
 Now add this on top of all middlewares in your settings.py and you will be good to go.
+
 ![](/img/blog/2019/08/Screenshot-2019-08-30-at-4.12.59-PM.png)
+
 ### RPS of `/polls/2xx_success/`
 
 `sum(rate(django_request_count{endpoint="/polls/2xx_success/", instance=~".*"}[1m]))`
 ![](/img/blog/2019/08/Screenshot-2019-08-30-at-4.26.03-PM.png)
+
 ### RPS by endpoint
 
 `sum(rate(django_request_count{instance=~".*"}[1m])) by (endpoint)`
 ![](/img/blog/2019/08/Screenshot-2019-08-30-at-4.50.34-PM.png)
+
 ### Average request duration per endpoint
 
 `avg(rate(django_request_latency_seconds_sum[1m])/rate(django_request_latency_seconds_count[1m])) by (endpoint)`
 ![](/img/blog/2019/08/Screenshot-2019-08-30-at-4.48.02-PM.png)
+
 ### Quantile of endpoints
 
 `django_request_latency_seconds{endpoint="/polls/2xx_success/"}`
@@ -256,28 +281,31 @@ Now, we have very detailed RPS and latency filtering working for our application
 
 ## What happens to Prometheus metrics when one of the nodes die? Exploring highly available Prometheus!
 
-### *Case 1: The node other than Prometheus server was stopped*
+### _Case 1: The node other than Prometheus server was stopped_
+
 ![](/img/blog/2019/08/stopping_non_prometheus_server_node.png)
+
 > This data has been collected for different web application but the results should be very similar
 
-The node which was killed was hosting 1 pod of the django application. So, we see metrics from 1 pod dying while the other pod kept sending correct metrics to prometheus. 
+The node which was killed was hosting 1 pod of the django application. So, we see metrics from 1 pod dying while the other pod kept sending correct metrics to prometheus.
 
 Soon enough (roughly after 2 minutes) kubernetes started another pod to match current state to desired state and the metrics from this new pod start coming automatically as prometheus discovers them by auto discovery of targets which I enabled in our `k8s/django-deployment.yml` file by below annotations:
 
             prometheus.io/scrape: 'true'
             prometheus.io/port:   '9102'
             prometheus.io/path:   '/metrics'
-    
 
-### *Case 2: The node hosting Prometheus server was stopped*
+### _Case 2: The node hosting Prometheus server was stopped_
+
 ![](/img/blog/2019/08/stopping_prometheus_server_node.png)
-Around the right side, we see a gap in the graph. This is the expected behaviour because prometheus server is not able to scrape metrics from any targets. Hence no metrics are collected till the time kubernetes auto restarts the prometheus-server pod. 
+Around the right side, we see a gap in the graph. This is the expected behaviour because prometheus server is not able to scrape metrics from any targets. Hence no metrics are collected till the time kubernetes auto restarts the prometheus-server pod.
 
 **The great thing being, in either case of node failure the system restores without any manual intervention. That's what is fantastic about kubernetes!**
 
-I hope this blog helps you setup metrics in prometheus for gunicorn and django stack. Feel free to reach out to me in case of any queries or suggestions. 
+I hope this blog helps you setup metrics in prometheus for gunicorn and django stack. Feel free to reach out to me in case of any queries or suggestions.
 
 ---
+
 [
 
 SigNoz/signoz
@@ -288,7 +316,8 @@ SigNoz helps developers monitor their applications & troubleshoot problems, an o
 
 ![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
 ](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
-**For any Prometheus related query reach me out on [Twitter](https://twitter.com/ankitnayan) or mail me at `ankit@signoz.io`**
+
+For any Prometheus related query reach me out on [Twitter](https://twitter.com/ankitnayan) or mail me at `ankit@signoz.io`
 
 #### Below blogs were helpful in understanding and implementing the concepts:
 

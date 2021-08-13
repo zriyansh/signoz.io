@@ -7,11 +7,20 @@ author: Ankit Nayan
 author_title: SigNoz Team
 author_url: https://github.com/ankitnayan
 author_image_url: https://avatars.githubusercontent.com/u/12460410?v=4
+description: In this blog, we explain how we enable high availability Prometheus using Cortex and Cassandra. This provides a single pane of view across multiple clusters - which enables visualising all monitoring metrics in one go.
+image: /img/blog/2019/12/HA-Prometheus-1.png
+keywords:
+  - Prometheus
+  - cassandra
+  - cortex
+  - Application Monitoring
 ---
 
 In this blog, we explain how we enable high availability Prometheus using Cortex and Cassandra. This provides a single pane of view across multiple clusters - which enables visualising all monitoring metrics in one go.
 
 <!--truncate-->
+
+![Cover Image](/img/blog/2019/12/HA-Prometheus-1.png)
 
 ## Why need Cortex?
 
@@ -239,7 +248,11 @@ Now install Grafana using command:
 You can pre-provision dashboards for Cortex performance or you can copy json files to dashboard manually and save them.
 
 Dashboard links and instructions can be found at [official Cortex github repo](https://github.com/cortexproject/cortex/tree/1dd96fd35d120bb45ce793a8799e43c14a50ac84/production/dashboards).
-![](/img/blog/2019/11/Screenshot-2019-11-30-at-2.59.13-PM.png)Cortex Write Dashboard![](/img/blog/2019/11/Screenshot-2019-11-30-at-3.00.18-PM.png)Cortex Read Dashboard
+
+![](/img/blog/2019/11/Screenshot-2019-11-30-at-2.59.13-PM.png)Cortex Write Dashboard
+
+![](/img/blog/2019/11/Screenshot-2019-11-30-at-3.00.18-PM.png)Cortex Read Dashboard
+
 Using the above dashboards you can monitor Cortex writes/sec by status codes and latencies of Distributor and Ingester. And similarly for reads/sec of Querier, Ingester and Memcache.
 
 ## Protection against Cardinality Bombing

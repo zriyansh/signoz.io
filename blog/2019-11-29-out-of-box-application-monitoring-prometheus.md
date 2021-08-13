@@ -74,6 +74,7 @@ Some cool features are:
 - Error percentage and RPS by status codes
 
 ![](/img/blog/2019/11/Screenshot-2019-11-29-at-4.22.53-PM.png)fig. 6 Metrics about external services
+
 The payment service calls user and cart services apart from _paypal.com_. We can analyse:
 
 - RPS of external calls by status code - now we can monitor how the calls to other micro-services are impacting this application
