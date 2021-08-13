@@ -7,7 +7,7 @@ author: Joy Bhattacharjee
 author_url: https://twitter.com/hashfyre
 author_image_url: https://pbs.twimg.com/profile_images/1298796024664743937/5ZPWaLTu_400x400.jpg
 description: OpenTelemetry is an instrumentation standard for application monitoring - both for monitoring metrics & distributed tracing. In this blog, we take you through a hands on guide on how to run this on Kubernetes.
-image: /img/blog/2021/07/SigNoz-OpenTelemetry-k8s.png
+image: /img/blog/2020/07/SigNoz-OpenTelemetry-k8s.png
 keywords:
   - OpenTelemetry
   - Kubernetes
