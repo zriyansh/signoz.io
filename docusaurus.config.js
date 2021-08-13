@@ -61,12 +61,12 @@ module.exports = {
           label: 'Slack',
           position: 'right',
         },
-        {
-          to: 'pricing/',
-          activeBasePath: 'pricing',
-          label: 'Cloud',
-          position: 'right',
-        },
+        // {
+        //   to: 'pricing/',
+        //   activeBasePath: 'pricing',
+        //   label: 'Cloud',
+        //   position: 'right',
+        // },
         {
           to: 'about-us/',
           label: 'About',
@@ -152,6 +152,11 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          trailingSlash: true,
         },
       },
     ],
