@@ -90,7 +90,7 @@ function Navbar() {
         <div className="navbar__items navbar__items--right">
           <iframe
               className="display--tablet"
-              src={`https://ghbtns.com/github-btn.html?user=SigNoz&repo=signoz&type=star&count=true&size=large`}
+              src={`https://ghbtns.com/github-btn.html?user=signoz&repo=signoz&type=star&count=true&size=large`}
               frameBorder="0"
               scrolling="0"
               width="150"
