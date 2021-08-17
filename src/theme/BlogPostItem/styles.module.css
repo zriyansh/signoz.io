@@ -9,7 +9,9 @@
   font-size: 2rem;
 }
 .blogPostTitle a,
-.tags {
+.tags,
+.avatarName a,
+.readMore strong {
   color: #f99781 !important;
 }
 

@@ -78,7 +78,7 @@ function BlogPostItem(props) {
           <div className="avatar__intro">
             {author && (
               <>
-                <h4 className="avatar__name">
+                <h4 className={`${styles.avatarName} avatar__name`}>
                   <a href={authorURL} target="_blank" rel="noreferrer noopener">
                     {author}
                   </a>
@@ -128,7 +128,7 @@ function BlogPostItem(props) {
               </div>
             )}
             {truncated && (
-              <div className={`${styles.readMore}text--right`}>
+              <div className={`${styles.readMore} text--right`}>
                 <Link
                   to={metadata.permalink}
                   aria-label={`Read more about ${title}`}
