@@ -26,9 +26,10 @@ function BlogPostPage(props) {
       {BlogPostContents && (
         <div className="container margin-vert--lg">
           <div className="row">
-            <div className="col col--3">
+            <div className="col col--2">
               <BlogSidebar sidebar={sidebar} />
             </div>
+
             <main className="col col--8">
               <BlogPostItem
                 frontMatter={frontMatter}
@@ -37,6 +38,7 @@ function BlogPostPage(props) {
               >
                 <BlogPostContents />
               </BlogPostItem>
+
               <div>
                 {editUrl && (
                   <a href={editUrl} target="_blank" rel="noreferrer noopener">
@@ -52,7 +54,7 @@ function BlogPostPage(props) {
               )}
             </main>
             {!hideTableOfContents && BlogPostContents.toc && (
-              <div className="col col--3">
+              <div className="col col--2">
                 <TOC toc={BlogPostContents.toc} />
               </div>
             )}
