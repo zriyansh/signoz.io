@@ -57,7 +57,7 @@ function BlogTagsListPage(props) {
           <div className="col col--3">
             <BlogSidebar sidebar={sidebar} />
           </div>
-          <main className="col col--8">
+          <main className="col col--7">
             <h1>Tags</h1>
             <div className="margin-vert--lg">{tagsSection}</div>
           </main>

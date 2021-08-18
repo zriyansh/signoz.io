@@ -31,7 +31,7 @@ function BlogListPage(props) {
           <div className="col col--3">
             <BlogSidebar sidebar={sidebar} />
           </div>
-          <main className="col col--8">
+          <main className="col col--7">
             {items.map(({ content: BlogPostContent }) => (
               <BlogPostItem
                 key={BlogPostContent.metadata.permalink}

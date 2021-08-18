@@ -28,7 +28,7 @@ function BlogTagsPostPage(props) {
           <div className="col col--3">
             <BlogSidebar sidebar={sidebar} />
           </div>
-          <main className="col col--8">
+          <main className="col col--7">
             <h1>
               {count} {pluralize(count, "post")} tagged with &quot;{tagName}
               &quot;
