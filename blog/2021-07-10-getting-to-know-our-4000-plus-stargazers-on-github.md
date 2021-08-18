@@ -97,13 +97,5 @@ If you want to drop by and say hi, here's a link to our [slack community](https:
 You can try out the [Stargazers](https://github.com/spencerkimball/stargazers) tool for your repo or any repo you would like to analyze.
 
 If you're looking for a full-stack monitoring & observability tool, feel free to check out our GitHub repo 👇
-[
 
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)

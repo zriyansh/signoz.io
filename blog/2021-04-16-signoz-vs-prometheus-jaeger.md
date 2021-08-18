@@ -24,16 +24,7 @@ Why we felt there was a need for a full-stack open source observability platform
 
 <!--truncate-->
 
-![cover image](/img/SigNoz_UI_hc.png)
-
-SigNoz/signoz
-
-Open source Observability Platform. 👉 SigNoz helps developers find issues in their deployed applications & solve them quickly - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/SigNoz/signoz)Want to play with the code - check out our Github Repo
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 ### Table of Contents
 
@@ -111,17 +102,7 @@ The above image depicts the flow of a request in Uber. They have thousands of se
 
 If something breaks, we would want to know whether downstream services failed or any particular instance was causing the issue or a new deployment is causing the errors.
 
-Distributed tracing comes in very useful in such scenarios. Below is a sample ride-hailing onDemand application that shows the usefulness of distributed tracing.
-[
-
-Take OpenTracing for a HotROD ride
-
-OpenTracing is a new, open standard for instrumenting applications and OSS packages for distributed tracing and monitoring. In this post we explore the features and capabilities of OpenTracing using…
-
-![](https://miro.medium.com/fit/c/152/152/1*sHhtYhaCe2Uc3IU0IgKwIQ.png)Yuri ShkuroOpenTracing
-
-![](https://miro.medium.com/max/1200/1*qV-nBz4460RReawCgSgAow.jpeg)
-](https://medium.com/opentracing/take-opentracing-for-a-hotrod-ride-f6e3141f7941)Hot R.O.D application
+Distributed tracing comes in very useful in such scenarios. [Here](https://medium.com/opentracing/take-opentracing-for-a-hotrod-ride-f6e3141f7941) is a sample ride-hailing onDemand application that shows the usefulness of distributed tracing.
 
 You can see individual traces in the Jaeger UI. The number of services this request passed through, the number of spans/events generated, the total time of the trace. You can also filter the traces based on service, duration and tags.
 
@@ -185,18 +166,9 @@ The above architecture uses both metrics and tracing data as independent silos, 
 
 4. Enterprise need multi-tenancy and RBAC control to restrict security threats and misuse inside the organisation
 
-# Why we built SigNoz?
+## Why we built SigNoz?
 
-[
-
-SigNoz/signoz
-
-Open source Observability Platform. 👉 SigNoz helps developers find issues in their deployed applications & solve them quickly - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/SigNoz/signoz)SigNoz is open source - Check out our Github repo
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 - Metrics + Traces in a single pane
 - Powerful Trace filtering and aggregation capabilities
@@ -209,7 +181,8 @@ Open source Observability Platform. 👉 SigNoz helps developers find issues in 
 - Enterprise features like RBAC + SSO (coming soon)
 - OpenSource anomaly detection framework (coming soon)
 
-Architecture of SigNoz
+### Architecture of SigNoz
+
 ![Architecture of SigNoz](https://lh4.googleusercontent.com/VCXzQZN2vhjySRccB3bEtEV_UBxFtBLU1x6-ica1SYrat3B0G09hMeDbCAGlPE9ENQjdbYaaHMVZB_Nw9en-d5dTlluwdEFTWakQlzBAfo18Otn7xPfIFQKts4yFYU__jsLTqNDmZoI)Architecture of SigNoz
 
 **Components**
@@ -252,17 +225,7 @@ The flattened data is then ingested to **Druid \***which is a real-time analytic
 
 ## How to start using SigNoz with OpenTelemetry?
 
-OpenTelemetry is a vendor-neutral instrumentation framework that provides libraries and tools in various languages to start sending telemetry data compliant to a standard.
-[
-
-OpenTelemetry
-
-The OpenTelemetry Project Site
-
-![](https://opentelemetry.io/favicons/android-192x192.png)OpenTelemetry
-
-![](https://opentelemetry.io/featured-background.jpg)
-](https://opentelemetry.io/)
+[OpenTelemetry](https://opentelemetry.io/) is a vendor-neutral instrumentation framework that provides libraries and tools in various languages to start sending telemetry data compliant to a standard.
 
 ### To gain observability into your applications you need to follow 2 steps:
 
@@ -291,13 +254,5 @@ That's all you need to see the beautiful dashboard of SigNoz with all your metri
 In this blog, I have laid out why we created SigNoz and how it differentiates from other tools in the market today.
 
 Would love to get any feedback on the product and if you like what we are doing - give us a star on our Github repo 👇
-[
 
-SigNoz/signoz
-
-Open source Observability Platform. 👉 SigNoz helps developers find issues in their deployed applications & solve them quickly - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/SigNoz/signoz)⭐️ If you like SigNoz, give it a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)

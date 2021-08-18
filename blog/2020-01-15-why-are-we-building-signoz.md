@@ -100,6 +100,8 @@ If you compare this timeline to human evolution, this is nothing. Humans have be
 
 This is what we believe SigNoz can help achieve. Making cloud systems become reliable, proactive and self-healing. We think that this future is possible in the next 5-10 years and we want to play our small part in achieving this.
 
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+
 ---
 
 We will keep you updated on our journey. Happy to listen to any thoughts/comments you may have. Please share them by commenting below or writing to me at **_pranay at signoz dot io_**

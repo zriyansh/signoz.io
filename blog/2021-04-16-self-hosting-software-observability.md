@@ -89,13 +89,5 @@ If you need more social proof to give more thought into this, here's  Elon Musk
 ---
 
 If the above made any tiny bit of sense, check out SigNoz, which is an open-source, self host-able alternative to application monitoring products like DataDog. Give it a whirl and let us know what you think!
-[
 
-SigNoz/signoz
-
-Open source Observability Platform. 👉 SigNoz helps developers find issues in their deployed applications & solve them quickly - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)

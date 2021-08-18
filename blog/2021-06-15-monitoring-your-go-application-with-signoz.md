@@ -25,16 +25,8 @@ In this article, learn how to setup application monitoring for Golang apps using
 <!--truncate-->
 
 If you want to check our Github repo before diving in 👇
-[
 
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 Scalability, Reliability, Maintainability...
 
@@ -231,13 +223,5 @@ Check out our [documentation](https://signoz.io/docs/deployment/docker) for more
 They say, "If it's not monitored, then it's not in production." And with SigNoz you can start monitoring your applications now. Enabling your team to resolve issues quickly in production is critical to maintaining complex distributed systems in fine health.
 
 At SigNoz, we are committed to making the best open-source, self-hosted tool for application performance monitoring. Feel free to check out our GitHub repo here:
-[
 
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)

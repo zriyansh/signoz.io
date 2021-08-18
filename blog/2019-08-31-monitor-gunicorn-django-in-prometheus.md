@@ -9,6 +9,7 @@ author_url: https://github.com/ankitnayan
 author_image_url: https://avatars.githubusercontent.com/u/12460410?v=4
 description: In this blog, let's see how to set up Prometheus and Grafana in EKS and how to monitor Python based applications using Prometheus.
 image: /img/blog/2019/08/Python-Prometheus-2.png
+hide_table_of_contents: true
 keywords:
   - Prometheus
   - Grafana
@@ -35,16 +36,8 @@ Create cluster and the command is:
 Follow this [link](https://eksworkshop.com/monitoring/) to set up prometheus and grafana in EKS cluster
 
 also add `--set server.global.scrape_interval="10s"` while installing prometheus from helm using the above link. The default scrape interval is 1m. This may test your patience to see metrics reflected in your Prometheus expression browser.
-[
 
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 **Grafana is exposed to public using Service type LoadBalancer.** You can get the External IP by running: `kubectl get svc -n grafana grafana -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'` which runs on port 80. Just visit the result the above command and you should see your grafana dashboard.
 
@@ -149,16 +142,8 @@ Run below command to get the External IP of the service which exposes your appli
 The type of service is LoadBalancer (ELB) which is provided by AWS and hence you will be charged for the same. You can view the ELB used in the list of Load Balancer in AWS dashboard.
 
 Now, visit the url `<externalIP>:8000/polls/2xx_success` and confirm that it works.
-[
 
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 ## Load testing to check RPS and latency metrics
 
@@ -306,16 +291,7 @@ I hope this blog helps you setup metrics in prometheus for gunicorn and django s
 
 ---
 
-[
-
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 For any Prometheus related query reach me out on [Twitter](https://twitter.com/ankitnayan) or mail me at `ankit@signoz.io`
 

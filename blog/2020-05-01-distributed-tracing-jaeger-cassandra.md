@@ -34,16 +34,8 @@ Distributed tracing, also called distributed request tracing, is a method used t
 - Logs do not propagate context across services
 
 A simple workaround for maintaining context across logs is passing a global requestId in the header when one service calls another service. A trace is more about an individual request and adding info to it as it moves across process boundaries, adding tags with valuable information about deployment versions, priority, IP, device info, etc.
-[
 
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 #### Tools and cost to run it in-house
 
@@ -72,16 +64,8 @@ I instrumented my applications using fork of DataDog client libraries. A set of 
 And Cassandra took 8.8GiB of disk space when used with a ReplicationFactor of 2. Thus, estimated storage needs would be 1.27 GiB per million spans.
 
 We will share a more detailed analysis of the cost to run Jaeger in-house soon and shall compare the pricing of existing vendors in the APM space.
-[
 
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 ### Set up Jaeger for Kubernetes
 
@@ -130,21 +114,18 @@ Load Column shows the space consumed in each disk attached to Cassandra node. Ow
 ### Sample application to see tracing in work
 
 We enabled HotROD application while installing Jaeger from helm chart, remember?
-[
 
-Take OpenTracing for a HotROD ride
+[![OpenTracing for HOT ROD](/img/blog/2020/05/opentracing_hotrod.png)](https://medium.com/opentracing/take-opentracing-for-a-hotrod-ride-f6e3141f7941)
 
-OpenTracing is a new, open standard for instrumenting applications and OSS packages for distributed tracing and monitoring. In this post we explore the features and capabilities of OpenTracing using…
-
-![](https://cdn-images-1.medium.com/fit/c/152/152/1*8I-HPL0bfoIzGied-dzOvA.png)Yuri ShkuroOpenTracing
-
-![](https://miro.medium.com/max/1200/1*qV-nBz4460RReawCgSgAow.jpeg)
-](https://medium.com/opentracing/take-opentracing-for-a-hotrod-ride-f6e3141f7941)
 To access the UI of the HotROD application run
 `kubectl port-forward svc/jaeger-hotrod 4000:80`. The below screen will be visible. Click on a few buttons and check whether you get a response about a driver arriving in some time, something like below.
+
 ![](/img/blog/2020/04/Screenshot-2020-04-30-at-7.21.15-PM.png)Landing Page of HotROD application
+
 Now to access the Jaeger UI run `kubectl port-forward svc/jaeger-query 8080:80`. You will see a dashboard like below:
+
 ![](/img/blog/2020/04/Screenshot-2020-04-30-at-7.23.54-PM.png)Traces of customer service
+
 The left-hand side panel will show you some filters to apply to your traces. From Services choose **customer** and click on **Find Traces** button. The right pane will display the list of traces. The below figure shows one trace from the trace list.
 ![](/img/blog/2020/04/Screenshot-2020-04-30-at-7.25.04-PM.png)Single trace from trace list
 
@@ -162,7 +143,19 @@ Clicking on span from mysql service shows the exact query executed and the time 
 The below image shows the left panel of Jaeger-UI in detail. You can filter to see traces of mysql service which took more than 1s by choosing **Service** and **Min Duration** filter.
 
 You can also filter based on **Operation** of that service and if you wish to see all the traces where mysql service responded with an error, just set the **Tags **filter with value **error=true. **We can also filter based on various other tags that you have instrumented.
-![](/img/blog/2020/04/Screenshot-2020-04-30-at-7.52.26-PM.png)Options to filter traces in Jaeger-UI
+
+import Screenshot from "@theme/Screenshot"
+
+<div class="text--center">
+<Screenshot
+  alt=""
+  height={700}
+  src="/img/blog/2020/04/Screenshot-2020-04-30-at-7.52.26-PM.png"
+  title="Options to filter traces in Jaeger-UI"
+  width={450}
+/>
+</div>
+
 Since we now know that instrumentation plays a big role in being able to filter and analyse traces based on tags. Most of the OpenCensus libraries provide auto-instrumentation libraries for different languages.
 
 > OpenTracing and OpenCensus are merged to OpenTelemetry to provide a vendor neutral  instrumentation
@@ -203,16 +196,8 @@ Above image shows how to monitor **Cassandra** usage by Jaeger:
 ### How to find issues from the Flame graph
 
 Chapter 9 from this book from Yuri Shkuro, the author of Jaeger gives details on how to find patterns in your tracing data which are likely indicative of a performance issue.
-[
 
-Mastering Distributed Tracing
-
-Performance analysis Using tracing data for application performance analysis is the classic use case of distributed tracing. Different aspects of application performance can be investigated via tracing: Availability: Is … - Selection from Mastering Distributed Tracing [Book]
-
-![](https://learning.oreilly.com/library/view/static/images/apple-touch-icon.png)O’Reilly Online Learning
-
-![](https://www.safaribooksonline.com/library/cover/9781788628464/360h/)
-](https://learning.oreilly.com/library/view/mastering-distributed-tracing/9781788628464/ch09s03.html)Mastering Distributed Tracing
+[![Mastering distributed tracing](/img/blog/2020/05/mastering_distributed_tracing.png)](https://learning.oreilly.com/library/view/mastering-distributed-tracing/9781788628464/ch09s03.html)
 
 - **Look For Error Markers**
 
@@ -241,16 +226,8 @@ For example, I have seen many times where using an \***\*object-relational mappi
 What could cause a series of spans to finish at **exactly** the same time? One possible explanation is when the system supports timeouts with cancellations. In the _above figure_, the top-level span may have been waiting for the four tasks to finish, but since they did not complete in the allotted timeframe, it canceled them and aborted the whole request. In this scenario, we may want to tune the timeout parameter or to investigate why the individual work units were taking longer than anticipated.
 
 Another example where we can observe this pattern is when there is a resource contention and all the requests are waiting on some lock, such as a long-running database transaction from another request that locked the table. Once the lock is released, our units of work can complete quickly. We may want to investigate what it is that is blocking all these spans, by adding additional instrumentation.
-[
 
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 ## Conclusion
 

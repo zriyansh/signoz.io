@@ -50,16 +50,9 @@ Actual Median of combined datasets is:
 Output: 130.0
 
 Now how to aggregate medians of data1 and data2?
-[
 
-SigNoz/signoz
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
 Average gives (117.5 + 390)/2 = 253.75 while the actual median of the combined data set is 130.0
 
 > If the above were response time of an application from 2 different nodes, the aggregation would give a misleading insight
@@ -73,16 +66,8 @@ Output: (array([11, 2, 0, 2, 0, 1, 2, 1, 0, 2]), array([100., 145., 190., 235., 
 > A linear interpolation will give you 145 as the approximated median from histogram which is very close to the real median which is 130
 
 To read more about quantile aggregation using summary and histogram in prometheus, go through the below link. It also explains the problems in linear interpolation and that one should have an idea about your buckets for better results.
-[
 
-Histograms and summaries | Prometheus
-
-An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.
-
-![](https://prometheus.io/assets/favicons/android-chrome-192x192.png)PrometheusPrometheus
-
-![](https://prometheus.io/assets/prometheus_logo_grey.svg)
-](https://prometheus.io/docs/practices/histograms/)
+[![prometheus docs](/img/blog/2019/09/Prometheus_statsD.png)](https://prometheus.io/docs/practices/histograms/)
 
 We shall apply the histogram approach to aggregate quantile on prometheus. For that we will have to enable statsd-exporter to send metrics in buckets (number of observations falling in each bucket).
 
@@ -177,16 +162,7 @@ This is the aggregated 0.5 quantile (median) from all statsd-exporter instances.
 
 > Keep in mind to generate load from locustio before running these promql queries since we are working on rate (per second) of metrics or else you shall get NaN in output
 
-[
-
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 ## Plotting percentiles and 5 slowest endpoints in Grafana
 
@@ -212,16 +188,7 @@ Finally the graph we plot is:
 
 I hope, this blog helped those looking for ways to aggregate percentiles/quantiles from multiple instances of statsd-exporter in prometheus.
 
-[
-
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 ---
 
