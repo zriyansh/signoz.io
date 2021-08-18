@@ -123,11 +123,6 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://signoz.io/blog/author/ankit-anand/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
   <loc>https://signoz.io/blog/getting-to-know-our-4000-plus-stargazers-on-github/</loc>
   <lastmod>2021-07-27T16:46:00+00:00</lastmod>
   <priority>0.64</priority>
@@ -158,22 +153,12 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://signoz.io/blog/author/pranay-2/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
   <loc>https://signoz.io/blog/nodejs-opensource-application-monitoring/</loc>
   <lastmod>2021-07-27T16:46:00+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://signoz.io/blog/signoz-vs-prometheus-jaeger/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/author/ankit/</loc>
   <lastmod>2021-07-27T16:46:00+00:00</lastmod>
   <priority>0.64</priority>
 </url>
@@ -193,17 +178,7 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://signoz.io/blog/author/joy/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
   <loc>https://signoz.io/blog/distributed-tracing-jaeger-cassandra/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/author/ankit-2/</loc>
   <lastmod>2021-07-27T16:46:00+00:00</lastmod>
   <priority>0.64</priority>
 </url>
@@ -241,81 +216,6 @@
   <loc>https://signoz.io/blog/monitoring-tools-comparing-instana-and-sysdig/</loc>
   <lastmod>2021-07-27T16:46:00+00:00</lastmod>
   <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/apm-tools/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/clickhouse/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/python/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/community/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/nodejs/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/observability/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/self-hosting/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/benchmarks/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/opentelemetry/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/distributed-tracing/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/founders-post/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/high-availability/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/grafana/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/prometheus/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://signoz.io/blog/tag/monitoring/</loc>
-  <lastmod>2021-07-27T16:46:00+00:00</lastmod>
-  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://signoz.io/blog/opentelemetry-spring-boot/</loc>
