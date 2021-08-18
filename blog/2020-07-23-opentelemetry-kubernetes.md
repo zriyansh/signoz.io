@@ -29,16 +29,8 @@ OpenTelemetry’s vendor neutral APIs and data formats form its core capability 
 # The Lineage of an Open Standard
 
 OpenTelemerty is the culmination of a two decades worth of effort into observability standards and vendor neutral APIs. Inspired by papers and implementations from early 2000s, Google had built Dapper, an internal tool for auto-instrumentation and distributed tracing of the Google Search related micro-services. Google released the Dapper paper in 2010 and set the modern tracing ecosystem in motion.
-[
 
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ We recently open sourced SigNoz. If you like it, give us a star on [GitHub](https://github.com/SigNoz/signoz)! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 Soon, Twitter had its own implementation of the Dapper paper called Zipkin, backed by Cassandra backend and the famed Finagle RPC framework. Uber was already running it’s internal tracing tool called Merckx, that slowly morphed into Jaeger by 2015 borrowing inspiration from both Dapper and open-zipkin. Initially Jaeger directly used the zipkin-ui component.
 
@@ -83,31 +75,14 @@ We use a load-generator deployment that generates simulated metrics and traces f
 - Source:  [https://github.com/open-telemetry/opentelemetry-collector/blob/master/examples/main.go](https://github.com/open-telemetry/opentelemetry-collector/blob/master/examples/demo/app/main.go)
 - Omnition’s synthetic-load-generator
 
-[
-
-Omnition/synthetic-load-generator
-
-Generates synthetic operational load (traces, metrics, logs, events) simulating a microservice-based app. - Omnition/synthetic-load-generator
-
-![](https://github.githubassets.com/favicons/favicon.svg)OmnitionGitHub
-
-![](https://avatars0.githubusercontent.com/u/39106559?s=400&v=4)
-](https://github.com/Omnition/synthetic-load-generator)
+[![Generates synthetic operational load (traces, metrics, logs, events) simulating a microservice-based app.](/img/blog/2020/07/synthetic_load_genrator_github.png)](https://github.com/Omnition/synthetic-load-generator)
 
 - Jaeger traces
 - Zipkin traces
 - Freshtracks.io’s prometheus metrics load generator - Avalanche
 
-[
+[![Prometheus/OpenMetrics endpoint series generator for load testing.](/img/blog/2020/07/avalanche_github.png)](https://github.com/open-fresh/avalanche)
 
-open-fresh/avalanche
-
-Prometheus/OpenMetrics endpoint series generator for load testing. - open-fresh/avalanche
-
-![](https://github.githubassets.com/favicons/favicon.svg)open-freshGitHub
-
-![](https://avatars3.githubusercontent.com/u/43547772?s=400&v=4)
-](https://github.com/open-fresh/avalanche)
 For each of the above data sources, we configure a corresponding receiver in opentelmetry agent which runs as a daemonset. While the opencensus, jaeger and zipkin receivers are push based, with the app having to push traces and metrics to a pre-configured endpoint; the prometheus receiver is pull based, one just needs to write standard prometheus scrape-configs on the sources /metrics endpoint in order to receive the metrics.
 
 One caveat to note here is that since all above receivers work on GRPC ports, the agent needs to expose them through an headless service with **ClusterIP: None, **so that individual pod IPs are exposed through the **Endpoint** object, making sure grpc clients on the load-generator deployment don’t break connection.
@@ -128,31 +103,16 @@ The processed metrics are exposed at :8889 for the prometheus deployment to scra
 
 Please remember all the above trace, metrics sinks are for demonstration only, it’s not advisable to run any of the all-in-one deployments in production. We recommend using the jaeger and prometheus operators respectively for running production workloads. OpenTelemetry itself has an operator in the works, which we are currently evaluating internally. We might do future posts on the same.
 
-The source code for this post is available at below link
-[
+The source code for this post is available at below link:
 
-Hashfyre/otel-k8s
+[![openelemetry-kubernetes setup with load-generators](/img/blog/2020/07/hashfyre_otel_k8s.png)](https://github.com/Hashfyre/otel-k8s)
 
-openelemetry-kubernetes setup with load-generators - Hashfyre/otel-k8s
-
-![](https://github.githubassets.com/favicons/favicon.svg)HashfyreGitHub
-
-![](https://avatars1.githubusercontent.com/u/581287?s=400&v=4)
-](https://github.com/Hashfyre/otel-k8s)
 Given the scope and expanse of the Opentelemetry project, we barely scratched the surface of the possibilities, and even important aspects like tail-sampling. That said, following this post should get one bootstrapped easily with a running OpenTelemetry stack on your own cluster.
 
 ---
 
-[
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ We recently open sourced SigNoz. If you like it, give us a star on GitHub! ⭐️
 If you want to learn more about Open telemetry or how we are using it at SigNoz, feel free to reach out to us at:
 
 - [pranay@signoz.io](mailto:pranay@signoz.io)

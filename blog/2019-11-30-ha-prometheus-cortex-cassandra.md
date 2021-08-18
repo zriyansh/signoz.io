@@ -28,16 +28,7 @@ In this blog, we explain how we enable high availability Prometheus using Cortex
 - Enabling HA Prometheus - Usually folks run a singe Prometheus per cluster. If that node is down or Prometheus gets killed, you will find gaps in your graph till the time k8s recreates Prometheus pod. With Cortex, you can run multiple instances of Prometheus in your cluster and Cortex will de-duplicate metrics for you.
 - Single pane of view for multi-cluster Prometheus - When you have multiple Prometheuses across multiple clusters, provisioning 1 Grafana dashboard for each cluster will quickly become a pain. Also, aggregating metrics over multiple clusters won't be possible. Cortex enables this by letting Prometheuses in each cluster write their metrics to single DB and provide a label for your cluster. A Grafana dashboard built on top of the shared DB will enable queries to any of the clusters.
 
-[
-
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 ## Architecture of Cortex
 
@@ -206,16 +197,9 @@ This will identify tenants with a username. This is not full-proof.
 ## Check single pane of view
 
 The cluster labels that we specified while helm installing Prometheus will let you run aggregated queries over clusters. The below image shows application metrics from different clusters and Kubernetes Capacity Planning dashboards also cluster-wise.
-![](/img/blog/2019/11/mutli-cluster-grafana.png)Single Pane of view for multi-cluster setup[
+![](/img/blog/2019/11/mutli-cluster-grafana.png)Single Pane of view for multi-cluster setup
 
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 ## Provisioning Grafana dashboards for Cortex
 
@@ -271,18 +255,7 @@ Before you make Cortex production-ready, you should go through the below docs to
 - [Running Cortex in Production](https://cortexmetrics.io/docs/production/running-in-production/)
 - [Ingester Hand Over](https://github.com/cortexproject/cortex/blob/master/docs/ingester-handover.md)
 
-[
-
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
-
----
+## [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 ## **How can I try out remote write in Prometheus?**
 

@@ -382,16 +382,8 @@ Choosing the right open source APM tool is critical to your team's ability to mo
 But this is just one aspect. Another aspect is whether the tool serves all your needs for application monitoring or not. You don't want your team to manage multiple tools for end-to-end visibility into the performance of your apps.
 
 Logs, metrics, and traces form the three cornerstones of full-stack APM tools. In that scenario, a tool like [SigNoz](https://github.com/SigNoz/signoz) can serve all your needs for application monitoring. As the instrumentation is based on OpenTelemetry, you also have the added advantage of not being locked into any product. You can try out SigNoz by visiting its GitHub repo 👇
-[
 
-SigNoz/signoz
-
-SigNoz helps developers monitor their applications & troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. 🔥 🖥 - SigNoz/signoz
-
-![](https://github.githubassets.com/favicons/favicon.svg)SigNozGitHub
-
-![](https://repository-images.githubusercontent.com/326404870/e961a900-63c9-11eb-83f6-02913cf1b477)
-](https://github.com/signoz/signoz)⭐️ SigNoz is open source now. Check it out & if you like it give us a star on GitHub! ⭐️
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 If you want to read more about SigNoz 👇
 

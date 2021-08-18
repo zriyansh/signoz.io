@@ -189,4 +189,4 @@ An open-source tool like [SigNoz](https://signoz.io/), can be your best option 
 
 Check out SigNoz GitHub repo:
 
-[SigNoz GitHub repo](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
