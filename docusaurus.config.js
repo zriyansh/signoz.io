@@ -48,9 +48,13 @@ module.exports = {
         },
         //docusaurus expects href elements to be full links
         //https://stackoverflow.com/questions/63268853/how-do-i-link-to-non-docusaurus-defined-routes-from-a-docusuarus-footer
-        {href: 'https://signoz.io/blog/', label: 'Blog', position: 'left'},
-        
-        
+        //{href: 'https://signoz.io/blog/', label: 'Blog', position: 'left'}
+        {
+          to: 'blog/',
+          activeBasePath: 'blog',
+          label: 'Blog',
+          position: 'left',
+        },
         {
           href: 'https://github.com/SigNoz/signoz',
           label: 'GitHub',
