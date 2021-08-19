@@ -2,7 +2,7 @@
 title: Quantile Aggregation for statsd-exporter in Prometheus
 slug: quantile-aggregation-for-statsd-exporter
 date: 2019-09-02
-tags: [prometheus, statsd]
+tags: [prometheus, apm-tools]
 author: Ankit Nayan
 author_title: SigNoz Team
 author_url: https://github.com/ankitnayan

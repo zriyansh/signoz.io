@@ -32,12 +32,12 @@ OpenTelemetry is a set of tools, APIs, and SDKs which enables you to create and 
 
 ## What is OpenTelemetry Java auto instrumentation?
 
-OpenTelemetry provides three repositories to instrument applications. The [opentelemetry-java-instrumentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation) repo contains the code for auto-instrumentation of Java applications.
+OpenTelemetry provides three repositories to instrument applications. The <a href = "https://github.com/open-telemetry/opentelemetry-java-instrumentation" rel="noopener noreferrer nofollow" target="_blank" ><b>opentelemetry-java-instrumentation</b></a> repo contains the code for auto-instrumentation of Java applications.
 
 The other two repos are:
 
-- [opentelemetry-java](https://github.com/open-telemetry/opentelemetry-java) - contains components for manual instrumentation as well as the API and SDK
-- [opentelemetry-java-contrib](https://github.com/open-telemetry/opentelemetry-java-contrib) - contains libraries for standalone utilities which don't fit the scope of the other two projects
+- <a href = "https://github.com/open-telemetry/opentelemetry-java" rel="noopener noreferrer nofollow" target="_blank" ><b>opentelemetry-java</b></a> - contains components for manual instrumentation as well as the API and SDK.
+- <a href = "https://github.com/open-telemetry/opentelemetry-java-contrib" rel="noopener noreferrer nofollow" target="_blank" ><b>opentelemetry-java-contrib</b></a> - contains libraries for standalone utilities which don't fit the scope of the other two projects.
 
 The OpenTelemetry Java auto instrumentation repo provides a Java JAR agent that can be downloaded and attached to Java 8+ applications. The agent recognizes popular libraries and frameworks and injects bytecode dynamically to instrument the code.
 

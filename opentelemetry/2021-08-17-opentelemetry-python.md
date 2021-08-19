@@ -2,7 +2,7 @@
 title: Monitor your Python application with OpenTelemetry and SigNoz
 slug: python
 date: 2021-08-17
-tags: [opentelemetry, python-monitoring]
+tags: [python-monitoring]
 author: Ankit Anand
 author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
@@ -45,7 +45,7 @@ OpenTelemetry emerged as a single project after the merging of OpenCensus(from G
 
 OpenTelemetry has laguage-specific implementation for generating telemetry data which includes OpenTelemetry Python libraries.
 
-You can check out the current releases of [opentelemetry-python](https://github.com/open-telemetry/opentelemetry-python/releases).
+You can check out the current releases of <a href = "https://github.com/open-telemetry/opentelemetry-python/releases" rel="noopener noreferrer nofollow" target="_blank">opentelemetry-python</a>.
 
 OpenTelemetry only generates telemetry data and lets you decide where to send your data for analysis and visualization. In this article, we will be using [SigNoz](https://signoz.io/) - an open-source full-stack application performance monitoring tool as our analysis backend.
 
@@ -86,7 +86,7 @@ import Screenshot from "@theme/Screenshot"
 **Prerequisites**
 
 1. Python 3.4 or newer
-   If you do not have Python installed on your system, you can download it from the [link](https://www.python.org/downloads/). Check the version of Python using `python3 --version` on your terminal to see if Python is properly installed or not.
+   If you do not have Python installed on your system, you can download it from the <a href="https://www.python.org/downloads/" rel="noopener noreferrer nofollow" target="_blank">link</a>. Check the version of Python using `python3 --version` on your terminal to see if Python is properly installed or not.
 
 2. MongoDB
    If you already have MongoDB services running on your system, you can skip this step.
@@ -149,7 +149,7 @@ import Screenshot from "@theme/Screenshot"
    pip3 install -r requirements.txt
    ```
 
-   If it hangs while installing `grpcio` during **pip3 install opentelemetry-exporter-otlp** then follow below steps as suggested in [this stackoverflow link](https://stackoverflow.com/questions/56357794/unable-to-install-grpcio-using-pip-install-grpcio/62500932#62500932).
+   If it hangs while installing `grpcio` during **pip3 install opentelemetry-exporter-otlp** then follow below steps as suggested in <a href="https://stackoverflow.com/questions/56357794/unable-to-install-grpcio-using-pip-install-grpcio/62500932#62500932" rel="noopener noreferrer nofollow" target="_blank">this stackoverflow link</a>.
 
    - pip3 install --upgrade pip
    - python3 -m pip install --upgrade setuptools

@@ -2,7 +2,7 @@
 title: Cost benchmarking - Self hosting SigNoz vs using a SaaS vendor
 slug: signoz-benchmarks
 date: 2021-02-02
-tags: [benchmarks, distributed-tracing, application-monitoring]
+tags: [distributed-tracing, application-monitoring]
 author: Ankit Nayan
 author_title: SigNoz Team
 author_url: https://github.com/ankitnayan

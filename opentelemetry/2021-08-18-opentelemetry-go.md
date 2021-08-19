@@ -2,7 +2,7 @@
 title: Monitor your Go application with OpenTelemetry and SigNoz
 slug: go
 date: 2021-08-18
-tags: [opentelemetry, go-monitoring]
+tags: [go-monitoring]
 author: Ankit Anand
 author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
