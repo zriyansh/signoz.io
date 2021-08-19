@@ -22,7 +22,7 @@ Choosing the right APM tool is critical. How do you know which is the right one 
 
 ![Cover Image](/img/blog/2021/08/open_source_apm_hc.jpeg)
 
-> **What is an open source APM tool?**
+> **What is an open source APM tool?**<br></br>
 > APM stands for Application Performance Monitoring. APM tools help you to monitor your application for any performance issues. When you opt for an open source APM tool, you get the added advantage of having access to the tool's source code.
 
 Businesses are embracing digital transformation now more than ever. In most cases, the digital channel is the primary driver of revenue and growth. Customers and end-users are going online to fulfill both their daily and long-term needs.
@@ -92,24 +92,34 @@ SigNoz is a full-stack open source APM and observability tool. It captures both 
 
 Without distributed tracing, you can not monitor and troubleshoot user requests across multiple services. As SigNoz supports distributed tracing, you can have code-level visibility of where your user requests are failing. That's why SigNoz is most suited as an open source APM tool for microservices-based application architectures.
 
-![SigNoz Architecture Diagram](/img/blog/2021/07/SigNoz_architecture-min.png)
+import Screenshot from "@theme/Screenshot"
 
-<!--- SigNoz Architecture with ClickHouse as storage backend --->
+<Screenshot
+   alt="SigNoz Architecture Diagram"
+   height={500}
+   src="/img/blog/2021/08/signoz_dashboard_hc.png"
+   title="SigNoz Architecture with ClickHouse as storage backend"
+   width={700}
+/>
 
 Monitoring starts with instrumenting your code. SigNoz supports OpenTelemetry for instrumentation which is a vendor-agnostic instrumentation library. That means you are never locked on the SigNoz platform.
 It also comes with out of the box charts and visualization so that you can get started right away.
 
-![SigNoz Dashboard showing RED metrics](/img/blog/2021/07/signoz_ui-min.png)
-
-<!--- Capture RED metrics (Rate of requests, Error rate and Duration) and visualize it with SigNoz --->
+<Screenshot
+   alt="SigNoz Dashboard showing RED metrics"
+   height={500}
+   src="/img/blog/2021/07/signoz_ui-min.png"
+   title="Capture RED metrics (Rate of requests, Error rate and Duration) and visualize it with SigNoz"
+   width={700}
+/>
 
 You can choose between industry-standard Kafka+Druid or fast OLAP database ClickHouse as the storage backend. The query service is written in GO, and the frontend is built with Typescript.
 
 ### Graphite
 
-🌐 [Website](https://graphiteapp.org/)
+🌐 <a href = "https://graphiteapp.org/" rel="noopener noreferrer nofollow" target="_blank" >Website</a>
 
-💻 [GitHub](https://github.com/graphite-project/graphite-web)
+💻 <a href = "https://github.com/graphite-project/graphite-web" rel="noopener noreferrer nofollow" target="_blank" >GitHub</a>
 
 Graphite is a time-series monitoring tool that was released in 2008. Graphite consists of three software components:
 
@@ -121,21 +131,29 @@ The primary purpose of Graphite is to store numeric time-series data and render 
 
 Graphite does not do data collection. Instead, your app needs to be configured to send data to Graphite which passively listens for data using Carbon - a Twisted daemon. Carbon then sends the data to Whisper to store the time-series data to a filesystem.
 
-![Graphite architecture](/img/blog/2021/07/Graphite-architecture-min.png)
-
-<!--- Graphite Architecture (Source: Graphite documentation) --->
+<Screenshot
+   alt="Graphite architecture"
+   height={500}
+   src="/img/blog/2021/07/Graphite-architecture-min.png"
+   title="Graphite Architecture (Source: Graphite documentation)"
+   width={700}
+/>
 
 Graphite comes with an in-built UI, but that is fairly basic. Usually, for visualizations, Graphite is clubbed together with Grafana, which is an open source visualization tool.
 
-![Graphite APM tool dashboard](/img/blog/2021/07/graphite_dashboard-min.png)
-
-<!--- Graphite's UI (Source: [Nuxeo](https://doc.nuxeo.com/nxdoc/metrics/)) --->
+<Screenshot
+   alt="Graphite APM tool dashboard"
+   height={500}
+   src="/img/blog/2021/07/graphite_dashboard-min.png"
+   title="Graphite's UI (Source: [Nuxeo](https://doc.nuxeo.com/nxdoc/metrics/))"
+   width={700}
+/>
 
 ### Pinpoint
 
-🌐 [Website](https://pinpoint-apm.github.io/pinpoint/)
+🌐 <a href = "https://pinpoint-apm.github.io/pinpoint/" rel="noopener noreferrer nofollow" target="_blank" >Website</a>
 
-💻 [GitHub](https://github.com/pinpoint-apm/pinpoint)
+💻 <a href = "https://github.com/pinpoint-apm/pinpoint" rel="noopener noreferrer nofollow" target="_blank" >GitHub</a>
 
 Pinpoint is an open source APM tool meant for large-scale distributed systems written in Java, Python, or PHP. This project is inspired and modeled after Google's Dapper. It traces transactions across different components of an application and provides insights to identify potential issues. Some of the key features of the Pinpoint APM tool includes:
 
@@ -145,21 +163,29 @@ Pinpoint is an open source APM tool meant for large-scale distributed systems wr
 - APM agents which require minimal changes to code
 - Minimal impact on performance
 
-![Pinpoint APM tool architecture](/img/blog/2021/07/pinpoint-architecture-min.png)
-
-<!--- Architecture of Pinpoint (Source: Pinpoint Documentation) --->
+<Screenshot
+   alt="Pinpoint APM tool architecture"
+   height={500}
+   src="/img/blog/2021/07/pinpoint-architecture-min.png"
+   title="Architecture of Pinpoint (Source: Pinpoint Documentation)"
+   width={700}
+/>
 
 The main purpose of the Pinpoint APM tool is to identify and track how transactions flow between different components of a system. It does not track logs and metrics.
 
-![Pinpoint dashboard](/img/blog/2021/07/pinpoint-dashboard-min.png)
-
-<!--- Pinpoint Dashboard (Source: Pinpoint documentation) --->
+<Screenshot
+   alt="Pinpoint dashboard"
+   height={500}
+   src="/img/blog/2021/07/pinpoint-dashboard-min.png"
+   title="Pinpoint Dashboard (Source: Pinpoint documentation)"
+   width={700}
+/>
 
 ### Prometheus
 
-🌐 [Website](https://prometheus.io/)
+🌐 <a href = "https://prometheus.io/" rel="noopener noreferrer nofollow" target="_blank" >Website</a>
 
-💻 [GitHub](https://github.com/prometheus/prometheus)
+💻 <a href = "https://github.com/prometheus/prometheus" rel="noopener noreferrer nofollow" target="_blank" >GitHub</a>
 
 Prometheus enables you to capture time-series data as metrics. These metrics can be aggregated to give insights into the behavior of our systems.
 
@@ -173,21 +199,36 @@ Prometheus monitoring stack includes the following components:
 - Alertmanager
 - Visualization Layer
 
-![Prometheus APM tool architecture](/img/blog/2021/07/Prometheus_architecture-min.png)
-
-<!--- Prometheus Architecture (Source: Prometheus Documentation) --->
+<Screenshot
+   alt="Prometheus APM tool architecture"
+   height={500}
+   src="/img/blog/2021/07/Prometheus_architecture-min.png"
+   title="Prometheus Architecture (Source: Prometheus Documentation)"
+   width={700}
+/>
 
 Prometheus does not do distributed tracing but can be used effectively to monitor time-series data as metrics. It also has some limitations at scale as it is designed for a single machine.
 The visualization layer of Prometheus is basic, but it is generally used with Grafana, a visualization tool to create charts and graphs.
 
-![Prometheus Expression Browser](/img/blog/2021/07/prom_exp_browser-min.png)
-Prometheus Expression Browser
+<Screenshot
+   alt="Prometheus Expression Browser"
+   height={500}
+   src="/img/blog/2021/07/prom_exp_browser-min.png"
+   title="Prometheus Expression Browser"
+   width={700}
+/>
 
-![Grafana dashboard visualizing Prometheus metrics](/img/blog/2021/07/prometheus_grafana-min.png)Grafana used for visualization with Prometheus
+<Screenshot
+   alt="Grafana dashboard visualizing Prometheus metrics"
+   height={500}
+   src="/img/blog/2021/07/prometheus_grafana-min.png"
+   title="Grafana used for visualization with Prometheus"
+   width={700}
+/>
 
 ### Javamelody
 
-💻 [GitHub](https://github.com/javamelody/javamelody)
+💻 <a href = "https://github.com/javamelody/javamelody" rel="noopener noreferrer nofollow" target="_blank" >GitHub</a>
 
 Javamelody is an open source APM tool that aims to monitor Java or Java EE applications in QA and production environments. It is mainly used to track and measure the statistics of requests on an application based on its usage.
 
@@ -199,14 +240,19 @@ Some of the key metrics captured by the Javamelody APM tool are as follows:
 - Number of user sessions
 - Number of JDBC connections
 
-![Charts shown on JavaMelody dashboard](/img/blog/2021/07/javamelody_ui-min.png)
-Charts provided by Javamelody APM tool (Source: Javamelody GitHub repo)
+<Screenshot
+   alt="Charts shown on JavaMelody dashboard"
+   height={500}
+   src="/img/blog/2021/07/javamelody_ui-min.png"
+   title="Charts provided by Javamelody APM tool (Source: Javamelody GitHub repo)"
+   width={700}
+/>
 
 ### Stagemonitor
 
-🌐 [Website](https://www.stagemonitor.org/)
+🌐 <a href = "https://www.stagemonitor.org/" rel="noopener noreferrer nofollow" target="_blank" >Website</a>
 
-💻 [GitHub](https://github.com/stagemonitor/stagemonitor)
+💻 <a href = "https://github.com/stagemonitor/stagemonitor" rel="noopener noreferrer nofollow" target="_blank" >GitHub</a>
 
 Stagemonitor is an open source APM tool for Java server applications. It enables you to monitor the performance of your Java web app throughout its lifecycle in development, QA, and production. It monitors applications with the help of servlet filters and bytecode manipulation.
 
@@ -218,11 +264,17 @@ Some of the key features of Stagemonitor APM tool includes:
 - Production Monitoring
 - Preconfigured Dashboards
 
-![Architecture diagram of Stagemonitor APM tool](/img/blog/2021/07/stagemonitor_architecture-min.png)Stagemonitor architecture (Source: Stagemonitor GitHub repo)
+<Screenshot
+   alt="Architecture diagram of Stagemonitor APM tool"
+   height={500}
+   src="/img/blog/2021/07/stagemonitor_architecture-min.png"
+   title="Stagemonitor architecture (Source: Stagemonitor GitHub repo)"
+   width={700}
+/>
 
 ### Scouter
 
-💻 [GitHub](https://github.com/scouter-project/scouter)
+💻 <a href = "https://github.com/scouter-project/scouter" rel="noopener noreferrer nofollow" target="_blank" >GitHub</a>
 
 Scouter is an open source APM tool written in Java, Javascript, and Scala. It captures and shows metrics about users, services, and resources. Some of the key metrics that Scouter captures:
 
@@ -230,9 +282,13 @@ Scouter is an open source APM tool written in Java, Javascript, and Scala. It ca
 - Services - Active service, TPS, Response time, Application profiles
 - Resources - Cpu, Memory, Network and Heap usage, Connection pools, etc.
 
-![Architecture diagram of Scouter APM tool](/img/blog/2021/07/scouter_architecture-min-1.png)
-
-<!--- Scouter Architecture (Source: Scouter GitHub repo) --->
+<Screenshot
+   alt="Architecture diagram of Scouter APM tool"
+   height={500}
+   src="/img/blog/2021/07/scouter_architecture-min-1.png"
+   title="Scouter Architecture (Source: Scouter GitHub repo)"
+   width={700}
+/>
 
 Scouter's architecture consists of the following components:
 
@@ -241,13 +297,19 @@ Scouter's architecture consists of the following components:
 - Java Agent to capture performance data of the Java program such as heap memory, thread, profiles
 - Client(Viewer) to visualize collected data
 
-![Charts visualized with Scouter APM](/img/blog/2021/07/scouter_ui-min.png)Scouter UI (Source: Scouter GitHub repo)
+<Screenshot
+   alt="Charts visualized with Scouter APM"
+   height={500}
+   src="/img/blog/2021/07/scouter_ui-min.png"
+   title="Scouter UI (Source: Scouter GitHub repo)"
+   width={700}
+/>
 
 ### Zipkin
 
-🌐 [Website](https://zipkin.io/)
+🌐 <a href = "https://zipkin.io/" rel="noopener noreferrer nofollow" target="_blank" >Website</a>
 
-💻 [GitHub](https://github.com/openzipkin/zipkin)
+💻 <a href = "https://github.com/openzipkin/zipkin" rel="noopener noreferrer nofollow" target="_blank" >GitHub</a>
 
 Zipkin is an open source APM tool used for distributed tracing. Zipkin captures timing data need to troubleshoot latency problems in service architectures. In distributed systems, it's a challenge to trace user requests across different services. If a request fails or takes too long, distributed tracing helps to identify the events that caused it.
 
@@ -260,22 +322,39 @@ Zipkin's architecture includes:
 - API to query data
 - UI
 
-![Zipkin architecture diagram](/img/blog/2021/07/Zipkin_architecture-min.png)
-Zipkin architecture (Source: Zipkin website)
+<Screenshot
+   alt="Zipkin architecture diagram"
+   height={500}
+   src="/img/blog/2021/07/Zipkin_architecture-min.png"
+   title="Zipkin architecture (Source: Zipkin website)"
+   width={700}
+/>
 
 Zipkin's in-built UI is limited, and you can use Grafana or Kibana from the ELK stack for better analytics and visualizations.
-![Zipkin dashboard showing traces](/img/blog/2021/07/Zipkin_ui-min.png)
-Zipkin UI (Source: Zipkin's GitHub repo)
+
+<Screenshot
+   alt="Zipkin dashboard showing traces"
+   height={500}
+   src="/img/blog/2021/07/Zipkin_ui-min.png"
+   title="Zipkin UI (Source: Zipkin's GitHub repo)"
+   width={700}
+/>
 
 It also includes a dependency diagram that shows how many user requests went through each service. It can help you to identify error paths and calls to deprecated services.
-![Zipkin dependency diagram to show user requests across services](/img/blog/2021/07/zipkin_dependency_diagram-min.png)
-Zipkin dependency diagram (Source: GitHub repo)
+
+<Screenshot
+   alt="Zipkin dependency diagram to show user requests across services"
+   height={500}
+   src="/img/blog/2021/07/zipkin_dependency_diagram-min.png"
+   title="Zipkin dependency diagram (Source: GitHub repo)"
+   width={700}
+/>
 
 ### Jaeger
 
-🌐 [Website](https://www.jaegertracing.io/)
+🌐 <a href = "https://www.jaegertracing.io/" rel="noopener noreferrer nofollow" target="_blank" >Website</a>
 
-💻 [GitHub](https://github.com/jaegertracing/jaeger)
+💻 <a href = "https://github.com/jaegertracing/jaeger" rel="noopener noreferrer nofollow" target="_blank" >GitHub</a>
 
 Jaeger is an open source APM tool developed at Uber, which was later donated to Cloud Native Computing Foundation(CNCF). Inspired by Google's Dapper, Jaeger is a distributed tracing system.
 
@@ -287,18 +366,29 @@ It is used for monitoring and troubleshooting microservices-based distributed sy
 - Service dependency analysis
 - Performance / latency optimization
 
-![Architecture diagram of Jaeger APM](/img/blog/2021/07/jaeger_architecture-min.png)
-Jaeger Architecture (Source: Uber Engineering)
+<Screenshot
+   alt="Architecture diagram of Jaeger APM"
+   height={500}
+   src="/img/blog/2021/07/jaeger_architecture-min.png"
+   title="Jaeger Architecture (Source: Uber Engineering)"
+   width={700}
+/>
 
 Jaeger supports two popular open source NoSQL databases as trace storage backends: Cassandra and Elasticsearch. Jaeger's UI can be used to see individual traces. You can also filter the traces based on service, duration, and tags.
 
-![Jaeger UI](/img/blog/2021/07/jaeger_ui-min.png)Jaeger UI showing list of filtered traces
+<Screenshot
+   alt="Jaeger UI"
+   height={500}
+   src="/img/blog/2021/07/jaeger_ui-min.png"
+   title="Jaeger UI showing list of filtered traces"
+   width={700}
+/>
 
 ### Apache Skywalking
 
-🌐 [Website](https://skywalking.apache.org/)
+🌐 <a href = "https://skywalking.apache.org/" rel="noopener noreferrer nofollow" target="_blank" >Website</a>
 
-💻 [GitHub](https://github.com/apache/skywalking)
+💻 <a href = "https://github.com/apache/skywalking" rel="noopener noreferrer nofollow" target="_blank" >GitHub</a>
 
 This open source APM tool is focused on monitoring distributed systems, including microservices, cloud-native, and container-based architectures. Some of the key features of the APM tool includes:
 
@@ -310,14 +400,19 @@ This open source APM tool is focused on monitoring distributed systems, includin
 
 Skywalking also supports the collection of telemetry data in multiple formats.
 
-![Skywalking dashboard](/img/blog/2021/07/skywalking_ui-min.png)
-Skywalking dashboard (Source: Skywalking website)
+<Screenshot
+   alt="Skywalking dashboard"
+   height={500}
+   src="/img/blog/2021/07/skywalking_ui-min.png"
+   title="Skywalking dashboard (Source: Skywalking website)"
+   width={700}
+/>
 
 ### Elastic APM
 
-🌐 [Website](https://www.elastic.co/apm/)
+🌐 <a href = "https://www.elastic.co/apm/" rel="noopener noreferrer nofollow" target="_blank" >Website</a>
 
-💻 [GitHub](https://github.com/elastic/apm-server)
+💻 <a href = "https://github.com/elastic/apm-server" rel="noopener noreferrer nofollow" target="_blank" >GitHub</a>
 
 You might already be familiar with Elasticsearch. Elastic APM is an open source application performance monitoring tool built on top of the ELK stack (Elasticsearch, Logstash, Kibana). It consists of 4 main components:
 
@@ -326,18 +421,29 @@ You might already be familiar with Elasticsearch. Elastic APM is an open source 
 - Elasticsearch - It is used to store the APM performance metrics.
 - Kibana - It is a visualization platform designed to work with Elastsearch.
 
-![Elastic APM architecture diagram](/img/blog/2021/07/elastic_apm_architecture-min.png)
-Elastic APM architecture (Source: Elastic APM documentation)
+<Screenshot
+   alt="Elastic APM architecture diagram"
+   height={500}
+   src="/img/blog/2021/07/elastic_apm_architecture-min.png"
+   title="Elastic APM architecture (Source: Elastic APM documentation)"
+   width={700}
+/>
 
 With Kibana, you can have visualize your requests and services.
-![Service maps on Elastic APM dashboard](/img/blog/2021/07/elasticapm_servicemaps-min.png)
-Service Maps in Elastic APM (Source: Elastic APM website)
+
+<Screenshot
+   alt="Service maps on Elastic APM dashboard"
+   height={500}
+   src="/img/blog/2021/07/elasticapm_servicemaps-min.png"
+   title="Service Maps in Elastic APM (Source: Elastic APM website)"
+   width={700}
+/>
 
 ### App Metrics
 
-🌐 [Website](https://www.app-metrics.io/)
+🌐 <a href = "https://www.app-metrics.io/" rel="noopener noreferrer nofollow" target="_blank" >Website</a>
 
-💻 [GitHub](https://github.com/AppMetrics/AppMetrics)
+💻 <a href = "https://github.com/AppMetrics/AppMetrics" rel="noopener noreferrer nofollow" target="_blank" >GitHub</a>
 
 App Metrics is an open source and cross-platform .NET library that can be used to capture application metrics within any .NET application. App Metrics provides extensions to report to various open source time-series databases. It also provides dashboards to visualize application metrics in real-time. Some of the key features of this open source APM tool includes:
 
@@ -347,22 +453,33 @@ App Metrics is an open source and cross-platform .NET library that can be used t
 
 App Metrics does not include a visualization tool, but it does provide App Metrics specific Grafana dashboards.
 
-![Grafana charts for visualization of App Metrics](/img/blog/2021/07/app-metrics-dashboard-min.png)
-App Metrics dashboard using Grafana (Source: App Metrics website)
+<Screenshot
+   alt="Grafana charts for visualization of App Metrics"
+   height={500}
+   src="/img/blog/2021/07/app-metrics-dashboard-min.png"
+   title="App Metrics dashboard using Grafana (Source: App Metrics website)"
+   width={700}
+/>
 
 ### Glowroot
 
-🌐 [Website](https://glowroot.org/)
+🌐 <a href = "https://glowroot.org/" rel="noopener noreferrer nofollow" target="_blank" >Website</a>
 
-💻 [GitHub](https://github.com/glowroot/glowroot)
+💻 <a href = "https://github.com/glowroot/glowroot" rel="noopener noreferrer nofollow" target="_blank" >GitHub</a>
 
 Glowroot is an open source Java APM tool. It is used to monitor Java-based applications. Glowroot can be implemented in two ways:
 
 - With embedded collectors that can be used to monitor stand-alone applications
 - With central collector that can be used to monitor distributed systems
 
-![Glowroot architecture diagram](/img/blog/2021/07/glowroot-architecture-min.png)
-Glowroot architecture
+<Screenshot
+   alt="Glowroot architecture diagram"
+   height={500}
+   src="/img/blog/2021/07/glowroot-architecture-min.png"
+   title="Glowroot architecture"
+   width={700}
+/>
+
 Glowroot agents help to capture metrics like:
 
 - API’s average response time
