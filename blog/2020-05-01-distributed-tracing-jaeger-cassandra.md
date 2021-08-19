@@ -2,7 +2,7 @@
 title: Distributed tracing using Jaeger with Cassandra
 slug: distributed-tracing-jaeger-cassandra
 date: 2020-05-01
-tags: [distributed-tracing, cassandra, jaeger]
+tags: [distributed-tracing, jaeger]
 author: Ankit Nayan
 author_title: SigNoz Team
 author_url: https://github.com/ankitnayan

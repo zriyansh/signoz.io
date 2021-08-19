@@ -2,7 +2,7 @@
 title: Monitor your Spring Boot application with OpenTelemetry and SigNoz
 slug: opentelemetry-spring-boot
 date: 2021-08-02
-tags: [spring-boot, application-monitoring, java-monitoring]
+tags: [application-monitoring, java-monitoring]
 author: Ankit Anand
 author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss

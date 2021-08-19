@@ -2,7 +2,7 @@
 title: Setting up HA Prometheus with Cortex and Cassandra
 slug: ha-prometheus-cortex-cassandra
 date_published: 2019-11-30
-tags: [prometheus, cassandra, cortex]
+tags: [prometheus, apm-tools]
 author: Ankit Nayan
 author_title: SigNoz Team
 author_url: https://github.com/ankitnayan

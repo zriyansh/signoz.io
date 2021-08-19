@@ -56,11 +56,11 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
 ## Installing sample Tomcat Java application
 
 **Prerequisites:**<br></br>
-Make sure you have Tomcat installed on your system. If not, then you can download it from [Apache Tomcat website](https://tomcat.apache.org/index.html). For this tutorial I have used Tomcat 10.0.8.
+Make sure you have Tomcat installed on your system. If not, then you can download it from <a href="https://tomcat.apache.org/index.html" rel="noopener noreferrer nofollow" target="_blank">Apache Tomcat website</a>. For this tutorial I have used Tomcat 10.0.8.
 
 ### Steps to install sample Tomcat Java application:
 
-- Download an example app packaged as a war file provided at Apache Tomcat official website - [Sample Tomcat app](https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/)
+- Download an example app packaged as a war file provided at Apache Tomcat official website - <a href="https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/" rel="noopener noreferrer nofollow" target="_blank">Sample Tomcat app</a>
   ![Sample applicationlink](/img/blog/2021/08/opentelemetry_tomcat_sample_app-min.png)
 
 - The easiest way to run the sample app is to move it to webapps folder inside the Tomcat directory.

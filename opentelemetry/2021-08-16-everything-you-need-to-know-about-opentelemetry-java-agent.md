@@ -43,12 +43,11 @@ Telemetry data is generated using a process called instrumentation. OpenTelemetr
 
 For Java applications, OpenTelemetry provides three repositories:
 
-[**opentelemetry-java**](https://github.com/open-telemetry/opentelemetry-java)<br></br>
-This repo is the main OpenTelemetry Java SDK and provides components for manual instrumentation. Top-level components include OpenTelemetry API, extensions, SDK, bridge layers for OpenTracing and OpenCensus.
+<a href = "https://github.com/open-telemetry/opentelemetry-java" rel="noopener noreferrer nofollow" target="_blank" ><b>opentelemetry-java</b></a><br></br>This repo is the main OpenTelemetry Java SDK and provides components for manual instrumentation. Top-level components include OpenTelemetry API, extensions, SDK, bridge layers for OpenTracing and OpenCensus.<br></br>
 
-[**opentelemetry-java-instrumentation**](https://github.com/open-telemetry/opentelemetry-java-instrumentation)<br></br>This is the sibling project of opentelemetry-java and provides the all-in-one, easy-to-install auto instrumentation Java agent. The OpenTelemetry Java agent enables you to capture telemetry data from many popular libraries and frameworks. You need to attach it to any Java 8+ application. We will learn more about the Java agent below.
+<a href = "https://github.com/open-telemetry/opentelemetry-java-instrumentation" rel="noopener noreferrer nofollow" target="_blank" ><b>opentelemetry-java-instrumentation</b></a><br></br>This is the sibling project of opentelemetry-java and provides the all-in-one, easy-to-install auto instrumentation Java agent. The OpenTelemetry Java agent enables you to capture telemetry data from many popular libraries and frameworks. You need to attach it to any Java 8+ application. We will learn more about the Java agent below.<br></br>
 
-[**opentelemetry-java-contrib**](https://github.com/open-telemetry/opentelemetry-java-contrib)<br></br>
+<a href = "https://github.com/open-telemetry/opentelemetry-java-contrib" rel="noopener noreferrer nofollow" target="_blank" ><b>opentelemetry-java-contrib</b></a><br></br>
 OpenTelemetry java provides this repo to cover JVM-based applications and workflows that don't fit into the scope of opentelemetry-java and opentelemetry-java-instrumentation.
 
 ## What is OpenTelemetry Java agent?
@@ -125,7 +124,7 @@ The supported libraries and frameworks supported by OpenTelemetry Java agent for
 
 Some of the popular application servers supported by the Java agent include Glassfish, JBoss EAP, Jetty, Payara, Tomcat, TomEE, Weblogic, and Wildfly.
 
-You can find the complete list of supported libraries and frameworks supported by OpenTelemetry Java agent at [opentelemetry-java-instrumentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/docs/supported-libraries.md#libraries--frameworks) GitHub repo.
+You can find the complete list of supported libraries and frameworks supported by OpenTelemetry Java agent at <a href = "https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/docs/supported-libraries.md#libraries--frameworks" rel="noopener noreferrer nofollow" target="_blank" >opentelemetry-java-instrumentation</a> GitHub repo.
 
 ## Conclusion
 
