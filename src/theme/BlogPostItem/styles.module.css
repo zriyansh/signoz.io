@@ -24,3 +24,7 @@
   display: flex;
   justify-content: space-between;
 }
+
+.avatarName {
+  margin-bottom: 0.4rem;
+}

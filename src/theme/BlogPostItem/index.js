@@ -83,7 +83,7 @@ function BlogPostItem(props) {
                     {author}
                   </a>
                 </h4>
-                <small className="avatar__subtitle">{authorTitle}</small>
+                <small>{authorTitle}</small>
               </>
             )}
           </div>
