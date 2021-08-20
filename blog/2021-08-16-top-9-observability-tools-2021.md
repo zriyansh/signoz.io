@@ -65,41 +65,59 @@ SigNoz enables a full-stack observability stack for your microservice applicatio
 
 SigNoz uses OpenTelemetry - a vendor-agnostic instrumentation library for generating telemetry data. OpenTelemetry is a project under Cloud Native Computing Foundation and is becoming the industry standard for creating portable telemetry data.
 
-![SigNoz UI showing RED metrics](/img/blog/2021/08/observability_tool_signoz.png)
+import Screenshot from "@theme/Screenshot"
 
-<!--- SigNoz Dashboard with visualization of the popular RED metrics for your application (Number of requests, rate of error & duration) --->
+<Screenshot
+  alt="SigNoz UI showing RED metrics"
+  height={500}
+  src="/img/blog/2021/08/observability_tool_signoz.png"
+  title="SigNoz Dashboard with visualization of the popular RED metrics for your application (Number of requests, rate of error & duration)"
+  width={700}
+/>
 
-![Flamegraphs & gantt charts on SigNoz dashboard](/img/blog/2021/08/observability_tool_flamegraphs_hc.png)
-
-<!--- SigNoz also has Flamegraphs and Gantt charts to visualize distributed tracing for your microservice application --->
+<Screenshot
+  alt="Flamegraphs & gantt charts on SigNoz dashboard"
+  height={500}
+  src="/img/blog/2021/08/observability_tool_flamegraphs_hc.png"
+  title="SigNoz also has Flamegraphs and Gantt charts to visualize distributed tracing for your microservice application"
+  width={700}
+/>
 
 ### Instana
 
-[Instana](https://www.instana.com/) is enterprise observability and automated application monitoring tool. It uses an agent to discover and monitor components. This agent needs to be installed on every host that is to be monitored.
+<a href = "https://www.instana.com/" rel="noopener noreferrer nofollow" target="_blank" ><b>Instana</b></a> is enterprise observability and automated application monitoring tool. It uses an agent to discover and monitor components. This agent needs to be installed on every host that is to be monitored.
 
 The agents deploy sensors crafted to capture data from different technologies. Sensors automatically collect configuration, changes, metrics, and events.
 
 Instana charges $75 per host/per month if billed annually. It also supports open standards like Prometheus, StatsD, OpenTracing, and Opencensus.
 
-![Instana dashboard](/img/blog/2021/08/observability_tools_instana-min.png)
-
-<!--- Instana Dashboard. (Source: Instana Docs) --->
+<Screenshot
+  alt="Instana dashboard"
+  height={500}
+  src="/img/blog/2021/08/observability_tools_instana-min.png"
+  title="Instana Dashboard. (Source: Instana Docs)"
+  width={700}
+/>
 
 ### Dynatrace
 
-[Dynatrace](https://www.dynatrace.com/) is an extensive SaaS enterprise tool targeting a broad spectrum of monitoring needs of large-scale enterprises. It provides an AI engine called Davis to automate things like root cause analysis and anomaly detection.
+<a href = "https://www.dynatrace.com/" rel="noopener noreferrer nofollow" target="_blank" ><b>Dynatrace</b></a> is an extensive SaaS enterprise tool targeting a broad spectrum of monitoring needs of large-scale enterprises. It provides an AI engine called Davis to automate things like root cause analysis and anomaly detection.
 
 Dynatrace also provides a different solution for infrastructure monitoring, application security, and cloud automation. The pricing depends on the product you want to opt for.
 
 Full-stack monitoring, the product aimed to provide observability for apps, is priced at $69 per month for 8 GB per host if billed annually.
 
-![Dynatrace dashboard](/img/blog/2021/08/observability_tools_dynatrace-min.png)
-
-<!--- Dynatrace dashboard (Source: Dynatrace website) --->
+<Screenshot
+  alt="Dynatrace dashboard"
+  height={500}
+  src="/img/blog/2021/08/observability_tools_dynatrace-min.png"
+  title="Dynatrace dashboard (Source: Dynatrace website)"
+  width={700}
+/>
 
 ### Grafana Labs
 
-[Grafana](https://grafana.com/) is popular open-source analytics and interactive visualization web layer. It supports many different storage backends for time-series data. It can be connected to data sources like Graphite, InfluxDB, ElasticSearch, Prometheus, and many more. For traces, it supports Jaeger, Tempo, X-Ray, and Zipkin data sources.
+<a href = "https://grafana.com/" rel="noopener noreferrer nofollow" target="_blank" ><b>Grafana</b></a> is popular open-source analytics and interactive visualization web layer. It supports many different storage backends for time-series data. It can be connected to data sources like Graphite, InfluxDB, ElasticSearch, Prometheus, and many more. For traces, it supports Jaeger, Tempo, X-Ray, and Zipkin data sources.
 
 Grafana offers plugins, dashboards, alerts, and different user-level access for governance as an observability tool. In addition, it provides two versions of services:
 
@@ -107,21 +125,33 @@ Grafana offers plugins, dashboards, alerts, and different user-level access for 
 
 - Grafana Enterprise stack - It provides support for metrics and logs with Grafana installed within your infrastructure. It also comes with expert support.
 
-![Grafana dashboard](/img/blog/2021/08/observability_tools_grafana-min.png)
+<Screenshot
+  alt="Grafana dashboard"
+  height={500}
+  src="/img/blog/2021/08/observability_tools_grafana-min.png"
+  title="Grafana dashboard (Source: Grafana website)"
+  width={700}
+/>
 
 ### Honeycomb
 
-[Honeycomb](https://www.honeycomb.io/) is an observability tool that aims to provide the visibility needed by engineering teams to troubleshoot problems in distributed systems. It is a full-stack cloud-based observability tool with support for events, logs, and traces.
+<a href = "https://www.honeycomb.io/" rel="noopener noreferrer nofollow" target="_blank" ><b>Honeycomb</b></a> is an observability tool that aims to provide the visibility needed by engineering teams to troubleshoot problems in distributed systems. It is a full-stack cloud-based observability tool with support for events, logs, and traces.
 
 If your code is not already instrumented, Honeycomb provides an automatic instrumentation agent called Honeycomb beelines, which can instrument your code. It also supports OpenTelemetry for generating instrumentation data.
 
 Honeycomb offers a free tier of service, and its pro tier starts at $100. The pricing is based on data retention and event volume captured.
 
-![Honeycomb dashboard](/img/blog/2021/08/observability_tools_honeycomb-min.png)
+<Screenshot
+  alt="Honeycomb dashboard"
+  height={500}
+  src="/img/blog/2021/08/observability_tools_honeycomb-min.png"
+  title="Snapshot of Honeycomb dashboard (Source: Honeycomb documentation)"
+  width={700}
+/>
 
 ### Lightstep
 
-As an observability tool, [Lightstep](https://lightstep.com/) automatically detects changes to your application, infrastructure, and user experience. It can then highlight the specific causes for the changes.
+As an observability tool, <a href = "https://lightstep.com/" rel="noopener noreferrer nofollow" target="_blank" ><b>Lightstep</b></a> automatically detects changes to your application, infrastructure, and user experience. It can then highlight the specific causes for the changes.
 
 For instrumentation, Lightstep uses OpenTelemetry to generate and send telemetry data to what it calls Lightstep Microsatellites. The microsatellites collect and forward the data to Lightstep SaaS for analysis. Lightstep also has its own time-series database to store the telemetry data.
 
@@ -133,21 +163,33 @@ Lightstep offers three plans of service:
 - Teams edition - Starts at $100 per month and is based on the number of monthly active services.
 - Enterprise edition - Offered to large enterprises with discounts based on volume.
 
-![Lighstep dashboard](/img/blog/2021/08/observability_tools_lightstep-min.png)
+<Screenshot
+  alt="Lighstep dashboard"
+  height={500}
+  src="/img/blog/2021/08/observability_tools_lightstep-min.png"
+  title="Lightstep dashboard (Source: Lightstep sandbox environment)"
+  width={700}
+/>
 
 ### New Relic
 
-[New Relic](https://newrelic.com/) is one of the oldest companies in the observability domain. Its observability tool enables you to visualize, analyze and troubleshoot your software stack in one platform. It also supports auto-instrumentation for eight popular programming languages.
+<a href = "https://newrelic.com/" rel="noopener noreferrer nofollow" target="_blank" ><b>New Relic</b></a> is one of the oldest companies in the observability domain. Its observability tool enables you to visualize, analyze and troubleshoot your software stack in one platform. It also supports auto-instrumentation for eight popular programming languages.
 
 New Relic can connect your application performance with your infrastructure health to provide you better insights for quick troubleshooting.
 
 Standard offering includes plans for teams up to 5 full users. Their pricing depends on the amount of data ingested with 100 GB free data ingest and $0.25 per extra GB.
 
-![New Relic dashboard](/img/blog/2021/08/New_relic_dashboard-min.png)
+<Screenshot
+  alt="New Relic dashboard"
+  height={500}
+  src="/img/blog/2021/08/New_relic_dashboard-min.png"
+  title="New Relic dashboard (Source: New Relic website)"
+  width={700}
+/>
 
 ### DataDog
 
-With the [DataDog](https://www.datadoghq.com/) observability tool, you can do a range of things like infrastructure monitoring, log management, application performance monitoring, and security monitoring. For providing full visibility into distributed applications, DataDog allows you to:
+With the <a href = "https://www.datadoghq.com/" rel="noopener noreferrer nofollow" target="_blank" ><b>DataDog</b></a> observability tool, you can do a range of things like infrastructure monitoring, log management, application performance monitoring, and security monitoring. For providing full visibility into distributed applications, DataDog allows you to:
 
 - Trace requests from end to end across distributed systems
 - Charts of latency percentiles(p95, p99, etc.)
@@ -156,11 +198,17 @@ With the [DataDog](https://www.datadoghq.com/) observability tool, you can do a 
 
 The pricing depends on the product you opt for. For example, the APM solution provides end-to-end distributed tracing, starts at $31 per host per month if billed annually.
 
-![DataDog dashboard](/img/blog/2021/08/observability_tools_datadog-min.png)
+<Screenshot
+  alt="DataDog dashboard"
+  height={500}
+  src="/img/blog/2021/08/observability_tools_datadog-min.png"
+  title="DataDog dashboard (Source: DataDog website)"
+  width={700}
+/>
 
 ### Splunk
 
-Splunk is a comprehensive observability tool that offers multiple products, including:
+<a href = "https://www.splunk.com/" rel="noopener noreferrer nofollow" target="_blank" ><b>Splunk</b></a> is a comprehensive observability tool that offers multiple products, including:
 
 - infrastructure monitoring
 - Application performance monitoring
@@ -173,7 +221,13 @@ Splunk allows you to collect all traces instead of a sample set. It also provide
 
 Splunk's observability Cloud for Enterprise editions starts at $95 per host per month if billed annually.
 
-![Splunk dashboard](/img/blog/2021/08/observability_tools_splunk-min.png)
+<Screenshot
+  alt="Splunk dashboard"
+  height={500}
+  src="/img/blog/2021/08/observability_tools_splunk-min.png"
+  title="DataDog dashboard (Source: DataDog website)"
+  width={700}
+/>
 
 ## How to choose the right observability tool?
 

@@ -90,7 +90,7 @@ SigNoz uses OpenTelemetry - a vendor-agnostic instrumentation library for genera
 - Infrastructure Monitoring
 - Log Management
 
-Standard offering includes plans for teams upto 5 full users. Their pricing depends on the amount of data ingested with 100 GB free data ingest and $0.25 per extra GB. You can visit their [pricing page](https://newrelic.com/pricing) for details.
+Standard offering includes plans for teams upto 5 full users. Their pricing depends on the amount of data ingested with 100 GB free data ingest and $0.25 per extra GB. You can visit their <a href = "https://newrelic.com/pricing" rel="noopener noreferrer nofollow" target="_blank" >pricing page</a> for details.
 
 <Screenshot
   alt="New Relic dashboard"
