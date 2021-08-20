@@ -97,7 +97,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
    alt="SigNoz Architecture Diagram"
    height={500}
-   src="/img/blog/2021/08/signoz_dashboard_hc.png"
+   src="/img/blog/2021/08/signoz_architecture-min.png"
    title="SigNoz Architecture with ClickHouse as storage backend"
    width={700}
 />
