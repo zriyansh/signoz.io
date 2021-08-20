@@ -14,6 +14,12 @@ module.exports = {
     //   // Optional fields.
     //   // anonymizeIP: true, // Should IPs be anonymized?
     // },
+    gtag: {
+      // You can also use your "G-" Measurement ID here.
+      trackingID: 'UA-152867655-1',
+      // Optional fields.
+      // anonymizeIP: true, // Should IPs be anonymized?
+    },
     announcementBar: {
       id: 'support_us', // Any value that will identify this message.
       content:
@@ -53,6 +59,12 @@ module.exports = {
           to: 'blog/',
           activeBasePath: 'blog',
           label: 'Blog',
+          position: 'left',
+        },
+        {
+          to: 'opentelemetry/',
+          activeBasePath: 'opentelemetry',
+          label: 'OpenTelemetry',
           position: 'left',
         },
         {
@@ -186,6 +198,7 @@ module.exports = {
       },
     ],
   ],
+  // plugins: ['@docusaurus/plugin-google-gtag'],
 
   
   // plugins: ['@docusaurus/plugin-google-analytics'],
