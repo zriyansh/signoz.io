@@ -49,9 +49,15 @@ We have installed SigNoz on a Ubuntu VM in Azure cloud. You can access SigNoz UI
 
 The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
 
-![SigNoz Dashboard](/img/blog/2021/08/openetelemetry_tomcat_signoz_dashboard.png)
+import Screenshot from "@theme/Screenshot"
 
-<!--- SigNoz Dashboard --->
+<Screenshot
+   alt="SigNoz dashboard showing application list"
+   height={500}
+   src="/img/blog/2021/08/openetelemetry_tomcat_signoz_dashboard.png"
+   title="SigNoz Dashboard"
+   width={700}
+/>
 
 ## Installing sample Tomcat Java application
 
@@ -125,7 +131,13 @@ OpenTelemetry has a very handy Java JAR agent that can be attached to any Java 8
 
    Below you can find your `Tomcat-SigNoz` app in the list of applications being monitored.
 
-   ![Tomcat shows up in the list of applications monitored by SIgNoz](/img/blog/2021/08/opentelemetry_tomcat_ui.png)
+   <Screenshot
+      alt="Tomcat shows up in the list of applications monitored by SigNoz"
+      height={500}
+      src="/img/blog/2021/08/opentelemetry_tomcat_ui.png"
+      title="Tomcat-SigNoz shows up in the list of applications monitored by SigNoz"
+      width={700}
+   />
 
 ## Metrics and Traces of the Tomcat Java Application
 
@@ -137,15 +149,33 @@ SigNoz comes with out of box RED metrics charts and visualization. RED metrics s
 - Error rate of requests
 - Duration taken by requests
 
-![SigNoz Ui showing charts](/img/blog/2021/08/opentelemetry_tomcat_signoz_charts.png)
+<Screenshot
+   alt="SigNoz Ui showing charts"
+   height={500}
+   src="/img/blog/2021/08/opentelemetry_tomcat_signoz_charts.png"
+   title="SigNoz UI showing popular RED metrics of application performance"
+   width={700}
+/>
 
 You can then choose a particular timestamp where latency is high to drill down to traces around that timestamp.
 
-![View of traces at a particular timestamp](/img/blog/2021/08/opentelemetry_regex.png)
+<Screenshot
+   alt="View of traces at a particular timestamp"
+   height={500}
+   src="/img/blog/2021/08/opentelemetry_regex.png"
+   title="View of traces at a particular timestamp"
+   width={700}
+/>
 
 You can use flamegraphs to identify the issue causing the latency.
 
-![Flamegraphs](/img/blog/2021/08/opentelemetry_tomcat_flamegraphs.png)
+<Screenshot
+   alt="Flamegraphs"
+   height={500}
+   src="/img/blog/2021/08/opentelemetry_tomcat_flamegraphs.png"
+   title="Flamegraphs used for distributed tracing in SigNoz dashboard"
+   width={700}
+/>
 
 ## Conclusion
 
@@ -158,7 +188,7 @@ If you are someone who understands more from video, then you can watch the tutor
 
 <div class="text--center">
 
-  <iframe width="560" height="315" src="https://www.youtube.com/watch?v=4obQilMqU4E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4obQilMqU4E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </div>
 
@@ -167,4 +197,4 @@ If you are someone who understands more from video, then you can watch the tutor
 
 [Golang Application Performance Monitoring with SigNoz](https://signoz.io/blog/monitoring-your-go-application-with-signoz/)
 
-[Monitor your Spring Boot application with OpenTelemetry and SigNoz](https://signoz.io/blog/monitoring-your-go-application-with-signoz/)
+[Monitor your Spring Boot application with OpenTelemetry and SigNoz](https://signoz.io/blog/opentelemetry-spring-boot/)
