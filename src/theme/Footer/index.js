@@ -104,7 +104,7 @@ function Footer() {
       >
         <div style={{ display: "block" }} className={"footer-yc-logo"}>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <img src={"/img/yc-logo.png"} />
+            <img src={"/img/yc-logo.png"} alt={"Y Combinator"}/>
           </div>
           <div
             style={{
