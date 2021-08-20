@@ -120,7 +120,7 @@ module.exports = {
           items: [
             {
               label: "Blog",
-              href: "https://signoz.io/blog/",
+              to: "blog/",
             },
             {
               label: "GitHub",
