@@ -24,3 +24,7 @@
 .navbarHidden {
   top: calc(var(--ifm-navbar-height) * -1) !important;
 }
+
+.title {
+  min-width: 80px;
+}
