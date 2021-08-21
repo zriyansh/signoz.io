@@ -83,7 +83,7 @@ function Navbar() {
           <Logo
             className="navbar__brand"
             imageClassName="navbar__logo"
-            titleClassName={clsx("navbar__title", {
+            titleClassName={clsx(styles.title, {
               [styles.hideLogoText]: isSearchBarExpanded,
             })}
           />
