@@ -47,15 +47,25 @@ And it quickly becomes unrealistic for teams to identify which service was respo
 
 SigNoz is a full-stack open-source application monitoring and observability platform which can be installed within your infra. You can track metrics like p99 latency, error rates for your services, external API calls, and individual endpoints. With service maps, you can quickly assess the health of your services.
 
-![](/img/blog/2021/06/ezgif.com-gif-maker-1.gif)
+import Screenshot from "@theme/Screenshot"
 
-<!--- Service maps on SigNoz dashboard --->
+<Screenshot
+   alt="Service Maps on SigNoz dashboard"
+   height={500}
+   src="/img/blog/2021/06/ezgif.com-gif-maker-1.gif"
+   title="Service maps on SigNoz dashboard"
+   width={700}
+/>
 
 And once you know the affected service, trace data can help you identify the exact code causing the issue. Using SigNoz dashboard, you can visualize your traces easily with flamegraphs.
 
-![](/img/blog/2021/06/screenzy-1622399034895.png)
-
-<!--- Distributed tracing visualized with flamegraphs on SigNoz dashboard --->
+<Screenshot
+   alt="Flamegraphs on SigNoz dashboard"
+   height={500}
+   src="/img/blog/2021/06/screenzy-1622399034895.png"
+   title="Distributed tracing visualized with flamegraphs on SigNoz dashboard"
+   width={700}
+/>
 
 Now let's get down to some action and see everything for yourself.
 
@@ -146,8 +156,13 @@ Verify if you have Golang installed on your machine by running `$ go version` on
 
     If you see an empty array, it means your application is working. You can check out how to write, update and delete books in your array from the article [here](https://blog.logrocket.com/how-to-build-a-rest-api-with-golang-using-gin-and-gorm/).
 
-    ![](/img/blog/2021/06/screenzy-1623261415095.png)
-    <!--- endpoint of our bookstore app --->
+    <Screenshot
+    alt="endpoint of bookstore app"
+    height={500}
+    src="/img/blog/2021/06/screenzy-1623261415095.png"
+    title="endpoint of our bookstore app"
+    width={700}
+    />
 
     Once you ensure that your application is working, exit the server by pressing 'Ctrl + C' on your mac terminal.
 
@@ -184,9 +199,13 @@ And, congratulations! You have instrumented your sample Golang app. Hit the `/bo
 
 You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000/) to monitor your app for performance metrics.
 
-![](/img/blog/2021/06/signoz_ui_goapp.png)
-
-<!--- Sample Golang app appears in the list of application --->
+<Screenshot
+   alt="Sample golang app in the list of applications"
+   height={500}
+   src="/img/blog/2021/06/signoz_ui_goapp.png"
+   title="Sample Golang app appears in the list of application"
+   width={700}
+/>
 
 If you want to instrument your own Golang application, you can read about it in our [documentation](https://signoz.io/docs/instrumentation/golang/#instrumentation-of-a-sample-golang-application).
 
