@@ -156,7 +156,7 @@ Steps to get the app set up and running:
    OTEL_EXPORTER_OTLP_SPAN_ENDPOINT="http://localhost:55681/v1/trace" OTEL_METRICS_EXPORTER=none LS_SERVICE_NAME=sample_app node server_init.js
    ```
 
-And, congratulations! You have instrumented your sample Node.js app. You can now access the SigNoz dashboard at http://localhost:3000 to monitor your app for performance metrics.
+And, congratulations! You have instrumented your sample Node.js app. You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000) to monitor your app for performance metrics.
 <Screenshot
   alt="Sample nodejs app in the applications monitored"
   height={500}
@@ -210,6 +210,8 @@ OpenTelemetry makes it very convenient to instrument your Nodejs application. Yo
 You can try out SigNoz by visiting its GitHub repo 👇<br></br>
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+
+If you face any issues while trying out SigNoz, feel free to write to us at: support@signoz.io
 
 If you want to read more about SigNoz 👇<br></br>
 

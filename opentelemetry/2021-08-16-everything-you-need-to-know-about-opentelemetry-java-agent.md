@@ -132,13 +132,23 @@ The OpenTelemetry Java Jar agent provides a quick and convenient way to enable y
 
 As mentioned earlier, OpenTelemetry is a vendor-agnostic instrumentation library. So the telemetry data is portable. You can configure it to export in many different formats. A tool like [SigNoz](https://signoz.io/) supports the default OTLP formats and is a perfect choice for sending your telemetry data. It also comes with a visualization layer where you can visualize charts like the popular RED metrics and distributed tracing with flame graphs and Gantt charts.
 
-![SigNoz UI](/img/SigNoz_UI_hc.png)
+import Screenshot from "@theme/Screenshot"
 
-<!--- Visualize application metrics like latency, request per sec, error percentage and top endpoints --->
+<Screenshot
+  alt="SigNoz UI showing RED metrics"
+  height={500}
+  src="/img/SigNoz_UI_hc.png"
+  title="SigNoz Dashboard with visualization of the popular RED metrics for your application (Number of requests, rate of error & duration)"
+  width={700}
+/>
 
-![Flamegraphs](/img/signoz_flamegraphs_hc.png)
-
-<!--- Flamegraphs and Gantt Charts for visualizing distributed tracing --->
+<Screenshot
+  alt="SigNoz UI showing RED metrics"
+  height={500}
+  src="/img/signoz_flamegraphs_hc.png"
+  title="Flamegraphs and Gantt Charts for visualizing distributed tracing"
+  width={700}
+/>
 
 Read how to monitor your Spring Boot application with OpenTelemetry Java agent and SigNoz 👇<br></br>
 [Monitor your Spring Boot application with OpenTelemetry and SigNoz](https://signoz.io/blog/opentelemetry-spring-boot/)

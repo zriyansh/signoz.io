@@ -123,7 +123,7 @@ import Screenshot from "@theme/Screenshot"
    ```
 
    <Screenshot
-    alt="starting mongoDB services from mac terminal"
+    alt="mac terminal commands for running a python app"
     height={500}
     src="/img/blog/2021/08/opentelemetry_python_python_app_terminal.png"
     title="Running Python app from terminal"
@@ -133,10 +133,10 @@ import Screenshot from "@theme/Screenshot"
    You can now access the UI of the app on your local host: http://localhost:5000/
 
    <Screenshot
-    alt="starting mongoDB services from mac terminal"
+    alt="Python app UI"
     height={500}
     src="/img/blog/2021/08/python_app_ui.png"
-    title="Running Python app from terminal"
+    title="Python App UI accessed on port 5000"
     width={700}
     />
 
@@ -236,6 +236,8 @@ OpenTelemetry makes it very convenient to instrument your Python application. Yo
 You can try out SigNoz by visiting its GitHub repo 👇<br></br>
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+
+If you face any issues while trying out SigNoz, feel free to write to us at: support@signoz.io
 
 If you want to read more about SigNoz 👇<br></br>
 
