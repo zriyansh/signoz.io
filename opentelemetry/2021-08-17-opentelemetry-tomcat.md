@@ -182,7 +182,7 @@ You can use flamegraphs to identify the issue causing the latency.
 OpenTelemetry makes it very convenient to instrument your Spring Boot application. You can then use an open-source APM tool like SigNoz to analyze the performance of your app. As SigNoz offers a full-stack observability tool, you don't have to use multiple tools for your monitoring needs.
 
 You can try out SigNoz by visiting its GitHub repo 👇<br></br>
-[SigNoz GitHub repo](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 If you are someone who understands more from video, then you can watch the tutorial on how to monitor your Tomcat Java Application with OpenTelemetry and SigNoz below👇<br></br>
 
@@ -191,6 +191,8 @@ If you are someone who understands more from video, then you can watch the tutor
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4obQilMqU4E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </div>
+
+If you face any issues while trying out SigNoz, feel free to write to us at: support@signoz.io
 
 <br></br>If you want to read more about SigNoz 👇
 <br></br>

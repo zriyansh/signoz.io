@@ -161,7 +161,7 @@ SigNoz comes with out of box RED metrics charts and visualization. RED metrics s
 - Duration taken by requests
 
 <Screenshot
-  alt="Sample nodejs app in the applications monitored"
+  alt="SigNoz charts and visualization"
   height={500}
   src="/img/blog/common/signoz_charts_application_metrics.png"
   title="Measure things like application latency, requests per sec, error percentage and see your top endpoints"
@@ -195,6 +195,8 @@ OpenTelemetry makes it very convenient to instrument your Go applications and ge
 You can try out SigNoz by visiting its GitHub repo 👇<br></br>
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+
+If you face any issues while trying out SigNoz, feel free to write to us at: support@signoz.io
 
 If you want to read more about SigNoz 👇<br></br>
 [Monitor your Spring Boot application with OpenTelemetry and SigNoz](https://signoz.io/blog/opentelemetry-spring-boot/)
