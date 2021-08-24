@@ -35,6 +35,17 @@ If you are on Mac or any of the following linux distributions, using our install
 If you are neither on any of the above distributions nor on Mac, please install directly using [Docker Compose](#2-using-docker-compose)
 
 Here's a [quick guide](https://docs.docker.com/compose/install/) to install Docker Compose if you don't have it set up already
+<br></br>
+
+
+:::note
+
+[Update Aug 23, 2021] If you are trying to test SigNoz on **Mac M1 (Apple Silicon Chip)**, the below methods would throw an error as Clickhouse doesn't provide an [official arm build](https://github.com/ClickHouse/ClickHouse/issues/20237#issuecomment-888979638) for docker. We recommend you try installing on a cloud virtual machine on Ubuntu or any of the other supported linux distros.
+
+We are working on finding a way to solve this ASAP.
+:::
+
+
 
 <br></br>
 
@@ -63,10 +74,12 @@ Check that you are in `signoz/deploy` folder. Now run
 
 2) Kafka + Druid setup to handle scale (recommended for production use)
 ```
+<br></br>
 
-Once `./install.sh` runs successfully, the UI should be accessible at port 3000 on the domain you set up or the IP of your instance.
+Once `install.sh` runs successfully, the UI should be accessible at port 3000 on the domain you set up or the IP of your instance.
 
 <br></br>
+
 
 :::info
 Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3000`.
