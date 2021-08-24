@@ -29,7 +29,17 @@ You liked something on the Internet, decided to buy it and made the payment at t
 But instead, you get a blank page staring  👀 at you.
 
 You wait hoping that it would show a success message. But no, it just stares back at you.
-![](/img/blog/2020/01/BlankPage.jpg)Blank page returned after making payment
+
+import Screenshot from "@theme/Screenshot"
+
+<Screenshot
+    alt="Blank page returned after making payment"
+    height={500}
+    src="/img/blog/2020/01/BlankPage.jpg"
+    title="Blank page returned after making payment"
+    width={700}
+/>
+
 You get worried, thinking - "What happened to my money? Will my order be delivered? Or not?"
 
 Inevitably you lose your patience and reach out to customer care. Depending on how good is the company's customer service team - you may be in for a long battle over multiple emails/twitter escalations, etc.
@@ -73,28 +83,36 @@ It means that
 - And, if some issue still creeps in, then you should be able to debug them in a matter of minutes
 
 Of course, there are other players in this space, but we believe that there is a paradigm shift happening in how people run their software on the cloud. Cloud-native technologies like Kubernetes and Serverless are getting rapid adoption and they bring with them their own set of challenges and unique opportunities.
-![](/img/blog/2020/01/KubeConCNCAttendance2019.png)_KubeCon (leading k8s conference) attendance went from 500 to 23000 in 5 yrs_
+
+<Screenshot
+    alt="KubeCon conference attendance"
+    height={500}
+    src="/img/blog/2020/01/KubeConCNCAttendance2019.png"
+    title="KubeCon (leading k8s conference) attendance went from 500 to 23000 in 5 yrs"
+    width={700}
+/>
+
 In this new world, monitoring can't be an afterthought but built into when you start building your systems. Any how-to guide on Kubernetes today also includes instruction on how to set up monitoring.
-[Checkout SigNoz - Lightweight APM for Kubernetes](https://signoz.io)
-a.button {
--webkit-appearance: button;
--moz-appearance: button;
-appearance: button;
 
-    text-decoration: none;
-    color: initial;
-
-}
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
 ## A peep into the Future
 
 We believe the AI/Robot age is already here. It's just that the robots are not roaming in the streets, as the movie Terminator showed it to be, but are settled in cloud provider data centers.
-![](/img/blog/2020/01/BlogTerminator.jpg)The robots are already. They are just sitting in cloud datacentres.
+
+<Screenshot
+    alt="Robots"
+    height={500}
+    src="/img/blog/2020/01/BlogTerminator.jpg"
+    width={700}
+/>
+
+The robots are already. They are just sitting in cloud datacentres.
 After all, if you think carefully - isn't a lot of our lives governed by the notifications we get on mobile or desktop. Be it slack pings, new offer on e-commerce, email, twitter replies or WhatsApp notifications. Our brain has got attuned to responding to these triggers like a Pavlovian dog. In a way, the robots are already here and controlling us, but by sitting in their comfortable datacentres.
 
 Observability/monitoring is a way to ensure that these cloud-based robots are functioning properly and are doing what they are supposed to do. In spite of all the advancements in computer science, these cloud-based software systems are fragile and break quite often. Any software engineer who has deployed a service at least has a few stories to narrate on how he deployed services and the issues faced.
 
-It would be unfair on our part to lament the fragility of software systems though. As a discipline, computers/software engineering is quite new. If you take the World War II code-breaking era as the start of programming, this discipline is only 70-80 years old. Some [sources](https://people.inf.ethz.ch/wirth/Miscellaneous/IEEE-Annals.pdf) take the starting of software engineering as a discipline to be around 1960. So we are hardly 60 years in.
+It would be unfair on our part to lament the fragility of software systems though. As a discipline, computers/software engineering is quite new. If you take the World War II code-breaking era as the start of programming, this discipline is only 70-80 years old. Some <a href = "https://people.inf.ethz.ch/wirth/Miscellaneous/IEEE-Annals.pdf" rel="noopener noreferrer nofollow" target="_blank" >sources</a> take the starting of software engineering as a discipline to be around 1960. So we are hardly 60 years in.
 
 If you compare this timeline to human evolution, this is nothing. Humans have benefited from millions of years of tinkering by evolution - and have developed sophisticated mechanisms like immunity, self-healing. We believe that cloud systems will also get there and at a much faster pace compared to what evolution took.
 
@@ -104,4 +122,4 @@ This is what we believe SigNoz can help achieve. Making cloud systems become rel
 
 ---
 
-We will keep you updated on our journey. Happy to listen to any thoughts/comments you may have. Please share them by commenting below or writing to me at **_pranay at signoz dot io_**
+We will keep you updated on our journey. Happy to listen to any thoughts/comments you may have. Please share them by commenting below or writing to me at pranay@signoz.io

@@ -57,6 +57,8 @@ import Screenshot from "@theme/Screenshot"
 
 ## Installing sample Spring Boot app
 
+If you don't have Java installed, first install it from the <a href = "https://www.java.com/en/" rel="noopener noreferrer nofollow" target="_blank" >official website</a>.
+
 For this tutorial, we will use a sample Spring Boot application built using Maven. You can find the code for the application at its <a href = "https://github.com/spring-projects/spring-petclinic" rel="noopener noreferrer nofollow" target="_blank" >GitHub repo</a>.
 
 Steps to get the app set up and running:
@@ -137,17 +139,31 @@ Once you ensure that your application runs fine, stop it with `ctrl + z` on mac,
 For instrumenting Java applications, OpenTelemetry has a very handy Java JAR agent that can be attached to any Java 8+ application. The JAR agent can detect a number of <a href = "https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/docs/supported-libraries.md" rel="noopener noreferrer nofollow" target="_blank" >popular libraries and frameworks</a> and instrument it right out of the box. You don't need to add any code for that.
 
 1. Download the [latest Java JAR agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent-all.jar).
+
 2. Now you need to enable the instrumentation agent as well as run your sample application. You can do so by the following command:
 
-```
-OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://IP of SigNoz:4317" OTEL_RESOURCE_ATTRIBUTES=service.name=javaApp java -javaagent:/path/to/opentelemetry-javaagent-all.jar -jar target/\*.jar
-```
+   ```
+   OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://IP of SigNoz:4317" OTEL_RESOURCE_ATTRIBUTES=service.name=javaApp java -javaagent:/path/to/opentelemetry-javaagent-all.jar -jar target/\*.jar
+   ```
 
-<br></br>As you are running this on your local host, you need to replace `IP of SigNoz` with `localhost`. The path should be updated to where you have kept your downloaded Java JAR agent. Your final command will look like this:<br></br>
+   <br></br>As you are running this on your local host, you need to replace `IP of SigNoz` with `localhost`. The path should be updated to where you have kept your downloaded Java JAR agent. Your final command will look like this:
+   <br></br>
 
-    OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" OTEL_RESOURCE_ATTRIBUTES=service.name=javaApp java -javaagent:/Users/Downloads/opentelemetry-javaagent-all.jar -jar target/*.jar
+   ```
+   OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" OTEL_RESOURCE_ATTRIBUTES=service.name=javaApp java -javaagent:/Users/Downloads/opentelemetry-javaagent-all.jar -jar target/\*.jar
+   ```
 
-<br></br>Note the path is updated for my local environment.
+   <br></br>Note the path is updated for my local environment.
+
+   You can also use `-D` option to install the java agent.
+
+   ```
+   java -javaagent:/path/to/opentelemetry-javaagent-all.jar \
+    -Dotel.metrics.exporter=none \
+    -Dotel.exporter.otlp.endpoint=http://<IP of SigNoz>:4317 \
+    -Dotel.resource.attributes="service.name=<service_name>" \
+    -jar target/*.jar
+   ```
 
 Check out the Spring Pet Clinic app at: [http://localhost:8090/](http://localhost:8090/) and play around with it to generate some load. It might take 1-2 minutes before it starts showing up in the SigNoz dashboard.
 
@@ -217,6 +233,8 @@ If you are someone who understands more from video, then you can watch the tutor
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YxZb17_LYwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </div>
+
+If you face any issues while trying out SigNoz, feel free to write to us at: support@signoz.io
 
 If you want to read more about SigNoz 👇
 
