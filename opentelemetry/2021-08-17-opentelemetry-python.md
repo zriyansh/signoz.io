@@ -23,6 +23,8 @@ OpenTelemetry is a vendor-agnostic instrumentation library under CNCF. It can be
 
 <!--truncate-->
 
+import Screenshot from "@theme/Screenshot"
+
 <Screenshot
   alt="Monitor Python applications with SigNoz"
   height={500}
@@ -70,8 +72,6 @@ You will have an option to choose between ClickHouse or Kafka + Druid as a stora
 When you are done installing SigNoz, you can access the UI at: `http://localhost:3000`
 
 The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
-
-import Screenshot from "@theme/Screenshot"
 
 <Screenshot
   alt="SigNoz dashboard"

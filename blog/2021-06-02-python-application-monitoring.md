@@ -26,6 +26,8 @@ In this article, learn how to setup application monitoring for Python apps using
 
 If you want to check our Github repo before diving in 👇
 
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+
 **The cost of a millisecond.**
 
 TABB Group, a financial services industry research firm, [estimates](https://research.tabbgroup.com/report/v06-007-value-millisecond-finding-optimal-speed-trading-infrastructure) that if a broker's electronic trading platform is 5 milliseconds behind the competition, it could cost $4 million in revenue per millisecond.
