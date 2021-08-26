@@ -159,10 +159,5 @@ If you liked what you read, then check out our GitHub repo 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
-You can get in touch with us, and we will be happy to help. Write to us at: support@signoz.io
-
 Our slack community is a great place to get your queries solved instantly and get community support for SigNoz. Link to join 👇<br></br>
 [SigNoz slack community](https://bit.ly/signoz-slack)
-
-If you want to read more about SigNoz 👇<br></br>
-[Monitor Spring Boot application with OpenTelemetry and SigNoz](https://signoz.io/blog/opentelemetry-spring-boot/)
