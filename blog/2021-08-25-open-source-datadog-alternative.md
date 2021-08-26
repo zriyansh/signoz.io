@@ -18,7 +18,7 @@ keywords:
   - signoz
 ---
 
-More and more companies are now shifting to a cloud-native & microservices based architecture. Having an application monitoring tool is critical in this world because you can’t just log into a machine and figure out what’s going wrong.
+More and more companies are now shifting to a cloud-native & microservices-based architecture. Having an application monitoring tool is critical in this world because you can’t just log into a machine and figure out what’s going wrong.
 
 <!--truncate-->
 
@@ -26,18 +26,18 @@ More and more companies are now shifting to a cloud-native & microservices based
 
 We have spent years learning about application monitoring & observability. What are the key features an observability tool should have to enable fast resolution of issues.
 
-In our opinion, a good observability tools should have
+In our opinion, good observability tools should have
 
 - Out of the box application metrics
 - Way to go from metrics to traces to find why some issues are happening
 - Seamless flow between metrics, traces & logs — the three pillars of observability
-- Filtering of traces based on different tag and filters
+- Filtering of traces based on different tags and filters
 - Ability to set dynamic thresholds for alerts
 - Transparency in pricing
 
 ## User experience not great in current open-source tools
 
-We found that though there are open-source tools like Prometheus & Jaeger, they don’t provide great user experience like SaaS products do. It takes lots of time and effort to get them working, figuring out the long term storage, etc. And if you want metrics and traces, it’s not possible as Prometheus metrics & Jaeger traces have different formats.
+We found that though there are open-source tools like Prometheus & Jaeger, they don’t provide a great user experience as SaaS products do. It takes lots of time and effort to get them working, figuring out the long-term storage, etc. And if you want metrics and traces, it’s not possible as Prometheus metrics & Jaeger traces have different formats.
 
 SaaS tools like DataDog and NewRelic do a much better job at many of these aspects:
 
@@ -47,10 +47,10 @@ SaaS tools like DataDog and NewRelic do a much better job at many of these aspec
 
 But it has the following issues:
 
-- Crazy node based pricing which doesn’t make sense in today’s micro-services architecture. Any node which is live for more than 8hrs in a month is charged. So, unsuitable for spiky workloads
+- Crazy node-based pricing, which doesn’t make sense in today’s micro-services architecture. Any node which is live for more than 8hrs in a month is charged. So, unsuitable for spiky workloads
 - Very costly. They charge custom metrics for $5/100 metrics
-- It is cloud only, so not suitable for companies which have concerns with sending data outside their infra
-- For any small feature, you are dependent on their roadmap. We think this is an unnecessary restriction for a product which is used by developers. A product used by developers should be extendible
+- It is cloud-only, so not suitable for companies that have concerns with sending data outside their infra
+- For any small feature, you are dependent on their roadmap. We think this is an unnecessary restriction for a product which developers use. A product used by developers should be extendible
 
 ---
 
@@ -143,9 +143,26 @@ Detailed flamegraph & Gantt charts to find exact cause of the issue, and which o
 
 ---
 
+## Getting started with SigNoz
+
+If you have docker installed, getting started with SigNoz just takes three easy steps at the command line:
+
+```
+git clone https://github.com/SigNoz/signoz.git
+cd signoz/deploy/
+./install.sh
+```
+
+You can read more about deploying SigNoz from its [documentation](https://signoz.io/docs/deployment/docker/).
+
 If you liked what you read, then check out our GitHub repo 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
-Join our slack community 👇<br></br>
+You can get in touch with us, and we will be happy to help. Write to us at: support@signoz.io
+
+Our slack community is a great place to get your queries solved instantly and get community support for SigNoz. Link to join 👇<br></br>
 [SigNoz slack community](https://bit.ly/signoz-slack)
+
+If you want to read more about SigNoz 👇<br></br>
+[Monitor Spring Boot application with OpenTelemetry and SigNoz](https://signoz.io/blog/opentelemetry-spring-boot/)
