@@ -112,7 +112,7 @@ While installing SigNoz, you will have the option to choose between ClickHouse o
     width={700}
 />
 
-ClickHouse is designed to be a [very fast](https://clickhouse.tech/docs/en/faq/general/why-clickhouse-is-so-fast/) OLAP database. It is also low resource-intensive. Kafka+Druid is an industry-proven combo to power highly scalable data ingestion and real-time data analysis.
+ClickHouse is designed to be a <a href = "https://clickhouse.tech/docs/en/faq/general/why-clickhouse-is-so-fast/" rel="noopener noreferrer nofollow" target="_blank" >very fast</a> OLAP database. It is also low resource-intensive. Kafka+Druid is an industry-proven combo to power highly scalable data ingestion and real-time data analysis.
 
 For Jaeger, Cassandra and Elasticsearch are the primary supported storage backends. But users have requested ClickHouse support for Jaeger too due to its popularity. Check out this GitHub issue 👇
 
