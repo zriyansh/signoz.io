@@ -1,8 +1,8 @@
 ---
 title: Monitor your Nodejs application with OpenTelemetry and SigNoz
-slug: nodejs
+slug: opentelemetry-nodejs
 date: 2021-08-18
-tags: [javascript-monitoring]
+tags: [opentelemetry, javascript-monitoring]
 author: Ankit Anand
 author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
@@ -19,10 +19,6 @@ keywords:
   - nodejs instrumentation
   - signoz
 ---
-
-<head>
-  <link rel="canonical" href="https://signoz.io/blog/opentelemetry-nodejs/" />
-</head>
 
 OpenTelemetry can auto-instrument many common modules for a Javascript application. The telemetry data captured can then be sent to SigNoz for analysis and visualization.
 
