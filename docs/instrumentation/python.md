@@ -128,6 +128,16 @@ Please refer the official [Django docs](https://docs.djangoproject.com/en/1.10/t
 
 <p>&nbsp;</p>
 
+### Running applications with Gunicorn, uWSGI
+
+For application servers which are based on pre fork model like Gunicorn, uWSGI you have to add a `post_fork` hook or a `postfork decorator` in your configuration. 
+
+Check this [documentation](https://opentelemetry-python.readthedocs.io/en/latest/examples/fork-process-model/README.html) from OpenTelemetry om how to set it up. 
+
+[Here's](https://github.com/SigNoz/opentelemetry-python/tree/main/docs/examples/fork-process-model) a working example where we have configured a gunicorn server with `post_fork` hook.
+  
+<p>&nbsp;</p>
+
 
 ### Troubleshooting your installation
 
