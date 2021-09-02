@@ -194,7 +194,36 @@ module.exports = {
         path: "./opentelemetry",
       },
     ],
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/icons/icon-512x512.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json', // your PWA manifest
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: 'rgb(95, 34, 20)',
+          },
+        ],
+      },
+    ],
   ],
+
   // plugins: ['@docusaurus/plugin-google-gtag'],
 
   // plugins: ['@docusaurus/plugin-google-analytics'],
