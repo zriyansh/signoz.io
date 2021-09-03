@@ -29,11 +29,11 @@ module.exports = {
       textColor: "#eeeeee", // Defaults to `#000`.
       isCloseable: false, // Defaults to `true`.
     },
-    posthog: {
-      apiKey: "H-htDCae7CR3RV57gUzmol6IAKtm5IMCvbcm_fwnL-w",
-      appUrl: "https://app.posthog.com", // optional
-      enableInDevelopment: true, // optional
-    },
+    // posthog: {
+    //   apiKey: "H-htDCae7CR3RV57gUzmol6IAKtm5IMCvbcm_fwnL-w",
+    //   appUrl: "https://app.posthog.com", // optional
+    //   enableInDevelopment: false, // optional
+    // },
     image: "img/HeroShot-3.jpg",
     colorMode: {
       // "light" | "dark"
@@ -174,7 +174,7 @@ module.exports = {
       },
     ],
   ],
-  plugins: ["posthog-docusaurus"],
+  // plugins: ["posthog-docusaurus"],
   plugins: [
     [
       "@docusaurus/plugin-content-blog",
