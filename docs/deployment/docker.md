@@ -104,7 +104,7 @@ git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
 If you don't have `docker-compose` set up, please follow [this guide](https://docs.docker.com/compose/install/) to set up docker compose before proceeding with the next steps.
 
 <Tabs
-  defaultValue="clickHouse"
+  defaultValue="clickhouse"
   groupId="datastore-options"
   values={[
     { label: "ClickHouse Setup", value: "clickhouse" },
