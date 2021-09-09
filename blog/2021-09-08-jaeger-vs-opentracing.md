@@ -71,7 +71,7 @@ As such, if you're looking to enable distributed tracing, implementing Jaeger is
 
 - Jaeger is an end-to-end distributed tracing tool, while OpenTracing is an instrumentation library
 - Jaeger has a web UI component while you need to select an analysis backend tool while using a instrumentation library like OpenTracing
-- Jaeger is an active [open-source project](https://github.com/jaegertracing/jaeger), while OpenTracing is no longer actively maintained as the project merged with OpenCensus to form [OpenTelemetry](https://opentelemetry.io/)
+- Jaeger is an active <a href = "https://github.com/jaegertracing/jaeger" rel="noopener noreferrer nofollow" target="_blank" ><b>open-source project</b></a>, while OpenTracing is no longer actively maintained as the project merged with OpenCensus to form <a href = "https://opentelemetry.io/" rel="noopener noreferrer nofollow" target="_blank" ><b>OpenTelemetry</b></a>
 - OpenTracing does not provide an option to store data, while Jaeger supports two popular open-source projects: Cassandra and ElasticSearch for storage
 
 ## Use-cases of Jaeger and OpenTracing
