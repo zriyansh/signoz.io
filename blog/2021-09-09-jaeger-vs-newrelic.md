@@ -17,6 +17,10 @@ keywords:
   - opentelemetry tracing
   - traces
 ---
+<head>
+  <link rel="canonical" href="https://signoz.io/blog/jaeger-vs-newrelic/"/>
+</head>
+
 Jaeger and New Relic are tools used in the application monitoring and observability domain. While Jaeger is an open source tool under Cloud Native Computing Foundation, New Relic is a SaaS vendor in the observability domain. Let us explore the key differences between Jaeger and New Relic in this article.
 
 <!--truncate-->

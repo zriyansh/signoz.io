@@ -1,5 +1,5 @@
 ---
-title: Jaeger vs OpenTracing - Key differences, use-cases and alternatives
+title: Jaeger and OpenTracing - Key concepts, use-cases and alternatives
 slug: jaeger-vs-opentracing
 date: 2021-09-08
 tags: [jaeger, apm-tools]
@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Jaeger and OpenTracing are both open-source projects aimed to solve pain-points of distributed tracing. But the scope of the projects are completely different. While Jaeger is an end-to-end distributed tracing tool..
-image: /img/blog/2021/09/jaeger_vs_opentracing_cover-min.jpg
+image: /img/blog/2021/09/jaeger_vs_opentracing_cover-min-2.jpg
 keywords:
   - jaeger
   - opentracing
@@ -17,12 +17,15 @@ keywords:
   - opentelemetry tracing
   - traces
 ---
+<head>
+  <link rel="canonical" href="https://signoz.io/blog/jaeger-vs-opentracing/"/>
+</head>
 
 Jaeger and OpenTracing are both open-source projects. Jaeger was originally built by teams at Uber and then open-sourced. The OpenTracing project was also started by teams at Uber, and hence they are compatible with each other. While Jaeger is an end-to-end distributed tracing tool, OpenTracing is a set of APIs and libraries that can be used to instrument your application.
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/09/jaeger_vs_opentracing_cover-min.jpg)
+![Cover Image](/img/blog/2021/09/jaeger_vs_opentracing_cover-min-2.jpg)
 
 >OpenTracing has officially merged with another open-source project called OpenCensus to form OpenTelemetry, which is emerging as the world standard for creating and managing telemetry data.<br></br>
 >If you're looking for an open-source distributed tracing tool, your best option is [SigNoz](https://signoz.io/) - a full-stack APM and observability tool.

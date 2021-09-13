@@ -17,6 +17,9 @@ keywords:
   - apm tools
   - signoz
 ---
+<head>
+  <link rel="canonical" href="https://signoz.io/blog/open-source-datadog-alternative/"/>
+</head>
 
 More and more companies are now shifting to a cloud-native & microservices-based architecture. Having an application monitoring tool is critical in this world because you can’t just log into a machine and figure out what’s going wrong.
 

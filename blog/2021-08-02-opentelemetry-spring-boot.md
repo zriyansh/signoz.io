@@ -17,6 +17,10 @@ keywords:
   - application monitoring
 ---
 
+<head>
+  <link rel="canonical" href="https://signoz.io/blog/opentelemetry-spring-boot/"/>
+</head>
+
 OpenTelemetry can auto-instrument your Spring Boot application to capture telemetry data from a number of popular libraries and frameworks. Let's learn how it works.
 
 <!--truncate-->

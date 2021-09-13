@@ -15,6 +15,10 @@ keywords:
   - opentelemetry tracing
   - traces
 ---
+<head>
+  <link rel="canonical" href="https://signoz.io/blog/opentelemetry-tracing/"/>
+</head>
+
 Setting up observability and robust monitoring for distributed systems is a challenging task. Engineering teams need access to different pieces of information to understand what's happening with their application. Is OpenTelemetry a step in the right direction for distributed tracing? Let's find out.
 
 <!--truncate-->

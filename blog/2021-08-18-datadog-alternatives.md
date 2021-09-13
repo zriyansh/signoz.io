@@ -20,6 +20,10 @@ keywords:
   - signoz
 ---
 
+<head>
+  <link rel="canonical" href="https://signoz.io/blog/datadog-alternatives/"/>
+</head>
+
 Are you looking for a DataDog alternative? Then you have come to the right place. In this article, we will go through top 5 DataDog alternatives. One of the biggest challenge users face with DataDog is its pricing policies.
 
 <!--truncate-->

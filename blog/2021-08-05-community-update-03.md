@@ -15,6 +15,10 @@ keywords:
   - GitHub contributors
 ---
 
+<head>
+  <link rel="canonical" href="https://signoz.io/blog/community-update-03/"/>
+</head>
+
 It's time for monthly product updates aka Signal #03. This month's release hit a major milestones with PRs from 10+ contributors. Let's see what humans of SigNoz have been upto 🙌
 
 <!--truncate-->

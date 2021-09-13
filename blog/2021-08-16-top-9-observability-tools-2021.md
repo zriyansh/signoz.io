@@ -17,6 +17,10 @@ keywords:
   - signoz
 ---
 
+<head>
+  <link rel="canonical" href="https://signoz.io/blog/observability-tools/"/>
+</head>
+
 In microservices architecture, observability tools enable you to create central dashboards to gauge the health of your distributed systems. Let's explore some top observability tools which can help you in meeting the increasing demands of today's users.
 
 <!--truncate-->

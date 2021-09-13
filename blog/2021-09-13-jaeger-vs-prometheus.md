@@ -17,6 +17,10 @@ keywords:
   - metrics monitoring
   - traces
 ---
+<head>
+  <link rel="canonical" href="https://signoz.io/blog/jaeger-vs-prometheus/"/>
+</head>
+
 Both Jaeger and Prometheus are popular open-source application performance monitoring tools. While Jaeger is an end-to-end distributed tracing tool, Prometheus is used as a time-series database for monitoring metrics. Let's dive in to explore their key features and differences.
 
 <!--truncate-->
