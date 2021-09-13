@@ -7,8 +7,8 @@ author: Ankit Anand
 author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
-description: Jaeger and Zipkin are two popular open-source projects used for end-to-end distributed tracing. WHile Zipkin is an older project and a wider community, Jaeger has modern, scalable architecture and supports open standards of instrumentation libraries..
-image: /img/blog/2021/09/jaeger_vs_newrelic_cover-min.jpg
+description: Jaeger and Zipkin are two popular open-source projects used for end-to-end distributed tracing. While Zipkin is an older project and a wider community, Jaeger has modern, scalable architecture and supports open standards of instrumentation libraries..
+image: /img/blog/2021/09/jaeger_vs_zipkin_apm_cover-min.jpg
 keywords:
   - jaeger
   - zipkin
