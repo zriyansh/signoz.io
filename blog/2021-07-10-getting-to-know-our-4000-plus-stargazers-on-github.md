@@ -14,6 +14,9 @@ keywords:
   - stargazers analysis
   - SigNoz
 ---
+<head>
+  <link rel="canonical" href="https://signoz.io/blog/getting-to-know-our-4000-plus-stargazers-on-github/"/>
+</head>
 
 In a little over 4 months, we have crossed 4k+ stars on our GitHub repo. In this article, we explore what we can learn from our GitHub stars.
 

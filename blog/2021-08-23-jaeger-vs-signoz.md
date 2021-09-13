@@ -18,6 +18,10 @@ keywords:
   - jaegertracing
 ---
 
+<head>
+  <link rel="canonical" href="https://signoz.io/blog/jaeger-vs-signoz/"/>
+</head>
+
 Are you thinking of using Jaeger as a distributed tracing tool? What if there is a better alternative that does both traces and metrics so that your engineering team does not have to use multiple tools.
 
 <!--truncate-->

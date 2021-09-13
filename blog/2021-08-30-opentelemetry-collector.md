@@ -1,5 +1,5 @@
 ---
-title: Everything you need to know about OpenTelemetry Collector
+title: OpenTelemetry Collector - architecture and configuration guide
 slug: opentelemetry-collector-complete-guide
 date: 2021-08-31
 tags: [opentelemetry]
@@ -19,6 +19,7 @@ keywords:
 
 <head>
   <title>OpenTelemetry Collector | Complete Guide</title>
+  <link rel="canonical" href="https://signoz.io/blog/opentelemetry-collector-complete-guide/"/>
 </head>
 
 OpenTelemetry Collector is a crucial component of OpenTelemetry architecture. It reduces overhead on your application to collect and manage telemetry data. Let's do a deep dive on OpenTelemetry Collectors to understand how it works.
@@ -47,7 +48,7 @@ Before deep-diving into OpenTelemetry collectors, let's take a short detour to u
 
 ## What is OpenTelemetry?
 
-OpenTelemetry is a set of API, SDKs, libraries, and integrations that is aiming to standardize the generation, collection, and management of telemetry data(logs, metrics, and traces). OpenTelemetry is a Cloud Native Computing Foundation project created after the merger of OpenCensus(from Google) and OpenTracing(From Uber).
+<a href = "https://opentelemetry.io/" rel="noopener noreferrer nofollow" target="_blank" >OpenTelemetry</a> is a set of API, SDKs, libraries, and integrations that is aiming to standardize the generation, collection, and management of telemetry data(logs, metrics, and traces). OpenTelemetry is a Cloud Native Computing Foundation project created after the merger of OpenCensus(from Google) and OpenTracing(From Uber).
 
 The data you collect with OpenTelemetry is vendor-agnostic and can be exported in many formats. Telemetry data has become critical to observe the state of distributed systems. With microservices and polyglot architectures, there was a need to have a global standard. OpenTelemetry aims to fill that space and is doing a great job at it thus far.
 
@@ -69,11 +70,13 @@ List of reasons why to use OpenTelemetry Collector:
 
 OpenTelemetry collector consists of three main components:
 
-- Receivers<br></br>
+- **Receivers**<br></br>
   Receivers are used to get data into the collector. You can use it to configure ports and formats the collector can take data in. It could be push or pull-based. You can receive data in multiple formats. It has a default OTLP format, but you can also receive data in other popular open-source formats like Jaeger or Prometheus. SigNoz uses the default OTLP format to receive telemetry data.
-- Processors<br></br>
+
+- **Processors**<br></br>
   Processors are used to doing any processing required on the collected data like data massaging, data manipulation, or any change in the data as it flows through the collector. It can also be used to remove PII data from the collected telemetry data, which can be very useful. You can also do things like batching the data before sending it out, retrying in case the exporting fails, adding metadata, tail-based sampling, etc.
-- Exporters<br></br>
+
+- **Exporters**<br></br>
   Exporters are used to exporting data to a backend analysis tool like [SigNoz](https://signoz.io/). You can send out data in multiple data formats.
 
 <Screenshot
@@ -90,7 +93,7 @@ With the combination of these three components, OpenTelemetry Collector can be u
 
 You need to configure the three components of the OpenTelemetry collector described above. Once configured, these components must be enabled via pipelines within the service section.
 
-### Receivers
+### **Receivers**
 
 In the sample code shown below, we have two receivers:
 
@@ -111,7 +114,7 @@ receivers:
           thrift_http:
 ```
 
-### Processors
+### **Processors**
 
 There are three processors in the code sample shown below:
 
@@ -144,7 +147,7 @@ processors:
 
 You can find detailed information about these processors and more in <a href = "https://github.com/open-telemetry/opentelemetry-collector/tree/caadbbc476cc13ba87503b8ae7a1a8a50d5b22c4/processor" rel="noopener noreferrer nofollow" target="_blank" >OpenTelemetry Collector GitHub repo</a>.
 
-### Exporters
+### **Exporters**
 
 In this sample code, we have created two exporters.
 
@@ -281,7 +284,7 @@ data:
 
 ## Getting started with OpenTelemetry
 
-OpenTelemetry provides a vendor-agnostic way of collecting and managing telemetry data. The next step is to choose a backend analysis tool that can help you make sense of the collected data. [SigNoz](https://signoz.io/) is a full-stack open-source application performance monitoring and observability platform.
+OpenTelemetry provides a vendor-agnostic way of collecting and managing telemetry data. The next step is to choose a backend analysis tool that can help you make sense of the collected data. [SigNoz](https://signoz.io/) is a full-stack open-source application performance monitoring and observability platform built natively for OpenTelemetry.
 
 If you have docker installed, getting started with SigNoz just takes three easy steps at the command line:
 

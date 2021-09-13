@@ -15,6 +15,10 @@ keywords:
   - Dev community
 ---
 
+<head>
+  <link rel="canonical" href="https://signoz.io/blog/community-update-04/"/>
+</head>
+
 Folks! Great to have you over for our monthly product update aka Signal #04. This month we made great strides in both our frontend and backend pods. Metrics ingestion, testing frameworks, improved tracking features for gRPC calls and much more!
 
 <!--truncate-->

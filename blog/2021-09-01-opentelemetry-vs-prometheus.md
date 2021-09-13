@@ -21,6 +21,10 @@ keywords:
   - traces
 ---
 
+<head>
+  <link rel="canonical" href="https://signoz.io/blog/opentelemetry-vs-prometheus/"/>
+</head>
+
 OpenTelemetry and Prometheus are both open-source projects under Cloud Native Computing Foundation. In this article, let us understand the key differences between the two projects and explore their advantages and shortcomings.
 
 <!--truncate-->
