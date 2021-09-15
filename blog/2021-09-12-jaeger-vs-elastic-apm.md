@@ -116,8 +116,8 @@ So is there a tool that can provide you extensive APM capabilities along with th
 
 That's where [SigNoz](https://signoz.io/) comes into the picture.
 
-## Alternative to Jaeger and Elastic APM - SigNoz
-SigNoz is a full-stack open-source application performance monitoring and observability tool which can be used in place of Jaeger and Prometheus. It provides advanced distributed tracing capabilities along with metrics under a single dashboard.
+## Alternative to Elastic APM and Jaeger - SigNoz
+SigNoz is a full-stack open-source application performance monitoring and observability tool which can be used in place of Elastic APM and Jaeger. It provides advanced distributed tracing capabilities along with metrics under a single dashboard.
 
 SigNoz is built to support OpenTelemetry natively. [OpenTelemetry](https://opentelemetry.io/) is becoming the world standard for generating and managing telemetry data (Logs, metrics and traces). It also provides users flexibility in terms of storage. You can choose between ClickHouse or Kafka + Druid as your backend storage while installing SigNoz.
 
