@@ -62,7 +62,7 @@ A **trace context** is passed along when requests travel between services, which
 />
 
 ## Key Features of AWS X-Ray
-AWS X-Ray helps developers to analyze and debug distributed applications in production. Using AWS X-Ray, you can identify the root cause of performance issues and errors. Some of the key features of AWS X-Ray includes:
+<a href = "https://aws.amazon.com/xray/" rel="noopener noreferrer nofollow" target="_blank" ><b>AWS X-Ray</b></a> helps developers to analyze and debug distributed applications in production. Using AWS X-Ray, you can identify the root cause of performance issues and errors. Some of the key features of AWS X-Ray includes:
 
 - **End-to-end tracing**<br></br>
 AWS X-Ray gathers data from individual services and gives you a cross-service view of requests made to your application. It aggregates request data into a single trace, which can then be used to follow the path of an individual request as it passes through different services.
@@ -97,7 +97,7 @@ A large distributed application will have lots of sensitive telemetry data. AWS 
 />
 
 ## Key features of Jaeger
-Jaeger was originally built by teams at Uber and then open-sourced. It is used for end-to-end distributed tracing for microservices. Some of the key features of Jaeger includes:
+<a href = "https://www.jaegertracing.io/" rel="noopener noreferrer nofollow" target="_blank" ><b>Jaeger</b></a> was originally built by teams at Uber and then open-sourced. It is used for end-to-end distributed tracing for microservices. Some of the key features of Jaeger includes:
 
 - **Distributed context propagation**<br></br>
   One of the challenges of distributed systems is to have a standard format for passing context across process boundaries and services. Jaeger provides client libraries that support code instrumentation in multiple languages to propagate context across services
@@ -144,9 +144,9 @@ This makes Jaeger a better alternative for end-to-end distributed tracing. But J
 That's where [SigNoz](https://signoz.io/) comes into the picture. It provides a full-stack open-source performance monitoring platform.
 
 ## Alternative to AWS X-Ray and Jaeger - SigNoz
-SigNoz is a full-stack open-source application performance monitoring and observability tool which can be used in place of Jaeger and Prometheus. It provides advanced distributed tracing capabilities along with metrics under a single dashboard.
+SigNoz is a full-stack open-source application performance monitoring and observability tool which can be used in place of AWS X-Ray and Jaeger. It provides advanced distributed tracing capabilities along with metrics under a single dashboard.
 
- SigNoz is built to support OpenTelemetry natively. [OpenTelemetry](https://opentelemetry.io/) is becoming the world standard for generating and managing telemetry data (Logs, metrics and traces). It also provides users flexibility in terms of storage. You can choose between ClickHouse or Kafka + Druid as your backend storage while installing SigNoz.
+ SigNoz is built to support OpenTelemetry natively. <a href = "https://opentelemetry.io/" rel="noopener noreferrer nofollow" target="_blank" ><b>OpenTelemetry</b></a> is becoming the world standard for generating and managing telemetry data (Logs, metrics and traces). It also provides users flexibility in terms of storage. You can choose between ClickHouse or Kafka + Druid as your backend storage while installing SigNoz.
 
  <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
