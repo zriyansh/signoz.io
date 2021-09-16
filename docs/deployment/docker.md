@@ -72,7 +72,7 @@ Check that you are in `signoz/deploy` folder. Now run
 
 1) ClickHouse as database (default)
 
-2) Kafka + Druid setup to handle scale (recommended for production use)
+2) Kafka + Druid setup as datastore
 ```
 <br></br>
 
