@@ -57,7 +57,7 @@ A **trace context** is passed along when requests travel between services, which
     alt="Trace context is passed to track user requests across services"
     height={500}
     src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.png"
-    title="A trace context is passed when user requests passes from one service to another"
+    title="A trace context is passed when user requests pass from one service to another"
     width={700}
 />
 
