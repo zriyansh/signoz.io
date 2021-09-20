@@ -141,10 +141,21 @@ You can also use flamegraphs to visualize spans from your trace data. All of thi
 <Screenshot
     alt="Flamegraphs used to visualie spans of distributed tracing in SigNoz UI"
     height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.png"
+    src="/img/blog/common/signoz_flamegraphs.png"
     title="Flamegraphs showing exact duration taken by each spans - a concept of distributed tracing"
     width={700}
 />
+
+Gantt charts make it easy to visualize your services and events in a parent-child relationship tree. You can easily figure out which events are causing latency in a request call.
+
+<Screenshot
+    alt="Gantt charts on SigNoz dashboard"
+    height={500}
+    src="/img/blog/2021/09/signoz_gantt_chart-min.png"
+    title="Gantt charts on SigNoz dashboard to visualize your spans in a parent-child relationship"
+    width={700}
+/>
+
 
 ### Jaeger
 
@@ -346,20 +357,6 @@ Some of the key features of DataDog APM, which provides distributed tracing capa
 - APM agents - Collects the data to send to the APM server
 - APM server - Receives data from APM agents and process it for storing in Elasticsearch
 
-Some of the key features of Elastic APM includes:
-
-- Root cause investigations<br></br>
-Elastic APM provides a dashboard for showing a service's transactions and dependencies which can be used to identify issues.
-
-- Service Maps<br></br>
-With service maps, you can see how your services are connected. It provides a convenient way to see which services need optimization.
-
-- OpenTracing compliant<br></br>
-Elastic APM supports OpenTracing APIs for code instrumentation. OpenTracing provides vendor-neutral client libraries in multiple languages for instrumenting application code.
-
-- Logs, metrics and traces in one dashboard<br></br>
-With Elastic APM, you can have your logs, metrics, and traces all stored and indexed in ElasticSearch. So in the APM dashboard, you can quickly correlate traces with other metrics and logs.
-
 <Screenshot
     alt="Elastic APM distributed tracing dashboard"
     height={500}
@@ -374,9 +371,12 @@ With Elastic APM, you can have your logs, metrics, and traces all stored and ind
 
 Some of the key features of the Splunk distributed tracing tool includes:
 
-- No sample full fidelity trace data ingestion With Splunk, you can capture all trace data to ensure your cloud-native application work the way it is supposed to
-- Full-stack observability Splunk APM provides a seamless correlation between infrastructure metrics and application performance metrics
-- AI-Driven troubleshooting Splunk APM provides uses an AI-driven approach to identify error-prone microservices
+- No sample full fidelity trace data ingestion<br></br>
+With Splunk, you can capture all trace data to ensure your cloud-native application work the way it is supposed to.
+- Full-stack observability<br></br>
+Splunk APM provides a seamless correlation between infrastructure metrics and application performance metrics.
+- AI-Driven troubleshooting<br></br>
+Splunk APM provides uses an AI-driven approach to identify error-prone microservices.
 
 <Screenshot
     alt="Splunk distributed tracing dashboard"
@@ -390,7 +390,7 @@ Some of the key features of the Splunk distributed tracing tool includes:
 
 Tracing user requests is now critical for maintaining an exemplary user experience. Yes, distributed tracing directly impacts end-user experience as it gives your teams the right insights in the right amount of time to act on issues affecting application performance.
 
-In our view, distributed tracing tools should be the developer first tools. As developers directly utilize these tools in critical situations, the codebase of the tools should be open-source. Open-source is the future of all software tools.
+In our view, distributed tracing tools should be developer first tools. As developers directly utilize these tools in critical situations, the codebase of the tools should be open-source. Open-source is the future of all software tools.
 
 Transparency and collaboration are some key benefits of open-source software tools. Developers want to see the code first hand, and if there are issues they want to address, they prefer to reach out to an active developer community than a customer support team.
 

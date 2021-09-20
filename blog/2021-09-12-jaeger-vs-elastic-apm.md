@@ -97,7 +97,7 @@ Elastic APM provides capabilities to set threshold based alerts through popular 
 - **Multi-language support**<br></br>
 Elastic APM provides support for Java, Go, Node.js, Python, PHP, Ruby, .NET and Javascript.
 
-## Jaeger vs Elastic APM: key differences
+## Comparing Jaeger and Elastic APM
 From the description above, you might have a good idea about the differences between Jaeger and Elastic APM. The major difference between the two is that Jaeger is specifically meant for distributed tracing, whereas Elastic APM is a full-fledged application performance monitoring tool.
 
 Summarizing the key differences between Jaeger and Elastic APM:

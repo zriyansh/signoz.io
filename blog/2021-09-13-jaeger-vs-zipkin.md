@@ -129,7 +129,7 @@ Both Jaeger and Zipkin provide pluggable storage backends for trace data. Cassan
 
 Zipkin was originally built to store data in Cassandra, but it later started supporting Elasticsearch and MySQL too.
 
-## Jaeger vs Zipkin: Key differences
+## Comparing Jaeger and Zipkin
 Jaeger and Zipkin have a lot of similarities in their architecture. Though Zipkin is an older project, Jaeger has a more modern and scalable design. Let us summarize the key differences between Jaeger and Zipkin in the following points:
 
 - Jaeger's has wider support of instrumentation libraries as it supports OpenTracing APIs and is also compatible with Zipkin's API. Jaeger also provides an option to <a href = "https://www.jaegertracing.io/docs/1.26/getting-started/#migrating-from-zipkin" rel="noopener noreferrer nofollow" target="_blank" ><b>migrate from Zipkin</b></a>.
