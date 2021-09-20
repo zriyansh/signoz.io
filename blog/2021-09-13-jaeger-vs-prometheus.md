@@ -95,7 +95,7 @@ Prometheus enables you to capture time-series data as metrics. These metrics can
     width={700}
 />
 
-## Jaeger vs Prometheus: key differences
+## Comparing Jaeger and Prometheus
 From the description above, you might have a good idea about the differences between Jaeger and Prometheus. The major difference between the two is that Jaeger is specifically meant for distributed tracing, and Prometheus is specifically meant for monitoring metrics.
 
 Summarizing the key differences between Jaeger and Prometheus:

@@ -126,7 +126,7 @@ DataDog provides extensive integrations and libraries to monitor Java, .NET, PHP
     width={700}
 />
 
-## DataDog vs Jaeger: Key differences
+## Comparing DataDog and Jaeger
 DataDog is one of the major SaaS vendors in the APM space. On the other hand, Jaeger is a popular open-source distributed tracing tool that graduated from Cloud Native Computing Foundation. The differences between the tools arise from this genesis.
 
 Some of the key differences between DataDog and Jaeger are:

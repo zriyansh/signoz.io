@@ -43,11 +43,11 @@ We have also written a [blog](/blog/clickhouse-storage-monitoring/) with compari
 
 ### Frontend upgrades
 
-**Performance upgrades**
+**Performance upgrades**<br></br>
 We have improved our dashboard loading time and reduced the bundle size to less than 1 mb. Our dashboards are meant to take quick actions on your issues, so we will keep on improving our frontend performance.
 
-**Gantt charts for better trace/span visualization**
-We have made it easier to drill down on issues causing latency in your services. With Gantt charts  you can visualise your services and events in a parent-child relationship tree which makes it easier to figure out which events are causing a latency in a request call.
+**Gantt charts for better trace/span visualization**<br></br>
+We have made it easier to drill down on issues causing latency in your services. With Gantt charts you can visualise your services and events in a parent-child relationship tree which makes it easier to figure out which events are causing a latency in a request call.
 
 ![Gantt charts on SigNoz UI](/img/blog/2021/07/gantt-charts.png)
 

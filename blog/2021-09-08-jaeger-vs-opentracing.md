@@ -67,7 +67,7 @@ The authors aimed to create standard instrumentation for all the middleware and 
     width={700}
 />
 
-## Compare Jaeger and OpenTracing
+## Comparing Jaeger and OpenTracing
 From the description above, you might have a good idea about the differences between Jaeger and OpenTracing. The key difference between the two projects is their scope. While Jaeger is an end-to-end distributed tracing tool, OpenTracing was a project that aimed to standardize code instrumentation for generating and managing telemetry data. 
 
 As such, if you're looking to enable distributed tracing, implementing Jaeger is a better option. You can also go with a full-stack open-source tool like [SigNoz](https://signoz.io/blog/jaeger-vs-signoz/). Key differences between Jaeger and OpenTracing can be summarised as follows:

@@ -122,7 +122,7 @@ A large distributed application will have lots of sensitive telemetry data. AWS 
     width={700}
 />
 
-## AWS X-Ray vs Jaeger: Key differences
+## Comparing AWS X-Ray and Jaeger
 The most important difference between AWS X-Ray and Jaeger is that AWS X-Ray only supports tracing for applications in the AWS cloud ecosystem while Jaeger, an open-source tool, provides a vendor-agnostic way to collect and analyze trace data.
 
 Some of the key differences between AWS X-Ray and Jaeger are:
