@@ -139,7 +139,7 @@ SigNoz uses OpenTelemetry for code instrumentation. OpenTelemetry provides vendo
 You can also use flamegraphs to visualize spans from your trace data. All of this comes out of the box with SigNoz.
 
 <Screenshot
-    alt="Flamegraphs used to visualie spans of distributed tracing in SigNoz UI"
+    alt="Flamegraphs used to visualize spans of distributed tracing in SigNoz UI"
     height={500}
     src="/img/blog/common/signoz_flamegraphs.png"
     title="Flamegraphs showing exact duration taken by each spans - a concept of distributed tracing"
