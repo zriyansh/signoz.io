@@ -18,7 +18,7 @@ keywords:
   - application performance monitoring
 ---
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/jaeger-vs-tempo/"/>
+  <link rel="canonical" href="https://signoz.io/blog/jaeger-microservices/"/>
 </head>
 
 Jaeger is a popular open-source tool used for distributed tracing in a microservice architecture. In a microservice architecture, a user request or transaction can travel across hundreds of services before serving what a user wants. Distributed tracing helps to track the performance of a transaction across multiple services.
