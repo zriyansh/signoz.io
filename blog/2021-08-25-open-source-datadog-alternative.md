@@ -110,7 +110,7 @@ For example, you can find latency experienced by customers who have customer_typ
 
 ### Custom aggregates on filtered traces
 
-Create custom metrics from filtered traces to find metrics of any type of requests. Want to find p99 latency of `customer_type: premium` who are seeing `status_code:400`. Just set the filters, and you have the graph. Boom!
+Create custom metrics from filtered traces to find metrics of any type of request. Want to find p99 latency of `customer_type: premium` who are seeing `status_code:400`. Just set the filters, and you have the graph. Boom!
 
 <Screenshot
     alt="Custom aggregates on filtered traces"
@@ -134,7 +134,7 @@ You can drill down details of how many events is each application sending or at 
 
 ### Detailed Flamegraphs & Gantt charts
 
-Detailed flamegraph & Gantt charts to find exact cause of the issue, and which of the underlying requests is causing the problem. Is it a SQL query gone rogue or a redis operation is causing an issue?
+Detailed flamegraph & Gantt charts to find the exact cause of the issue and which underlying requests are causing the problem. Is it a SQL query gone rogue or a Redis operation is causing an issue?
 
 <Screenshot
     alt="Detailed Flamegraphs & Gantt charts"
