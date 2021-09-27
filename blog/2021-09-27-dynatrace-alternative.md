@@ -1,54 +1,41 @@
 ---
-title: SigNoz - Open-source alternative to New Relic
-slug: open-source-newrelic-alternative
-date: 2021-09-25
-tags: [application-monitoring, new-relic, apm-tools]
+title: SigNoz - Open-source alternative to Dynatrace
+slug: dynatrace-alternative
+date: 2021-09-27
+tags: [application-monitoring, apm-tools]
 author: Ankit Anand
 author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
-description: If you're looking for an open-source alternative to New Relic, then you're at the right place. SigNoz is a perfect open-source alternative to New Relic. SigNoz provides a unified UI for both metrics and traces with advanced tagging and filtering capabilities...
-image: /img/blog/2021/09/new_relic_alternative_cover-min.jpg
+description: If you're looking for an open-source alternative to Dynatrace, then you're at the right place. SigNoz is a perfect open-source alternative to Dynatrace. SigNoz provides a unified UI for both metrics and traces with advanced tagging and filtering capabilities...
+image: /img/blog/2021/09/dynatrace_alternative_cover-min.jpg
 keywords:
-  - new relic
-  - new relic alternative
-  - new relic open source alternative
+  - dynatrace
+  - dynatrace alternative
+  - dynatrace open source alternative
   - apm tools
   - microservice architecture
   - application performance monitoring
 ---
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/open-source-newrelic-alternative/"/>
+  <link rel="canonical" href="https://signoz.io/blog/dynatrace-alternative/"/>
 </head>
 
-If you're looking for an open-source alternative to New Relic, then you're at the right place. SigNoz is a perfect open-source alternative to New Relic. SigNoz provides a unified UI for both metrics and traces with advanced tagging and filtering capabilities.
+If you're looking for an open-source alternative to Dynatrace, then you're at the right place. SigNoz is a perfect open-source alternative to Dynatrace. SigNoz provides a unified UI for both metrics and traces with advanced tagging and filtering capabilities.
 
 <!--truncate-->
 
-![cover image](/img/blog/2021/09/new_relic_alternative_cover-min.jpg)
+![cover image](/img/blog/2021/09/dynatrace_alternative_cover-min.jpg)
 
-In today's digital economy, more and more companies are shifting to cloud-native and microservice architecture to support global scale and distributed teams. But distributed systems also make it impossible for engineering teams to track how user requests perform across services. Application performance monitoring tools provide the visibility needed to resolve performance issues quickly in distributed systems.
+In today's digital economy, more and more companies are shifting to cloud-native and microservice architecture to support global scale and distributed teams. But distributed systems also make it impossible for engineering teams to track how user requests perform across services. Application performance monitoring tools provide the visibility needed to resolve performance issues quickly.
 
-New Relic is a great SaaS tool when it comes to application performance monitoring. But there are a few challenges when it comes to enterprise SaaS products, and it's just not a great fit for every company.
+Dynatrace is a great SaaS tool when it comes to application performance monitoring. But there are a few challenges when it comes to enterprise SaaS products, and it's just not a great fit for every company.
 
-Some of the challenges with tools like New Relic includes:
+Some of the challenges with tools like Dynatrace includes:
 
 - It is cloud-only, so not suitable for companies that have concerns with sending data outside their infra
 - For any small feature, you are dependent on their roadmap. We think this is an unnecessary restriction for a product which developers use. A product used by developers should be extendible
-- Pricing plans of enterprise tools can sometimes leave you in a lurch with frequent changes.
-
-[Users discussing pain points with New Relic.](https://www.reddit.com/r/sysadmin/comments/n6zzwn/what_is_the_catch_with_new_relic/)
-
-import Screenshot from "@theme/Screenshot"
-
-<Screenshot
-    alt="SigNoz dashboard showing popular RED metrics"
-    height={500}
-    src="/img/blog/2021/09/issue_with_newrelic-min.jpg"
-    title="What's the catch with New Relic? (Source: Reddit)"
-    width={700}
-/>
-
+- Too costly. Thier full-stack monitoring plan starts at $69/month for 8GB per host. Pricing plans of enterprise tools can also sometimes leave you in a lurch with frequent changes.
 
 A relatively newer concept in the field of application performance monitoring is observability. Making a system observable is the pursuit of achieving a state of proactiveness to solve unknown issues. Logs, metrics, and traces are usually considered the three pillars of observability.
 
@@ -61,7 +48,8 @@ Some of the key features of good observability tools are:
 - Ability to set dynamic thresholds for alerts
 - Transparency in pricing
 
-## Why choose an open-source alternative to New Relic?
+
+## Why choose an open-Source alternative to Dynatrace?
 APM and observability tools are critical tools in a developer's kit. These tools improve developer efficiency, save bandwidth by resolving issues quickly, and increase developer productivity.
 
 An open-source product is always a better choice for any developer tool. Some of the key advantages of open-source developer tools are:
@@ -85,9 +73,9 @@ But most open-source projects don't provide a great user experience as SaaS prod
 
 And that's where SigNoz shines. It is very simple to get started, supports multiple tech-stack, and comes with a SaaS-like web user experience.
 
-## Key Features of SigNoz - a New Relic alternative
+## Key Features of SigNoz - a Dynatrace alternative
 
-Some of our key features which makes SigNoz vastly superior to current open-source products and a great alternative to New Relic are:
+Some of our key features which makes SigNoz vastly superior to current open-source products and a great alternative to Dynatrace are:
 
 - Out of the box application metrics
 - Seamless flow between metrics & traces
@@ -100,6 +88,8 @@ Some of our key features which makes SigNoz vastly superior to current open-sour
 ### Out of box application metrics
 
 Get p90, p99 latencies, RPS, Error rates, and top endpoints for a service out of the box.
+
+import Screenshot from "@theme/Screenshot"
 
 <Screenshot
     alt="SigNoz dashboard showing popular RED metrics"
