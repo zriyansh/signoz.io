@@ -1,6 +1,6 @@
 ---
 id: helm_chart
-title: Deploying with Helm Chart
+title: Deploy with Helm Charts
 ---
 ### Steps:
 1. Install SigNoz backend as instructed in this page

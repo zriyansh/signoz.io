@@ -1,6 +1,6 @@
 ---
 id: docker
-title: Deploying with Docker
+title: Deploy with Docker
 ---
 
 import Tabs from "@theme/Tabs";
