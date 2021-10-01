@@ -10,25 +10,23 @@ author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: As an open-source project, we are excited to announce that SigNoz is participating in Hacktoberfest!..
 image: /img/blog/2021/10/hacktoberfest_signoz_new-min.png
 keywords:
-  - opentelemetry
-  - opentelemetry collector
-  - code instrumentation
-  - application monitoring
-  - signoz
+  - hacktoberfest
+  - open source
+  - github
 ---
 
 <head>
   <link rel="canonical" href="https://signoz.io/blog/hacktoberfest/"/>
 </head>
 
->Open-source is changing the world, one contribution at a time.
+Have you been waiting to start making open-source contributions? There can never be a better time than Hacktoberfest.
 
 <!--truncate-->
 
 ![cover image](/img/blog/2021/10/hacktoberfest_signoz_new-min.png)
 
 
-Have you been waiting to start making open-source contributions? Do you want your GitHub profile to look like this👇
+Do you want your GitHub profile to look like this👇
 
 import Screenshot from "@theme/Screenshot"
 
@@ -40,7 +38,9 @@ import Screenshot from "@theme/Screenshot"
   width={700}
 />
 
-There can never be a better time than **[Hacktoberfest](https://hacktoberfest.digitalocean.com/)**. For a month-long period, participation in open-source projects is celebrated and you are also eligible to receive cool swags if you complete the challenge of making **four approved Pull Requests(PRs)** between October 1-31 in any time zone.
+>Open-source is changing the world, one contribution at a time.
+
+For a month-long period, participation in open-source projects is celebrated and you are also eligible to receive cool swags if you complete the challenge of making **four approved Pull Requests(PRs)** between October 1-31 in any time zone.
 
 As an open-source project, we are excited to announce that **SigNoz is participating in Hacktoberfest!**
 
@@ -97,6 +97,4 @@ Visit to our GitHub repo now, and start hacking 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
-Join our slack community if you need any help. Link to join 👇
-
-[SigNoz slack community](https://bit.ly/signoz-slack)
+Join our **[slack community](https://bit.ly/signoz-slack)** if you need any help.
