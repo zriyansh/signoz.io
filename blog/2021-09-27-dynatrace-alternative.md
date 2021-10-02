@@ -191,4 +191,13 @@ Our slack community is a great place to get your queries solved instantly and ge
 
 [SigNoz slack community](https://bit.ly/signoz-slack)
 
+---
+
+#### **Related Content**
+
+**[DataDog Alternative](https://signoz.io/blog/open-source-datadog-alternative/)**<br></br>
+**[New Relic Alternative](https://signoz.io/blog/open-source-newrelic-alternative/)**<br></br>
+**[AppDynamics Alternative](https://signoz.io/blog/appdynamics-alternative/)**<br></br>
+
+
 

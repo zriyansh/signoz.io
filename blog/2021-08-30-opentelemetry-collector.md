@@ -309,3 +309,10 @@ SigNoz can be used to visualize metrics and traces with charts that can enable q
 You can try out SigNoz by visiting its GitHub repo 👇
 
 [![SigNoz repo](/img/blog/common/signoz_github.png)](https://github.com/signoz/signoz)
+
+___
+
+#### **Related Content**
+
+**[OpenTelemetry Tracing - things you need to know](https://signoz.io/blog/opentelemetry-tracing/)**<br></br>
+**[Monitor Nodejs Application with OpenTelemetry and SigNoz](https://signoz.io/opentelemetry/nodejs/)**<br></br>

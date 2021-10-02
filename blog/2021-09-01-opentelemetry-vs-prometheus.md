@@ -137,3 +137,11 @@ SigNoz comes with out of box visualization of things like RED metrics. There is 
 
 You can check out SigNoz's GitHub repo here 👇
 [![SigNoz repo](/img/blog/common/signoz_github.png)](https://github.com/signoz/signoz)
+
+___
+
+#### **Related Content**
+
+**[OpenTelemetry Collector - Complete Guide](https://signoz.io/blog/opentelemetry-collector-complete-guide/)**<br></br>
+**[OpenTelemetry Tracing - things you need to know](https://signoz.io/blog/opentelemetry-tracing/)**<br></br>
+
