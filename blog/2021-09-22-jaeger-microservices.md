@@ -199,3 +199,9 @@ You can check out SigNoz's GitHub repo here 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
+___
+
+#### **Related Content**
+
+**[Jaeger distributed tracing - complete guide](https://signoz.io/blog/distributed-tracing-jaeger/)**<br></br>
+**[Jaeger vs SigNoz](https://signoz.io/blog/jaeger-vs-signoz/)**<br></br>

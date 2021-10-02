@@ -242,6 +242,6 @@ If you face any issues while trying out SigNoz, feel free to write to us at: sup
 
 If you want to read more about SigNoz 👇
 
-[Golang Application Performance Monitoring with SigNoz](/blog/monitoring-your-go-application-with-signoz/)
+[Golang Aplication Monitoring with OpenTelemetry and SigNoz](https://signoz.io/opentelemetry/go/)
 
-[Nodejs Application Performance Monitoring with SigNoz](/blog/nodejs-opensource-application-monitoring/)
+[Nodejs Application Monitoring with OpenTelemetry and SigNoz](https://signoz.io/opentelemetry/nodejs/)

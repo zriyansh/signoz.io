@@ -252,6 +252,13 @@ You can check out SigNoz's GitHub repo here 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
+___
+
+#### **Related Content**
+
+**[Using Jaeger for your microservices](https://signoz.io/blog/jaeger-microservices/)**<br></br>
+**[Jaeger vs SigNoz](https://signoz.io/blog/jaeger-vs-signoz/)**<br></br>
+
 
 
 

@@ -164,3 +164,11 @@ If you liked what you read, then check out our GitHub repo 👇
 
 Our slack community is a great place to get your queries solved instantly and get community support for SigNoz. Link to join 👇<br></br>
 [SigNoz slack community](https://bit.ly/signoz-slack)
+
+---
+
+#### **Related Content**
+
+**[New Relic Alternative](https://signoz.io/blog/open-source-newrelic-alternative/)**<br></br>
+**[Dynatrace Alternative](https://signoz.io/blog/dynatrace-alternative/)**<br></br>
+**[AppDynamics Alternative](https://signoz.io/blog/appdynamics-alternative/)**<br></br>

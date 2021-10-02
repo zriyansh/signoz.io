@@ -229,7 +229,7 @@ Splunk's observability Cloud for Enterprise editions starts at $95 per host per 
   alt="Splunk dashboard"
   height={500}
   src="/img/blog/2021/08/observability_tools_splunk-min.png"
-  title="DataDog dashboard (Source: DataDog website)"
+  title="Splunk dashboard (Source: Splunk website)"
   width={700}
 />
 
@@ -248,3 +248,9 @@ An open-source tool like [SigNoz](https://signoz.io/), can be your best option 
 Check out SigNoz GitHub repo:
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+
+___
+
+#### **Related Content**
+
+**[Top 21 APM tools](https://signoz.io/blog/apm-tools/)**<br></br>

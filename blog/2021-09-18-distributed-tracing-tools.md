@@ -1,5 +1,5 @@
 ---
-title: Top 11 distributed tracing tools in 2021
+title: Latest top 11 distributed tracing tools [perfect for microservices]
 slug: distributed-tracing-tools
 date: 2021-09-18
 tags: [distributed-tracing, application-monitoring, apm-tools]
@@ -400,5 +400,12 @@ SigNoz is a full-stack open-source application performance monitoring and observ
 
 You can check out SigNoz's GitHub repo here 👇
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+
+___
+
+#### **Related Content**
+
+**[Top 9 observability tools](https://signoz.io/blog/observability-tools/)**<br></br>
+**[Top 21 APM tools](https://signoz.io/blog/apm-tools/)**<br></br>
 
 
