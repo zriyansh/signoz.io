@@ -106,7 +106,7 @@ October is the month of celebrating the open-source ecosystem. If you make four 
 As a open-source project, we are excited to [take part](https://signoz.io/blog/hacktoberfest/) in Hacktoberfest 🎉 Find some [good first issues](https://github.com/SigNoz/signoz/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) to submit PRs. Get hacking now!
 
 ## From our blog
-### OpenTelemetry Collecotr
+### OpenTelemetry Collector
 SigNoz is built to natively support OpenTelemetry. OpenTelemetry is a set of APIs, SDKs, libraries, and integrations that aims to standardize the generation, collection, and management of telemetry data(logs, metrics, and traces). Advantages of using OpenTelemetry inlcudes:
 
 - Reduces performance overhead on application to manage telemetry data
