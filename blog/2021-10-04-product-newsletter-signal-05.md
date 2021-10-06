@@ -91,11 +91,21 @@ In our monthly community call, [Ankit Nayan](https://github.com/ankitnayan) gave
 
 You can find the full recordings of the call here 👇
 
-<div class="text--center">
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fy1K5PifDDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+export const YoutubeWrapper = ({children, url}) => (
+  <div 
+    style={{
+    position: 'relative', 
+    width: '100%',
+    paddingBottom: '56.25%', 
+    height: "0",
+    }} >
+    <iframe width="560" height="315" style={{ position: 'absolute', top:'0', left: '0', width: '100%', height: '100%'}} src={ url } title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+);
+
+<YoutubeWrapper url="https://www.youtube.com/embed/fy1K5PifDDU"> </YoutubeWrapper>
+
 
 ### Features 📸
 Data pipelines are complex systems that require observability to understand why processes fail. We got [featured](https://analyticsindiamag.com/top-data-observability-platforms-for-monitoring-data-quality-at-scale/) as one of the top Data Observability platforms by Analytics India Magazine. 🎉
@@ -124,19 +134,8 @@ Here's a complete architecture and configuration guide on OpenTelemetry collecto
 ### Custom metrics monitoring with SigNoz
 Learn how to monitor custom metrics of your Nodejs application with OpenTelemetry and SigNoz 👇
 
-export const YoutubeWrapper = ({children}) => (
-  <div 
-    style={{
-    position: 'relative', 
-    width: '100%',
-    paddingBottom: '56.25%', 
-    height: "0",
-    }} >
-    <iframe width="560" height="315" style={{ position: 'absolute', top:'0', left: '0', width: '100%', height: '100%'}} src="https://www.youtube.com/embed/7Ni78SajFLM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-);
 
-<YoutubeWrapper > </YoutubeWrapper>
+<YoutubeWrapper url="https://www.youtube.com/embed/7Ni78SajFLM"> </YoutubeWrapper>
 
 ---
 
