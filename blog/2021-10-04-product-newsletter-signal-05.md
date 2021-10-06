@@ -124,11 +124,19 @@ Here's a complete architecture and configuration guide on OpenTelemetry collecto
 ### Custom metrics monitoring with SigNoz
 Learn how to monitor custom metrics of your Nodejs application with OpenTelemetry and SigNoz 👇
 
-<div class="text--center">
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7Ni78SajFLM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+export const YoutubeWrapper = ({children}) => (
+  <div 
+    style={{
+    position: 'relative', 
+    width: '100%',
+    paddingBottom: '56.25%', 
+    height: "0",
+    }} >
+    <iframe width="560" height="315" style={{ position: 'absolute', top:'0', left: '0', width: '100%', height: '100%'}} src="https://www.youtube.com/embed/7Ni78SajFLM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+);
+
+<YoutubeWrapper > </YoutubeWrapper>
 
 ---
 
