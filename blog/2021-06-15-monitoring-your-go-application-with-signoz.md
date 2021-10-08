@@ -20,9 +20,9 @@ keywords:
 
 In this article, learn how to setup application monitoring for Golang apps using an open-source solution, SigNoz.
 
-![Cover Image](/img/blog/2021/06/golang_app_monitoring_cover_hc.png)
-
 <!--truncate-->
+
+![Cover Image](/img/blog/2021/06/golang_app_monitoring_cover_hc.png)
 
 If you want to check our Github repo before diving in 👇
 
@@ -76,20 +76,17 @@ We will divide the tutorial into two parts:
 
 ## Part 1 - Installing SigNoz
 
-1.  **Install Docker**
-
+1.  **Install Docker**<br></br>
     You can install Docker by following the steps listed on their website [here.](https://www.docker.com/get-started) For this tutorial, you can choose the Docker Desktop option based on the system you have.
 
     ![](/img/blog/2021/06/docker-installation.png)
 
-2.  **Clone SigNoz GitHub repository**
-
+2.  **Clone SigNoz GitHub repository**<br></br>
     From your terminal use the following command to clone SigNoz's GitHub repository.
 
         git clone https://github.com/SigNoz/signoz.git
 
-3.  **Update path to signoz/deploy and install SigNoz**
-
+3.  **Update path to signoz/deploy and install SigNoz**<br></br>
     The deploy folder contains the files necessary for deploying SigNoz through Docker.
 
         cd signoz/deploy/
@@ -133,16 +130,14 @@ Verify if you have Golang installed on your machine by running `$ go version` on
 
 ### Steps
 
-1.  Clone sample Golang app repository
-
+1.  Clone sample Golang app repository<br></br>
     From your terminal use the following command to clone sample Golang app GitHub repository.
 
     ```
     git clone https://github.com/SigNoz/sample-golang-app.git
     ```
 
-2.  Update path to **sample-golang-app** & check if the app is working
-
+2.  Update path to **sample-golang-app** & check if the app is working<br></br>
     Update your terminal path to the sample app directory and check if the app is working or not using the following command:
 
         cd sample-golang-app
@@ -166,8 +161,7 @@ Verify if you have Golang installed on your machine by running `$ go version` on
 
     Once you ensure that your application is working, exit the server by pressing 'Ctrl + C' on your mac terminal.
 
-3.  **Set up OpenTelemetry Golang instrumentation library**
-
+3.  **Set up OpenTelemetry Golang instrumentation library**<br></br>
     The file `main.go` has instructions to import all the necessary OpenTelemetry packages in order to instrument the sample app. For this app, we import the following OpenTelemetry packages.
 
     ```

@@ -76,12 +76,12 @@ You need to ensure that you have **Node.js version 12 or newer**. You can downlo
 
 Steps to get the app set up and running:
 
-1. Make a directory and install express<br></br>
+1. **Make a directory and install express**<br></br>
    Make a directory for your sample app on your machine. Then open up the terminal, navigate to the directory path and install express with the following command:
    ```
    npm i express
    ```
-2. Setup server.js<br></br>
+2. **Setup server.js**<br></br>
    Create a file called 'server.js' in your directory and with any text editor setup your 'Hello World' file with the code below:
 
    ```
@@ -96,7 +96,7 @@ Steps to get the app set up and running:
    app.listen(9090);
    ```
 
-3. Boot up the server with the following command on the terminal:
+3. **Boot up the server with the following command on the terminal:**
 
    ```
    node server.js

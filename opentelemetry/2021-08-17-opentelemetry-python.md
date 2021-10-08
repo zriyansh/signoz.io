@@ -85,10 +85,10 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
 
 **Prerequisites**
 
-1. Python 3.4 or newer
+1. **Python 3.4 or newer**<br></br>
    If you do not have Python installed on your system, you can download it from the <a href="https://www.python.org/downloads/" rel="noopener noreferrer nofollow" target="_blank">link</a>. Check the version of Python using `python3 --version` on your terminal to see if Python is properly installed or not.
 
-2. MongoDB
+2. **MongoDB**<br></br>
    If you already have MongoDB services running on your system, you can skip this step.
    For macOS:
    Download link: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
@@ -142,7 +142,7 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
 
 ## Instrumentation with OpenTelemetry and sending data to SigNoz
 
-1. Opentelemetry Python instrumentation installation<br></br>
+1. **Opentelemetry Python instrumentation installation**<br></br>
    Your app folder contains a file called requirements.txt. This file contains all the necessary commands to set up OpenTelemetry Python instrumentation. All the mandatory packages required to start the instrumentation are installed with the help of this file. Make sure your path is updated to the root directory of your sample app and run the following command:
 
    ```
@@ -155,14 +155,14 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
    - python3 -m pip install --upgrade setuptools
    - pip3 install --no-cache-dir --force-reinstall -Iv grpcio
 
-2. Install application specific packages
+2. **Install application specific packages**<br></br>
    This step is required to install packages specific to the application. Make sure to run this command in the root directory of your installed application. This command figures out which instrumentation packages the user might want to install and installs it for them:
 
    ```
    opentelemetry-bootstrap --action=install
    ```
 
-3. Configure a span exporter and run your application
+3. **Configure a span exporter and run your application**<br></br>
    You're almost done. In the last step, you just need to configure a few environment variables for your OTLP exporters. Environment variables that need to be configured:
 
    - SERVICE_NAME **-** application service name (you can name it as you like)

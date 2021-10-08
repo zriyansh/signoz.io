@@ -78,20 +78,20 @@ Verify if you have Golang installed on your machine by running `$ go version` on
 
 **Steps to install sample Go application:**
 
-1. Clone sample Go application repository
+1. **Clone sample Go application repository**<br></br>
    From your terminal use the following command to clone sample Go application GitHub repository.
    ```
    git clone https://github.com/SigNoz/sample-golang-app.git
    ```
-2. Update path to sample-golang-app & check if the app is working
+2. **Update path to sample-golang-app**<br></br>
    Update your terminal path to the sample app directory and check if the app is working or not using the following command:
 
    ```
    cd sample-golang-app
    go run main.go
    ```
-
-   Make sure you have an available port for running your app. If, by default, the go app tries to run on port 8080, you might get an error as SigNoz uses port 8080 for its query service. On your mac terminal, you can set the listening port of your app by using the following command:
+   
+   Make sure you have an available port for running your app. SigNoz uses `port 8080` for its query service. On your mac terminal, you can set the listening port of your app by using the following command:
 
    ```
    export PORT = 8081

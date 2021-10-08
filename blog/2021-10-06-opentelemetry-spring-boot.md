@@ -1,7 +1,7 @@
 ---
 title: Monitor your Spring Boot application with OpenTelemetry and SigNoz
 slug: opentelemetry-spring-boot
-date: 2021-08-02
+date: 2021-10-06
 tags: [application-monitoring, java-monitoring]
 author: Ankit Anand
 author_title: SigNoz Team
@@ -37,7 +37,7 @@ Steps to get started with OpenTelemetry for Spring Boot application:
 
 ## Installing SigNoz
 
-You can get started with SigNoz using just three commands at your terminal if you have Docker installed. You can read about other deployment options from [SigNoz documentation](https://signoz.io/docs/deployment/requirement/).
+You can get started with SigNoz using just three commands at your terminal if you have Docker installed. You can install Docker from its <a href = "https://www.docker.com/get-started" rel="noopener noreferrer nofollow" target="_blank" >official website</a>. You can read about other deployment options from [SigNoz documentation](https://signoz.io/docs/deployment/requirement/).
 
     git clone https://github.com/SigNoz/signoz.git
     cd signoz/deploy/
@@ -67,14 +67,14 @@ For this tutorial, we will use a sample Spring Boot application built using Mave
 
 Steps to get the app set up and running:
 
-1. Git clone the repository and go to the root folder
+1. **Git clone the repository and go to the root folder**
 
-   ```
+   ```jsx
    git clone https://github.com/spring-projects/spring-petclinic.git
    cd spring-petclinic
    ```
 
-2. Update port
+2. **Update port**<br></br>
    This app runs on port `8080` by default. But port `8080` is used by SigNoz for its query service, so let's update the port number to something else.
 
    Open the `application.properties` file located at `spring-petclinic/src/main/resources` and update the server.port attribute.
@@ -119,7 +119,7 @@ Steps to get the app set up and running:
 
    Also, update the port number in [petclinic_test_plan.jmx](https://github.com/SigNoz/spring-petclinic/blob/main/src/test/jmeter/petclinic_test_plan.jmx) located at `spring-petclinic/src/test/jmeter` to `port number: 8090`. It will appear under `PETCLINIC_PORT` elementProp.
 
-3. Run the application using the following commands.
+3. **Run the application using the following commands.**
 
    ```
    ./mvnw package
@@ -215,6 +215,16 @@ You can use flamegraphs to exactly identify the issue causing the latency.
      src="/img/blog/2021/08/signoz_flamegraphs_hc.png"
      title="Flamegraphs showing exact duration taken by each spans - a concept of distributed tracing"
      width={700}
+/>
+
+You can also build custom metrics dashboard for your infrastructure.
+
+<Screenshot
+    alt="SigNoz custom metrics dashboard"
+    height={500}
+    src="/img/blog/2021/10/signoz_custom_dashboard-min.jpg"
+    title="You can also build a custom metrics dashboard for your infrastructure"
+    width={700}
 />
 
 ## Conclusion

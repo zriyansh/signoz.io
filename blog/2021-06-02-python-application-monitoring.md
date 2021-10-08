@@ -63,22 +63,19 @@ We have set up a [sample ToDo Python app](https://github.com/SigNoz/sample-flask
 
 ## Part 1 - Installing SigNoz
 
-1. **Install Docker**
-
+1. **Install Docker**<br></br>
    You can install Docker by following the steps listed on their website [here.](https://www.docker.com/get-started) For this tutorial, you can choose the Docker Desktop option based on the system you have.
 
    ![](/img/blog/2021/05/screenzy-1621623948044-2.png)
 
-2. **Clone SigNoz GitHub repository**
-
+2. **Clone SigNoz GitHub repository**<br></br>
    From your terminal use the following command to clone SigNoz's GitHub repository.
 
    ```
    git clone https://github.com/SigNoz/signoz.git
    ```
 
-3. **Update path to signoz/deploy and install SigNoz**
-
+3. **Update path to signoz/deploy and install SigNoz**<br></br>
    The deploy folder contains the files necessary for deploying SigNoz through Docker.
 
    ```
@@ -115,10 +112,10 @@ SigNoz supports [OpenTelemetry](https://opentelemetry.io/) as the primary way fo
 
 **Prerequisites**
 
-1. **Python 3.4 or newer**
+1. **Python 3.4 or newer**<br></br>
    If you do not have Python installed on your system, you can download it from the link [here](https://www.python.org/downloads/). Check the version of Python using `python3 --version` on your terminal to see if Python is properly installed or not.
 
-2. **MongoDB**
+2. **MongoDB**<br></br>
    If you already have MongoDB services running on your system, you can skip this step.
    For macOS:
    Download link: [https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
@@ -135,15 +132,14 @@ On MacOS the installation is done using Homebrew's brew package manager. Once th
 
 ### Steps
 
-1. Clone sample Flask app repository
-
+1. Clone sample Flask app repository<br></br>
    From your terminal use the following command to clone sample Flask app GitHub repository.
 
    ```
    git clone https://github.com/SigNoz/sample-flask-app.git
    ```
 
-2. Update path to sample-flask-app & check if the app is running\*\*
+2. Update path to sample-flask-app<br></br>
 
    Check if the app is working or not using the following command:
 
@@ -162,8 +158,7 @@ On MacOS the installation is done using Homebrew's brew package manager. Once th
 
    Press 'Ctrl + C' to exit the app once you have made sure it is running properly.
 
-3. **Set up OpenTelemetry Python instrumentation library**
-
+3. **Set up OpenTelemetry Python instrumentation library**<br></br>
    Your app folder contains a file called requirements.txt. This file contains all the necessary commands to set up OpenTelemetry python instrumentation library. All the mandatory packages required to start the instrumentation are installed with the help of this file. Make sure your path is updated to the root directory of your sample app and run the following command:
 
    ```
@@ -176,16 +171,14 @@ On MacOS the installation is done using Homebrew's brew package manager. Once th
    - python3 -m pip install --upgrade setuptools
    - pip3 install --no-cache-dir --force-reinstall -Iv grpcio
 
-4. **Install application specific packages**
-
+4. **Install application specific packages**<br></br>
    This step is required to install packages specific to the application. Make sure to run this command in the root directory of your installed application. This command figures out which instrumentation packages the user might want to install and installs it for them:
 
    ```
    opentelemetry-bootstrap --action=install
    ```
 
-5. **Configure a span exporter and run your application**
-
+5. **Configure a span exporter and run your application**<br></br>
    You're almost done. In the last step, you just need to configure a few environment variables for your OTLP exporters. Environment variables that need to be configured:
 
    - SERVICE_NAME- application service name (you can name it as you like)
