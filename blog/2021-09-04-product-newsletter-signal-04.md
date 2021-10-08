@@ -114,25 +114,29 @@ We joined folks at ClickHouse for their community call to showcase how we use Cl
 
 You can also find the complete recordings of the virtual meetup here 👇
 
-<div class="text--center">
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aQx6ko0BFvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+export const YoutubeWrapper = ({children, url}) => (
+  <div 
+    style={{
+    position: 'relative', 
+    width: '100%',
+    paddingBottom: '56.25%', 
+    height: "0",
+    }} >
+    <iframe width="560" height="315" style={{ position: 'absolute', top:'0', left: '0', width: '100%', height: '100%'}} src={ url } title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+);
+
+<YoutubeWrapper url="https://www.youtube.com/embed/aQx6ko0BFvs"> </YoutubeWrapper>
 
 ### August Community Call
 
 In our monthly community call, [Ankit Nayan](https://github.com/ankitnayan) took the members through an architectural deep-dive of SigNoz where he explained the components used and the rationale behind architectural choices of SigNoz. You can find the full recordings of the call below 👇
 
-<div class="text--center">
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1UEeTysHX4c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-</div>
+<YoutubeWrapper url="https://www.youtube.com/embed/1UEeTysHX4c"> </YoutubeWrapper>
 
 We are planning to conduct performance benchmarks for SigNoz. We would love to hear your suggestions on better performance testing 👇
 
-[SigNoz Performance Benchmarking](https://github.com/SigNoz/signoz/discussions/218)
+**[SigNoz Performance Benchmarking](https://github.com/SigNoz/signoz/discussions/218)**
 
 ### Slack community
 We recently crossed 200+ members on our slack community. Our slack channel is a place where devs from diverse backgrounds come together to collaborate and we love it!
@@ -145,7 +149,8 @@ Join us in our wonderful journey as we build the next-gen application monitoring
 
 Are you thinking of using Jaeger as a distributed tracing tool? You might want to take some time to go through this article elaborating how SigNoz is taking distributed tracing to the next level. Not only that, SigNoz does both metrics and traces. With SigNoz, you can get a unified UI for both metrics and traces. And that is just one of the reasons to choose SigNoz over Jaeger.
 
-Find out the entire list of reasons here 👇
-[Jaeger vs SigNoz - Taking distributed tracing to the next level](https://signoz.io/blog/jaeger-vs-signoz/)
+Find out the entire list of reasons here 👇<br></br>
+
+**[Jaeger vs SigNoz - Taking distributed tracing to the next level](https://signoz.io/blog/jaeger-vs-signoz/)**
 
 Thank you for taking out the time to read this issue :) If you have any feedback or want any changes with the format, please create an [issue](https://github.com/SigNoz/signoz/issues).
