@@ -38,20 +38,19 @@ Let's divide this tutorial in 2 parts:
 
 ## Part 1 - Installing SigNoz
 
-1. **Install Docker**
-
+1. **Install Docker**<br></br>
    You can install Docker by following the steps listed on their website [here.](https://www.docker.com/get-started) For this tutorial, you can choose the Docker Desktop option based on the system you have.
 
    ![](/img/blog/2021/05/screenzy-1621623948044.png)
 
-2. **Clone SigNoz GitHub repository**
+2. **Clone SigNoz GitHub repository**<br></br>
    From your terminal use the following command to clone SigNoz's GitHub repository.
 
    ```
    git clone https://github.com/SigNoz/signoz.git
    ```
 
-3. **Update path to signoz/deploy and install SigNoz**
+3. **Update path to signoz/deploy and install SigNoz**<br></br>
    The deploy folder contains the files necessary for deploying SigNoz through Docker.
 
    ```
@@ -91,16 +90,14 @@ But to see how SigNoz helps you in monitoring an app's performance, we need an a
 
 You need to ensure that you have **Node.js version 12 or newer. **You can download the latest version of Node.js [here](https://nodejs.org/en/download/). For the sample application, let's create a basic 'hello world' express.js application.
 
-1. **Make a directory and install express**
-
+1. **Make a directory and install express**<br></br>
    Make a directory for your sample app on your machine. Then open up the terminal, navigate to the directory path and install express with the following command:
 
    ```
    npm i express
    ```
 
-2. **Setup server.js**
-
+2. **Setup server.js**<br></br>
    Create a file called 'server.js' in your directory and with any text editor setup your 'Hello World' file with the code below:
 
    ```
@@ -121,7 +118,7 @@ You need to ensure that you have **Node.js version 12 or newer. **You can downlo
    You can check if your app is working by visiting: [http://localhost:9090/hello](http://localhost:9000/hello)
    Once you are finished checking, exit the localhost on your terminal.
 
-3. **Setting up OpenTelemetry**
+3. **Setting up OpenTelemetry**<br></br>
    In the same directory path at the terminal, install the OpenTelemetry launcher package with this command:
 
    ```
