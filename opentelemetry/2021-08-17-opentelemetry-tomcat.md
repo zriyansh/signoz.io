@@ -186,16 +186,23 @@ You can try out SigNoz by visiting its GitHub repo 👇<br></br>
 
 If you are someone who understands more from video, then you can watch the tutorial on how to monitor your Tomcat Java Application with OpenTelemetry and SigNoz below👇<br></br>
 
-<div class="text--center">
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4obQilMqU4E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+export const YoutubeWrapper = ({children, url}) => (
+  <div 
+    style={{
+    position: 'relative', 
+    width: '100%',
+    paddingBottom: '56.25%', 
+    height: "0",
+    }} >
+    <iframe width="560" height="315" style={{ position: 'absolute', top:'0', left: '0', width: '100%', height: '100%'}} src={ url } title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+);
+
+<YoutubeWrapper url="https://www.youtube.com/embed/4obQilMqU4E"> </YoutubeWrapper><br></br>
 
 If you face any issues while trying out SigNoz, feel free to write to us at: support@signoz.io
 
-<br></br>If you want to read more about SigNoz 👇
-<br></br>
+If you want to read more about SigNoz 👇
 
 [Golang Application Performance Monitoring with SigNoz](https://signoz.io/blog/monitoring-your-go-application-with-signoz/)
 

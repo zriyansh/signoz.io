@@ -240,13 +240,21 @@ You can try out SigNoz by visiting its GitHub repo 👇
 </div>
 
 <br></br>
-If you are someone who understands more from video, then you can watch the tutorial on how to use OpenTelemetry for Spring Boot application here 👇
+If you are someone who understands more from video, then you can watch the tutorial on how to use OpenTelemetry for Spring Boot application here 👇<br></br>
 
-<div class="text--center">
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YxZb17_LYwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+export const YoutubeWrapper = ({children, url}) => (
+  <div 
+    style={{
+    position: 'relative', 
+    width: '100%',
+    paddingBottom: '56.25%', 
+    height: "0",
+    }} >
+    <iframe width="560" height="315" style={{ position: 'absolute', top:'0', left: '0', width: '100%', height: '100%'}} src={ url } title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+);
+
+<YoutubeWrapper url="https://www.youtube.com/embed/YxZb17_LYwQ"> </YoutubeWrapper><br></br>
 
 If you face any issues while trying out SigNoz, feel free to write to us at: support@signoz.io
 
