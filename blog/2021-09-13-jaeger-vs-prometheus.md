@@ -166,7 +166,7 @@ ___
 **[Jaeger vs ELastic APM](https://signoz.io/blog/jaeger-vs-elastic-apm/)**<br></br>
 **[Jaeger vs SigNoz](https://signoz.io/blog/jaeger-vs-signoz/)**<br></br>
 **[Jaeger vs Zipkin](https://signoz.io/blog/jaeger-vs-zipkin/)**<br></br>
-**[Jaeger vs New Relic](https://signoz.io/blog/jaeger-vs-newrelic/)**<br></br>
+**[DataDog vs Prometheus](https://signoz.io/blog/datadog-vs-prometheus/)**<br></br>
 
 
 
