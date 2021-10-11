@@ -20,8 +20,9 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/datadog-vs-grafana/"/>
 </head>
 
+DataDog is a paid SaaS tool that provides a range of products for monitoring applications and tech infrastructure. While Grafana is an open-source web visualization tool that can be used with a variety of data sources to create dashboards.
+
 <!--truncate-->
-DataDog is a paid SaaS tool that provides a range of products for monitoring applications and tech infrastructure. While Grafana is an open-source web visualization tool that can be used with a variety of data sources to create dashboards. 
 
 ![Cover Image](/img/blog/2021/10/datadog_vs_grafana_cover-min.jpg)
 
