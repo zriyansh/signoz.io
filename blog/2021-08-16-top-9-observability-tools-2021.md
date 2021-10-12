@@ -245,10 +245,19 @@ For applications with microservices architecture, observability tools have becom
 
 An open-source tool like [SigNoz](https://signoz.io/), can be your best option in today's privacy-driven digital economy. Moreover, SigNoz uses open-source standards for instrumentation, and its code can be assessed for quality from its [GitHub repo](https://github.com/SigNoz/signoz). Finally, as the tool is open-sourced, you get the support of the community while having access to out-of-box features like a SaaS vendor.
 
-Check out SigNoz GitHub repo:
+## Getting started with SigNoz
+
+If you have docker installed, getting started with SigNoz just takes three easy steps at the command line:
+```jsx
+git clone https://github.com/SigNoz/signoz.git
+cd signoz/deploy/
+./install.sh
+```
+You can read more about deploying SigNoz from its [documentation](https://signoz.io/docs/deployment/docker/).
+
+You can check out SigNoz's GitHub repo here 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
-
 ___
 
 #### **Related Content**

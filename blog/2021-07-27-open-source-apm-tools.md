@@ -502,7 +502,19 @@ Choosing the right open source APM tool is critical to your team's ability to mo
 
 But this is just one aspect. Another aspect is whether the tool serves all your needs for application monitoring or not. You don't want your team to manage multiple tools for end-to-end visibility into the performance of your apps.
 
-Logs, metrics, and traces form the three cornerstones of full-stack APM tools. In that scenario, a tool like [SigNoz](https://github.com/SigNoz/signoz) can serve all your needs for application monitoring. As the instrumentation is based on OpenTelemetry, you also have the added advantage of not being locked into any product. You can try out SigNoz by visiting its GitHub repo 👇
+Logs, metrics, and traces form the three cornerstones of full-stack APM tools. In that scenario, a tool like [SigNoz](https://github.com/SigNoz/signoz) can serve all your needs for application monitoring. As the instrumentation is based on OpenTelemetry, you also have the added advantage of not being locked into any product.
+
+## Getting started with SigNoz
+
+If you have docker installed, getting started with SigNoz just takes three easy steps at the command line:
+```jsx
+git clone https://github.com/SigNoz/signoz.git
+cd signoz/deploy/
+./install.sh
+```
+You can read more about deploying SigNoz from its [documentation](https://signoz.io/docs/deployment/docker/).
+
+You can check out SigNoz's GitHub repo here 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
