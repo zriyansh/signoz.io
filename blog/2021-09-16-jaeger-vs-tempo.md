@@ -223,6 +223,16 @@ Some of the things SigNoz can help you track:
 - Run aggregates on trace data
 - Unified UI for both metrics and traces
 
+## Getting started with SigNoz
+
+If you have docker installed, getting started with SigNoz just takes three easy steps at the command line:
+```jsx
+git clone https://github.com/SigNoz/signoz.git
+cd signoz/deploy/
+./install.sh
+```
+You can read more about deploying SigNoz from its [documentation](https://signoz.io/docs/deployment/docker/).
+
 You can check out SigNoz's GitHub repo here 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
