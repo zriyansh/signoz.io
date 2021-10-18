@@ -53,7 +53,7 @@ List of top DataDog alternatives in 2021:
 
 ## SigNoz
 
-[SigNoz](https://signoz.io/) is full-stack open-source application monitoring and observability tool which can be a great DataDog alternative. It can be hosted within your infra, and as such, you don't need to send your data to a third-party vendor. It uses distributed tracing to help developers gauge the performance of their application in production. It captures both metrics and traces with log management currently in the product roadmap.
+[SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) is full-stack open-source application monitoring and observability tool which can be a great DataDog alternative. It can be hosted within your infra, and as such, you don't need to send your data to a third-party vendor. It uses distributed tracing to help developers gauge the performance of their application in production. It captures both metrics and traces with log management currently in the product roadmap.
 A few things that SigNoz can help you with as a DataDog alternative are:
 
 - Track the popular RED metrics

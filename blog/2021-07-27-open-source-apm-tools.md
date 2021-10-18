@@ -119,7 +119,7 @@ It also comes with out of the box charts and visualization so that you can get s
 
 You can choose between industry-standard Kafka+Druid or fast OLAP database ClickHouse as the storage backend. The query service is written in GO, and the frontend is built with Typescript.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://bit.ly/2Z5xcyH)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=open_source_apm_tools)
 
 ### Graphite
 
@@ -516,7 +516,7 @@ cd signoz/deploy/
 ```
 You can read more about deploying SigNoz from its documentation.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://bit.ly/2Z5xcyH)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=open_source_apm_tools)
 
 You can check out SigNoz's GitHub repo here 👇
 

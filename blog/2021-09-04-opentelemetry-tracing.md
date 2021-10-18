@@ -61,7 +61,7 @@ A trace context is passed along when requests travel between services, which tra
 
 Using OpenTelemetry you can encapsulate several pieces of information with a span. Common information includes **the name of the operation, start and end timestamp, events occurring during the span**. You can also add custom attributes with key/value pairs to enable more insights if needed.
 
-In the picture below, you can see the details for the selected span. [SigNoz](https://signoz.io/) is a lightweight open-source APM tool based on OpenTelemetry, which can be used as an analysis tool.
+In the picture below, you can see the details for the selected span. [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) is a lightweight open-source APM tool based on OpenTelemetry, which can be used as an analysis tool.
 
 <Screenshot
     alt="Attributes can be added to spans for more context"
@@ -162,7 +162,7 @@ You can also instrument your code manually to have more business specific contex
 ## How to get started with OpenTelemetry tracing?
 OpenTelemetry is becoming the world standard for instrumenting application code due to its multi-language support and ease of use. But OpenTelemetry helps only to generate and collect telemetry data. You need to export the telemetry data to a backend analysis tool so that your teams can store, query, and visualize the collected data.
 
-And that's where [SigNoz](https://signoz.io/) comes into the picture. SigNoz uses OpenTelemetry natively to instrument application codes. OpenTelemetry collector then sends the data to the SigNoz backend, where users have the option to choose between ClickHouse or Kafka+Druid as their telemetry data storage option.
+And that's where [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) comes into the picture. SigNoz uses OpenTelemetry natively to instrument application codes. OpenTelemetry collector then sends the data to the SigNoz backend, where users have the option to choose between ClickHouse or Kafka+Druid as their telemetry data storage option.
 
 SigNoz comes with out of box visualization of things like RED metrics. There is a unified UI of metrics and traces, unlike Prometheus, so that you can easily identify the root cause of issues causing things like latency in your apps.
 

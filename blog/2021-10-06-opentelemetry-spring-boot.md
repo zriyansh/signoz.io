@@ -46,7 +46,7 @@ cd signoz/deploy/
 
 You will have an option to choose between ClickHouse or Kafka + Druid as a storage option. Trying out SigNoz with ClickHouse database takes less than 1.5GB of memory, and for this tutorial, we will use that option.<br></br>
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://bit.ly/3aKpRqC)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=springboot)
 
 When you are done installing SigNoz, you can access the UI at: [http://localhost:3000](http://localhost:3000/application)
 

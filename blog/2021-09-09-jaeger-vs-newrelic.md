@@ -139,7 +139,7 @@ It's no surprise that New Relic has better features than Jaeger as it's paid. Pr
 ## Alternative to Jaeger and New Relic
 Jaeger and New Relic are both established tools in the observability domain. But Jaeger fells short on providing a robust observability framework since it only does distributed tracing. SaaS vendors like New Relic come with their own set of concerns, like sending your data to a 3rd party cloud vendor.
 
-That's where [SigNoz](https://signoz.io/) comes into the picture. [SigNoz](https://signoz.io/) is a full-stack open-source application performance monitoring and observability tool which can be used in place of Jaeger. SigNoz is built to support OpenTelemetry natively. It also provides users flexibility in terms of storage. You can choose between ClickHouse or Kafka + Druid as your backend storage while installing SigNoz.
+That's where [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) comes into the picture. [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) is a full-stack open-source application performance monitoring and observability tool which can be used in place of Jaeger. SigNoz is built to support OpenTelemetry natively. It also provides users flexibility in terms of storage. You can choose between ClickHouse or Kafka + Druid as your backend storage while installing SigNoz.
 
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
