@@ -40,7 +40,7 @@ In this article, we will compare DataDog with Grafana based on the following cat
 We will also explore the key features of DataDog and Grafana.
 
 > While DataDog and Grafana are great monitoring tools, they have their limitations. DataDog is an enterprise SaaS tool with complex pricing tiers. Grafana is an open-source monitoring tool that needs support and maintenance to set up and scale.<br></br>
-> And that's where [SigNoz](https://signoz.io/) comes into the picture. It is an open-source APM tool that comes with great user experience in terms of getting started and web user experience. It's an open-source alternative to DataDog.
+> And that's where [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) comes into the picture. It is an open-source APM tool that comes with great user experience in terms of getting started and web user experience. It's an open-source alternative to DataDog.
 
 ## Comparing DataDog and Grafana
 
@@ -148,7 +148,7 @@ Some of the key features of Grafana are:
 
 ## A better alternative to DataDog and Grafana - SigNoz
 
-[SigNoz](https://signoz.io/) is a full-stack open-source application performance monitoring and observability tool which can be used in place of DataDog and Grafana. SigNoz is built to give SaaS like user experience combined with the perks of open-source software. Developer tools should be developer first, and SigNoz was built by developers to address the gap between SaaS vendors and open-source software.
+[SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) is a full-stack open-source application performance monitoring and observability tool which can be used in place of DataDog and Grafana. SigNoz is built to give SaaS like user experience combined with the perks of open-source software. Developer tools should be developer first, and SigNoz was built by developers to address the gap between SaaS vendors and open-source software.
 
 Key architecture features:
 

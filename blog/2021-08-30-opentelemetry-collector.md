@@ -77,7 +77,7 @@ OpenTelemetry collector consists of three main components:
   Processors are used to doing any processing required on the collected data like data massaging, data manipulation, or any change in the data as it flows through the collector. It can also be used to remove PII data from the collected telemetry data, which can be very useful. You can also do things like batching the data before sending it out, retrying in case the exporting fails, adding metadata, tail-based sampling, etc.
 
 - **Exporters**<br></br>
-  Exporters are used to exporting data to a backend analysis tool like [SigNoz](https://signoz.io/). You can send out data in multiple data formats.
+  Exporters are used to exporting data to a backend analysis tool like [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article). You can send out data in multiple data formats.
 
 <Screenshot
       alt="OpenTelemetry Collector"
@@ -218,7 +218,7 @@ service:
 
 ---
 
-A sample OpenTelemetry Collector configuration file. (Source: [SigNoz](https://signoz.io/))
+A sample OpenTelemetry Collector configuration file. (Source: [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article))
 
 ```
 apiVersion: v1
@@ -284,7 +284,7 @@ data:
 
 ## Getting started with OpenTelemetry
 
-OpenTelemetry provides a vendor-agnostic way of collecting and managing telemetry data. The next step is to choose a backend analysis tool that can help you make sense of the collected data. [SigNoz](https://signoz.io/) is a full-stack open-source application performance monitoring and observability platform built natively for OpenTelemetry.
+OpenTelemetry provides a vendor-agnostic way of collecting and managing telemetry data. The next step is to choose a backend analysis tool that can help you make sense of the collected data. [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) is a full-stack open-source application performance monitoring and observability platform built natively for OpenTelemetry.
 
 If you have docker installed, getting started with SigNoz just takes three easy steps at the command line:
 
@@ -294,7 +294,10 @@ cd signoz/deploy/
 ./install.sh
 ```
 
-You can read more about deploying SigNoz from its [documentation](https://signoz.io/docs/deployment/docker/).
+You can read more about deploying SigNoz from its documentation.
+
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_colllector)
+
 
 SigNoz can be used to visualize metrics and traces with charts that can enable quick insights for your teams.
 

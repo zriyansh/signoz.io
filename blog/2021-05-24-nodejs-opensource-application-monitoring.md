@@ -29,7 +29,7 @@ Node.js is a dynamically typed single-threaded programming language. There is a 
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
 
-[SigNoz](https://github.com/SigNoz/signoz) is an open-source application monitoring and observability platform which can be installed within your infra. There's no need to go through any sales team or complex onboarding process to start monitoring your application with SigNoz. In this article, let's take a look at how it can be deployed with Docker in a sample Node.js application.
+[SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) is an open-source application monitoring and observability platform which can be installed within your infra. There's no need to go through any sales team or complex onboarding process to start monitoring your application with SigNoz. In this article, let's take a look at how it can be deployed with Docker in a sample Node.js application.
 
 Let's divide this tutorial in 2 parts:
 

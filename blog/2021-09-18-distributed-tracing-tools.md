@@ -104,7 +104,7 @@ Below is a snapshot from SigNoz dashboard showing spans from a request as rectan
 Now let's explore the top 11 distributed tracing tools in 2021.
 
 ### SigNoz
-[SigNoz](https://signoz.io/) is a full-stack open-source APM and observability tool. It captures both metrics and traces with log management currently in the product roadmap. Logs, metrics, and traces are considered to be the three pillars of observability in modern-day distributed systems.
+[SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) is a full-stack open-source APM and observability tool. It captures both metrics and traces with log management currently in the product roadmap. Logs, metrics, and traces are considered to be the three pillars of observability in modern-day distributed systems.
 
 SigNoz provides a unified UI for metrics and traces so that there is no need to switch between different tools like Jaeger and Prometheus.
 
@@ -406,7 +406,9 @@ git clone https://github.com/SigNoz/signoz.git
 cd signoz/deploy/
 ./install.sh
 ```
-You can read more about deploying SigNoz from its [documentation](https://signoz.io/docs/deployment/docker/).
+You can read more about deploying SigNoz from its documentation.
+
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=distributed_tracing_tools)
 
 You can check out SigNoz's GitHub repo here 👇
 
