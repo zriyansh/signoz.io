@@ -114,7 +114,7 @@ We will divide the tutorial into two parts:
 
 Now that you have SigNoz up and running, let's see how instrumentation works. Instrumentation is the process of implementing code instructions to monitor your application's performance. Instrumentation is key to see how your application handles the real world. It helps you generate trace data which you can then use to understand what's happening inside your systems.
 
-SigNoz supports [OpenTelemetry](https://opentelemetry.io/) as the primary way for users to instrument their application. OpenTelemetry is a single, vendor-agnostic instrumentation library with support for both automatic and manual instrumentation. More details on OpenTelemetry  Golang SDKs and APIs [here](https://github.com/open-telemetry/opentelemetry-go).
+SigNoz supports [OpenTelemetry](https://opentelemetry.io/) as the primary way for users to instrument their application. OpenTelemetry is a single, vendor-agnostic instrumentation library with support for both automatic and manual instrumentation. More details on OpenTelemetry Golang SDKs and APIs [here](https://github.com/open-telemetry/opentelemetry-go).
 
 ## Part 2 - Instrumenting sample Golang app
 
@@ -128,7 +128,7 @@ OpenTelemetry has specific instrumentation packages to support popular Golang pa
 
 Verify if you have Golang installed on your machine by running `$ go version` on your terminal. If you don't have Golang installed, you can download it [here](https://golang.org/doc/install).
 
-### Steps
+### Steps to instrument Golang app
 
 1.  Clone sample Golang app repository<br></br>
     From your terminal use the following command to clone sample Golang app GitHub repository.

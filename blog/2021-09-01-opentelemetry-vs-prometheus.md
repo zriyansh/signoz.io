@@ -35,6 +35,10 @@ OpenTelemetry is a vendor-agnostic instrumentation library. It provides a set of
 
 Prometheus is a time-series metrics monitoring tool. Prometheus enables you to capture time-series data as metrics. These metrics can be aggregated to give insights into the behavior of your systems.
 
+*Check out SigNoz - an open-source alternative to DataDog* 👇
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://bit.ly/3aNnkf9)
+
+
 ## What is OpenTelemetry?
 
 OpenTelemetry is a set of API, SDKs, libraries, and integrations that is aiming to standardize the generation, collection, and management of telemetry data(logs, metrics, and traces). OpenTelemetry is a Cloud Native Computing Foundation project created after the merger of OpenCensus(from Google) and OpenTracing(from Uber).
@@ -143,7 +147,9 @@ git clone https://github.com/SigNoz/signoz.git
 cd signoz/deploy/
 ./install.sh
 ```
-You can read more about deploying SigNoz from its [documentation](https://signoz.io/docs/deployment/docker/).
+You can read more about deploying SigNoz from its documentation.
+
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://bit.ly/3G1lqGq)
 
 You can check out SigNoz's GitHub repo here 👇
 

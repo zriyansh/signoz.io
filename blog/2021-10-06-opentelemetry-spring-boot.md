@@ -37,13 +37,16 @@ Steps to get started with OpenTelemetry for Spring Boot application:
 
 ## Installing SigNoz
 
-You can get started with SigNoz using just three commands at your terminal if you have Docker installed. You can install Docker from its <a href = "https://www.docker.com/get-started" rel="noopener noreferrer nofollow" target="_blank" >official website</a>. You can read about other deployment options from [SigNoz documentation](https://signoz.io/docs/deployment/requirement/).
+You can get started with SigNoz using just three commands at your terminal if you have Docker installed. You can install Docker from its <a href = "https://www.docker.com/get-started" rel="noopener noreferrer nofollow" target="_blank" >official website</a>.
+```
+git clone https://github.com/SigNoz/signoz.git
+cd signoz/deploy/
+./install.sh
+```
 
-    git clone https://github.com/SigNoz/signoz.git
-    cd signoz/deploy/
-    ./install.sh
+You will have an option to choose between ClickHouse or Kafka + Druid as a storage option. Trying out SigNoz with ClickHouse database takes less than 1.5GB of memory, and for this tutorial, we will use that option.<br></br>
 
-<br></br>You will have an option to choose between ClickHouse or Kafka + Druid as a storage option. Trying out SigNoz with ClickHouse database takes less than 1.5GB of memory, and for this tutorial, we will use that option.
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://bit.ly/3aKpRqC)
 
 When you are done installing SigNoz, you can access the UI at: [http://localhost:3000](http://localhost:3000/application)
 
