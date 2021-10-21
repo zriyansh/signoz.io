@@ -139,7 +139,7 @@ It's no surprise that New Relic has better features than Jaeger as it's paid. Pr
 ## Alternative to Jaeger and New Relic
 Jaeger and New Relic are both established tools in the observability domain. But Jaeger fells short on providing a robust observability framework since it only does distributed tracing. SaaS vendors like New Relic come with their own set of concerns, like sending your data to a 3rd party cloud vendor.
 
-That's where [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) comes into the picture. [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) is a full-stack open-source application performance monitoring and observability tool which can be used in place of Jaeger. SigNoz is built to support OpenTelemetry natively. It also provides users flexibility in terms of storage. You can choose between ClickHouse or Kafka + Druid as your backend storage while installing SigNoz.
+That's where [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=jaeger_vs_newrelic) comes into the picture. [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=jaeger_vs_newrelic) is a full-stack open-source application performance monitoring and observability tool which can be used in place of Jaeger. SigNoz is built to support OpenTelemetry natively. It also provides users flexibility in terms of storage. You can choose between ClickHouse or Kafka + Druid as your backend storage while installing SigNoz.
 
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
@@ -176,7 +176,10 @@ git clone https://github.com/SigNoz/signoz.git
 cd signoz/deploy/
 ./install.sh
 ```
-You can read more about deploying SigNoz from its [documentation](https://signoz.io/docs/deployment/docker/).
+
+You can read more about deploying SigNoz from its documentation.
+
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=jaeger_vs_newrelic)
 
 You can check out SigNoz's GitHub repo here 👇
 
