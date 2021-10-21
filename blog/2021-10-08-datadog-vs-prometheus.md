@@ -49,7 +49,7 @@ Some of the key differences between DataDog and Prometheus:
 - **Getting started**<br></br>
   DataDog is relatively simpler to get started than Prometheus. You need to sign up for a DataDog account and then install DataDog agents on your host. The DataDog agent can be installed on many platforms either directly or as a containerized version. The agent reports events and metrics from the host.
 
-  Prometheus installation requires a bit of configuration to get started. You also need to set up a long-term storage layer if you want to retain your metrics. It is easier to get started with Prometheus for monitoring other CNCF projects like Kubernetes.
+  Prometheus installation requires a bit of configuration to get started. You would want to set up long-term external retention if you don't want a single machine as a point of failure and to analyze data from multiple Prometheus instances giving a global view. It is easier to get started with Prometheus for monitoring other CNCF projects like Kubernetes.
 
 - **Monitoring use-cases**<br></br>
   DataDog has an extensive list of monitoring services it offers. List of all monitoring products that DataDog provides:
@@ -210,7 +210,10 @@ git clone https://github.com/SigNoz/signoz.git
 cd signoz/deploy/
 ./install.sh
 ```
-You can read more about deploying SigNoz from its [documentation](https://signoz.io/docs/deployment/docker/).
+
+You can read more about deploying SigNoz from its documentation.
+
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=dd_vs_prometheus)
 
 You can check out SigNoz's GitHub repo here 👇
 

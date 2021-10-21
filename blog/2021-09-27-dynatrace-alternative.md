@@ -181,7 +181,9 @@ cd signoz/deploy/
 ./install.sh
 ```
 
-You can read more about deploying SigNoz from its [documentation](https://signoz.io/docs/deployment/docker/).
+You can read more about deploying SigNoz from its documentation.
+
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=dynatrace_alternative)
 
 If you liked what you read, then check out our GitHub repo 👇
 
