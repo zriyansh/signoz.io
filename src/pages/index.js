@@ -332,6 +332,7 @@ function Home() {
               <div className="col col--4">
                 <p className="hero__title " style={{ fontWeight: "bold" }}>
                   Open-source Observability platform
+                  {/* Open-source application monitoring platform */}
                 </p>
                 <p className="hero__subtitle">
                   Understand issues in your deployed applications & solve them
