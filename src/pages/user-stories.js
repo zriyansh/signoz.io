@@ -26,11 +26,9 @@ function aboutus() {
                     />
                   </div>
                   <div class="card__body">
-                    <h4>Quaco Lighthouse</h4>
+                    <h4>Building Netflix's Distributed Tracing infrastructure</h4>
                     <small>
-                      The Quaco Head Lighthouse is a well maintained lighthouse close to St.
-                      Martins. It is a short, beautiful walk to the lighthouse along the
-                      seashore.
+                    In this article, Netflix engineering team describes how they designed the tracing infrastructure behind Edgar. Edgar helps Netflix troubleshoot distributed systems.
                     </small>
                   </div>
                   <div class="card__footer">
@@ -51,11 +49,9 @@ function aboutus() {
                     />
                   </div>
                   <div class="card__body">
-                    <h4>Quaco Lighthouse</h4>
+                    <h4>Lessons from Building Observability Tools at Netflix</h4>
                     <small>
-                      The Quaco Head Lighthouse is a well maintained lighthouse close to St.
-                      Martins. It is a short, beautiful walk to the lighthouse along the
-                      seashore.
+                    5 key learnings of Netflix engineering team from building observability tools. The learnings cover scaling log ingestion, contextual distributed tracing, analysis of metrics, choosing observability database and data visualization.
                     </small>
                   </div>
                   <div class="card__footer">
@@ -77,11 +73,10 @@ function aboutus() {
                     />
                   </div>
                   <div class="card__body">
-                    <h4>Quaco Lighthouse</h4>
+                    <h4>Edgar: Solving Mysteries Faster with Observability</h4>
                     <small>
-                      The Quaco Head Lighthouse is a well maintained lighthouse close to St.
-                      Martins. It is a short, beautiful walk to the lighthouse along the
-                      seashore.
+                      Edgar: Solving Mysteries Faster with Observability -yaddya yaadda yaddya
+                      Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
                     </small>
                   </div>
                   <div class="card__footer">
