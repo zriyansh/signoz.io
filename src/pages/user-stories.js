@@ -23,7 +23,7 @@ function aboutus() {
             And, hence the name Sig.Noz ( Signal vs Noise) 🤓
           </p>
           <div class="row">
-            <div class="col col--6">
+            <div class="col col--4">
               <div class="card-demo margin--md">
                 <div class="card">
                   <div class="avatar margin--md">
@@ -70,7 +70,7 @@ function aboutus() {
                 </div>
               </div>
             </div>
-            <div class="col col--6">
+            <div class="col col--4">
               <div class="card-demo margin--md">
                 <div class="card">
                   <div class="avatar margin--md">
