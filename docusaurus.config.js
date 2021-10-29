@@ -83,9 +83,14 @@ module.exports = {
         //   label: 'Cloud',
         //   position: 'right',
         // },
+        // {
+        //   to: "about-us/",
+        //   label: "About",
+        //   position: "right",
+        // },
         {
-          to: "about-us/",
-          label: "About",
+          href: "https://www.ycombinator.com/companies/signoz",
+          label: "Careers",
           position: "right",
         },
       ],
@@ -131,8 +136,8 @@ module.exports = {
           title: "More",
           items: [
             {
-              label: "Blog",
-              to: "blog/",
+              label: "About",
+              to: "about-us/",
             },
             {
               label: "GitHub",
