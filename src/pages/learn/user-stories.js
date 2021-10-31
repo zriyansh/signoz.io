@@ -13,9 +13,9 @@ function aboutus() {
           <p className="text--center margin-vert--lg">
             {" "}
             <h1 class="margin-vert--lg">Observability User Stories </h1>
-            <p> One of the best ways to learn about a domain is to learn how the masters have done it.
+            <h4> One of the best ways to learn about a domain is to learn how the masters have done it.
               With the same thought in mind, here's a compilation of how top companies like Uber, Netflix, etc. have gone about designing their observability
-              systems. </p>
+              systems. </h4>
 
 
           </p>
