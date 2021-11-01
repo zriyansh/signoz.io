@@ -139,6 +139,7 @@ Check this [documentation](https://opentelemetry-python.readthedocs.io/en/latest
 <p>&nbsp;</p>
 
 
+
 ### Troubleshooting your installation
 
 If spans are not being reported to SigNoz, try running in debug mode by setting `OTEL_LOG_LEVEL=debug`:
@@ -180,3 +181,11 @@ Span {
   _spanProcessor: MultiSpanProcessor { _spanProcessors: [Array] }
 },
 ```
+
+<p>&nbsp;</p>
+
+<p align="center">
+
+[![Book meeting](/img/docs/ZoomCTA.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
+
+</p>

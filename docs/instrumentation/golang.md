@@ -313,3 +313,12 @@ The OpenTracing shim allows existing OpenTracing instrumentation to report to th
 
 Go OpenTracing shim
 Read more about upgrading to OpenTelemetry in our OpenTracing Migration Guide.
+
+
+<p>&nbsp;</p>
+
+<p align="center">
+
+[![Book meeting](/img/docs/ZoomCTA.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
+
+</p>

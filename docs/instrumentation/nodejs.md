@@ -174,3 +174,12 @@ If your application exits quickly after startup, you may need to explicitly shut
 ```bash
 opentelemetry.trace.getTracer('your_tracer_name').getActiveSpanProcessor().shutdown()
 ```
+
+<p>&nbsp;</p>
+
+
+<p align="center">
+
+[![Book meeting](/img/docs/ZoomCTA.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
+
+</p>
