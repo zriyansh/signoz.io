@@ -140,8 +140,8 @@ module.exports = {
               to: "about-us/",
             },
             {
-              label: "GitHub",
-              href: "https://github.com/SigNoz/signoz",
+              label: "Learn",
+              href: "learn/user-stories/",
             },
             {
               label: "Support",
