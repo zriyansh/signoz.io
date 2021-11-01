@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 
 function aboutus() {
   return (
-    <Layout title="About Us">
+    <Layout title="Observability User Stories">
       <section>
         <div
           className="container"
@@ -26,7 +26,7 @@ function aboutus() {
                   <div class="card__image">
                     <img
                       src="/img/user_stories/1_netflix_distributed_tracing.webp"
-                      alt="Image alt text"
+                      alt="Netflix Distributed Tracing"
                       title="Logo Title Text 1"
                     />
                   </div>
@@ -37,6 +37,10 @@ function aboutus() {
                     </small>
                   </div>
                   <div class="card__footer">
+                  {/* <span class="badge badge--secondary">netflix</span>
+                  <span class="badge badge--secondary">tracing</span> */}
+
+
                     <Link
                       className="button button--secondary button--outline"
                       href={"https://netflixtechblog.com/building-netflixs-distributed-tracing-infrastructure-bb856c319304"}
