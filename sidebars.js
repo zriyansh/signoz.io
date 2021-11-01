@@ -66,5 +66,25 @@ module.exports = {
         'configuration/retention_period',
       ],
     },
+    {
+      id: "architecture",
+      type: "doc",
+    },
+    {
+      id: "contributing",
+      type: "doc",
+    },
+    {
+      id: "community",
+      type: "doc",
+    },
+    {
+      id: "roadmap",
+      type: "doc",
+    },
+    {
+      id: "faq",
+      type: "doc",
+    },
   ]
 }

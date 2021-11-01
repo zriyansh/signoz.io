@@ -7,9 +7,6 @@ We are focused on building an integrated observability tool which can be a super
 
 The following items are in our roadmap currently
 
-### Custom Metrics
-
-Support for custom metrics ingestion into SigNoz
 
 ### Alert management
 
