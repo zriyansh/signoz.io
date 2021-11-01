@@ -37,8 +37,8 @@ function aboutus() {
                     </small>
                   </div>
                   <div class="card__footer">
-                  <span class="badge badge--secondary">netflix</span>
-                  <span class="badge badge--secondary">tracing</span>
+                  {/* <span class="badge badge--secondary">netflix</span>
+                  <span class="badge badge--secondary">tracing</span> */}
 
 
                     <Link
