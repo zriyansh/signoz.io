@@ -141,7 +141,7 @@ module.exports = {
             },
             {
               label: "Learn",
-              href: "learn/user-stories/",
+              to: "learn/user-stories/",
             },
             {
               label: "Support",
