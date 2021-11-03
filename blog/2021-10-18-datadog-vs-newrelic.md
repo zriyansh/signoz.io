@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Want to choose between DataDog and New Relic? In this article, let's go through 5 key capabilities of both the tools...
-image: /img/blog/2021/10/datadog_vs_newrelic_cover-min.jpg
+image: /img/blog/2021/10/datadog_vs_newrelic_cover-min.webp
 hide_table_of_contents: true
 keywords:
   - datadog
@@ -25,7 +25,7 @@ Both DataDog and New Relic are enterprise monitoring tools that provide a wide r
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/10/datadog_vs_newrelic_cover-min.jpg)
+![Cover Image](/img/blog/2021/10/datadog_vs_newrelic_cover-min.webp)
 
 import Screenshot from "@theme/Screenshot"
 
@@ -60,7 +60,7 @@ Some of the key features of DataDog APM includes:
 <Screenshot
     alt="DataDog APM Dashboard"
     height={500}
-    src="/img/blog/2021/09/apm_tools_datadog-min.jpg"
+    src="/img/blog/2021/09/apm_tools_datadog-min.webp"
     title="DataDog APM tool dashboard (Source: DataDog dashboard)"
     width={700}
 />
@@ -80,7 +80,7 @@ Some of the key features of New Relic APM includes:
 <Screenshot
     alt="New Relic APM Dashboard"
     height={500}
-    src="/img/blog/2021/10/dd_vs_nr_newrelic_apm-min.jpg"
+    src="/img/blog/2021/10/dd_vs_nr_newrelic_apm-min.webp"
     title="New Relic APM Dashboard (Source: New Relic Dashboard)"
     width={700}
 />
@@ -100,7 +100,7 @@ Some of the key features of DataDog's infrastructure monitoring includes:
 <Screenshot
     alt="DataDog Infrastructure Monitoring Dashboard"
     height={500}
-    src="/img/blog/2021/10/dd_vs_nr_datadog_infrastructure-min.jpg"
+    src="/img/blog/2021/10/dd_vs_nr_datadog_infrastructure-min.webp"
     title="See detailed info about your hosts on DataDog dashboard (Source: DataDog website)"
     width={700}
 />
@@ -118,7 +118,7 @@ Some of the key features of New Relic infrastructure monitoring includes:
 <Screenshot
     alt="New Relic Infrastructure Monitoring Dashboard"
     height={500}
-    src="/img/blog/2021/10/dd_vs_nr_newrelic_infrastructure-min.jpg"
+    src="/img/blog/2021/10/dd_vs_nr_newrelic_infrastructure-min.webp"
     title="New Relic Infrastructure Monitoring Dashboard (Source: New Relic documentation)"
     width={700}
 />
@@ -138,7 +138,7 @@ Some of the key features of DataDog Log Management includes:
 <Screenshot
     alt="DataDog Log Management Dashboard"
     height={500}
-    src="/img/blog/2021/10/dd_vs_nr_datadog_log_management-min.jpg"
+    src="/img/blog/2021/10/dd_vs_nr_datadog_log_management-min.webp"
     title="DataDog log management dashboard (Source: DataDog website)"
     width={700}
 />
@@ -156,7 +156,7 @@ Some of the key features of New Relic log management include:
 <Screenshot
     alt="New Relic Log Management Dashboard"
     height={500}
-    src="/img/blog/2021/10/dd_vs_nr_newrelic_log_management-min.jpg"
+    src="/img/blog/2021/10/dd_vs_nr_newrelic_log_management-min.webp"
     title="New Relic Log Management Dashboard (Source: New Relic website)"
     width={700}
 />
@@ -173,7 +173,7 @@ Some of the key features of DataDog network monitoring include:
 <Screenshot
     alt="DataDog Network Monitoring Dashboard"
     height={500}
-    src="/img/blog/2021/10/dd_vs_nr_datadog_network_monitoring-min.jpg"
+    src="/img/blog/2021/10/dd_vs_nr_datadog_network_monitoring-min.webp"
     title="DataDog network monitoring (Source: DataDog website)"
     width={700}
 />
@@ -188,7 +188,7 @@ Some of the key features of New Relic Network monitoring include:
 <Screenshot
     alt="New Relic Network Monitoring Dashboard"
     height={500}
-    src="/img/blog/2021/10/dd_vs_nr_newrelic_network_monitoring-min.jpg"
+    src="/img/blog/2021/10/dd_vs_nr_newrelic_network_monitoring-min.webp"
     title="New Relic Network Monitoring (Source: New Relic website)"
     width={700}
 />
@@ -207,7 +207,7 @@ Some of the key features of DataDog end-user monitoring:
 <Screenshot
     alt="DataDog RUM Dashboard"
     height={500}
-    src="/img/blog/2021/10/dd_vs_nr_datadog_rum-min.jpg"
+    src="/img/blog/2021/10/dd_vs_nr_datadog_rum-min.webp"
     title="DataDog Real User Monitoring"
     width={700}
 />
@@ -224,7 +224,7 @@ Some of the key features of New Relic Browser Monitoring include:
 <Screenshot
     alt="New Relic Browser Monitoring Dashboard"
     height={500}
-    src="/img/blog/2021/10/dd_vs_nr_browser_monitoring-min.jpg"
+    src="/img/blog/2021/10/dd_vs_nr_browser_monitoring-min.webp"
     title="New Relic Browser monitoring (Source: New Relic website)"
     width={700}
 />
@@ -286,7 +286,7 @@ You can also build custom metrics dashboard for your infrastructure.
 <Screenshot
     alt="SigNoz custom metrics dashboard"
     height={500}
-    src="/img/blog/2021/10/signoz_custom_dashboard-min.jpg"
+    src="/img/blog/2021/10/signoz_custom_dashboard-min.webp"
     title="You can also build a custom metrics dashboard for your infrastructure"
     width={700}
 />
