@@ -66,70 +66,26 @@ import Screenshot from "@theme/Screenshot"
 
 If you don't have Java installed, first install it from the <a href = "https://www.java.com/en/" rel="noopener noreferrer nofollow" target="_blank" >official website</a>.
 
-For this tutorial, we will use a sample Spring Boot application built using Maven. You can find the code for the application at its <a href = "https://github.com/spring-projects/spring-petclinic" rel="noopener noreferrer nofollow" target="_blank" >GitHub repo</a>.
+For this tutorial, we will use a sample Spring Boot application built using Maven. You can find the code for the application at its <a href = "https://github.com/SigNoz/spring-petclinic" rel="noopener noreferrer nofollow" target="_blank" >GitHub repo</a>.
 
 Steps to get the app set up and running:
 
 1. **Git clone the repository and go to the root folder**
 
    ```jsx
-   git clone https://github.com/spring-projects/spring-petclinic.git
+   git clone https://github.com/SigNoz/spring-petclinic.git
    cd spring-petclinic
    ```
 
-2. **Update port**<br></br>
-   This app runs on port `8080` by default. But port `8080` is used by SigNoz for its query service, so let's update the port number to something else.
 
-   Open the `application.properties` file located at `spring-petclinic/src/main/resources` and update the server.port attribute.
-
-   ```
-   # database init, supports mysql too
-
-   database=h2
-   spring.datasource.schema=classpath*:db/${database}/schema.sql
-   spring.datasource.data=classpath*:db/${database}/data.sql
-
-   # Web
-
-   spring.thymeleaf.mode=HTML
-   server.port=8090
-
-   # JPA
-
-   spring.jpa.hibernate.ddl-auto=none
-   spring.jpa.open-in-view=false
-
-   # Internationalization
-
-   spring.messages.basename=messages/messages
-
-   # Actuator
-
-   management.endpoints.web.exposure.include=\*
-
-   # Logging
-
-   logging.level.org.springframework=INFO
-
-   # logging.level.org.springframework.web=DEBUG
-
-   # logging.level.org.springframework.context.annotation=TRACE
-
-   # Maximum time static resources should be cached
-
-   spring.resources.cache.cachecontrol.max-age=12h
-   ```
-
-   Also, update the port number in [petclinic_test_plan.jmx](https://github.com/SigNoz/spring-petclinic/blob/main/src/test/jmeter/petclinic_test_plan.jmx) located at `spring-petclinic/src/test/jmeter` to `port number: 8090`. It will appear under `PETCLINIC_PORT` elementProp.
-
-3. **Run the application using the following commands.**
+2. **Run the application using the following commands.**
 
    ```
    ./mvnw package
    java -jar target/*.jar
    ```
 
-   You can now access the application UI here: [http://localhost:8090/](http://localhost:8080/)
+   You can now access the application UI here: [http://localhost:8090/](http://localhost:8090/)
 
 <Screenshot
    alt="Spring PetClinic app accessed at port:8090"
@@ -145,7 +101,7 @@ Once you ensure that your application runs fine, stop it with `ctrl + z` on mac,
 
 For instrumenting Java applications, OpenTelemetry has a very handy Java JAR agent that can be attached to any Java 8+ application. The JAR agent can detect a number of <a href = "https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/docs/supported-libraries.md" rel="noopener noreferrer nofollow" target="_blank" >popular libraries and frameworks</a> and instrument it right out of the box. You don't need to add any code for that.
 
-1. Download the [latest Java JAR agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent-all.jar).
+1. Download the [latest Java JAR agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent-all.jar). You will need the path of this file, so note it down somewhere.
 
 2. Now you need to enable the instrumentation agent as well as run your sample application. You can do so by the following command:
 
@@ -153,11 +109,11 @@ For instrumenting Java applications, OpenTelemetry has a very handy Java JAR age
    OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://IP of SigNoz:4317" OTEL_RESOURCE_ATTRIBUTES=service.name=javaApp java -javaagent:/path/to/opentelemetry-javaagent-all.jar -jar target/\*.jar
    ```
 
-   <br></br>As you are running this on your local host, you need to replace `IP of SigNoz` with `localhost`. The path should be updated to where you have kept your downloaded Java JAR agent. Your final command will look like this:
+   <br></br>As you are running this on your local host, you need to replace `IP of SigNoz` with `localhost`. The path for Java JAR agent should be updated to where you have kept your downloaded Java JAR agent. Your final command will look like this:
    <br></br>
 
    ```
-   OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" OTEL_RESOURCE_ATTRIBUTES=service.name=javaApp java -javaagent:/Users/Downloads/opentelemetry-javaagent-all.jar -jar target/\*.jar
+   OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" OTEL_RESOURCE_ATTRIBUTES=service.name=javaApp java -javaagent:/Users/cruxaki/Downloads/opentelemetry-javaagent-all.jar -jar target/*.jar
    ```
 
    <br></br>Note the path is updated for my local environment.
