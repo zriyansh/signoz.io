@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: As an open-source project, we are excited to announce that SigNoz is participating in Hacktoberfest!..
-image: /img/blog/2021/10/hacktoberfest_signoz_new-min.png
+image: /img/blog/2021/10/hacktoberfest_signoz_new-min.webp
 keywords:
   - hacktoberfest
   - open source
@@ -23,7 +23,7 @@ Have you been waiting to start making open-source contributions? There can never
 
 <!--truncate-->
 
-![cover image](/img/blog/2021/10/hacktoberfest_signoz_new-min.png)
+![cover image](/img/blog/2021/10/hacktoberfest_signoz_new-min.webp)
 
 
 Do you want your GitHub profile to look like this👇
@@ -33,7 +33,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
   alt="GitHub contributions"
   height={500}
-  src="/img/blog/2021/10/github_contributions-min.jpg"
+  src="/img/blog/2021/10/github_contributions-min.webp"
   title="Do you want your GitHub profile full of these green dots?"
   width={700}
 />
@@ -58,7 +58,7 @@ Well, we have tons of issues to be taken care and we will be glad to have your h
 
 Our backend is written in Golang, while our frontend is written in Typescript. Check your favorite issues to tackle now 🤺👇
 
-[![SigNoz good first issues](/img/blog/2021/10/hacktoberfest_signoz_first_issues.png)](https://github.com/SigNoz/signoz/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+[![SigNoz good first issues](/img/blog/2021/10/hacktoberfest_signoz_first_issues.webp)](https://github.com/SigNoz/signoz/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 
 ## Why contribute to open-source projects?
 If you're here, then you probably understand the importance of the open-source ecosystem. But it's just not about how open-source software has the potential to change the world. It is also very beneficial for developers to contribute to open-source.
@@ -95,6 +95,6 @@ Here's a list of some good first issues that you can take up for SigNoz:
 
 Visit to our GitHub repo now, and start hacking 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 Join our **[slack community](https://bit.ly/signoz-slack)** if you need any help.

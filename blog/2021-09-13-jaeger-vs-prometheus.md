@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Both Jaeger and Prometheus are popular open-source application performance monitoring tools. While Jaeger is an end-to-end distributed tracing tool, Prometheus is used as a time-series database for monitoring metrics. Let's dive in to explore their key features and differences.
-image: /img/blog/2021/09/jaeger_vs_prometheus_cover-min.jpg
+image: /img/blog/2021/09/jaeger_vs_prometheus_cover-min.webp
 keywords:
   - jaeger
   - prometheus
@@ -25,7 +25,7 @@ Both Jaeger and Prometheus are popular open-source application performance monit
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/09/jaeger_vs_prometheus_cover-min.jpg)
+![Cover Image](/img/blog/2021/09/jaeger_vs_prometheus_cover-min.webp)
 
 
 Application performance monitoring is the key to keep your system's health in check. In today's digital economy, no business can afford to have failed or delayed completion of user requests. Latencies of a few milliseconds can lead to lost business opportunities running in millions.
@@ -60,7 +60,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
     alt="Jaeger UI"
     height={500}
-    src="/img/blog/2021/08/jaeger_ui-min.png"
+    src="/img/blog/2021/08/jaeger_ui-min.webp"
     title="Jaeger UI showing services and corresponding traces"
     width={700}
 />
@@ -90,7 +90,7 @@ Prometheus enables you to capture time-series data as metrics. These metrics can
 <Screenshot
     alt="Prometheus metrics visualized with Grafana"
     height={500}
-    src="/img/blog/2021/09/jaeger_vs_prometheus_grafana dashboard-min.jpg"
+    src="/img/blog/2021/09/jaeger_vs_prometheus_grafana dashboard-min.webp"
     title="Prometheus metrics data visualization using Grafana"
     width={700}
 />
@@ -120,7 +120,7 @@ SigNoz is built to support OpenTelemetry natively. [OpenTelemetry](https://opent
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
     height={500}
-    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.png"
+    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.webp"
     title="Architecture of SigNoz with ClickHouse as storage backend and OpenTelemetry for code instrumentatiion"
     width={700}
 />
@@ -130,7 +130,7 @@ SigNoz comes with out of box visualization of things like RED metrics.
 <Screenshot
     alt="SigNoz UI showing the popular RED metrics"
     height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.png"
+    src="/img/blog/common/signoz_charts_application_metrics.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
 />
@@ -140,7 +140,7 @@ You can also use flamegraphs to visualize spans from your trace data. All of thi
 <Screenshot
     alt="Flamegraphs used to visualize spans of distributed tracing in SigNoz UI"
     height={500}
-    src="/img/blog/common/signoz_flamegraphs.png"
+    src="/img/blog/common/signoz_flamegraphs.webp"
     title="Flamegraphs showing exact duration taken by each spans - a concept of distributed tracing"
     width={700}
 />
@@ -167,7 +167,7 @@ You can read more about deploying SigNoz from its [documentation](https://signo
 
 You can check out SigNoz's GitHub repo here 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ___
 

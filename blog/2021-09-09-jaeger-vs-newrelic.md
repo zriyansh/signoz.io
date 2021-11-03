@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Jaeger and New Relic are tools used in the application monitoring and observability domain. While Jaeger is open-source, New Relic is a SaaS vendor. Jaeger is suited for distributed tracing and New Relic...
-image: /img/blog/2021/09/jaeger_vs_newrelic_cover-min.jpg
+image: /img/blog/2021/09/jaeger_vs_newrelic_cover-min.webp
 keywords:
   - jaeger
   - new relic
@@ -25,7 +25,7 @@ Jaeger and New Relic are tools used in the application monitoring and observabil
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/09/jaeger_vs_newrelic_cover-min.jpg)
+![Cover Image](/img/blog/2021/09/jaeger_vs_newrelic_cover-min.webp)
 
 New Relic is an extensive SaaS tool and provides application performance as well as infrastructure monitoring. Jaeger provides an open-source solution for end-to-end distributed tracing. Before we dive in, let's first understand in brief what is distributed tracing.
 
@@ -44,7 +44,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
     alt="Trace context is used to track requests across services"
     height={500}
-    src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.png"
+    src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.webp"
     title="A trace context is passed when user requests pass from one service to another"
     width={700}
 />
@@ -70,7 +70,7 @@ Once you have identified, which service or query is creating latency, you can us
 <Screenshot
     alt="Jaeger's UI showing traces"
     height={500}
-    src="/img/blog/2021/08/jaeger_ui-min.png"
+    src="/img/blog/2021/08/jaeger_ui-min.webp"
     title="Jaeger's UI showing traces for selected services"
     width={700}
 />
@@ -98,7 +98,7 @@ New Relic provides integrations with all leading cloud providers and also suppor
 <Screenshot
     alt="New Relic Dashboard"
     height={500}
-    src="/img/blog/2021/08/New_relic_dashboard-min.png"
+    src="/img/blog/2021/08/New_relic_dashboard-min.webp"
     title="New Relic Dashboard (Source: New Relic website)"
     width={700}
 />
@@ -121,7 +121,7 @@ Let's focus on the distributed tracing capabilities of both the tools and see th
 <Screenshot
     alt="New Relic Dashboard"
     height={500}
-    src="/img/blog/2021/09/new_relic_distributed_tracing-min.jpg"
+    src="/img/blog/2021/09/new_relic_distributed_tracing-min.webp"
     title="New Relic's distributed tracing dashboard (Source: New Relic Website)"
     width={700}
 />
@@ -129,7 +129,7 @@ Let's focus on the distributed tracing capabilities of both the tools and see th
 <Screenshot
     alt="Jaeger's distributed tracing UI"
     height={500}
-    src="/img/blog/2021/08/jaeger_gantt_charts-min.png"
+    src="/img/blog/2021/08/jaeger_gantt_charts-min.webp"
     title="Jaeger's distributed tracing UI"
     width={700}
 />
@@ -144,7 +144,7 @@ That's where [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=jaeger_vs_ne
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
     height={500}
-    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.png"
+    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.webp"
     title="Architecture of SigNoz with ClickHouse as storage backend and OpenTelemetry for code instrumentatiion"
     width={700}
 />
@@ -154,7 +154,7 @@ SigNoz comes with out of box visualization of things like RED metrics.
 <Screenshot
     alt="SigNoz UI showing the popular RED metrics"
     height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.png"
+    src="/img/blog/common/signoz_charts_application_metrics.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
 />
@@ -179,11 +179,11 @@ cd signoz/deploy/
 
 You can read more about deploying SigNoz from its documentation.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=jaeger_vs_newrelic)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=jaeger_vs_newrelic)
 
 You can check out SigNoz's GitHub repo here 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ___
 

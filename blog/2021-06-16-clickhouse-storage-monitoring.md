@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: In this article, we dig deeper into why we decided to extend support for ClickHouse as a storage backend for SigNoz and the efficiency gains we achieved using it.
-image: /img/blog/2021/06/clickhouse_support_cover_hc.jpeg
+image: /img/blog/2021/06/clickhouse_support_cover_hc.webp
 keywords:
   - Clickhouse database
   - Open Source
@@ -22,19 +22,19 @@ In this article, we dig deeper into why we decided to extend support for ClickHo
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/06/clickhouse_support_cover_hc.jpeg)
+![Cover Image](/img/blog/2021/06/clickhouse_support_cover_hc.webp)
 
 ### What is SigNoz?
 
 SigNoz is an open-source alternative to DataDog, New Relic etc. It is a full-stack application monitoring and observability platform, which can be used to track both metrics and traces. Link to our GitHub repo 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ### Launching support for ClickHouse
 
 In our [latest release](https://github.com/SigNoz/signoz) `v0.3.1` , we launched support for ClickHouse as storage backend for SigNoz. ClickHouse is a column-oriented database management system (DBMS) for online analytical processing of queries (OLAP). Now when you install SigNoz, you will have the option to choose between ClickHouse or Kafka + Druid as a database system.
 
-![](/img/blog/2021/06/clickhouse_choose_setup_hc.png)
+![](/img/blog/2021/06/clickhouse_choose_setup_hc.webp)
 
 Users can choose between ClickHouse or Kafka + Druid for their storage system of choice while installing SigNoz
 In this article, let's dig deeper into why we decided to introduce support for Clickhouse as a database storage system and how our users can benefit from it.
@@ -43,7 +43,7 @@ In this article, let's dig deeper into why we decided to introduce support for C
 
 As an open-source software, we build what our community wants. We listened to [demands](https://github.com/SigNoz/signoz/issues/22) from our community for supporting ClickHouse as a storage backend.
 
-![Issue raised on our GitHub repo demanding ClicHouse support](/img/blog/2021/06/Clickhouse_community_demands_hc.png)
+![Issue raised on our GitHub repo demanding ClicHouse support](/img/blog/2021/06/Clickhouse_community_demands_hc.webp)
 
 As a storage backend, ClickHouse is less resource-intensive than using Kafka + Druid. It makes getting started with SigNoz much quicker, and users can now try out SigNoz on their local machine easily as the entire setup takes **less than 1.5GB of memory space.**
 
@@ -68,7 +68,7 @@ You can then proceed with either ClickHouse or Kafka+Druid installation set up. 
 
 So in just over a minute, you will be able to access our dashboard with the Clickhouse set up on your local host.
 
-![Dashboard of SigNoz](/img/blog/2021/06/signoz_ui-1.png)
+![Dashboard of SigNoz](/img/blog/2021/06/signoz_ui-1.webp)
 
 <!--- Track metrics & use traces to monitor app performance with SigNoz --->
 
@@ -76,13 +76,13 @@ So in just over a minute, you will be able to access our dashboard with the Clic
 
 Let's analyse the performance of ClickHouse and Kafka+Druid set ups with `docker stats` command. The `docker stats` command displays a live data stream with CPU, memory usage, memory limit, block I/O, and network IO metrics for all the running containers.
 
-![](/img/blog/2021/06/docker_stats_clickhouse_final.png)
+![](/img/blog/2021/06/docker_stats_clickhouse_final.webp)
 
 <!--- Memory usage stats snapshot with ClickHouse installation --->
 
 Total memory usage with ClickHouse set up: 340.391 MiB
 
-![](/img/blog/2021/06/docker_stats_kafka_final.png)
+![](/img/blog/2021/06/docker_stats_kafka_final.webp)
 
 <!--- Memory usage stats snapshot with kafka + Druid installation --->
 
@@ -92,7 +92,7 @@ As we can see, the ClickHouse set up uses about **8.5x less memory** than the Ka
 
 ## SigNoz architecture with ClickHouse
 
-![](/img/blog/2021/06/architecture-signoz-clickhouse-1.png)
+![](/img/blog/2021/06/architecture-signoz-clickhouse-1.webp)
 
 <!--- SigNoz Architecture with ClickHouse as storage backend --->
 
@@ -112,4 +112,4 @@ SigNoz is also self-hosted, so you don't need to send your critical data to SaaS
 
 We are constantly looking out for community feedback and will be pleased to hear from you.
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)

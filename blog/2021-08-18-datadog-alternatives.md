@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Are you looking for a DataDog alternative? Then you've come to the right place. In this article, we will explore the top 5 alternatives to DataDog. 1.SigNoz 2.New Relic 3.Dynatrace...
-image: /img/blog/2021/08/datadog_alternatives_cover-min.png
+image: /img/blog/2021/08/datadog_alternatives_cover-min.webp
 keywords:
   - opentelemetry
   - opentelemetry golang
@@ -33,13 +33,13 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
   alt="Monitor your Go applications with SigNoz"
   height={500}
-  src="/img/blog/2021/08/datadog_alternatives_cover-min.png"
+  src="/img/blog/2021/08/datadog_alternatives_cover-min.webp"
   width={700}
 />
 
 For bigger enterprises it might make sense to shell out huge monitoring bills, but it's often out of question for small and medium size enterprises.
 
-[![Pricing concerns for DataDog](/img/blog/2021/08/datadog_alternative_reddit.png)](https://www.reddit.com/r/devops/comments/fp7xl7/warning_avoid_datadog_at_all_costs/)
+[![Pricing concerns for DataDog](/img/blog/2021/08/datadog_alternative_reddit.webp)](https://www.reddit.com/r/devops/comments/fp7xl7/warning_avoid_datadog_at_all_costs/)
 
 The space is highly competitive, but there are a few products that stand out. In this article we will go through the best DatDog alternatives which you can explore while selecting your vendor for application monitoring.
 
@@ -69,7 +69,7 @@ SigNoz uses OpenTelemetry - a vendor-agnostic instrumentation library for genera
 <Screenshot
   alt="SigNoz showing popular RED metrics for application monitoring"
   height={500}
-  src="/img/blog/common/signoz_charts_application_metrics.png"
+  src="/img/blog/common/signoz_charts_application_metrics.webp"
   title="SigNoz Dashboard with visualization of the popular RED metrics for your application (Number of requests, rate of error & duration)"
   width={700}
 />
@@ -77,7 +77,7 @@ SigNoz uses OpenTelemetry - a vendor-agnostic instrumentation library for genera
 <Screenshot
   alt="SigNoz flamegraphs and gantt charts"
   height={500}
-  src="/img/blog/common/signoz_flamegraphs.png"
+  src="/img/blog/common/signoz_flamegraphs.webp"
   title="SigNoz also has Flamegraphs and Gantt charts to visualize distributed tracing for your microservice application"
   width={700}
 />
@@ -99,7 +99,7 @@ Standard offering includes plans for teams upto 5 full users. Their pricing depe
 <Screenshot
   alt="New Relic dashboard"
   height={500}
-  src="/img/blog/2021/08/Datadog_alt_New_relic_dashboard-min.png"
+  src="/img/blog/2021/08/Datadog_alt_New_relic_dashboard-min.webp"
   title="New Relic Dashboard"
   width={700}
 />
@@ -119,7 +119,7 @@ Full-stack monitoring, the Dynatrace product aimed to provide observability for 
 <Screenshot
   alt="Dynatrace dashboard"
   height={500}
-  src="/img/blog/2021/08/datadog_alternative_dynatrace_dashboard.png"
+  src="/img/blog/2021/08/datadog_alternative_dynatrace_dashboard.webp"
   title="Dynatrace dashboard (Source: Dynatrace website)"
   width={700}
 />
@@ -139,7 +139,7 @@ The visualization layer of Prometheus is basic, and it is often used alongside G
 <Screenshot
   alt="Prometheus Expression Browser"
   height={500}
-  src="/img/blog/2021/08/datadog_alternative_prom_exp_browser-min.png"
+  src="/img/blog/2021/08/datadog_alternative_prom_exp_browser-min.webp"
   title="Prometheus expression browser"
   width={700}
 />
@@ -147,7 +147,7 @@ The visualization layer of Prometheus is basic, and it is often used alongside G
 <Screenshot
   alt="Grafana used as a visualization layer for Prometheus"
   height={500}
-  src="/img/blog/2021/08/dd_alt_prometheus_grafana-min.png"
+  src="/img/blog/2021/08/dd_alt_prometheus_grafana-min.webp"
   title="Grafana used for visualization with Prometheus"
   width={700}
 />
@@ -168,7 +168,7 @@ With dynamic topology mapping, you can have an overview of your network devices 
 <Screenshot
     alt="LogicMonitor dashboard"
     height={500}
-    src="/img/blog/2021/08/dd_alt_logicmonitor-min.png"
+    src="/img/blog/2021/08/dd_alt_logicmonitor-min.webp"
     title="LogicMonitor Dashboard (Source: LogicMonitor website)"
     width={700}
 />
@@ -181,7 +181,7 @@ The above DataDog alternatives can be a good option to meet your monitoring need
 
 If you want to check out SigNoz GitHub repo👇<br></br>
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 Read more about SigNoz:<br></br>
 

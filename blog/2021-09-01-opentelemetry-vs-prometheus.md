@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: OpenTelemetry and Prometheus are both open-source projects under Cloud Native Computing Foundation. One is used for managing telemetry data and the other is a metrics monitoring tool..
-image: /img/blog/2021/09/opentelemetry_vs_prometheus_cover-min.png
+image: /img/blog/2021/09/opentelemetry_vs_prometheus_cover-min.webp
 keywords:
   - opentelemetry
   - prometheus
@@ -29,14 +29,14 @@ OpenTelemetry and Prometheus are both open-source projects under Cloud Native Co
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/09/opentelemetry_vs_prometheus_cover-min.png)
+![Cover Image](/img/blog/2021/09/opentelemetry_vs_prometheus_cover-min.webp)
 
 OpenTelemetry is a vendor-agnostic instrumentation library. It provides a set of tools, APIs, and SDKs to create and manage telemetry data(logs, metrics, and traces).
 
 Prometheus is a time-series metrics monitoring tool. Prometheus enables you to capture time-series data as metrics. These metrics can be aggregated to give insights into the behavior of your systems.
 
 *Check out SigNoz - an open-source alternative to DataDog* 👇
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz?utm_source=blog&utm_medium=github_opentelemetry_vs_prometheus)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz?utm_source=blog&utm_medium=github_opentelemetry_vs_prometheus)
 
 
 ## What is OpenTelemetry?
@@ -50,7 +50,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
     alt="OpenTelemetry Architecture"
     height={500}
-    src="/img/blog/2021/08/opentelemetry_architecture-min.png"
+    src="/img/blog/2021/08/opentelemetry_architecture-min.webp"
     title="OpenTelemetry architecture - client libraries instrument application code to send telemetry data to a collector agent which then exports the data to a backend analysis tool."
     width={700}
 />
@@ -77,7 +77,7 @@ Some of the key disadvantages of using OpenTelemetry are:
 
 But OpenTelemetry project is intentional about not providing a backend analysis tool as it aims to be vendor-neutral. You can use a tool like [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=opentelemetry_vs_prometheus) to send your telemetry data. [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=opentelemetry_vs_prometheus) is a full-stack open-source application monitoring and observability platform which comes with a great out of box visualization layer. It is also an open-source project.
 
-[![SigNoz repo](/img/blog/common/signoz_github.png)](https://github.com/signoz/signoz)
+[![SigNoz repo](/img/blog/common/signoz_github.webp)](https://github.com/signoz/signoz)
 
 ## What is Prometheus?
 
@@ -98,7 +98,7 @@ Some of the key features of Prometheus are:
 <Screenshot
     alt="Prometheus Architecture"
     height={500}
-    src="/img/blog/2021/09/otel_vs_prometheus_prometheus_architecture-min.png"
+    src="/img/blog/2021/09/otel_vs_prometheus_prometheus_architecture-min.webp"
     title="Architecture of Prometheus (Source: Prometheus website)"
     width={700}
 />
@@ -134,7 +134,7 @@ SigNoz comes with out of box visualization of things like RED metrics. There is 
 <Screenshot
     alt="SigNoz UI"
     height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.png"
+    src="/img/blog/common/signoz_charts_application_metrics.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
 />
@@ -149,11 +149,11 @@ cd signoz/deploy/
 ```
 You can read more about deploying SigNoz from its documentation.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_vs_prometheus)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_vs_prometheus)
 
 You can check out SigNoz's GitHub repo here 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ___
 

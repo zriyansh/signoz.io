@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Both AWS X-Ray and Jaeger are distributed tracing tools used for performance monitoring in a microservices architecture. Jaeger was originally built by teams at Uber and then open-sourced in 2015. On the other hand, AWS X-Ray is a distributed tracing tool provided by AWS specifically focused on distributed tracing for applications using Amazon Cloud Services.
-image: /img/blog/2021/09/aws_xray_vs_jaeger_cover.jpg
+image: /img/blog/2021/09/aws_xray_vs_jaeger_cover.webp
 keywords:
   - jaeger
   - aws x ray
@@ -24,7 +24,7 @@ Both AWS X-Ray and Jaeger are distributed tracing tools used for performance mon
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/09/aws_xray_vs_jaeger_cover.jpg)
+![Cover Image](/img/blog/2021/09/aws_xray_vs_jaeger_cover.webp)
 
 Jaeger is a popular open-source tool that graduated as a project from Cloud Native Computing Foundation. On the other hand, Amazon X-Ray is more suited to an application built on Amazon Cloud Services.
 
@@ -39,7 +39,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
     alt="Microservices architecture"
     height={500}
-    src="/img/blog/2021/09/jaeger_vs_zipkin_microservices_architecture.png"
+    src="/img/blog/2021/09/jaeger_vs_zipkin_microservices_architecture.webp"
     title="Microservice architecture of a fictional e-commerce application"
     width={700}
 />
@@ -56,7 +56,7 @@ A **trace context** is passed along when requests travel between services, which
 <Screenshot
     alt="Trace context is passed to track user requests across services"
     height={500}
-    src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.png"
+    src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.webp"
     title="A trace context is passed when user requests pass from one service to another"
     width={700}
 />
@@ -83,7 +83,7 @@ A large distributed application will have lots of sensitive telemetry data. AWS 
 <Screenshot
     alt="Service maps give an overview of how services are connected in your application"
     height={500}
-    src="/img/blog/2021/09/aws_xray_service_maps-min.jpg"
+    src="/img/blog/2021/09/aws_xray_service_maps-min.webp"
     title="Service Maps feature on AWS X-Ray"
     width={700}
 />
@@ -91,7 +91,7 @@ A large distributed application will have lots of sensitive telemetry data. AWS 
 <Screenshot
     alt="Traces capture how a user request travel across services"
     height={500}
-    src="/img/blog/2021/09/aws_xray_traces-min.jpg"
+    src="/img/blog/2021/09/aws_xray_traces-min.webp"
     title="User request tracking using traces on AWS X-Ray dashboard"
     width={700}
 />
@@ -117,7 +117,7 @@ A large distributed application will have lots of sensitive telemetry data. AWS 
 <Screenshot
     alt="Jaeger UI"
     height={500}
-    src="/img/blog/2021/08/jaeger_ui-min.png"
+    src="/img/blog/2021/08/jaeger_ui-min.webp"
     title="Jaeger UI showing services and corresponding traces"
     width={700}
 />
@@ -151,7 +151,7 @@ SigNoz is a full-stack open-source application performance monitoring and observ
  <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
     height={500}
-    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.png"
+    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.webp"
     title="Architecture of SigNoz with ClickHouse as storage backend and OpenTelemetry for code instrumentatiion"
     width={700}
 />
@@ -161,7 +161,7 @@ SigNoz comes with out of box visualization of things like RED metrics.
 <Screenshot
     alt="SigNoz UI showing the popular RED metrics"
     height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.png"
+    src="/img/blog/common/signoz_charts_application_metrics.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
 />
@@ -171,7 +171,7 @@ You can also use flamegraphs to visualize spans from your trace data. All of thi
 <Screenshot
     alt="Flamegraphs used to visualize spans of distributed tracing in SigNoz UI"
     height={500}
-    src="/img/blog/common/signoz_flamegraphs.png"
+    src="/img/blog/common/signoz_flamegraphs.webp"
     title="Flamegraphs showing exact duration taken by each spans - a concept of distributed tracing"
     width={700}
 />
@@ -188,7 +188,7 @@ Some of the things SigNoz can help you track:
 
 You can check out SigNoz's GitHub repo here 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ___
 

@@ -9,7 +9,7 @@ author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 hide_table_of_contents: true
 description: It's time for the monthly product update of SigNoz - a full-stack open-source and observability tool. Find out what we've been upto at SigNoz during August, 2021.
-image: /img/blog/2021/09/signal_04_cover-min.jpg
+image: /img/blog/2021/09/signal_04_cover-min.webp
 keywords:
   - SigNoz Product Update
   - Dev community
@@ -23,7 +23,7 @@ Folks! Great to have you over for our monthly product update aka Signal #04. Thi
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/09/signal_04_cover-min.jpg)
+![Cover Image](/img/blog/2021/09/signal_04_cover-min.webp)
 
 We also crossed 200+ members on our **[slack community](https://bit.ly/signoz-slack)** 🎉🎉🎉
 
@@ -47,7 +47,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
    alt="SigNoz dashboard showing metrics like CPU load"
    height={500}
-   src="/img/blog/2021/09/metrics_graph_cpu-min.jpg"
+   src="/img/blog/2021/09/metrics_graph_cpu-min.webp"
    title="Track and visualize critical performance metrics like CPU load with SigNoz"
    width={700}
 />
@@ -61,7 +61,7 @@ Cypress is a Javascript-based end-to-end testing framework which can run in the 
 <Screenshot
     alt="Cypress frontend testing framework"
     height={500}
-    src="/img/blog/2021/09/cypress_frontend_testing-min.png"
+    src="/img/blog/2021/09/cypress_frontend_testing-min.webp"
     title="Testing SigNoz UI with Cypress"
     width={700}
 />
@@ -108,7 +108,7 @@ We joined folks at ClickHouse for their community call to showcase how we use Cl
 
 <Screenshot
     height={500}
-    src="/img/blog/2021/09/clickhouse_community_call-min.png"
+    src="/img/blog/2021/09/clickhouse_community_call-min.webp"
     width={700}
 />
 

@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: OpenTelemetry collector provides a vendor-neutral way to collect, process, and export your telemetry data to an analysis backend of your choice. Learn how to configure..
-image: /img/blog/2021/08/opentelemetry_collector_cover-min.png
+image: /img/blog/2021/08/opentelemetry_collector_cover-min.webp
 keywords:
   - opentelemetry
   - opentelemetry collector
@@ -26,7 +26,7 @@ OpenTelemetry Collector is a crucial component of OpenTelemetry architecture. It
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/08/opentelemetry_collector_cover-min.png)
+![Cover Image](/img/blog/2021/08/opentelemetry_collector_cover-min.webp)
 
 The first step in setting up distributed systems monitoring and tracing is instrumentation, which enables generating and managing telemetry data. Once the telemetry data is generated, you need a way to collect and analyze it.
 
@@ -39,7 +39,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
     alt="OpenTelemetry Architecture"
     height={500}
-    src="/img/blog/2021/08/opentelemetry_architecture-min.png"
+    src="/img/blog/2021/08/opentelemetry_architecture-min.webp"
     title="Architecture - How OpenTelemetry fits in an application architecture. OTel collector refers to OpenTelemetry Collector"
     width={700}
 />
@@ -82,7 +82,7 @@ OpenTelemetry collector consists of three main components:
 <Screenshot
       alt="OpenTelemetry Collector"
       height={500}
-      src="/img/blog/2021/08/Otel_collector-min.png"
+      src="/img/blog/2021/08/Otel_collector-min.webp"
       title="Architecture of OpenTelemetry Collector with receivers, processors and exporters."
       width={700}
 />
@@ -296,7 +296,7 @@ cd signoz/deploy/
 
 You can read more about deploying SigNoz from its documentation.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_colllector)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_colllector)
 
 
 SigNoz can be used to visualize metrics and traces with charts that can enable quick insights for your teams.
@@ -304,14 +304,14 @@ SigNoz can be used to visualize metrics and traces with charts that can enable q
 <Screenshot
       alt="SigNoz dashboard showing overview metrics like RPS"
       height={500}
-      src="/img/blog/common/signoz_charts_application_metrics.png"
+      src="/img/blog/common/signoz_charts_application_metrics.webp"
       title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
       width={700}
 />
 
 You can try out SigNoz by visiting its GitHub repo 👇
 
-[![SigNoz repo](/img/blog/common/signoz_github.png)](https://github.com/signoz/signoz)
+[![SigNoz repo](/img/blog/common/signoz_github.webp)](https://github.com/signoz/signoz)
 
 ___
 

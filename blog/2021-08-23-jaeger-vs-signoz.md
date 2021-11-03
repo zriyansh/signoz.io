@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Thinking of using Jaeger for distributed tracing? But wait, there is a much better alternative. SigNoz provides advanced capabilities for distributed tracing along with metrics and ...
-image: /img/blog/2021/08/jaeger_vs_signoz_cover.png
+image: /img/blog/2021/08/jaeger_vs_signoz_cover.webp
 hide_table_of_contents: true
 keywords:
   - jaeger
@@ -26,11 +26,11 @@ Are you thinking of using Jaeger as a distributed tracing tool? What if there is
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/08/jaeger_vs_signoz_cover.png)
+![Cover Image](/img/blog/2021/08/jaeger_vs_signoz_cover.webp)
 
 In this article, we will explore how SigNoz is a better alternative than Jaeger as an observability tool. Jaeger is famous as an end-to-end distributed tracing tool. Jaeger was originally built by teams at Uber and then open-sourced. Distributed tracing is a mechanism to track transactions across services. When you have a distributed system based on microservices, tracing your transactions across services is a necessity. With distributed tracing, engineering teams can quickly identify issues instead of wasting time checking multiple logs and dashboards.
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 SigNoz is an excellent open-source distributed tracing tool. But it goes beyond. It is a full-stack APM and observability tool with a unified UI for metrics and traces. So you don't have to switch between tools like Prometheus(metrics) and Jaeger(traces) to debug issues. The product roadmap of SigNoz also has log management in its pipeline.
 
@@ -59,7 +59,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
     alt="Jaeger UI for showing traces"
     height={500}
-    src="/img/blog/2021/08/jaeger_ui-min.png"
+    src="/img/blog/2021/08/jaeger_ui-min.webp"
     title="Jaeger UI showing services and corresponding traces"
     width={700}
 />
@@ -75,7 +75,7 @@ SigNoz also provides an easy way to track the top endpoints of your application,
 <Screenshot
     alt="SigNoz UI"
     height={500}
-    src="/img/blog/2021/08/signoz_ui-min.png"
+    src="/img/blog/2021/08/signoz_ui-min.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
 />
@@ -89,7 +89,7 @@ Let's break down what it means. Suppose you have a user category marked `gold` f
 <Screenshot
     alt="SigNoz trace filters"
     height={500}
-    src="/img/blog/2021/08/signoz_trace_filters-min.png"
+    src="/img/blog/2021/08/signoz_trace_filters-min.webp"
     title="You can filter traces with tags in SigNoz traces dashboard"
     width={700}
 />
@@ -99,7 +99,7 @@ After filtering the traces, you can choose to visualize metrics like calls, dura
 <Screenshot
     alt="See metrics of filtered traces"
     height={500}
-    src="/img/blog/2021/08/sigNoz_metrics_for_traces-min.png"
+    src="/img/blog/2021/08/sigNoz_metrics_for_traces-min.webp"
     title="See metrics like number of calls, duration and error on filtered traces"
     width={700}
 />
@@ -111,7 +111,7 @@ While installing SigNoz, you will have the option to choose between ClickHouse o
 <Screenshot
     alt="Technical architecture of SigNoz with ClickHouse setup"
     height={500}
-    src= "/img/blog/2021/08/SigNoz_architecture-min.png"
+    src= "/img/blog/2021/08/SigNoz_architecture-min.webp"
     title="Technical architecture of SigNoz with ClickHouse setup"
     width={700}
 />
@@ -120,7 +120,7 @@ ClickHouse is designed to be a <a href = "https://clickhouse.tech/docs/en/faq/ge
 
 For Jaeger, Cassandra and Elasticsearch are the primary supported storage backends. But users have requested ClickHouse support for Jaeger too due to its popularity. Check out this GitHub issue 👇
 
-[![Jaeger GitHub issues](/img/blog/2021/08/jaeger_clickhouse_issue-min.png)](https://github.com/jaegertracing/jaeger/issues/1438)
+[![Jaeger GitHub issues](/img/blog/2021/08/jaeger_clickhouse_issue-min.webp)](https://github.com/jaegertracing/jaeger/issues/1438)
 
 ### Out of box charts and visualization with SigNoz
 
@@ -131,7 +131,7 @@ Below you can see how spans in a trace are visualized with flamegraphs and Gantt
 <Screenshot
     alt="SigNoz flamegraphs"
     height={500}
-    src= "/img/blog/2021/08/signoz_flamegraphs_gantt_charts-min.png"
+    src= "/img/blog/2021/08/signoz_flamegraphs_gantt_charts-min.webp"
     title="Spans of a trace visualized with the help of flamegraphs and gantt charts in SigNoz dashboard"
     width={700}
 />
@@ -141,7 +141,7 @@ Jaeger does not provide Flamegraphs, and to view details of a span, you need to 
 <Screenshot
     alt="Jaeger gantt charts"
     height={500}
-    src= "/img/blog/2021/08/jaeger_gantt_charts-min.png"
+    src= "/img/blog/2021/08/jaeger_gantt_charts-min.webp"
     title="Jaeger's UI showing  spans for selected traces"
     width={700}
 />
@@ -151,7 +151,7 @@ SigNoz also provides interactive service maps which can automatically identify t
 <Screenshot
     alt="SigNoz service maps"
     height={500}
-    src= "/img/blog/2021/08/signoz_service_maps-min.png"
+    src= "/img/blog/2021/08/signoz_service_maps-min.webp"
     title="Interactive Service Maps shown on SigNoz dashboard"
     width={700}
 />
@@ -159,7 +159,7 @@ SigNoz also provides interactive service maps which can automatically identify t
 <Screenshot
     alt="Jaeger's dependency graph"
     height={500}
-    src= "/img/blog/2021/08/jaeger_dependency_graph-min.png"
+    src= "/img/blog/2021/08/jaeger_dependency_graph-min.webp"
     title="Jaeger's dependency graph"
     width={700}
 />
@@ -194,7 +194,7 @@ You can read more about deploying SigNoz from its [documentation](https://signoz
 If you face any issues while trying out SigNoz, feel free to write to us at: support@signoz.io
 
 You can check out SigNoz's GitHub repo here 👇
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 If you want to read more about SigNoz 👇
 

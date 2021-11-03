@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/pranay01
 author_image_url: https://avatars.githubusercontent.com/u/504541?v=4
 description: With changing privacy laws, it's getting riskier to send your data to third party SaaS vendors. In the observability domain, traces and logs are something which you don't want to send outside. Let's find out why self-hosted software solutions are replacing SaaS providers now.
-image: /img/blog/2021/04/signoz-self-hosted-1.png
+image: /img/blog/2021/04/signoz-self-hosted-1.webp
 keywords:
   - SigNoz
   - Third Party SaaS vendors
@@ -21,7 +21,7 @@ Not all industries are the same in terms of the sensitivity of data they handle.
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/04/signoz-self-hosted-1.png)
+![Cover Image](/img/blog/2021/04/signoz-self-hosted-1.webp)
 
 I can hear your mind wheels spinning -
 
@@ -35,7 +35,7 @@ For example, if you are a fast growing fin-tech company working with a number of
 
 In the observability domain, traces and logs are something which you don’t want to send outside. Unless you have great PII scrapers running before sending data outside, and well we all know it is not easy to create PII scrapers which work with 100% accuracy. So even if you have PII scrapers, why do you want to take the risk of some tiny bit of customer data leaking - and you inviting the fury of your legal and audit teams.
 
-![](/img/blog/2021/04/onprem-monitoring-tracing.jpg)60% of companies run monitoring & logging within their infra ([CNCF Report](https://www.cncf.io/wp-content/uploads/2020/11/CNCF_Survey_Report_2020.pdf))
+![](/img/blog/2021/04/onprem-monitoring-tracing.webp)60% of companies run monitoring & logging within their infra ([CNCF Report](https://www.cncf.io/wp-content/uploads/2020/11/CNCF_Survey_Report_2020.pdf))
 There are few other reasons also which should at the very least encourage you to think about this option
 
 1. Increase in privacy laws like GDPR/CPRA
@@ -60,9 +60,18 @@ Are all your SaaS vendors equally well secure?
 
 - **Data egress cost **- This is something which many engineering teams are not aware about, as this is just a line item in your AWS/GCP bill which few people give attention to. But if you are sending huge amount of monitoring/logging data to a SaaS vendor, this line item will soon start rearing its head.
 
-      	AWS charges for transfer that send data out over the internet are billed at   region-specific and tiered data transfer rates. If you are sending 10 TB in a month to Internet, just this would add **900 USD** to your monthly bill.
+> AWS charges for transfer that send data out over the internet are billed at   region-specific and tiered data transfer rates. If you are sending 10 TB in a month to Internet, just this would add **900 USD** to your monthly bill.
 
-  ![](/img/blog/2021/04/Screenshot-2021-04-16-at-7.01.00-PM.jpg)AWS data transfer pricing ( [link](https://aws.amazon.com/ec2/pricing/on-demand/) )
+import Screenshot from "@theme/Screenshot"
+
+<Screenshot
+  alt="DataDog APM cost"
+  height={500}
+  src="/img/blog/2021/04/Screenshot-2021-04-16-at-7.01.00-PM.webp"
+  title="AWS data transfer pricing"
+  width={700}
+/>
+
   Grant Miller, CEO of Replicated recently wrote an interesting [blog](https://techcrunch.com/2018/06/17/after-twenty-years-of-salesforce-what-marc-benioff-got-right-and-wrong-about-the-cloud/) on why modern on-prem delivery model is a much better software delivery model than SaaS.
 
 If you think about it, SaaS was a welcome change from the world of legacy on-prem software deployment in early 2000s. You would need to buy costly hardware, the annual licenses to start running with your software and then employ consultants to actually get the software up and running. The whole process would easily take 3-6 months - and this is when everything  runs on time. Then there would be annual ritual of upgrading the software which would be another pain in the a\*\*\*.
@@ -90,4 +99,4 @@ If you need more social proof to give more thought into this, here's  Elon Musk
 
 If the above made any tiny bit of sense, check out SigNoz, which is an open-source, self host-able alternative to application monitoring products like DataDog. Give it a whirl and let us know what you think!
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)

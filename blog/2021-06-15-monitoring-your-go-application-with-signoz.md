@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: In this article, learn how to setup application monitoring for Golang apps using an open-source solution, SigNoz.
-image: /img/blog/2021/06/golang_app_monitoring_cover_hc.png
+image: /img/blog/2021/06/golang_app_monitoring_cover_hc.webp
 keywords:
   - go application monitoring
   - opentelemetry
@@ -22,11 +22,11 @@ In this article, learn how to setup application monitoring for Golang apps using
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/06/golang_app_monitoring_cover_hc.png)
+![Cover Image](/img/blog/2021/06/golang_app_monitoring_cover_hc.webp)
 
 If you want to check our Github repo before diving in 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 Scalability, Reliability, Maintainability...
 
@@ -62,7 +62,7 @@ And once you know the affected service, trace data can help you identify the exa
 <Screenshot
    alt="Flamegraphs on SigNoz dashboard"
    height={500}
-   src="/img/blog/2021/06/screenzy-1622399034895.png"
+   src="/img/blog/2021/06/screenzy-1622399034895.webp"
    title="Distributed tracing visualized with flamegraphs on SigNoz dashboard"
    width={700}
 />
@@ -79,7 +79,7 @@ We will divide the tutorial into two parts:
 1.  **Install Docker**<br></br>
     You can install Docker by following the steps listed on their website [here.](https://www.docker.com/get-started) For this tutorial, you can choose the Docker Desktop option based on the system you have.
 
-    ![](/img/blog/2021/06/docker-installation.png)
+    ![](/img/blog/2021/06/docker-installation.webp)
 
 2.  **Clone SigNoz GitHub repository**<br></br>
     From your terminal use the following command to clone SigNoz's GitHub repository.
@@ -100,15 +100,15 @@ We will divide the tutorial into two parts:
 
     Trying out SigNoz with clickhouse database takes less than 1.5GB of memory and for this tutorial, we will use that option.
 
-    ![](/img/blog/2021/06/signoz_installation_terminal.png)
+    ![](/img/blog/2021/06/signoz_installation_terminal.webp)
 
     You will get the following message once the installation is complete.
 
-    ![](/img/blog/2021/06/installation_complete.png)
+    ![](/img/blog/2021/06/installation_complete.webp)
 
     Once the installation runs successfully, the UI should be accessible at port 3000. Wait for 2-3 mins for the data to be available to frontend.
 
-    ![](/img/blog/2021/06/signoz_ui.png)
+    ![](/img/blog/2021/06/signoz_ui.webp)
 
     The applications shown in the dashboard are from a sample app called Hot R.O.D that comes with the installation bundle. It has 4 microservices being monitored: Frontend, Customer, Driver and Route. You can access the Hot R.O.D application UI at: [http://localhost:9000/](http://localhost:9000/)
 
@@ -154,7 +154,7 @@ Verify if you have Golang installed on your machine by running `$ go version` on
     <Screenshot
     alt="endpoint of bookstore app"
     height={500}
-    src="/img/blog/2021/06/screenzy-1623261415095.png"
+    src="/img/blog/2021/06/screenzy-1623261415095.webp"
     title="endpoint of our bookstore app"
     width={700}
     />
@@ -196,7 +196,7 @@ You can now access the SigNoz dashboard at [http://localhost:3000](http://localh
 <Screenshot
    alt="Sample golang app in the list of applications"
    height={500}
-   src="/img/blog/2021/06/signoz_ui_goapp.png"
+   src="/img/blog/2021/06/signoz_ui_goapp.webp"
    title="Sample Golang app appears in the list of application"
    width={700}
 />
@@ -211,23 +211,23 @@ In just 5 easy steps, our dashboard lets you drill down to events causing a dela
 
 1. **Choose the service you want to inspect**
 
-   ![List of services monitored](/img/blog/2021/06/dashboard_applications_list-2.png)
+   ![List of services monitored](/img/blog/2021/06/dashboard_applications_list-2.webp)
 
 2. **Choose the timestamp where latency is high and click on view traces**
 
-   ![Dashboard showing RED metrics](/img/blog/2021/06/dashboard_view_traces-1.png)
+   ![Dashboard showing RED metrics](/img/blog/2021/06/dashboard_view_traces-1.webp)
 
 3. **Choose the trace ID with the highest latency**
 
-   ![See list of traces](/img/blog/2021/06/dashboard_highest_traceid.png)
+   ![See list of traces](/img/blog/2021/06/dashboard_highest_traceid.webp)
 
 4. **Inspect distributed traces with flamegraph**
 
-   ![Flamegraphs for distributed tracing](/img/blog/2021/06/dashboard_flamegraph.png)
+   ![Flamegraphs for distributed tracing](/img/blog/2021/06/dashboard_flamegraph.webp)
 
 5. **Zero in on the highest latency event and take action**
 
-   ![Zoom in to specific spans](/img/blog/2021/06/dashboard_highest_latency.png)
+   ![Zoom in to specific spans](/img/blog/2021/06/dashboard_highest_latency.webp)
 
 If you need any help with trying out SigNoz, feel free to mail me at ankit.anand@signoz.io.
 
@@ -237,4 +237,4 @@ They say, "If it's not monitored, then it's not in production." And with SigNoz 
 
 At SigNoz, we are committed to making the best open-source, self-hosted tool for application performance monitoring. Feel free to check out our GitHub repo here:
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)

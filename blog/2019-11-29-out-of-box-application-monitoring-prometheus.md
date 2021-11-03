@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankitnayan
 author_image_url: https://avatars.githubusercontent.com/u/12460410?v=4
 description: Prometheus is a popular monitoring tool for kubernetes. Kube-state metrics and node exporters send a lot of metrics. But visualization of the metrics in charts is still painful. In this article, let's see how we can have some out of box visualizations with Prometheus.
-image: /img/blog/2019/11/prometheus_application_monitoring_hc.jpeg
+image: /img/blog/2019/11/prometheus_application_monitoring_hc.webp
 keywords:
   - Prometheus
   - Grafana
@@ -20,7 +20,7 @@ Prometheus is undoubtedly growing as the native monitoring tool for Kubernetes. 
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2019/11/prometheus_application_monitoring_hc.jpeg)
+![Cover Image](/img/blog/2019/11/prometheus_application_monitoring_hc.webp)
 
 Prometheus is undoubtedly growing as the native monitoring tool for Kubernetes. We have been using Prometheus to collect metrics about our infrastructure for a long time and there are plenty of dashboards available to get the dashboards up fast. For some time, I have been wondering why there aren't out of box application metrics, something like node-exporter for infrastructure metrics.
 
@@ -42,21 +42,21 @@ We have 2 Clusters.
 - the architecture of application in demo-cluster-1 is shown in image below
 - demo-cluster-2 has a simple Django Application with sample endpoints
 
-![](/img/blog/2019/11/Screenshot-2019-11-29-at-3.12.30-PM.png)Fig 1. Architecture for Demo Cluster 1
+![](/img/blog/2019/11/Screenshot-2019-11-29-at-3.12.30-PM.webp)Fig 1. Architecture for Demo Cluster 1
 By adding remote-write url with cluster labels you can visualise metrics from multiple Prometheus instances from different clusters. We have a running cortex at our backend that can be used for the following purposes:
 
 1. Long term storage of Prometheus metrics
 2. De-duplicating metrics for HA Prometheus setup
 3. Single pane of Grafana dashboard for metrics from multiple clusters
 
-![](/img/blog/2019/11/Screenshot-2019-11-29-at-3.40.52-PM.png)Fig. 2 Grafana Dashboards for application and infra metrics
+![](/img/blog/2019/11/Screenshot-2019-11-29-at-3.40.52-PM.webp)Fig. 2 Grafana Dashboards for application and infra metrics
 Application metrics of Payment, Shipping and User micro-services from demo-cluster-1 and Django App from demo-cluster-2 as we can see in Fig.2 above.
 
 Infrastructure metrics from both the clusters containing individual cluster metrics and aggregated metrics of all clusters.
 
 ## How is your application performing?
 
-![](/img/blog/2019/11/Screenshot-2019-11-29-at-3.46.38-PM.png)Fg 3. RPS and latency metrics for application
+![](/img/blog/2019/11/Screenshot-2019-11-29-at-3.46.38-PM.webp)Fg 3. RPS and latency metrics for application
 Some cool features are:
 
 - **_RPS by status codes_** - when you get 5xx error the graph will turn red
@@ -64,23 +64,23 @@ Some cool features are:
 - **_Distribution of complete application time_** - how much of time is being taken by Redis, Mongo, calls to external services, etc. This may tell you that a sudden increase in latency might be completely due to Redis and thus you should look into commands to Redis to drill down on problems.
 - **_Latency by endpoints_** - you get to know which endpoints are performing slow and thus look into those specific endpoints
 
-![](/img/blog/2019/11/Screenshot-2019-11-29-at-3.54.56-PM.png)Fig. 4 Mongo & Redis - RPS and Latencies
+![](/img/blog/2019/11/Screenshot-2019-11-29-at-3.54.56-PM.webp)Fig. 4 Mongo & Redis - RPS and Latencies
 
 - Mongo/Redis specific metrics - how many calls do the application make to mongo and Redis and how does the time taken by them look
 - See which type of commands/queries are taking more time
 
-![](/img/blog/2019/11/Screenshot-2019-11-29-at-4.21.21-PM.png)Fig. 5 Error report from application
+![](/img/blog/2019/11/Screenshot-2019-11-29-at-4.21.21-PM.webp)Fig. 5 Error report from application
 
 - Error percentage and RPS by status codes
 
-![](/img/blog/2019/11/Screenshot-2019-11-29-at-4.22.53-PM.png)fig. 6 Metrics about external services
+![](/img/blog/2019/11/Screenshot-2019-11-29-at-4.22.53-PM.webp)fig. 6 Metrics about external services
 
 The payment service calls user and cart services apart from _paypal.com_. We can analyse:
 
 - RPS of external calls by status code - now we can monitor how the calls to other micro-services are impacting this application
 - Avg time taken by each of those external addresses. As we can see from the graph that calls to Paypal takes much larger time than the call to other services
 
-![](/img/blog/2019/11/Screenshot-2019-11-29-at-4.31.15-PM.png)Fig. 7 Mysql performance on application queries
+![](/img/blog/2019/11/Screenshot-2019-11-29-at-4.31.15-PM.webp)Fig. 7 Mysql performance on application queries
 
 - In Shipping App, mysql is not the bottleneck in response time. Application is taking ~1.8s whereas mysql is taking ~0.3s to respond. Thus there is scope  to improve your application logic to get better response time.
 - Also, /cities API is taking ~2.5s whereas other apis like /calc, /confirm, /codes are taking ~1.5s to respond
@@ -92,18 +92,18 @@ No, the exporters give metrics about  Mysql/Redis/Mongo irrespective of the app
 ## Infrastructure Metrics
 
 Demonstrating Kubernetes Capacity Planning dashboard
-![](/img/blog/2019/11/Screenshot-2019-11-29-at-4.37.35-PM.png)Fig. 8 CPU and memory usage
+![](/img/blog/2019/11/Screenshot-2019-11-29-at-4.37.35-PM.webp)Fig. 8 CPU and memory usage
 
 - In total there are 6 CPUs out of which 4.5 is idle on avg
 - 1m, 5m, and 15m system load. More about load can be read [here](<https://en.wikipedia.org/wiki/Load_(computing)>)
 - Memory usage patterns of all clusters aggregated by free, buffered and cached
 
-![](/img/blog/2019/11/Screenshot-2019-11-29-at-4.38.44-PM.png)Fig. 9 DiskIO and Network usage
+![](/img/blog/2019/11/Screenshot-2019-11-29-at-4.38.44-PM.webp)Fig. 9 DiskIO and Network usage
 
 - Disk IO in terms of read, write and io
 - Network usage of all clusters aggregated by received and transmitted bytes
 
-![](/img/blog/2019/11/Screenshot-2019-11-29-at-4.39.40-PM.png)Fig. 10 Cluster-Wise infrastructure metrics
+![](/img/blog/2019/11/Screenshot-2019-11-29-at-4.39.40-PM.webp)Fig. 10 Cluster-Wise infrastructure metrics
 We can also monitor cluster-wise metrics by choosing the cluster name from the dropdown.
 
 > Popular USE (usage and saturation) metrics is coming up soon

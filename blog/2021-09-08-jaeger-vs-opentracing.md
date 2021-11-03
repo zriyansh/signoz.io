@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Jaeger and OpenTracing are both open-source projects aimed to solve pain-points of distributed tracing. But the scope of the projects are completely different. While Jaeger is an end-to-end distributed tracing tool..
-image: /img/blog/2021/09/jaeger_vs_opentracing_cover-min-2.jpg
+image: /img/blog/2021/09/jaeger_vs_opentracing_cover-min-2.webp
 keywords:
   - jaeger
   - opentracing
@@ -25,7 +25,7 @@ Jaeger and OpenTracing are both open-source projects. Jaeger was originally buil
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/09/jaeger_vs_opentracing_cover-min-2.jpg)
+![Cover Image](/img/blog/2021/09/jaeger_vs_opentracing_cover-min-2.webp)
 
 >OpenTracing has officially merged with another open-source project called OpenCensus to form OpenTelemetry, which is emerging as the world standard for creating and managing telemetry data.<br></br>
 >If you're looking for an open-source distributed tracing tool, your best option is [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) - a full-stack APM and observability tool.
@@ -49,7 +49,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
     alt="Jaeger's UI showing traces"
     height={500}
-    src="/img/blog/2021/08/jaeger_ui-min.png"
+    src="/img/blog/2021/08/jaeger_ui-min.webp"
     title="Jaeger's UI showing traces for selected services"
     width={700}
 />
@@ -62,7 +62,7 @@ The authors aimed to create standard instrumentation for all the middleware and 
 <Screenshot
     alt="OpenTracing design"
     height={500}
-    src="/img/blog/2021/09/opentracing_ecosystem.png"
+    src="/img/blog/2021/09/opentracing_ecosystem.webp"
     title="How OpenTracing fits within an application architecture"
     width={700}
 />
@@ -105,7 +105,7 @@ SigNoz is a full-stack open-source application performance monitoring and observ
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
     height={500}
-    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.png"
+    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.webp"
     title="Architecture of SigNoz with ClickHouse as storage backend and OpenTelemetry for code instrumentatiion"
     width={700}
 />
@@ -115,7 +115,7 @@ SigNoz comes with out of box visualization of things like RED metrics.
 <Screenshot
     alt="SigNoz UI showing the popular RED metrics"
     height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.png"
+    src="/img/blog/common/signoz_charts_application_metrics.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
 />
@@ -131,7 +131,7 @@ Some of the things SigNoz can help you track:
 
 You can check out SigNoz's GitHub repo here 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ## Frequently asked question
 

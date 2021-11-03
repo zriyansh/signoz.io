@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Jaeger is an open-source end-to-end distributed tracing tool for microservices architecture. On the other hand, Elastic APM is an application performance monitoring system which is built on top of the ELK Stack...
-image: /img/blog/2021/09/jaeger_vs_elastic_apm_cover-min.jpg
+image: /img/blog/2021/09/jaeger_vs_elastic_apm_cover-min.webp
 keywords:
   - jaeger
   - elastic apm
@@ -24,7 +24,7 @@ Jaeger is an open-source end-to-end distributed tracing tool for microservices a
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/09/jaeger_vs_elastic_apm_cover-min.jpg)
+![Cover Image](/img/blog/2021/09/jaeger_vs_elastic_apm_cover-min.webp)
 
 
 Application performance monitoring is the process of keeping your app's health in check. APM tools enable you to be proactive about meeting the demands of your customers. There are many components to a good APM tool like metrics monitoring, distributed tracing, log management, alert systems, etc.
@@ -54,7 +54,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
     alt="Jaeger UI"
     height={500}
-    src="/img/blog/2021/08/jaeger_ui-min.png"
+    src="/img/blog/2021/08/jaeger_ui-min.webp"
     title="Jaeger UI showing services and corresponding traces"
     width={700}
 />
@@ -72,7 +72,7 @@ The four major components of elastic APM has the following features:
 <Screenshot
     alt="Elastic APM architecture"
     height={500}
-    src="/img/blog/2021/09/elastic_apm_architecture.png"
+    src="/img/blog/2021/09/elastic_apm_architecture.webp"
     title="Elastic APM architecture"
     width={700}
 />
@@ -124,7 +124,7 @@ SigNoz is built to support OpenTelemetry natively. [OpenTelemetry](https://opent
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
     height={500}
-    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.png"
+    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.webp"
     title="Architecture of SigNoz with ClickHouse as storage backend and OpenTelemetry for code instrumentatiion"
     width={700}
 />
@@ -134,7 +134,7 @@ SigNoz comes with out of box visualization of things like RED metrics.
 <Screenshot
     alt="SigNoz UI showing the popular RED metrics"
     height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.png"
+    src="/img/blog/common/signoz_charts_application_metrics.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
 />
@@ -144,7 +144,7 @@ You can also use flamegraphs to visualize spans from your trace data. All of thi
 <Screenshot
     alt="Flamegraphs used to visualize spans of distributed tracing in SigNoz UI"
     height={500}
-    src="/img/blog/common/signoz_flamegraphs.png"
+    src="/img/blog/common/signoz_flamegraphs.webp"
     title="Flamegraphs showing exact duration taken by each spans - a concept of distributed tracing"
     width={700}
 />
@@ -171,7 +171,7 @@ You can read more about deploying SigNoz from its [documentation](https://signo
 
 You can check out SigNoz's GitHub repo here 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ___
 

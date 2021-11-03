@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Latest top open source APM tool list - 1.SigNoz 2.Graphite 3.Pinpoint 4.Prometheus 5.JavaMelody 6.StageMonitor 7.Scouter 8.Zipkin 9.Jaeger 10.Skywalking...
-image: /img/blog/2021/08/open_source_apm_hc.jpeg
+image: /img/blog/2021/08/open_source_apm_hc.webp
 hide_table_of_contents: true
 keywords:
   - Open Source
@@ -24,7 +24,7 @@ Choosing the right APM tool is critical. How do you know which is the right one 
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/08/open_source_apm_hc.jpeg)
+![Cover Image](/img/blog/2021/08/open_source_apm_hc.webp)
 
 > **What is an open source APM tool?**<br></br>
 > APM stands for Application Performance Monitoring. APM tools help you to monitor your application for any performance issues. When you opt for an open source APM tool, you get the added advantage of having access to the tool's source code.
@@ -101,7 +101,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
    alt="SigNoz Architecture Diagram"
    height={500}
-   src="/img/blog/2021/08/signoz_architecture-min.png"
+   src="/img/blog/2021/08/signoz_architecture-min.webp"
    title="SigNoz Architecture with ClickHouse as storage backend"
    width={700}
 />
@@ -112,14 +112,14 @@ It also comes with out of the box charts and visualization so that you can get s
 <Screenshot
    alt="SigNoz Dashboard showing RED metrics"
    height={500}
-   src="/img/blog/2021/07/signoz_ui-min.png"
+   src="/img/blog/2021/07/signoz_ui-min.webp"
    title="Capture RED metrics (Rate of requests, Error rate and Duration) and visualize it with SigNoz"
    width={700}
 />
 
 You can choose between industry-standard Kafka+Druid or fast OLAP database ClickHouse as the storage backend. The query service is written in GO, and the frontend is built with Typescript.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=open_source_apm_tools)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=open_source_apm_tools)
 
 ### Graphite
 
@@ -140,7 +140,7 @@ Graphite does not do data collection. Instead, your app needs to be configured t
 <Screenshot
    alt="Graphite architecture"
    height={500}
-   src="/img/blog/2021/07/Graphite-architecture-min.png"
+   src="/img/blog/2021/07/Graphite-architecture-min.webp"
    title="Graphite Architecture (Source: Graphite documentation)"
    width={700}
 />
@@ -150,7 +150,7 @@ Graphite comes with an in-built UI, but that is fairly basic. Usually, for visua
 <Screenshot
    alt="Graphite APM tool dashboard"
    height={500}
-   src="/img/blog/2021/07/graphite_dashboard-min.png"
+   src="/img/blog/2021/07/graphite_dashboard-min.webp"
    title="Graphite's UI (Source: [Nuxeo](https://doc.nuxeo.com/nxdoc/metrics/))"
    width={700}
 />
@@ -172,7 +172,7 @@ Pinpoint is an open source APM tool meant for large-scale distributed systems wr
 <Screenshot
    alt="Pinpoint APM tool architecture"
    height={500}
-   src="/img/blog/2021/07/pinpoint-architecture-min.png"
+   src="/img/blog/2021/07/pinpoint-architecture-min.webp"
    title="Architecture of Pinpoint (Source: Pinpoint Documentation)"
    width={700}
 />
@@ -182,7 +182,7 @@ The main purpose of the Pinpoint APM tool is to identify and track how transacti
 <Screenshot
    alt="Pinpoint dashboard"
    height={500}
-   src="/img/blog/2021/07/pinpoint-dashboard-min.png"
+   src="/img/blog/2021/07/pinpoint-dashboard-min.webp"
    title="Pinpoint Dashboard (Source: Pinpoint documentation)"
    width={700}
 />
@@ -208,7 +208,7 @@ Prometheus monitoring stack includes the following components:
 <Screenshot
    alt="Prometheus APM tool architecture"
    height={500}
-   src="/img/blog/2021/07/Prometheus_architecture-min.png"
+   src="/img/blog/2021/07/Prometheus_architecture-min.webp"
    title="Prometheus Architecture (Source: Prometheus Documentation)"
    width={700}
 />
@@ -219,7 +219,7 @@ The visualization layer of Prometheus is basic, but it is generally used with Gr
 <Screenshot
    alt="Prometheus Expression Browser"
    height={500}
-   src="/img/blog/2021/07/prom_exp_browser-min.png"
+   src="/img/blog/2021/07/prom_exp_browser-min.webp"
    title="Prometheus Expression Browser"
    width={700}
 />
@@ -227,7 +227,7 @@ The visualization layer of Prometheus is basic, but it is generally used with Gr
 <Screenshot
    alt="Grafana dashboard visualizing Prometheus metrics"
    height={500}
-   src="/img/blog/2021/07/prometheus_grafana-min.png"
+   src="/img/blog/2021/07/prometheus_grafana-min.webp"
    title="Grafana used for visualization with Prometheus"
    width={700}
 />
@@ -249,7 +249,7 @@ Some of the key metrics captured by the Javamelody APM tool are as follows:
 <Screenshot
    alt="Charts shown on JavaMelody dashboard"
    height={500}
-   src="/img/blog/2021/07/javamelody_ui-min.png"
+   src="/img/blog/2021/07/javamelody_ui-min.webp"
    title="Charts provided by Javamelody APM tool (Source: Javamelody GitHub repo)"
    width={700}
 />
@@ -273,7 +273,7 @@ Some of the key features of Stagemonitor APM tool includes:
 <Screenshot
    alt="Architecture diagram of Stagemonitor APM tool"
    height={500}
-   src="/img/blog/2021/07/stagemonitor_architecture-min.png"
+   src="/img/blog/2021/07/stagemonitor_architecture-min.webp"
    title="Stagemonitor architecture (Source: Stagemonitor GitHub repo)"
    width={700}
 />
@@ -291,7 +291,7 @@ Scouter is an open source APM tool written in Java, Javascript, and Scala. It ca
 <Screenshot
    alt="Architecture diagram of Scouter APM tool"
    height={500}
-   src="/img/blog/2021/07/scouter_architecture-min-1.png"
+   src="/img/blog/2021/07/scouter_architecture-min-1.webp"
    title="Scouter Architecture (Source: Scouter GitHub repo)"
    width={700}
 />
@@ -306,7 +306,7 @@ Scouter's architecture consists of the following components:
 <Screenshot
    alt="Charts visualized with Scouter APM"
    height={500}
-   src="/img/blog/2021/07/scouter_ui-min.png"
+   src="/img/blog/2021/07/scouter_ui-min.webp"
    title="Scouter UI (Source: Scouter GitHub repo)"
    width={700}
 />
@@ -331,7 +331,7 @@ Zipkin's architecture includes:
 <Screenshot
    alt="Zipkin architecture diagram"
    height={500}
-   src="/img/blog/2021/07/Zipkin_architecture-min.png"
+   src="/img/blog/2021/07/Zipkin_architecture-min.webp"
    title="Zipkin architecture (Source: Zipkin website)"
    width={700}
 />
@@ -341,7 +341,7 @@ Zipkin's in-built UI is limited, and you can use Grafana or Kibana from the ELK 
 <Screenshot
    alt="Zipkin dashboard showing traces"
    height={500}
-   src="/img/blog/2021/07/Zipkin_ui-min.png"
+   src="/img/blog/2021/07/Zipkin_ui-min.webp"
    title="Zipkin UI (Source: Zipkin's GitHub repo)"
    width={700}
 />
@@ -351,7 +351,7 @@ It also includes a dependency diagram that shows how many user requests went thr
 <Screenshot
    alt="Zipkin dependency diagram to show user requests across services"
    height={500}
-   src="/img/blog/2021/07/zipkin_dependency_diagram-min.png"
+   src="/img/blog/2021/07/zipkin_dependency_diagram-min.webp"
    title="Zipkin dependency diagram (Source: GitHub repo)"
    width={700}
 />
@@ -375,7 +375,7 @@ It is used for monitoring and troubleshooting microservices-based distributed sy
 <Screenshot
    alt="Architecture diagram of Jaeger APM"
    height={500}
-   src="/img/blog/2021/07/jaeger_architecture-min.png"
+   src="/img/blog/2021/07/jaeger_architecture-min.webp"
    title="Jaeger Architecture (Source: Uber Engineering)"
    width={700}
 />
@@ -385,7 +385,7 @@ Jaeger supports two popular open source NoSQL databases as trace storage backend
 <Screenshot
    alt="Jaeger UI"
    height={500}
-   src="/img/blog/2021/07/jaeger_ui-min.png"
+   src="/img/blog/2021/07/jaeger_ui-min.webp"
    title="Jaeger UI showing list of filtered traces"
    width={700}
 />
@@ -409,7 +409,7 @@ Skywalking also supports the collection of telemetry data in multiple formats.
 <Screenshot
    alt="Skywalking dashboard"
    height={500}
-   src="/img/blog/2021/07/skywalking_ui-min.png"
+   src="/img/blog/2021/07/skywalking_ui-min.webp"
    title="Skywalking dashboard (Source: Skywalking website)"
    width={700}
 />
@@ -430,7 +430,7 @@ You might already be familiar with Elasticsearch. Elastic APM is an open source 
 <Screenshot
    alt="Elastic APM architecture diagram"
    height={500}
-   src="/img/blog/2021/07/elastic_apm_architecture-min.png"
+   src="/img/blog/2021/07/elastic_apm_architecture-min.webp"
    title="Elastic APM architecture (Source: Elastic APM documentation)"
    width={700}
 />
@@ -440,7 +440,7 @@ With Kibana, you can have visualize your requests and services.
 <Screenshot
    alt="Service maps on Elastic APM dashboard"
    height={500}
-   src="/img/blog/2021/07/elasticapm_servicemaps-min.png"
+   src="/img/blog/2021/07/elasticapm_servicemaps-min.webp"
    title="Service Maps in Elastic APM (Source: Elastic APM website)"
    width={700}
 />
@@ -462,7 +462,7 @@ App Metrics does not include a visualization tool, but it does provide App Metri
 <Screenshot
    alt="Grafana charts for visualization of App Metrics"
    height={500}
-   src="/img/blog/2021/07/app-metrics-dashboard-min.png"
+   src="/img/blog/2021/07/app-metrics-dashboard-min.webp"
    title="App Metrics dashboard using Grafana (Source: App Metrics website)"
    width={700}
 />
@@ -481,7 +481,7 @@ Glowroot is an open source Java APM tool. It is used to monitor Java-based appli
 <Screenshot
    alt="Glowroot architecture diagram"
    height={500}
-   src="/img/blog/2021/07/glowroot-architecture-min.png"
+   src="/img/blog/2021/07/glowroot-architecture-min.webp"
    title="Glowroot architecture"
    width={700}
 />
@@ -516,11 +516,11 @@ cd signoz/deploy/
 ```
 You can read more about deploying SigNoz from its documentation.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=open_source_apm_tools)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=open_source_apm_tools)
 
 You can check out SigNoz's GitHub repo here 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 If you want to read more about SigNoz 👇
 

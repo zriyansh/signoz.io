@@ -36,34 +36,37 @@ USD 31 per host per month
 - 15-month metric retention
 - 1.7 USD/mn spans for 15 day retention
 
-[
-
-Pricing | Datadog
-
-Flexible, clear pricing for modern infrastructure and applications of any scale.
-
-![](https://web.archive.org/web/20210208145414im_/https://imgix.datadoghq.com/img/favicons/apple-touch-icon.png)Datadog Logo
-
-![](https://web.archive.org/web/20210208145414im_/https://imgix.datadoghq.com/img/navbar/menu/features.svg)
-](https://web.archive.org/web/20210208145414if_/https://www.datadoghq.com/pricing/?product&#x3D;apm#apm)
 To compare the cost of running DataDog APM & SigNoz, we will take 15 day retention as the standard - as that is what DataDog uses as default.
 
 We will take **90 RPS **workload as an example to compare cost of running DataDog and SigNoz. We are creating more detailed benchmark frameworks. This is just a first attempt at this.
 
-> Please, note that 90 RPS is the ingested and retained trace rate. Many companies sample trace extensively ( upto 0.5%) but here we are comparing trace volume sent RPS.
-
-> For example, if you are sampling traces at 1%, then you can  handle upto **9000 RPS** with below costs - both for SigNoz & DataDog.
+> Please, note that 90 RPS is the ingested and retained trace rate. Many companies sample trace extensively ( upto 0.5%) but here we are comparing trace volume sent RPS. For example, if you are sampling traces at 1%, then you can  handle upto 9000 RPS with below costs - both for SigNoz & DataDog.
 
 ### DataDog APM cost
 
-![](/img/blog/2021/02/datadog-cost-90rps.jpg)DataDog costs for 90 RPS at 50 spans/ request
-5832 mn spans with each span around 0.3 KB = 1.75 TB  @ 0.08 USD/GB-month = 140 USD/month
+import Screenshot from "@theme/Screenshot"
+
+<Screenshot
+  alt="DataDog APM cost"
+  height={500}
+  src="/img/blog/2021/02/datadog-cost-90rps.webp"
+  title="DataDog costs for 90 RPS at 50 spans/ request
+5832 mn spans with each span around 0.3 KB = 1.75 TB  @ 0.08 USD/GB-month = 140 USD/month"
+  width={700}
+/>
 
 ### Cost of running SigNoz
 
 For running this on SigNoz, we tested it on a EKS cluster of 3 nodes with 8GB RAM (t3.large). Monthly cost for t3.large (8 GB RAM, 2 CPU) is ~42 USD/ month ( with 30% annual reserved instance discount)
-![](/img/blog/2021/02/signoz-cost-90rps-1.jpg)SigNoz cost for 90 RPS at 50 spans/request
-Disc cost for 15 day retention at 0.08 USD/GB-month
+
+<Screenshot
+  alt="SigNoz cost"
+  height={500}
+  src="/img/blog/2021/02/signoz-cost-90rps-1.webp"
+  title="SigNoz cost for 90 RPS at 50 spans/request
+Disc cost for 15 day retention at 0.08 USD/GB-month"
+  width={700}
+/>
 
 Total SigNoz cost ~** 338 USD per montt**
 
@@ -78,6 +81,13 @@ Improvement over DataDog = 19982/676 = 29x improvement over DataDog's cost. Even
 ---
 
 And finally, this  is how it looks on your SigNoz dashboard 🤓
-![](/img/blog/2021/02/signoz-dashboard-90rps.jpeg)SigNoz running at 90 rps
+
+<Screenshot
+  alt="SigNoz UI"
+  height={500}
+  src="/img/blog/common/signoz_charts_application_metrics.webp"
+  title="SigNoz UI showing application metrics like latency, error rates and request rates"
+  width={700}
+/>
 
 ### If this sounds interesting, check out our [GitHub](https://github.com/SigNoz/signoz) repo and get started with SigNoz.

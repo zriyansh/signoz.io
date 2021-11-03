@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Thinking about using OpenTelemetry for distributed tracing? OpenTelemetry Tracing API provides options for manual as well as automated instrumentation..
-image: /img/blog/2021/09/opentelemetry_tracing-min.jpg
+image: /img/blog/2021/09/opentelemetry_tracing-min.webp
 keywords:
   - opentelemetry
   - distributed tracing
@@ -23,7 +23,7 @@ Setting up observability and robust monitoring for distributed systems is a chal
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/09/opentelemetry_tracing-min.jpg)
+![Cover Image](/img/blog/2021/09/opentelemetry_tracing-min.webp)
 
 
 Nothing can guarantee how your systems will behave in production. Things will go wrong, and it's critical to monitor your application for any signs that need troubleshooting. A robust monitoring and observability framework requires telemetry data - logs, metrics and traces.
@@ -35,7 +35,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
     alt="OpenTelemetry Architecture"
     height={500}
-    src="/img/blog/2021/08/opentelemetry_architecture-min.png"
+    src="/img/blog/2021/08/opentelemetry_architecture-min.webp"
     title="OpenTelemetry architecture - client libraries instrument application code to send telemetry data to a collector agent which then exports the data to a backend analysis tool."
     width={700}
 />
@@ -54,7 +54,7 @@ A trace context is passed along when requests travel between services, which tra
 <Screenshot
     alt="OpenTelemetry tracing uses trace context to track user request across services"
     height={500}
-    src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.png"
+    src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.webp"
     title="A trace context is passed when user requests pass from one service to another"
     width={700}
 />
@@ -66,7 +66,7 @@ In the picture below, you can see the details for the selected span. [SigNoz](h
 <Screenshot
     alt="Attributes can be added to spans for more context"
     height={500}
-    src="/img/blog/2021/09/details_span-min.png"
+    src="/img/blog/2021/09/details_span-min.webp"
     title="SigNoz is a lightweight APM tool based on OpenTelemetry. it provides out of box visualization for traces and metrics."
     width={700}
 />
@@ -169,13 +169,13 @@ SigNoz comes with out of box visualization of things like RED metrics. There is 
 <Screenshot
     alt="SigNoz dashboard showing popular RED metrics"
     height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.png"
+    src="/img/blog/common/signoz_charts_application_metrics.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
 />
 
 You can check out SigNoz's GitHub repo here 👇
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ___
 

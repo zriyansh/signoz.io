@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: SigNoz crossed 4000+ stars recently. In this article, we dig deep to find out about our GitHub stargazers using a tool called Stargazers.
-image: /img/blog/2021/08/stargazers_cover_hc.jpeg
+image: /img/blog/2021/08/stargazers_cover_hc.webp
 keywords:
   - github stargazers
   - stargazers analysis
@@ -22,7 +22,7 @@ In a little over 4 months, we have crossed 4k+ stars on our GitHub repo. In this
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/08/stargazers_cover_hc.jpeg)
+![Cover Image](/img/blog/2021/08/stargazers_cover_hc.webp)
 
 As the maintainers of an active open source project, we have often wondered what do our stars mean? According to GitHub docs, starring is a way for people to keep track of projects they find interesting. GitHub uses this data to recommend relevant content to its users.
 
@@ -47,7 +47,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
    alt="Trending on GitHub"
    height={500}
-   src="/img/blog/2021/07/stargazers_rise-1.png"
+   src="/img/blog/2021/07/stargazers_rise-1.webp"
    title="We were trending on GitHub at #1 across all programming languages."
    width={700}
 />
@@ -63,7 +63,7 @@ Here's a distribution of our stargazers from the top 25 countries.
 <Screenshot
    alt="Chart showing countries where SigNoz stargazers are from"
    height={500}
-   src="/img/blog/2021/07/countries-1.png"
+   src="/img/blog/2021/07/countries-1.webp"
    title="SigNoz's stargazers belong to nations worldwide with the largest number from United States"
    width={700}
 />
@@ -77,7 +77,7 @@ One of the coolest things about Spencer's code was that we could see what other 
 <Screenshot
    alt="Correlated repos to SigNoz"
    height={700}
-   src="/img/blog/2021/07/correlated-repos-1.png"
+   src="/img/blog/2021/07/correlated-repos-1.webp"
    title="Correlated repos to SigNoz"
    width={500}
 />
@@ -95,7 +95,7 @@ Here are the commit stats of our top 20 stargazers.
 <Screenshot
    alt="Commit stats for our top 20 stargazers"
    height={700}
-   src="/img/blog/2021/07/commit-stats-1.png"
+   src="/img/blog/2021/07/commit-stats-1.webp"
    title="Commit stats for our top 20 stargazers"
    width={500}
 />
@@ -111,7 +111,7 @@ And as we have been starred from 110 different countries, we can be certain that
 <Screenshot
    alt="Distribution of shared followers of SigNoz's Stargazers"
    height={500}
-   src="/img/blog/2021/07/shared-followers---2.png"
+   src="/img/blog/2021/07/shared-followers---2.webp"
    title="Histogram of % shared followers for stargazers of SigNoz"
    width={700}
 />
@@ -128,4 +128,4 @@ You can try out the [Stargazers](https://github.com/spencerkimball/stargazers) t
 
 If you're looking for a full-stack monitoring & observability tool, feel free to check out our GitHub repo 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)

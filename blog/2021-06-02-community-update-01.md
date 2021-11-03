@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Excited to launch our first newsletter. We are delighted to have crossed 1.6k stars on GitHub, growing more than 30% last month. Catch up on what we're upto at SigNoz!
-image: /img/blog/2021/06/signal_01_cover_hc.jpeg
+image: /img/blog/2021/06/signal_01_cover_hc.webp
 keywords:
   - SigNoz Product Update
   - Open Source community
@@ -21,7 +21,7 @@ Excited to launch our first newsletter. We are delighted to have crossed 1.6k st
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/06/signal_01_cover_hc.jpeg)
+![Cover Image](/img/blog/2021/06/signal_01_cover_hc.webp)
 
 We are pleased to release the first issue of our newsletter. With this newsletter, we aim to let our community know what we've been upto. A roundup of major releases, issues, comments as well as some interesting stuff from our blog section. So without further ado, let's get down to it!
 
@@ -43,7 +43,7 @@ External API monitoring provides you a separate dashboard for seeing metrics for
 
 This helps you quickly isolate if the issue is due to internal services or on any external dependencies.
 
-![External API calls](/img/blog/2021/05/external_api.png)
+![External API calls](/img/blog/2021/05/external_api.webp)
 
 <!--- Separate dashboards for External API calls --->
 
@@ -67,7 +67,7 @@ We heard you and have already started exploring design details for Clickhouse su
 
 We are delighted to have crossed 1.6k stars on GitHub, growing more than 30% last month 🎉. We can't thank you all enough for this! 👏
 
-![1.6k stars on GitHub](/img/blog/2021/05/screenzy-1622043034078-2.png)
+![1.6k stars on GitHub](/img/blog/2021/05/screenzy-1622043034078-2.webp)
 
 <!--- We reached 1.6K Github stars in May --->
 
@@ -93,4 +93,4 @@ Thank you for taking out the time to go through our first newsletter :) If you h
 
 Also, come join us in our [slack](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA) community, we would love to host you there :)
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)

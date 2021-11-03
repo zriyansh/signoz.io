@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/pranay01
 author_image_url: https://avatars.githubusercontent.com/u/504541?v=4
 description: In the world of microservices, who takes care of failures? How do you solve availability and performance issues quickly in your production environment. For a modern-day distributed system, observability needs to be built within the system. And, SigNoz attempts to bring you the best open-source observability stack for your distributed system.
-image: /img/blog/2020/01/Why-1.png
+image: /img/blog/2020/01/Why-1.webp
 keywords:
   - Microservices
   - Distributed Tracing
@@ -16,7 +16,7 @@ keywords:
   - Debugging
 ---
 
-![Cover Image](/img/blog/2020/01/Why-1.png)
+![Cover Image](/img/blog/2020/01/Why-1.webp)
 
 <!--truncate-->
 
@@ -35,7 +35,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
     alt="Blank page returned after making payment"
     height={500}
-    src="/img/blog/2020/01/BlankPage.jpg"
+    src="/img/blog/2020/01/BlankPage.webp"
     title="Blank page returned after making payment"
     width={700}
 />
@@ -87,14 +87,14 @@ Of course, there are other players in this space, but we believe that there is a
 <Screenshot
     alt="KubeCon conference attendance"
     height={500}
-    src="/img/blog/2020/01/KubeConCNCAttendance2019.png"
+    src="/img/blog/2020/01/KubeConCNCAttendance2019.webp"
     title="KubeCon (leading k8s conference) attendance went from 500 to 23000 in 5 yrs"
     width={700}
 />
 
 In this new world, monitoring can't be an afterthought but built into when you start building your systems. Any how-to guide on Kubernetes today also includes instruction on how to set up monitoring.
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ## A peep into the Future
 
@@ -103,7 +103,7 @@ We believe the AI/Robot age is already here. It's just that the robots are not r
 <Screenshot
     alt="Robots"
     height={500}
-    src="/img/blog/2020/01/BlogTerminator.jpg"
+    src="/img/blog/2020/01/BlogTerminator.webp"
     width={700}
 />
 
@@ -118,7 +118,7 @@ If you compare this timeline to human evolution, this is nothing. Humans have be
 
 This is what we believe SigNoz can help achieve. Making cloud systems become reliable, proactive and self-healing. We think that this future is possible in the next 5-10 years and we want to play our small part in achieving this.
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ---
 

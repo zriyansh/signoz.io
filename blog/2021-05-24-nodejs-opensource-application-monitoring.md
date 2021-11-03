@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: In this article, learn how to setup application monitoring for Node.js apps with our open-source solution, SigNoz.
-image: /img/SigNoz_UI_hc.png
+image: /img/blog/2021/05/nodejs_with_signoz_cover.webp
 keywords:
   - SigNoz Product Update
   - Open Source community
@@ -21,13 +21,13 @@ In this article, learn how to setup application monitoring for Node.js apps with
 
 <!--truncate-->
 
-![Cover Image](/img/SigNoz_UI_hc.png)
+![Cover Image](/img/blog/2021/05/nodejs_with_signoz_cover.webp)
 
 Node.js tops the list of most widely used frameworks by developers. Powered by Google's V8 javascript engine, its performance is incredible. Ryan Dahl, the creator of Node.js, wanted to create real-time websites with push capability. On Nov 8, 2009, Node.js was first demonstrated by Dahl at the inaugural European JSconf. Node.js has now become a critical component in the technology stack of large-scale enterprises. But like any technology, it has its own set of limitations.
 
 Node.js is a dynamically typed single-threaded programming language. There is a lot of freedom for the interpreter and runtime to make decisions that can easily lead to memory leaks and high CPU loads. This can lead to performance issues, loss of resources, and potential downtime. Hence, it is crucial to monitor your Node.js apps for app performance metrics.
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) is an open-source application monitoring and observability platform which can be installed within your infra. There's no need to go through any sales team or complex onboarding process to start monitoring your application with SigNoz. In this article, let's take a look at how it can be deployed with Docker in a sample Node.js application.
 
@@ -41,7 +41,7 @@ Let's divide this tutorial in 2 parts:
 1. **Install Docker**<br></br>
    You can install Docker by following the steps listed on their website [here.](https://www.docker.com/get-started) For this tutorial, you can choose the Docker Desktop option based on the system you have.
 
-   ![](/img/blog/2021/05/screenzy-1621623948044.png)
+   ![](/img/blog/2021/05/screenzy-1621623948044.webp)
 
 2. **Clone SigNoz GitHub repository**<br></br>
    From your terminal use the following command to clone SigNoz's GitHub repository.
@@ -65,16 +65,16 @@ Let's divide this tutorial in 2 parts:
 
 Trying out SigNoz with clickhouse database takes less than 1.5GB of memory and for this tutorial, we will use that option.
 
-![Choose setup](/img/blog/2021/06/screenzy-1623086990810.png)
+![Choose setup](/img/blog/2021/06/screenzy-1623086990810.webp)
 
 You will get the following message once the installation is complete.
 
-![Success message](/img/blog/2021/06/screenzy-1623086918860.png)
+![Success message](/img/blog/2021/06/screenzy-1623086918860.webp)
 Note that this setup is just for demo/testing purposes and you need to proceed with Kafka + Druid set up option in case you want to set up SigNoz for use in production.
 
 Once `./install.sh` runs successfully, the UI should be accessible at port 3000. Wait for 2-3 mins for the data to be available to frontend.
 
-![SigNoz UI](/img/blog/2021/05/screenzy-1621624012520.png)
+![SigNoz UI](/img/blog/2021/05/screenzy-1621624012520.webp)
 
 The applications shown in the dashboard are from a sample app called Hot R.O.D that comes with the installation bundle. It has 4 microservices being monitored: Frontend, Customer, Driver and Route. You can access the Hot R.O.D application UI at: [http://localhost:9000/](http://localhost:9000/)
 
@@ -171,7 +171,7 @@ You need to ensure that you have **Node.js version 12 or newer. **You can downlo
 
 And, congratulations! You have instrumented your sample Node.js app. You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000/) to monitor your app for performance metrics.
 
-![Sample app in the list of applications](/img/blog/2021/05/screenzy-1621629522993.png)
+![Sample app in the list of applications](/img/blog/2021/05/screenzy-1621629522993.webp)
 
 ## Identifying events causing high latency in your app
 
@@ -195,4 +195,4 @@ They say, "If it's not monitored, then it's not in production." And with SigNoz 
 
 At SigNoz, we are committed to making the best open-source, self-hosted tool for application performance monitoring. Feel free to check out our GitHub repo here:
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)

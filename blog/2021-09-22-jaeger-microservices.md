@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Jaeger is a popular open-source tool used for distributed tracing in a microservice architecture. In a microservice architecture, a user request or transaction can travel across hundreds of services before serving what a user wants.
-image: /img/blog/2021/09/jaeger_microservices_cover-min.jpg
+image: /img/blog/2021/09/jaeger_microservices_cover-min.webp
 keywords:
   - jaeger
   - microservices
@@ -26,7 +26,7 @@ Jaeger is a popular open-source tool used for distributed tracing in a microserv
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/09/jaeger_microservices_cover-min.jpg)
+![Cover Image](/img/blog/2021/09/jaeger_microservices_cover-min.webp)
 
 > Jaeger is a fantastic open-source tool for distributed tracing. But for effective resolution of production issues, engineering teams need both metrics and traces. [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article), a full-stack open-source tool, provides a unified UI for both metrics and traces.
 
@@ -40,7 +40,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
     alt="Microservices architecture"
     height={500}
-    src="/img/blog/2021/09/jaeger_vs_zipkin_microservices_architecture.png"
+    src="/img/blog/2021/09/jaeger_vs_zipkin_microservices_architecture.webp"
     title="Microservice architecture of a fictional e-commerce application"
     width={700}
 />
@@ -57,7 +57,7 @@ A **trace context** is passed along when requests travel between services, which
 <Screenshot
     alt="Trace context is passed to track user requests across services"
     height={500}
-    src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.png"
+    src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.webp"
     title="A trace context is passed when user requests pass from one service to another"
     width={700}
 />
@@ -80,7 +80,7 @@ The four key components are:
 <Screenshot
     alt="Jaeger architecture"
     height={500}
-    src="/img/blog/2021/09/Jaeger_architecture-min.jpg"
+    src="/img/blog/2021/09/Jaeger_architecture-min.webp"
     title="Jaeger architecture (Source: Jaeger Website)"
     width={700}
 />
@@ -126,7 +126,7 @@ Jaeger's UI is basic but comprehensive when it comes to distributed tracing.
 <Screenshot
     alt="Jaeger UI showing services and corresponding traces"
     height={500}
-    src="/img/blog/2021/08/jaeger_ui-min.png"
+    src="/img/blog/2021/08/jaeger_ui-min.webp"
     title="Jaeger UI showing services and corresponding traces"
     width={700}
 />
@@ -134,7 +134,7 @@ Jaeger's UI is basic but comprehensive when it comes to distributed tracing.
 <Screenshot
     alt="Jaeger UI showing spans"
     height={500}
-    src="/img/blog/2021/08/jaeger_gantt_charts-min.png"
+    src="/img/blog/2021/08/jaeger_gantt_charts-min.webp"
     title="Jaeger's UI showing spans for selected traces"
     width={700}
 />
@@ -160,7 +160,7 @@ SigNoz also provides users flexibility in terms of data storage.You can choose b
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
     height={500}
-    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.png"
+    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.webp"
     title="Architecture of SigNoz with ClickHouse as storage backend and OpenTelemetry for code instrumentatiion"
     width={700}
 />
@@ -170,7 +170,7 @@ SigNoz comes with out of box visualization of things like RED metrics.
 <Screenshot
     alt="SigNoz UI showing the popular RED metrics"
     height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.png"
+    src="/img/blog/common/signoz_charts_application_metrics.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
 />
@@ -180,7 +180,7 @@ You can also use flamegraphs to visualize spans from your trace data. All of thi
 <Screenshot
     alt="Flamegraphs used to visualize spans of distributed tracing in SigNoz UI"
     height={500}
-    src="/img/blog/common/signoz_flamegraphs.png"
+    src="/img/blog/common/signoz_flamegraphs.webp"
     title="Flamegraphs showing exact duration taken by each spans - a concept of distributed tracing"
     width={700}
 />
@@ -197,7 +197,7 @@ Some of the things SigNoz can help you track:
 
 You can check out SigNoz's GitHub repo here 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ___
 

@@ -9,7 +9,7 @@ author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 hide_table_of_contents: true
 description: It's time for the monthly product update of SigNoz - a full-stack open-source and observability tool. Find out what we've been upto at SigNoz during July, 2021.
-image: /img/blog/2021/08/signal_03_cover_hc.jpeg
+image: /img/blog/2021/08/signal_03_cover_hc.webp
 keywords:
   - SigNoz Product Update
   - GitHub contributors
@@ -23,7 +23,7 @@ It's time for monthly product updates aka Signal #03. This month's release hit a
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/08/signal_03_cover_hc.jpeg)
+![Cover Image](/img/blog/2021/08/signal_03_cover_hc.webp)
 
 Welcome to Signal #03!
 
@@ -41,7 +41,7 @@ Some of our users wanted to see 4xx errors quickly. So we have enabled regex pat
 
 [Link to issue](https://github.com/SigNoz/signoz/pull/249)
 
-![You can use regex patterns for filtering traces](/img/blog/2021/08/regex_pattern_hc.png)
+![You can use regex patterns for filtering traces](/img/blog/2021/08/regex_pattern_hc.webp)
 
 <!--- Apply regex operations on trace filters --->
 
@@ -49,7 +49,7 @@ Some of our users wanted to see 4xx errors quickly. So we have enabled regex pat
 
 Flamegraphs and Gantt charts make a champion combo for debugging latency issues on our dashboard. We improved the experience slightly, where selecting a trace in the flamegraph highlights the corresponding span in the Gantt chart view.
 
-![Selecting a trace in the flamegraph highlights the corresponding span in the gantt charts](/img/blog/2021/08/gantt_charts_hc.png)
+![Selecting a trace in the flamegraph highlights the corresponding span in the gantt charts](/img/blog/2021/08/gantt_charts_hc.webp)
 
 <!--- When you select a trace in the flamegraph, corresponding span in the Gantt chart gets highlighted --->
 
@@ -59,7 +59,7 @@ We recently conducted a [deep dive](/blog/getting-to-know-our-4000-plus-stargaze
 
 To make our GitHub repo more accessible, we raised requests for getting our [readme.md](https://github.com/SigNoz/signoz/blob/main/README.md) translated to different languages. [Tony Qu](https://github.com/tonyqus), a 15+ year .NET veteran, helped translate our [Readme](https://github.com/SigNoz/signoz/blob/main/README.zh-cn.md) to Chinese, and we couldn't be happier. 🤓
 
-![Countries from which our stargazers belong](/img/blog/2021/08/stargazers_countries_hc.png)
+![Countries from which our stargazers belong](/img/blog/2021/08/stargazers_countries_hc.webp)
 
 <!--- SigNoz's stargazers belong to nations worldwide --->
 
@@ -121,4 +121,4 @@ We also wanted to express our gratitude to [Lalit Kale](https://www.linkedin.com
 
 Thank you for taking out the time to read this issue :) If you have any feedback or want any changes with the format, please create an [issue](https://github.com/SigNoz/signoz/issues).
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
