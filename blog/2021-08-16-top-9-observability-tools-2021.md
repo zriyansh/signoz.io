@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Latest top observability tools list - 1.SigNoz 2.Instana 3.Dynatrace 4.Grafana Labs 5.Honeycomb 6.Lightstep 7.New Relic 8.DataDog...
-image: /img/blog/2021/08/observability_tools_cover-min.png
+image: /img/blog/2021/08/observability_tools_cover-min.webp
 keywords:
   - observability
   - observability tools
@@ -25,7 +25,7 @@ In microservices architecture, observability tools enable you to create central 
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/08/observability_tools_cover-min.png)
+![Cover Image](/img/blog/2021/08/observability_tools_cover-min.webp)
 
 In today's digital economy, distributed architectures have become the norm. Organizations are also opting for polyglot microservices to boost developer productivity. But how do you manage the operational challenges of such systems?
 Customer experience is the key to the success of tech companies of any size, be it startups, mid or large-level enterprises. You need to proactively solve for things like availability and performance of your applications in production.
@@ -74,7 +74,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
   alt="SigNoz UI showing RED metrics"
   height={500}
-  src="/img/blog/2021/08/observability_tool_signoz.png"
+  src="/img/blog/2021/08/observability_tool_signoz.webp"
   title="SigNoz Dashboard with visualization of the popular RED metrics for your application (Number of requests, rate of error & duration)"
   width={700}
 />
@@ -82,7 +82,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
   alt="Flamegraphs & gantt charts on SigNoz dashboard"
   height={500}
-  src="/img/blog/2021/08/observability_tool_flamegraphs_hc.png"
+  src="/img/blog/2021/08/observability_tool_flamegraphs_hc.webp"
   title="SigNoz also has Flamegraphs and Gantt charts to visualize distributed tracing for your microservice application"
   width={700}
 />
@@ -98,7 +98,7 @@ Instana charges $75 per host/per month if billed annually. It also supports open
 <Screenshot
   alt="Instana dashboard"
   height={500}
-  src="/img/blog/2021/08/observability_tools_instana-min.png"
+  src="/img/blog/2021/08/observability_tools_instana-min.webp"
   title="Instana Dashboard. (Source: Instana Docs)"
   width={700}
 />
@@ -114,7 +114,7 @@ Full-stack monitoring, the product aimed to provide observability for apps, is p
 <Screenshot
   alt="Dynatrace dashboard"
   height={500}
-  src="/img/blog/2021/08/observability_tools_dynatrace-min.png"
+  src="/img/blog/2021/08/observability_tools_dynatrace-min.webp"
   title="Dynatrace dashboard (Source: Dynatrace website)"
   width={700}
 />
@@ -132,7 +132,7 @@ Grafana offers plugins, dashboards, alerts, and different user-level access for 
 <Screenshot
   alt="Grafana dashboard"
   height={500}
-  src="/img/blog/2021/08/observability_tools_grafana-min.png"
+  src="/img/blog/2021/08/observability_tools_grafana-min.webp"
   title="Grafana dashboard (Source: Grafana website)"
   width={700}
 />
@@ -148,7 +148,7 @@ Honeycomb offers a free tier of service, and its pro tier starts at $100. The pr
 <Screenshot
   alt="Honeycomb dashboard"
   height={500}
-  src="/img/blog/2021/08/observability_tools_honeycomb-min.png"
+  src="/img/blog/2021/08/observability_tools_honeycomb-min.webp"
   title="Snapshot of Honeycomb dashboard (Source: Honeycomb documentation)"
   width={700}
 />
@@ -170,7 +170,7 @@ Lightstep offers three plans of service:
 <Screenshot
   alt="Lighstep dashboard"
   height={500}
-  src="/img/blog/2021/08/observability_tools_lightstep-min.png"
+  src="/img/blog/2021/08/observability_tools_lightstep-min.webp"
   title="Lightstep dashboard (Source: Lightstep sandbox environment)"
   width={700}
 />
@@ -186,7 +186,7 @@ Standard offering includes plans for teams up to 5 full users. Their pricing dep
 <Screenshot
   alt="New Relic dashboard"
   height={500}
-  src="/img/blog/2021/08/New_relic_dashboard-min.png"
+  src="/img/blog/2021/08/New_relic_dashboard-min.webp"
   title="New Relic dashboard (Source: New Relic website)"
   width={700}
 />
@@ -205,7 +205,7 @@ The pricing depends on the product you opt for. For example, the APM solution pr
 <Screenshot
   alt="DataDog dashboard"
   height={500}
-  src="/img/blog/2021/08/observability_tools_datadog-min.png"
+  src="/img/blog/2021/08/observability_tools_datadog-min.webp"
   title="DataDog dashboard (Source: DataDog website)"
   width={700}
 />
@@ -228,7 +228,7 @@ Splunk's observability Cloud for Enterprise editions starts at $95 per host per 
 <Screenshot
   alt="Splunk dashboard"
   height={500}
-  src="/img/blog/2021/08/observability_tools_splunk-min.png"
+  src="/img/blog/2021/08/observability_tools_splunk-min.webp"
   title="Splunk dashboard (Source: Splunk website)"
   width={700}
 />
@@ -256,11 +256,11 @@ cd signoz/deploy/
 
 You can read more about deploying SigNoz from its documentation.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=observability_tools)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=observability_tools)
 
 You can check out SigNoz's GitHub repo here 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 ___
 
 #### **Related Content**

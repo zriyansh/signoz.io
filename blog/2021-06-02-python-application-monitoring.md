@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: In this article, learn how to setup application monitoring for Python apps using an open-source solution, SigNoz.
-image: /img/blog/2021/06/python_application_monitoring_hc.png
+image: /img/blog/2021/06/python_application_monitoring_hc.webp
 keywords:
   - python application monitoring
   - opentelemetry
@@ -22,11 +22,11 @@ In this article, learn how to setup application monitoring for Python apps using
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/06/python_application_monitoring_hc.png)
+![Cover Image](/img/blog/2021/06/python_application_monitoring_hc.webp)
 
 If you want to check our Github repo before diving in 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 **The cost of a millisecond.**
 
@@ -50,7 +50,7 @@ SigNoz is a full-stack open-source application monitoring and observability plat
 
 And once you know the affected service, trace data can help you identify the exact code causing the issue. Using SigNoz dashboard, you can visualize your traces easily with flamegraphs.
 
-![](/img/blog/2021/05/screenzy-1622399034895.png)
+![](/img/blog/2021/05/screenzy-1622399034895.webp)
 
 <!--- Distributed tracing visualized with flamegraphs on SigNoz dashboard --->
 
@@ -66,7 +66,7 @@ We have set up a [sample ToDo Python app](https://github.com/SigNoz/sample-flask
 1. **Install Docker**<br></br>
    You can install Docker by following the steps listed on their website [here.](https://www.docker.com/get-started) For this tutorial, you can choose the Docker Desktop option based on the system you have.
 
-   ![](/img/blog/2021/05/screenzy-1621623948044-2.png)
+   ![](/img/blog/2021/05/screenzy-1621623948044-2.webp)
 
 2. **Clone SigNoz GitHub repository**<br></br>
    From your terminal use the following command to clone SigNoz's GitHub repository.
@@ -90,17 +90,17 @@ We have set up a [sample ToDo Python app](https://github.com/SigNoz/sample-flask
 
    Trying out SigNoz with ClickHouse database takes less than 1.5GB of memory and for this tutorial, we will use that option.
 
-   ![](/img/blog/2021/06/screenzy-1623086990810-1.png)
+   ![](/img/blog/2021/06/screenzy-1623086990810-1.webp)
 
    You will get the following message once the installation is complete.
 
-   ![](/img/blog/2021/06/screenzy-1623086918860-1.png)
+   ![](/img/blog/2021/06/screenzy-1623086918860-1.webp)
 
    Note that this setup is just for demo/testing purposes and you need to proceed with Kafka + Druid set up option in case you want to set up SigNoz for use in production.
 
 Once the installation runs successfully, the UI should be accessible at port 3000. Wait for 2-3 mins for the data to be available to frontend.
 
-![SigNoz UI](/img/blog/2021/05/screenzy-1621624012520-3.png)
+![SigNoz UI](/img/blog/2021/05/screenzy-1621624012520-3.webp)
 
 The applications shown in the dashboard are from a sample app called Hot R.O.D that comes with the installation bundle. It has 4 microservices being monitored: Frontend, Customer, Driver and Route. You can access the Hot R.O.D application UI at: [http://localhost:9000/](http://localhost:9000/)
 
@@ -128,7 +128,7 @@ SigNoz supports [OpenTelemetry](https://opentelemetry.io/) as the primary way fo
 
 On MacOS the installation is done using Homebrew's brew package manager. Once the installation is done, don't forget to start MongoDB services using `brew services start mongodb/brew/mongodb-community@4.4`  on your macOS terminal.
 
-![Starting mongodb with homebrew](/img/blog/2021/05/screenzy-1622494628333.png)
+![Starting mongodb with homebrew](/img/blog/2021/05/screenzy-1622494628333.webp)
 
 ### Steps
 
@@ -148,12 +148,12 @@ On MacOS the installation is done using Homebrew's brew package manager. Once th
    python3 app.py
    ```
 
-   ![mac terminal running Python apps](/img/blog/2021/05/screenzy-1622486361195.png)
+   ![mac terminal running Python apps](/img/blog/2021/05/screenzy-1622486361195.webp)
    <!--- On my mac terminal --->
 
    You can now access the UI of the app on your local host: [http://localhost:5000/](http://localhost:5000/)
 
-   ![](/img/blog/2021/05/screenzy-1622486344949-1.png)
+   ![](/img/blog/2021/05/screenzy-1622486344949-1.webp)
    TODO reminder app with Flask and MongoDB
 
    Press 'Ctrl + C' to exit the app once you have made sure it is running properly.
@@ -198,7 +198,7 @@ On MacOS the installation is done using Homebrew's brew package manager. Once th
 
 And, congratulations! You have instrumented your sample Python app. You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000/) to monitor your app for performance metrics.
 
-![Python app in the application list](/img/blog/2021/05/dashboard-1.png)
+![Python app in the application list](/img/blog/2021/05/dashboard-1.webp)
 
 ## Using SigNoz dashboard to identify issues causing high latency in your app
 
@@ -208,23 +208,23 @@ In just 5 easy steps, our dashboard lets you drill down to events causing a dela
 
 1. **Choose the service you want to inspect**
 
-   ![List of services monitored](/img/blog/2021/06/dashboard_applications_list-2.png)
+   ![List of services monitored](/img/blog/2021/06/dashboard_applications_list-2.webp)
 
 2. **Choose the timestamp where latency is high and click on view traces**
 
-   ![Dashboard showing RED metrics](/img/blog/2021/06/dashboard_view_traces-1.png)
+   ![Dashboard showing RED metrics](/img/blog/2021/06/dashboard_view_traces-1.webp)
 
 3. **Choose the trace ID with the highest latency**
 
-   ![See list of traces](/img/blog/2021/06/dashboard_highest_traceid.png)
+   ![See list of traces](/img/blog/2021/06/dashboard_highest_traceid.webp)
 
 4. **Inspect distributed traces with flamegraph**
 
-   ![Flamegraphs for distributed tracing](/img/blog/2021/06/dashboard_flamegraph.png)
+   ![Flamegraphs for distributed tracing](/img/blog/2021/06/dashboard_flamegraph.webp)
 
 5. **Zero in on the highest latency event and take action**
 
-   ![Zoom in to specific spans](/img/blog/2021/06/dashboard_highest_latency.png)
+   ![Zoom in to specific spans](/img/blog/2021/06/dashboard_highest_latency.webp)
 
 If you need any help with trying out SigNoz, feel free to mail me at ankit.anand@signoz.io.
 
@@ -234,4 +234,4 @@ They say, "If it's not monitored, then it's not in production." And with SigNoz 
 
 At SigNoz, we are committed to making the best open-source, self-hosted tool for application performance monitoring. Feel free to check out our GitHub repo here 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)

@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankitnayan
 author_image_url: https://avatars.githubusercontent.com/u/12460410?v=4
 description: In this blog, we explain how we enable high availability Prometheus using Cortex and Cassandra. This provides a single pane of view across multiple clusters - which enables visualising all monitoring metrics in one go.
-image: /img/blog/2019/12/HA-Prometheus-1.png
+image: /img/blog/2019/12/HA-Prometheus-1.webp
 keywords:
   - Prometheus
   - cassandra
@@ -20,7 +20,7 @@ In this blog, we explain how we enable high availability Prometheus using Cortex
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2019/12/HA-Prometheus-1.png)
+![Cover Image](/img/blog/2019/12/HA-Prometheus-1.webp)
 
 ## Why need Cortex?
 
@@ -28,11 +28,11 @@ In this blog, we explain how we enable high availability Prometheus using Cortex
 - Enabling HA Prometheus - Usually folks run a singe Prometheus per cluster. If that node is down or Prometheus gets killed, you will find gaps in your graph till the time k8s recreates Prometheus pod. With Cortex, you can run multiple instances of Prometheus in your cluster and Cortex will de-duplicate metrics for you.
 - Single pane of view for multi-cluster Prometheus - When you have multiple Prometheuses across multiple clusters, provisioning 1 Grafana dashboard for each cluster will quickly become a pain. Also, aggregating metrics over multiple clusters won't be possible. Cortex enables this by letting Prometheuses in each cluster write their metrics to single DB and provide a label for your cluster. A Grafana dashboard built on top of the shared DB will enable queries to any of the clusters.
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ## Architecture of Cortex
 
-![](/img/blog/2019/11/cortex-architecture.png)Architecture of Cortex
+![](/img/blog/2019/11/cortex-architecture.webp)Architecture of Cortex
 
 ## Must know about Ingester
 
@@ -197,9 +197,9 @@ This will identify tenants with a username. This is not full-proof.
 ## Check single pane of view
 
 The cluster labels that we specified while helm installing Prometheus will let you run aggregated queries over clusters. The below image shows application metrics from different clusters and Kubernetes Capacity Planning dashboards also cluster-wise.
-![](/img/blog/2019/11/mutli-cluster-grafana.png)Single Pane of view for multi-cluster setup
+![](/img/blog/2019/11/mutli-cluster-grafana.webp)Single Pane of view for multi-cluster setup
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ## Provisioning Grafana dashboards for Cortex
 
@@ -233,9 +233,9 @@ You can pre-provision dashboards for Cortex performance or you can copy json fil
 
 Dashboard links and instructions can be found at [official Cortex github repo](https://github.com/cortexproject/cortex/tree/1dd96fd35d120bb45ce793a8799e43c14a50ac84/production/dashboards).
 
-![](/img/blog/2019/11/Screenshot-2019-11-30-at-2.59.13-PM.png)Cortex Write Dashboard
+![](/img/blog/2019/11/Screenshot-2019-11-30-at-2.59.13-PM.webp)Cortex Write Dashboard
 
-![](/img/blog/2019/11/Screenshot-2019-11-30-at-3.00.18-PM.png)Cortex Read Dashboard
+![](/img/blog/2019/11/Screenshot-2019-11-30-at-3.00.18-PM.webp)Cortex Read Dashboard
 
 Using the above dashboards you can monitor Cortex writes/sec by status codes and latencies of Distributor and Ingester. And similarly for reads/sec of Querier, Ingester and Memcache.
 
@@ -255,7 +255,7 @@ Before you make Cortex production-ready, you should go through the below docs to
 - [Running Cortex in Production](https://cortexmetrics.io/docs/production/running-in-production/)
 - [Ingester Hand Over](https://github.com/cortexproject/cortex/blob/master/docs/ingester-handover.md)
 
-## [![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+## [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ## **How can I try out remote write in Prometheus?**
 

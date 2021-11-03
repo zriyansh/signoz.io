@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: SigNoz is now available with ClickHouse as a storage backend. This and other updates on what we've been upto at SigNoz. And yes, we trended at number 1 on GitHub trending.
-image: /img/blog/2021/08/signal_02_cover_hc.jpeg
+image: /img/blog/2021/08/signal_02_cover_hc.webp
 keywords:
   - SigNoz Product Update
   - GitHub contributors
@@ -18,7 +18,7 @@ It's time for community updates 2. We're delighted to announce that SigNoz is no
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/08/signal_02_cover_hc.jpeg)
+![Cover Image](/img/blog/2021/08/signal_02_cover_hc.webp)
 
 Welcome to Signal #02!
 
@@ -35,7 +35,7 @@ Last month, we had two major releases: [v0.3.1](https://github.com/SigNoz/signoz
 In our last issue, we had mentioned community demands to extend support for ClickHouse as a storage backend. And we're delighted to announce that it is now integrated with SigNoz.
 When you install SigNoz, you will have an option to either go with ClickHouse or Kafka + Druid as your storage backend.
 
-![Installing SigNoz through Docker](/img/blog/2021/07/choose-setup-1.png)
+![Installing SigNoz through Docker](/img/blog/2021/07/choose-setup-1.webp)
 
 Users can choose between ClickHouse or Kafka + Druid for their storage system of choice while installing SigNoz
 
@@ -49,7 +49,7 @@ We have improved our dashboard loading time and reduced the bundle size to less 
 **Gantt charts for better trace/span visualization**<br></br>
 We have made it easier to drill down on issues causing latency in your services. With Gantt charts you can visualise your services and events in a parent-child relationship tree which makes it easier to figure out which events are causing a latency in a request call.
 
-![Gantt charts on SigNoz UI](/img/blog/2021/07/gantt-charts.png)
+![Gantt charts on SigNoz UI](/img/blog/2021/07/gantt-charts.webp)
 
 <!--- Gantt charts on SigNoz dashboard for trace/span visualization --->
 
@@ -78,19 +78,19 @@ A few things that will be enabled post metrics ingestion pipeline:
 
 We conducted a workshop on **Observability 101 using OpenTelemetry & SigNoz** during Bengaluru's first ever **Kubernetes Community Days.** Ankit Nayan, our CTO talked about the importance of observability in modern-day distributed systems. We also gave a hands-on demo of SigNoz where we instrumented a Python app to set it up for monitoring with SigNoz.
 
-![](/img/blog/2021/07/observability-101.png)
+![](/img/blog/2021/07/observability-101.webp)
 
 **Trending on GitHub 🔥**
 
 On 27th June, we found out we were trending at **#1 position on GitHub** worldwide across all programming languages. More than 100 million repositories are live on GitHub, and to find SigNoz right at #1 out of all these repos was an humbling experience for the team. We're extremely thankful to the entire Dev community for showing us such love 💙
 
-![](/img/blog/2021/07/github_trending_1.png)
+![](/img/blog/2021/07/github_trending_1.webp)
 Our GitHub repo trending at #1
 
 **Stargazers**✨
 
 On that front, we're also delighted to announce that we have **crossed 4k stargazers on GitHub.**⭐  We are thankful to each of you stargazers 🤓
-![](/img/blog/2021/07/stargazers-1.png)
+![](/img/blog/2021/07/stargazers-1.webp)
 We crossed 4k GitHub stargazers in June
 
 **Slack Community 👋**
@@ -119,4 +119,4 @@ Shout out to [Raj](https://github.com/rajdas98) and [Yash](https://github.com/jy
 
 Thank you for taking out the time to read our second issue :) If you have any feedback or want any changes with the format, create an issue [here](https://github.com/SigNoz/signoz/issues).
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)

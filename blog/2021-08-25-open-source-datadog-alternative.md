@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/pranay01
 author_image_url: https://avatars.githubusercontent.com/u/504541?v=4
 description: DataDog is a popular APM tool. But it is very expensive and opaque about its billing practices. What if you could get a SaaS like experience from an open-source APM tool....
-image: /img/blog/2021/08/signoz_datadog_alternatives_cover-min.png
+image: /img/blog/2021/08/signoz_datadog_alternatives_cover-min.webp
 keywords:
   - datadog
   - open source
@@ -25,7 +25,7 @@ More and more companies are now shifting to a cloud-native & microservices-based
 
 <!--truncate-->
 
-![cover image](/img/blog/2021/08/signoz_datadog_alternatives_cover-min.png)
+![cover image](/img/blog/2021/08/signoz_datadog_alternatives_cover-min.webp)
 
 We have spent years learning about application monitoring & observability. What are the key features an observability tool should have to enable fast resolution of issues.
 
@@ -79,7 +79,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
     alt="SigNoz dashboard showing popular RED metrics"
     height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.png"
+    src="/img/blog/common/signoz_charts_application_metrics.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
 />
@@ -91,7 +91,7 @@ Found something suspicious in a metric, just click that point in the graph & get
 <Screenshot
     alt="Seamless flow between metrics and traces"
     height={500}
-    src="/img/blog/2021/08/metrics_to_traces_signoz-min.png"
+    src="/img/blog/2021/08/metrics_to_traces_signoz-min.webp"
     title="Move from metrics to traces at any point of time which needs more analysis"
     width={700}
 />
@@ -103,7 +103,7 @@ For example, you can find latency experienced by customers who have customer_typ
 <Screenshot
     alt="Filtering based on tags"
     height={500}
-    src="/img/blog/2021/08/tags_based_filtering_signoz-min.png"
+    src="/img/blog/2021/08/tags_based_filtering_signoz-min.webp"
     title="Filter traces for a specific user group using tags"
     width={700}
 />
@@ -115,7 +115,7 @@ Create custom metrics from filtered traces to find metrics of any type of reques
 <Screenshot
     alt="Custom aggregates on filtered traces"
     height={500}
-    src="/img/blog/2021/08/metrics_on_filtered_traces-min.png"
+    src="/img/blog/2021/08/metrics_on_filtered_traces-min.webp"
     title="Find custom aggregates on filtered traces"
     width={700}
 />
@@ -127,7 +127,7 @@ You can drill down details of how many events is each application sending or at 
 <Screenshot
     alt="Transparent usage data"
     height={500}
-    src="/img/blog/2021/08/transparent_usage_data-min.png"
+    src="/img/blog/2021/08/transparent_usage_data-min.webp"
     title="SigNoz provides usage explorer so that you are always informed about your usage"
     width={700}
 />
@@ -139,7 +139,7 @@ Detailed flamegraph & Gantt charts to find the exact cause of the issue and whic
 <Screenshot
     alt="Detailed Flamegraphs & Gantt charts"
     height={500}
-    src="/img/blog/common/signoz_flamegraphs.png"
+    src="/img/blog/common/signoz_flamegraphs.webp"
     title="Spans of a trace visualized with the help of flamegraphs and gantt charts in SigNoz dashboard"
     width={700}
 />
@@ -158,11 +158,11 @@ cd signoz/deploy/
 
 You can read more about deploying SigNoz from its documentation.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=open_source_dd_alternative)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=open_source_dd_alternative)
 
 If you liked what you read, then check out our GitHub repo 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 Our slack community is a great place to get your queries solved instantly and get community support for SigNoz. Link to join 👇<br></br>
 [SigNoz slack community](https://bit.ly/signoz-slack)

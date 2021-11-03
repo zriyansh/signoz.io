@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: In this article, learn how to setup application monitoring for Node.js apps with OpenTelemetry and SigNoz.
-image: /img/blog/2021/08/opentelemetry_nodejs.jpeg
+image: /img/blog/2021/08/opentelemetry_nodejs.webp
 keywords:
   - opentelemetry
   - opentelemetry javascript
@@ -33,7 +33,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
   alt="Monitor your Nodejs applications with SigNoz"
   height={500}
-  src="/img/blog/common/signoz_charts_application_metrics.png"
+  src="/img/blog/common/signoz_charts_application_metrics.webp"
   width={700}
 />
 OpenTelemetry is a set of tools, APIs, and SDKs used to instrument applications to create and manage telemetry data(Logs, metrics, and traces). For any distributed system based on microservice architecture, it's an operational challenge to solve performance issues quickly.
@@ -65,7 +65,7 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
 <Screenshot
   alt="SigNoz dashboard"
   height={500}
-  src="/img/blog/common/signoz_dashboard_homepage.png"
+  src="/img/blog/common/signoz_dashboard_homepage.webp"
   title="SigNoz dashboard"
   width={700}
 />
@@ -164,7 +164,7 @@ And, congratulations! You have instrumented your sample Node.js app. You can now
 <Screenshot
   alt="Sample nodejs app in the applications monitored"
   height={500}
-  src="/img/blog/2021/08/opentelemetry_nodejs_signoz_dashboard.png"
+  src="/img/blog/2021/08/opentelemetry_nodejs_signoz_dashboard.webp"
   title="Sample_app in the list of applications monitored"
   width={700}
 />
@@ -182,7 +182,7 @@ SigNoz comes with out of box RED metrics charts and visualization. RED metrics s
 <Screenshot
   alt="Sample nodejs app in the applications monitored"
   height={500}
-  src="/img/blog/common/signoz_charts_application_metrics.png"
+  src="/img/blog/common/signoz_charts_application_metrics.webp"
   title="Measure things like application latency, requests per sec, error percentage and see your top endpoints"
   width={700}
 />
@@ -192,7 +192,7 @@ You can then choose a particular timestamp where latency is high to drill down t
 <Screenshot
       alt="See traces, and apply powerful filters on trace data"
       height={500}
-      src="/img/blog/common/signoz_list_of_traces_hc.png"
+      src="/img/blog/common/signoz_list_of_traces_hc.webp"
       title="View of traces at a particular timestamp"
       width={700}
 />
@@ -202,7 +202,7 @@ You can use flamegraphs to exactly identify the issue causing the latency.
 <Screenshot
       alt="Flamegraphs for distributed tracing"
       height={500}
-      src="/img/blog/common/signoz_flamegraphs.png"
+      src="/img/blog/common/signoz_flamegraphs.webp"
       title="Flamegraphs showing exact duration taken by each spans - a concept of distributed tracing"
       width={700}
 />
@@ -213,7 +213,7 @@ OpenTelemetry makes it very convenient to instrument your Nodejs application. Yo
 
 You can try out SigNoz by visiting its GitHub repo 👇<br></br>
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 If you face any issues while trying out SigNoz, feel free to write to us at: support@signoz.io
 

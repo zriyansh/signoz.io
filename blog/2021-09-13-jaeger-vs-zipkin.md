@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Jaeger and Zipkin are two popular open-source projects used for end-to-end distributed tracing. While Zipkin is an older project and has a wider community, Jaeger has a modern, scalable architecture and supports open standards of instrumentation libraries..
-image: /img/blog/2021/09/jaeger_vs_zipkin_apm_cover-min.jpg
+image: /img/blog/2021/09/jaeger_vs_zipkin_apm_cover-min.webp
 keywords:
   - jaeger
   - zipkin
@@ -24,7 +24,7 @@ Distributed tracing is becoming a critical component of any application's perfor
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/09/jaeger_vs_zipkin_apm_cover-min.jpg)
+![Cover Image](/img/blog/2021/09/jaeger_vs_zipkin_apm_cover-min.webp)
 
 Both Zipkin and Jaeger are popular open-source distributed tracing tools. Zipkin was originally inspired by Google's Dapper and was developed by Twitter. Zipkin is a much older project than Jaeger and was first released as an open-source project in 2012. Jaeger was originally built by teams at Uber and then open-sourced in 2015. It got accepted as a Cloud Native incubation project in 2017 and graduated in 2019.
 
@@ -39,7 +39,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
     alt="Microservices architecture"
     height={500}
-    src="/img/blog/2021/09/jaeger_vs_zipkin_microservices_architecture.png"
+    src="/img/blog/2021/09/jaeger_vs_zipkin_microservices_architecture.webp"
     title="Microservice architecture of a fictional e-commerce application"
     width={700}
 />
@@ -56,7 +56,7 @@ A trace context is passed along when requests travel between services, which tra
 <Screenshot
     alt="Trace context is passed to track user requests across services"
     height={500}
-    src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.png"
+    src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.webp"
     title="A trace context is passed when user requests pass from one service to another"
     width={700}
 />
@@ -72,7 +72,7 @@ A trace context is passed along when requests travel between services, which tra
 <Screenshot
     alt="Jaeger architecture"
     height={500}
-    src="/img/blog/2021/09/Jaeger_architecture-min.jpg"
+    src="/img/blog/2021/09/Jaeger_architecture-min.webp"
     title="Illustration of  Jaeger architecture (Source: Jaeger website)"
     width={700}
 />
@@ -80,7 +80,7 @@ A trace context is passed along when requests travel between services, which tra
 <Screenshot
     alt="Zipkin architecture"
     height={500}
-    src="/img/blog/2021/09/zipkin_architecture-min.jpg"
+    src="/img/blog/2021/09/zipkin_architecture-min.webp"
     title="Illustration of Zipkin architecture (Source: Zipkin website)"
     width={700}
 />
@@ -111,7 +111,7 @@ The consumer of the query service is a Web UI in both Jaeger and Zipkin, which i
 <Screenshot
     alt="Jaeger's web UI showing Gantt charts"
     height={500}
-    src="/img/blog/2021/08/jaeger_gantt_charts-min.png"
+    src="/img/blog/2021/08/jaeger_gantt_charts-min.webp"
     title="Jaeger's Web UI showing spans with Gantt charts"
     width={700}
 />
@@ -119,7 +119,7 @@ The consumer of the query service is a Web UI in both Jaeger and Zipkin, which i
 <Screenshot
     alt="Zipkin trace UI"
     height={500}
-    src="/img/blog/2021/09/jaeger_vs_zipkin_trace_ui.jpg"
+    src="/img/blog/2021/09/jaeger_vs_zipkin_trace_ui.webp"
     title="Zipkin's trace UI"
     width={700}
 />
@@ -154,7 +154,7 @@ SigNoz is built to support OpenTelemetry natively. It also provides users flexib
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
     height={500}
-    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.png"
+    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.webp"
     title="Architecture of SigNoz with ClickHouse as storage backend and OpenTelemetry for code instrumentatiion"
     width={700}
 />
@@ -164,7 +164,7 @@ SigNoz comes with out of box visualization of things like RED metrics.
 <Screenshot
     alt="SigNoz UI showing the popular RED metrics"
     height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.png"
+    src="/img/blog/common/signoz_charts_application_metrics.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
 />
@@ -180,7 +180,7 @@ Some of the things SigNoz can help you track:
 
 You can check out SigNoz's GitHub repo here 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ___
 

@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: End-to-end performance monitoring of Spring Boot application with OpenTelemetry. Get your telemetry data visualized with SigNoz.
-image: /img/blog/2021/08/opentelemetry_springboot_hc.png
+image: /img/blog/2021/08/opentelemetry_springboot_hc.webp
 keywords:
   - OpenTelemetry
   - OpenTelemetry java
@@ -25,7 +25,7 @@ OpenTelemetry can auto-instrument your Spring Boot application to capture teleme
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/08/opentelemetry_springboot_hc-min.png)
+![Cover Image](/img/blog/2021/08/opentelemetry_springboot_hc-min.webp)
 
 OpenTelemetry is a vendor-agnostic instrumentation library. In this article, let's explore how you can auto-instrument your Java Spring Boot application with OpenTelemetry and get the data reported through SigNoz - an open-source APM and observability tool.
 
@@ -46,7 +46,7 @@ cd signoz/deploy/
 
 You will have an option to choose between ClickHouse or Kafka + Druid as a storage option. Trying out SigNoz with ClickHouse database takes less than 1.5GB of memory, and for this tutorial, we will use that option.<br></br>
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=springboot)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=springboot)
 
 When you are done installing SigNoz, you can access the UI at: [http://localhost:3000](http://localhost:3000/application)
 
@@ -57,7 +57,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
    alt="SigNoz dashboard showing application list"
    height={500}
-   src="/img/blog/2021/08/signoz_dashboard_hc.png"
+   src="/img/blog/2021/08/signoz_dashboard_hc.webp"
    title="SigNoz Dashboard"
    width={700}
 />
@@ -90,7 +90,7 @@ Steps to get the app set up and running:
 <Screenshot
    alt="Spring PetClinic app accessed at port:8090"
    height={500}
-   src="/img/blog/2021/08/spring_petclinic_hc.png"
+   src="/img/blog/2021/08/spring_petclinic_hc.webp"
    title="Sample Spring Boot application running in your local host."
    width={700}
 />
@@ -135,7 +135,7 @@ Below you can find your `javaApp` in the list of applications being monitored.
 <Screenshot
    alt="`Javaapp` appears in the list of applications monitored through SigNoz"
    height={500}
-   src="/img/blog/2021/08/javaapp_boxed_hc.png"
+   src="/img/blog/2021/08/javaapp_boxed_hc.webp"
    title="`javaApp` in the list of applications monitored"
    width={700}
 />
@@ -152,7 +152,7 @@ SigNoz comes with out of box RED metrics charts and visualization. RED metrics s
   <Screenshot
        alt="SigNoz dashboard showing application latency, requests per sec, error percentage and top endpoints"
        height={500}
-       src="/img/blog/2021/08/signoz_charts_hc.png"
+       src="/img/blog/2021/08/signoz_charts_hc.webp"
        title="Measure things like application latency, requests per sec, error percentage and see your top endpoints with SigNoz."
        width={700}
   />
@@ -161,7 +161,7 @@ You can then choose a particular timestamp where latency is high to drill down t
 <Screenshot
      alt="List of traces shown on SigNoz dashboard"
      height={500}
-     src="/img/blog/2021/08/signoz_visualization_hc.png"
+     src="/img/blog/2021/08/signoz_visualization_hc.webp"
      title="View of traces at a particular timestamp"
      width={700}
 />
@@ -171,7 +171,7 @@ You can use flamegraphs to exactly identify the issue causing the latency.
 <Screenshot
      alt="Flamegraphs and gantt charts to visualize time taken by requests"
      height={500}
-     src="/img/blog/2021/08/signoz_flamegraphs_hc.png"
+     src="/img/blog/2021/08/signoz_flamegraphs_hc.webp"
      title="Flamegraphs showing exact duration taken by each spans - a concept of distributed tracing"
      width={700}
 />
@@ -181,7 +181,7 @@ You can also build custom metrics dashboard for your infrastructure.
 <Screenshot
     alt="SigNoz custom metrics dashboard"
     height={500}
-    src="/img/blog/2021/10/signoz_custom_dashboard-min.jpg"
+    src="/img/blog/2021/10/signoz_custom_dashboard-min.webp"
     title="You can also build a custom metrics dashboard for your infrastructure"
     width={700}
 />
@@ -194,7 +194,7 @@ You can try out SigNoz by visiting its GitHub repo 👇
 
 <div class="text--center">
 
-[![SigNoz repo](/img/blog/common/signoz_github.png)](https://github.com/signoz/signoz)
+[![SigNoz repo](/img/blog/common/signoz_github.webp)](https://github.com/signoz/signoz)
 
 </div>
 

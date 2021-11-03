@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankitnayan
 author_image_url: https://avatars.githubusercontent.com/u/12460410?v=4
 description: In this blog, we compare Instana and Sysdig - two popular monitoring tools which claim to show APM metrics without need to instrument code.
-image: /img/blog/2019/08/Instana-Sysdig-2.png
+image: /img/blog/2019/08/Instana-Sysdig-2.webp
 keywords:
   - instana
   - sysdig
@@ -21,7 +21,7 @@ In this blog, we compare Instana and Sysdig - two popular monitoring tools which
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2019/08/Instana-Sysdig-2.png)
+![Cover Image](/img/blog/2019/08/Instana-Sysdig-2.webp)
 
 We are running [Sock Shop](https://github.com/microservices-demo/microservices-demo/) application open sourced by [WeaveWorks](https://www.weave.works/) to test 2 popular monitoring solutions - [Instana](https://www.instana.com/) and [Sysdig](https://sysdig.com/).
 
@@ -47,10 +47,10 @@ What are the different features which each product is focusing on
 
 Instana has better integration with Kubernetes. Immediately checks all Kubernetes base info. Sysdig is not able to find services from Kubernetes services name.
 
-![](/img/blog/2019/08/Kubernetes-Dashboard-Instana-1.jpg)
+![](/img/blog/2019/08/Kubernetes-Dashboard-Instana-1.webp)
 Instana detects all Kubernetes Clusters and gives a clean dashboard
 
-![](/img/blog/2019/08/Cluster_Dashboard-Sysdig-2.jpg)
+![](/img/blog/2019/08/Cluster_Dashboard-Sysdig-2.webp)
 Sysdig's Dashboard is more technical with not much focus on UI
 
 ## Automatic Service Detection
@@ -59,26 +59,26 @@ Sysdig's Dashboard is more technical with not much focus on UI
 
 The Services dashboard gives important metrics like inbound calls, error rates, mean latency, etc. out of the box.
 
-![](/img/blog/2019/08/Instana-Service-Dashboard-3.jpg)
+![](/img/blog/2019/08/Instana-Service-Dashboard-3.webp)
 Instana's Service Dashboard
 
 **_Sysdig_**
-![](/img/blog/2019/08/Sysdig-Dashboard-5.jpg)
+![](/img/blog/2019/08/Sysdig-Dashboard-5.webp)
 Sysdig's Service dashboard points to each service
 
 ## List of services discovered
 
 The [architecture](https://github.com/microservices-demo/microservices-demo/blob/master/internal-docs/design.md) of Sock Shop application looks like as shown below:
 
-![](/img/blog/2019/08/SOck-Shop-Arch-6.jpg)Sock Shop Architecture
+![](/img/blog/2019/08/SOck-Shop-Arch-6.webp)Sock Shop Architecture
 
 **Instana **is only able to detect the following services : queue-master, shipping, orders and carts.
 
-![](/img/blog/2019/08/Instana-services-7.jpg)Instana detects only a few services
+![](/img/blog/2019/08/Instana-services-7.webp)Instana detects only a few services
 
 Sysdig detects almost all the services which are part of the architecture. This they are able to do without putting any load to Sock Shop application - and hence are not dependent on API calls.
 
-![](/img/blog/2019/08/Sysdig-services-8.jpg)
+![](/img/blog/2019/08/Sysdig-services-8.webp)
 Sysdig detects almost all of the services
 
 Sysdig provides very granular way of how to see metrics. It is called Groupings.

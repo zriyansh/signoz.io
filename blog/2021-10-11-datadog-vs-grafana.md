@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: In this article, we will compare DataDog with Grafana. Both are monitoring tools but differ significantly in their offerings. DataDog is a paid SaaS monitoring tool, while Grafana is an open-source metrics...
-image: /img/blog/2021/10/datadog_vs_grafana_cover-min.jpg
+image: /img/blog/2021/10/datadog_vs_grafana_cover-min.webp
 keywords:
   - datadog
   - grafana
@@ -24,7 +24,7 @@ DataDog is a paid SaaS tool that provides a range of products for monitoring app
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/10/datadog_vs_grafana_cover-min.jpg)
+![Cover Image](/img/blog/2021/10/datadog_vs_grafana_cover-min.webp)
 
 import Screenshot from "@theme/Screenshot"
 
@@ -81,7 +81,7 @@ Some of the key differences between DataDog and Grafana:
 <Screenshot
     alt="DataDog dashboard"
     height={500}
-    src="/img/blog/2021/10/datadog_vs_grafana_datadog_dashboard-min.jpg"
+    src="/img/blog/2021/10/datadog_vs_grafana_datadog_dashboard-min.webp"
     title="DataDog account comes with in-built charts for things like metrics, traces and logs"
     width={700}
 />
@@ -89,7 +89,7 @@ Some of the key differences between DataDog and Grafana:
   <Screenshot
     alt="Grafana dashboard"
     height={500}
-    src="/img/blog/2021/08/observability_tools_grafana-min.png"
+    src="/img/blog/2021/08/observability_tools_grafana-min.webp"
     title="Grafana Dashboard"
     width={700}
 />
@@ -132,7 +132,7 @@ Some of the key features of Grafana are:
 <Screenshot
     alt="Grafana visualization options"
     height={500}
-    src="/img/blog/2021/10/datadog_vs_grafana_grafana_visualizations-min.jpg"
+    src="/img/blog/2021/10/datadog_vs_grafana_grafana_visualizations-min.webp"
     title="Grafana visualization widgets for creating dashboards"
     width={700}
 />
@@ -162,7 +162,7 @@ Key architecture features:
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
     height={500}
-    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.png"
+    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.webp"
     title="Architecture of SigNoz with ClickHouse as storage backend and OpenTelemetry for code instrumentatiion"
     width={700}
 />
@@ -172,7 +172,7 @@ SigNoz comes with out of box visualization of things like RED metrics.
 <Screenshot
     alt="SigNoz UI showing the popular RED metrics"
     height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.png"
+    src="/img/blog/common/signoz_charts_application_metrics.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
 />
@@ -182,7 +182,7 @@ You can also use flamegraphs to visualize spans from your trace data. All of thi
 <Screenshot
     alt="Flamegraphs used to visualize spans of distributed tracing in SigNoz UI"
     height={500}
-    src="/img/blog/common/signoz_flamegraphs.png"
+    src="/img/blog/common/signoz_flamegraphs.webp"
     title="Flamegraphs showing exact duration taken by each spans - a concept of distributed tracing"
     width={700}
 />
@@ -192,7 +192,7 @@ You can also build custom metrics dashboard for your infrastructure.
 <Screenshot
     alt="SigNoz custom metrics dashboard"
     height={500}
-    src="/img/blog/2021/10/signoz_custom_dashboard-min.jpg"
+    src="/img/blog/2021/10/signoz_custom_dashboard-min.webp"
     title="You can also build a custom metrics dashboard for your infrastructure"
     width={700}
 />
@@ -219,11 +219,11 @@ cd signoz/deploy/
 
 You can read more about deploying SigNoz from its documentation.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=dd_vs_grafana)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=dd_vs_grafana)
 
 You can check out SigNoz's GitHub repo here 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ___
 

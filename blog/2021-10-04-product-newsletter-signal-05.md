@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: It's time for the monthly product update of SigNoz - a full-stack open-source and observability tool. Find out what we've been upto at SigNoz during September, 2021.
-image: /img/blog/2021/10/signal_05_cover-min.jpg
+image: /img/blog/2021/10/signal_05_cover-min.webp
 hide_table_of_contents: true
 keywords:
  - SigNoz Product Update
@@ -22,7 +22,7 @@ A month and thousands of code lines later, we're here with our monthly product u
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/10/signal_05_cover-min.jpg)
+![Cover Image](/img/blog/2021/10/signal_05_cover-min.webp)
 
 We also got featured by one of the top online analytics magazines as one of the leading Data Observability platforms. 🥳
 
@@ -53,7 +53,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
    alt="SigNoz dashboard showing custom metrics dashboard"
    height={500}
-   src="/img/blog/2021/10/signoz_custom_dashboard-min.jpg"
+   src="/img/blog/2021/10/signoz_custom_dashboard-min.webp"
    title="Build a custom dashboard for your infrastruture with metrics that matters to you!"
    width={700}
 />

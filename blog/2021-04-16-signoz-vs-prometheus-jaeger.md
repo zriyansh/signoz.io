@@ -9,7 +9,7 @@ author_url: https://github.com/ankitnayan
 author_image_url: https://avatars.githubusercontent.com/u/12460410?v=4
 hide_table_of_contents: true
 description: Why we felt there was a need for a full-stack open source observability platform and how we went about building it.
-image: /img/SigNoz_UI_hc.png
+image: /img/SigNoz_UI_hc.webp
 keywords:
   - SigNoz
   - Prometheus
@@ -24,7 +24,7 @@ Why we felt there was a need for a full-stack open source observability platform
 
 <!--truncate-->
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ### Table of Contents
 
@@ -62,7 +62,7 @@ We have been using logs for long to debug applications. For an application handl
 
 [Loki by GrafanaLabs](https://grafana.com/oss/loki/) is one such effort in making logs more usable and cost-efficient.
 
-![](/img/blog/2021/04/image.png)Prometheus, Jaeger, Elastic & Loki from left to right
+![](/img/blog/2021/04/image.webp)Prometheus, Jaeger, Elastic & Loki from left to right
 
 ## The Easy and Hard things about Prometheus
 
@@ -77,7 +77,7 @@ But when you look to deploy Prometheus in a large company, there will be things 
 - Prometheus is not horizontally scalable, you will need to use a machine with bigger resources to scale Prometheus. Or, you need to federate Prometheus where a parent Prometheus scrapes child prometheuses on fixed intervals.
 - Prometheus stores data on disk by default. You need to set up Cortex or Thanos to provide long-term storage and horizontally scalable Prometheus. Running Cortex can turn out to be difficult.
 
-![Architecture of cortex](/img/blog/2021/04/Screenshot-2021-04-16-at-6.47.08-PM.png)Architecture of Cortex
+![Architecture of cortex](/img/blog/2021/04/Screenshot-2021-04-16-at-6.47.08-PM.webp)Architecture of Cortex
 
 - You would need to deal with a lot of exporters and hence manage their uptime.
 - Setting up Prometheus with all exporters and long term storage and building Grafana panels can take almost 1.5 months of developer time
@@ -122,7 +122,7 @@ You can:
 
 1. Look for errors in the spans
 
-   ![](/img/blog/2021/04/screenzy-1619008131444.jpg)Errors in span
+   ![](/img/blog/2021/04/screenzy-1619008131444.webp)Errors in span
 
 2. Look for the longest span and try to optimize its time
 
@@ -150,7 +150,7 @@ You can:
 
 We saw how to setup metrics using Prometheus + Cortex. We also saw how to setup distributed tracing using Jaeger. Now, as a full solution, we want to run both metrics and traces to gain deep visibility into debugging issues. This means we have to run Prometheus + Cortex + Jaeger together. The architecture together looks like below image 👇
 
-![](/img/blog/2021/04/screenzy-1619008261624.jpg)Prometheus + Cortex + Jaeger - Quickly gets very complex
+![](/img/blog/2021/04/screenzy-1619008261624.webp)Prometheus + Cortex + Jaeger - Quickly gets very complex
 
 The above architecture uses both metrics and tracing data as independent silos, starting from different collectors to different queriers. We tried building a unified UI that can query metrics from Cortex querier and traces from Jaeger querier. But it quickly got very complex.
 
@@ -168,7 +168,7 @@ The above architecture uses both metrics and tracing data as independent silos, 
 
 ## Why we built SigNoz?
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 - Metrics + Traces in a single pane
 - Powerful Trace filtering and aggregation capabilities
@@ -243,11 +243,11 @@ where `app_name` is the name of the application and `myapp` is the jar file for 
 
 That's all you need to see the beautiful dashboard of SigNoz with all your metrics and traces being explorable.
 
-![](/img/blog/2021/04/screenzy-1619009722859.jpg)Application page in SigNoz
+![](/img/blog/2021/04/screenzy-1619009722859.webp)Application page in SigNoz
 
-![](/img/blog/2021/04/screenzy-1619009757596.jpg)Trace Filtering page in SigNoz
+![](/img/blog/2021/04/screenzy-1619009757596.webp)Trace Filtering page in SigNoz
 
-![](/img/blog/2021/04/screenzy-1619009797973.jpg)FlameGraph of a trace in SigNoz
+![](/img/blog/2021/04/screenzy-1619009797973.webp)FlameGraph of a trace in SigNoz
 
 ## Summary
 
@@ -255,4 +255,4 @@ In this blog, I have laid out why we created SigNoz and how it differentiates fr
 
 Would love to get any feedback on the product and if you like what we are doing - give us a star on our Github repo 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)

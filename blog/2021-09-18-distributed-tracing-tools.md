@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: Latest top distributed tracing tools list - 1.SigNoz 2.Dynatrace 3.New Relic 4.Honeycomb 5.Lightstep 6.Instana 7.Jaeger 8.DataDog 9.Zipkin..
-image: /img/blog/2021/09/distributed_tracing_tools_cover-min.jpg
+image: /img/blog/2021/09/distributed_tracing_tools_cover-min.webp
 keywords:
   - jaeger
   - tempo
@@ -25,7 +25,7 @@ Choosing the right distributed tracing tool is critical. How do you know which i
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/09/distributed_tracing_tools_cover-min.jpg)
+![Cover Image](/img/blog/2021/09/distributed_tracing_tools_cover-min.webp)
 
 > What is a distributed tracing tool?<br></br>
 > A distributed tracing tool enables you to track user requests across multiple servers and services in a microservice architecture. It gives you a central overview of how user requests are performing in different services.
@@ -68,7 +68,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
     alt="Microservices architecture"
     height={500}
-    src="/img/blog/2021/09/jaeger_vs_zipkin_microservices_architecture.png"
+    src="/img/blog/2021/09/jaeger_vs_zipkin_microservices_architecture.webp"
     title="Microservice architecture of a fictional e-commerce application"
     width={700}
 />
@@ -85,7 +85,7 @@ A **trace context** is passed along when requests travel between services, which
 <Screenshot
     alt="Trace context is passed to track user requests across services"
     height={500}
-    src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.png"
+    src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.webp"
     title="A trace context is passed when user requests pass from one service to another"
     width={700}
 />
@@ -95,7 +95,7 @@ Below is a snapshot from SigNoz dashboard showing spans from a request as rectan
 <Screenshot
     alt="SigNoz dashboard showing spans from a request"
     height={500}
-    src="/img/blog/2021/09/spans_traces-min.jpg"
+    src="/img/blog/2021/09/spans_traces-min.webp"
     title="Spans representing logical operations within a trace as rectangular blocks (Source: SigNoz dashboard)"
     width={700}
 />
@@ -121,7 +121,7 @@ An open-source tool with the capabilities of SaaS vendors, SigNoz is a great cho
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
     height={500}
-    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.png"
+    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.webp"
     title="Architecture of SigNoz with ClickHouse as storage backend and OpenTelemetry for code instrumentatiion"
     width={700}
 />
@@ -131,7 +131,7 @@ SigNoz uses OpenTelemetry for code instrumentation. OpenTelemetry provides vendo
 <Screenshot
     alt="SigNoz UI showing the popular RED metrics"
     height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.png"
+    src="/img/blog/common/signoz_charts_application_metrics.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
 />
@@ -141,7 +141,7 @@ You can also use flamegraphs to visualize spans from your trace data. All of thi
 <Screenshot
     alt="Flamegraphs used to visualize spans of distributed tracing in SigNoz UI"
     height={500}
-    src="/img/blog/common/signoz_flamegraphs.png"
+    src="/img/blog/common/signoz_flamegraphs.webp"
     title="Flamegraphs showing exact duration taken by each spans - a concept of distributed tracing"
     width={700}
 />
@@ -151,7 +151,7 @@ Gantt charts make it easy to visualize your services and events in a parent-chil
 <Screenshot
     alt="Gantt charts on SigNoz dashboard"
     height={500}
-    src="/img/blog/2021/09/signoz_gantt_chart-min.png"
+    src="/img/blog/2021/09/signoz_gantt_chart-min.webp"
     title="Gantt charts on SigNoz dashboard to visualize your spans in a parent-child relationship"
     width={700}
 />
@@ -172,7 +172,7 @@ It is used for monitoring and troubleshooting microservices-based distributed sy
 <Screenshot
     alt="Jaeger Architecture"
     height={500}
-    src="/img/blog/2021/09/Jaeger_architecture-min.jpg"
+    src="/img/blog/2021/09/Jaeger_architecture-min.webp"
     title="Architecture of Jaeger"
     width={700}
 />
@@ -182,7 +182,7 @@ Jaeger supports two popular open-source NoSQL databases as trace storage backend
 <Screenshot
     alt="Jaeger UI"
     height={500}
-    src="/img/blog/2021/08/jaeger_ui-min.png"
+    src="/img/blog/2021/08/jaeger_ui-min.webp"
     title="Jaeger UI showing services and corresponding traces"
     width={700}
 />
@@ -203,7 +203,7 @@ Zipkin's architecture includes:
 <Screenshot
     alt="Zipkin architecture"
     height={500}
-    src="/img/blog/2021/09/zipkin_architecture-min.jpg"
+    src="/img/blog/2021/09/zipkin_architecture-min.webp"
     title="Zipkin architecture (Source: Zipkin website)"
     width={700}
 />
@@ -213,7 +213,7 @@ Zipkin's in-built UI is limited, and you can use Grafana or Kibana from the ELK 
 <Screenshot
     alt="Zipkin UI"
     height={500}
-    src="/img/blog/2021/07/Zipkin_ui-min_o.png"
+    src="/img/blog/2021/07/Zipkin_ui-min_o.webp"
     title="Zipkin UI (Source: Zipkin's GitHub repo)"
     width={700}
 />
@@ -223,7 +223,7 @@ It also includes a dependency diagram that shows how many user requests went thr
 <Screenshot
     alt="Zipkin dependency diagram"
     height={500}
-    src="/img/blog/2021/07/zipkin_dependency_diagram-min_o.png"
+    src="/img/blog/2021/07/zipkin_dependency_diagram-min_o.webp"
     title="Zipkin dependency diagram (Source: GitHub repo)"
     width={700}
 />
@@ -241,7 +241,7 @@ Some of the key features provided by the Dynatrace distributed tracing tool incl
 <Screenshot
     alt="Dynatrace distributed tracing dashboard"
     height={500}
-    src="/img/blog/2021/09/dynatrace_purepath-min.jpg"
+    src="/img/blog/2021/09/dynatrace_purepath-min.webp"
     title="Distributed tracing by PurePath technology (Source: Dynatrace website)"
     width={700}
 />
@@ -249,7 +249,7 @@ Some of the key features provided by the Dynatrace distributed tracing tool incl
 <Screenshot
     alt="Code-level insights with Dynatrace PurePath technology"
     height={500}
-    src="/img/blog/2021/09/dynatrace_purepath_code_level-min.jpg"
+    src="/img/blog/2021/09/dynatrace_purepath_code_level-min.webp"
     title="Code-level insights shown on Dynatrace dashboard (Source: Dynatrace website)"
     width={700}
 />
@@ -268,7 +268,7 @@ Some of the key features of the New Relic distributed tracing tool includes:
 <Screenshot
     alt="New Relic distributed tracing dashboard"
     height={500}
-    src="/img/blog/2021/09/new_relic_distributed_tracing-min_2.jpg"
+    src="/img/blog/2021/09/new_relic_distributed_tracing-min_2.webp"
     title="New Relic distributed tracing dashboard (Source: New Relic website)"
     width={700}
 />
@@ -286,7 +286,7 @@ Some of the key features of the Honeycomb distributed tracing tool includes:
 <Screenshot
     alt="Honeycomb tracing dashboard (Source: Honeycomb website)"
     height={500}
-    src="/img/blog/2021/09/honeycomb_tracing_dashboard-min.jpg"
+    src="/img/blog/2021/09/honeycomb_tracing_dashboard-min.webp"
     title="Honeycomb distributed tracing dashboard (Source: Honeycomb website)"
     width={700}
 />
@@ -304,7 +304,7 @@ Some of the key features of the Lightstep distributed tracing tool includes:
 <Screenshot
     alt="Lighstep tracing dashboard (Source: thenewstack.io)"
     height={500}
-    src="/img/blog/2021/09/lightstep_tracing_dashboard-min.jpg"
+    src="/img/blog/2021/09/lightstep_tracing_dashboard-min.webp"
     title="Lighstep distributed tracing dashboard (Source: thenewstack.io)"
     width={700}
 />
@@ -323,7 +323,7 @@ Some of the key features of the Instana distributed tracing tool includes:
 <Screenshot
     alt="Instana distributed tracing dashboard"
     height={500}
-    src="/img/blog/2021/09/instana_distributed_tracing_dashboard-min.jpg"
+    src="/img/blog/2021/09/instana_distributed_tracing_dashboard-min.webp"
     title="Instana distributed tracing dashboard (Source: Instana website)"
     width={700}
 />
@@ -342,7 +342,7 @@ Some of the key features of DataDog APM, which provides distributed tracing capa
 <Screenshot
     alt="DataDog distributed tracing dashboard"
     height={500}
-    src="/img/blog/2021/09/datadog_distributed_tracing_dashboard-min.jpg"
+    src="/img/blog/2021/09/datadog_distributed_tracing_dashboard-min.webp"
     title="DataDog distributed tracing dashboard (Source: DataDog website)"
     width={700}
 />
@@ -360,7 +360,7 @@ Some of the key features of DataDog APM, which provides distributed tracing capa
 <Screenshot
     alt="Elastic APM distributed tracing dashboard"
     height={500}
-    src="/img/blog/2021/09/elastic_apm_distributed_tracing_dashboard-min.jpg"
+    src="/img/blog/2021/09/elastic_apm_distributed_tracing_dashboard-min.webp"
     title="Elastic APM distributed tracing dashboard (Source: DataDog website)"
     width={700}
 />
@@ -381,7 +381,7 @@ Splunk APM provides uses an AI-driven approach to identify error-prone microserv
 <Screenshot
     alt="Splunk distributed tracing dashboard"
     height={500}
-    src="/img/blog/2021/09/splunk_distributed_tracing_dashboard-min.jpg"
+    src="/img/blog/2021/09/splunk_distributed_tracing_dashboard-min.webp"
     title="Splunk distributed tracing dashboard (Source: DataDog website)"
     width={700}
 />
@@ -408,11 +408,11 @@ cd signoz/deploy/
 ```
 You can read more about deploying SigNoz from its documentation.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=distributed_tracing_tools)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=distributed_tracing_tools)
 
 You can check out SigNoz's GitHub repo here 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ___
 

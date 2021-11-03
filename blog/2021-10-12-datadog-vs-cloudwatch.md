@@ -8,7 +8,7 @@ author_title: SigNoz Team
 author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: DataDog is a paid SaaS tool that provides a range of products for monitoring applications and tech infrastructure. While CloudWatch is an Amazon Web Services product that monitors applications running on AWS infrastructure and using AWS services....
-image: /img/blog/2021/10/datadog_vs_cloudwatch_cover-min.jpg
+image: /img/blog/2021/10/datadog_vs_cloudwatch_cover-min.webp
 keywords:
   - datadog
   - cloudwatch
@@ -24,7 +24,7 @@ DataDog is a paid SaaS tool that provides a range of products for monitoring app
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/10/datadog_vs_cloudwatch_cover-min.jpg)
+![Cover Image](/img/blog/2021/10/datadog_vs_cloudwatch_cover-min.webp)
 
 import Screenshot from "@theme/Screenshot"
 
@@ -60,7 +60,7 @@ Differences between DataDog and CloudWatch can be summarized below:
 <Screenshot
     alt="DataDog continuous code profiler"
     height={500}
-    src="/img/blog/2021/10/datadog_vs_cloudwatch_datadog_continuous_profiler-min.jpg"
+    src="/img/blog/2021/10/datadog_vs_cloudwatch_datadog_continuous_profiler-min.webp"
     title="DataDog's continuous code profiler (Source: DataDog website)"
     width={700}
 />
@@ -119,7 +119,7 @@ Some of the key features of CloudWatch includes:
 <Screenshot
     alt="CloudWatch dashboard"
     height={500}
-    src="/img/blog/2021/10/datadog_vs_cloudwatch_cloudwatch_dashboard-min.jpg"
+    src="/img/blog/2021/10/datadog_vs_cloudwatch_cloudwatch_dashboard-min.webp"
     title="Home page view of CloudWatch dashboard (Source: CloudWatch dashboard)"
     width={700}
 />
@@ -154,7 +154,7 @@ Key architecture features:
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
     height={500}
-    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.png"
+    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.webp"
     title="Architecture of SigNoz with ClickHouse as storage backend and OpenTelemetry for code instrumentatiion"
     width={700}
 />
@@ -164,7 +164,7 @@ SigNoz comes with out of box visualization of things like RED metrics.
 <Screenshot
     alt="SigNoz UI showing the popular RED metrics"
     height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.png"
+    src="/img/blog/common/signoz_charts_application_metrics.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
 />
@@ -174,7 +174,7 @@ You can also use flamegraphs to visualize spans from your trace data. All of thi
 <Screenshot
     alt="Flamegraphs used to visualize spans of distributed tracing in SigNoz UI"
     height={500}
-    src="/img/blog/common/signoz_flamegraphs.png"
+    src="/img/blog/common/signoz_flamegraphs.webp"
     title="Flamegraphs showing exact duration taken by each spans - a concept of distributed tracing"
     width={700}
 />
@@ -184,7 +184,7 @@ You can also build custom metrics dashboard for your infrastructure.
 <Screenshot
     alt="SigNoz custom metrics dashboard"
     height={500}
-    src="/img/blog/2021/10/signoz_custom_dashboard-min.jpg"
+    src="/img/blog/2021/10/signoz_custom_dashboard-min.webp"
     title="You can also build a custom metrics dashboard for your infrastructure"
     width={700}
 />
@@ -211,11 +211,11 @@ cd signoz/deploy/
 
 You can read more about deploying SigNoz from its documentation.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=dd_vs_cloudwatch)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=dd_vs_cloudwatch)
 
 You can check out SigNoz's GitHub repo here 👇
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.png)](https://github.com/SigNoz/signoz)
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 ___
 
