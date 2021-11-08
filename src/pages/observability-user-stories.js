@@ -1,10 +1,17 @@
 import React from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
+import Head from '@docusaurus/Head';
 
-function aboutus() {
+
+function userstories() {
   return (
+    
+    
     <Layout title="Observability User Stories">
+      <Head>
+        <meta property="og:image" content="/img/user_stories/2_netflix_lesson_learnt.webp" />
+      </Head>
       <section>
         <div
           className="container"
@@ -1109,4 +1116,4 @@ function aboutus() {
   );
 }
 
-export default aboutus;
+export default userstories;
