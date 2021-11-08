@@ -10,7 +10,7 @@ function userstories() {
     
     <Layout title="Observability User Stories">
       <Head>
-        <meta property="og:image" content="/img/user_stories/2_netflix_lesson_learnt.webp" />
+        <meta property="og:image" content="https://signoz.io/img/user_stories/2_netflix_lesson_learnt.webp" />
       </Head>
       <section>
         <div
