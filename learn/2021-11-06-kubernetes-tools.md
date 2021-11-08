@@ -25,35 +25,7 @@ Kubernetes is complex, as **[accepted by Google itself](https://www.theregister.
 
 ![Cover Image](/img/blog/2021/11/kubernetes_tools_cover.webp)
 
-And fortunately there are some amazing tools available that can help you with your Kubernetes workflow. Here's a list of 27 open-source tools that can make your Kubernetes workflow easier:
-
-- [Minikube](#minikube)
-- [Kubebox](#kubebox)
-- [Kops](#kops)
-- [Kube-burner](#kube-burner)
-- [Kube-hunter](#kube-hunter)
-- [K9s](#k9s)
-- [K3s](#k3s)
-- [Helm](#helm)
-- [Nacos](#nacos)
-- [Kaniko](#kaniko)
-- [Kube-monkey](#kube-monkey)
-- [Teleport](#teleport)
-- [Kubespray](#kubespray)
-- [Kube-bench](#kube-bench)
-- [Project Quay](#project-quay)
-- [Kube-applier](#kube-applier)
-- [Kubetail](#kubetail)
-- [Kube-state-metrics](#kube-state-metrics)
-- [Kubeval](#kubeval)
-- [Kube-ps1](#kube-ps1)
-- [Kubectx](#kubectx)
-- [Kubecost](#kubecost)
-- [KubeDB](#kubedb)
-- [Skaffold](#skaffold)
-- [Tilt](#tilt)
-- [Kubernetes Dashboard](#kubernetes-dashboard)
-- [Kong](#kong)
+And fortunately there are some amazing tools available that can help you with your Kubernetes workflow. Here's a list of 27 open-source tools that can make your Kubernetes workflow easier.
 
 ### Minikube
 
@@ -294,12 +266,6 @@ Hope you enjoyed the list. We are currently building [SigNoz](https://signoz.io/
 If this sounds interesting to you, check out our GitHub repo 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
-
-
-
-| Metrics | Description |
-| --- | ----- |
-| [Minikube](#minikube) | [Minikube](#minikube)|
 
 
 
