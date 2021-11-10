@@ -11,6 +11,9 @@ function userstories() {
     <Layout title="Observability User Stories">
       <Head>
         <meta property="og:image" content="https://signoz.io/img/user_stories/2_netflix_lesson_learnt.webp" />
+        <meta property="canonical" content="https://signoz.io/observability-user-stories/" />
+
+
       </Head>
       <section>
         <div
