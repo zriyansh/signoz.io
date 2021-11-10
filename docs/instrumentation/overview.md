@@ -18,7 +18,7 @@ SigNoz currently provides simple ways to instrument NodeJS, Java, Python and Gol
 1. [OpenTelemetry Python Instrumentation](/docs/instrumentation/python)
 2. [OpenTelemetry NodeJS Instrumentation](/docs/instrumentation/nodejs)
 3. [OpenTelemetry Java Instrumentation](/docs/instrumentation/java)
-4. [OpenTelemetry Golang Instrumentation](/docs/instrumentation/java)
+4. [OpenTelemetry Go Instrumentation](/docs/instrumentation/golang)
 5. [OpenTelemetry .NET Instrumentation](/docs/instrumentation/dotnet)
 
 
