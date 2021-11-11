@@ -53,6 +53,7 @@ module.exports = {
       items: [
         'userguide/overview',
         'userguide/metrics-dashboard',
+        'userguide/prometheus-metrics',
         'userguide/retention-period',
         'userguide/service-map',
         'userguide/trace-details',
