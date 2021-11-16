@@ -84,7 +84,7 @@ This should set these environment variables and start sending telemetry data to 
 
 export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/path/to/opentelemetry-javaagent-all.jar"
 export OTEL_METRICS_EXPORTER=none
-export OTEL_EXPORTER_OTLP_ENDPOINT=<IP of SigNoz Backend>:4317
+export OTEL_EXPORTER_OTLP_ENDPOINT=http://<IP of SigNoz Backend>:4317
 export OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name>
 
 ```
