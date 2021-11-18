@@ -216,7 +216,10 @@ export const YoutubeWrapper = ({children, url}) => (
 <YoutubeWrapper url="https://www.youtube.com/embed/YxZb17_LYwQ"> </YoutubeWrapper><br></br>
 
 
-If you face any issues while trying out SigNoz, feel free to write to us at: support@signoz.io
+Join our slack community 👇
+
+[![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://bit.ly/signoz-slack)
+
 
 If you want to read more about SigNoz 👇
 
