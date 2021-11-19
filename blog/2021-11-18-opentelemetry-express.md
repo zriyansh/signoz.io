@@ -21,7 +21,7 @@ keywords:
   - signoz
 ---
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/community-update-06/"/>
+  <link rel="canonical" href="https://signoz.io/blog/opentelemetry-express/"/>
 </head>
 
 Nodejs is a popular Javascript runtime environment that executes Javascript code outside of a web browser. Express is the most popular web frameworks that sits on top of Nodejs and adds functionalities like middleware, routing, etc. to Nodejs.
