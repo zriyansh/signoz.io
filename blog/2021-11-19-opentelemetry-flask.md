@@ -219,7 +219,7 @@ If you want to read more about SigNoz 👇
 
 [Golang Aplication Monitoring with OpenTelemetry and SigNoz](https://signoz.io/opentelemetry/go/)
 
-[OpenTelemetry collector - full guide](https://signoz.io/blog/opentelemetry-collector-complete-guide/)
+[OpenTelemetry collector - complete guide](https://signoz.io/blog/opentelemetry-collector-complete-guide/)
 
 
 
