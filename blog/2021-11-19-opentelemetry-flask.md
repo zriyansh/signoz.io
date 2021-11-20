@@ -60,6 +60,8 @@ cd signoz/deploy/
 
 You will have an option to choose between ClickHouse or Kafka + Druid as a storage option. Trying out SigNoz with ClickHouse database takes less than 1.5GB of memory, and for this tutorial, we will use that option.
 
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_flask)
+
 When you are done installing SigNoz, you can access the UI at: [http://localhost:3000](http://localhost:3000/application)
 
 The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
@@ -217,7 +219,7 @@ If you want to read more about SigNoz 👇
 
 [Golang Aplication Monitoring with OpenTelemetry and SigNoz](https://signoz.io/opentelemetry/go/)
 
-[OpenTelemetry collector - full guide](https://signoz.io/blog/opentelemetry-collector-complete-guide/)
+[OpenTelemetry collector - complete guide](https://signoz.io/blog/opentelemetry-collector-complete-guide/)
 
 
 

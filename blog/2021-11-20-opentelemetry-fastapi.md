@@ -1,0 +1,221 @@
+---
+title: Monitoring your FastAPI application using OpenTelemetry
+slug: opentelemetry-fastapi
+date: 2021-11-20
+tags: [opentelemetry, python-monitoring]
+author: Ankit Anand
+author_title: SigNoz Team
+author_url: https://github.com/ankit01-oss
+author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+description: OpenTelemetry is a vendor-agnostic isntrumentation library. In this article, learn how to set up monitoring for FastAPI web framework using OpenTelemetry.
+image: /img/blog/2021/11/monitor_fastAPI_cover.webp
+hide_table_of_contents: true
+keywords:
+  - opentelemetry
+  - opentelemetry python
+  - opentelemetry fastapi
+  - distributed tracing
+  - observability
+  - fastapi monitoring
+  - fastapi instrumentation
+  - signoz
+---
+<head>
+  <link rel="canonical" href="https://signoz.io/blog/opentelemetry-fastapi/"/>
+</head>
+
+FastAPI is a modern Python web framework based on standard Python type hints that makes it easy to build APIs. It's a relatively new framework, having been released in 2018 but has now been adopted by big companies like Uber, Netflix, and Microsoft.
+
+<!--truncate-->
+
+![Cover Image](/img/blog/2021/11/monitor_fastAPI_cover.webp)
+
+FastAPI is one of the fastest Python web frameworks currently available and is really efficient when it comes to writing code. It is based on ASGI specification, unlike other Python frameworks like Flask, which is based on WSGI specification.
+
+Instrumentation is the biggest challenge engineering teams face when starting out with monitoring their application performance. <a href = "https://opentelemetry.io/" rel="noopener noreferrer nofollow" target="_blank" >OpenTelemetry</a> is the leading open-source standard that is solving the problem of instrumentation. It is currently an incubating project under the <a href = "https://www.cncf.io/" rel="noopener noreferrer nofollow" target="_blank" >Cloud Native Computing Foundation</a>.
+
+It is a set of tools, APIs, and SDKs used to instrument applications to create and manage telemetry data(Logs, metrics, and traces). It aims to make telemetry data(logs, metrics, and traces) a built-in feature of cloud-native software applications.
+
+ One of the biggest advantages of using OpenTelemetry is that it is vendor-agnostic. It can export data in multiple formats which you can send to a backend of your choice.
+
+In this article, we will use [SigNoz](https://signoz.io/) as a backend. SigNoz is an open-source APM tool that can be used for both metrics and distributed tracing.
+
+Let's get started and see how to use OpenTelemetry for a FastAPI application.
+
+## Running a FastAPI application with OpenTelemetry
+
+OpenTelemetry is a great choice to instrument ASGI frameworks. As it is open-source and vendor-agnostic, the data can be sent to any backend of your choice.
+
+### Installing SigNoz
+
+You can get started with SigNoz using just three commands at your terminal if you have Docker installed. You can install Docker from its <a href = "https://www.docker.com/get-started" rel="noopener noreferrer nofollow" target="_blank" >official website</a>.
+
+```jsx
+git clone https://github.com/SigNoz/signoz.git
+cd signoz/deploy/
+./install.sh
+```
+<br></br>
+You will have an option to choose between ClickHouse or Kafka + Druid as a storage option. Trying out SigNoz with ClickHouse database takes less than 1.5GB of memory, and for this tutorial, we will use that option.
+
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=fastapi)
+
+When you are done installing SigNoz, you can access the UI at: [http://localhost:3000](http://localhost:3000/application)
+
+The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
+
+import Screenshot from "@theme/Screenshot"
+
+<Screenshot
+    alt="SigNoz dashboard home"
+    height={500}
+    src="/img/blog/common/signoz_dashboard_homepage.webp"
+    title="List of applications shown as an example on SigNoz dashboard"
+    width={700}
+/>
+
+### Instrumenting a sample FastAPI application with OpenTelemetry
+
+**Prerequisites**<br></br>
+Python 3.6 or newer
+
+Download the [latest version](https://www.python.org/downloads/) of Python.
+
+**Running sample FastAPI app**<br></br>
+We will be using the FastAPI app at this [Github repo](https://github.com/sureshdsk/sample-fastapi-app). All the required OpenTelemetry packages are contained within the `requirements.txt` file under `app` folder in this sample app.
+```jsx
+git clone https://github.com/sureshdsk/sample-fastapi-app.git
+cd sample-fastapi-app/
+```
+<br></br>
+
+**Run with docker**<br></br>
+Build docker image
+```jsx
+docker build -t sample-fastapi-app .
+```
+You need to set some environment variables while running the application with OpenTelemetry and send collected data to SigNoz. You can do so with the following commands at the terminal:
+```jsx
+# If you have your SigNoz IP Address, replace <IP of SigNoz> with your IP Address. 
+
+docker run -d --name fastapi-container \
+-e OTEL_METRICS_EXPORTER='none' \
+-e OTEL_RESOURCE_ATTRIBUTES='service.name=fastapiApp' \
+-e OTEL_EXPORTER_OTLP_ENDPOINT='http://<IP of SigNoz>:4317' \
+-p 5000:5000 sample-fastapi-app
+```
+<br></br>
+
+If you're using docker-compose setup:
+
+```jsx
+# If you are running signoz through official docker-compose setup, run `docker network ls` and find clickhouse network id. It will be something like this clickhouse-setup_default 
+# and pass network id by using --net <network ID>
+
+docker run -d --name fastapi-container \ 
+--net clickhouse-setup_default  \ 
+--link clickhouse-setup_otel-collector_1 \
+-e OTEL_METRICS_EXPORTER='none' \
+-e OTEL_RESOURCE_ATTRIBUTES='service.name=fastapiApp' \
+-e OTEL_EXPORTER_OTLP_ENDPOINT='http://clickhouse-setup_otel-collector_1:4317' \
+-p 5000:5000 sample-fastapi-app
+```
+<br></br>
+
+If you're running SigNoz in your local host then you can replace `<IP of SigNoz>` with `localhost` and the final command will look like below:
+
+```jsx
+docker run -d --name fastapi-container \
+-e OTEL_METRICS_EXPORTER='none' \
+-e OTEL_RESOURCE_ATTRIBUTES='service.name=fastapiApp' \
+-e OTEL_EXPORTER_OTLP_ENDPOINT='http://localhost:4317' \
+-p 5000:5000 sample-fastapi-app
+```
+<br></br>
+
+You need to generate some load on your app so that there is data to be captured by OpenTelemetry. You can use locust for this load testing.
+
+```jsx
+pip install locust
+```
+
+```jsx
+locust -f locust.py --headless --users 10 --spawn-rate 1 -H http://localhost:5000
+```
+<br></br>
+
+You will find `fastapiAPP` in the list of sample applications being monitored by SigNoz.
+
+<Screenshot
+    alt="FastAPI in the list of applications"
+    height={500}
+    src="/img/blog/2021/11/list_of_apps_fastapi.webp"
+    title="FastAPI in the list of applications being monitored by SigNoz"
+    width={700}
+/>
+
+## Open-source tool to visualize telemetry data
+SigNoz makes it easy to visualize metrics and traces captured through OpenTelemetry instrumentation.
+
+SigNoz comes with out of box RED metrics charts and visualization. RED metrics stands for:
+
+- Rate of requests
+- Error rate of requests
+- Duration taken by requests
+
+<Screenshot
+    alt="SigNoz charts and metrics"
+    height={500}
+    src="/img/blog/common/signoz_charts_application_metrics.webp"
+    title="Measure things like application latency, requests per sec, error percentage and see your top endpoints with SigNoz."
+    width={700}
+/>
+
+You can then choose a particular timestamp where latency is high to drill down to traces around that timestamp.
+
+<Screenshot
+    alt="List of traces on SigNoz dashboard"
+    height={500}
+    src="/img/blog/common/signoz_list_of_traces_hc.webp"
+    title="View of traces at a particular timestamp"
+    width={700}
+/>
+
+You can use flamegraphs to exactly identify the issue causing the latency.
+
+<Screenshot
+    alt="Flamegraphs used to visualize spans of distributed tracing in SigNoz UI"
+    height={500}
+    src="/img/blog/common/signoz_flamegraphs.webp"
+    title="View of traces at a particular timestamp"
+    width={700}
+/>
+
+You can also build custom metrics dashboard for your infrastructure.
+
+<Screenshot
+    alt="Custom metrics dashboard"
+    height={500}
+    src="/img/blog/common/signoz_custom_dashboard-min.webp"
+    title="You can also build a custom metrics dashboard for your infrastructure"
+    width={700}
+/>
+
+## Conclusion
+OpenTelemetry makes it very convenient to instrument your FastAPI application. You can then use an open-source APM tool like SigNoz to analyze the performance of your app. As SigNoz offers a full-stack observability tool, you don't have to use multiple tools for your monitoring needs.
+
+You can try out SigNoz by visiting its GitHub repo 👇
+
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
+
+If you have any questions or need any help in setting things up, join our slack community and ping us in `#help` channel.
+
+[![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://bit.ly/signoz-slack)
+
+---
+Read more about OpenTelemetry 👇
+
+[Things you need to know about OpenTelemetry tracing](https://signoz.io/blog/opentelemetry-tracing/)
+
+[OpenTelemetry collector - architecture and configuration guide](https://signoz.io/blog/opentelemetry-collector-complete-guide/)
+
