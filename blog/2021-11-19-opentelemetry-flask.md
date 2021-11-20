@@ -32,7 +32,7 @@ In this article, we will use OpenTelemetry to instrument a sample Flask app. Fla
 
 Instrumentation is one of the biggest challenge engineering teams face when starting out with observability. Instrumenting a distributed application architecture is not easy. Applications now have distributed services as well as distributed teams that might be using multiple programming languages and numerous frameworks and libraries.
 
-**[OpenTelemetry](https://opentelemetry.io/)** is the leading open-source standard that is solving the problem of instrumentation. It is currently an incubating project under the **[Cloud Native Computing Foundation](https://www.cncf.io/)**.
+[OpenTelemetry](https://opentelemetry.io/) is the leading open-source standard that is solving the problem of instrumentation. It is currently an incubating project under the [Cloud Native Computing Foundation](https://www.cncf.io/).
 
 It is a set of tools, APIs, and SDKs used to instrument applications to create and manage telemetry data(Logs, metrics, and traces). It aims to make telemetry data(logs, metrics, and traces) a built-in feature of cloud-native software applications.
 
@@ -40,7 +40,7 @@ It is a set of tools, APIs, and SDKs used to instrument applications to create a
 
 As might be clear by now that OpenTelemetry helps you to generate telemetry data. You still need a backend to analyze, store and visualize that data. By design, OpenTelemetry is vendor-agnostic. And that's one of the biggest advantages of using OpenTelemetry. It can export data in multiple formats which you can send to a backend of your choice.
 
-In this article, we will use **[SigNoz](https://signoz.io/)** as a backend. SigNoz is an open-source APM that can be used for both metrics and distributed tracing.
+In this article, we will use [SigNoz](https://signoz.io/) as a backend. SigNoz is an open-source APM that can be used for both metrics and distributed tracing.
 
 Let's get started and see how to use OpenTelemetry for a Flask application.
 
