@@ -32,13 +32,13 @@ FastAPI is a modern Python web framework based on standard Python type hints tha
 
 FastAPI is one of the fastest Python web frameworks currently available and is really efficient when it comes to writing code. It is based on ASGI specification, unlike other Python frameworks like Flask, which is based on WSGI specification.
 
-Instrumentation is the biggest challenge engineering teams face when starting out with monitoring their application performance. <a href = "https://opentelemetry.io/" rel="noopener noreferrer nofollow" target="_blank" ><b>OpenTelemetry</b></a> is the leading open-source standard that is solving the problem of instrumentation. It is currently an incubating project under the <a href = "https://www.cncf.io/" rel="noopener noreferrer nofollow" target="_blank" ><b>Cloud Native Computing Foundation</b></a>.
+Instrumentation is the biggest challenge engineering teams face when starting out with monitoring their application performance. <a href = "https://opentelemetry.io/" rel="noopener noreferrer nofollow" target="_blank" >OpenTelemetry</a> is the leading open-source standard that is solving the problem of instrumentation. It is currently an incubating project under the <a href = "https://www.cncf.io/" rel="noopener noreferrer nofollow" target="_blank" >Cloud Native Computing Foundation</a>.
 
 It is a set of tools, APIs, and SDKs used to instrument applications to create and manage telemetry data(Logs, metrics, and traces). It aims to make telemetry data(logs, metrics, and traces) a built-in feature of cloud-native software applications.
 
  One of the biggest advantages of using OpenTelemetry is that it is vendor-agnostic. It can export data in multiple formats which you can send to a backend of your choice.
 
-In this article, we will use **[SigNoz](https://signoz.io/)** as a backend. SigNoz is an open-source APM tool that can be used for both metrics and distributed tracing.
+In this article, we will use [SigNoz](https://signoz.io/) as a backend. SigNoz is an open-source APM tool that can be used for both metrics and distributed tracing.
 
 Let's get started and see how to use OpenTelemetry for a FastAPI application.
 
@@ -48,7 +48,7 @@ OpenTelemetry is a great choice to instrument ASGI frameworks. As it is open-sou
 
 ### Installing SigNoz
 
-You can get started with SigNoz using just three commands at your terminal if you have Docker installed. You can install Docker from its <a href = "https://www.docker.com/get-started" rel="noopener noreferrer nofollow" target="_blank" ><b>official website</b></a>.
+You can get started with SigNoz using just three commands at your terminal if you have Docker installed. You can install Docker from its <a href = "https://www.docker.com/get-started" rel="noopener noreferrer nofollow" target="_blank" >official website</a>.
 
 ```jsx
 git clone https://github.com/SigNoz/signoz.git
@@ -79,7 +79,7 @@ import Screenshot from "@theme/Screenshot"
 **Prerequisites**<br></br>
 Python 3.6 or newer
 
-Download the **[latest version](https://www.python.org/downloads/)** of Python.
+Download the [latest version](https://www.python.org/downloads/) of Python.
 
 **Running sample FastAPI app**<br></br>
 We will be using the FastAPI app at this [Github repo](https://github.com/sureshdsk/sample-fastapi-app). All the required OpenTelemetry packages are contained within the `requirements.txt` file under `app` folder in this sample app.
@@ -217,5 +217,5 @@ Read more about OpenTelemetry 👇
 
 [Things you need to know about OpenTelemetry tracing](https://signoz.io/blog/opentelemetry-tracing/)
 
-[OpenTelemetry collector - full guide](https://signoz.io/blog/opentelemetry-collector-complete-guide/)
+[OpenTelemetry collector - architecture and configuration guide](https://signoz.io/blog/opentelemetry-collector-complete-guide/)
 
