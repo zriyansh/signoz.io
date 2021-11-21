@@ -29,7 +29,6 @@ If you are on Mac or any of the following linux distributions, using our install
 - OpenSuse
 - CentOS
 - SUSE Linux Enterprise Server (SLES)
-- Amazon Linux
 
 If you are neither on any of the above distributions nor on Mac, please install directly using [Docker Compose](#2-using-docker-compose)
 
