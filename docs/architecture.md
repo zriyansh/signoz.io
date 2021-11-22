@@ -16,7 +16,7 @@ SigNoz supports two storage setups, one based on ClickHouse and another based on
 - Query Service
 - Frontend
 
-## Kafka + Druid Setup Architecture
+<!-- ## Kafka + Druid Setup Architecture
 
 SigNoz uses industry proven Kafka and Druid to power highly scalable data ingestion and realtime data analysis.
 
@@ -29,7 +29,7 @@ SigNoz uses industry proven Kafka and Druid to power highly scalable data ingest
 - Stream Processors
 - Apache Druid
 - Query Service
-- Frontend
+- Frontend -->
 
 **OpenTelemetry Collector** can receive data in multiple formats. It currently has receivers for below formats
 
@@ -39,7 +39,7 @@ SigNoz uses industry proven Kafka and Druid to power highly scalable data ingest
 - OTLP Receiver
 - Zipkin Receiver
 
-OpenTelemetry Collector then exports those traces to a kafka topic, `otlp_spans`.
+<!-- OpenTelemetry Collector then exports those traces to a kafka topic, `otlp_spans`.
 
 **Apache Kafka is a distributed streaming platform** that can be used as message-driven backbone of communication. Applications can send messages between its components in the form of records that can be produced to Kafka topics and consumed from Kafka topics.
 
@@ -59,7 +59,7 @@ The flattened data is then ingested to **Druid** _which is a real-time analytics
 
 - We then add supervisor in druid to ingest from kafka at realtime
 - We then add retention policy in druid. By default, we set 3 days of data retention
-- We have option to add AWS S3 bucket credentials for deep storage of data in druid. By default, we use `storage: local` in helm `values.yaml`
+- We have option to add AWS S3 bucket credentials for deep storage of data in druid. By default, we use `storage: local` in helm `values.yaml` -->
 
 **Query Service** is the interface between Frontend and Druid. It provides APIs to be consumed by frontend application and queries Druid to fetch data and processes data before responding back to the frontend.
 

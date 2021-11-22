@@ -29,8 +29,8 @@ teams. We will have role based pricing for our enterprise
 edition which will have advanced features needed by
 bigger teams.
 
-## What is Kafka and Druid?
+<!-- ## What is Kafka and Druid?
 
 Kafka is a queuing system, it provides a way to send requests to be processed asynchonously by unknown to the sender instances. The idea that you can scale your processes more easily by decoupling the two and unlike a load balancer, if one instance fails to process a request it can stay on the queue to be processed by another.
 
-Druid is a timeseries database for running queries against pre-aggregated data. Imagine a bunch of records like {host: "ABC", event: "foo", timeperiod: "00:00-01:00", count: 1234}. It's designed to be really fast then at answering queries like "How many bar events occurred in hosts matching "prod-\*" between 3am and 5am?" or "Give me the Baz events at daily intervals for the last 90 days"
+Druid is a timeseries database for running queries against pre-aggregated data. Imagine a bunch of records like {host: "ABC", event: "foo", timeperiod: "00:00-01:00", count: 1234}. It's designed to be really fast then at answering queries like "How many bar events occurred in hosts matching "prod-\*" between 3am and 5am?" or "Give me the Baz events at daily intervals for the last 90 days" -->

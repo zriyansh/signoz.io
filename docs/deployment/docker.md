@@ -38,7 +38,7 @@ Here's a [quick guide](https://docs.docker.com/compose/install/) to install Dock
 
 :::note
 
-[Update Aug 23, 2021] If you are trying to test SigNoz on **Mac M1 (Apple Silicon Chip)**, the below methods would throw an error as Clickhouse doesn't provide an [official arm build](https://github.com/ClickHouse/ClickHouse/issues/20237#issuecomment-888979638) for docker. We recommend you try installing on a cloud virtual machine on Ubuntu or any of the other supported linux distros.
+[Update Nov 21, 2021] If you are trying to test SigNoz on **Mac M1 (Apple Silicon Chip)**, the below methods would throw an error as Clickhouse doesn't provide an [official arm build](https://github.com/ClickHouse/ClickHouse/issues/20237#issuecomment-888979638) for docker. We recommend you try installing on a cloud virtual machine on Ubuntu or any of the other supported linux distros.
 
 We are working on finding a way to solve this ASAP.
 :::
@@ -63,18 +63,7 @@ Check that you are in `signoz/deploy` folder. Now run
 ```
 <br></br>
 
-3. You will be given choice to either chose Clickhouse or Kafka+Druid as the storage backend
-
-```
-👉 Two ways to go forward
-
-1) ClickHouse as database (default)
-
-2) Kafka + Druid as datastore
-```
-<br></br>
-
-Once `install.sh` runs successfully, the UI should be accessible at port 3000 on the domain you set up or the IP of your instance.
+3. Once `install.sh` runs successfully, the UI should be accessible at port 3000 on the domain you set up or the IP of your instance.
 
 <br></br>
 
@@ -106,7 +95,6 @@ If you don't have `docker-compose` set up, please follow [this guide](https://do
   groupId="datastore-options"
   values={[
     { label: "ClickHouse Setup", value: "clickhouse" },
-    { label: "Kafka + Druid Setup", value: "druid" },
   ]}
 >
 
@@ -117,24 +105,24 @@ sudo docker-compose -f ./docker/clickhouse-setup/docker-compose.yaml up -d
 ```
 </TabItem>
 
-<TabItem value="druid">
+<!-- <TabItem value="druid">
 
 ```bash
 sudo docker-compose -f ./docker/druid-kafka-setup/docker-compose-tiny.yaml up -d
 ```
 
-</TabItem>
+</TabItem> -->
 
 </Tabs> 
 
 <br></br>
 
-### Production Settings for Kafka + Druid setup
+<!-- ### Production Settings for Kafka + Druid setup
 
 A standard instance of SigNoz needs around **8GB of memory**. The setup uses `docker-compose.yaml` file at `deploy/docker/druid-kafka-setup`
   
   
-If you are interested in configuring S3 deep storage for production usage, check out [this section](/docs/configuration/deep_storage)
+If you are interested in configuring S3 deep storage for production usage, check out [this section](/docs/configuration/deep_storage) -->
 
 
 <br></br>
@@ -151,8 +139,8 @@ The current `docker-compose.yaml` includes sample application ([HotR.O.D](https:
 [Checkout Troubleshooting Section](/docs/deployment/troubleshooting)
 
   
-
+<!-- 
 ### Deep Storage with S3 for Kafka+Druid Setup
-[Checkout Configuration Section](/docs/configuration/deep_storage)
+[Checkout Configuration Section](/docs/configuration/deep_storage) -->
 
 <br></br>
