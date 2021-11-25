@@ -44,7 +44,7 @@ module.exports = {
         'instrumentation/java',
         'instrumentation/golang',   
         'instrumentation/dotnet',
-
+        'instrumentation/ruby-on-rails',
       ],
     },
     {

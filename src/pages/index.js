@@ -914,7 +914,7 @@ function Home() {
                     <Link
                       className="button button--primary margin--md "
                       //  onClick={setShowTrySignozModal.bind(this,true)}>
-                      href={"/docs/deployment/docker"}
+                      href={"/docs/"}
                     >
                       Get Started
                     </Link>

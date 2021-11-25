@@ -86,34 +86,16 @@ git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
 ```
 <br></br>
 
-2. You now need to set up ClickHouse as the datastore. You need to have docker-compose correctly setup before running this.
+2. We will now set up SigNoz via docker compose. This will set up the required dependencies and also load a sample app.
+
+You need to have docker-compose correctly setup before running this.
 
 If you don't have `docker-compose` set up, please follow [this guide](https://docs.docker.com/compose/install/) to set up docker compose before proceeding with the next steps.
 
-<Tabs
-  defaultValue="clickhouse"
-  groupId="datastore-options"
-  values={[
-    { label: "ClickHouse Setup", value: "clickhouse" },
-  ]}
->
 
-<TabItem value="clickhouse">
-
-```bash
+```console
 sudo docker-compose -f ./docker/clickhouse-setup/docker-compose.yaml up -d
 ```
-</TabItem>
-
-<!-- <TabItem value="druid">
-
-```bash
-sudo docker-compose -f ./docker/druid-kafka-setup/docker-compose-tiny.yaml up -d
-```
-
-</TabItem> -->
-
-</Tabs> 
 
 <br></br>
 
