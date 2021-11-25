@@ -54,6 +54,7 @@ module.exports = {
         'userguide/overview',
         'userguide/metrics-dashboard',
         'userguide/prometheus-metrics',
+        'userguide/alerts-management',
         'userguide/retention-period',
         'userguide/service-map',
         'userguide/trace-details',
