@@ -3,7 +3,7 @@ id: requirement
 title: Requirements
 ---
 
-For running SigNoz, atleast **1.5GB of memory** should be allocated in docker to setup and do basic test You can easily test upto 10 services serving less than 10 request per secons each. 
+For running SigNoz, atleast **1.5GB of memory** should be allocated in docker to setup and do basic test. You can easily test upto 10 services serving less than 10 request per secons each. 
 
 You may need to allocate more memory depending upon the volume of metrics/traces you send to SigNoz.
 
