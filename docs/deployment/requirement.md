@@ -18,7 +18,7 @@ Choosing Kafka + Druid should install a tiny instance setting which runs with **
 
 You need to check the memory allocated to docker. Follow below steps:
 
-a) Choose the Docker menu whale menu > Preferences from the menu bar and configure the runtime options described below.
+a) Choose the Docker whale menu > Preferences from the menu bar and configure the runtime options described below.
 
 ![Docker Preferences](../../static/img/docs/prefs-general.webp)
 

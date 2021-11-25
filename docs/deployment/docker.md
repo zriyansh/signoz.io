@@ -86,7 +86,7 @@ git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
 ```
 <br></br>
 
-2. You can chose either ClickHouse or Druid as the datastore. You need to have docker-compose correctly setup before running this.
+2. You now need to set up ClickHouse as the datastore. You need to have docker-compose correctly setup before running this.
 
 If you don't have `docker-compose` set up, please follow [this guide](https://docs.docker.com/compose/install/) to set up docker compose before proceeding with the next steps.
 
