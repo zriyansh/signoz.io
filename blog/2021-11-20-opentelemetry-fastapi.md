@@ -48,7 +48,7 @@ OpenTelemetry is a great choice to instrument ASGI frameworks. As it is open-sou
 
 ### Installing SigNoz
 
-You can get started with SigNoz using just three commands at your terminal if you have Docker installed. You can install Docker from its <a href = "https://www.docker.com/get-started" rel="noopener noreferrer nofollow" target="_blank" >official website</a>.
+You can get started with SigNoz using just three commands at your terminal.
 
 ```jsx
 git clone https://github.com/SigNoz/signoz.git
@@ -56,7 +56,8 @@ cd signoz/deploy/
 ./install.sh
 ```
 <br></br>
-You will have an option to choose between ClickHouse or Kafka + Druid as a storage option. Trying out SigNoz with ClickHouse database takes less than 1.5GB of memory, and for this tutorial, we will use that option.
+
+For detailed instructions, you can visit our documentation.
 
 [![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=fastapi)
 
