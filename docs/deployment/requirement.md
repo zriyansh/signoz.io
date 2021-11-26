@@ -3,7 +3,7 @@ id: requirement
 title: Requirements
 ---
 
-For running SigNoz, atleast **1.5GB of memory** should be allocated in docker to setup and do basic test. You can easily test upto 10 services serving less than 10 request per secons each. 
+For running SigNoz, atleast **1.5GB of memory** should be allocated in docker to setup and do basic test. You can easily test upto 10 services serving less than 10 request per second each.
 
 You may need to allocate more memory depending upon the volume of metrics/traces you send to SigNoz.
 
@@ -23,6 +23,6 @@ a) Choose the Docker whale menu > Preferences from the menu bar and configure th
 
 ![Docker Preferences](../../static/img/docs/prefs-general.webp)
 
-b) Choose Resources from Preferences Menu and change Memory to **2GB** 
+b) Choose Resources from Preferences Menu and update Memory to atleast **2GB**, preferably a bit more than that.
 
 ![Docker Resource Preferences](../../static/img/docker_preferences.jpeg)

@@ -40,14 +40,16 @@ OpenTelemetry is a set of tools, APIs, and SDKs used to instrument applications 
 
 ### Install SigNoz
 
-You can get started with SigNoz using just three commands at your terminal if you have Docker installed. You can install Docker from its [official website](https://www.docker.com/get-started).
+You can get started with SigNoz using just three commands at your terminal.
 
 ```jsx
 git clone https://github.com/SigNoz/signoz.git
 cd signoz/deploy/
 ./install.sh
 ```
-You will have an option to choose between ClickHouse or Kafka + Druid as a storage option. Trying out SigNoz with ClickHouse database takes less than 1.5GB of memory, and for this tutorial, we will use that option.
+<br></br>
+
+For detailed instructions, you can visit our documentation.
 
 [![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_express)
 

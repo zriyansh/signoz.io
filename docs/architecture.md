@@ -3,10 +3,6 @@ id: architecture
 title: Technical Architecture
 ---
 
-SigNoz supports two storage setups, one based on ClickHouse and another based on Kafka + Druid. Depending upon your preference you can choose any of the two
-
-## ClickHouse setup Architecture
-
 ![acrhitecture-diagram-clickhouse](../static/img/architecture-signoz-clickhouse.svg)
 
 ### Architecture Components
@@ -61,6 +57,6 @@ The flattened data is then ingested to **Druid** _which is a real-time analytics
 - We then add retention policy in druid. By default, we set 3 days of data retention
 - We have option to add AWS S3 bucket credentials for deep storage of data in druid. By default, we use `storage: local` in helm `values.yaml` -->
 
-**Query Service** is the interface between Frontend and Druid. It provides APIs to be consumed by frontend application and queries Druid to fetch data and processes data before responding back to the frontend.
+**Query Service** is the interface between Frontend and ClickHouse. It provides APIs to be consumed by frontend application and queries ClickHouse to fetch data and processes data before responding back to the frontend.
 
 **Frontend** is the UI, built in ReactJS and Typescript and provides advanced trace/span filtering capabilities and plot metrics to give service overviews.

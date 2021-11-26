@@ -181,15 +181,18 @@ SigNoz uses <a href = "https://opentelemetry.io/" rel="noopener noreferrer nofol
 
 ## How to install and get started with SigNoz?
 
-If you have docker installed, getting started with SigNoz just takes three easy steps at the command line:
+You can get started with SigNoz using just three commands at your terminal.
 
-```
+```jsx
 git clone https://github.com/SigNoz/signoz.git
 cd signoz/deploy/
 ./install.sh
 ```
+<br></br>
 
-You can read more about deploying SigNoz from its [documentation](https://signoz.io/docs/deployment/docker/).
+For detailed instructions, you can visit our documentation.
+
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=jaeger_vs_signoz)
 
 If you face any issues while trying out SigNoz, feel free to write to us at: support@signoz.io
 

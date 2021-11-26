@@ -286,15 +286,16 @@ data:
 
 OpenTelemetry provides a vendor-agnostic way of collecting and managing telemetry data. The next step is to choose a backend analysis tool that can help you make sense of the collected data. [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=opentelemetry_colllector) is a full-stack open-source application performance monitoring and observability platform built natively for OpenTelemetry.
 
-If you have docker installed, getting started with SigNoz just takes three easy steps at the command line:
+You can get started with SigNoz using just three commands at your terminal.
 
-```
+```jsx
 git clone https://github.com/SigNoz/signoz.git
 cd signoz/deploy/
 ./install.sh
 ```
+<br></br>
 
-You can read more about deploying SigNoz from its documentation.
+For detailed instructions, you can visit our documentation.
 
 [![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_colllector)
 

@@ -18,7 +18,7 @@ You can install SigNoz backend in following 2 ways:
 1. Using Install Script
 2. Using Docker Compose
 
-We have explained each of these way in the following sections
+We have explained each of these ways in the following sections:
 <br></br>
 
 ### 1. Using Install Script
@@ -30,17 +30,20 @@ If you are on Mac or any of the following linux distributions, using our install
 - CentOS
 - SUSE Linux Enterprise Server (SLES)
 
-If you are neither on any of the above distributions nor on Mac, please install directly using [Docker Compose](#2-using-docker-compose)
+Docker Desktop must be installed manually on Mac OS to proceed. Docker can only be installed automatically using install script on above linux distros.
 
-Here's a [quick guide](https://docs.docker.com/compose/install/) to install Docker Compose if you don't have it set up already
+If you are neither on any of the above distributions nor on Mac, please install directly using [Docker Compose](#2-using-docker-compose).
+
+Here's a [quick guide](https://docs.docker.com/compose/install/) to install Docker Compose if you don't have it set up already.
 <br></br>
 
 
 :::note
 
-[Update Nov 21, 2021] If you are trying to test SigNoz on **Mac M1 (Apple Silicon Chip)**, the below methods would throw an error as Clickhouse doesn't provide an [official arm build](https://github.com/ClickHouse/ClickHouse/issues/20237#issuecomment-888979638) for docker. We recommend you try installing on a cloud virtual machine on Ubuntu or any of the other supported linux distros.
+[Update Nov 21, 2021]
+1. If you are trying to test SigNoz on **Mac M1 (Apple Silicon Chip)**, the below methods will throw an error as ClickHouse doesn't provide an [official arm build](https://github.com/ClickHouse/ClickHouse/issues/20237#issuecomment-888979638) for docker. We recommend you try installing on a cloud virtual machine on Ubuntu or any of the other supported Linux distros.
 
-We are working on finding a way to solve this ASAP.
+2. Currently, we have not tested these instructions to run SigNoz on Windows. But you can try it.
 :::
 
 
