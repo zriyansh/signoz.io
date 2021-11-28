@@ -62,7 +62,7 @@ The Java agent needs to be downloaded and distributed for each host that you wan
 
 Steps to use the OpenTelemetry Java agent:
 
-- Download and distribute the [latest Java JAR agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent-all.jar) to each monitored host and service.
+- Download and distribute the [latest Java JAR agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar) to each monitored host and service.
 
 - Prepare environment variables like the service name of your monitored service and endpoint to where you will export your data
 
