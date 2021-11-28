@@ -15,7 +15,7 @@ To install OpenTelemetry, we recommend [LightStep's handy OTel-Launcher](https:/
 
 ### Sample Express Application
 
-For this tutorial, we’re going to make a very, very simple application: an express service that responds to `http://localhost:9000/hello` with "Hello World". It’s as basic as it is original!
+For this tutorial, we’re going to make a very, very simple application: an express service that responds to `http://localhost:9090/hello` with "Hello World". It’s as basic as it is original!
 
 First, make a directory to contain your project, and install express:
 
@@ -34,7 +34,7 @@ app.get('/hello', (req, res) => {
  res.status(200).send('Hello World');
 });
 
-app.listen(9000);
+app.listen(9090);
 ```
 
 Boot up server by
@@ -43,7 +43,9 @@ Boot up server by
 node server.js
 ```
 
-and check that it works by visiting `http://localhost:9000/hello`
+and check that it works by visiting `http://localhost:9090/hello`
+
+Once you ensure that your app is running, you can stop the server using `Ctrl+C`.
 
 ### Setting up OpenTelemetry
 
@@ -83,6 +85,8 @@ const {
 
 ### Run Command
 
+After you set up your files, you can start sending data with OpenTelemetry using the following command:
+
 <!-- <Tabs
   defaultValue="self-hosted"
   groupId="hosting-options-node"
@@ -96,6 +100,18 @@ const {
 ```bash
 OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_SPAN_ENDPOINT="http://<IP of SigNoz Backend>:55681/v1/trace" LS_SERVICE_NAME=<service name> node server_init.js
 ```
+<br></br>
+You will need to replace 'IP of SigNoz Backend' with the IP of the machine where you installed SigNoz. Replacing the placeholders in the above command for local host:
+
+- `IP of SigNoz Backend`: localhost (since we are running SigNoz on our local host)
+
+- `service name`: node_app (you can give whatever name that suits you)
+
+```jsx
+OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_SPAN_ENDPOINT="http://localhost:55681/v1/trace" LS_SERVICE_NAME=node_app node server_init.js
+```
+<br></br>
+
 :::note
 
 - Remember to allow incoming requests to port **55681** of machine where SigNoz backend is hosted
