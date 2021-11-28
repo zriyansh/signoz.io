@@ -49,7 +49,7 @@ You can attach the Java agent to your application through your terminal (-javaag
 
 Now that you know how Java agent works, let's see how to use the Java agent provided by OpenTelemetry for auto-instrumentation.
 
-1. Download the [latest Java Jar agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent-all.jar).
+1. Download the [latest Java Jar agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar).
 2. Prepare environment variables needed for the Java agent. The common ones include a service name for the service being monitored, traces and metrics exporter format specifier, and an endpoint for collecting the captured data.
 3. You need to export the captured data to an endpoint. You can use a full-stack open-source observability tool like [SigNoz](https://signoz.io/) as a backend to capture the data.
 

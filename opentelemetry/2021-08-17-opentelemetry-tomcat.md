@@ -97,7 +97,7 @@ Make sure you have Tomcat installed on your system. If not, then you can downloa
 
 OpenTelemetry has a very handy Java JAR agent that can be attached to any Java 8+ application for instrumenting Java applications.. The JAR agent can detect a number of popular libraries and frameworks and instrument it right out of the box. You don't need to add any code for that.
 
-1. Download the [latest Java JAR agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent-all.jar).
+1. Download the [latest Java JAR agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar).
 2. For the Tomcat application, you need to setup a few environment variables. You need to create and add a new file `setenv.sh` in your Tomcat bin folder. The `./startup.sh` command which is used to run the Java app will check for `setenv.sh` file and run the commands accordingly.
 3. In `setenv.sh` file, paste the following environment variables using a code editor:
 
