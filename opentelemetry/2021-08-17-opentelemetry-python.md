@@ -93,10 +93,12 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
 
 2. **MongoDB**<br></br>
    If you already have MongoDB services running on your system, you can skip this step.
-   For macOS:
-   Download link: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+   
+   For macOS: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
 
    For Linux: https://docs.mongodb.com/manual/administration/install-on-linux/
+
+   For Ubuntu: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
 
    For Windows: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
 
