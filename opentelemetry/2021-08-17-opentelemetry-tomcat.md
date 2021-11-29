@@ -102,7 +102,7 @@ OpenTelemetry has a very handy Java JAR agent that can be attached to any Java 8
 3. In `setenv.sh` file, paste the following environment variables using a code editor:
 
    ```
-   export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/path/to/opentelemetry-javaagent-all.jar"
+   export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/path/opentelemetry-javaagent.jar"
    export OTEL_METRICS_EXPORTER=none
    export OTEL_EXPORTER_OTLP_ENDPOINT=<IP of SigNoz Backend>:4317
    export OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name>
@@ -115,7 +115,7 @@ OpenTelemetry has a very handy Java JAR agent that can be attached to any Java 8
    `OTEL_RESOURCE_ATTRIBUTES` is used to specify the service name of the service being monitored. So the final environment variables will look like below. Note that:
 
    ```
-   export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/Users/cruxaki/Downloads/opentelemetry-javaagent-all.jar"
+   export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/Users/cruxaki/Downloads/opentelemetry-javaagent.jar"
    export OTEL_METRICS_EXPORTER=none
    export OTEL_EXPORTER_OTLP_ENDPOINT=http://40.76.59.122:4317
    export OTEL_RESOURCE_ATTRIBUTES=service.name=Tomcat-SigNoz

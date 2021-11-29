@@ -20,7 +20,7 @@ Enable the instrumentation agent using the -javaagent flag to the JVM.
 
 <p>&nbsp;</p>
 
-### For Java applications packages as JAR files
+### For Java applications packaged as JAR files
 
 If you run your Java application as a JAR file, please follow the below instruction
 
@@ -35,15 +35,15 @@ If you run your Java application as a JAR file, please follow the below instruct
   <TabItem value="self-hosted"> -->
 
 ```bash
-OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz Backend>:4317" OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name> java -javaagent:/path/to/opentelemetry-javaagent-all.jar -jar  <myapp>.jar
+OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz Backend>:4317" OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name> java -javaagent:/path/opentelemetry-javaagent.jar -jar  <myapp>.jar
 ```
 
-where <app_name> is the name you want to set for your application
+where <app_name> is the name you want to set for your application. `path` should be updated to the path of downloaded Java JAR agent.
 
 You can also specify environment variables in the following way
 
 ```bash
-java -javaagent:/path/to/opentelemetry-javaagent-all.jar \
+java -javaagent:/path/opentelemetry-javaagent.jar \
     -Dotel.metrics.exporter=none \
     -Dotel.exporter.otlp.endpoint=http://<IP of SigNoz Backend>:4317 \
     -Dotel.resource.attributes="service.name=<app_name>" \
@@ -53,6 +53,8 @@ java -javaagent:/path/to/opentelemetry-javaagent-all.jar \
 :::note
 Remember to allow incoming requests to port 4317 of machine where SigNoz backend is hosted
 :::
+
+If you want to try out SigNoz with a sample Java application, visit this [GitHub repo](https://github.com/SigNoz/spring-petclinic).
 
 <!-- </TabItem>
   <TabItem value="cloud">
@@ -82,7 +84,7 @@ This should set these environment variables and start sending telemetry data to 
 
 ```bash
 
-export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/path/to/opentelemetry-javaagent-all.jar"
+export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/path/to/opentelemetry-javaagent.jar"
 export OTEL_METRICS_EXPORTER=none
 export OTEL_EXPORTER_OTLP_ENDPOINT=http://<IP of SigNoz Backend>:4317
 export OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name>
