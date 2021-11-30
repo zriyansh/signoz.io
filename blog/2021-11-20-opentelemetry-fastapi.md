@@ -80,10 +80,10 @@ import Screenshot from "@theme/Screenshot"
 **Prerequisites**<br></br>
 Python 3.6 or newer
 
-Download the [latest version](https://www.python.org/downloads/) of Python.
+Download the <a href = "https://www.python.org/downloads/" rel="noopener noreferrer nofollow" target="_blank" >latest version</a> of Python.
 
 **Running sample FastAPI app**<br></br>
-We will be using the FastAPI app at this [Github repo](https://github.com/sureshdsk/sample-fastapi-app). All the required OpenTelemetry packages are contained within the `requirements.txt` file under `app` folder in this sample app.
+We will be using the FastAPI app at this <a href = "https://github.com/sureshdsk/sample-fastapi-app" rel="noopener noreferrer nofollow" target="_blank" >Github repo</a>. All the required OpenTelemetry packages are contained within the `requirements.txt` file under `app` folder in this sample app.
 ```jsx
 git clone https://github.com/sureshdsk/sample-fastapi-app.git
 cd sample-fastapi-app/

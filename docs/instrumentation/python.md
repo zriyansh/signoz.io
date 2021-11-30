@@ -37,12 +37,11 @@ Retry installing `opentelemetry-exporter-otlp` by doing
 - pip3 install opentelemetry-exporter-otlp
 
 
+The below command inspects the active Python site-packages and figures out which instrumentation packages the user might want to install and installs them for you.
 
 ```bash
 opentelemetry-bootstrap --action=install
 ```
-
-The above command inspects the active Python site-packages and figures out which instrumentation packages the user might want to install and installs them for you.
 
 :::note
 If it says cannot find command `opentelemetry-bootstrap` then you need to specify the path of the file. In ubuntu, it is at `/home/ubuntu/.local/bin/opentelemetry-bootstrap`. So your command becomes,
@@ -64,6 +63,8 @@ If it says cannot find command `opentelemetry-bootstrap` then you need to specif
 >
 <TabItem value="self-hosted"> -->
 
+Finally, to start sending data to SigNoz, use the following command:
+
 ```bash
 OTEL_METRICS_EXPORTER=none OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz Backend>:4317"  opentelemetry-instrument <your run command>
 ```
@@ -71,6 +72,7 @@ OTEL_METRICS_EXPORTER=none OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> 
 _<service_name>_ is the name of service you want
 
 _<your_run_command>_ can be `python3 app.py` or `flask run`
+
 
 :::note
 
