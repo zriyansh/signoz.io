@@ -93,8 +93,24 @@ You need to have docker-compose correctly setup before running this.
 If you don't have `docker-compose` set up, please follow [this guide](https://docs.docker.com/compose/install/) to set up docker compose before proceeding with the next steps.
 
 
+For v0.5.0 and earlier
+
 ```console
 sudo docker-compose -f ./docker/clickhouse-setup/docker-compose.yaml up -d
+```
+
+
+For v0.5.1 (Released on 2 Dec 2021) and later 
+
+For x86 architecture (default if you are not on Apple Silicon)
+
+```console
+sudo docker-compose --env-file ./docker/clickhouse-setup/env/x86_64.env -f docker/clickhouse-setup/docker-compose.yaml up -d
+```
+
+For ARM64 architecture (Apple Silicon)
+```console
+sudo docker-compose --env-file ./docker/clickhouse-setup/env/arm64.env -f docker/clickhouse-setup/docker-compose.yaml up -d
 ```
 
 <br></br>
