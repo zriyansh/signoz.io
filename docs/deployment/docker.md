@@ -98,20 +98,28 @@ For v0.5.0 and earlier
 ```console
 sudo docker-compose -f ./docker/clickhouse-setup/docker-compose.yaml up -d
 ```
-
+<p>&nbsp;</p>
 
 For v0.5.1 (Released on 2 Dec 2021) and later 
 
-For x86 architecture (default if you are not on Apple Silicon)
+<Tabs
+  defaultValue="x86"
+  values={[
+    {label: 'x86', value: 'x86'},
+    {label: 'Apple Silicon', value: 'arm64'},
+  ]}>
+  <TabItem value="x86">
 
-```console
-sudo docker-compose --env-file ./docker/clickhouse-setup/env/x86_64.env -f docker/clickhouse-setup/docker-compose.yaml up -d
-```
+    sudo docker-compose --env-file ./docker/clickhouse-setup/env/x86_64.env -f docker/clickhouse-setup/docker-compose.yaml up -d
+  
+  </TabItem>
 
-For ARM64 architecture (Apple Silicon)
-```console
-sudo docker-compose --env-file ./docker/clickhouse-setup/env/arm64.env -f docker/clickhouse-setup/docker-compose.yaml up -d
-```
+  <TabItem value="arm64">
+
+    sudo docker-compose --env-file ./docker/clickhouse-setup/env/arm64.env -f docker/clickhouse-setup/docker-compose.yaml up -d
+
+  </TabItem>
+</Tabs>
 
 <br></br>
 

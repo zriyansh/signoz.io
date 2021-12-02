@@ -2,9 +2,11 @@
 id: troubleshooting
 title: Troubleshooting
 ---
-### ClickHouse Setup
 
-For running Clickhouse setup, atleast **1.5GB of memory** should be allocated in docker. This is just for demo/testing purpose.
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+For running SigNoz, atleast **1.5GB of memory** should be allocated in docker. This is just for demo/testing purpose.
 
 To test if everything is fine, run the following command
 
@@ -54,16 +56,28 @@ You would want to open port 3000 to be accessible from outside world if you want
 
 1. For v0.5.1 (Released on 2 Dec 2021) and later 
 
-For x86 architecture (default if you are not on Apple Silicon)
+<Tabs
+  defaultValue="x86"
+  values={[
+    {label: "x86", value: 'x86'},
+    {label: "Apple Silicon", value: 'arm64'},
+  ]}>
+  <TabItem value="x86">
 
-```console
-sudo docker-compose --env-file ./docker/clickhouse-setup/env/x86_64.env -f docker/clickhouse-setup/docker-compose.yaml down -v
-```
+    sudo docker-compose --env-file ./docker/clickhouse-setup/env/x86_64.env -f docker/clickhouse-setup/docker-compose.yaml down -v
 
-For ARM64 architecture (Apple Silicon)
-```console
-sudo docker-compose --env-file ./docker/clickhouse-setup/env/arm64.env -f docker/clickhouse-setup/docker-compose.yaml down -v
-```
+  </TabItem>
+
+  <TabItem value="arm64">
+    
+    sudo docker-compose --env-file ./docker/clickhouse-setup/env/arm64.env -f docker/clickhouse-setup/docker-compose.yaml down -v
+
+  </TabItem>
+
+</Tabs>
+
+<p>&nbsp;</p>
+
 
 2. `./install.sh`
 
