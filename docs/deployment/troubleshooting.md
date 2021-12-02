@@ -25,12 +25,11 @@ b3afb9d3ac32   yandex/clickhouse-server                       "/entrypoint.sh"  
 ```
 <br></br>
 
-#### Troubleshooting of common issues for ClickHouse Setup
+#### Troubleshooting of common issues 
 
 1. `docker ps` will show all containers created by SigNoz. Check if `clickhouse-setup_clickhouse`, `clickhouse-setup_clickhouse` and `query-service` containers are running. They do not come up if there is a memory problem. You may want to increase alloted memory.
 2. If you are still facing issues, try re-running `./install.sh`. This will retry installing containers which failed the first time.
-3. Try reinstall SigNoz by first bringing down the existing containers by running
-   `sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml down -v` and then running `./install.sh`
+3. Try reinstall SigNoz by first bringing down the existing containers & [reinstalling](#re-installing-signoz)
 
 :::info
 Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3000`.
@@ -53,9 +52,19 @@ You would want to open port 3000 to be accessible from outside world if you want
 
 ### Re-installing SigNoz
 
-#### ClickHouse setup
+1. For v0.5.1 (Released on 2 Dec 2021) and later 
 
-1. `sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml down -v`
+For x86 architecture (default if you are not on Apple Silicon)
+
+```console
+sudo docker-compose --env-file ./docker/clickhouse-setup/env/x86_64.env -f docker/clickhouse-setup/docker-compose.yaml down -v
+```
+
+For ARM64 architecture (Apple Silicon)
+```console
+sudo docker-compose --env-file ./docker/clickhouse-setup/env/arm64.env -f docker/clickhouse-setup/docker-compose.yaml down -v
+```
+
 2. `./install.sh`
 
 <!-- #### Kafka+Druid setup
