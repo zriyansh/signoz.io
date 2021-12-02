@@ -39,11 +39,8 @@ Here's a [quick guide](https://docs.docker.com/compose/install/) to install Dock
 
 
 :::note
-
-[Update Nov 21, 2021]
-1. If you are trying to test SigNoz on **Mac M1 (Apple Silicon Chip)**, the below methods will throw an error as ClickHouse doesn't provide an [official arm build](https://github.com/ClickHouse/ClickHouse/issues/20237#issuecomment-888979638) for docker. We recommend you try installing on a cloud virtual machine on Ubuntu or any of the other supported Linux distros.
-
-2. Currently, we have not tested these instructions to run SigNoz on Windows. But you can try it.
+[Update Nov 21, 2021]<br></br>
+Currently, we have not tested these instructions to run SigNoz on Windows. But you can try it.
 :::
 
 
