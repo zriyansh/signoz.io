@@ -39,7 +39,7 @@ Here's a [quick guide](https://docs.docker.com/compose/install/) to install Dock
 
 
 :::note
-[Update Nov 21, 2021]<br></br>
+[Update December 2, 2021]<br></br>
 Currently, we have not tested these instructions to run SigNoz on Windows. But you can try it.
 :::
 
