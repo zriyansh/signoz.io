@@ -54,7 +54,7 @@ SigNoz currently supports 2 type of panels.
 
 
 
-### Steps to enable more recivers and metrics
+### Steps to enable more receivers and metrics
 
 
 - You can configure which receivers and metrics you want to enable by changing [these](https://github.com/SigNoz/signoz/blob/53d52254cb94d305a81763f8852bbd645adf79c1/deploy/docker/clickhouse-setup/otel-collector-config.yaml#L14) lines in otel collector config file.
