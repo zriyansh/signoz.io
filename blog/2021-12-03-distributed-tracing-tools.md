@@ -1,7 +1,7 @@
 ---
 title: Latest top 11 distributed tracing tools [perfect for microservices]
 slug: distributed-tracing-tools
-date: 2021-09-18
+date: 2021-12-03
 tags: [distributed-tracing, application-monitoring, apm-tools]
 author: Ankit Anand
 author_title: SigNoz Team
