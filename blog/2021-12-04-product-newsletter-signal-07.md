@@ -87,7 +87,7 @@ export const YoutubeWrapper = ({children, url}) => (
 </div>
 );
 
-<YoutubeWrapper url="https://www.youtube.com/watch?v=HBLtC3UKpmA"> </YoutubeWrapper><br></br>
+<YoutubeWrapper url="https://www.youtube.com/embed/HBLtC3UKpmA"> </YoutubeWrapper><br></br>
 
 We would love to hear your feedback on alerts. Join our slack community to pass on any suggestions for improvement.
 
