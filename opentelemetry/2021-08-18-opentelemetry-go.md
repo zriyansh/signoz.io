@@ -87,28 +87,12 @@ Verify if you have Golang installed on your machine by running `$ go version` on
    git clone https://github.com/SigNoz/sample-golang-app.git
    ```
 2. **Update path to sample-golang-app**<br></br>
-   Update your terminal path to the sample app directory and check if the app is working or not using the following command:
+   Update your terminal path to the sample app directory
 
    ```
    cd sample-golang-app
-   go run main.go
-   ```
-   
-   Make sure you have an available port for running your app. SigNoz uses `port 8080` for its query service. On your mac terminal, you can set the listening port of your app by using the following command:
-
-   ```
-   export PORT = 8081
    ```
 
-   <Screenshot
-   alt="Sample Go app"
-   height={500}
-   src="/img/blog/2021/08/opentelemetry_go_sample_app.png"
-   title="/books endpoint of our bookstore app"
-   width={700}
-   />
-
-   Once you ensure that your application is working, exit the server by pressing 'Ctrl + C' on your mac terminal.
 
 ## Instrumentation with OpenTelemetry and sending data to SigNoz
 
@@ -139,7 +123,17 @@ SERVICE_NAME=goApp INSECURE_MODE=true OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_O
 SERVICE_NAME=goApp INSECURE_MODE=true OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT=localhost:4317 go run main.go
 ```
 
-<br></br>And, congratulations! You have instrumented your sample Golang app. Hit the `/books` endpoint of the bookstore app at http://localhost:8081/books. Refresh it a bunch of times in order to generate load, and wait for 1-2 mins for data to appear on SigNoz dashboard.
+<br></br>And, congratulations! You have instrumented your sample Golang app. 
+
+Hit the `/books` endpoint of the bookstore app at [http://localhost:8090/books](http://localhost:8090/books). Refresh it a bunch of times in order to generate load, and wait for 1-2 mins for data to appear on SigNoz dashboard.
+
+ <Screenshot
+   alt="Sample Go app"
+   height={500}
+   src="/img/blog/2021/08/opentelemetry_go_sample_app.png"
+   title="/books endpoint of our bookstore app"
+   width={700}
+   />
 
 You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000) to monitor your app for performance metrics.
 

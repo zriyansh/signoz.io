@@ -76,41 +76,32 @@ We will divide the tutorial into two parts:
 
 ## Part 1 - Installing SigNoz
 
-1.  **Install Docker**<br></br>
-    You can install Docker by following the steps listed on their website [here.](https://www.docker.com/get-started) For this tutorial, you can choose the Docker Desktop option based on the system you have.
+### Installing SigNoz
 
-    ![](/img/blog/2021/06/docker-installation.webp)
+You can get started with SigNoz using just three commands at your terminal.
 
-2.  **Clone SigNoz GitHub repository**<br></br>
-    From your terminal use the following command to clone SigNoz's GitHub repository.
+```jsx
+git clone https://github.com/SigNoz/signoz.git
+cd signoz/deploy/
+./install.sh
+```
+<br></br>
 
-        git clone https://github.com/SigNoz/signoz.git
+For detailed instructions, you can visit our documentation.
 
-3.  **Update path to signoz/deploy and install SigNoz**<br></br>
-    The deploy folder contains the files necessary for deploying SigNoz through Docker.
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_flask)
 
-        cd signoz/deploy/
+When you are done installing SigNoz, you can access the UI at: [http://localhost:3000](http://localhost:3000/application)
 
-        ./install.sh
+The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
 
-    You will be asked to select one of the 2 ways to proceed:
-
-    1. Clickhouse as database (default)
-    2. Kafka + Druid setup to handle scale (recommended for production use)
-
-    Trying out SigNoz with clickhouse database takes less than 1.5GB of memory and for this tutorial, we will use that option.
-
-    ![](/img/blog/2021/06/signoz_installation_terminal.webp)
-
-    You will get the following message once the installation is complete.
-
-    ![](/img/blog/2021/06/installation_complete.webp)
-
-    Once the installation runs successfully, the UI should be accessible at port 3000. Wait for 2-3 mins for the data to be available to frontend.
-
-    ![](/img/blog/2021/06/signoz_ui.webp)
-
-    The applications shown in the dashboard are from a sample app called Hot R.O.D that comes with the installation bundle. It has 4 microservices being monitored: Frontend, Customer, Driver and Route. You can access the Hot R.O.D application UI at: [http://localhost:9000/](http://localhost:9000/)
+<Screenshot
+   alt="SigNoz dashboard showing application list"
+   height={500}
+   src="/img/blog/2021/08/signoz_dashboard_hc.webp"
+   title="SigNoz Dashboard"
+   width={700}
+/>
 
 Now that you have SigNoz up and running, let's see how instrumentation works. Instrumentation is the process of implementing code instructions to monitor your application's performance. Instrumentation is key to see how your application handles the real world. It helps you generate trace data which you can then use to understand what's happening inside your systems.
 
@@ -142,12 +133,7 @@ Verify if you have Golang installed on your machine by running `$ go version` on
 
         cd sample-golang-app
         go run main.go
-
-    Make sure you have an available port for running your app. If by default, the golang app tries to run on port 8080, you might get an error as SigNoz uses port 8080 for its query service. On your mac terminal, you can set the listening port of your app by using following command:
-
-        export PORT = 8081
-
-    When the server runs successfully, you can check the endpoint of your sample bookstore app at: [http://localhost:8081/books](http://localhost:8081/books)
+    This runs the gin application at port `8090`. Try accessing API at `http://localhost:8090/books`
 
     If you see an empty array, it means your application is working. You can check out how to write, update and delete books in your array from the article [here](https://blog.logrocket.com/how-to-build-a-rest-api-with-golang-using-gin-and-gorm/).
 
@@ -159,9 +145,9 @@ Verify if you have Golang installed on your machine by running `$ go version` on
     width={700}
     />
 
-    Once you ensure that your application is working, exit the server by pressing 'Ctrl + C' on your mac terminal.
+3.  Once you ensure that your application is working, exit the server by pressing `Ctrl + C` on your mac terminal.
 
-3.  **Set up OpenTelemetry Golang instrumentation library**<br></br>
+4.  **Set up OpenTelemetry Golang instrumentation library**<br></br>
     The file `main.go` has instructions to import all the necessary OpenTelemetry packages in order to instrument the sample app. For this app, we import the following OpenTelemetry packages.
 
     ```
@@ -189,7 +175,7 @@ Verify if you have Golang installed on your machine by running `$ go version` on
     SERVICE_NAME=goApp INSECURE_MODE=true OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT=localhost:4317 go run main.go
     ```
 
-And, congratulations! You have instrumented your sample Golang app. Hit the `/books` endpoint of the bookstore app at [http://localhost:8081/books](http://localhost:8081/books). Refresh it a bunch of times in order to generate load, and wait for 1-2 mins for data to appear on SigNoz dashboard.
+And, congratulations! You have instrumented your sample Golang app. Hit the `/books` endpoint of the bookstore app at [http://localhost:8090/books](http://localhost:8090/books). Refresh it a bunch of times in order to generate load, and wait for 1-2 mins for data to appear on SigNoz dashboard.
 
 You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000/) to monitor your app for performance metrics.
 
