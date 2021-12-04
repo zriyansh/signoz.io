@@ -1,7 +1,7 @@
 ---
 title: Jaeger distributed tracing - complete guide
 slug: distributed-tracing-jaeger
-date: 2021-09-23
+date: 2021-12-01
 tags: [jaeger, distributed-tracing]
 author: Ankit Anand
 author_title: SigNoz Team

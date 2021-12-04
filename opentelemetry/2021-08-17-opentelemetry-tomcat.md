@@ -153,7 +153,7 @@ SigNoz comes with out of box RED metrics charts and visualization. RED metrics s
 - Duration taken by requests
 
 <Screenshot
-   alt="SigNoz Ui showing charts"
+   alt="SigNoz UI showing charts"
    height={500}
    src="/img/blog/2021/08/opentelemetry_tomcat_signoz_charts.png"
    title="SigNoz UI showing popular RED metrics of application performance"

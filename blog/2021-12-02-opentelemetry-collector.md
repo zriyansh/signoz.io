@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry Collector - architecture and configuration guide
 slug: opentelemetry-collector-complete-guide
-date: 2021-08-31
+date: 2021-12-02
 tags: [opentelemetry]
 author: Ankit Anand
 author_title: SigNoz Team
