@@ -70,7 +70,7 @@ import Screenshot from "@theme/Screenshot"
 ### Creating a sample express application
 You need to ensure that you have Node.js version 12 or newer.
 
-[Download latest version of Nodejs](https://nodejs.org/en/download/).
+<a href = "https://nodejs.org/en/download/" rel="noopener noreferrer nofollow" target="_blank" >Download latest version of Nodejs</a>.
 
 For the sample application, let's create a basic 'hello world' express.js application.
 

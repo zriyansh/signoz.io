@@ -32,7 +32,7 @@ In this article, we will use OpenTelemetry to instrument a sample Flask app. Fla
 
 Instrumentation is one of the biggest challenge engineering teams face when starting out with observability. Instrumenting a distributed application architecture is not easy. Applications now have distributed services as well as distributed teams that might be using multiple programming languages and numerous frameworks and libraries.
 
-[OpenTelemetry](https://opentelemetry.io/) is the leading open-source standard that is solving the problem of instrumentation. It is currently an incubating project under the [Cloud Native Computing Foundation](https://www.cncf.io/).
+<a href = "https://opentelemetry.io/" rel="noopener noreferrer nofollow" target="_blank" >OpenTelemetry</a> is the leading open-source standard that is solving the problem of instrumentation. It is currently an incubating project under the <a href = "https://www.cncf.io/" rel="noopener noreferrer nofollow" target="_blank" >Cloud Native Computing Foundation</a>.
 
 It is a set of tools, APIs, and SDKs used to instrument applications to create and manage telemetry data(Logs, metrics, and traces). It aims to make telemetry data(logs, metrics, and traces) a built-in feature of cloud-native software applications.
 
@@ -81,17 +81,18 @@ import Screenshot from "@theme/Screenshot"
 
 **Prerequisites**
 1. Python 3.4 or newer<br></br>
-   Download the [latest version](https://www.python.org/downloads/) of Python.
+   Download the <a href = "https://www.python.org/downloads/" rel="noopener noreferrer nofollow" target="_blank" >latest version</a> of Python.
     
 2. MongoDB<br></br>
    Below are the download links for different OS:<br></br>
-   [MacOS](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)<br></br>
-   [Linux](https://docs.mongodb.com/manual/administration/install-on-linux/)<br></br>
-   [Windows](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/)<br></br>
+   <a href = "https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/" rel="noopener noreferrer nofollow" target="_blank" >MacOS</a><br></br>
+   <a href = "https://docs.mongodb.com/manual/administration/install-on-linux/" rel="noopener noreferrer nofollow" target="_blank" >Linux</a><br></br>
+   <a href = "https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/" rel="noopener noreferrer nofollow" target="_blank" >Windows</a><br></br>
+   <a href = "https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/" rel="noopener noreferrer nofollow" target="_blank" >Ubuntu</a><br></br>
 
 
 **Running sample Flask app**<br></br>
-We will be using the Flask app at this [Github repo](https://github.com/SigNoz/sample-flask-app).
+We will be using the Flask app at this <a href = "https://github.com/SigNoz/sample-flask-app" rel="noopener noreferrer nofollow" target="_blank" >Github repo</a>.
 
 1. Clone sample Flask app repository and go to the root folder<br></br>
    ```jsx
@@ -118,7 +119,7 @@ You can now access the UI of the app on your local host: http://localhost:5000/
    ```jsx
    pip3 install -r requirements.txt
    ```
-   If it hangs while installing `grpcio` during **pip3 install opentelemetry-exporter-otlp** then follow below steps as suggested in [this stackoverflow link](https://stackoverflow.com/questions/56357794/unable-to-install-grpcio-using-pip-install-grpcio/62500932#62500932).
+   If it hangs while installing `grpcio` during **pip3 install opentelemetry-exporter-otlp** then follow below steps as suggested in <a href = "https://stackoverflow.com/questions/56357794/unable-to-install-grpcio-using-pip-install-grpcio/62500932#62500932" rel="noopener noreferrer nofollow" target="_blank" >this stackoverflow link</a>.
 
    - pip3 install --upgrade pip
    - python3 -m pip install --upgrade setuptools
