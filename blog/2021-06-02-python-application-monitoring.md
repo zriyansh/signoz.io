@@ -151,7 +151,7 @@ On MacOS the installation is done using Homebrew's brew package manager. Once th
    ![mac terminal running Python apps](/img/blog/2021/05/screenzy-1622486361195.webp)
    <!--- On my mac terminal --->
 
-   You can now access the UI of the app on your local host: [http://localhost:5000/](http://localhost:5000/)
+   You can now access the UI of the app on your local host: [http://localhost:5002/](http://localhost:5002/)
 
    ![](/img/blog/2021/05/screenzy-1622486344949-1.webp)
    TODO reminder app with Flask and MongoDB

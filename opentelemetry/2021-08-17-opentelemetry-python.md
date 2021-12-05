@@ -135,13 +135,13 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
     width={700}
     />
 
-   You can now access the UI of the app on your local host: http://localhost:5000/
+   You can now access the UI of the app on your local host: http://localhost:5002/
 
    <Screenshot
     alt="Python app UI"
     height={500}
     src="/img/blog/2021/08/python_app_ui.png"
-    title="Python App UI accessed on port 5000"
+    title="Python App UI accessed on port 5002"
     width={700}
     />
 

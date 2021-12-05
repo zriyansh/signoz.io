@@ -103,7 +103,7 @@ We will be using the Flask app at this <a href = "https://github.com/SigNoz/samp
    ```jsx
    python3 app.py
    ```
-You can now access the UI of the app on your local host: http://localhost:5000/
+You can now access the UI of the app on your local host: http://localhost:5002/
 
 <Screenshot
    alt="SigNoz dashboard showing application list"
