@@ -317,8 +317,8 @@ function Home() {
   return (
     <>
       <Layout
-        title={`Open source Observability platform`}
-        description="SigNoz is an opensource observability platform to help you find issues in your deployed applications & solve them quickly.
+        title={`Open source APM`}
+        description="SigNoz is an open-source APM to help you find issues in your deployed applications & solve them quickly.
       It provides an integrated UI for metrics and traces with deep filtering and aggregation to pin down specific issues very quickly.
       Built on Kafka and Druid, it is designed to handle enterprise scale."
       >
@@ -331,7 +331,7 @@ function Home() {
             <div className="row">
               <div className="col col--4">
                 <p className="hero__title " style={{ fontWeight: "bold" }}>
-                  Open-source Observability platform
+                  Open-source APM
                   {/* Open-source application monitoring platform */}
                 </p>
                 <p className="hero__subtitle">
