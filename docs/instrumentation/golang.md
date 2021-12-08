@@ -6,6 +6,13 @@ title: OpenTelemetry Go Instrumentation
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+
+<p align="center">
+
+[![Book meeting](/img/docs/ZoomCTA.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
+
+</p>
+
 ### Configuring to send data to SigNoz
 
 <!-- <Tabs
@@ -316,9 +323,3 @@ Read more about upgrading to OpenTelemetry in our OpenTracing Migration Guide.
 
 
 <p>&nbsp;</p>
-
-<p align="center">
-
-[![Book meeting](/img/docs/ZoomCTA.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
-
-</p>

@@ -6,6 +6,13 @@ title: OpenTelemetry Java Instrumentation
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+<p align="center">
+
+[![Book meeting](/img/docs/ZoomCTA.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
+
+</p>
+
+
 Get up and running with OpenTelemetry in just a few quick steps! The setup process consists of two phases--getting OpenTelemetry installed and configured, and then validating that configuration to ensure that data is being sent as expected. This guide explains how to download, install, and run OpenTelemetry in Java.
 
 We follow [OpenTelemetry java instrumentation library](https://github.com/open-telemetry/opentelemetry-java-instrumentation). **We shall be exporting data in OTLP format.**
@@ -160,8 +167,3 @@ Span {
 
 <p>&nbsp;</p>
 
-<p align="center">
-
-[![Book meeting](/img/docs/ZoomCTA.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
-
-</p>

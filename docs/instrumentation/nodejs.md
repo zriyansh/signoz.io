@@ -6,6 +6,13 @@ title: OpenTelemetry NodeJS Instrumentation
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+<p align="center">
+
+[![Book meeting](/img/docs/ZoomCTA.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
+
+</p>
+
+
 **Requirements**
 
 - Node.js version 12 or newer
@@ -193,9 +200,3 @@ opentelemetry.trace.getTracer('your_tracer_name').getActiveSpanProcessor().shutd
 
 <p>&nbsp;</p>
 
-
-<p align="center">
-
-[![Book meeting](/img/docs/ZoomCTA.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
-
-</p>
