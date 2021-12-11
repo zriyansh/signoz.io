@@ -26,7 +26,7 @@ This guide explains how to download, install, and run OpenTelemetry in Python.
 - Python 3.4 or newer
 - An app to add OpenTelemetry to
 
-We follow [OpenTelemetry python instrumentation library](https://github.com/open-telemetry/opentelemetry-python/tree/master/opentelemetry-instrumentation). **We shall be exporting data in Jaeger Thrift protocol.**
+We follow [OpenTelemetry python instrumentation library](https://github.com/open-telemetry/opentelemetry-python). **We shall be exporting data in Jaeger Thrift protocol.**
 
 ```bash
 pip3 install opentelemetry-distro
