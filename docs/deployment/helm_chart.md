@@ -26,9 +26,6 @@ kubectl create ns platform
 
 helm -n platform install signoz deploy/kubernetes/platform
 
-kubectl -n platform apply -Rf deploy/kubernetes/jobs
-
-kubectl -n platform apply -f deploy/kubernetes/otel-collector
 ```
 
 \*_If you choose a different namespace, you need to point your applications to correct address to send traces. In our sample application just change the `JAEGER_ENDPOINT` environment variable in `sample-apps/hotrod/deployment.yaml`_
