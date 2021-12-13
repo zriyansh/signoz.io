@@ -20,6 +20,8 @@ SigNoz currently provides simple ways to instrument NodeJS, Java, Python and Gol
 3. [OpenTelemetry Java Instrumentation](/docs/instrumentation/java)
 4. [OpenTelemetry Go Instrumentation](/docs/instrumentation/golang)
 5. [OpenTelemetry .NET Instrumentation](/docs/instrumentation/dotnet)
+6. [OpenTelemetry Ruby on Rails Instrumentation](/docs/instrumentation/ruby-on-rails/)
+
 
 
 <!-- If you need assistance instrumenting applications in other languages, please write to us at [support@signoz.io](mailto:support@signoz.io) or reach out to us on [Slack Community](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA) -->
