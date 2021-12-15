@@ -7,13 +7,13 @@ title: Deploy with Helm Charts
 2. Instrument your application as instructed in [Instructions Page](/docs/instrumentation/overview)
 
 ### Getting Started
-The easiest way to get started with SigNoz is to install using helm charts, this will install
+The easiest way to get started with SigNoz on Kubernetes is to install using helm charts, this will install
 
-- Kafka
-- Druid
-- Flattener Processor (Streaming data processor)
-- Query Service
-- Web UI
+- Query Service (Backend service)
+- Web UI (Frontend)
+- ClickHouse instance (Datastore)
+- OpenTelemetry collector
+- Alert Manager
 
 ### Steps to Deploy SigNoz
 
