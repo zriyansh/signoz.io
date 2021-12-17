@@ -9,7 +9,6 @@ author_url: https://github.com/ankit01-oss
 author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
 description: OpenTelemetry is a vendor-agnostic isntrumentation library. In this article, learn how to set up monitoring for FastAPI web framework using OpenTelemetry.
 image: /img/blog/2021/11/monitor_fastAPI_cover.webp
-hide_table_of_contents: true
 keywords:
   - opentelemetry
   - opentelemetry python
@@ -83,18 +82,89 @@ Python 3.6 or newer
 Download the <a href = "https://www.python.org/downloads/" rel="noopener noreferrer nofollow" target="_blank" >latest version</a> of Python.
 
 **Running sample FastAPI app**<br></br>
-We will be using the FastAPI app at this <a href = "https://github.com/sureshdsk/sample-fastapi-app" rel="noopener noreferrer nofollow" target="_blank" >Github repo</a>. All the required OpenTelemetry packages are contained within the `requirements.txt` file under `app` folder in this sample app.
+We will be using the FastAPI app at this <a href = "https://github.com/SigNoz/sample-fastAPI-app" rel="noopener noreferrer nofollow" target="_blank" >Github repo</a>. All the required OpenTelemetry packages are contained within the `requirements.txt` file under `app` folder in this sample app. Go to the `app` folder first.
 ```jsx
-git clone https://github.com/sureshdsk/sample-fastapi-app.git
+git clone https://github.com/SigNoz/sample-fastAPI-app.git
 cd sample-fastapi-app/
+cd app
 ```
 <br></br>
 
-**Run with docker**<br></br>
-Build docker image
+**Run instructions for sending data to SigNoz**<br></br>
+The `requirements.txt` file contains all the necessary OpenTelemetry Python packages needed for instrumentation. In order to install those packages, run the following command:
+```jsx
+pip3 install -r requirements.txt
+```
+<br></br>
+
+**Install application specific packages**<br></br>
+This step is required to install packages specific to the application. This command figures out which instrumentation packages the user might want to install and installs it for them:
+```jsx
+opentelemetry-bootstrap --action=install
+```
+<br></br>
+
+
+**Configure environment variables to run app and send data to SigNoz**<br></br>
+You're almost done. In the last step, you just need to configure a few environment variables for your OTLP exporters. Environment variables that need to be configured:
+
+   - `service.name`- application service name (you can name it as you like)
+   - `OTEL_EXPORTER_OTLP_ENDPOINT` - In this case, IP of the machine where SigNoz is installed
+
+   :::note
+   Don’t run app in reloader/hot-reload mode as it breaks instrumentation.
+   :::
+   
+   You need to put these environment variables in the below command.
+   
+   ```jsx
+   OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317" opentelemetry-instrument uvicorn main:app --host localhost --port 5002
+   ```
+
+   As we are running SigNoz on local host, `IP of SigNoz` can be replaced with `localhost` in this case. And, for `service_name` let's use `fastapiApp`. Hence, the final command becomes:
+
+   **Final Command**
+
+   ```jsx
+   OTEL_RESOURCE_ATTRIBUTES=service.name=fastapiApp OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" opentelemetry-instrument uvicorn main:app --host localhost --port 5002
+   ```
+
+And, congratulations! You have instrumented your sample FastAPI app. You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000) to monitor your app for performance metrics.
+
+You need to generate some load on your app so that there is data to be captured by OpenTelemetry. You can use locust for this load testing.
+
+```jsx
+pip3 install locust
+```
+
+<br></br>
+
+```jsx
+locust -f locust.py --headless --users 10 --spawn-rate 1 -H http://localhost:5002
+```
+<br></br>
+
+You will find `fastapiAPP` in the list of sample applications being monitored by SigNoz.
+
+<Screenshot
+    alt="FastAPI in the list of applications"
+    height={500}
+    src="/img/blog/2021/11/list_of_apps_fastapi.webp"
+    title="FastAPI in the list of applications being monitored by SigNoz"
+    width={700}
+/>
+
+If you want to run the application with a docker image, refer to the section below for instructions.
+
+### Run with docker
+You can use the below instructions if you want to run your app as a docker image, below are the instructions.<br></br>
+**Build docker image**
 ```jsx
 docker build -t sample-fastapi-app .
 ```
+<br></br>
+
+**Setting environment variables**<br></br>
 You need to set some environment variables while running the application with OpenTelemetry and send collected data to SigNoz. You can do so with the following commands at the terminal:
 ```jsx
 # If you have your SigNoz IP Address, replace <IP of SigNoz> with your IP Address. 
@@ -103,7 +173,7 @@ docker run -d --name fastapi-container \
 -e OTEL_METRICS_EXPORTER='none' \
 -e OTEL_RESOURCE_ATTRIBUTES='service.name=fastapiApp' \
 -e OTEL_EXPORTER_OTLP_ENDPOINT='http://<IP of SigNoz>:4317' \
--p 5000:5000 sample-fastapi-app
+-p 5002:5002 sample-fastapi-app
 ```
 <br></br>
 
@@ -119,7 +189,7 @@ docker run -d --name fastapi-container \
 -e OTEL_METRICS_EXPORTER='none' \
 -e OTEL_RESOURCE_ATTRIBUTES='service.name=fastapiApp' \
 -e OTEL_EXPORTER_OTLP_ENDPOINT='http://clickhouse-setup_otel-collector_1:4317' \
--p 5000:5000 sample-fastapi-app
+-p 5002:5002 sample-fastapi-app
 ```
 <br></br>
 
@@ -130,30 +200,9 @@ docker run -d --name fastapi-container \
 -e OTEL_METRICS_EXPORTER='none' \
 -e OTEL_RESOURCE_ATTRIBUTES='service.name=fastapiApp' \
 -e OTEL_EXPORTER_OTLP_ENDPOINT='http://localhost:4317' \
--p 5000:5000 sample-fastapi-app
+-p 5002:5002 sample-fastapi-app
 ```
 <br></br>
-
-You need to generate some load on your app so that there is data to be captured by OpenTelemetry. You can use locust for this load testing.
-
-```jsx
-pip install locust
-```
-
-```jsx
-locust -f locust.py --headless --users 10 --spawn-rate 1 -H http://localhost:5000
-```
-<br></br>
-
-You will find `fastapiAPP` in the list of sample applications being monitored by SigNoz.
-
-<Screenshot
-    alt="FastAPI in the list of applications"
-    height={500}
-    src="/img/blog/2021/11/list_of_apps_fastapi.webp"
-    title="FastAPI in the list of applications being monitored by SigNoz"
-    width={700}
-/>
 
 ## Open-source tool to visualize telemetry data
 SigNoz makes it easy to visualize metrics and traces captured through OpenTelemetry instrumentation.
