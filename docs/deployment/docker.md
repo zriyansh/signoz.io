@@ -93,20 +93,11 @@ You need to have docker-compose correctly setup before running this.
 If you don't have `docker-compose` set up, please follow [this guide](https://docs.docker.com/compose/install/) to set up docker compose before proceeding with the next steps.
 
 
-For v0.5.0 and earlier
-
-```console
-sudo docker-compose -f ./docker/clickhouse-setup/docker-compose.yaml up -d
-```
-<p>&nbsp;</p>
-
-For v0.5.1 (Released on 2 Dec 2021) and later 
-
 <Tabs
   defaultValue="x86"
   values={[
-    {label: 'x86', value: 'x86'},
-    {label: 'Apple Silicon', value: 'arm64'},
+    {label: 'Intel Chip', value: 'x86'},
+    {label: 'Mac with Apple chip', value: 'arm64'},
   ]}>
   <TabItem value="x86">
 
@@ -120,6 +111,14 @@ For v0.5.1 (Released on 2 Dec 2021) and later
 
   </TabItem>
 </Tabs>
+
+For v0.5.0 and earlier
+
+```console
+sudo docker-compose -f ./docker/clickhouse-setup/docker-compose.yaml up -d
+```
+<p>&nbsp;</p>
+
 
 <br></br>
 
