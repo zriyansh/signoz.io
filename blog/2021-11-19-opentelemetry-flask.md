@@ -113,6 +113,8 @@ You can now access the UI of the app on your local host: http://localhost:5002/
    width={700}
 />
 
+To capture data with OpenTelemetry, you need to configure some environment variables and run the app with OpenTelemetry packages. Once you ensure your app is running, stop the app with `ctrl + c` on a mac. So let us see how to run the app with OpenTelemetry packages.
+
 ### Instrumenting the Flask application with OpenTelemetry
 1. **Opentelemetry Python instrumentation installation**<br></br>
    The app folder contains a file called `requirements.txt`, which contains all the necessary requirements to set up OpenTelemetry Python instrumentation. Make sure your path is updated to the root directory of your sample app and run the following command:
@@ -133,28 +135,45 @@ You can now access the UI of the app on your local host: http://localhost:5002/
 
 3. **Passing the necessary environment variables**<br></br>
    You're almost done. In the last step, you just need to configure a few environment variables for your OTLP exporters. Environment variables that need to be configured:
-   - SERVICE_NAME  - application service name (you can name it as you like)
-   - ENDPOINT_ADDRESS - OTLP gRPC collector endpoint address (IP of SigNoz)
-   After taking care of these environment variables, you only need to run your instrumented application. Accomplish all these by using the following command at your terminal.
+
+   - `service.name`- application service name (you can name it as you like)
+   - `OTEL_EXPORTER_OTLP_ENDPOINT` - In this case, IP of the machine where SigNoz is installed
+
+   You need to put these environment variables in the below command.
+
+   :::note
+   Don’t run app in reloader/hot-reload mode as it breaks instrumentation.
+   :::
+
    ```jsx
-   OTEL_RESOURCE_ATTRIBUTES=service.name=flaskApp OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317" opentelemetry-instrument python3 app.py
+   OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317" opentelemetry-instrument python3 app.py
    ```
-   `Ip of SigNoz` can be replaced with localhost in this case. Hence, the final command becomes:
+
+   As we are running SigNoz on local host, `IP of SigNoz` can be replaced with `localhost` in this case. And, for `service_name` let's use `Flask_App`. Hence, the final command becomes:<br></br>
+   **Final Command**
    ```jsx
-   OTEL_RESOURCE_ATTRIBUTES=service.name=flaskApp OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" opentelemetry-instrument python3 app.py
+   OTEL_RESOURCE_ATTRIBUTES=service.name=Flask_App OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" opentelemetry-instrument python3 app.py
    ```
 
-And congratulations! You have now instrumented your flask application with OpenTelemetry.
+   And congratulations! You have now instrumented your flask application with OpenTelemetry.
 
-Below you can find your `Flask_app` in the list of applications being monitored on SigNoz dashboard.
+   Below you can find your `Flask_app` in the list of applications being monitored on SigNoz dashboard.
 
-<Screenshot
+   <Screenshot
     alt="Flask app in the list of applications"
     height={500}
     src="/img/blog/2021/11/flask_app_list_signoz.webp"
     title="Flask app in the list of applications monitored by SigNoz"
     width={700}
-/>
+   />
+
+### Troubleshooting
+The debug mode can break instrumentation from happening because it enables a reloader. To run instrumentation while the debug mode is enabled, set the use_reloader option to False:
+```jsx
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5002, debug=True, use_reloader=False)
+```
+If you face any problem in instrumenting with OpenTelemetry, refer to docs at https://signoz.io/docs/instrumentation/python
 
 
 ## Open-source tool to visualize telemetry data

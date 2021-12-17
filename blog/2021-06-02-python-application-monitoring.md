@@ -61,7 +61,37 @@ We have set up a [sample ToDo Python app](https://github.com/SigNoz/sample-flask
 1. Installing SigNoz
 2. Instrumenting sample app to start monitoring
 
-## Part 1 - Installing SigNoz
+
+## Installing SigNoz
+
+You can get started with SigNoz using just three commands at your terminal.
+
+```jsx
+git clone https://github.com/SigNoz/signoz.git
+cd signoz/deploy/
+./install.sh
+```
+<br></br>
+
+For detailed instructions, you can visit our documentation.
+
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_python)
+
+When you are done installing SigNoz, you can access the UI at: `http://localhost:3000`
+
+The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
+
+import Screenshot from "@theme/Screenshot"
+
+<Screenshot
+  alt="SigNoz dashboard"
+  height={500}
+  src="/img/blog/common/signoz_dashboard_homepage.png"
+  title="SigNoz dashboard"
+  width={700}
+/>
+
+<!-- ## Part 1 - Installing SigNoz
 
 1. **Install Docker**<br></br>
    You can install Docker by following the steps listed on their website [here.](https://www.docker.com/get-started) For this tutorial, you can choose the Docker Desktop option based on the system you have.
@@ -98,17 +128,17 @@ We have set up a [sample ToDo Python app](https://github.com/SigNoz/sample-flask
 
    Note that this setup is just for demo/testing purposes and you need to proceed with Kafka + Druid set up option in case you want to set up SigNoz for use in production.
 
-Once the installation runs successfully, the UI should be accessible at port 3000. Wait for 2-3 mins for the data to be available to frontend.
+Once the installation runs successfully, the UI should be accessible at port 3000. Wait for 2-3 mins for the data to be available to frontend. 
 
-![SigNoz UI](/img/blog/2021/05/screenzy-1621624012520-3.webp)
+![SigNoz UI](/img/blog/2021/05/screenzy-1621624012520-3.webp) -->
 
-The applications shown in the dashboard are from a sample app called Hot R.O.D that comes with the installation bundle. It has 4 microservices being monitored: Frontend, Customer, Driver and Route. You can access the Hot R.O.D application UI at: [http://localhost:9000/](http://localhost:9000/)
+The applications shown in the dashboard are from a sample app called Hot R.O.D that comes with the installation bundle.
 
 Now that you have SigNoz up and running, let's see how instrumentation works. Instrumentation is the process of implementing code instructions to monitor your application's performance. Instrumentation is key to see how your application handles the real world.
 
 SigNoz supports [OpenTelemetry](https://opentelemetry.io/) as the primary way for users to instrument their application. OpenTelemetry is a single, vendor-agnostic instrumentation library per language with support for both automatic and manual instrumentation. You don't need to worry about instrumentation in this tutorial. OpenTelemetry comes with all currently available [instrumentation](https://github.com/open-telemetry/opentelemetry-python).
 
-## Part 2 - Instrumenting sample app to start monitoring
+## Instrumenting sample app to start monitoring
 
 **Prerequisites**
 
@@ -159,7 +189,7 @@ On MacOS the installation is done using Homebrew's brew package manager. Once th
    Press 'Ctrl + C' to exit the app once you have made sure it is running properly.
 
 3. **Set up OpenTelemetry Python instrumentation library**<br></br>
-   Your app folder contains a file called requirements.txt. This file contains all the necessary commands to set up OpenTelemetry python instrumentation library. All the mandatory packages required to start the instrumentation are installed with the help of this file. Make sure your path is updated to the root directory of your sample app and run the following command:
+   Your app folder contains a file called `requirements.txt`. This file contains all the necessary commands to set up OpenTelemetry python instrumentation library. All the mandatory packages required to start the instrumentation are installed with the help of this file. Make sure your path is updated to the root directory of your sample app and run the following command:
 
    ```
    pip3 install -r requirements.txt
@@ -178,19 +208,25 @@ On MacOS the installation is done using Homebrew's brew package manager. Once th
    opentelemetry-bootstrap --action=install
    ```
 
-5. **Configure a span exporter and run your application**<br></br>
+5. **Configure environment variables to run app and send data to SigNoz**<br></br>
    You're almost done. In the last step, you just need to configure a few environment variables for your OTLP exporters. Environment variables that need to be configured:
 
-   - SERVICE_NAME- application service name (you can name it as you like)
-   - ENDPOINT_ADDRESS** - **OTLP gRPC collector endpoint address (IP of SigNoz)
+   - `service.name`- application service name (you can name it as you like)
+   - `OTEL_EXPORTER_OTLP_ENDPOINT` - In this case, IP of the machine where SigNoz is installed
 
-   After taking care of these environment variables, you only need to run your instrumented application. Accomplish all these by using the following command at your terminal.
+   You need to put these environment variables in the below command.
 
+   :::note
+   Don’t run app in reloader/hot-reload mode as it breaks instrumentation.
+   :::
+   
+   ```jsx
+   OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317" opentelemetry-instrument python3 app.py
    ```
-   OTEL_RESOURCE_ATTRIBUTES=service.name=pythonApp OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317" opentelemetry-instrument python3 app.py
-   ```
 
-   `IP of SigNoz` can be replaced with localhost in this case. Hence, the final command becomes:
+   As we are running SigNoz on local host, `IP of SigNoz` can be replaced with `localhost` in this case. And, for `service_name` let's use `pythonApp`. Hence, the final command becomes:
+
+   **Final Command**
 
    ```
    OTEL_RESOURCE_ATTRIBUTES=service.name=pythonApp OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" opentelemetry-instrument python3 app.py

@@ -170,26 +170,31 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
 3. **Configure a span exporter and run your application**<br></br>
    You're almost done. In the last step, you just need to configure a few environment variables for your OTLP exporters. Environment variables that need to be configured:
 
-   - SERVICE_NAME **-** application service name (you can name it as you like)
-   - ENDPOINT_ADDRESS **-** OTLP gRPC collector endpoint address (IP of SigNoz)
+   - `service.name`- application service name (you can name it as you like)
+   - `OTEL_EXPORTER_OTLP_ENDPOINT` - In this case, IP of the machine where SigNoz is installed
 
-   After taking care of these environment variables, you only need to run your instrumented application.
-   Accomplish all these by using the following command at your terminal.
+   You need to put these environment variables in the below command.
 
+   :::note
+   Don’t run app in reloader/hot-reload mode as it breaks instrumentation.
+   :::
+   
+   ```jsx
+   OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317" opentelemetry-instrument python3 app.py
    ```
-   OTEL_RESOURCE_ATTRIBUTES=service.name=pythonApp OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317" opentelemetry-instrument python3 app.py
-   ```
 
-   `Ip of SigNoz` can be replaced with localhost in this case. Hence, the final command becomes:
+   As we are running SigNoz on local host, `IP of SigNoz` can be replaced with `localhost` in this case. And, for `service_name` let's use `pythonApp`. Hence, the final command becomes:
+
+   **Final Command**
 
    ```
    OTEL_RESOURCE_ATTRIBUTES=service.name=pythonApp OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" opentelemetry-instrument python3 app.py
    ```
 
-   And, congratulations! You have instrumented your sample Python app. You can now access the SigNoz dashboard at http://localhost:3000 to monitor your app for performance metrics.
+   And, congratulations! You have instrumented your sample Python app. You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000/) to monitor your app for performance metrics.
 
    <Screenshot
-    alt="SigNoz dashboard showing python app in its list of applicayions."
+    alt="SigNoz dashboard showing python app in its list of applications."
     height={500}
     src="/img/blog/2021/08/opentelemetry_python_dashboard.png"
     title="Python app appearing in the list of applications"
