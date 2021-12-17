@@ -107,7 +107,7 @@ We believe the AI/Robot age is already here. It's just that the robots are not r
     width={700}
 />
 
-The robots are already. They are just sitting in cloud datacentres.
+The robots are already here. They are just sitting in cloud datacentres.
 After all, if you think carefully - isn't a lot of our lives governed by the notifications we get on mobile or desktop. Be it slack pings, new offer on e-commerce, email, twitter replies or WhatsApp notifications. Our brain has got attuned to responding to these triggers like a Pavlovian dog. In a way, the robots are already here and controlling us, but by sitting in their comfortable datacentres.
 
 Observability/monitoring is a way to ensure that these cloud-based robots are functioning properly and are doing what they are supposed to do. In spite of all the advancements in computer science, these cloud-based software systems are fragile and break quite often. Any software engineer who has deployed a service at least has a few stories to narrate on how he deployed services and the issues faced.
