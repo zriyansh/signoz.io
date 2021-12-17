@@ -96,7 +96,7 @@ If you don't have `docker-compose` set up, please follow [this guide](https://do
 <Tabs
   defaultValue="x86"
   values={[
-    {label: 'Intel Chip', value: 'x86'},
+    {label: 'x86 Chip', value: 'x86'},
     {label: 'Mac with Apple chip', value: 'arm64'},
   ]}>
   <TabItem value="x86">
@@ -112,6 +112,9 @@ If you don't have `docker-compose` set up, please follow [this guide](https://do
   </TabItem>
 </Tabs>
 
+<br></br>
+
+
 For v0.5.0 and earlier
 
 ```console
@@ -120,7 +123,6 @@ sudo docker-compose -f ./docker/clickhouse-setup/docker-compose.yaml up -d
 <p>&nbsp;</p>
 
 
-<br></br>
 
 <!-- ### Production Settings for Kafka + Druid setup
 
