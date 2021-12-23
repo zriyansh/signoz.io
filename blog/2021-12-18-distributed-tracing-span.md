@@ -53,11 +53,22 @@ These requests are broken down into spans, and the entire request is represented
 ### What are spans?
 Each unit of work in a trace is represented by a span. A trace represents a complete process for a request - from its initiation to its completion. The picture below shows one trace which is composed of multiple spans.
 
+In the example shown below, the request is initiated from a frontend web client. The first span is the parent span which shows the total time taken by the request.
+
+Parent span calls four services which form the child spans, namely:
+
+- auth - to authenticate the user
+- route - to find the nearest route
+- driver - to allocate the nearest driver
+- customer - to add customer details
+
+These spans can then further have their own child spans.
+
 <Screenshot
     alt="A complete trace consisting of multiple spans"
     height={500}
-    src="/img/blog/2021/12/spans_flamegraphs1.webp"
-    title="A complete trace consisting of multiple spans shown on SigNoz dashboard"
+    src="/img/blog/2021/12/trace_spans.webp"
+    title="A sample trace demonstrating a request initiated by a frontend web client."
     width={700}
 />
 

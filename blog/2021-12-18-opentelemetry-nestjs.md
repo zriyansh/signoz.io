@@ -55,9 +55,9 @@ cd signoz/deploy/
 ```
 For detailed instructions, you can visit our documentation.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_flask)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_nestjs)
 
-if you have installed SigNoz on your local host, you can access the UI at: [http://localhost:3000](http://localhost:3000/application)
+If you have installed SigNoz on your local host, you can access the UI at: [http://localhost:3000](http://localhost:3000/application)
 
 The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
 

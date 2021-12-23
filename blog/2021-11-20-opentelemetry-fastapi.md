@@ -81,7 +81,7 @@ Python 3.6 or newer
 
 Download the <a href = "https://www.python.org/downloads/" rel="noopener noreferrer nofollow" target="_blank" >latest version</a> of Python.
 
-**Running sample FastAPI app**<br></br>
+**1. Running sample FastAPI app**<br></br>
 We will be using the FastAPI app at this <a href = "https://github.com/SigNoz/sample-fastAPI-app" rel="noopener noreferrer nofollow" target="_blank" >Github repo</a>. All the required OpenTelemetry packages are contained within the `requirements.txt` file under `app` folder in this sample app. Go to the `app` folder first.
 ```jsx
 git clone https://github.com/SigNoz/sample-fastAPI-app.git
@@ -90,14 +90,14 @@ cd app
 ```
 <br></br>
 
-**Run instructions for sending data to SigNoz**<br></br>
+**2. Run instructions for sending data to SigNoz**<br></br>
 The `requirements.txt` file contains all the necessary OpenTelemetry Python packages needed for instrumentation. In order to install those packages, run the following command:
 ```jsx
 pip3 install -r requirements.txt
 ```
 <br></br>
 
-**Install application specific packages**<br></br>
+**3. Install application specific packages**<br></br>
 This step is required to install packages specific to the application. This command figures out which instrumentation packages the user might want to install and installs it for them:
 ```jsx
 opentelemetry-bootstrap --action=install
@@ -105,7 +105,7 @@ opentelemetry-bootstrap --action=install
 <br></br>
 
 
-**Configure environment variables to run app and send data to SigNoz**<br></br>
+**4. Configure environment variables to run app and send data to SigNoz**<br></br>
 You're almost done. In the last step, you just need to configure a few environment variables for your OTLP exporters. Environment variables that need to be configured:
 
    - `service.name`- application service name (you can name it as you like)
