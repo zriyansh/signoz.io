@@ -8,7 +8,7 @@ We are focused on building an integrated observability tool which can be a super
 The following items are in our roadmap currently
 
 
-### Alert management
+### Alert management (Shipped 🎉 with release [v0.5.0](https://github.com/SigNoz/signoz/releases/tag/v0.5.0))
 
 We plan to build upon prometheus alert manager for our use case, primarily to have alerting as code - similar to Prom alerts
 
