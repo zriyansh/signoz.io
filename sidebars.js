@@ -40,6 +40,7 @@ module.exports = {
       items: [
         'instrumentation/overview',
         'instrumentation/python',
+        'instrumentation/fastapi',
         'instrumentation/nodejs',
         'instrumentation/nestjs',
         'instrumentation/java',

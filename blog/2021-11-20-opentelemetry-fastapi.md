@@ -129,7 +129,9 @@ You're almost done. In the last step, you just need to configure a few environme
    OTEL_RESOURCE_ATTRIBUTES=service.name=fastapiApp OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" opentelemetry-instrument uvicorn main:app --host localhost --port 5002
    ```
 
-And, congratulations! You have instrumented your sample FastAPI app. You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000) to monitor your app for performance metrics.
+And, congratulations! You have instrumented your sample FastAPI app. You can check if your app is running or not by hitting the endpoint at [http://localhost:5002/](http://localhost:5002/).
+
+If you have installed SigNoz on your local host, then you can access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000) to monitor your app for performance metrics.
 
 You need to generate some load on your app so that there is data to be captured by OpenTelemetry. You can use locust for this load testing.
 

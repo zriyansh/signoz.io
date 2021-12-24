@@ -107,7 +107,7 @@ First, let's create a sample Express application. If you don't want to create th
 
    Now you need to run your application with some environment variables for OpenTelemetry. Environment variables that need to be configured:
 
-   a. `IP of SigNoz backend` - IP of the machine where SigNoz is installed. In case of `localhost`, we can use `localhost`
+   a. `IP of SigNoz backend` - IP of the machine where SigNoz is installed. In case you have installed SigNoz on your local machine, you can use `localhost`
 
    b. `service name` - the service you are monitoring (you can name it anything)
 
