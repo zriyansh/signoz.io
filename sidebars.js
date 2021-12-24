@@ -41,6 +41,7 @@ module.exports = {
         'instrumentation/overview',
         'instrumentation/python',
         'instrumentation/nodejs',
+        'instrumentation/nestjs',
         'instrumentation/java',
         'instrumentation/golang',   
         'instrumentation/dotnet',
@@ -58,6 +59,13 @@ module.exports = {
         'userguide/retention-period',
         'userguide/service-map',
         'userguide/trace-details',
+      ],
+    },
+    {
+      label: "Tutorial",
+      type: "category",
+      items: [
+        'tutorial/jvm-metrics',
       ],
     },
     {
