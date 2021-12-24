@@ -66,6 +66,7 @@ module.exports = {
       type: "category",
       items: [
         'tutorial/jvm-metrics',
+        'tutorial/kubernetes-infra-metrics',
       ],
     },
     {
