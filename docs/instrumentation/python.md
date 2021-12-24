@@ -8,7 +8,7 @@ import TabItem from "@theme/TabItem";
 
 <p align="center">
 
-[![Book meeting](/img/docs/ZoomCTA.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
+[![Book meeting](/img/docs/ZoomCTA1.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
 
 </p>
 

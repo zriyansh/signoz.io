@@ -16,7 +16,7 @@ import TabItem from "@theme/TabItem";
 
 SigNoz can help you monitor your Nestjs applications for application related metrics like latency, request per second, error rates, etc. It can also monitor infrastructure metrics like CPU utilization and memory usage.
 
-You can also set alerts on metrics of your choice to stay on top of any issues arising in your deployed application.
+You can set alerts on metrics of your choice to stay on top of any issues arising in your deployed application.
 
 
 ### Getting started for Nestjs with SigNoz

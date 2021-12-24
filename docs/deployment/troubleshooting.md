@@ -6,6 +6,12 @@ title: Troubleshooting
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+<p align="center">
+
+[![Book meeting](/img/docs/ZoomCTA1.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
+
+</p>
+
 For running SigNoz, atleast **1.5GB of memory** should be allocated in docker. This is just for demo/testing purpose.
 
 To test if everything is fine, run the following command
