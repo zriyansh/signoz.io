@@ -8,7 +8,7 @@ import TabItem from "@theme/TabItem";
 
 <p align="center">
 
-[![Book meeting](/img/docs/ZoomCTA.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
+[![Book meeting](/img/docs/ZoomCTA1.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
 
 </p>
 
@@ -99,7 +99,7 @@ First, let's create a sample Express application. If you don't want to create th
    This servs as the new entry point for the sample application. It enables OpenTelemetry SDK to load before the application starts so that OpenTelemetry can apply available instrumentation.
   
 
-3. **Final run Command**<br></br>
+3. **Final run command**<br></br>
    
    :::caution
    Run this command at your terminal after replacing the environment variables applicable for your setup.
