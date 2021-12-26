@@ -377,6 +377,7 @@ function Home() {
                   <img
                     src={"/img/yc-logo-white.svg"}
                     height={24}
+                    alt={"YCombinator"}
                     style={{ marginRight: 16 }}
                   />{" "}
                   Backed by Y Combinator
@@ -390,7 +391,7 @@ function Home() {
                         id={"demo-video-cover"}
                         onClick={setShowVideo.bind(this, true)}
                         style={{
-                          background: "url('/videos/demo_cover.png')",
+                          background: "url('/videos/demo_cover.webp')",
                           height: 426,
                           width: "100%",
                         }}
@@ -630,6 +631,8 @@ function Home() {
                           <img
                             class="avatar__photo"
                             src="img/users/aloysious_r6dl9i.webp"
+                            alt="aloysius"
+
                           />
                           <div class="avatar__intro">
                             <h4 class="avatar__name">Aloysius Coelho</h4>
@@ -694,6 +697,7 @@ function Home() {
                           <img
                             class="avatar__photo"
                             src="img/users/rachid_avbfka.webp"
+                            alt="rachid"
                           />
                           <div class="avatar__intro">
                             <h4 class="avatar__name">Rachid Zarouali</h4>
@@ -760,6 +764,7 @@ function Home() {
                           <img
                             class="avatar__photo"
                             src="img/users/kaushik_ajmrtq.webp"
+                            alt="kaushik"
                           />
                           <div class="avatar__intro">
                             <h4 class="avatar__name">Kaushik Thirthappa</h4>
@@ -920,10 +925,10 @@ function Home() {
                     </Link>
                     <Link
                       className="button button--secondary margin--md"
-                      href={"https://github.com/SigNoz/signoz"}
+                      href={"https://calendly.com/pranay-signoz/signoz-demo"}
                       onClick={requestDemoClicked}
                     >
-                      GitHub Repo
+                      Book a Demo
                     </Link>
                   </div>
                 </div>
