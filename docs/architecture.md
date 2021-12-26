@@ -59,4 +59,4 @@ The flattened data is then ingested to **Druid** _which is a real-time analytics
 
 **Query Service** is the interface between Frontend and ClickHouse. It provides APIs to be consumed by frontend application and queries ClickHouse to fetch data and processes data before responding back to the frontend.
 
-**Frontend** is the UI, built in ReactJS and Typescript and provides advanced trace/span filtering capabilities and plot metrics to give service overviews.
+**Frontend** is the UI, built in ReactJS and Typescript and provides advanced trace/span filtering capabilities and plot metrics to provide service overviews.
