@@ -94,7 +94,7 @@ const WhySigNoz = () => {
               style={{ display: feature === "pricing" ? "block" : "none" }}
             >
               <img
-                src={useBaseUrl("img/metrics-tooltip-traces.jpg")}
+                src={useBaseUrl("img/metrics-tooltip-light-v2.webp")}
                 alt="SigNoz screenshot"
               />
             </div>
@@ -103,7 +103,7 @@ const WhySigNoz = () => {
               style={{ display: feature === "olap" ? "block" : "none" }}
             >
               <img
-                src={useBaseUrl("img/business-metrics-light.jpg")}
+                src={useBaseUrl("img/business-metrics-light-v2.webp")}
                 alt="SigNoz screenshot"
               />
             </div>
@@ -114,7 +114,7 @@ const WhySigNoz = () => {
               }}
             >
               <img
-                src={useBaseUrl("img/custom-aggregates.jpg")}
+                src={useBaseUrl("img/custom-aggregates.webp")}
                 alt="SigNoz screenshot"
               />
             </div>
@@ -266,31 +266,31 @@ function ShowCompanyLogos() {
         <ul>
           <li>
             <img
-              src="https://res.cloudinary.com/dcv3epinx/image/upload/v1621059606/naver_white2_hie7gu.svg"
+              src="img/users/naver_white2_hie7gu.svg"
               alt="naver logo"
             />
           </li>
           <li>
             <img
-              src="https://res.cloudinary.com/dcv3epinx/image/upload/v1621059241/solve_white_njrutq.svg"
+              src="img/users/solve_white_njrutq.svg"
               alt="solve logo"
             />
           </li>
           <li>
             <img
-              src="https://res.cloudinary.com/dcv3epinx/image/upload/v1621014836/bukukas_svg_nfhkmf.svg"
-              alt="bukukas logo"
+              src="img/users/Outplay.webp"
+              alt="outplay logo"
             />
           </li>
           <li>
             <img
-              src="https://res.cloudinary.com/dcv3epinx/image/upload/v1620977641/cafe21_1_vlrznt.svg"
+              src="img/users/cafe21_1_vlrznt.svg"
               alt="cafe24 logo"
             />
           </li>
           <li>
             <img
-              src="https://res.cloudinary.com/dcv3epinx/image/upload/v1621059423/wpromote_white_1_njjebt.svg"
+              src="img/users/wpromote_white_1_njjebt.svg"
               alt="wpromote logo"
             />
           </li>
@@ -359,10 +359,10 @@ function Home() {
                       paddingRight: "10px",
                     }}
                     className="button button--outline button--secondary "
-                    href={"https://github.com/SigNoz/signoz"}
+                    href={"https://calendly.com/pranay-signoz/signoz-demo"}
                     onClick={requestDemoClicked}
                   >
-                    GitHub Repo
+                    Book a Demo
                   </Link>
                 </div>
 
@@ -629,7 +629,7 @@ function Home() {
                         <div class="avatar">
                           <img
                             class="avatar__photo"
-                            src="https://res.cloudinary.com/dcv3epinx/image/upload/v1620994526/aloysious_r6dl9i.jpg"
+                            src="img/users/aloysious_r6dl9i.webp"
                           />
                           <div class="avatar__intro">
                             <h4 class="avatar__name">Aloysius Coelho</h4>
@@ -693,7 +693,7 @@ function Home() {
                         <div class="avatar">
                           <img
                             class="avatar__photo"
-                            src="https://res.cloudinary.com/dcv3epinx/image/upload/v1620994758/rachid_avbfka.jpg"
+                            src="img/users/rachid_avbfka.webp"
                           />
                           <div class="avatar__intro">
                             <h4 class="avatar__name">Rachid Zarouali</h4>
@@ -759,7 +759,7 @@ function Home() {
                         <div class="avatar">
                           <img
                             class="avatar__photo"
-                            src="https://res.cloudinary.com/dcv3epinx/image/upload/v1620995322/kaushik_ajmrtq.jpg"
+                            src="img/users/kaushik_ajmrtq.webp"
                           />
                           <div class="avatar__intro">
                             <h4 class="avatar__name">Kaushik Thirthappa</h4>
