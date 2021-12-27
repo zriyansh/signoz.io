@@ -4,66 +4,30 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
-import BlogSidebar from "@theme/BlogSidebar";
-
-function getCategoryOfTag(tag) {
-  // tag's category should be customizable
-  return tag[0].toUpperCase();
-}
+import React from 'react';
+import BlogLayout from '@theme/BlogLayout';
+import TagsListByLetter from '@theme/TagsListByLetter';
+import {
+  ThemeClassNames,
+  translateTagsPageTitle,
+} from '@docusaurus/theme-common';
 
 function BlogTagsListPage(props) {
-  const { tags, sidebar } = props;
-  const tagCategories = {};
-  Object.keys(tags).forEach((tag) => {
-    const category = getCategoryOfTag(tag);
-    tagCategories[category] = tagCategories[category] || [];
-    tagCategories[category].push(tag);
-  });
-  const tagsList = Object.entries(tagCategories).sort(([a], [b]) => {
-    if (a === b) {
-      return 0;
-    }
-
-    return a > b ? 1 : -1;
-  });
-  const tagsSection = tagsList
-    .map(([category, tagsForCategory]) => (
-      <div key={category}>
-        <h3>{category}</h3>
-        {tagsForCategory.map((tag) => (
-          <Link
-            className="padding-right--md"
-            href={tags[tag].permalink}
-            key={tag}
-          >
-            {tags[tag].name} ({tags[tag].count})
-          </Link>
-        ))}
-        <hr />
-      </div>
-    ))
-    .filter((item) => item != null);
+  const {tags, sidebar} = props;
+  const title = translateTagsPageTitle();
   return (
-    <Layout
-      title="Tags"
-      description="Blog Tags"
-      wrapperClassName="blog-wrapper"
-    >
-      <div className="container margin-vert--lg">
-        <div className="row">
-          <div className="col col--3">
-            <BlogSidebar sidebar={sidebar} />
-          </div>
-          <main className="col col--7">
-            <h1>Tags</h1>
-            <div className="margin-vert--lg">{tagsSection}</div>
-          </main>
-        </div>
-      </div>
-    </Layout>
+    <BlogLayout
+      title={title}
+      wrapperClassName={ThemeClassNames.wrapper.blogPages}
+      pageClassName={ThemeClassNames.page.blogTagsListPage}
+      searchMetadata={{
+        // assign unique search tag to exclude this page from search results!
+        tag: 'blog_tags_list',
+      }}
+      sidebar={sidebar}>
+      <h1>{title}</h1>
+      <TagsListByLetter tags={Object.values(tags)} />
+    </BlogLayout>
   );
 }
 

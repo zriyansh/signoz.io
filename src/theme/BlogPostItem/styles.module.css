@@ -6,25 +6,13 @@
  */
 
 .blogPostTitle {
-  font-size: 2rem;
-}
-.blogPostTitle a,
-.tags,
-.avatarName a,
-.readMore strong {
-  color: #f99781 !important;
+  font-size: 3rem;
 }
 
-.blogPostDate {
+.blogPostData {
   font-size: 0.9rem;
 }
 
-.footer {
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-.avatarName {
-  margin-bottom: 0.4rem;
+.blogPostDetailsFull {
+  flex-direction: column;
 }
