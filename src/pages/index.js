@@ -320,7 +320,7 @@ function Home() {
         title={`Open source APM`}
         description="SigNoz is an open-source APM to help you find issues in your deployed applications & solve them quickly.
       It provides an integrated UI for metrics and traces with deep filtering and aggregation to pin down specific issues very quickly.
-      Built on Kafka and Druid, it is designed to handle enterprise scale."
+      Built with ClickHouse as datastore, it is designed to handle enterprise scale."
       >
         <TrySignozModal
           isOpen={showTrySignozModal}
@@ -586,7 +586,7 @@ function Home() {
                     <div class="card">
                       <div class="card__body padding--md">
                         <p>
-                          Industry trusted Kafka & Druid to handle enterprise
+                          Scalable & modular architecture to handle enterprise
                           scale. No scaling pains. Ever.
                         </p>
                       </div>

@@ -70,14 +70,14 @@ module.exports = {
         'tutorial/kubernetes-infra-metrics',
       ],
     },
-    {
-      label: "Configuration",
-      type: "category",
-      items: [
-        'configuration/deep_storage', 
-        'configuration/retention_period',
-      ],
-    },
+    // {
+    //   label: "Configuration",
+    //   type: "category",
+    //   items: [
+    //     'configuration/deep_storage', 
+    //     'configuration/retention_period',
+    //   ],
+    // },
     {
       id: "architecture",
       type: "doc",
