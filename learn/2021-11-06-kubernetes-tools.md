@@ -16,7 +16,7 @@ keywords:
  - dev community
 ---
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/kubernetes-tools/"/>
+  <link rel="canonical" href="https://signoz.io/learn/kubernetes-tools/"/>
 </head>
 
 Kubernetes is complex, as **[accepted by Google itself](https://www.theregister.com/2021/02/25/google_kubernetes_autopilot/)**. If you need more proof, here is an interesting collection of **[Kubernetes failure stories](https://k8s.af/)**. But Kubernetes is also a powerful container orchestration engine for automating deployment, scaling and management of containerized application. So the way forward is to make Kubernetes easier.
