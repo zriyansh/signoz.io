@@ -104,7 +104,7 @@ function Footer() {
       >
         <div style={{ display: "block" }} className={"footer-yc-logo"}>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <img src={"/img/yc-logo.png"} alt={"Y Combinator"}/>
+            <img src={"/img/yc-logo.png"} alt={"Y Combinator"} />
           </div>
           <div
             style={{
@@ -155,26 +155,15 @@ function Footer() {
         )}
 
         <NewsletterSignup />
-
-        <div></div>
-        {/*{(logo || copyright) && <div className="footer__bottom text--center">*/}
-        {/*    {logo && logo.src && <div className="margin-bottom--sm">*/}
-        {/*        {logo.href ? <a href={logo.href} target="_blank" rel="noopener noreferrer" className={styles.footerLogoLink}>*/}
-        {/*            <FooterLogo alt={logo.alt} url={logoUrl} />*/}
-        {/*          </a> : <FooterLogo alt={logo.alt} url={logoUrl} />}*/}
-        {/*      </div>}*/}
-
-        {/*  </div>}*/}
       </div>
-      {copyright ? (
+      {copyright && (
         <div
-          className="footer__copyright" // Developer provided the HTML, so assume it's safe.
-          // eslint-disable-next-line react/no-danger
+          className="footer__copyright"
           dangerouslySetInnerHTML={{
             __html: copyright,
           }}
         />
-      ) : null}
+      )}
     </footer>
   );
 }
