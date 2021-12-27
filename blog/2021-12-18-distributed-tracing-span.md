@@ -3,10 +3,7 @@ title: Spans - a key concept of distributed tracing
 slug: distributed-tracing-span
 date: 2021-12-18
 tags: [distributed-tracing, application-monitoring]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: Spans are fundamental blocks of distributed tracing. A single trace in distributed tracing consists of a series of tagged time intervals known as spans...
 image: /img/blog/2021/12/distributed_tracing_span_cover.webp
 keywords:

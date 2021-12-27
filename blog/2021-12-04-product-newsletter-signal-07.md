@@ -3,10 +3,7 @@ title: Get alerts on metrics that matter to you with SigNoz  - SigNal 07
 slug: community-update-07
 date: 2021-12-04
 tags: [product-updates, community]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: It's time for the monthly product update of SigNoz - a full-stack open-source APM tool. Find out what we've been upto at SigNoz during November, 2021.
 image: /img/blog/2021/12/signal_07_cover2.webp
 hide_table_of_contents: true
