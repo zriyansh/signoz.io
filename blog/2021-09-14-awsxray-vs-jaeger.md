@@ -3,10 +3,7 @@ title: AWS X-Ray vs Jaeger - key features, differences and alternatives
 slug: aws-xray-vs-jaeger
 date: 2021-09-14
 tags: [jaeger, apm-tools]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: Both AWS X-Ray and Jaeger are distributed tracing tools used for performance monitoring in a microservices architecture. Jaeger was originally built by teams at Uber and then open-sourced in 2015. On the other hand, AWS X-Ray is a distributed tracing tool provided by AWS specifically focused on distributed tracing for applications using Amazon Cloud Services.
 image: /img/blog/2021/09/aws_xray_vs_jaeger_cover.webp
 keywords:

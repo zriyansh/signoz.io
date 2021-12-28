@@ -3,10 +3,7 @@ title: Jaeger vs SigNoz - Taking distributed tracing to the next level
 slug: jaeger-vs-signoz
 date: 2021-08-23
 tags: [jaeger, apm-tools, distributed-tracing]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: Thinking of using Jaeger for distributed tracing? But wait, there is a much better alternative. SigNoz provides advanced capabilities for distributed tracing along with metrics and ...
 image: /img/blog/2021/08/jaeger_vs_signoz_cover.webp
 hide_table_of_contents: true

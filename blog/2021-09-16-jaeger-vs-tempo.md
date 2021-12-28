@@ -3,10 +3,7 @@ title: Jaeger vs Tempo - key features, differences, and alternatives
 slug: jaeger-vs-tempo
 date: 2021-09-16
 tags: [jaeger, apm-tools]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: Both Jaeger and Grafana Tempo are tools aimed at distributed tracing for microservice architecture. Tempo supports multiple open-source instrumentation standards, while Jaeger supports OpenTracing APIs..
 image: /img/blog/2021/09/jaeger_vs_tempo_cover-min.webp
 keywords:

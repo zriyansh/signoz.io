@@ -3,10 +3,7 @@ title: Jaeger vs New Relic - Key differences, use-cases and alternatives
 slug: jaeger-vs-newrelic
 date: 2021-09-09
 tags: [jaeger, apm-tools]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: Jaeger and New Relic are tools used in the application monitoring and observability domain. While Jaeger is open-source, New Relic is a SaaS vendor. Jaeger is suited for distributed tracing and New Relic...
 image: /img/blog/2021/09/jaeger_vs_newrelic_cover-min.webp
 keywords:

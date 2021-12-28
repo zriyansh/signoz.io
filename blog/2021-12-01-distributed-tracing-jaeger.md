@@ -3,10 +3,7 @@ title: Jaeger distributed tracing - complete guide
 slug: distributed-tracing-jaeger
 date: 2021-12-01
 tags: [jaeger, distributed-tracing]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: Jaeger is a popular open-source tool used for distributed tracing in a microservice architecture. See a demo ride-sharing application reporting its traces through Jaeger...
 image: /img/blog/2021/09/distributed_tracing_jaeger_cover-min.webp
 keywords:

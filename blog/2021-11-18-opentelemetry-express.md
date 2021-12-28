@@ -3,10 +3,7 @@ title: Monitoring your Express application using OpenTelemetry
 slug: opentelemetry-express
 date: 2021-11-18
 tags: [opentelemetry, javascript-monitoring]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: OpenTelemetry is a vendor-agnostic isntrumentation library. In this article, learn how to set up monitoring for an Express application using OpenTelemetry.
 image: /img/blog/2021/11/monitor_express_cover.webp
 hide_table_of_contents: true

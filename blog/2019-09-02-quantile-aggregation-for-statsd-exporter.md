@@ -3,10 +3,7 @@ title: Quantile Aggregation for statsd-exporter in Prometheus
 slug: quantile-aggregation-for-statsd-exporter
 date: 2019-09-02
 tags: [prometheus, apm-tools]
-author: Ankit Nayan
-author_title: SigNoz Team
-author_url: https://github.com/ankitnayan
-author_image_url: https://avatars.githubusercontent.com/u/12460410?v=4
+authors: ankit_nayan
 description: In this blog, we shall send observation frequencies in the bucket intervals chosen and aggregate those at the Prometheus back-end.
 image: /img/blog/2019/09/Quintile-Prom.webp
 keywords:

@@ -3,10 +3,7 @@ title: Cost benchmarking - Self hosting SigNoz vs using a SaaS vendor
 slug: signoz-benchmarks
 date: 2021-02-02
 tags: [distributed-tracing, application-monitoring]
-author: Ankit Nayan
-author_title: SigNoz Team
-author_url: https://github.com/ankitnayan
-author_image_url: https://avatars.githubusercontent.com/u/12460410?v=4
+authors: ankit_nayan
 description: With changing privacy laws, it's getting riskier to send your data to third party SaaS vendors. In the observability domain, traces and logs are something which you don't want to send outside. Let's find out why self-hosted software solutions are replacing SaaS providers now.
 image: /img/blog/2021/04/signoz-benchmarks-1.png
 keywords:

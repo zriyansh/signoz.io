@@ -3,10 +3,7 @@ title: Getting to know our 4000+ stargazers on GitHub
 slug: getting-to-know-our-4000-plus-stargazers-on-github
 date: 2021-07-10
 tags: [community]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: SigNoz crossed 4000+ stars recently. In this article, we dig deep to find out about our GitHub stargazers using a tool called Stargazers.
 image: /img/blog/2021/08/stargazers_cover_hc.webp
 keywords:

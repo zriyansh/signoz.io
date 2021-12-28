@@ -3,10 +3,7 @@ title: Launched ClickHouse support, crossed 4k stars on GitHub -Signal 02
 slug: community-update-02
 date: 2021-07-06
 tags: [product-updates, community]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: SigNoz is now available with ClickHouse as a storage backend. This and other updates on what we've been upto at SigNoz. And yes, we trended at number 1 on GitHub trending.
 image: /img/blog/2021/08/signal_02_cover_hc.webp
 keywords:

@@ -3,10 +3,7 @@ title: Monitoring OpenMetrics for Gunicorn and Django application in Prometheus
 slug: monitor-gunicorn-django-in-prometheus
 date: 2019-08-30
 tags: [application-monitoring, prometheus, grafana, python-monitoring]
-author: Ankit Nayan
-author_title: SigNoz Team
-author_url: https://github.com/ankitnayan
-author_image_url: https://avatars.githubusercontent.com/u/12460410?v=4
+authors: ankit_nayan
 description: In this blog, let's see how to set up Prometheus and Grafana in EKS and how to monitor Python based applications using Prometheus.
 image: /img/blog/2019/08/Python-Prometheus-2.webp
 hide_table_of_contents: true
