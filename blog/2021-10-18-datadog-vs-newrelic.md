@@ -3,10 +3,7 @@ title: DataDog vs New Relic | Detailed comparison (5 key features)
 slug: datadog-vs-newrelic
 date: 2021-10-18
 tags: [datadog, apm-tools]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: Want to choose between DataDog and New Relic? In this article, let's go through 5 key capabilities of both the tools...
 image: /img/blog/2021/10/datadog_vs_newrelic_cover-min.webp
 hide_table_of_contents: true

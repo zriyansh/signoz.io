@@ -3,10 +3,7 @@ title: SigNoz is taking part in Hacktoberfest!
 slug: hacktoberfest
 date: 2021-10-01
 tags: [open-source]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: As an open-source project, we are excited to announce that SigNoz is participating in Hacktoberfest!..
 image: /img/blog/2021/10/hacktoberfest_signoz_new-min.webp
 keywords:

@@ -3,10 +3,7 @@ title: Metrics Dashboard, Scale testing upto 500K events/sec - Signal 05
 slug: community-update-05
 date: 2021-10-04
 tags: [product-updates, community]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: It's time for the monthly product update of SigNoz - a full-stack open-source and observability tool. Find out what we've been upto at SigNoz during September, 2021.
 image: /img/blog/2021/10/signal_05_cover-min.webp
 hide_table_of_contents: true

@@ -3,10 +3,7 @@ title: Monitor your Python application with full stack open source APM tool - Si
 slug: python-application-monitoring
 date: 2021-06-02
 tags: [application-monitoring, python-monitoring, opentelemetry]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: In this article, learn how to setup application monitoring for Python apps using an open-source solution, SigNoz.
 image: /img/blog/2021/06/python_application_monitoring_hc.webp
 keywords:

@@ -3,10 +3,7 @@ title: Launching support for ClickHouse as storage backend for SigNoz
 slug: clickhouse-storage-monitoring
 date: 2021-06-16
 tags: [product-updates, open-source]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: In this article, we dig deeper into why we decided to extend support for ClickHouse as a storage backend for SigNoz and the efficiency gains we achieved using it.
 image: /img/blog/2021/06/clickhouse_support_cover_hc.webp
 keywords:

@@ -3,10 +3,7 @@ title: Jaeger vs Prometheus - Key differences, use-cases and alternatives
 slug: jaeger-vs-prometheus
 date: 2021-09-13
 tags: [jaeger, apm-tools]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: Both Jaeger and Prometheus are popular open-source application performance monitoring tools. While Jaeger is an end-to-end distributed tracing tool, Prometheus is used as a time-series database for monitoring metrics. Let's dive in to explore their key features and differences.
 image: /img/blog/2021/09/jaeger_vs_prometheus_cover-min.webp
 keywords:

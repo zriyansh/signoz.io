@@ -3,10 +3,7 @@ title: OpenTelemetry tracing - things you need to know before implementing
 slug: opentelemetry-tracing
 date: 2021-09-04
 tags: [opentelemetry, distributed-tracing]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: Thinking about using OpenTelemetry for distributed tracing? OpenTelemetry Tracing API provides options for manual as well as automated instrumentation..
 image: /img/blog/2021/09/opentelemetry_tracing-min.webp
 keywords:

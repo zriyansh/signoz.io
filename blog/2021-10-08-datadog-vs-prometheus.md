@@ -3,10 +3,7 @@ title: DataDog vs Prometheus - Key features & differences
 slug: datadog-vs-prometheus
 date: 2021-10-08
 tags: [datadog, apm-tools]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: In this article, we will compare DataDog with Prometheus. Both are monitoring tools but differ significantly in their offerings. DataDog is a paid SaaS monitoring tool, while Prometheus is an open-source metrics...
 image: /img/blog/2021/10/datadog_vs_prometheus_cover-min.webp
 keywords:

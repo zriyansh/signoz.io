@@ -3,10 +3,7 @@ title: A major release, tons of bug fixes and amazing new contributors - Signal 
 slug: community-update-03
 date: 2021-08-05
 tags: [product-updates, community]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 hide_table_of_contents: true
 description: It's time for the monthly product update of SigNoz - a full-stack open-source and observability tool. Find out what we've been upto at SigNoz during July, 2021.
 image: /img/blog/2021/08/signal_03_cover_hc.webp

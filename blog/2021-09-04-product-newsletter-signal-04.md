@@ -3,10 +3,7 @@ title: Metrics first look, more robust frontend and much more - Signal 04
 slug: community-update-04
 date: 2021-09-06
 tags: [product-updates, community]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 hide_table_of_contents: true
 description: It's time for the monthly product update of SigNoz - a full-stack open-source and observability tool. Find out what we've been upto at SigNoz during August, 2021.
 image: /img/blog/2021/09/signal_04_cover-min.webp

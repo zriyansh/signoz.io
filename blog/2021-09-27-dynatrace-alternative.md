@@ -3,10 +3,7 @@ title: SigNoz - Open-source alternative to Dynatrace
 slug: dynatrace-alternative
 date: 2021-09-27
 tags: [application-monitoring, apm-tools]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: If you're looking for an open-source alternative to Dynatrace, then you're at the right place. SigNoz is a perfect open-source alternative to Dynatrace. SigNoz provides a unified UI for both metrics and traces with advanced tagging and filtering capabilities...
 image: /img/blog/2021/09/dynatrace_alternative_cover-min.webp
 keywords:

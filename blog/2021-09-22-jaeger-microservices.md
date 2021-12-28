@@ -3,10 +3,7 @@ title: Using Jaeger for your microservices
 slug: jaeger-microservices
 date: 2021-09-22
 tags: [jaeger, distributed-tracing]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: Jaeger is a popular open-source tool used for distributed tracing in a microservice architecture. In a microservice architecture, a user request or transaction can travel across hundreds of services before serving what a user wants.
 image: /img/blog/2021/09/jaeger_microservices_cover-min.webp
 keywords:

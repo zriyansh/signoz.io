@@ -3,10 +3,7 @@ title: Crossed 5000+ GitHub stars, metrics generation from spans - SigNal 06
 slug: community-update-06
 date: 2021-11-03
 tags: [product-updates, community]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: It's time for the monthly product update of SigNoz - a full-stack open-source and observability tool. Find out what we've been upto at SigNoz during October, 2021.
 image: /img/blog/2021/11/signal_06_cover.webp
 hide_table_of_contents: true

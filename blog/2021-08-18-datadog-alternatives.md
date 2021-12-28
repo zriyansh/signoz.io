@@ -3,10 +3,7 @@ title: Top 5 DataDog alternatives in 2021
 slug: datadog-alternatives
 date: 2021-08-18
 tags: [datadog, apm-tools]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: Are you looking for a DataDog alternative? Then you've come to the right place. In this article, we will explore the top 5 alternatives to DataDog. 1.SigNoz 2.New Relic 3.Dynatrace...
 image: /img/blog/2021/08/datadog_alternatives_cover-min.webp
 keywords:

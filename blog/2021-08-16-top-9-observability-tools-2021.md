@@ -3,10 +3,7 @@ title: Top 9 observability tools in 2021 perfect for microservices
 slug: observability-tools
 date: 2021-08-16
 tags: [observability, application-monitoring]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: Latest top observability tools list - 1.SigNoz 2.Instana 3.Dynatrace 4.Grafana Labs 5.Honeycomb 6.Lightstep 7.New Relic 8.DataDog...
 image: /img/blog/2021/08/observability_tools_cover-min.webp
 keywords:

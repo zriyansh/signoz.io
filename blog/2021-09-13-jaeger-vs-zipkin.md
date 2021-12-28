@@ -3,10 +3,7 @@ title: Jaeger vs Zipkin - Key architecture components, differences and alternati
 slug: jaeger-vs-zipkin
 date: 2021-09-13
 tags: [jaeger, apm-tools]
-author: Ankit Anand
-author_title: SigNoz Team
-author_url: https://github.com/ankit01-oss
-author_image_url: https://avatars.githubusercontent.com/u/83692067?v=4
+authors: ankit_anand
 description: Jaeger and Zipkin are two popular open-source projects used for end-to-end distributed tracing. While Zipkin is an older project and has a wider community, Jaeger has a modern, scalable architecture and supports open standards of instrumentation libraries..
 image: /img/blog/2021/09/jaeger_vs_zipkin_apm_cover-min.webp
 keywords:
