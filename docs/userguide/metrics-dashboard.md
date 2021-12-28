@@ -40,7 +40,7 @@ SigNoz currently supports 2 type of panels.
 
 - Once you type a correct query and click anywhere out side the Query box, the graphg would be plotted.
 
-- You can set `Panel Time Preference` to match to Globa Time or set specific time intervals. If you select the time interval shown in the graph would change based on the global time filter selected in top right corner time selector. 
+- You can set `Panel Time Preference` to match to Global Time or set specific time intervals. If you select the time interval shown in the graph would change based on the global time filter selected in top right corner time selector. 
 
 - If you select a specific time period say `15 min` the time interval shown in the panel will be `15 min` irrespective of the time period selected in the Global time filter.
 
