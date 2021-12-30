@@ -201,6 +201,7 @@ module.exports = {
          * Path to data on filesystem relative to site dir.
          */
         path: "./opentelemetry",
+        blogTitle: 'OpenTelemetry',
       },
     ],
     [
@@ -219,6 +220,7 @@ module.exports = {
          * Path to data on filesystem relative to site dir.
          */
         path: "./learn",
+        blogTitle: 'Learn with SigNoz',
       },
     ],
     [
