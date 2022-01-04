@@ -21,7 +21,7 @@ keywords:
 ---
 
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/opentelemetry-nodejs/" />
+  <link rel="canonical" href="https://signoz.io/opentelemetry/nodejs/"/>
 </head>
 
 OpenTelemetry can auto-instrument many common modules for a Javascript application. The telemetry data captured can then be sent to SigNoz for analysis and visualization.

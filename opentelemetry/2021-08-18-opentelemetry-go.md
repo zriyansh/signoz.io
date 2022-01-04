@@ -20,6 +20,10 @@ keywords:
   - signoz
 ---
 
+<head>
+  <link rel="canonical" href="https://signoz.io/opentelemetry/go/"/>
+</head>
+
 OpenTelemetry provides a set of APIs to directly measure the performance and behavior of your software and send this data to observability platforms. Let's learn how to get started with OpenTelemetry for Go applications and visualize that data with SigNoz.
 
 <!--truncate-->
