@@ -29,7 +29,7 @@ function aboutus() {
                   <div class="avatar margin--md">
                     <img
                       class="avatar__photo avatar__photo--lg"
-                      src="https://avatars2.githubusercontent.com/u/504541?s=460&u=7bdaf251448e3b7ed760a4bffb3da7ceba3d655d&v=4"
+                      src="/img/504541.webp"
                     />
                     <div class="avatar__intro">
                       <h4 class="avatar__name">Pranay Prateek</h4>
@@ -76,7 +76,7 @@ function aboutus() {
                   <div class="avatar margin--md">
                     <img
                       class="avatar__photo avatar__photo--lg"
-                      src="https://avatars3.githubusercontent.com/u/12460410?s=460&u=db2947e0e7d4368d460a8105030564198da89c75&v=4"
+                      src="/img/12460410.webp"
                     />
                     <div class="avatar__intro">
                       <h4 class="avatar__name">Ankit Nayan</h4>
