@@ -14,11 +14,11 @@ import { PlaySVG } from "../svgs/common";
 const { Panel } = Collapse;
 
 ReactGA.initialize("UA-152867655-1"); // How to make it appear only for production?
-ReactGA.pageview("Home Page");
-ReactGA.event({
-  category: "User",
-  action: "Opened Main page",
-});
+// ReactGA.pageview("Home Page");
+// ReactGA.event({
+//   category: "User",
+//   action: "Opened Main page",
+// });
 
 const getStartedClicked = () => {
   ReactGA.event({
