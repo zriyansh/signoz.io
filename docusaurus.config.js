@@ -15,12 +15,7 @@ module.exports = {
     //   // Optional fields.
     //   // anonymizeIP: true, // Should IPs be anonymized?
     // },
-    gtag: {
-      // You can also use your "G-" Measurement ID here.
-      trackingID: 'UA-152867655-1',
-      // Optional fields.
-      // anonymizeIP: true, // Should IPs be anonymized?
-    },
+
     announcementBar: {
       id: "support_us", // Any value that will identify this message.
       content:
@@ -179,6 +174,12 @@ module.exports = {
         sitemap: {
           changefreq: "weekly",
           priority: 0.5,
+        },
+        gtag: {
+          // You can also use your "G-" Measurement ID here.
+          trackingID: 'UA-152867655-1',
+          // Optional fields.
+          // anonymizeIP: true, // Should IPs be anonymized?
         },
       },
     ],
