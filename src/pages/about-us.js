@@ -30,6 +30,7 @@ function aboutus() {
                     <img
                       class="avatar__photo avatar__photo--lg"
                       src="/img/504541.webp"
+                      alt="Profile pic of Pranay Prateek"
                     />
                     <div class="avatar__intro">
                       <h4 class="avatar__name">Pranay Prateek</h4>
@@ -77,6 +78,7 @@ function aboutus() {
                     <img
                       class="avatar__photo avatar__photo--lg"
                       src="/img/12460410.webp"
+                      alt="Profile pic of Ankit Nayan"
                     />
                     <div class="avatar__intro">
                       <h4 class="avatar__name">Ankit Nayan</h4>

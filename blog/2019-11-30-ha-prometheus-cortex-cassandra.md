@@ -29,7 +29,7 @@ In this blog, we explain how we enable high availability Prometheus using Cortex
 
 ## Architecture of Cortex
 
-![](/img/blog/2019/11/cortex-architecture.webp)Architecture of Cortex
+![architecture of cortex](/img/blog/2019/11/cortex-architecture.webp)Architecture of Cortex
 
 ## Must know about Ingester
 
@@ -194,7 +194,8 @@ This will identify tenants with a username. This is not full-proof.
 ## Check single pane of view
 
 The cluster labels that we specified while helm installing Prometheus will let you run aggregated queries over clusters. The below image shows application metrics from different clusters and Kubernetes Capacity Planning dashboards also cluster-wise.
-![](/img/blog/2019/11/mutli-cluster-grafana.webp)Single Pane of view for multi-cluster setup
+
+![Single pane of view](/img/blog/2019/11/mutli-cluster-grafana.webp)Single Pane of view for multi-cluster setup
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
@@ -230,9 +231,9 @@ You can pre-provision dashboards for Cortex performance or you can copy json fil
 
 Dashboard links and instructions can be found at [official Cortex github repo](https://github.com/cortexproject/cortex/tree/1dd96fd35d120bb45ce793a8799e43c14a50ac84/production/dashboards).
 
-![](/img/blog/2019/11/Screenshot-2019-11-30-at-2.59.13-PM.webp)Cortex Write Dashboard
+![Cortex write dashboard](/img/blog/2019/11/Screenshot-2019-11-30-at-2.59.13-PM.webp)Cortex Write Dashboard
 
-![](/img/blog/2019/11/Screenshot-2019-11-30-at-3.00.18-PM.webp)Cortex Read Dashboard
+![Cortex read dashboard](/img/blog/2019/11/Screenshot-2019-11-30-at-3.00.18-PM.webp)Cortex Read Dashboard
 
 Using the above dashboards you can monitor Cortex writes/sec by status codes and latencies of Distributor and Ingester. And similarly for reads/sec of Querier, Ingester and Memcache.
 

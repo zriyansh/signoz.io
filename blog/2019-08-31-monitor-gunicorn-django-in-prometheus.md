@@ -116,15 +116,15 @@ The Django prometheus client adopts an approach where you basically have each [w
 
 We can run statsd-exporter as a side-car to django application container in each pod. The number of scraping targets for prometheus will be equal to number of pods running.
 
-![](/img/blog/2019/08/Screenshot-2019-08-30-at-11.08.32-AM.webp)
+![Statsd-exporter as a sidecar to django application](/img/blog/2019/08/Screenshot-2019-08-30-at-11.08.32-AM.webp)
 
 Or we can run 1 statsd-exporter per node. All applications in a node shall push to a common statsd server of that node.
 
-![](/img/blog/2019/08/Screenshot-2019-08-30-at-11.38.11-AM.webp)
+![1 statsd-exporter per node](/img/blog/2019/08/Screenshot-2019-08-30-at-11.38.11-AM.webp)
 
 **I have used side-car pattern to deploy statsd-exporter (check `django-deployment.yml`).**
 
-![](/img/blog/2019/08/Screenshot-2019-08-30-at-11.55.49-AM.webp)
+![django-deployment.yml file](/img/blog/2019/08/Screenshot-2019-08-30-at-11.55.49-AM.webp)
 
 Now, deploy the pods and services using
 `kubectl create namespace django-with-statsd`
@@ -170,11 +170,11 @@ Those who are wondering what RED metrics mean.
 
 ### Request Rate: `sum(rate(gunicorn_requests[1m]))`
 
-![](/img/blog/2019/08/Screenshot-2019-08-30-at-1.24.00-PM.webp)
+![RPS](/img/blog/2019/08/Screenshot-2019-08-30-at-1.24.00-PM.webp)
 
 The RPS is around 4 which is confirmed from the locust web portal.
 
-![](/img/blog/2019/08/Screenshot-2019-08-30-at-1.25.41-PM.webp)
+![locust web portal](/img/blog/2019/08/Screenshot-2019-08-30-at-1.25.41-PM.webp)
 
 Similarly we can get other rates by:
 
@@ -187,7 +187,7 @@ Similarly we can get other rates by:
 `rate(gunicorn_request_duration_sum[1m])/rate(gunicorn_request_duration_count[1m])`
 
 This will generate the below graph
-![](/img/blog/2019/08/Screenshot-2019-08-30-at-1.17.50-PM.webp)
+![avg. request duration](/img/blog/2019/08/Screenshot-2019-08-30-at-1.17.50-PM.webp)
 
 - 2 lines in graph because we have 2 pods in the deployment and hence 2 statsd-exporter since they are sidecars
 - Gap in graph because I stopped the load generator for some time
@@ -226,7 +226,7 @@ Called during response:
 
 We shall implement `process_request` and `process_response` methods for our case. Have a look at the `[middlewares/collect_statsd_metrics.py](https://github.com/ankitnayan/django_sample_project/blob/master/middlewares/collect_statsd_metrics.py)`
 
-![](/img/blog/2019/08/Screenshot-2019-08-30-at-3.59.20-PM.webp)
+![code snippet](/img/blog/2019/08/Screenshot-2019-08-30-at-3.59.20-PM.webp)
 
 > If you notice, we are using DogStatsd library to include tags in the metrics which correspond to prometheus labels.
 
@@ -234,27 +234,27 @@ As you can see, we have labels of status codes, endpoint, method and service for
 
 Now add this on top of all middlewares in your settings.py and you will be good to go.
 
-![](/img/blog/2019/08/Screenshot-2019-08-30-at-4.12.59-PM.webp)
+![add all middlewares in setting.py](/img/blog/2019/08/Screenshot-2019-08-30-at-4.12.59-PM.webp)
 
 ### RPS of `/polls/2xx_success/`
 
 `sum(rate(django_request_count{endpoint="/polls/2xx_success/", instance=~".*"}[1m]))`
-![](/img/blog/2019/08/Screenshot-2019-08-30-at-4.26.03-PM.webp)
+![RPS](/img/blog/2019/08/Screenshot-2019-08-30-at-4.26.03-PM.webp)
 
 ### RPS by endpoint
 
 `sum(rate(django_request_count{instance=~".*"}[1m])) by (endpoint)`
-![](/img/blog/2019/08/Screenshot-2019-08-30-at-4.50.34-PM.webp)
+![RPS by endpoint](/img/blog/2019/08/Screenshot-2019-08-30-at-4.50.34-PM.webp)
 
 ### Average request duration per endpoint
 
 `avg(rate(django_request_latency_seconds_sum[1m])/rate(django_request_latency_seconds_count[1m])) by (endpoint)`
-![](/img/blog/2019/08/Screenshot-2019-08-30-at-4.48.02-PM.webp)
+![Avg request duration per endpoint](/img/blog/2019/08/Screenshot-2019-08-30-at-4.48.02-PM.webp)
 
 ### Quantile of endpoints
 
 `django_request_latency_seconds{endpoint="/polls/2xx_success/"}`
-![](/img/blog/2019/08/Screenshot-2019-08-30-at-4.53.45-PM.webp)
+![quantile of endpoints](/img/blog/2019/08/Screenshot-2019-08-30-at-4.53.45-PM.webp)
 We now have 50, 90 and 99 percentile metrics from each of statsd-exporter instance. Since we have 2 statsd-exporter we see each of these percentile for each of them.
 
 > Note that we cannot aggregate on the quantiles collected. The post aggregation does not make any sense of data.
@@ -265,7 +265,7 @@ Now, we have very detailed RPS and latency filtering working for our application
 
 ### _Case 1: The node other than Prometheus server was stopped_
 
-![](/img/blog/2019/08/stopping_non_prometheus_server_node.webp)
+![Node other than Prometheus server was stopped](/img/blog/2019/08/stopping_non_prometheus_server_node.webp)
 
 > This data has been collected for different web application but the results should be very similar
 
@@ -279,7 +279,7 @@ Soon enough (roughly after 2 minutes) kubernetes started another pod to match cu
 
 ### _Case 2: The node hosting Prometheus server was stopped_
 
-![](/img/blog/2019/08/stopping_prometheus_server_node.webp)
+![node hosting Prometheus server was stopped](/img/blog/2019/08/stopping_prometheus_server_node.webp)
 Around the right side, we see a gap in the graph. This is the expected behaviour because prometheus server is not able to scrape metrics from any targets. Hence no metrics are collected till the time kubernetes auto restarts the prometheus-server pod.
 
 **The great thing being, in either case of node failure the system restores without any manual intervention. That's what is fantastic about kubernetes!**

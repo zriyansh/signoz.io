@@ -106,6 +106,7 @@ We joined folks at ClickHouse for their community call to showcase how we use Cl
 <Screenshot
     height={500}
     src="/img/blog/2021/09/clickhouse_community_call-min.webp"
+    alt="clickhouse community call"
     width={700}
 />
 

@@ -41,13 +41,13 @@ And to do that, you need insights into how your infrastructure handles user requ
 
 SigNoz is a full-stack open-source application monitoring and observability platform which can be installed within your infra. You can track metrics like p99 latency, error rates for your services, external API calls, and individual endpoints. With service maps, you can quickly assess the health of your services.
 
-![](/img/blog/2021/05/ezgif.com-gif-maker-1.gif)
+![service maps](/img/blog/2021/05/ezgif.com-gif-maker-1.gif)
 
 <!--- Service maps on SigNoz dashboard --->
 
 And once you know the affected service, trace data can help you identify the exact code causing the issue. Using SigNoz dashboard, you can visualize your traces easily with flamegraphs.
 
-![](/img/blog/2021/05/screenzy-1622399034895.webp)
+![flamegraphs](/img/blog/2021/05/screenzy-1622399034895.webp)
 
 <!--- Distributed tracing visualized with flamegraphs on SigNoz dashboard --->
 
@@ -180,7 +180,7 @@ On MacOS the installation is done using Homebrew's brew package manager. Once th
 
    You can now access the UI of the app on your local host: [http://localhost:5002/](http://localhost:5002/)
 
-   ![](/img/blog/2021/05/screenzy-1622486344949-1.webp)
+   ![sample app screenshot](/img/blog/2021/05/screenzy-1622486344949-1.webp)
    TODO reminder app with Flask and MongoDB
 
    Press 'Ctrl + C' to exit the app once you have made sure it is running properly.

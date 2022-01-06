@@ -3,7 +3,7 @@ title: The genesis of SigNoz - A full-stack open source observability platform
 slug: signoz-vs-prometheus-jaeger
 date: 2021-04-16
 tags: [observability, distributed-tracing]
-authors: ankit_anand
+authors: ankit_nayan
 hide_table_of_contents: true
 description: Why we felt there was a need for a full-stack open source observability platform and how we went about building it.
 image: /img/SigNoz_UI_hc.webp
@@ -59,7 +59,7 @@ We have been using logs for long to debug applications. For an application handl
 
 [Loki by GrafanaLabs](https://grafana.com/oss/loki/) is one such effort in making logs more usable and cost-efficient.
 
-![](/img/blog/2021/04/image.webp)Prometheus, Jaeger, Elastic & Loki from left to right
+![tool logos](/img/blog/2021/04/image.webp)Prometheus, Jaeger, Elastic & Loki from left to right
 
 ## The Easy and Hard things about Prometheus
 
@@ -80,13 +80,13 @@ But when you look to deploy Prometheus in a large company, there will be things 
 - Setting up Prometheus with all exporters and long term storage and building Grafana panels can take almost 1.5 months of developer time
 - Deeper application metrics data is not available in exporters for application metrics. Metrics like, time spent in DB calls or external API calls cannot be found easily. A few difficult to get application metrics are shown below
 
-![](https://lh4.googleusercontent.com/4mlldY5siMOJZd2we0ezME8LNop-5x9ggnIMYuXwHUwf8eV8CpT5nzjbvUw1Soq-IHbT55zRqgTtl6x1pCx-42ra1dZzEQtbKORxLNbfvT4eXydm0TkGnRymyqZJluS2ZJd1LqXSZ9Q)
+![Application latency charts](https://lh4.googleusercontent.com/4mlldY5siMOJZd2we0ezME8LNop-5x9ggnIMYuXwHUwf8eV8CpT5nzjbvUw1Soq-IHbT55zRqgTtl6x1pCx-42ra1dZzEQtbKORxLNbfvT4eXydm0TkGnRymyqZJluS2ZJd1LqXSZ9Q)
 Application latency breakdown by components, endpoints, status codes
 
-![](https://lh5.googleusercontent.com/VjGTUUIAk2bDNkuJNxSYVPy8iIS_Mg-MxvIQIPhTiYpwC1UuyjUCkplqUOsptbXXisR-5_1eg76K3dhL7nqXNjHqVXLhoYk1rY3WMs2gQ42MPXfitkgozK4LOmIiqrOY6kSqJ-hQgls)
+![Mongo and Redis throughput and latency charts](https://lh5.googleusercontent.com/VjGTUUIAk2bDNkuJNxSYVPy8iIS_Mg-MxvIQIPhTiYpwC1UuyjUCkplqUOsptbXXisR-5_1eg76K3dhL7nqXNjHqVXLhoYk1rY3WMs2gQ42MPXfitkgozK4LOmIiqrOY6kSqJ-hQgls)
 Mongo and Redis throughput and latency by Application
 
-![](https://lh3.googleusercontent.com/3Imsk4N1hgn9QeJi9_Xj2-m7_Ic_OJilYL5adYWr2FOCJViA7bDrc8tAeuAnIDdRFgP4SrsPa-gtj6afO631IWp-rSjKfR3rreVh1RybDMnb5VvoWaERIZVEqDLkIZL0OG26k3a9dHU)
+![External API calls, errors and latencies charts](https://lh3.googleusercontent.com/3Imsk4N1hgn9QeJi9_Xj2-m7_Ic_OJilYL5adYWr2FOCJViA7bDrc8tAeuAnIDdRFgP4SrsPa-gtj6afO631IWp-rSjKfR3rreVh1RybDMnb5VvoWaERIZVEqDLkIZL0OG26k3a9dHU)
 External API calls, errors and latencies in Application
 
 - RCA (Root Cause Analysis) cannot be done using metrics alone. Metrics just indicate that the measured quantity is going out of bounds. What to do next? How to figure out the exact issue that caused that? Metrics and hence Prometheus fail to give such details and distributed-tracing comes to rescue here.
@@ -111,7 +111,7 @@ TraceView in Jaeger shows details of a trace listing out all events and their ti
 
 Also, on clicking on a span, you can see details about that span, like, tags associated with it.
 
-![](https://lh4.googleusercontent.com/WXf-IGcv1HZ4JrgHkrxZeMvEQ6Ss1sTTDPjwWncaD0bgrQa2uWbe22W4OkL1uAOqPfM95cE3l8zWqekbDKE-Uko8VeScXnkbCIQeWytdas0uwpBSXgyLw0bFIoOnX71FFBH5y0afk3I)
+![Details about the span](https://lh4.googleusercontent.com/WXf-IGcv1HZ4JrgHkrxZeMvEQ6Ss1sTTDPjwWncaD0bgrQa2uWbe22W4OkL1uAOqPfM95cE3l8zWqekbDKE-Uko8VeScXnkbCIQeWytdas0uwpBSXgyLw0bFIoOnX71FFBH5y0afk3I)
 
 A distributed trace shows you details about each execution step of a request and thus becoming very useful in debugging issues.
 
@@ -119,20 +119,20 @@ You can:
 
 1. Look for errors in the spans
 
-   ![](/img/blog/2021/04/screenzy-1619008131444.webp)Errors in span
+   ![Errors in the span](/img/blog/2021/04/screenzy-1619008131444.webp)Errors in span
 
 2. Look for the longest span and try to optimize its time
 
-   ![](https://lh4.googleusercontent.com/_qitgo6gBgXJCTVQpYkpXSwCzXHrA0B1pfJizR5wS-mkLBlpQOK5LailIvE1gXdCHXh7YIzA60RLtbQi9IscXGl8BIs_MkaC9HtG4wYpqP0Et2ANPd5ASGPc2JMGLLgy65BJBSfOz0Q)
+   ![Look for the longest span and try to optimize its time](https://lh4.googleusercontent.com/_qitgo6gBgXJCTVQpYkpXSwCzXHrA0B1pfJizR5wS-mkLBlpQOK5LailIvE1gXdCHXh7YIzA60RLtbQi9IscXGl8BIs_MkaC9HtG4wYpqP0Et2ANPd5ASGPc2JMGLLgy65BJBSfOz0Q)
    <!--- workB is the longest span which should be optimized --->
 
 3. Look for staircase pattern which means sequential execution is going on. You would like to review whether sequential execution is expected or needs to be paralleled
 
-   ![](https://lh5.googleusercontent.com/LLHpi2hAY-d1GkByg8tC4m_mb-5iO88iBrUwuBfGiG_YGCvA19o0U6ooBdpo8bhHbFg_VLOUjhtB18WObJHzd9Qf4EMCMkdPyF4gfxVjn2Jr9PdAuhA0kNKpBsR005HG0y0UhcyvoHY)Staircase pattern meaning sequential execution
+   ![Optimize sequential patterns](https://lh5.googleusercontent.com/LLHpi2hAY-d1GkByg8tC4m_mb-5iO88iBrUwuBfGiG_YGCvA19o0U6ooBdpo8bhHbFg_VLOUjhtB18WObJHzd9Qf4EMCMkdPyF4gfxVjn2Jr9PdAuhA0kNKpBsR005HG0y0UhcyvoHY)Staircase pattern meaning sequential execution
 
 4. Look for spans ending at the same time. It may point out events like timeout, etc
 
-   ![](https://lh6.googleusercontent.com/upfcV4pXzpPrdmf0tfWO1u9KlAT8h5jvGH01fB_g3-QZ8bogD562YhhnidhwmZjbJeNcpRMUi2PX7Bu2PaodsSVbbIT4kgCRARYlXvGNLExClNhJo7h6UDa8H4XKxTaa7zYhJnCRoQ4)Spans ending at the same time
+   ![Spans ending at the same time may point out timeout](https://lh6.googleusercontent.com/upfcV4pXzpPrdmf0tfWO1u9KlAT8h5jvGH01fB_g3-QZ8bogD562YhhnidhwmZjbJeNcpRMUi2PX7Bu2PaodsSVbbIT4kgCRARYlXvGNLExClNhJo7h6UDa8H4XKxTaa7zYhJnCRoQ4)Spans ending at the same time
 
 ## Architecture of Jaeger
 
@@ -147,7 +147,7 @@ You can:
 
 We saw how to setup metrics using Prometheus + Cortex. We also saw how to setup distributed tracing using Jaeger. Now, as a full solution, we want to run both metrics and traces to gain deep visibility into debugging issues. This means we have to run Prometheus + Cortex + Jaeger together. The architecture together looks like below image 👇
 
-![](/img/blog/2021/04/screenzy-1619008261624.webp)Prometheus + Cortex + Jaeger - Quickly gets very complex
+![Complex architecture](/img/blog/2021/04/screenzy-1619008261624.webp)Prometheus + Cortex + Jaeger - Quickly gets very complex
 
 The above architecture uses both metrics and tracing data as independent silos, starting from different collectors to different queriers. We tried building a unified UI that can query metrics from Cortex querier and traces from Jaeger querier. But it quickly got very complex.
 

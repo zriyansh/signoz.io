@@ -32,7 +32,7 @@ For example, if you are a fast growing fin-tech company working with a number of
 
 In the observability domain, traces and logs are something which you don’t want to send outside. Unless you have great PII scrapers running before sending data outside, and well we all know it is not easy to create PII scrapers which work with 100% accuracy. So even if you have PII scrapers, why do you want to take the risk of some tiny bit of customer data leaking - and you inviting the fury of your legal and audit teams.
 
-![](/img/blog/2021/04/onprem-monitoring-tracing.webp)60% of companies run monitoring & logging within their infra ([CNCF Report](https://www.cncf.io/wp-content/uploads/2020/11/CNCF_Survey_Report_2020.pdf))
+![how companies run their monitoring and logging](/img/blog/2021/04/onprem-monitoring-tracing.webp)60% of companies run monitoring & logging within their infra ([CNCF Report](https://www.cncf.io/wp-content/uploads/2020/11/CNCF_Survey_Report_2020.pdf))
 There are few other reasons also which should at the very least encourage you to think about this option
 
 1. Increase in privacy laws like GDPR/CPRA

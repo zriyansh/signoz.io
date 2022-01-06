@@ -75,19 +75,19 @@ A few things that will be enabled post metrics ingestion pipeline:
 
 We conducted a workshop on **Observability 101 using OpenTelemetry & SigNoz** during Bengaluru's first ever **Kubernetes Community Days.** Ankit Nayan, our CTO talked about the importance of observability in modern-day distributed systems. We also gave a hands-on demo of SigNoz where we instrumented a Python app to set it up for monitoring with SigNoz.
 
-![](/img/blog/2021/07/observability-101.webp)
+![Workshop on Observability 101 with SigNoz](/img/blog/2021/07/observability-101.webp)
 
 **Trending on GitHub 🔥**
 
 On 27th June, we found out we were trending at **#1 position on GitHub** worldwide across all programming languages. More than 100 million repositories are live on GitHub, and to find SigNoz right at #1 out of all these repos was an humbling experience for the team. We're extremely thankful to the entire Dev community for showing us such love 💙
 
-![](/img/blog/2021/07/github_trending_1.webp)
+![Trending on GitHub](/img/blog/2021/07/github_trending_1.webp)
 Our GitHub repo trending at #1
 
 **Stargazers**✨
 
 On that front, we're also delighted to announce that we have **crossed 4k stargazers on GitHub.**⭐  We are thankful to each of you stargazers 🤓
-![](/img/blog/2021/07/stargazers-1.webp)
+![Crossed 4k stars on GitHub](/img/blog/2021/07/stargazers-1.webp)
 We crossed 4k GitHub stargazers in June
 
 **Slack Community 👋**
