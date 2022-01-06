@@ -38,7 +38,7 @@ Let's divide this tutorial in 2 parts:
 1. **Install Docker**<br></br>
    You can install Docker by following the steps listed on their website [here.](https://www.docker.com/get-started) For this tutorial, you can choose the Docker Desktop option based on the system you have.
 
-   ![](/img/blog/2021/05/screenzy-1621623948044.webp)
+   ![Getting started with Docker](/img/blog/2021/05/screenzy-1621623948044.webp)
 
 2. **Clone SigNoz GitHub repository**<br></br>
    From your terminal use the following command to clone SigNoz's GitHub repository.

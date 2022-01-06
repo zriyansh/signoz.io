@@ -141,13 +141,13 @@ Just to cross reference, we shall now take a look at the metrics which prometheu
 
 Since the prometheus expression browser is accessed via tunnel at port 9090 on localhost (as set up in previous blog). Visit `http://localhost:9090/targets#job-kubernetes-pods`, it gives you the list of pods as targets. Mine looks like this:
 
-![](/img/blog/2019/09/Screenshot-2019-09-02-at-7.49.17-PM.webp)
+![list of pods](/img/blog/2019/09/Screenshot-2019-09-02-at-7.49.17-PM.webp)
 
 The endpoints contain the metrics that prometheus scrapes at scrape-interval. These endpoints are internal addresses and can be accessed only within the cluster. So ssh into any of the ec2 instances which are nodes in your cluster. I chose to do by `EC2 Instance Connect (browser-based SSH connection)`provided in aws console.
 
 When you get into the instance, run `curl http://192.168.19.6:9102/metrics | grep django` and replace `http://192.168.19.6:9102/metrics` by your scrape target. The output will look something like this:
 
-![](/img/blog/2019/09/Screenshot-2019-09-02-at-7.57.53-PM.webp)
+![scrape target output](/img/blog/2019/09/Screenshot-2019-09-02-at-7.57.53-PM.webp)
 
 Now our application instrumented metrics does not contain quantiles but shall contain buckets and this can easily be aggregated in prometheus by running below command to your expression browser.
 
@@ -169,17 +169,17 @@ You can get the below graph by applying this query in grafana:
 
 Add 2 more queries with 1st arg to `histogram_quantile` as 0.9 and 0.99.
 
-![](/img/blog/2019/09/request_percentiles.webp)
+![request percentiles](/img/blog/2019/09/request_percentiles.webp)
 
 To get the 5 slowest endpoints follow blog [Graph top N time series in Grafana](https://www.robustperception.io/graph-top-n-time-series-in-grafana). A slight change will be the Regex expression for the variable. Check mine from the below image.
 
-![](/img/blog/2019/09/Screenshot-2019-09-03-at-7.33.24-PM.webp)
+![regex expression](/img/blog/2019/09/Screenshot-2019-09-03-at-7.33.24-PM.webp)
 
 And, the grafana query becomes `histogram_quantile(0.9, sum(rate(django_request_latency_seconds_bucket{endpoint=~"$slow_endpoints"}[5m])) by (le, endpoint))`
 
 Finally the graph we plot is:
 
-![](/img/blog/2019/09/5_slowest_urls.webp)
+![slowest urls](/img/blog/2019/09/5_slowest_urls.webp)
 
 > I have only 3 endpoints so it displays only 3 endpoints in the graph but this works for >5 endpoints also
 

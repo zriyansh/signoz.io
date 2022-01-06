@@ -44,10 +44,10 @@ What are the different features which each product is focusing on
 
 Instana has better integration with Kubernetes. Immediately checks all Kubernetes base info. Sysdig is not able to find services from Kubernetes services name.
 
-![](/img/blog/2019/08/Kubernetes-Dashboard-Instana-1.webp)
+![Instana dashboard](/img/blog/2019/08/Kubernetes-Dashboard-Instana-1.webp)
 Instana detects all Kubernetes Clusters and gives a clean dashboard
 
-![](/img/blog/2019/08/Cluster_Dashboard-Sysdig-2.webp)
+![Sysdig dashbaord](/img/blog/2019/08/Cluster_Dashboard-Sysdig-2.webp)
 Sysdig's Dashboard is more technical with not much focus on UI
 
 ## Automatic Service Detection
@@ -56,26 +56,26 @@ Sysdig's Dashboard is more technical with not much focus on UI
 
 The Services dashboard gives important metrics like inbound calls, error rates, mean latency, etc. out of the box.
 
-![](/img/blog/2019/08/Instana-Service-Dashboard-3.webp)
+![Instana's service dashboard](/img/blog/2019/08/Instana-Service-Dashboard-3.webp)
 Instana's Service Dashboard
 
 **_Sysdig_**
-![](/img/blog/2019/08/Sysdig-Dashboard-5.webp)
+![Sysdig service dashboard](/img/blog/2019/08/Sysdig-Dashboard-5.webp)
 Sysdig's Service dashboard points to each service
 
 ## List of services discovered
 
 The [architecture](https://github.com/microservices-demo/microservices-demo/blob/master/internal-docs/design.md) of Sock Shop application looks like as shown below:
 
-![](/img/blog/2019/08/SOck-Shop-Arch-6.webp)Sock Shop Architecture
+![Sock Shop architecture](/img/blog/2019/08/SOck-Shop-Arch-6.webp)Sock Shop Architecture
 
 **Instana **is only able to detect the following services : queue-master, shipping, orders and carts.
 
-![](/img/blog/2019/08/Instana-services-7.webp)Instana detects only a few services
+![services detected by Instana](/img/blog/2019/08/Instana-services-7.webp)Instana detects only a few services
 
 Sysdig detects almost all the services which are part of the architecture. This they are able to do without putting any load to Sock Shop application - and hence are not dependent on API calls.
 
-![](/img/blog/2019/08/Sysdig-services-8.webp)
+![services detected by sysdig](/img/blog/2019/08/Sysdig-services-8.webp)
 Sysdig detects almost all of the services
 
 Sysdig provides very granular way of how to see metrics. It is called Groupings.

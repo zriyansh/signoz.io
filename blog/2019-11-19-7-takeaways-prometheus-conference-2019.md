@@ -23,7 +23,7 @@ The conference featured lots of talks - from detailed guidelines from practition
 
 Here's the schedule from Day 1. As you can see, it features a good mix from different type of people - from devs to project maintainers to vendor representatives.
 
-![](/img/blog/2019/11/Screen-Shot-2019-11-19-at-11.49.35-AM.webp)PromCon 2019 - Day 1 Schedule
+![Promcon 2019 - Day 1 schedule](/img/blog/2019/11/Screen-Shot-2019-11-19-at-11.49.35-AM.webp)PromCon 2019 - Day 1 Schedule
 
 We recently open-sourced our observability platform on Github.
 
@@ -41,13 +41,13 @@ We recently open-sourced our observability platform on Github.
 
    They also used Grafana snapshot API to create a point in time copy of the dashboard and use this to understand what was the performance of the system at any point in time.
 
-   ![](/img/blog/2019/11/Screen-Shot-2019-11-08-at-10.39.15-PM.webp)Figure 1 - Managing Grafana dashboards with grafonnet and git.
+   ![Managing grafana dashboards](/img/blog/2019/11/Screen-Shot-2019-11-08-at-10.39.15-PM.webp)Figure 1 - Managing Grafana dashboards with grafonnet and git.
 
 2. **Validate and test alert definitions before making them live**
 
    [Simon Pasquier](https://twitter.com/simonhiker) from Red Hat gave a great talk on details of alert manager, how to configure and validate them before making live in production environments. He is the maintainer for _Alertmanager_ and* consul_exporter  *projects*, * so what he says carries some weight.
 
-   ![](/img/blog/2019/11/Screen-Shot-2019-11-10-at-8.46.17-PM-1.webp)Fig.2 - Sample alert definition
+   ![Sample alert definition](/img/blog/2019/11/Screen-Shot-2019-11-10-at-8.46.17-PM-1.webp)Fig.2 - Sample alert definition
 
    _Some guidelines on creating an alert definition_
 
@@ -58,7 +58,7 @@ We recently open-sourced our observability platform on Github.
    5. Alert should be tested and gone through some software validation - As any software is tested before shipping to production, alerts should also be tested before making live. This can be done by writing simple .yml test cases in tools  [promtool](https://github.com/prometheus/prometheus/tree/master/cmd/promtool) as shown in Fig.3
    6. Description can be implemented using variables which would give more informative annotations to the alert.
 
-   ![](/img/blog/2019/11/Screen-Shot-2019-11-10-at-8.54.24-PM.webp)Fig. 3 - Tests can be written for alerts - as shown above
+   ![Tests can be written for alerts](/img/blog/2019/11/Screen-Shot-2019-11-10-at-8.54.24-PM.webp)Fig. 3 - Tests can be written for alerts - as shown above
 
    Once you write an alert expression, don't assume that alerts will be shown as soon as the condition is true. You need to understand how alerts are evaluated and what is the evaluation period and group_wait interval.
 
@@ -66,7 +66,7 @@ We recently open-sourced our observability platform on Github.
 
    > There are scrape intervals, for conditions which come into play here. Evaluations should be true for 2 minutes after scraping for the alerts to start firing
 
-   ![](/img/blog/2019/11/Screen-Shot-2019-11-10-at-9.00.08-PM.webp)Fig.4 - Alertmanager trigger cycle
+   ![Alertmanager trigger cycle](/img/blog/2019/11/Screen-Shot-2019-11-10-at-9.00.08-PM.webp)Fig.4 - Alertmanager trigger cycle
 
 3. **Understanding Routing of alerts**
 
@@ -78,7 +78,7 @@ We recently open-sourced our observability platform on Github.
    - Group alerts together so that the notification is meaningful for the user
    - Every service or team should manage its own paging/alerting cadence
 
-   ![](/img/blog/2019/11/Screen-Shot-2019-11-10-at-9.20.36-PM.webp)Figure 5 - Using amtool to visualise alerting rules
+   ![atmool visualizing alerting rules](/img/blog/2019/11/Screen-Shot-2019-11-10-at-9.20.36-PM.webp)Figure 5 - Using amtool to visualise alerting rules
 
 4. **Using Silence and Inhibitions when debugging issues | HA of alert manager**
 
@@ -120,7 +120,7 @@ We recently open-sourced our observability platform on Github.
 
    Below is a graph on measuring saturation :
 
-   ![](/img/blog/2019/11/Screen-Shot-2019-11-10-at-10.21.38-PM.webp)Figure 6 - Modelling Saturation
+   ![Modeling Saturation](/img/blog/2019/11/Screen-Shot-2019-11-10-at-10.21.38-PM.webp)Figure 6 - Modelling Saturation
 
    These metrics can be used to predict the saturation level of resources. Generally, we just need to monitor only the worst case prediction. Below is a PromQL query showing how this could be done.
 
@@ -144,7 +144,7 @@ Below is a snapshot of how Gitlab currently does its capacity planning. Any reso
 
 [Capacity Planning dashboard used by Gitlab](https://dashboards.gitlab.com/d/general-capacity-planning/general-capacity-planning?orgId=1)
 
-![](/img/blog/2019/11/Screen-Shot-2019-11-10-at-11.05.18-PM.webp)Figure 7 - Capacity Planning dashboard used by Gitlab
+![Capacity planning dashbaord](/img/blog/2019/11/Screen-Shot-2019-11-10-at-11.05.18-PM.webp)Figure 7 - Capacity Planning dashboard used by Gitlab
 
 6. **Failure is not linear in complex systems**
 
@@ -152,9 +152,9 @@ Below is a snapshot of how Gitlab currently does its capacity planning. Any reso
 
    In such cases, linear interpolation based prediction is useless as the underlying system behaves non-linearly. A more robust, worst-case based prediction system should be made which rather than predicting actual saturation level, predicts the worst-case error. In his experience, this is a much simpler heuristic to look at - than building linear predictive models.
 
-   ![](/img/blog/2019/11/Screen-Shot-2019-11-10-at-10.16.39-PM.webp)Figure 8 - Error rate increased non-linearly with saturation
+   ![Error rate](/img/blog/2019/11/Screen-Shot-2019-11-10-at-10.16.39-PM.webp)Figure 8 - Error rate increased non-linearly with saturation
 
-   ![](/img/blog/2019/11/Screen-Shot-2019-11-10-at-11.00.23-PM.webp)Figure 9 - Linear interpolation doesn't work for saturation prediction
+   ![Saturation prediction](/img/blog/2019/11/Screen-Shot-2019-11-10-at-11.00.23-PM.webp)Figure 9 - Linear interpolation doesn't work for saturation prediction
 
 7. **Prediction rather than alerting is the way to go**
 
@@ -162,9 +162,9 @@ Below is a snapshot of how Gitlab currently does its capacity planning. Any reso
 
    Forewarning in such a situation helps a lot and that is what Gitlab is building.
 
-   ![](/img/blog/2019/11/Screen-Shot-2019-11-10-at-10.15.40-PM.webp)Figure 10 - Key Takeaways
+   ![key takeaways](/img/blog/2019/11/Screen-Shot-2019-11-10-at-10.15.40-PM.webp)Figure 10 - Key Takeaways
 
-   ![](/img/blog/2019/11/Screen-Shot-2019-11-10-at-11.07.08-PM.webp)Figure 11 - Future improvements
+   ![Future improvements](/img/blog/2019/11/Screen-Shot-2019-11-10-at-11.07.08-PM.webp)Figure 11 - Future improvements
 
 **Bonus:**
 

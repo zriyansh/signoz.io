@@ -5,7 +5,7 @@ date: 2020-07-23
 tags: [opentelemetry, kubernetes, distributed-tracing]
 author: Joy Bhattacharjee
 author_url: https://twitter.com/hashfyre
-author_image_url: https://pbs.twimg.com/profile_images/1298796024664743937/5ZPWaLTu_400x400.webp
+author_image_url: /img/authors/5ZPWaLTu_400x400.webp
 description: OpenTelemetry is an instrumentation standard for application monitoring - both for monitoring metrics & distributed tracing. In this blog, we take you through a hands on guide on how to run this on Kubernetes.
 image: /img/blog/2020/07/SigNoz-OpenTelemetry-k8s.webp
 keywords:
@@ -40,7 +40,7 @@ Google open sourced it’s internal Census tool as OpenCensus circa 2018, this o
 
 In March 2019, Ben Sigelman announced that OpenTracing and OpenCensus projects had decided to merge to further their common goals of an open standards based interoperability and vendor neutral observability ecosystem.
 
-![](https://lh3.googleusercontent.com/efnww3EnuCcBNLGjsUWoPmt5Whl23R1Je4potAduy8oxAtN_bYaOm1fnHtQDKySWx__4Fl142CfWfPYmK1If-p9uOgfjmw3xgYnLYY0x45EFBhkN86LljkRTWsk-k8ESyFd6e8EO)Fig 1. A short graphical history of the open-telemetry project
+![Graphical history of OpenTelemetry project](https://lh3.googleusercontent.com/efnww3EnuCcBNLGjsUWoPmt5Whl23R1Je4potAduy8oxAtN_bYaOm1fnHtQDKySWx__4Fl142CfWfPYmK1If-p9uOgfjmw3xgYnLYY0x45EFBhkN86LljkRTWsk-k8ESyFd6e8EO)Fig 1. A short graphical history of the open-telemetry project
 
 # Architecture
 
@@ -49,7 +49,7 @@ OpenTelemetry offers standard vendor neutral APIs for collecting metrics and tra
 The code is instrumented either with any of OpenTelemetry’s provided language-specific client libraries, auto-instrumentation libraries or using any of the existing vendor libraries like jaeger, opentracing, opencensus, zipkin.
 
 **Receivers **collect the data from all available sources and convert them to internal format before sending out to processors. **OTLP **is OpenTelemetry’s internal wire protocol and the intermediate data format for all other open / proprietary formats for telemetry data.
-![](/img/blog/2020/07/Copy-of-fig-2---Open-Telemetry-data-flow--1-.webp)Fig 2. Open-telemetry data flow
+![OpenTelemetry data flow](/img/blog/2020/07/Copy-of-fig-2---Open-Telemetry-data-flow--1-.webp)Fig 2. Open-telemetry data flow
 The **OTLP **receiver collects data from code instrumented with provided client libraries, while there are specific receivers available for many of the current instrumentation vendors / FOSS projects.
 
 **Processors **would then pre-process data before sending it to a specific exporter as defined in the pipeline. They queue and batch the received data and implement retry mechanisms to prevent lossy transmissions. They may do validations before either refusing or accepting telemetry data. Additionally a processor can add / remove attributes as needed and sample the data before sending them to all available exporters.
@@ -57,7 +57,9 @@ The **OTLP **receiver collects data from code instrumented with provided client 
 **Exporters **are again vendor / data-sink specific like receivers. They receive massaged, possibly sampled data from processors and convert that to a target data-sink specific format and implement communication protocols for such data sinks.
 
 A **Pipeline **defines a combination of various metric and trace receivers, a set of processors and a final set of metrics and trace receivers.
-![](https://lh5.googleusercontent.com/mRc_j2ZiBvrIxHL0NCH7_aVROB8P8vSJ36vxrygh65uAshupJ2aepeQq949wQSuN2ZC2HrnaNUfUjAJqVPANdo8_waeC3UytWzI0fW6foMD3oISajNNvs5kWNhIS71qMuC_kk1q7)Fig 3. OpenTelemetry Receivers, Processors and Exporters : Core components in green, contrib components in Red
+
+![OpenTelemetry receivers, processors and exporters](https://lh5.googleusercontent.com/mRc_j2ZiBvrIxHL0NCH7_aVROB8P8vSJ36vxrygh65uAshupJ2aepeQq949wQSuN2ZC2HrnaNUfUjAJqVPANdo8_waeC3UytWzI0fW6foMD3oISajNNvs5kWNhIS71qMuC_kk1q7)Fig 3. OpenTelemetry Receivers, Processors and Exporters : Core components in green, contrib components in Red
+
 The core receivers, processors and exporters live on the [https://github.com/open-telemetry/opentelemetry-collector](https://github.com/open-telemetry/opentelemetry-collector) repo. However, many other community contributed ones can be found on the official contrib repo at [https://github.com/open-telemetry/opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib).
 
 Fig. 3 provides a snapshot view of available components as of now.
@@ -67,7 +69,8 @@ Please note that the above lists and diagrams are not exhaustive and only indica
 # Deploying to Kubernetes
 
 We will now try and deploy a fully working example of open-telemetry collector in kubernetes. While a full-fledged docker example exists on [https://github.com/open-telemetry/opentelemetry-collector/tree/master/examples/demo](https://github.com/open-telemetry/opentelemetry-collector/tree/master/examples/demo), the same could not be said for kubernetes and this post tries to bridge that gap. We assume familiarity with kubernetes objects like Deployment, Service, Daemonset, ConfigMap etc going ahead.
-![](/img/blog/2020/07/Copy-of-fig-4---otel-collector-k8s.webp)Fig 4. Opentelemetry-collector kubernetes deployment
+
+![OpenTelemetry collector kubernetes deployment](/img/blog/2020/07/Copy-of-fig-4---otel-collector-k8s.webp)Fig 4. Opentelemetry-collector kubernetes deployment
 
 We use a load-generator deployment that generates simulated metrics and traces for OpenTelemetry stack to consume, this consists of:
 

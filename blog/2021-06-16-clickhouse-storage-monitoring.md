@@ -31,7 +31,7 @@ SigNoz is an open-source alternative to DataDog, New Relic etc. It is a full-sta
 
 In our [latest release](https://github.com/SigNoz/signoz) `v0.3.1` , we launched support for ClickHouse as storage backend for SigNoz. ClickHouse is a column-oriented database management system (DBMS) for online analytical processing of queries (OLAP). Now when you install SigNoz, you will have the option to choose between ClickHouse or Kafka + Druid as a database system.
 
-![](/img/blog/2021/06/clickhouse_choose_setup_hc.webp)
+![choose clickhouse](/img/blog/2021/06/clickhouse_choose_setup_hc.webp)
 
 Users can choose between ClickHouse or Kafka + Druid for their storage system of choice while installing SigNoz
 In this article, let's dig deeper into why we decided to introduce support for Clickhouse as a database storage system and how our users can benefit from it.
@@ -73,13 +73,13 @@ So in just over a minute, you will be able to access our dashboard with the Clic
 
 Let's analyse the performance of ClickHouse and Kafka+Druid set ups with `docker stats` command. The `docker stats` command displays a live data stream with CPU, memory usage, memory limit, block I/O, and network IO metrics for all the running containers.
 
-![](/img/blog/2021/06/docker_stats_clickhouse_final.webp)
+![memory usage](/img/blog/2021/06/docker_stats_clickhouse_final.webp)
 
 <!--- Memory usage stats snapshot with ClickHouse installation --->
 
 Total memory usage with ClickHouse set up: 340.391 MiB
 
-![](/img/blog/2021/06/docker_stats_kafka_final.webp)
+![memory usage](/img/blog/2021/06/docker_stats_kafka_final.webp)
 
 <!--- Memory usage stats snapshot with kafka + Druid installation --->
 
@@ -89,7 +89,7 @@ As we can see, the ClickHouse set up uses about **8.5x less memory** than the Ka
 
 ## SigNoz architecture with ClickHouse
 
-![](/img/blog/2021/06/architecture-signoz-clickhouse-1.webp)
+![architecture of SigNoz with ClickHouse](/img/blog/2021/06/architecture-signoz-clickhouse-1.webp)
 
 <!--- SigNoz Architecture with ClickHouse as storage backend --->
 
