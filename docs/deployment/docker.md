@@ -15,13 +15,17 @@ import TabItem from "@theme/TabItem";
 <br></br>
 
 You can install SigNoz backend in following 2 ways:
-1. Using Install Script
-2. Using Docker Compose
+1. [Using Install Script](#1-using-install-script)
+2. [Using Docker Compose](#2-using-docker-compose)
 
 We have explained each of these ways in the following sections:
 <br></br>
 
 ### 1. Using Install Script
+
+:::note
+The install script installs Docker automatically on linux distros mentioned below. If you're using Mac OS, Docker Desktop must be installed before proceeding. [Download Docker Desktop for Mac.](https://www.docker.com/products/docker-desktop)
+:::
 
 If you are on Mac or any of the following linux distributions, using our install script should be the easiest way to get started:
 - Ubuntu
@@ -30,11 +34,9 @@ If you are on Mac or any of the following linux distributions, using our install
 - CentOS
 - SUSE Linux Enterprise Server (SLES)
 
-Docker Desktop must be installed manually on Mac OS to proceed. Docker can only be installed automatically using install script on above linux distros.
 
 If you are neither on any of the above distributions nor on Mac, please install directly using [Docker Compose](#2-using-docker-compose).
 
-Here's a [quick guide](https://docs.docker.com/compose/install/) to install Docker Compose if you don't have it set up already.
 <br></br>
 
 
@@ -47,44 +49,28 @@ Currently, we have not tested these instructions to run SigNoz on Windows. But y
 
 <br></br>
 
-1. To clone the SigNoz repository and enter the new directory, run:
+1. To clone the SigNoz repository and enter the new directory, run:<br></br>
+   ```jsx
+   git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
+   ```
 
-```console
-git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
-```
-<br></br>
+2. To run SigNoz:<br></br>
+   Check that you are in `signoz/deploy` folder. Now run
+   ```jsx
+   ./install.sh
+   ```
 
-2. To run SigNoz:
+3. Once `install.sh` runs successfully, the UI should be accessible at port 3000 on the domain you set up or the IP of your instance. For example, if you installed SigNoz on your local host, you can access the dashboard at [http://localhost:3000/](http://localhost:3000/)
 
-Check that you are in `signoz/deploy` folder. Now run
+4. Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3000`. You would want to open port 3000 to be accessible from outside world if you want to use public url of machine.
 
-```
-./install.sh
-```
-<br></br>
-
-3. Once `install.sh` runs successfully, the UI should be accessible at port 3000 on the domain you set up or the IP of your instance.
-
-<br></br>
-
-
-:::info
-Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3000`.
-You would want to open port 3000 to be accessible from outside world if you want to use public url of machine.
-:::
-
-<br></br>
-<br></br>
 
 ### 2. Using Docker Compose
 
-
-1. To clone the SigNoz repository and enter the new directory, run:
-
-```console
-git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
-```
-<br></br>
+1. To clone the SigNoz repository and enter the new directory, run:<br></br>
+   ```console
+   git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
+   ```
 
 2. We will now set up SigNoz via docker compose. This will set up the required dependencies and also load a sample app.
 
@@ -132,15 +118,12 @@ A standard instance of SigNoz needs around **8GB of memory**. The setup uses `do
 If you are interested in configuring S3 deep storage for production usage, check out [this section](/docs/configuration/deep_storage) -->
 
 
-<br></br>
-
 ### How to instrument your own applications
 
-The current `docker-compose.yaml` includes sample application ([HotR.O.D](https://github.com/jaegertracing/jaeger/tree/master/examples/hotrod)) that generates tracing data. To see your own application data, follow the steps below
+The current `docker-compose.yaml` includes sample application ([HotR.O.D](https://github.com/jaegertracing/jaeger/tree/master/examples/hotrod)) that generates tracing data. You can explore SigNoz dashboard with the data from the sample app.
 
-[Checkout Instrumentation Section](/docs/instrumentation/overview)
+[Instrument your own application](/docs/instrumentation/overview)
 
-<br></br>
 
 ### Having issues running SigNoz?
 [Checkout Troubleshooting Section](/docs/deployment/troubleshooting)

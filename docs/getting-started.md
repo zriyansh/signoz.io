@@ -5,12 +5,14 @@ sidebar_label: Getting Started
 slug: /
 ---
 
-SigNoz is an open-source APM. It helps developers monitor their applications and troubleshoot problems. You can monitor application metrics as well as infrastructure metrics.
+SigNoz is an open-source Application Performance Monitoring(APM) tool. It helps you monitor applications and troubleshoot problems. With SigNoz, you can monitor metrics(both application and infrastructure), track user requests across services and set alerts on metrics.
 
-- Application metrics like latency, requests per sec, error rates
-- Infrastructure metrics like CPU utilization, memory usage
+- monitor application metrics like latency, requests per sec, error rates
+- track user requests across services
+- monitor infrastructure metrics like CPU utilization, memory usage
+- set alerts on metrics
 
-Once you instrument your applications with OpenTelemetry libraries, you can start seeing RED metrics and detailed trace graphs in SigNoz. You can also go from metrics to traces to find the traces corresponding to anomalous metrics.
+<!-- Once you instrument your applications with OpenTelemetry libraries, you can start seeing RED metrics and detailed trace graphs in SigNoz. You can also go from metrics to traces to find the traces corresponding to anomalous metrics. -->
 
 ## Quick Start
 
