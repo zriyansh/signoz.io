@@ -10,6 +10,10 @@ keywords:
   - community writing
 ---
 
+<head>
+  <link rel="canonical" href="https://signoz.io/technical-writer-program/"/>
+</head>
+
 # Launching SigNoz Technical Writer Program
 
 Are you a developer who loves creating content and getting it across to a global audience? We'd love to have you contribute to our community writer program.
