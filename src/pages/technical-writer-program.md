@@ -14,6 +14,8 @@ keywords:
 <head>
   <link rel="canonical" href="https://signoz.io/technical-writer-program/"/>
   <meta property="og:image" content="https://signoz.io/img/signoz_twp_cover.webp"/>
+  <meta name ="twitter:image" content="https://signoz.io/img/signoz_twp_cover.webp"/>
+
 </head>
 
 # Launching SigNoz Technical Writer Program
