@@ -2,6 +2,7 @@
 title: Technical Writer Program
 slug: technical-writer-program
 description: With SigNoz technical writer program, you have an amazing opportunity to build your digital brand, improve your writing skills, and getting your content across a global audience.
+image: /img/signoz_twp_cover.webp
 keywords:
   - techincal writers
   - techincal writer program
@@ -12,6 +13,7 @@ keywords:
 
 <head>
   <link rel="canonical" href="https://signoz.io/technical-writer-program/"/>
+  <meta property="og:image" content="https://signoz.io/img/signoz_twp_cover.webp"/>
 </head>
 
 # Launching SigNoz Technical Writer Program
