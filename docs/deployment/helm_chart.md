@@ -25,7 +25,6 @@ helm dependency update deploy/kubernetes/platform
 kubectl create ns platform
 
 helm -n platform install signoz deploy/kubernetes/platform
-
 ```
 
 \*_If you choose a different namespace, you need to point your applications to correct address to send traces. In our sample application just change the `JAEGER_ENDPOINT` environment variable in `sample-apps/hotrod/deployment.yaml`_
@@ -63,5 +62,17 @@ kubectl -n sample-application run strzal --image=djbingham/curl \
 ### How to instrument your own applications
 
 [Checkout Instrumentation Section](/docs/instrumentation/overview)
+
+### Increase ClickHouse persistent volume size in EKS/GKE
+
+Use the command below to increase PV size from default `20Gi` to `25Gi`:
+
+```console
+helm -n platform upgrade signoz deploy/kubernetes/platform --set clickhouseOperator.storage=25Gi
+```
+
+\*_The above Helm upgrade command overrides the default values from `values.yaml` using `--set` flag for each execution.
+Alternatively, you can pass updated `values.yaml` file using `-f` flag._
+
 
 <!-- Supported Markdown languages - Highlight.js https://github.com/highlightjs/highlight.js/blob/master/SUPPORTED_LANGUAGES.md -->
