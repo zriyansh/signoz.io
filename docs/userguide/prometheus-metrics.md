@@ -23,4 +23,4 @@ The [code section](https://github.com/SigNoz/signoz/blob/510815655fe6cc9ac3e86b6
 
 You also need to deploy SigNoz again after making the above config changes.
 
-If you have any questions, drop us a note on our [slack community](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA)
+If you have any questions, drop us a note on our [slack community](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA).
