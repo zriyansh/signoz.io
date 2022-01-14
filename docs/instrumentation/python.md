@@ -44,7 +44,7 @@ Retry installing `opentelemetry-exporter-otlp` by doing
 - pip3 install opentelemetry-exporter-otlp
 
 
-The below command inspects the active Python site-packages and figures out which instrumentation packages the user might want to install and installs them for you.
+The below command inspects the Python dependencies of your application and installs the instrumentation packages relevant for your Python application.
 
 ```bash
 opentelemetry-bootstrap --action=install
