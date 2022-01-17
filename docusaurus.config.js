@@ -122,26 +122,32 @@ module.exports = {
               href: "https://twitter.com/SigNozHQ",
             },
             {
-              label: "hello@signoz.io",
-              href: "mailto:hello@signoz.io",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "About",
-              to: "about-us/",
+              label: "Support",
+              to: "support/",
             },
             {
               label: "Learn",
               to: "learn/",
             },
+
+          ],
+        },
+        {
+          title: "More",
+          items: [
+            
             {
-              label: "Support",
-              to: "support/",
+              label: "About",
+              to: "about-us/",
             },
+            {
+              label: "Terms",
+              to: "terms-of-service/",
+            },
+            {
+              label: "Privacy",
+              to: "privacy/",
+            }
           ],
         },
       ],
