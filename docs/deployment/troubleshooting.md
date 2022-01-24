@@ -35,9 +35,13 @@ b3afb9d3ac32   yandex/clickhouse-server                       "/entrypoint.sh"  
 
 #### Troubleshooting of common issues 
 
-1. `docker ps` will show all containers created by SigNoz. Check if `clickhouse-setup_clickhouse`, `clickhouse-setup_clickhouse` and `query-service` containers are running. They do not come up if there is a memory problem. You may want to increase alloted memory.
-2. If you are still facing issues, try re-running `./install.sh`. This will retry installing containers which failed the first time.
-3. Try reinstall SigNoz by first bringing down the existing containers & [reinstalling](#re-installing-signoz)
+1. If you see no sample services in the dashboard after installing SigNoz
+   - Are you on Windows? We don't have official support for running SigNoz on Windows as of Jan 24, 2021. Please try installing on a Linux or Mac OS.
+   - If you are on Mac or Linux based OS, please reachout to us on our [slack community](https://signoz.io/slack) 
+
+2. `docker ps` will show all containers created by SigNoz. Check if `clickhouse-setup_clickhouse`, `clickhouse-setup_clickhouse` and `query-service` containers are running. They do not come up if there is a memory problem. You may want to increase alloted memory.
+3. If you are still facing issues, try re-running `./install.sh`. This will retry installing containers which failed the first time.
+4. Try reinstall SigNoz by first bringing down the existing containers & [reinstalling](#re-installing-signoz)
 
 :::info
 Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3000`.
