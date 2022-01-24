@@ -5,7 +5,7 @@ date: 2021-12-03
 tags: [distributed-tracing, application-monitoring, apm-tools]
 authors: ankit_anand
 description: Latest top distributed tracing tools list - 1.SigNoz 2.Dynatrace 3.New Relic 4.Honeycomb 5.Lightstep 6.Instana 7.Jaeger 8.DataDog 9.Zipkin..
-image: /img/blog/2021/09/distributed_tracing_tools_cover-min.webp
+image: /img/blog/2022/01/distributed_tracing_tools_cover.webp
 keywords:
   - jaeger
   - tempo
@@ -22,7 +22,7 @@ Choosing the right distributed tracing tool is critical. How do you know which i
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/09/distributed_tracing_tools_cover-min.webp)
+![Cover Image](/img/blog/2022/01/distributed_tracing_tools_cover.webp)
 
 > What is a distributed tracing tool?<br></br>
 > A distributed tracing tool enables you to track user requests across multiple servers and services in a microservice architecture. It gives you a central overview of how user requests are performing in different services.
@@ -98,7 +98,7 @@ Below is a snapshot from SigNoz dashboard showing spans from a request as rectan
 />
 
 ## Top 11 distributed tracing tools
-Now let's explore the top 11 distributed tracing tools in 2021.
+Now let's explore the top 11 distributed tracing tools in 2022.
 
 ### SigNoz
 [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) is a full-stack open-source APM and observability tool. It captures both metrics and traces with log management currently in the product roadmap. Logs, metrics, and traces are considered to be the three pillars of observability in modern-day distributed systems.
