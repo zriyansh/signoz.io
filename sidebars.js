@@ -19,21 +19,25 @@
 module.exports = {
   docs: [
     {
-      id: "getting-started",
+      id: "introduction",
       type: "doc",
     },
     {
-      label: "Install SigNoz",
-      type: "category",
+      type: 'category',
+      label: 'Install SigNoz',
+      link: {
+        type: 'generated-index',
+        title: 'Install SigNoz',
+        description: 'To install SigNoz, follow the instructions in the next sections, depending on your environment.',
+        slug: '/install',
+      },
       items: [
-        "deployment/requirement",
-        'deployment/docker',
-        'deployment/docker_swarm',
-        'deployment/helm_chart',
-        'deployment/troubleshooting'
+        "install/docker-standalone",
+        'install/docker-swarm',
+        'install/kubernetes',
+        'install/troubleshooting'
       ],
     },
- 
     {
       label: "Instrumentation",
       type: "category",
@@ -50,7 +54,7 @@ module.exports = {
       ],
     },
     {
-      label: "User Guide",
+      label: "User Guides",
       type: "category",
       items: [
         'userguide/overview',
@@ -63,21 +67,13 @@ module.exports = {
       ],
     },
     {
-      label: "Tutorial",
+      label: "Tutorials",
       type: "category",
       items: [
         'tutorial/jvm-metrics',
         'tutorial/kubernetes-infra-metrics',
       ],
     },
-    // {
-    //   label: "Configuration",
-    //   type: "category",
-    //   items: [
-    //     'configuration/deep_storage', 
-    //     'configuration/retention_period',
-    //   ],
-    // },
     {
       id: "architecture",
       type: "doc",

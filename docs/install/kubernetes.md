@@ -1,5 +1,5 @@
 ---
-id: helm_chart
+id: kubernetes
 title: Deploy with Helm Charts
 ---
 ### Steps:

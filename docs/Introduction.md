@@ -1,26 +1,45 @@
 ---
 id: introduction
-title: What is SigNoz?
+title: Introduction
+slug: /
 ---
 
-Pronounced as sig.noz
+## What is SigNoz?
 
-Trained in EECS, we are obsessed with the idea of signal vs noise. How do devops engineers find signals which they can act on from the various sources of noise they encounter from their observability systems?
+SigNoz is an open-source Application Performance Monitoring(APM) tool which helps you monitor your applications and troubleshoot problems. SigNoz uses distributed tracing to gain visibility into your software stack.
 
-This is one idea we obsess over and seems important enough to continually strive towards. And, hence the name Sig.Noz ( **Sig**nal vs **No**ise) 🤓
+With SigNoz, you can:
+- Collect metrics like p99 latency, error rates for your services, external API calls, and individual endpoints.
+- Find the root cause of the problem by identifying the exact traces causing problems in your application
+- See detailed flame graphs of individual request traces.
+- Run aggregates on trace data to get business-relevant metrics
+- Identify the slowest endpoints in your application
+- See exact request trace to figure out issues in downstream services, slow database queries, calls to third-party services like payment gateways.
+- Filter traces by service name, operation, latency, error, tags/annotations.
+- Run aggregates on trace data (events/spans) to get business relevant metrics.
+- Use a unified UI for metrics and traces. No need to switch from Prometheus to Jaeger to debug issues.
 
-## Philosophy
+## Get Started with SigNoz
 
-We always kept asking ourselves why there is no OSS system which just works end to end and has great visualization like what SaaS products provide? SigNoz is our attempt to solve that problem.
+- [Install SigNoz](/docs/install)
+- [Troubleshoot Your Installation](/docs/troubleshooting)
+- [Instrument Your Application](/docs/instrumentation/overview)
 
-At present, there is a false dichotomy between open source & SaaS. SaaS products are pricey and do many things auto-magically. Open source gives you a lot of control but you need employee time to set things up and maintain them, which is a cost in itself. Also, it hardly makes sense for a business to invest in non-core things. OSS users on the other hand, often miss great UX and visualization.
+## User Guides
 
-We want to obliterate this huge gap between SaaS & open-source.
+- [Overview](/docs/userguide/overview/)
+- [Metrics Dashboard](/docs/userguide/metrics-dashboard/)
+- [Prometheus Metrics](/docs/userguide/prometheus-metrics/)
+- [Setting Alert Rules](/docs/userguide/alerts-management/)
+- [Customize the Retention Period](/docs/userguide/retention-period/)
+- [Using Service Maps](/userguide/service-map/)
+- [Trace Details](/docs/userguide/trace-details/)
 
-This has started happening now with the coming of OpenTelemetry. Instrumentation layer is commoditised now. Products should work seamlessly with current OSS frameworks. Pricing should be simple.
+## Tutorials
 
-### Developer Focus
+- [Monitoring Spring Boot JVM Metrics](/docs/tutorial/jvm-metrics/)
+- [Monitoring Kubernetes Infrastructure Metrics](/docs/tutorial/kubernetes-infra-metrics/)
 
-As developers, we often get frustrated by using SaaS products which lack one small feature which we wanted and made our life a lot tougher - just for a small piece of code which we could have as well added ourselves. And then we have to wait for that feature to get prioritised.
+## Reference
 
-With OSS products, if you find that the product doesn’t have any specific feature, you can very easily add it yourself - and potentially upstream it, potentially helping others in the community
+- [Technical Architecture](/docs/architecture/)
