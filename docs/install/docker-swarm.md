@@ -38,7 +38,7 @@ docker swarm init
   To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
   ```
 
-3. _(Optional)_ You can use the `docker swarm join` command to add more nodes to the swarm. Note that the node you added in the previous step is the manager. For details, see the [Docker Swarm Join](https://docs.docker.com/engine/reference/commandline/swarm_join/) page of the official Docker documentation.
+3. _(Optional)_ You can use the `docker swarm join` command to add more nodes to the swarm. Note that the node you added in the previous step is the manager. For details, see the [Docker Swarm Join](https://docs.docker.com/engine/reference/commandline/swarm_join/) page of the Docker documentation.
 
 4. Deploy SigNoz by entering the `docker stack deploy command` and specifying the following:
    - `-c` and the path to the Compose file (`docker-swarm/clickhouse-setup/docker-compose.yaml`)
