@@ -17,7 +17,7 @@ This section provides information on installing SigNoz on Docker Swarm.
 - [Docker Compose](https://docs.docker.com/compose/install/)
 - [Git client](https://desktop.github.com/)
 
-## Install SigNoz on Docker Docker Swarm
+## Install SigNoz on Docker Swarm
     
 1. <CloneRepo />
 
