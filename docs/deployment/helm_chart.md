@@ -18,38 +18,24 @@ The easiest way to get started with SigNoz on Kubernetes is to install using hel
 ### Steps to Deploy SigNoz
 
 ```console
-helm repo add signoz https://charts.signoz.io
+git clone https://github.com/SigNoz/signoz.git && cd signoz
+
+helm dependency update deploy/kubernetes/platform
 
 kubectl create ns platform
 
-helm -n platform install my-release signoz/signoz
+helm -n platform install signoz deploy/kubernetes/platform
 ```
 
-The above command will install a recent version of the SigNoz.
-To use an explicit version of SigNoz:
-
-```console
-helm install my-release signoz/signoz \
- --set frontend.image.tag="0.5.3"\
- --set queryService.image.tag="0.5.3"
-```
-
-\*_Note: When configuring the SigNoz image tag, be careful not to use `latest` or `master`
-in a production environment. These tags may have the SigNoz version change, causing
-a mixed-version SigNoz cluster that can lead to an outage and potential data loss._
+\*_If you choose a different namespace, you need to point your applications to correct address to send traces. In our sample application just change the `JAEGER_ENDPOINT` environment variable in `sample-apps/hotrod/deployment.yaml`_
 
 ### Test HotROD application with SigNoz
 
 ```console
 kubectl create ns sample-application
 
-kubectl -n sample-application apply -f https://raw.githubusercontent.com/SigNoz/signoz/main/sample-apps/hotrod/hotrod.yaml
+kubectl -n sample-application apply -Rf sample-apps/hotrod/
 ```
-
-\*_If you choose a namespace other than `platform` for SigNoz, you will need to
-point the sample application to the correct address to send traces. In our
-sample application just change the `JAEGER_ENDPOINT` environment variable in
-[sample-apps/hotrod/hotrod.yaml](https://github.com/SigNoz/signoz/blob/main/sample-apps/hotrod/hotrod.yaml)_
 
 ### How to generate load
 
@@ -61,13 +47,9 @@ kubectl -n sample-application run strzal --image=djbingham/curl \
 
 ### See UI
 
-To access the UI, you can `port-forward` the frontend service:
-
 ```console
-kubectl -n platform port-forward svc/my-release-frontend 3000:3000
+kubectl -n platform port-forward svc/signoz-frontend 3000:3000
 ```
-
-You can open http://localhost:3000 in your favourite browser.
 
 ### How to stop load
 
@@ -86,12 +68,11 @@ kubectl -n sample-application run strzal --image=djbingham/curl \
 Use the command below to increase PV size from default `20Gi` to `25Gi`:
 
 ```console
-helm -n platform upgrade my-release signoz/signoz --set clickhouseOperator.storage=25Gi
+helm -n platform upgrade signoz deploy/kubernetes/platform --set clickhouseOperator.storage=25Gi
 ```
 
-\*_The above Helm upgrade command overrides the default values from `values.yaml`
-with the ones set using `--set` flag. Alternatively, you can pass updated values
-`override-values.yaml` file using `-f` flag._
+\*_The above Helm upgrade command overrides the default values from `values.yaml` using `--set` flag for each execution.
+Alternatively, you can pass updated `values.yaml` file using `-f` flag._
 
 
 <!-- Supported Markdown languages - Highlight.js https://github.com/highlightjs/highlight.js/blob/master/SUPPORTED_LANGUAGES.md -->
