@@ -117,12 +117,9 @@ Steps to create a sample Express application:
    This servs as the new entry point for the sample application. It enables OpenTelemetry SDK to load before the application starts so that OpenTelemetry can apply available instrumentation. -->
   
 
-3. **Start the server and start sending data to SigNoz**<br></br>
+3. **Start the Node application and start sending data to SigNoz**<br></br>
    The `tracing.js` file takes care of instantiating tracing for the application. You can have look at its content in the GitHub repo.
    
-   :::caution
-   Run this command at your terminal after replacing the environment variables applicable for your setup.
-   :::
 
    Now you need to run your application with some environment variables for OpenTelemetry. Environment variables that need to be configured:
 
@@ -132,6 +129,7 @@ Steps to create a sample Express application:
    
    
    You need to put these environment variables in the below command and run it at your terminal.
+   
 
    ```jsx
    OTEL_EXPORTER_OTLP_ENDPOINT="<IP of SigNoz>:4317" \
