@@ -50,13 +50,13 @@ Currently, we have not tested these instructions to run SigNoz on Windows. But y
 <br></br>
 
 1. To clone the SigNoz repository and enter the new directory, run:<br></br>
-   ```sh
+   ```jsx
    git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
    ```
 
 2. To run SigNoz:<br></br>
    Check that you are in `signoz/deploy` folder. Now run
-   ```sh
+   ```jsx
    ./install.sh
    ```
 
@@ -87,13 +87,13 @@ If you don't have `docker-compose` set up, please follow [this guide](https://do
   ]}>
   <TabItem value="x86">
 
-    sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up -d
+    sudo docker-compose --env-file ./docker/clickhouse-setup/env/x86_64.env -f docker/clickhouse-setup/docker-compose.yaml up -d
   
   </TabItem>
 
   <TabItem value="arm64">
 
-    sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml up -d
+    sudo docker-compose --env-file ./docker/clickhouse-setup/env/arm64.env -f docker/clickhouse-setup/docker-compose.yaml up -d
 
   </TabItem>
 </Tabs>
