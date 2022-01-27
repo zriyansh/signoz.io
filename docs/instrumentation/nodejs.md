@@ -48,25 +48,25 @@ Steps to create a sample Express application:
    npm i
    ```
 
-   Note: `auto-instrumentations-node` is a meta-package from opentelemetry-js-contrib that provides a simple way to initialize multiple Node.js instrumentation. 
+   Note: `auto-instrumentations-node` is a meta-package from <a href = "https://github.com/open-telemetry/opentelemetry-js-contrib/tree/main/metapackages/auto-instrumentations-node" rel="noopener noreferrer nofollow" target="_blank" >opentelemetry-js-contrib</a> that provides a simple way to initialize multiple Node.js instrumentation. 
 
 
 3. **Start the Node application and start sending data to SigNoz**<br></br>
 
-    The `tracing.js` file takes care of instantiating tracing for the application. You can have look at its content in the GitHub repo.
+    The `tracing.js` file takes care of instantiating tracing for the application. You can have look at its <a href = "https://github.com/SigNoz/sample-nodejs-app/blob/master/tracing.js" rel="noopener noreferrer nofollow" target="_blank" >content</a> in the GitHub repo.
    
     Now you need to run your application with some environment variables for OpenTelemetry. Environment variables that need to be configured:
 
     a. `IP of SigNoz backend` - IP of the machine where SigNoz is installed. In case you have installed SigNoz on your local machine, you can use `localhost`
 
-    b. `service name` - the service you are monitoring (you can name it anything)
+    b. `service_name` - the service you are monitoring (you can name it anything)
    
    
     You need to put these environment variables in the below command and run it at your terminal.
   
     ```jsx
     OTEL_EXPORTER_OTLP_ENDPOINT="<IP of SigNoz>:4317" \
-    OTEL_RESOURCE_ATTRIBUTES=service.name=nodeJsApp \
+    OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> \
     node -r ./tracing.js index.js
     ```
 
