@@ -74,13 +74,13 @@ You would want to open port 3000 to be accessible from outside world if you want
   ]}>
   <TabItem value="x86">
 
-    sudo docker-compose --env-file ./docker/clickhouse-setup/env/x86_64.env -f docker/clickhouse-setup/docker-compose.yaml down -v
+    sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml down -v
 
   </TabItem>
 
   <TabItem value="arm64">
     
-    sudo docker-compose --env-file ./docker/clickhouse-setup/env/arm64.env -f docker/clickhouse-setup/docker-compose.yaml down -v
+    sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml down -v
 
   </TabItem>
 
