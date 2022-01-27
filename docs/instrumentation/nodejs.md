@@ -18,20 +18,38 @@ import TabItem from "@theme/TabItem";
 - Node.js version 12 or newer
 - An app to add OpenTelemetry to
 
-To install OpenTelemetry, we recommend [LightStep's handy OTel-Launcher](https://github.com/lightstep/otel-launcher-node), which simplifies the process.
-
 ### Instrumenting a sample Express application
 
 For this tutorial, we’re going to create a very simple application: an express service that responds at `http://localhost:9090/hello` with "Hello World".
+ 
+Steps to create a sample Express application:
 
-First, let's create a sample Express application. If you don't want to create the app manually, you can clone it from its [GitHub repo](https://github.com/SigNoz/sample-nodejs-app). Steps to create a sample Express application:
 
-1. **Make a directory, and install express:**<br></br>
+1. **Git clone the sample app repo and change directory**<br></br>
+   Sample nodejs application repo on <a href = "https://github.com/SigNoz/sample-nodejs-app" rel="noopener noreferrer nofollow" target="_blank" >GitHub</a>.
 
-   ```bash
-   npm i express
+   ```jsx
+   git clone https://github.com/SigNoz/sample-nodejs-app.git
+   cd sample-nodejs-app
    ```
 
+2. **Install the dependencies**<br></br>
+   The required OpenTelemetry packages will get installed using this command. OpenTelemetry clients have two major components: the SDK and the API. Following are the OpenTelemetry packages used for the sample application:
+
+   - `@opentelemetry/api`
+   - `@opentelemetry/auto-instrumentations-node`
+   - `@opentelemetry/exporter-otlp-grpc`
+   - `@opentelemetry/sdk-node`
+   
+   <br></br>
+
+   ```jsx
+   npm i
+   ```
+
+   Note: `auto-instrumentations-node` is a meta-package from opentelemetry-js-contrib that provides a simple way to initialize multiple Node.js instrumentation. 
+
+<!-- 
 2. **Create a file called `server.js`**<br></br>
 
    ```bash
@@ -56,9 +74,9 @@ First, let's create a sample Express application. If you don't want to create th
 
 4. **Stop the application**<br></br>
 
-   You can stop the application using `Ctrl+C` on your terminal. We're doing this because we need to restart the application with OpenTelemetry.
+   You can stop the application using `Ctrl+C` on your terminal. We're doing this because we need to restart the application with OpenTelemetry. -->
 
-### Instrumenting sample app with OpenTelemetry
+<!-- ### Instrumenting sample app with OpenTelemetry
 
 1. **Install OpenTelemetry Launcher package**<br></br>
 
@@ -96,10 +114,10 @@ First, let's create a sample Express application. If you don't want to create th
    process.on('SIGTERM', shutdown);
    ```
 
-   This servs as the new entry point for the sample application. It enables OpenTelemetry SDK to load before the application starts so that OpenTelemetry can apply available instrumentation.
+   This servs as the new entry point for the sample application. It enables OpenTelemetry SDK to load before the application starts so that OpenTelemetry can apply available instrumentation. -->
   
 
-3. **Final run command**<br></br>
+3. **Start the server and start sending data to SigNoz**<br></br>
    
    :::caution
    Run this command at your terminal after replacing the environment variables applicable for your setup.
@@ -110,28 +128,27 @@ First, let's create a sample Express application. If you don't want to create th
    a. `IP of SigNoz backend` - IP of the machine where SigNoz is installed. In case you have installed SigNoz on your local machine, you can use `localhost`
 
    b. `service name` - the service you are monitoring (you can name it anything)
-
+   
+   
    You need to put these environment variables in the below command and run it at your terminal.
-   ```bash
-   OTEL_METRICS_EXPORTER=none \
-   OTEL_EXPORTER_OTLP_SPAN_ENDPOINT="http://<IP of SigNoz Backend>:55681/v1/trace" \
-   LS_SERVICE_NAME=<service name> \
-   node server_init.js
+
+   ```jsx
+   OTEL_EXPORTER_OTLP_ENDPOINT="<IP of SigNoz>:4317" \
+   OTEL_RESOURCE_ATTRIBUTES=service.name=nodeJsApp \
+   node -r ./tracing.js index.js
    ```
-   Note that this command is running your application with `node server_init.js` as this is the new entry point of your application.
 
    If you're running SigNoz on `localhost`, and want to name your service as `node_app`, the final command will be as follows:
 
-   ```bash
-   OTEL_METRICS_EXPORTER=none \
-   OTEL_EXPORTER_OTLP_SPAN_ENDPOINT="http://localhost:55681/v1/trace" \
-   LS_SERVICE_NAME=node_app \
-   node server_init.js
+   ```jsx
+   OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" \
+   OTEL_RESOURCE_ATTRIBUTES=service.name=node_app \
+   node -r ./tracing.js index.js
    ```
    <br></br>
 
    :::note
-   - Remember to allow incoming requests to port **55681** of machine where SigNoz backend is hosted
+   - Remember to allow incoming requests to port **4317** of machine where SigNoz backend is hosted
    :::
 
    You can check your application running at [http://localhost:9090/hello](http://localhost:9090/hello). You need to generate some load in order to see data reported on SigNoz dashboard. Refresh the endpoint for 10-20 times, and wait for 2-3 mins. 
