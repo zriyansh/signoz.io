@@ -70,21 +70,28 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
   width={700}
 />
 
-## Install sample Nodejs application
+
+## Creating sample Nodejs application
 
 You need to ensure that you have **Node.js version 12 or newer**. You can download the latest version of Node.js [here](https://nodejs.org/en/download/). For the sample application, let's create a basic 'hello world' express.js application.
 
+Check if node is installed on your machine by using the below command:
+
+```jsx
+node -v
+```
+
 Steps to get the app set up and running:
 
-1. Make a directory and install express<br></br>
+1. **Make a directory and install express**<br></br>
    Make a directory for your sample app on your machine. Then open up the terminal, navigate to the directory path and install express with the following command:
    ```
    npm i express
    ```
-2. Setup server.js<br></br>
-   Create a file called 'server.js' in your directory and with any text editor setup your 'Hello World' file with the code below:
+2. **Create index.js**<br></br>
+   Create a file called `index.js` in your directory and with any text editor setup your 'Hello World' file with the code below:
 
-   ```
+   ```jsx
    const express = require('express');
 
    const app = express();
@@ -96,19 +103,20 @@ Steps to get the app set up and running:
    app.listen(9090);
    ```
 
-3. Boot up the server with the following command on the terminal:
+3. **Check if your application is working**<br></br>
+   Run your application by using the below command at your terminal.
 
+   ```jsx
+   node index.js
    ```
-   node server.js
-   ```
 
-   You can check if your app is working by visiting: http://localhost:9090/hello
+   You can check if your app is working by visiting: [http://localhost:9090/hello](http://localhost:9090/hello)
 
-   Once you are finished checking, exit the localhost on your terminal.
+   Once you are finished checking, exit the application by using `Ctrl + C` on your terminal.
 
 ## Set up OpenTelemetry and send data to SigNoz
 
-1. In the same directory path at the terminal, install the OpenTelemetry launcher package with this command:
+<!-- 1. In the same directory path at the terminal, install the OpenTelemetry launcher package with this command:
 
    ```
    npm install lightstep-opentelemetry-launcher-node
@@ -160,11 +168,97 @@ Steps to get the app set up and running:
    OTEL_EXPORTER_OTLP_SPAN_ENDPOINT="http://localhost:55681/v1/trace" OTEL_METRICS_EXPORTER=none LS_SERVICE_NAME=sample_app node server_init.js
    ```
 
+And, congratulations! You have instrumented your sample Node.js app. You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000) to monitor your app for performance metrics. -->
+
+1. **Install OpenTelemetry packages**<br></br>
+   You will need the following OpenTelemetry packages for this sample application.
+   
+   ```jsx
+   npm install --save @opentelemetry/api
+   npm install --save @opentelemetry/sdk-node
+   npm install --save @opentelemetry/auto-instrumentations-node
+   npm install --save @opentelemetry/exporter-otlp-grpc
+   ```
+
+   OpenTelemetry clients have two major components: the SDK and the API. The details of the packages used for the application are as follows:
+   - `opentelemetry/api`<br></br>
+      Defines data types and operations for generating and correlating tracing, metrics, and logging data. The API is what you use to instrument your code.
+
+   - `opentelemetry/sdk-node`<br></br>
+      Provides automated instrumentation and tracing for Node.js applications.
+
+   - `opentelemetry/auto-instrumentations-node`<br></br>
+      A meta-package from [opentelemetry-js-contrib](https://github.com/open-telemetry/opentelemetry-js-contrib/tree/main/metapackages/auto-instrumentations-node) that provides a simple way to initialize multiple Node.js instrumentations.
+
+   - `opentelemetry/exporter-otlp-grpc`<br></br>
+      Exports data via gRPC using [OTLP](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/otlp.md) format.
+
+
+2. **Create `tracing.js` file**<br></br>
+   Instantiate tracing by creating a `tracing.js` file and using the below code.
+
+   ```jsx
+   // tracing.js
+   'use strict'
+   const process = require('process');
+   const opentelemetry = require('@opentelemetry/sdk-node');
+   const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
+   const { OTLPTraceExporter } = require('@opentelemetry/exporter-otlp-grpc');
+   // configure the SDK to export telemetry data to the console
+   // enable all auto-instrumentations from the meta package
+   const traceExporter = new OTLPTraceExporter();
+   const sdk = new opentelemetry.NodeSDK({
+     traceExporter,
+     instrumentations: [getNodeAutoInstrumentations()]
+     });
+     
+     // initialize the SDK and register with the OpenTelemetry API
+     // this enables the API to record telemetry
+     sdk.start()
+     .then(() => console.log('Tracing initialized'))
+     .catch((error) => console.log('Error initializing tracing', error));
+     
+     // gracefully shut down the SDK on process exit
+     process.on('SIGTERM', () => {
+       sdk.shutdown()
+       .then(() => console.log('Tracing terminated'))
+       .catch((error) => console.log('Error terminating tracing', error))
+       .finally(() => process.exit(0));
+       });
+  ```
+
+3. **Run the sample application with OpenTelemetry and send data to SigNoz**<br></br>
+   Once the file is created, you only need to run one last command at your terminal, which passes the necessary environment variables. Here, you also set SigNoz as your backend analysis tool.
+
+   ```jsx
+   OTEL_EXPORTER_OTLP_ENDPOINT="<IP of SigNoz>:4317" \
+   OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> \
+   node -r ./tracing.js index.js
+   ```
+
+   Replacing the placeholders in the above command for local host:
+
+   `IP of SigNoz Backend`: localhost (since we are running SigNoz on our local host)
+
+   `service_name` : node_app (you can give whatever name that suits you)
+
+   So the final command is:
+
+   ```jsx
+   OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" \
+   OTEL_RESOURCE_ATTRIBUTES=service.name=node_app \
+   node -r ./tracing.js index.js
+   ```
+
+   You can check your application running at [http://localhost:9090/hello](http://localhost:9090/hello). You need to generate some load in order to see data reported on SigNoz dashboard. Refresh the endpoint for 10-20 times, and wait for 2-3 mins.
+
 And, congratulations! You have instrumented your sample Node.js app. You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000) to monitor your app for performance metrics.
+
+
 <Screenshot
   alt="Sample nodejs app in the applications monitored"
   height={500}
-  src="/img/blog/2021/08/opentelemetry_nodejs_signoz_dashboard.webp"
+  src="/img/blog/2022/01/node_sample_app.webp"
   title="Sample_app in the list of applications monitored"
   width={700}
 />
