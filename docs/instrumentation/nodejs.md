@@ -118,6 +118,7 @@ Steps to create a sample Express application:
   
 
 3. **Start the server and start sending data to SigNoz**<br></br>
+   The `tracing.js` file takes care of instantiating tracing for the application. You can have look at its content in the GitHub repo.
    
    :::caution
    Run this command at your terminal after replacing the environment variables applicable for your setup.
