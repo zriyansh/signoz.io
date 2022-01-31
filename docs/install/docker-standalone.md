@@ -9,7 +9,7 @@ import CloneRepo from '../shared/clone-repo.md'
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-SigNoz can be installed on macOS on Linux computers, and there are two ways in which you can install SigNoz:
+SigNoz can be installed on macOS or Linux computers, and there are two ways in which you can install SigNoz:
 
  - You may execute a script that checks your environment, installs Docker Engine and Docker Compose on Linux, and runs the `docker compose up` command for you. 
  - You may execute the `docker compose up` command yourself.
@@ -31,7 +31,7 @@ If you're using a different Linux distribution, see the [Install SigNoz Using Do
 
 - A Linux or macOS machine.
 - On macOS, you must manually install [Docker Engine](https://docs.docker.com/engine/install/) before you run the install script. The install script automatically installs Docker Engine on Linux.
-- A minimum of 2GB of memory must be allocated to Docker.
+- A minimum of 2GB of memory must be allocated to Docker. <!-- Existing documentation is somehow unclear. Are there different memory requirements based on the operating system? -->
 - [Git client](https://desktop.github.com/)
 - Ensure that the port `3000` is open on the machine where you install SigNoz.
 
@@ -55,7 +55,6 @@ Before you install Signoz, ensure that [Docker Compose](https://docs.docker.com/
 1. <CloneRepo />
 
 2. To install SigNoz, enter the `sudo docker-compose up` command, specifying the following:
-    - `--env-file` and the path to your environment variables file
     - `-f` and the path to your configuration file
     - `-d` to un containers in the background
 
@@ -67,13 +66,13 @@ Before you install Signoz, ensure that [Docker Compose](https://docs.docker.com/
     ]}>
     <TabItem value="x86">
 
-      sudo docker-compose --env-file ./docker/clickhouse-setup/env/x86_64.env -f docker/clickhouse-setup/docker-compose.yaml up -d
+      sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up -d
     
     </TabItem>
 
     <TabItem value="arm64">
 
-      sudo docker-compose --env-file ./docker/clickhouse-setup/env/arm64.env -f docker/clickhouse-setup/docker-compose.yaml up -d
+      sudo docker-compose docker/clickhouse-setup/docker-compose.arm.yaml up -d
 
     </TabItem>
   </Tabs>
@@ -111,6 +110,10 @@ You should see a page similar to the one in the image below:
 
 -->
 
+
+<!--
+How is this helpful? I suggest we create something similar to the Kubernetes section. Do we have a blog post to which I could link out?
+-->
 :::info
 The `docker-compose.yaml` installs a sample application named [HotR.O.D](https://github.com/jaegertracing/jaeger/tree/master/examples/hotrod) that generates tracing data. You can explore the SigNoz dashboard with the data provided by the sample application.
 :::
@@ -118,8 +121,11 @@ The `docker-compose.yaml` installs a sample application named [HotR.O.D](https:/
 
 ## Related Topics
 
-- [Troubleshooting](/docs/deployment/troubleshooting)
+- [Troubleshoot SigNoz Installation Issues](/docs/install/troubleshooting)
 
 ## Next Steps
 
-- [Instrument your application](/docs/instrumentation/overview)
+- [Instrument Your Application](/docs/instrumentation/overview)
+- [User Guides](/docs/userguide/overview/)
+- [Tutorials](/docs/tutorials/)
+- [Operate SigNoz on Docker Standalone](/docs/operate/docker-standalone)

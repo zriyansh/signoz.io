@@ -141,7 +141,7 @@ function OpenSourceCard(props) {
                     </ul>
                 </div>
                 <div className="card__footer">
-                    <Link href={"/docs/deployment/docker"}>
+                    <Link href={"/docs/install/docker"}>
                         <button style={{background: "#2D9CDB", borderWidth: 0}} className="button button--primary button--block" >{buttonText}</button>
                     </Link>
 

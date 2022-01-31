@@ -189,7 +189,7 @@ cd signoz/deploy/
 
 For detailed instructions, you can visit our documentation.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=jaeger_vs_signoz)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/install/docker/?utm_source=blog&utm_medium=jaeger_vs_signoz)
 
 If you face any issues while trying out SigNoz, feel free to write to us at: support@signoz.io
 

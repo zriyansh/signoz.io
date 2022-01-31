@@ -1,6 +1,7 @@
 ---
 id: jvm-metrics
-title: Monitoring Spring Boot JVM Metrics
+title: Spring Boot Applications
+description: View JVM metrics from Spring Boot applications in SigNoz
 ---
 
 This tutorial shows you how you can visualise JVM metrics from Spring Boot applications in SigNoz.

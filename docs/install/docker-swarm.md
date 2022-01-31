@@ -12,8 +12,11 @@ This section provides information on installing SigNoz on Docker Swarm.
 
 ## Prerequisites
 
+<!-- Double-check if this list is comprehensive about memory, disk space, etc. -->
+<!-- This section should focus on SigNoz, hence we could assume that Docker Swarm is already installed, similar to the Docker Standalone or Kubernetes sections. Not sure why we show to initialize a swarm or add more nodes here.  -->
+
 - A Linux or macOS machine.
-- [Docker Engine](https://docs.docker.com/get-docker/). A minimum of 2GB of memory must be allocated to Docker.
+- [Docker Engine](https://docs.docker.com/get-docker/). A minimum of 2GB of memory must be allocated to each Docker node.
 - [Docker Compose](https://docs.docker.com/compose/install/)
 - [Git client](https://desktop.github.com/)
 
@@ -22,7 +25,6 @@ This section provides information on installing SigNoz on Docker Swarm.
 1. <CloneRepo />
 
 2. Initialize a single-node swarm by entering the following command:
-
   ```bash
 docker swarm init
   ```
@@ -43,7 +45,6 @@ docker swarm init
 4. Deploy SigNoz by entering the `docker stack deploy command` and specifying the following:
    - `-c` and the path to the Compose file (`docker-swarm/clickhouse-setup/docker-compose.yaml`)
    - The name of the stack (`signoz`)
-
   ```bash
 docker stack deploy -c docker-swarm/clickhouse-setup/docker-compose.yaml signoz
   ```
@@ -69,7 +70,8 @@ docker stack deploy -c docker-swarm/clickhouse-setup/docker-compose.yaml signoz
   Creating service signoz_query-service
   ```
 
-## Verify Your Installation
+5. _(Optional)_ By default, the instructions in this document create three replicas, and each replica can handle 50K spans per second. To handle an increased load, perform the steps in the [Scale Up](/docs/operate/docker-swarm/#scale-up) section of the [Operate on Docker Swarm](/docs/operate/docker-swarm/) page.
+## Verify the Installation
 
 1. Using the `docker stack services` command, monitor the SigNoz deployment process. Wait until all SigNoz services and replicas are created:
 
@@ -77,27 +79,9 @@ docker stack deploy -c docker-swarm/clickhouse-setup/docker-compose.yaml signoz
 docker stack services signoz
   ```
 
-<!-- For now, we can leave the scaling section here. In the future, we should probably create a separate page. -->
-## Scale Up
-
-SigNoz uses the [OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-collector) to ingest data. By default, the instructions in this document create 3 replicas, and each replica can handle 50K spans per second. To handle an increased load, perform the following steps:
-
-1. Open the `deploy/docker-swarm/clickhouse-setup/docker-compose.yaml` file in a plain-text editor.
-
-2. In the `services.otel-collector.deploy.replicas` field, enter the number of replicas you wish to create. The following example creates four replicas:
-
-  ![Open Telemetry Collector - Create four replicas](/img/scale-up-otel.png)
-
-3. Update the `signoz` stack by entering the following command:
-
-  ```bash
-docker stack deploy -c docker-swarm/clickhouse-setup/docker-compose.yaml signoz
-  ```
-
-## Related Topics
-
-- [Troubleshooting](/docs/deployment/troubleshooting)
-
 ## Next Steps
 
-- [Instrument your application](/docs/instrumentation/overview)
+- [Instrument Your Application](/docs/instrumentation/overview)
+- [User Guides](/docs/userguide/overview/)
+- [Tutorials](/docs/tutorials/)
+- [Operate SigNoz on Docker Swarm](/docs/operate/docker-swarm)

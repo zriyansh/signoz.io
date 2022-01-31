@@ -86,7 +86,7 @@ cd signoz/deploy/
 
 For detailed instructions, you can visit our documentation.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_flask)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/install/docker/?utm_source=blog&utm_medium=opentelemetry_flask)
 
 When you are done installing SigNoz, you can access the UI at: [http://localhost:3000](http://localhost:3000/application)
 
@@ -214,7 +214,7 @@ In just 5 easy steps, our dashboard lets you drill down to events causing a dela
 
 If you need any help with trying out SigNoz, feel free to mail me at ankit.anand@signoz.io.
 
-Check out our [documentation](https://signoz.io/docs/deployment/docker) for more installation guides and troubleshooting instructions.
+Check out our [documentation](https://signoz.io/docs/install/docker) for more installation guides and troubleshooting instructions.
 
 They say, "If it's not monitored, then it's not in production." And with SigNoz you can start monitoring your applications now. Enabling your team to resolve issues quickly in production is critical to maintaining complex distributed systems in fine health.
 

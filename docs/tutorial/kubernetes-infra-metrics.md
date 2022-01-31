@@ -1,6 +1,7 @@
 ---
 id: kubernetes-infra-metrics
-title: Kubernetes Infra Metrics with SigNoz
+title: Kubernetes Infrastructure
+description: View Kubernetes infrastructure metrics in SigNoz
 ---
 
 ### Overview
