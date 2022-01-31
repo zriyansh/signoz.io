@@ -1,0 +1,4 @@
+<a class="card margin-bottom--lg padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-next-theme-DocCard-styles-module cardContainerLink_node_modules-@docusaurus-theme-classic-lib-next-theme-DocCard-styles-module" href="/docs/install/docker/">
+   <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-next-theme-DocCard-styles-module" title="Docker Standalone">📄️ Docker Standalone</h2>
+   <div class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-next-theme-DocCard-styles-module" title="Learn how to install SigNoz on Docker Standalone">Learn how to install SigNoz on Docker Standalone</div>
+</a>

@@ -24,11 +24,11 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Install SigNoz',
+      label: 'Install',
       link: {
         type: 'generated-index',
         title: 'Install SigNoz',
-        description: 'To install SigNoz, follow the instructions in the next sections, depending on your environment.',
+        description: 'To install SigNoz, follow the instructions in the sections below.',
         slug: '/install',
       },
       items: [
@@ -69,6 +69,12 @@ module.exports = {
     {
       label: "Tutorials",
       type: "category",
+      link: {
+        type: 'generated-index',
+        title: 'Tutorials',
+        description: 'SigNoz tutorials are step-by-step training exercises that guide you through monitoring your applications and infrastructure.',
+        slug: '/tutorials',
+      },
       items: [
         'tutorial/jvm-metrics',
         'tutorial/kubernetes-infra-metrics',
@@ -77,6 +83,22 @@ module.exports = {
     {
       id: "architecture",
       type: "doc",
+    },
+    {
+      type: 'category',
+      label: 'Operate',
+      link: {
+        type: 'generated-index',
+        title: 'Operate',
+        description: 'The following sections provide an overview of the activities that are required to successfully operate SigNoz. Based on your environment, proceed to one of the sections below.',
+        slug: '/operate',
+      },
+      items: [
+        'operate/docker-standalone',
+        'operate/docker-swarm',
+        'operate/kubernetes'
+
+      ],
     },
     {
       id: "contributing",

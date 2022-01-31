@@ -164,7 +164,7 @@ git clone https://github.com/SigNoz/signoz.git
 cd signoz/deploy/
 ./install.sh
 ```
-You can read more about deploying SigNoz from its [documentation](https://signoz.io/docs/deployment/docker/).
+You can read more about deploying SigNoz from its [documentation](https://signoz.io/docs/install/docker/).
 
 You can check out SigNoz's GitHub repo here 👇
 

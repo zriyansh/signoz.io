@@ -1,0 +1,2 @@
+_(Optional)_ If you created a namespace with a different name, you must update the value of the `JAEGER_ENDPOINT` environment variable in the `sample-apps/hotrod/deployment.yaml` file. The environment variable is of the following form: `http://otel-collector.<NAMESPACE>.svc.cluster.local:14268/api/traces`. For example, if you created a namespace named `new`, then the value of the `JAEGER_ENDPOINT` environment variable should be `http://otel-collector.new.svc.cluster.local:14268/api/traces`:
+  ![Jaeger Environment Variable](/img/jaeger_env_variable.png)
