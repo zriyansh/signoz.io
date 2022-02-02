@@ -115,6 +115,10 @@ But to see how SigNoz helps you in monitoring an app's performance, we need an a
 
 You need to ensure that you have **Node.js version 12 or newer. **You can download the latest version of Node.js [here](https://nodejs.org/en/download/). For the sample application, let's create a basic 'hello world' express.js application.
 
+If you do not want to follow these steps manually, you can directly check out the <a href="https://github.com/SigNoz/sample-nodejs-app" rel="noopener noreferrer nofollow" target="_blank">GitHub repo</a> of the sample application. You can run the app directly after cloning it. Check out the details of running the app from the last step in the set of instructions.
+
+But, it would be better if you follow these steps to understand what's happening.
+
 1. **Make a directory and install express**<br></br>
    Make a directory for your sample app on your machine. Then open up the terminal, navigate to the directory path and install express with the following command:
    ```
