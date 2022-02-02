@@ -1,5 +1,5 @@
 ---
-title: What is context propagation in Distributed Tracing?
+title: What is Context Propagation in Distributed Tracing?
 slug: context-propagation-in-distributed-tracing
 date: 2022-02-01
 tags: [distributed-tracing]

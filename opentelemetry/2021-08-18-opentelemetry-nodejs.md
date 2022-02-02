@@ -77,6 +77,10 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
 
 You need to ensure that you have **Node.js version 12 or newer**. You can download the latest version of Node.js [here](https://nodejs.org/en/download/). For the sample application, let's create a basic 'hello world' express.js application.
 
+If you do not want to follow these steps manually, you can directly check out the <a href="https://github.com/SigNoz/sample-nodejs-app" rel="noopener noreferrer nofollow" target="_blank">GitHub repo</a> of the sample application. You can run the app directly after cloning it. Check out the details of running the app from the last step in the set of instructions.
+
+But, it would be better if you follow these steps to understand what's happening.
+
 Check if node is installed on your machine by using the below command:
 
 ```jsx
