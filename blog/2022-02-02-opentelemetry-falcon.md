@@ -121,9 +121,9 @@ import Screenshot from "@theme/Screenshot"
    Here’s a snapshot of packages in the `base.txt` file to run the Flacon application with OpenTelemetry.
    <Screenshot
    alt="Python packages required for the application"
-   height={500}
-   src="/img/blog/2022/02/falcon_app_opentelemetry_packages.webp"
-   width={700}
+   height={290}
+   src="/img/blog/2022/02/opentelemetry_python_packages.png"
+   width={500}
    />
 
 4. **Install application-specific packages**<br></br>
