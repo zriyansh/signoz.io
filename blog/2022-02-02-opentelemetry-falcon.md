@@ -1,7 +1,7 @@
 ---
 title: Monitoring apps based on Falcon Web Framework with OpenTelemetry
 slug: opentelemetry-falcon
-date: 2022-02-12
+date: 2022-02-03
 tags: [opentelemetry, python-monitoring]
 authors: [ankit_anand, ankit_nayan]
 description: OpenTelemetry provides an open-source standard with a consistent collection mechanism and data format. In this article, learn how to set up monitoring for a Falcon based web application using OpenTelemetry.
