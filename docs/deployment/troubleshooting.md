@@ -64,7 +64,7 @@ You would want to open port 3000 to be accessible from outside world if you want
 
 ### Re-installing SigNoz
 
-1. For v0.5.1 (Released on 2 Dec 2021) and later 
+1. Shut down currently running containers with the following command:
 
 <Tabs
   defaultValue="x86"
