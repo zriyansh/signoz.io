@@ -156,9 +156,9 @@ Can you still send data outside? Is removing all PII data an option?
 
 Can fintech firms send application performance data without including any **Personally Identifiable Information (PII)**?
 
-Some APM tools provide data scrubbers for removing PII data, but their implementation has challenges like customized settings that might need engineering bandwidth. Also, it comes with the risk of occasional misses as your application will constantly be evolving.
+You can consider using data scrubbers for removing PII data, but they are not full-proof. Also, it comes with the risk of occasional misses as your application will constantly be evolving.
 
-Another option for removing PII data is to assign it to your developers. But chances of human error can expose your company to unwarranted risks.
+Another way is to give guidelines to developers that they dont log or send PII data to APM tools. But it is fraught with the risk of human error.
 
 ## Way to go for Fintech Companies
 
