@@ -44,15 +44,20 @@ b3afb9d3ac32   yandex/clickhouse-server                       "/entrypoint.sh"  
 4. Try reinstall SigNoz by first bringing down the existing containers & [reinstalling](#re-installing-signoz)
 
 :::info
+
 Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3000`.
 You would want to open port 3000 to be accessible from outside world if you want to use public url of machine.
+
 :::
 
-<br></br>
+<p>&nbsp;</p>
+
 
 ### Troubleshooting repo
 
 Use the instructions in [this repo](https://github.com/SigNoz/troubleshoot) to test if SigNoz otel collector is accessible from where you are running your applications
+
+<p>&nbsp;</p>
 
 
 ### Re-installing SigNoz
