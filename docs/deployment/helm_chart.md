@@ -64,10 +64,10 @@ kubectl -n sample-application run strzal --image=djbingham/curl \
 To access the UI, you can `port-forward` the frontend service:
 
 ```console
-kubectl -n platform port-forward svc/my-release-frontend 3301:3301
+kubectl -n platform port-forward svc/my-release-frontend 3000:3000
 ```
 
-You can open http://localhost:3301 in your favourite browser.
+You can open http://localhost:3000 in your favourite browser.
 
 ### How to stop load
 
