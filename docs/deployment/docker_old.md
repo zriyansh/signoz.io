@@ -62,11 +62,11 @@ docker-compose up -d
 If you face any issues here, don't worry - just check out the troubleshooting steps in the section below
 :::
 
-7. Once `docker-compose` runs successfully, the UI should be accessible at port 3000 on the domain you set up or the IP of your instance.
+7. Once `docker-compose` runs successfully, the UI should be accessible at port 3301 on the domain you set up or the IP of your instance.
 
 :::info
-Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3000`.
-You would want to open port 3000 to be accessible from outside world if you want to use public url of machine.
+Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3301`.
+You would want to open port 3301 to be accessible from outside world if you want to use public url of machine.
 :::
 
 ### Troubleshooting

@@ -75,7 +75,7 @@ The above instruction is for MacOS and linux distributions. For detailed instruc
 
 [![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_django)
 
-If you have installed SigNoz on your local host, you can access the UI at: [http://localhost:3000](http://localhost:3000/application)
+If you have installed SigNoz on your local host, you can access the UI at: [http://localhost:3301](http://localhost:3301/application)
 
 The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
 
@@ -166,7 +166,7 @@ Download the <a href = "https://www.python.org/downloads/" rel="noopener norefer
       
       You can check if your app by opening the admin panel at [http://localhost:8000/admin](http://localhost:8000/admin).
       
-      If you have installed SigNoz on your local host, then you can access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000/) to monitor your Django app for performance metrics.
+      If you have installed SigNoz on your local host, then you can access the SigNoz dashboard at [http://localhost:3301](http://localhost:3301/) to monitor your Django app for performance metrics.
       
       You need to generate some load on your app so that there is data to be captured by OpenTelemetry. Try adding a few questions in the polls app and play around.
 
@@ -209,7 +209,7 @@ django-app:
 6. **Browsing the app and checking data with SigNoz**<br></br>
    a. Visit [http://localhost:8000/admin](http://localhost:8000/admin) and create a question for poll<br></br>
    b. Then visit the list of polls at [http://localhost:8000/polls/](http://localhost:8000/polls/) and explore the polls<br></br>
-   c. The data should be visible now in SigNoz at `http://<IP of SigNoz>:3000`<br></br>
+   c. The data should be visible now in SigNoz at `http://<IP of SigNoz>:3301`<br></br>
 
 
 ### Open-source tool to visualize telemetry data

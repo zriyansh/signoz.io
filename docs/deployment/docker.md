@@ -60,9 +60,9 @@ Currently, we have not tested these instructions to run SigNoz on Windows. But y
    ./install.sh
    ```
 
-3. Once `install.sh` runs successfully, the UI should be accessible at port 3000 on the domain you set up or the IP of your instance. For example, if you installed SigNoz on your local host, you can access the dashboard at [http://localhost:3000/](http://localhost:3000/)
+3. Once `install.sh` runs successfully, the UI should be accessible at port 3301 on the domain you set up or the IP of your instance. For example, if you installed SigNoz on your local host, you can access the dashboard at [http://localhost:3301/](http://localhost:3301/)
 
-4. Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3000`. You would want to open port 3000 to be accessible from outside world if you want to use public url of machine.
+4. Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3301`. You would want to open port 3301 to be accessible from outside world if you want to use public url of machine.
 
 
 ### 2. Using Docker Compose

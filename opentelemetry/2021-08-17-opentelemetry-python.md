@@ -72,7 +72,7 @@ For detailed instructions, you can visit our documentation.
 
 [![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_python)
 
-When you are done installing SigNoz, you can access the UI at: `http://localhost:3000`
+When you are done installing SigNoz, you can access the UI at: `http://localhost:3301`
 
 The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
 
@@ -191,7 +191,7 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
    OTEL_RESOURCE_ATTRIBUTES=service.name=pythonApp OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" opentelemetry-instrument python3 app.py
    ```
 
-   And, congratulations! You have instrumented your sample Python app. You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000/) to monitor your app for performance metrics.
+   And, congratulations! You have instrumented your sample Python app. You can now access the SigNoz dashboard at [http://localhost:3301](http://localhost:3301/) to monitor your app for performance metrics.
 
    <Screenshot
     alt="SigNoz dashboard showing python app in its list of applications."

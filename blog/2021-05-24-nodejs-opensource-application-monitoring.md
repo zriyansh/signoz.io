@@ -49,7 +49,7 @@ For detailed instructions, you can visit our documentation.
 
 [![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_nodejs)
 
-When you are done installing SigNoz, you can access the UI at: [http://localhost:3000](http://localhost:3000)
+When you are done installing SigNoz, you can access the UI at: [http://localhost:3301](http://localhost:3301)
 
 The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
 
@@ -97,7 +97,7 @@ You will get the following message once the installation is complete.
 ![Success message](/img/blog/2021/06/screenzy-1623086918860.webp)
 Note that this setup is just for demo/testing purposes and you need to proceed with Kafka + Druid set up option in case you want to set up SigNoz for use in production.
 
-Once `./install.sh` runs successfully, the UI should be accessible at port 3000. Wait for 2-3 mins for the data to be available to frontend.
+Once `./install.sh` runs successfully, the UI should be accessible at port 3301. Wait for 2-3 mins for the data to be available to frontend.
 
 ![SigNoz UI](/img/blog/2021/05/screenzy-1621624012520.webp)
 
@@ -231,7 +231,7 @@ But, it would be better if you follow these steps to understand what's happening
 
    You can check your application running at [http://localhost:9090/hello](http://localhost:9090/hello). You need to generate some load in order to see data reported on SigNoz dashboard. Refresh the endpoint for 10-20 times, and wait for 2-3 mins.
 
-And, congratulations! You have instrumented your sample Node.js app. You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000/) to monitor your app for performance metrics.
+And, congratulations! You have instrumented your sample Node.js app. You can now access the SigNoz dashboard at [http://localhost:3301](http://localhost:3301/) to monitor your app for performance metrics.
 
 import Screenshot from "@theme/Screenshot"
 
