@@ -16,7 +16,7 @@ The easiest way to get started with SigNoz is to install using helm charts, this
 ### Steps to Deploy SigNoz
 
 ```console
-git clone https://github.com/SigNoz/signoz.git && cd signoz
+git clone -b main https://github.com/SigNoz/signoz.git && cd signoz
 
 helm dependency update deploy/kubernetes/platform
 

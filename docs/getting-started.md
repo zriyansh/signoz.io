@@ -19,7 +19,7 @@ SigNoz is an open-source Application Performance Monitoring(APM) tool. It helps 
 ### 1. Clone SigNoz repo
 
 ```
-git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
+git clone -b main https://github.com/SigNoz/signoz.git && cd signoz/deploy/
 ```
 
 ### 2. Run install script

@@ -10,7 +10,7 @@ title: Deploy with Docker Swarm
 #### 2. Clone SigNoz github repo and go to deploy folder
 
 ```console
-git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
+git clone -b main https://github.com/SigNoz/signoz.git && cd signoz/deploy/
 ```
 
 #### 3. Enable docker swarm mode

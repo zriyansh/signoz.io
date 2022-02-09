@@ -160,7 +160,7 @@ Some of the things SigNoz can help you track:
 
 If you have docker installed, getting started with SigNoz just takes three easy steps at the command line:
 ```jsx
-git clone https://github.com/SigNoz/signoz.git
+git clone -b main https://github.com/SigNoz/signoz.git
 cd signoz/deploy/
 ./install.sh
 ```
