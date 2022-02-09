@@ -74,7 +74,7 @@ For detailed instructions, you can visit our documentation.
 
 [![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_python)
 
-When you are done installing SigNoz, you can access the UI at: `http://localhost:3000`
+When you are done installing SigNoz, you can access the UI at: `http://localhost:3301`
 
 The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
 
@@ -125,7 +125,7 @@ import Screenshot from "@theme/Screenshot"
 
    Note that this setup is just for demo/testing purposes and you need to proceed with Kafka + Druid set up option in case you want to set up SigNoz for use in production.
 
-Once the installation runs successfully, the UI should be accessible at port 3000. Wait for 2-3 mins for the data to be available to frontend. 
+Once the installation runs successfully, the UI should be accessible at port 3301. Wait for 2-3 mins for the data to be available to frontend. 
 
 ![SigNoz UI](/img/blog/2021/05/screenzy-1621624012520-3.webp) -->
 
@@ -229,7 +229,7 @@ On MacOS the installation is done using Homebrew's brew package manager. Once th
    OTEL_RESOURCE_ATTRIBUTES=service.name=pythonApp OTEL_METRICS_EXPORTER=none OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" opentelemetry-instrument python3 app.py
    ```
 
-And, congratulations! You have instrumented your sample Python app. You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000/) to monitor your app for performance metrics.
+And, congratulations! You have instrumented your sample Python app. You can now access the SigNoz dashboard at [http://localhost:3301](http://localhost:3301/) to monitor your app for performance metrics.
 
 ![Python app in the application list](/img/blog/2021/05/dashboard-1.webp)
 

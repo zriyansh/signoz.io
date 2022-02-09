@@ -35,7 +35,7 @@ git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
 
 :::note
 
-Verify that you can open SigNoz dashboards in `port 3000` of the IP where you installed SigNoz
+Verify that you can open SigNoz dashboards in `port 3301` of the IP where you installed SigNoz
 
 :::
 
