@@ -72,13 +72,13 @@ Use the instructions in [this repo](https://github.com/SigNoz/troubleshoot) to t
   ]}>
   <TabItem value="x86">
 
-    sudo docker-compose --env-file ./docker/clickhouse-setup/env/x86_64.env -f docker/clickhouse-setup/docker-compose.yaml down -v
+    sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml down -v
 
   </TabItem>
 
   <TabItem value="arm64">
     
-    sudo docker-compose --env-file ./docker/clickhouse-setup/env/arm64.env -f docker/clickhouse-setup/docker-compose.yaml down -v
+    sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml down -v
 
   </TabItem>
 
