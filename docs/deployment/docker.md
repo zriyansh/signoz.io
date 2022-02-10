@@ -50,8 +50,10 @@ Currently, we have not tested these instructions to run SigNoz on Windows. But y
 <br></br>
 
 1. To clone the SigNoz repository and enter the new directory, run:<br></br>
-   ```sh
-   git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
+
+   ```jsx
+   git clone -b main https://github.com/SigNoz/signoz.git && cd signoz/deploy/
+   
    ```
 
 2. To run SigNoz:<br></br>
@@ -69,7 +71,7 @@ Currently, we have not tested these instructions to run SigNoz on Windows. But y
 
 1. To clone the SigNoz repository and enter the new directory, run:<br></br>
    ```console
-   git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/
+   git clone -b main https://github.com/SigNoz/signoz.git && cd signoz/deploy/
    ```
 
 2. We will now set up SigNoz via docker compose. This will set up the required dependencies and also load a sample app.

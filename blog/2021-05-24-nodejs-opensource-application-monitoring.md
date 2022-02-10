@@ -39,7 +39,7 @@ Let's divide this tutorial in 2 parts:
 You can get started with SigNoz using just three commands at your terminal.
 
 ```jsx
-git clone https://github.com/SigNoz/signoz.git
+git clone -b main https://github.com/SigNoz/signoz.git
 cd signoz/deploy/
 ./install.sh
 ```
@@ -72,7 +72,7 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
    From your terminal use the following command to clone SigNoz's GitHub repository.
 
    ```
-   git clone https://github.com/SigNoz/signoz.git
+   git clone -b main https://github.com/SigNoz/signoz.git
    ```
 
 3. **Update path to signoz/deploy and install SigNoz**<br></br>

@@ -22,7 +22,7 @@ sudo apt-get update && sudo apt-get install git
 5. To clone the SigNoz repository and enter the new directory, run:
 
 ```console
-git clone https://github.com/SigNoz/signoz.git && cd signoz/deploy/docker
+git clone -b main https://github.com/SigNoz/signoz.git && cd signoz/deploy/docker
 ```
 
 6. **To run SigNoz**:
