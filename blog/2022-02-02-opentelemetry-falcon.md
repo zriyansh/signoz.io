@@ -57,7 +57,7 @@ The above instruction is for MacOS and linux distributions. For detailed instruc
 
 [![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_django)
 
-If you have installed SigNoz on your local host, you can access the UI at: [http://localhost:3000](http://localhost:3000/application)
+If you have installed SigNoz on your local host, you can access the UI at: [http://localhost:3301](http://localhost:3301/application)
 
 The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
 
@@ -156,7 +156,7 @@ import Screenshot from "@theme/Screenshot"
    
    You need to interact with the endpoint to generate some monitoring data. Refresh the endpoint about 10-20 times and check SigNoz dashboard.
    
-   If you have installed SigNoz on your local machine, you can access the SigNoz dashboard at: [http://localhost:3000](http://localhost:3000)
+   If you have installed SigNoz on your local machine, you can access the SigNoz dashboard at: [http://localhost:3301](http://localhost:3301)
 
 <Screenshot
    alt="Falcon based application monitored on SigNoz dashboard"

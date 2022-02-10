@@ -50,7 +50,7 @@ kubectl -n sample-application run strzal --image=djbingham/curl \
 ### See UI
 
 ```console
-kubectl -n platform port-forward svc/signoz-frontend 3000:3000
+kubectl -n platform port-forward svc/signoz-frontend 3301:3301
 ```
 
 ### How to stop load

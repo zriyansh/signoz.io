@@ -57,7 +57,7 @@ For detailed instructions, you can visit our documentation.
 
 [![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=fastapi)
 
-When you are done installing SigNoz, you can access the UI at: [http://localhost:3000](http://localhost:3000/application)
+When you are done installing SigNoz, you can access the UI at: [http://localhost:3301](http://localhost:3301/application)
 
 The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
 
@@ -128,7 +128,7 @@ You're almost done. In the last step, you just need to configure a few environme
 
 And, congratulations! You have instrumented your sample FastAPI app. You can check if your app is running or not by hitting the endpoint at [http://localhost:5002/](http://localhost:5002/).
 
-If you have installed SigNoz on your local host, then you can access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000) to monitor your app for performance metrics.
+If you have installed SigNoz on your local host, then you can access the SigNoz dashboard at [http://localhost:3301](http://localhost:3301) to monitor your app for performance metrics.
 
 You need to generate some load on your app so that there is data to be captured by OpenTelemetry. You can use locust for this load testing.
 

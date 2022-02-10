@@ -60,7 +60,7 @@ For detailed instructions, you can visit our documentation.
 
 [![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=opentelemetry_go)
 
-When you are done installing SigNoz, you can access the UI at: http://localhost:3000
+When you are done installing SigNoz, you can access the UI at: http://localhost:3301
 
 The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
 
@@ -139,7 +139,7 @@ Hit the `/books` endpoint of the bookstore app at [http://localhost:8090/book
    width={700}
    />
 
-You can now access the SigNoz dashboard at [http://localhost:3000](http://localhost:3000) to monitor your app for performance metrics.
+You can now access the SigNoz dashboard at [http://localhost:3301](http://localhost:3301) to monitor your app for performance metrics.
 
 <Screenshot
    alt="Sample Go app in the list of applications monitored by SigNoz"

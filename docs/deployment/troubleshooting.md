@@ -24,7 +24,7 @@ Output should look like this ( Should have 6 image names as shown below )
 
 ```
 CONTAINER ID   IMAGE                                          COMMAND                  CREATED         STATUS                   PORTS                                                                                                                                                                                                                                                                                                                                                 NAMES
-b080d1164e4d   signoz/frontend:0.3.1                          "nginx -g 'daemon of…"   4 minutes ago   Up 4 minutes             80/tcp, 0.0.0.0:3000->3000/tcp, :::3000->3000/tcp                                                                                                                                                                                                                                                                                                     frontend
+b080d1164e4d   signoz/frontend:0.3.1                          "nginx -g 'daemon of…"   4 minutes ago   Up 4 minutes             80/tcp, 0.0.0.0:3301->3301/tcp, :::3301->3301/tcp                                                                                                                                                                                                                                                                                                     frontend
 d8be80e798ba   signoz/otelcol:latest                          "/otelcol --config=/…"   4 minutes ago   Up 4 minutes             0.0.0.0:1777->1777/tcp, :::1777->1777/tcp, 0.0.0.0:4317->4317/tcp, :::4317->4317/tcp, 0.0.0.0:14268->14268/tcp, :::14268->14268/tcp, 0.0.0.0:55679-55681->55679-55681/tcp, :::55679-55681->55679-55681/tcp, 0.0.0.0:8887->8888/tcp, :::8887->8888/tcp, 0.0.0.0:49154->13133/tcp, :::49154->13133/tcp, 0.0.0.0:49153->55678/tcp, :::49153->55678/tcp   clickhouse-setup_otel-collector_1
 55b903bf600c   signoz/query-service:0.3.1                     "./query-service"        4 minutes ago   Up 4 minutes             0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                                                                                                                                                                                                                                                                                             query-service
 3d6225e85d25   jaegertracing/example-hotrod:latest            "/go/bin/hotrod-linu…"   5 minutes ago   Up 5 minutes             8081-8083/tcp, 0.0.0.0:9000->8080/tcp, :::9000->8080/tcp                                                                                                                                                                                                                                                                                              hotrod
@@ -45,8 +45,8 @@ b3afb9d3ac32   yandex/clickhouse-server                       "/entrypoint.sh"  
 
 :::info
 
-Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3000`.
-You would want to open port 3000 to be accessible from outside world if you want to use public url of machine.
+Wait for 2-3 mins for the data to be available to frontend. If you are running on local machine, checkout `http://localhost:3301`.
+You would want to open port 3301 to be accessible from outside world if you want to use public url of machine.
 
 :::
 
@@ -72,13 +72,13 @@ Use the instructions in [this repo](https://github.com/SigNoz/troubleshoot) to t
   ]}>
   <TabItem value="x86">
 
-    sudo docker-compose --env-file ./docker/clickhouse-setup/env/x86_64.env -f docker/clickhouse-setup/docker-compose.yaml down -v
+    sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml down -v
 
   </TabItem>
 
   <TabItem value="arm64">
     
-    sudo docker-compose --env-file ./docker/clickhouse-setup/env/arm64.env -f docker/clickhouse-setup/docker-compose.yaml down -v
+    sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml down -v
 
   </TabItem>
 
