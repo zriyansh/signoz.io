@@ -103,11 +103,27 @@ If you don't have `docker-compose` set up, please follow [this guide](https://do
 <br></br>
 
 
-For v0.5.0 and earlier
+For SigNoz version `v0.5.x`:
 
-```console
-sudo docker-compose -f ./docker/clickhouse-setup/docker-compose.yaml up -d
-```
+<Tabs
+  defaultValue="x86"
+  values={[
+    {label: 'x86 Chip', value: 'x86'},
+    {label: 'Mac with Apple chip', value: 'arm64'},
+  ]}>
+  <TabItem value="x86">
+
+    sudo docker-compose --env-file ./docker/clickhouse-setup/env/x86_64.env -f docker/clickhouse-setup/docker-compose.yaml down -v
+  
+  </TabItem>
+
+  <TabItem value="arm64">
+
+    sudo docker-compose --env-file ./docker/clickhouse-setup/env/arm64.env -f docker/clickhouse-setup/docker-compose.yaml down -v
+
+  </TabItem>
+</Tabs>
+
 <p>&nbsp;</p>
 
 
