@@ -26,7 +26,7 @@ helm -n platform install my-release signoz/signoz
 ```
 
 The above command will install a recent version of the SigNoz.
-To use an explicit version of SigNoz:
+To use an explicit version of SigNoz use the following command. The below command shows how to install version `0.5.3`
 
 ```console
 helm install my-release signoz/signoz \
