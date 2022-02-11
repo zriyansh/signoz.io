@@ -40,6 +40,7 @@ Based on where you are running SigNoz ( e.g. in an independent VM or k8s cluster
    ```jsx
    kubectl create ns signoz-infra-metrics
    kubectl -n signoz-infra-metrics apply -Rf agent
+   kubectl -n signoz-infra-metrics apply -Rf deployment
    kubectl -n signoz-infra-metrics get pods
    ```
 
