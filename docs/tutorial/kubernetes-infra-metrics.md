@@ -19,7 +19,12 @@ Based on where you are running SigNoz ( e.g. in an independent VM or k8s cluster
 2. **Set up the address to SigNoz in your OTel collectors**<br></br>
    You need to set up the address to SigNoz in your OTel collector which is collecting the k8s metrics.
 
-   a. If you are running SigNoz in an independent VM, you need to change the placeholder IPs [here](https://github.com/SigNoz/otel-collector-k8s/blob/main/agent/infra-metrics.yaml#L47) and [here](https://github.com/SigNoz/otel-collector-k8s/blob/main/deployment/all-in-one.yaml#L19) with the IP of machine where you are hosting signoz. You need to update the below section.
+   a. If you are running SigNoz in an independent VM, you need to change the placeholder IPs in the following files with the IP of machine where you are hosting signoz.
+   
+-  [agent/infra-metrics.yaml](https://github.com/SigNoz/otel-collector-k8s/blob/main/agent/infra-metrics.yaml#L47) 
+-  [deployment/all-in-one.yaml](https://github.com/SigNoz/otel-collector-k8s/blob/main/deployment/all-in-one.yaml#L19)  
+
+You need to update the below section.
    
    ```jsx
    exporters:
@@ -28,7 +33,7 @@ Based on where you are running SigNoz ( e.g. in an independent VM or k8s cluster
         insecure: true
    ```
 
-   b. If you are running SigNoz in the same Kubernetes cluster where your applications are, you have to replace the above endpoint ->  [here](https://github.com/SigNoz/otel-collector-k8s/blob/main/agent/infra-metrics.yaml#L47) and [here](https://github.com/SigNoz/otel-collector-k8s/blob/main/deployment/all-in-one.yaml#L19) by
+   b. If you are running SigNoz in the same Kubernetes cluster where your applications are, you have to replace the above endpoint in [agent/infra-metrics.yaml](https://github.com/SigNoz/otel-collector-k8s/blob/main/agent/infra-metrics.yaml#L47) and [deployment/all-in-one.yaml](https://github.com/SigNoz/otel-collector-k8s/blob/main/deployment/all-in-one.yaml#L19) by
 
    ```jsx
    otel-collector.<namespace_hosting_signoz>.svc.cluster.local:4317
