@@ -10,10 +10,16 @@ Based on where you are running SigNoz ( e.g. in an independent VM or k8s cluster
 
 ### Steps to export k8s metrics to SigNoz
 
-1. **Setting up the address to SigNoz in your OTel collectors**<br></br>
+1. **Clone Otel collector repo**
+
+   ```jsx
+   git clone https://github.com/SigNoz/otel-collector-k8s.git && cd otel-collector-k8s
+   ```
+
+2. **Set up the address to SigNoz in your OTel collectors**<br></br>
    You need to set up the address to SigNoz in your OTel collector which is collecting the k8s metrics.
 
-   a. If you are running SigNoz in an independent VM, you need to change the placeholder IPs at [1](https://github.com/SigNoz/otel-collector-k8s/blob/main/agent/infra-metrics.yaml#L47) and [2](https://github.com/SigNoz/otel-collector-k8s/blob/main/deployment/all-in-one.yaml#L19) with the IP of machine where you are hosting signoz. You need to update the below section.
+   a. If you are running SigNoz in an independent VM, you need to change the placeholder IPs [here](https://github.com/SigNoz/otel-collector-k8s/blob/main/agent/infra-metrics.yaml#L47) and [here](https://github.com/SigNoz/otel-collector-k8s/blob/main/deployment/all-in-one.yaml#L19) with the IP of machine where you are hosting signoz. You need to update the below section.
    
    ```jsx
    exporters:
@@ -22,7 +28,7 @@ Based on where you are running SigNoz ( e.g. in an independent VM or k8s cluster
         insecure: true
    ```
 
-   b. If you are running SigNoz in the same Kubernetes cluster where your applications are, you have to replace the above endpoint at [1](https://github.com/SigNoz/otel-collector-k8s/blob/main/agent/infra-metrics.yaml#L47) and [2](https://github.com/SigNoz/otel-collector-k8s/blob/main/deployment/all-in-one.yaml#L19) by
+   b. If you are running SigNoz in the same Kubernetes cluster where your applications are, you have to replace the above endpoint ->  [here](https://github.com/SigNoz/otel-collector-k8s/blob/main/agent/infra-metrics.yaml#L47) and [here](https://github.com/SigNoz/otel-collector-k8s/blob/main/deployment/all-in-one.yaml#L19) by
 
    ```jsx
    otel-collector.<namespace_hosting_signoz>.svc.cluster.local:4317
@@ -30,10 +36,6 @@ Based on where you are running SigNoz ( e.g. in an independent VM or k8s cluster
 
 2. **Install OTel collectors and enable specific receivers to send metrics to SigNoz**
    
-   Steps to checkout code
-   ```jsx
-   git clone https://github.com/SigNoz/otel-collector-k8s.git && cd otel-collector-k8s
-   ```
 
    To access metrics from kubeletstats receivers you have to:
 
