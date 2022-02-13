@@ -39,7 +39,7 @@ module.exports = {
       ],
     },
     {
-      label: "Instrumentation",
+      label: "Instrument your app",
       type: "category",
       items: [
         'instrumentation/overview',
@@ -51,6 +51,22 @@ module.exports = {
         'instrumentation/golang',   
         'instrumentation/dotnet',
         'instrumentation/ruby-on-rails',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Operate',
+      link: {
+        type: 'generated-index',
+        title: 'Operate',
+        description: 'The following sections provide an overview of the activities that are required to successfully operate SigNoz. Based on your environment, proceed to one of the sections below.',
+        slug: '/operate',
+      },
+      items: [
+        'operate/docker-standalone',
+        'operate/docker-swarm',
+        'operate/kubernetes'
+
       ],
     },
     {
@@ -83,22 +99,6 @@ module.exports = {
     {
       id: "architecture",
       type: "doc",
-    },
-    {
-      type: 'category',
-      label: 'Operate',
-      link: {
-        type: 'generated-index',
-        title: 'Operate',
-        description: 'The following sections provide an overview of the activities that are required to successfully operate SigNoz. Based on your environment, proceed to one of the sections below.',
-        slug: '/operate',
-      },
-      items: [
-        'operate/docker-standalone',
-        'operate/docker-swarm',
-        'operate/kubernetes'
-
-      ],
     },
     {
       id: "contributing",

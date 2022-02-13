@@ -25,19 +25,5 @@ This troubleshooting guide includes step-by-step instructions that should resolv
 6. If you're still facing issues trying to install SigNoz, please reach out to us on [Slack](https://signoz.io/slack) 
 
 
-<!-- #### Troubleshooting of common issues for Kafka + Druid Setup
-
-1. `docker ps` will show all containers created by SigNoz. Check if `broker`, `otel-collector` and `historical` containers are running. They do not come up if there is a memory problem. You may want to increase alloted memory.
-2. If you are still facing issues, try re-running `./install.sh`. This will retry installing containers which failed the first time.
-3. Try reinstall SigNoz by first bringing down the existing containers by running
-   `sudo docker-compose -f docker/druid-kafka-setup/docker-compose-tiny.yaml down -v` and then running `./install.sh`
-4. If you are facing issues like `Request failed with status code 400` in frontend, then open `http://localhost:8888` or port 8888 on your IP .This is druid console. Check if **Datasource** named `flattened_spans` has come up. If there is no **Ingestion Supervsor** running, then run `./install.sh` again to bring them up.
-5. If you couldn't spot issues, feel free to join our [slack community](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA) or shoot an email at ankit@signoz.io. We are generally always there.
-
-<br></br> -->
-
-
-<!-- #### Kafka+Druid setup
-
-1. `sudo docker-compose -f docker/druid-kafka-setup/docker-compose.yaml down -v`
-2. `./install.sh` -->
+## Using Troubleshooting repo
+Use the instructions in this [repo](https://github.com/SigNoz/troubleshoot) to test if SigNoz otel collector is accessible from where you are running your applications

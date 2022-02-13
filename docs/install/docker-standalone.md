@@ -33,7 +33,7 @@ If you're using a different Linux distribution, see the [Install SigNoz Using Do
 - On macOS, you must manually install [Docker Engine](https://docs.docker.com/engine/install/) before you run the install script. The install script automatically installs Docker Engine on Linux.
 - A minimum of 2GB of memory must be allocated to Docker. <!-- Existing documentation is somehow unclear. Are there different memory requirements based on the operating system? -->
 - [Git client](https://desktop.github.com/)
-- Ensure that the port `3000` is open on the machine where you install SigNoz.
+- Ensure that the port `3301` is open on the machine where you install SigNoz.
 
 
 ## Install SigNoz Using the Install Script
@@ -88,7 +88,7 @@ docker ps
 
   ```output
 CONTAINER ID   IMAGE                                             COMMAND                  CREATED         STATUS                   PORTS                                                                                                                                                                                                                NAMES
-b8b6d1c34dda   signoz/frontend:0.5.4                             "nginx -g 'daemon of…"   3 minutes ago   Up 2 minutes             80/tcp, 0.0.0.0:3000->3000/tcp                                                                                                                                                                                       frontend
+b8b6d1c34dda   signoz/frontend:0.5.4                             "nginx -g 'daemon of…"   3 minutes ago   Up 2 minutes             80/tcp, 0.0.0.0:3301->3301/tcp                                                                                                                                                                                       frontend
 1472604ef590   signoz/otelcontribcol:0.4.2                       "/otelcontribcol --c…"   3 minutes ago   Up 2 minutes             4317/tcp, 55679-55680/tcp                                                                                                                                                                                            clickhouse-setup-otel-collector-metrics-1
 403b01d1a48d   signoz/query-service:0.5.4                        "./query-service -co…"   3 minutes ago   Up 2 minutes             0.0.0.0:8080->8080/tcp                                                                                                                                                                                               query-service
 2c73764cc207   signoz/otelcontribcol:0.4.2                       "/otelcontribcol --c…"   3 minutes ago   Up 2 minutes             0.0.0.0:1777->1777/tcp, 0.0.0.0:4317->4317/tcp, 0.0.0.0:8889->8889/tcp, 0.0.0.0:14268->14268/tcp, 0.0.0.0:55679-55681->55679-55681/tcp, 0.0.0.0:8887->8888/tcp, 0.0.0.0:63639->13133/tcp, 0.0.0.0:63640->55678/tcp   clickhouse-setup-otel-collector-1
@@ -98,11 +98,11 @@ edf3143e6ab5   altinity/clickhouse-server:21.8.12.1.testingarm   "/entrypoint.sh
 138c12f70f33   jaegertracing/example-hotrod:latest               "/go/bin/hotrod-linu…"   3 minutes ago   Up 3 minutes             8081-8083/tcp, 0.0.0.0:9000->8080/tcp                                                                                                                                                                                hotrod
   ```
 
-2. Wait for all the pods to be in running state, and then point your browser to `http://<IP-ADDRESS>:3000/` to access the dashboard, replacing `<IP-ADDRESS>` with the IP address of the machine where you installed SigNoz.
+2. Wait for all the pods to be in running state, and then point your browser to `http://<IP-ADDRESS>:3301/` to access the dashboard, replacing `<IP-ADDRESS>` with the IP address of the machine where you installed SigNoz.
 
   **Example**:
-    - If you're running SigNoz on your local machine, you should point your browser to `http://localhost:3000/`.
-    - If the IP address of the machine on which you're running SigNoz is `66.82.18.247`, you should point your browser to `http://66.82.18.247:3000/`
+    - If you're running SigNoz on your local machine, you should point your browser to `http://localhost:3301/`.
+    - If the IP address of the machine on which you're running SigNoz is `66.82.18.247`, you should point your browser to `http://66.82.18.247:3301/`
 
 <!--
 

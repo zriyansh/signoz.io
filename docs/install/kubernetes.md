@@ -74,10 +74,10 @@ helm -n <namespace> install <helm-repository> deploy/kubernetes/platform
    - Do not use the `latest` or `master` tags in a production environment. Specifying these tags could install different versions of SigNoz on your cluster and could lead to data loss.
 :::
 
-6. You can access SigNoz by setting up port forwarding and browsing to the specified port. The following `kubectl port-forward` example command forwards all connections made to `localhost:3000` to `my-release-frontend:3000`:
+6. You can access SigNoz by setting up port forwarding and browsing to the specified port. The following `kubectl port-forward` example command forwards all connections made to `localhost:3301` to `my-release-frontend:3301`:
 
   ```bash
-kubectl -n <namespace> port-forward svc/my-release-frontend 3000:3000
+kubectl -n <namespace> port-forward svc/my-release-frontend 3301:3301
   ```
 
 ## Verify the Installation
@@ -110,7 +110,7 @@ kubectl -n <namespace> run strzal --image=djbingham/curl \
 'locust_count=6' -F 'hatch_rate=2' http://locust-master:8089/swarm
   ```
 
-4. Browse to `http://localhost:300` and see the metrics and traces for your sample application. <!--This step needs more details including a screenshot but I wasn't able to install SigNoz on Kubernetes yet -->
+4. Browse to `http://localhost:3301` and see the metrics and traces for your sample application. <!--This step needs more details including a screenshot but I wasn't able to install SigNoz on Kubernetes yet -->
 
 5. Stop the pod that generates load:
 
