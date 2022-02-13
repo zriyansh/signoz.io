@@ -19,23 +19,27 @@
 module.exports = {
   docs: [
     {
-      id: "getting-started",
+      id: "introduction",
       type: "doc",
     },
     {
-      label: "Install SigNoz",
-      type: "category",
+      type: 'category',
+      label: 'Install',
+      link: {
+        type: 'generated-index',
+        title: 'Install SigNoz',
+        description: 'To install SigNoz, follow the instructions in the sections below.',
+        slug: '/install',
+      },
       items: [
-        "deployment/requirement",
-        'deployment/docker',
-        'deployment/docker_swarm',
-        'deployment/helm_chart',
-        'deployment/troubleshooting'
+        "install/docker-standalone",
+        'install/docker-swarm',
+        'install/kubernetes',
+        'install/troubleshooting'
       ],
     },
- 
     {
-      label: "Instrumentation",
+      label: "Instrument your app",
       type: "category",
       items: [
         'instrumentation/overview',
@@ -50,7 +54,23 @@ module.exports = {
       ],
     },
     {
-      label: "User Guide",
+      type: 'category',
+      label: 'Operate',
+      link: {
+        type: 'generated-index',
+        title: 'Operate',
+        description: 'The following sections provide an overview of the activities that are required to successfully operate SigNoz. Based on your environment, proceed to one of the sections below.',
+        slug: '/operate',
+      },
+      items: [
+        'operate/docker-standalone',
+        'operate/docker-swarm',
+        'operate/kubernetes'
+
+      ],
+    },
+    {
+      label: "User Guides",
       type: "category",
       items: [
         'userguide/overview',
@@ -63,21 +83,19 @@ module.exports = {
       ],
     },
     {
-      label: "Tutorial",
+      label: "Tutorials",
       type: "category",
+      link: {
+        type: 'generated-index',
+        title: 'Tutorials',
+        description: 'SigNoz tutorials are step-by-step training exercises that guide you through monitoring your applications and infrastructure.',
+        slug: '/tutorials',
+      },
       items: [
         'tutorial/jvm-metrics',
         'tutorial/kubernetes-infra-metrics',
       ],
     },
-    // {
-    //   label: "Configuration",
-    //   type: "category",
-    //   items: [
-    //     'configuration/deep_storage', 
-    //     'configuration/retention_period',
-    //   ],
-    // },
     {
       id: "architecture",
       type: "doc",
