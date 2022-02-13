@@ -219,7 +219,7 @@ function TrySignozModal(props) {
           >
             <Link
               style={{ textDecoration: "none" }}
-              href={"/docs/deployment/docker"}
+              href={"/docs/install/docker"}
             >
               <ModalCard
                 title={"Open source"}
@@ -347,7 +347,7 @@ function Home() {
                     }}
                     className="button button--primary "
                     // onClick={setShowTrySignozModal.bind(this,true)}
-                    href={"/docs/deployment/docker"}
+                    href={"/docs/install/docker"}
                     onClick={getStartedClicked}
                   >
                     Get Started for free

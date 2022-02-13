@@ -3,6 +3,7 @@ id: overview
 title: Instrumentation Overview
 ---
 
+
 Instrumentation is the process of enabling your application code to generate telemetry data - anything that assists you in monitoring or measuring the performance and state of your application.
 
 SigNoz supports [OpenTelemetry](https://opentelemetry.io/) for instrumenting applications.

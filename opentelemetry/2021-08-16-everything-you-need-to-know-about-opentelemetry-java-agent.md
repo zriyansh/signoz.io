@@ -134,7 +134,7 @@ As mentioned earlier, OpenTelemetry is a vendor-agnostic instrumentation library
 
 SigNoz is a full-stack open-source APM tool built natively for OpenTelemetry. It also comes with a visualization layer where you can visualize charts like the popular RED metrics and distributed tracing with flame graphs and Gantt charts.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/deployment/docker/?utm_source=blog&utm_medium=java_agent)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.png)](https://signoz.io/docs/install/docker/?utm_source=blog&utm_medium=java_agent)
 
 
 import Screenshot from "@theme/Screenshot"
