@@ -160,7 +160,7 @@ Since we now know that instrumentation plays a big role in being able to filter 
 
 ### Monitor Jaeger using Prometheus and Grafana
 
-Run `kubectl port-forward svc/prometheus-grafana 3301:80` to proxy to grafana dashboard installed in your Kubernetes cluster. At the login page fill the below credentials which is the default setting when installing prometheus-operator:
+Run `kubectl port-forward svc/prometheus-grafana 3000:80` to proxy to grafana dashboard installed in your Kubernetes cluster. At the login page fill the below credentials which is the default setting when installing prometheus-operator:
 
     username: admin
     password prom-operator
