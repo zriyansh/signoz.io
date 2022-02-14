@@ -61,12 +61,12 @@ kubectl create ns platform
 helm -n <namespace> install <helm-repository> deploy/kubernetes/platform
   ```
 
-  Note that the above command installs the latest stable version of SigNoz. To install a different version, you can use the `--set` flag to specify the version you wish to install. The following example command installs SigNoz version 0.5.3:
+  Note that the above command installs the latest stable version of SigNoz. To install a different version, you can use the `--set` flag to specify the version you wish to install. The following example command installs SigNoz version `0.5.4`:
   
   ```bash
   helm -n <namespace> install <helm-repository> signoz/signoz \
-  --set frontend.image.tag="0.5.3"\
-  --set queryService.image.tag="0.5.3"
+  --set frontend.image.tag="0.5.4"\
+  --set queryService.image.tag="0.5.4"
   ```
 
 :::info
