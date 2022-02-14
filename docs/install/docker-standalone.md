@@ -87,15 +87,15 @@ docker ps
   The output should look similar to the following:
 
   ```output
-CONTAINER ID   IMAGE                                             COMMAND                  CREATED         STATUS                   PORTS                                                                                                                                                                                                                NAMES
-b8b6d1c34dda   signoz/frontend:0.5.4                             "nginx -g 'daemon of…"   3 minutes ago   Up 2 minutes             80/tcp, 0.0.0.0:3301->3301/tcp                                                                                                                                                                                       frontend
-1472604ef590   signoz/otelcontribcol:0.4.2                       "/otelcontribcol --c…"   3 minutes ago   Up 2 minutes             4317/tcp, 55679-55680/tcp                                                                                                                                                                                            clickhouse-setup-otel-collector-metrics-1
-403b01d1a48d   signoz/query-service:0.5.4                        "./query-service -co…"   3 minutes ago   Up 2 minutes             0.0.0.0:8080->8080/tcp                                                                                                                                                                                               query-service
-2c73764cc207   signoz/otelcontribcol:0.4.2                       "/otelcontribcol --c…"   3 minutes ago   Up 2 minutes             0.0.0.0:1777->1777/tcp, 0.0.0.0:4317->4317/tcp, 0.0.0.0:8889->8889/tcp, 0.0.0.0:14268->14268/tcp, 0.0.0.0:55679-55681->55679-55681/tcp, 0.0.0.0:8887->8888/tcp, 0.0.0.0:63639->13133/tcp, 0.0.0.0:63640->55678/tcp   clickhouse-setup-otel-collector-1
-0cefda7860b7   grubykarol/locust:1.2.3-python3.9-alpine3.12      "/docker-entrypoint.…"   3 minutes ago   Up 3 minutes             5557-5558/tcp, 0.0.0.0:8089->8089/tcp                                                                                                                                                                                load-hotrod
-cf8f324d622c   signoz/alertmanager:0.5.0                         "/bin/alertmanager -…"   3 minutes ago   Up 3 minutes             0.0.0.0:9093->9093/tcp                                                                                                                                                                                               clickhouse-setup-alertmanager-1
-edf3143e6ab5   altinity/clickhouse-server:21.8.12.1.testingarm   "/entrypoint.sh"         3 minutes ago   Up 3 minutes (healthy)   0.0.0.0:8123->8123/tcp, 9009/tcp, 0.0.0.0:9001->9000/tcp                                                                                                                                                             clickhouse-setup-clickhouse-1
-138c12f70f33   jaegertracing/example-hotrod:latest               "/go/bin/hotrod-linu…"   3 minutes ago   Up 3 minutes             8081-8083/tcp, 0.0.0.0:9000->8080/tcp                                                                                                                                                                                hotrod
+CONTAINER ID   IMAGE                                          COMMAND                  CREATED         STATUS                   PORTS                                                        NAMES
+130fee61f894   signoz/frontend:0.6.1                          "nginx -g 'daemon of…"   4 minutes ago   Up 4 minutes             80/tcp, 0.0.0.0:3301->3301/tcp, :::3301->3301/tcp            frontend
+7c957db328d3   signoz/otelcontribcol:0.5.0                    "/otelcontribcol --c…"   4 minutes ago   Up 4 minutes             4317/tcp, 55679-55680/tcp                                    clickhouse-setup_otel-collector-metrics_1
+ee8c2ec75926   signoz/query-service:0.6.1                     "./query-service -co…"   4 minutes ago   Up 4 minutes             8080/tcp                                                     query-service
+7eb27952387b   signoz/otelcontribcol:0.5.0                    "/otelcontribcol --c…"   4 minutes ago   Up 4 minutes             0.0.0.0:4317->4317/tcp, :::4317->4317/tcp, 55679-55680/tcp   clickhouse-setup_otel-collector_1
+d1706dd5903e   grubykarol/locust:1.2.3-python3.9-alpine3.12   "/docker-entrypoint.…"   4 minutes ago   Up 4 minutes             5557-5558/tcp, 8089/tcp                                      load-hotrod
+a5360a1d773f   signoz/alertmanager:0.5.0                      "/bin/alertmanager -…"   4 minutes ago   Up 4 minutes             9093/tcp                                                     clickhouse-setup_alertmanager_1
+874b01ec9d4d   yandex/clickhouse-server:21.12.3.32            "/entrypoint.sh"         4 minutes ago   Up 4 minutes (healthy)   8123/tcp, 9000/tcp, 9009/tcp                                 clickhouse-setup_clickhouse_1
+3694594501fa   jaegertracing/example-hotrod:1.30              "/go/bin/hotrod-linu…"   4 minutes ago   Up 4 minutes             8080-8083/tcp                                                hotrod
   ```
 
 2. Wait for all the pods to be in running state, and then point your browser to `http://<IP-ADDRESS>:3301/` to access the dashboard, replacing `<IP-ADDRESS>` with the IP address of the machine where you installed SigNoz.
@@ -118,6 +118,21 @@ How is this helpful? I suggest we create something similar to the Kubernetes sec
 The `docker-compose.yaml` installs a sample application named [HotR.O.D](https://github.com/jaegertracing/jaeger/tree/master/examples/hotrod) that generates tracing data. You can explore the SigNoz dashboard with the data provided by the sample application.
 :::
 
+
+## Install specific version of SigNoz
+
+1. <CloneRepo />
+
+2. Checkout to the specific version tag. For example, to install SigNoz version `v0.5.4`:
+  ```
+git checkout v0.5.4
+  ```
+
+3. Run the `install.sh` script:
+
+  ```bash
+./install.sh
+  ```
 
 ## Related Topics
 
