@@ -37,7 +37,7 @@ You need to update the below section.
    b. If you are running SigNoz in the same Kubernetes cluster where your applications are, you have to replace the above endpoint in [agent/infra-metrics.yaml](https://github.com/SigNoz/otel-collector-k8s/blob/main/agent/infra-metrics.yaml#L47) and [deployment/all-in-one.yaml](https://github.com/SigNoz/otel-collector-k8s/blob/main/deployment/all-in-one.yaml#L19) by
 
    ```jsx
-   otel-collector.<namespace_hosting_signoz>.svc.cluster.local:4317
+   <helm_release_name>-signoz-otel-collector.<namespace_hosting_signoz>.svc.cluster.local:4317
    ```
 
 2. **Install OTel collectors and enable specific receivers to send metrics to SigNoz**
