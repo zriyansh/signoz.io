@@ -34,10 +34,10 @@ The SigNoz Helm chart will install the following components into your Kubernetes
 
 ## Install SigNoz on Kubernetes with Helm
 
-1. Add the SigNoz Helm repository to your client by running the following command replacing `<repo-name>` with your repository:
+1. Add the SigNoz Helm repository to your client with name `signoz` by running the following command:
 
   ```bash
-helm repo add <helm-repository> https://charts.signoz.io
+helm repo add signoz https://charts.signoz.io
   ```
 
 2. Verify that the repository is accessible to the Helm CLI by entering the following command:
@@ -46,38 +46,35 @@ helm repo add <helm-repository> https://charts.signoz.io
 helm repo list
   ```
 
-1. Use the `kubectl create ns` command to create a new namespace. SigNoz recommends you use `platform` for your new namespace:
+3. Use the `kubectl create ns` command to create a new namespace. SigNoz recommends you use `platform` for your new namespace:
 
   ```bash
 kubectl create ns platform
   ```
-  
-4. <UpdateJaegerEndpoint />
 
-
-5. Run the following command to install the chart with the release name `signoz`, replacing `<namespace>` with your namespace and `<repository>` with your repository:
+4. Run the following command to install the chart with the release name `my-release` and namespace `platform`:
 
   ```bash
-helm -n <namespace> install <helm-repository> deploy/kubernetes/platform
+helm --namespace platform install my-release signoz/signoz
   ```
 
-  Note that the above command installs the latest stable version of SigNoz. To install a different version, you can use the `--set` flag to specify the version you wish to install. The following example command installs SigNoz version 0.5.3:
+  Note that the above command installs the latest stable version of SigNoz. To install a different version, you can use the `--set` flag to specify the version you wish to install. The following example command installs SigNoz version `0.5.4`:
   
   ```bash
-  helm -n <namespace> install <helm-repository> signoz/signoz \
-  --set frontend.image.tag="0.5.3"\
-  --set queryService.image.tag="0.5.3"
+  helm --namespace platform install my-release signoz/signoz \
+  --set frontend.image.tag="0.5.4"\
+  --set queryService.image.tag="0.5.4"
   ```
 
 :::info
-   - If you use the `--set` flag, ensure that you specify the same versions for the `frontend` and `queryService` images. Specifying different versions could lead to data loss.
+   - If you use the `--set` flag, ensure that you specify the same versions for the `frontend` and `queryService` images. Specifying different versions could lead the SigNoz cluster to behave abnormally.
    - Do not use the `latest` or `master` tags in a production environment. Specifying these tags could install different versions of SigNoz on your cluster and could lead to data loss.
 :::
 
-6. You can access SigNoz by setting up port forwarding and browsing to the specified port. The following `kubectl port-forward` example command forwards all connections made to `localhost:3301` to `my-release-frontend:3301`:
+5. You can access SigNoz by setting up port forwarding and browsing to the specified port. The following `kubectl port-forward` example command forwards all connections made to `localhost:3301` to `<release>-signoz-frontend:3301`:
 
   ```bash
-kubectl -n <namespace> port-forward svc/my-release-frontend 3301:3301
+kubectl --namespace platform port-forward svc/my-release-signoz-frontend 3301:3301
   ```
 
 ## Verify the Installation
@@ -98,14 +95,14 @@ Follow the steps in this section to install a sample application named [HotR.O.D
 1. Use the `kubectl create ns` command to create a new namespace. SigNoz recommends you use `sample-application` for your new namespace:
 
   ```bash
-kubectl create ns <namespace>
+kubectl create ns sample-application
   ```
 2. <UpdateJaegerEndpoint />
 
 3. Use the following command to generate load, replacing namespace with your namespace:
 
   ```bash
-kubectl -n <namespace> run strzal --image=djbingham/curl \
+kubectl --namespace sample-application run strzal --image=djbingham/curl \
 --restart='OnFailure' -i --tty --rm --command -- curl -X POST -F \
 'locust_count=6' -F 'hatch_rate=2' http://locust-master:8089/swarm
   ```
@@ -119,6 +116,31 @@ kubectl -n sample-application run strzal --image=djbingham/curl \
  --restart='OnFailure' -i --tty --rm --command -- curl \
  http://locust-master:8089/stop
  ```
+
+## Install specific version of SigNoz
+
+1. List the available SigNoz Helm charts with their version and supported app version.
+  ```bash
+helm search repo signoz --versions
+  ```
+  The output should look similar to the following:
+  ```output
+NAME               	CHART VERSION	APP VERSION	DESCRIPTION                                
+signoz/signoz      	0.0.6        	0.6.1      	SigNoz Observability Platform Helm Chart   
+signoz/signoz      	0.0.5        	0.6.0      	SigNoz Observability Platform Helm Chart   
+signoz/signoz      	0.0.4        	0.5.4      	SigNoz Observability Platform Helm Chart   
+signoz/signoz      	0.0.3        	0.5.4      	SigNoz Observability Platform Helm Chart   
+signoz/signoz      	0.0.2        	0.5.4      	SigNoz Observability Platform Helm Chart   
+signoz/alertmanager	0.5.1        	0.5.0      	The Alertmanager handles alerts for SigNoz.
+signoz/alertmanager	0.5.0        	0.5.0      	The Alertmanager handles alerts for SigNoz.
+signoz/clickhouse  	9.1.0        	21.7       	A Helm chart for ClickHouse
+  ```
+
+2. Run the following command to install the chart version `0.0.4` running SigNoz version `0.5.4` with the release name `my-release` and namespace `platform`:
+  ```bash
+helm --namespace platform install my-release signoz/signoz --version 0.0.4
+  ```
+
 ## Next Steps
 
 - [Instrument Your Application](/docs/instrumentation/overview)
