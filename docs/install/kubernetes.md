@@ -125,12 +125,12 @@ helm search repo signoz --versions
   ```
   The output should look similar to the following:
   ```output
-NAME               	CHART VERSION	APP VERSION	DESCRIPTION                                
-signoz/signoz      	0.0.6        	0.6.1      	SigNoz Observability Platform Helm Chart   
-signoz/signoz      	0.0.5        	0.6.0      	SigNoz Observability Platform Helm Chart   
-signoz/signoz      	0.0.4        	0.5.4      	SigNoz Observability Platform Helm Chart   
-signoz/signoz      	0.0.3        	0.5.4      	SigNoz Observability Platform Helm Chart   
-signoz/signoz      	0.0.2        	0.5.4      	SigNoz Observability Platform Helm Chart   
+NAME               	CHART VERSION	APP VERSION	DESCRIPTION
+signoz/signoz      	0.0.6        	0.6.1      	SigNoz Observability Platform Helm Chart
+signoz/signoz      	0.0.5        	0.6.0      	SigNoz Observability Platform Helm Chart
+signoz/signoz      	0.0.4        	0.5.4      	SigNoz Observability Platform Helm Chart
+signoz/signoz      	0.0.3        	0.5.4      	SigNoz Observability Platform Helm Chart
+signoz/signoz      	0.0.2        	0.5.4      	SigNoz Observability Platform Helm Chart
 signoz/alertmanager	0.5.1        	0.5.0      	The Alertmanager handles alerts for SigNoz.
 signoz/alertmanager	0.5.0        	0.5.0      	The Alertmanager handles alerts for SigNoz.
 signoz/clickhouse  	9.1.0        	21.7       	A Helm chart for ClickHouse
