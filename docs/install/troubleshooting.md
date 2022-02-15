@@ -6,6 +6,7 @@ description: Instructions that should resolve most installation issues
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import APITable from '@theme/APITable';
 
 <p align="center">
 
@@ -14,6 +15,12 @@ import TabItem from "@theme/TabItem";
 </p>
 
 This troubleshooting guide includes step-by-step instructions that should resolve most installation issues.
+
+
+## Using Troubleshooting repo
+Use the instructions in this [repo](https://github.com/SigNoz/troubleshoot) to test if SigNoz otel collector
+is accessible from where you are running your applications.
+
 
 ## Docker Standalone
 
@@ -25,5 +32,20 @@ This troubleshooting guide includes step-by-step instructions that should resolv
 6. If you're still facing issues trying to install SigNoz, please reach out to us on [Slack](https://signoz.io/slack) 
 
 
-## Using Troubleshooting repo
-Use the instructions in this [repo](https://github.com/SigNoz/troubleshoot) to test if SigNoz otel collector is accessible from where you are running your applications
+## SigNoz Otel Collector address Grid
+
+You might have specific set up for your application and SigNoz cluster.
+It might not be very clear on which address to use to send data to SigNoz.
+
+Here is the SigNoz Otel Collector address grid which could be helpful:
+
+<APITable>
+
+  |-| Where SigNoz is installed? |-|-|-|
+  |-| -------------------------- |-|-|-|
+  | Where your application is running? | VM (Docker) - Same Machine | VM ( Different Machine) | K8s (Same Cluster) | K8s (Different Cluster) |
+  | VM (native/binary) | `localhost:4317` | `<otelcollector-IP>:4317` | `<k8s-node-IP>:<otelcollector-node-port>`,`<k8s-loadbalancer-IP>:4317` | `<k8s-node-IP>:<otelcollector-node-port>`,`<k8s-loadbalancer-IP>:4317` |
+  | VM (Docker) | `172.17.0.1:4317`,`otel-collector:4317`(shared network) | `<otelcollector-IP>:4317` | `<k8s-node-IP>:<otelcollector-node-port>`,`<k8s-loadbalancer-IP>:4317` | `<k8s-node-IP>:<otelcollector-node-port>`,`<k8s-loadbalancer-IP>:4317` |
+  | K8s | `otelcollector-machine-IP:4317` | `<otelcollector-IP>:4317` | `<release-name>-signoz-otel-collector.<namespace>.svc.cluster.local:4317` | `<k8s-node-IP>:<otelcollector-node-port>`,`<k8s-loadbalancer-IP>:4317` |
+
+</APITable>
