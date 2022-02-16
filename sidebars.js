@@ -1,20 +1,3 @@
-// module.exports = {
-//   someSidebar: {
-
-
-
-
-
-
-//     'getting-started'
-//     Deployment: ['deployment/requirement','deployment/docker','deployment/docker_swarm', 'deployment/helm_chart','deployment/troubleshooting'],
-//     Overview: ['introduction', 'architecture', 'features','contributing','community','roadmap','faq'],
-//     Configuration: ['configuration/deep_storage', 'configuration/retention_period'],
-//     Instrumentation: ['instrumentation/overview','instrumentation/python', 'instrumentation/nodejs', 'instrumentation/java', 'instrumentation/golang'],
-//     // Features: ['mdx'],
-//   },
-// };
-
 
 module.exports = {
   docs: [
@@ -41,6 +24,12 @@ module.exports = {
     {
       label: "Instrument your app",
       type: "category",
+      link: {
+        type: 'generated-index',
+        title: 'Instrument your Application',
+        description: 'To instrument your applications and send data to SigNoz, follow the instructions in the sections below.',
+        slug: '/instrumentation',
+      },
       items: [
         'instrumentation/overview',
         'instrumentation/python',
@@ -51,6 +40,7 @@ module.exports = {
         'instrumentation/golang',   
         'instrumentation/dotnet',
         'instrumentation/ruby-on-rails',
+        'instrumentation/troubleshoot-instrumentation',
       ],
     },
     {

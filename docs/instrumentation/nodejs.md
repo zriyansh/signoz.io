@@ -1,6 +1,8 @@
 ---
 id: nodejs
 title: OpenTelemetry NodeJS Instrumentation
+description: Send events from your NodeJS application to SigNoz
+
 ---
 
 import Tabs from "@theme/Tabs";

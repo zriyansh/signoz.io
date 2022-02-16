@@ -1,6 +1,8 @@
 ---
 id: fastapi
 title: OpenTelemetry FastAPI Instrumentation
+description: Send events from your FastAPI application to SigNoz
+
 ---
 
 import Tabs from "@theme/Tabs";

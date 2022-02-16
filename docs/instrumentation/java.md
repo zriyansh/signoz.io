@@ -1,6 +1,8 @@
 ---
 id: java
 title: OpenTelemetry Java Instrumentation
+description: Send events from your Java application to SigNoz
+
 ---
 
 import Tabs from "@theme/Tabs";
