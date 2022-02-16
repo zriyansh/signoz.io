@@ -116,5 +116,12 @@ module.exports = {
       id: "faq",
       type: "doc",
     },
+    {
+      label: "Others",
+      type: "category",
+      items: [
+        'telemetry',
+      ],
+    },
   ]
 }
