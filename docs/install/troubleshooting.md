@@ -6,8 +6,6 @@ description: Instructions that should resolve most installation issues
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import APITable from '@theme/APITable';
-
 
 <p align="center">
 
@@ -28,8 +26,10 @@ You can run the one liner script below to download the troubleshoot binary:
 
 ```bash
 curl -sL https://github.com/SigNoz/troubleshoot/raw/main/scripts/install.sh | bash
-```import APITable from '@theme/APITable';
+```
+
 Here is the syntax:
+
 ```bash
 ./troubleshoot checkEndpoint --endpoint=<endpoint-to-check>
 ```
@@ -86,13 +86,42 @@ It might not be very clear on which address to use to send data to SigNoz.
 
 Here is the SigNoz Otel Collector address grid which could be helpful:
 
-<APITable>
-
-  |-| Where SigNoz is installed? |-|-|-|
-  |-| -------------------------- |-|-|-|
-  | Where your application is running? | VM (Docker) - Same Machine | VM ( Different Machine) | K8s (Same Cluster) | K8s (Different Cluster) |
-  | VM (native/binary) | `localhost:4317` | `<otelcollector-IP>:4317` | `<k8s-node-IP>:<otelcollector-node-port>`,`<k8s-loadbalancer-IP>:4317` | `<k8s-node-IP>:<otelcollector-node-port>`,`<k8s-loadbalancer-IP>:4317` |
-  | VM (Docker) | `172.17.0.1:4317`,`otel-collector:4317`(shared network) | `<otelcollector-IP>:4317` | `<k8s-node-IP>:<otelcollector-node-port>`,`<k8s-loadbalancer-IP>:4317` | `<k8s-node-IP>:<otelcollector-node-port>`,`<k8s-loadbalancer-IP>:4317` |
-  | K8s | `otelcollector-machine-IP:4317` | `<otelcollector-IP>:4317` | `<release-name>-signoz-otel-collector.<namespace>.svc.cluster.local:4317` | `<k8s-node-IP>:<otelcollector-node-port>`,`<k8s-loadbalancer-IP>:4317` |
-
-</APITable>
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th colspan="2"></th>
+            <th colspan="4">Where SigNoz is installed?</th>
+        </tr>
+    </thead>
+    <tbody>
+    	<tr>
+            <th colspan="2"></th>
+        	<th>VM (Docker) - Same Machine</th>
+            <th>VM (Docker) - Different Machine</th>
+            <th>K8s (Same Cluster)</th>
+            <th>K8s (Different Cluster)</th>
+        </tr>
+    	<tr>
+            <th rowspan="4">Where your application is running?</th>
+            <th>VM (native/binary)</th>
+            <td>localhost:4317</td>
+            <td>&lt;otelcollector-IP&gt;:4317</td>
+            <td>&lt;k8s-node-IP>:&gt;otelcollector-node-port&gt;,&lt;k8s-loadbalancer-IP&gt;:4317</td>
+            <td>&lt;k8s-node-IP>:&lt;otelcollector-node-port&gt;,&lt;k8s-loadbalancer-IP&gt;:4317</td>
+        </tr>
+        <tr>
+            <th>VM (Docker)</th>
+            <td>172.17.0.1:4317,&lt;otel-collector&gt;:4317(shared network)</td>
+            <td>&lt;otelcollector-IP&gt;:4317</td>
+            <td>&lt;k8s-node-IP>:&gt;otelcollector-node-port&gt;,&lt;k8s-loadbalancer-IP&gt;:4317</td>
+            <td>&lt;k8s-node-IP>:&gt;otelcollector-node-port&gt;,&lt;k8s-loadbalancer-IP&gt;:4317</td>
+        </tr>
+        <tr>
+            <th>Kubernetes</th>
+            <td>&lt;otelcollector-IP&gt;:4317</td>
+            <td>&lt;otelcollector-IP&gt;:4317</td>
+            <td>&lt;k8s-node-IP>:&gt;otelcollector-node-port&gt;,&lt;k8s-loadbalancer-IP&gt;:4317</td>
+            <td>&lt;k8s-node-IP>:&gt;otelcollector-node-port&gt;,&lt;k8s-loadbalancer-IP&gt;:4317</td>
+        </tr>
+    </tbody>
+</table>

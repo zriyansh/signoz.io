@@ -359,3 +359,11 @@ hero__screenshot {
     width: 95%;
   }
 }
+
+table.custom-table {
+  font-size: small;
+}
+
+table.custom-table tbody tr {
+  transition: box-shadow 0.2s;
+}
