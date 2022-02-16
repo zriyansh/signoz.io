@@ -8,6 +8,7 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import APITable from '@theme/APITable';
 
+
 <p align="center">
 
 [![Book meeting](/img/docs/ZoomCTA1.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
@@ -16,11 +17,57 @@ import APITable from '@theme/APITable';
 
 This troubleshooting guide includes step-by-step instructions that should resolve most installation issues.
 
+## Using Troubleshooting repository
 
-## Using Troubleshooting repo
-Use the instructions in this [repo](https://github.com/SigNoz/troubleshoot) to test if SigNoz otel collector
+You can use the [SigNoz troubleshoot](https://github.com/SigNoz/troubleshoot) to test if SigNoz otel collector
 is accessible from where you are running your applications.
 
+### Binary installation
+
+You can run the one liner script below to download the troubleshoot binary:
+
+```bash
+curl -sL https://github.com/SigNoz/troubleshoot/raw/main/scripts/install.sh | bash
+```import APITable from '@theme/APITable';
+Here is the syntax:
+```bash
+./troubleshoot checkEndpoint --endpoint=<endpoint-to-check>
+```
+
+#### Binary
+
+For example, if Otel Collector should be accessible in `localhost:4317`:
+
+```bash
+./troubleshoot checkEndpoint --endpoint=localhost:4317
+```
+
+#### Docker
+
+You can also use troubleshoot Docker image:
+
+```bash
+docker run -it --rm signoz/troubleshoot checkEndpoint --endpoint=172.17.0.1:4317
+```
+
+_*Notes: SigNoz Otel Collector should be accessible in `172.17.0.1:4317` from your application even if running in different docker network._
+
+#### Kubernetes
+
+You can also spin up a pod in Kubernetes with same namespace as your application:
+
+```bash
+kubectl -n app-namespace run troubleshoot --image=signoz/troubleshoot \
+  --restart='OnFailure' -i --tty --rm --command -- ./troubleshoot checkEndpoint \
+  --endpoint=my-release-signoz-otel-collector.platform.svc.cluster.local:4317
+```
+
+_*Notes:_
+1. Replace `app-namespace` with your application namespace, `my-release` with SigNoz helm release name, and `platform` with SigNoz namespace.
+2. In case on multiple k8s cluster, you might have to set otel collector service type as `NodePort` or `LoadBalancer`.
+  ```
+helm upgrade --install -n platform my-release signoz/signoz --set otelCollector.serviceType="<NodePort or LoadBalancer>"
+  ```
 
 ## Docker Standalone
 
