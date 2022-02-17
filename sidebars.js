@@ -84,6 +84,7 @@ module.exports = {
       items: [
         'tutorial/jvm-metrics',
         'tutorial/kubernetes-infra-metrics',
+        'tutorial/mongodb-metrics',
       ],
     },
     {
