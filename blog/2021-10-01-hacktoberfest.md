@@ -51,7 +51,7 @@ Here are the steps that you need to follow in order to participate in hacktoberf
 Hurry up! Only the first 50,000 participants can earn a T-shirt.
 
 ## Why choose SigNoz for participating in Hacktoberfest??
-Well, we have tons of issues to be taken care and we will be glad to have your helping hand. We also have a vibrant **[slack community](https://bit.ly/signoz-slack)** where you can seek out help in order to make your PRs. Just join our community and tell us you're there for Hacktoberfest!
+Well, we have tons of issues to be taken care and we will be glad to have your helping hand. We also have a vibrant **[slack community](https://signoz.io/slack)** where you can seek out help in order to make your PRs. Just join our community and tell us you're there for Hacktoberfest!
 
 Our backend is written in Golang, while our frontend is written in Typescript. Check your favorite issues to tackle now 🤺👇
 
@@ -94,4 +94,4 @@ Visit to our GitHub repo now, and start hacking 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
-Join our **[slack community](https://bit.ly/signoz-slack)** if you need any help.
+Join our **[slack community](https://signoz.io/slack)** if you need any help.

@@ -22,7 +22,7 @@ Folks! Great to have you over for our monthly product update aka Signal #04. Thi
 
 ![Cover Image](/img/blog/2021/09/signal_04_cover-min.webp)
 
-We also crossed 200+ members on our **[slack community](https://bit.ly/signoz-slack)** 🎉🎉🎉
+We also crossed 200+ members on our **[slack community](https://signoz.io/slack)** 🎉🎉🎉
 
 Let's dive in to see what humans at SigNoz have been upto!
 
@@ -141,7 +141,7 @@ We recently crossed 200+ members on our slack community. Our slack channel is a 
 
 Join us in our wonderful journey as we build the next-gen application monitoring & observability platform, the OSS way 👇
 
-**[Join SigNoz slack community](https://bit.ly/signoz-slack)**
+**[Join SigNoz slack community](https://signoz.io/slack)**
 
 ## From our blog
 

@@ -38,6 +38,10 @@ SigNoz currently supports 2 type of panels.
 
 - Just type in the metric you want to graph by editing the `PromQL Query` field and format the legend as needed using the `Legend Format` field.
 
+- `Legend Format` helps to show just the values of keys in chart. 
+   
+   e.g. Suppose your PromQL expression is `http_requests_total{job="prometheus"}` . The legend format `{{job}}` shows just `prometheus` in the legends of the chart and helps in better visualisation when the expression can be lengthy and difficult to read.
+
 - Once you type a correct query and click anywhere out side the Query box, the graphg would be plotted.
 
 - You can set `Panel Time Preference` to match to Global Time or set specific time intervals. If you select the time interval shown in the graph would change based on the global time filter selected in top right corner time selector. 
@@ -67,7 +71,7 @@ SigNoz currently supports 2 type of panels.
 
 :::note
 
-Ping us on [slack](https://bit.ly/signoz-slack) or email on [support@signoz.io](mailto:support@signoz.io) if need any help in enabling different metrics/receivers.
+Ping us on [slack](https://signoz.io/slack) or email on [support@signoz.io](mailto:support@signoz.io) if need any help in enabling different metrics/receivers.
 
 :::
 

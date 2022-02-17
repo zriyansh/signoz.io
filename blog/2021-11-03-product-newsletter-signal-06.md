@@ -100,7 +100,7 @@ Highlighting some key PRs by our awesome contributors:
 
 </div>
 
-We also crossed 300+ members on our [slack community](https://bit.ly/signoz-slack).🥳
+We also crossed 300+ members on our [slack community](https://signoz.io/slack).🥳
 
 ### **Crossed 5000+ GitHub stars**
 
