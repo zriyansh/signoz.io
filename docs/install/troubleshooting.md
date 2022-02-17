@@ -7,6 +7,19 @@ description: Instructions that should resolve most installation issues
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+export const YoutubeWrapper = ({children, url}) => (
+  <div 
+    style={{
+    position: 'relative', 
+    width: '100%',
+    paddingBottom: '56.25%', 
+    height: "0",
+    }} >
+    <iframe width="560" height="315" style={{ position: 'absolute', top:'0', left: '0', width: '100%', height: '100%'}} src={ url } title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+);
+
+
 <p align="center">
 
 [![Book meeting](/img/docs/ZoomCTA1.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
@@ -69,6 +82,18 @@ _*Notes:_
 helm upgrade --install -n platform my-release signoz/signoz --set otelCollector.serviceType="<NodePort or LoadBalancer>"
   ```
 
+<p>&nbsp;</p>
+
+### Troubleshooting Video
+
+Whew! That was a lot of instruction to follow. If you instead prefer to watch a video, here you go 👇
+
+
+<YoutubeWrapper url="https://www.youtube.com/embed/Y7OkvmuTRQ8"> </YoutubeWrapper><br></br>
+
+<p>&nbsp;</p>
+
+
 ## Docker Standalone
 
 1. Before you install SigNoz on Docker Standalone, ensure that all [prerequisites](/docs/install/docker/#prerequisites) are met.
@@ -78,61 +103,3 @@ helm upgrade --install -n platform my-release signoz/signoz --set otelCollector.
 5. Follow the steps for [uninstalling SigNoz](/docs/operate/docker-standalone/#uninstall-signoz) section and then install SigNoz again by following the steps in the [Install SigNoz on Docker Standalone](/docs/install/docker) section.
 6. If you're still facing issues trying to install SigNoz, please reach out to us on [Slack](https://signoz.io/slack) 
 
-
-## SigNoz Otel Collector address Grid
-
-You might have specific set up for your application and SigNoz cluster.
-It might not be very clear on which address to use to send data to SigNoz.
-
-Here is the SigNoz Otel Collector address grid which could be helpful:
-
-<table class="custom-table">
-    <thead>
-        <tr>
-            <th colspan="2"></th>
-            <th colspan="4">Where SigNoz is installed?</th>
-        </tr>
-    </thead>
-    <tbody>
-    	<tr>
-            <th colspan="2"></th>
-        	<th>VM (Docker) - Same Machine</th>
-            <th>VM (Docker) - Different Machine</th>
-            <th>K8s (Same Cluster)</th>
-            <th>K8s (Different Cluster)</th>
-        </tr>
-    	<tr>
-            <th rowspan="4">Where your application is running?</th>
-            <th>VM (native/binary)</th>
-            <td>localhost:4317</td>
-            <td>&lt;otelcollector-IP&gt;:4317</td>
-            <td>&lt;k8s-node-IP>:&lt;otelcollector-node-port&gt;, &lt;k8s-loadbalancer-IP&gt;:4317</td>
-            <td>&lt;k8s-node-IP>:&lt;otelcollector-node-port&gt;, &lt;k8s-loadbalancer-IP&gt;:4317</td>
-        </tr>
-        <tr>
-            <th>VM (Docker)</th>
-            <td>172.17.0.1:4317, otel-collector:4317(shared network)</td>
-            <td>&lt;otelcollector-IP&gt;:4317</td>
-            <td>&lt;k8s-node-IP&gt;:&lt;otelcollector-node-port&gt;, &lt;k8s-loadbalancer-IP&gt;:4317</td>
-            <td>&lt;k8s-node-IP&gt;:&lt;otelcollector-node-port&gt;, &lt;k8s-loadbalancer-IP&gt;:4317</td>
-        </tr>
-        <tr>
-            <th>Kubernetes</th>
-            <td>&lt;otelcollector-IP&gt;:4317</td>
-            <td>&lt;otelcollector-IP&gt;:4317</td>
-            <td>&lt;k8s-node-IP&gt;:&lt;otelcollector-node-port&gt;, &lt;k8s-loadbalancer-IP&gt;:4317</td>
-            <td>&lt;k8s-node-IP&gt;:&lt;otelcollector-node-port&gt;, &lt;k8s-loadbalancer-IP&gt;:4317</td>
-        </tr>
-    </tbody>
-</table>
-
-_*Notes:_
-1. For the `otelcollector-IP`, use private IP address if the VM is in same private network.
-  Replace `app-namespace` with your application namespace, `my-release` with SigNoz helm
-  release name, and `platform` with SigNoz namespace.
-2. In the case of k8s where the application and SigNoz are running in different k8s cluster, you will have to expose otel collector service.
-  Set the service type to either `NodePort` or `LoadBalancer`.
-  ```
-helm upgrade --install -n platform my-release signoz/signoz \
-  --set otelCollector.serviceType="<NodePort or LoadBalancer>"
-  ```

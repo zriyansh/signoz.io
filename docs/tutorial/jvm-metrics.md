@@ -1,6 +1,6 @@
 ---
 id: jvm-metrics
-title: Spring Boot Applications
+title: Spring Boot JVM Metrics 
 description: View JVM metrics from Spring Boot applications in SigNoz
 ---
 
