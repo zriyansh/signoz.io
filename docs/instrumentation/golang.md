@@ -213,14 +213,6 @@ OpenTelemetry automatically provides instrumentation for a large number of libra
 
 The full list of supported instrumentation can be found in the [README](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/master/instrumentation).
 
-Don’t see support for a framework or library you use? Join the beta by [filing an issue](https://github.com/open-telemetry/opentelemetry-go-contrib/issues), or try your hand at writing an instrumentation adapter yourself!
-
-#### OpenTracing support in Go
-
-The OpenTracing shim allows existing OpenTracing instrumentation to report to the OpenTelemetry SDK. OpenTracing support is not enabled by default. Instructions for enabling the shim can be found in the README.
-
-Go OpenTracing shim
-Read more about upgrading to OpenTelemetry in our OpenTracing Migration Guide.
 
 
 <p>&nbsp;</p>
