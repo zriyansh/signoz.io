@@ -198,7 +198,7 @@ If you liked what you read, then check out our GitHub repo 👇
 
 Our slack community is a great place to get your queries solved instantly and get community support for SigNoz. Link to join 👇
 
-[SigNoz slack community](https://bit.ly/signoz-slack)
+[SigNoz slack community](https://signoz.io/slack)
 
 ---
 

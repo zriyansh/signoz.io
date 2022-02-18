@@ -98,7 +98,7 @@ If you have an interesting idea for a blog post, you can apply [here](https://fo
 
 If you have any questions about the program, join our slack community and ping us in the **#write-for-signoz** channel.
 
-[![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://bit.ly/signoz-slack)
+[![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://signoz.io/slack)
 
 ### Who can apply?
 

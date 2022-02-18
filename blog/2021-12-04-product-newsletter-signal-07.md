@@ -88,7 +88,7 @@ export const YoutubeWrapper = ({children, url}) => (
 
 We would love to hear your feedback on alerts. Join our slack community to pass on any suggestions for improvement.
 
-[![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://bit.ly/signoz-slack)
+[![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://signoz.io/slack)
 
 ## Featured issue
 [Package SigNoz as a Single binary](https://github.com/SigNoz/signoz/issues/392)<br></br>

@@ -1,6 +1,8 @@
 ---
 id: python
 title: OpenTelemetry Python Instrumentation
+description: Send events from your Python application to SigNoz
+
 ---
 
 import Tabs from "@theme/Tabs";

@@ -1,6 +1,8 @@
 ---
 id: nestjs
-title: OpenTelemetry Nestjs Instrumentation
+title: OpenTelemetry NestJS Instrumentation
+description: Send events from your NestJS application to SigNoz
+
 ---
 
 import Tabs from "@theme/Tabs";

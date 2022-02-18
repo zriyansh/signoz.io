@@ -29,7 +29,7 @@ module.exports = {
     //   appUrl: "https://app.posthog.com", // optional
     //   enableInDevelopment: false, // optional
     // },
-    image: "img/HeroShot-3.jpg",
+    image: "/img/signoz_website_hero_image.webp",
     colorMode: {
       // "light" | "dark"
       defaultMode: "dark",

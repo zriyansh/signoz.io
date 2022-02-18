@@ -7,6 +7,19 @@ description: Instructions that should resolve most installation issues
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+export const YoutubeWrapper = ({children, url}) => (
+  <div 
+    style={{
+    position: 'relative', 
+    width: '100%',
+    paddingBottom: '56.25%', 
+    height: "0",
+    }} >
+    <iframe width="560" height="315" style={{ position: 'absolute', top:'0', left: '0', width: '100%', height: '100%'}} src={ url } title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+);
+
+
 <p align="center">
 
 [![Book meeting](/img/docs/ZoomCTA1.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
@@ -70,6 +83,18 @@ helm upgrade --install -n platform my-release signoz/signoz \
   --set otelCollector.serviceType="<NodePort or LoadBalancer>"
 ```
 
+<p>&nbsp;</p>
+
+### Troubleshooting Video
+
+Whew! That was a lot of instruction to follow. If you instead prefer to watch a video, here you go 👇
+
+
+<YoutubeWrapper url="https://www.youtube.com/embed/Y7OkvmuTRQ8"> </YoutubeWrapper><br></br>
+
+<p>&nbsp;</p>
+
+
 ## Docker Standalone
 
 1. Before you install SigNoz on Docker Standalone, ensure that all [prerequisites](/docs/install/docker/#prerequisites) are met.
@@ -78,7 +103,6 @@ helm upgrade --install -n platform my-release signoz/signoz \
 4. Run the `install.sh` script again. The script will try to reinstall the containers that failed.
 5. Follow the steps for [uninstalling SigNoz](/docs/operate/docker-standalone/#uninstall-signoz) section and then install SigNoz again by following the steps in the [Install SigNoz on Docker Standalone](/docs/install/docker) section.
 6. If you're still facing issues trying to install SigNoz, please reach out to us on [Slack](https://signoz.io/slack) 
-
 
 ## SigNoz Otel Collector address Grid
 

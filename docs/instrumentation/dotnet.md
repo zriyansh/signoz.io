@@ -1,6 +1,8 @@
 ---
 id: dotnet
 title: OpenTelemetry .NET Instrumentation
+description: Send events from your .NET application to SigNoz
+
 ---
 
 SigNoz supports opentelemetry natively for instrumnetation
