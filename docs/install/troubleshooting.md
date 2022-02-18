@@ -76,11 +76,12 @@ kubectl -n app-namespace run troubleshoot --image=signoz/troubleshoot \
 ```
 
 _*Notes:_
-1. Replace `app-namespace` with your application namespace, `my-release` with SigNoz helm release name, and `platform` with SigNoz namespace.
-2. In case on multiple k8s cluster, you might have to set otel collector service type as `NodePort` or `LoadBalancer`.
-  ```
-helm upgrade --install -n platform my-release signoz/signoz --set otelCollector.serviceType="<NodePort or LoadBalancer>"
-  ```
+  1. Replace `app-namespace` with your application namespace, `my-release` with SigNoz helm release name, and `platform` with SigNoz namespace.
+  2. In case on multiple k8s cluster, you might have to set otel collector service type as `NodePort` or `LoadBalancer`.
+```bash
+helm upgrade --install -n platform my-release signoz/signoz \
+  --set otelCollector.serviceType="<NodePort or LoadBalancer>"
+```
 
 <p>&nbsp;</p>
 
@@ -103,3 +104,61 @@ Whew! That was a lot of instruction to follow. If you instead prefer to watch a 
 5. Follow the steps for [uninstalling SigNoz](/docs/operate/docker-standalone/#uninstall-signoz) section and then install SigNoz again by following the steps in the [Install SigNoz on Docker Standalone](/docs/install/docker) section.
 6. If you're still facing issues trying to install SigNoz, please reach out to us on [Slack](https://signoz.io/slack) 
 
+## SigNoz Otel Collector address Grid
+
+You might have specific set up for your application and SigNoz cluster.
+It might not be very clear on which address to use to send data to SigNoz.
+
+Here is the SigNoz Otel Collector address grid which could be helpful:
+
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th colspan="2"></th>
+            <th colspan="4">Where SigNoz is installed?</th>
+        </tr>
+    </thead>
+    <tbody>
+    	<tr>
+            <th colspan="2"></th>
+        	<th>VM (Docker) - Same Machine</th>
+            <th>VM (Docker) - Different Machine</th>
+            <th>K8s (Same Cluster)</th>
+            <th>K8s (Different Cluster)</th>
+        </tr>
+    	<tr>
+            <th rowspan="4">Where your application is running?</th>
+            <th>VM (native/binary)</th>
+            <td>localhost:4317</td>
+            <td>&lt;otelcollector-IP&gt;:4317</td>
+            <td>&lt;k8s-node-IP>:&lt;otelcollector-node-port&gt;, &lt;k8s-loadbalancer-IP&gt;:4317</td>
+            <td>&lt;k8s-node-IP>:&lt;otelcollector-node-port&gt;, &lt;k8s-loadbalancer-IP&gt;:4317</td>
+        </tr>
+        <tr>
+            <th>VM (Docker)</th>
+            <td>172.17.0.1:4317, otel-collector:4317(shared network)</td>
+            <td>&lt;otelcollector-IP&gt;:4317</td>
+            <td>&lt;k8s-node-IP&gt;:&lt;otelcollector-node-port&gt;, &lt;k8s-loadbalancer-IP&gt;:4317</td>
+            <td>&lt;k8s-node-IP&gt;:&lt;otelcollector-node-port&gt;, &lt;k8s-loadbalancer-IP&gt;:4317</td>
+        </tr>
+        <tr>
+            <th>Kubernetes</th>
+            <td>&lt;otelcollector-IP&gt;:4317</td>
+            <td>&lt;otelcollector-IP&gt;:4317</td>
+            <td>&lt;release-name&gt;-signoz-otel-collector.&lt;namespace&gt;.svc.cluster.local:4317</td>
+            <td>&lt;k8s-node-IP&gt;:&lt;otelcollector-node-port&gt;, &lt;k8s-loadbalancer-IP&gt;:4317</td>
+        </tr>
+    </tbody>
+</table>
+
+
+**Notes:**
+1. For the `<otelcollector-IP>`, use private IP address if the VM is in same private network.
+2. Replace `<namespace>` with SigNoz namespace and `<release-name>` with SigNoz helm
+  release name.
+3. In the case of k8s where the application and SigNoz are running in different k8s cluster, you will have to expose otel collector service.
+  Set the service type to either `NodePort` or `LoadBalancer`.
+  ```
+helm upgrade --install -n platform my-release signoz/signoz \
+  --set otelCollector.serviceType="<NodePort or LoadBalancer>"
+  ```

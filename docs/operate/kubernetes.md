@@ -6,8 +6,74 @@ description: Learn how to operate SigNoz on Kubernetes.
 
 Once you have successfully installed SigNoz on Kubernetes, the following sections provide an overview of the activities that are required to successfully operate SigNoz.
 
+## Stop/Start
 
-<!-- Not sure the next section fits here, as all our instructions are related to on-prem installs-->
+To stop the running SigNoz cluster:
+
+```bash
+helm -n platform uninstall "my-release"
+```
+
+To start/resume the running SigNoz cluster:
+
+```bash
+helm -n platform install "my-release"
+```
+
+_*Note: The newly created release aka SigNoz cluster should mount to the existing persistent volume as long as the *namespace* and the *release name* matches to the old one._
+
+## Upgrade/Downgrade
+
+Here are the instructions to upgrade/downgrade the SigNoz cluster:
+
+1. List the available SigNoz Helm charts with their version and supported app version.
+```bash
+helm search repo signoz --versions
+```
+The output should look similar to the following:
+```output
+NAME               	CHART VERSION	APP VERSION	DESCRIPTION
+signoz/signoz      	0.0.6        	0.6.1      	SigNoz Observability Platform Helm Chart
+signoz/signoz      	0.0.5        	0.6.0      	SigNoz Observability Platform Helm Chart
+signoz/signoz      	0.0.4        	0.5.4      	SigNoz Observability Platform Helm Chart
+signoz/signoz      	0.0.3        	0.5.4      	SigNoz Observability Platform Helm Chart
+signoz/signoz      	0.0.2        	0.5.4      	SigNoz Observability Platform Helm Chart
+signoz/alertmanager	0.5.1        	0.5.0      	The Alertmanager handles alerts for SigNoz.
+signoz/alertmanager	0.5.0        	0.5.0      	The Alertmanager handles alerts for SigNoz.
+signoz/clickhouse  	9.1.0        	21.7       	A Helm chart for ClickHouse
+```
+
+2. Run the following command to install the chart version `0.0.4` running SigNoz version `0.5.4` with the release name `my-release` and namespace `platform`:
+```bash
+helm --namespace platform install my-release signoz/signoz --version 0.0.4
+```
+
+
+## Uninstall
+
+To uninstall/delete the `my-release` resources:
+
+```bash
+helm -n platform uninstall "my-release"
+```
+
+See the [Helm docs](https://helm.sh/docs/helm/helm_uninstall/) for documentation on the helm uninstall command.
+
+The command above removes all the Kubernetes components associated
+with the chart and deletes the release.
+
+Deletion of the StatefulSet doesn't cascade to deleting associated PVCs. To delete them:
+
+```bash
+kubectl -n platform delete pvc --selector app.kubernetes.io/instance=my-release
+```
+
+Sometimes everything doesn't get properly removed. If that happens try deleting the namespace:
+
+```bash
+kubectl delete namespace platform
+```
+
 ##  Increase the ClickHouse Persistent Volume Size on EKS/GKE
 
 

@@ -79,9 +79,10 @@ docker stack deploy -c docker-swarm/clickhouse-setup/docker-compose.yaml signoz
 docker stack services signoz
   ```
 
+Go to [Docker Swarm Operate](/docs/operate/docker-swarm) section for detailed instructions.
+
 ## Next Steps
 
 - [Instrument Your Application](/docs/instrumentation/overview)
 - [User Guides](/docs/userguide/overview/)
 - [Tutorials](/docs/tutorials/)
-- [Operate SigNoz on Docker Swarm](/docs/operate/docker-swarm)

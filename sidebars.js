@@ -53,6 +53,7 @@ module.exports = {
         slug: '/operate',
       },
       items: [
+        'operate/configuration',
         'operate/docker-standalone',
         'operate/docker-swarm',
         'operate/kubernetes'
