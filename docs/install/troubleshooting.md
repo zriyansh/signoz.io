@@ -63,12 +63,12 @@ kubectl -n app-namespace run troubleshoot --image=signoz/troubleshoot \
 ```
 
 _*Notes:_
-1. Replace `app-namespace` with your application namespace, `my-release` with SigNoz helm release name, and `platform` with SigNoz namespace.
-2. In case on multiple k8s cluster, you might have to set otel collector service type as `NodePort` or `LoadBalancer`.
-  ```
+  1. Replace `app-namespace` with your application namespace, `my-release` with SigNoz helm release name, and `platform` with SigNoz namespace.
+  2. In case on multiple k8s cluster, you might have to set otel collector service type as `NodePort` or `LoadBalancer`.
+```bash
 helm upgrade --install -n platform my-release signoz/signoz \
   --set otelCollector.serviceType="<NodePort or LoadBalancer>"
-  ```
+```
 
 ## Docker Standalone
 

@@ -42,9 +42,9 @@ If you're using a different Linux distribution, see the [Install SigNoz Using Do
 
 2. Run the `install.sh` script:
 
-  ```bash
+```bash
 ./install.sh
-  ```
+```
 
 ## Install SigNoz Using Docker Compose
 
@@ -81,12 +81,12 @@ Before you install Signoz, ensure that [Docker Compose](https://docs.docker.com/
 
 1. Ensure that your containers are running correctly. To view the status of your containers, run the following command:
 
-  ```bash
+```bash
 docker ps
-  ```
+```
   The output should look similar to the following:
 
-  ```output
+```output
 CONTAINER ID   IMAGE                                          COMMAND                  CREATED         STATUS                   PORTS                                                        NAMES
 130fee61f894   signoz/frontend:0.6.1                          "nginx -g 'daemon of…"   4 minutes ago   Up 4 minutes             80/tcp, 0.0.0.0:3301->3301/tcp, :::3301->3301/tcp            frontend
 7c957db328d3   signoz/otelcontribcol:0.5.0                    "/otelcontribcol --c…"   4 minutes ago   Up 4 minutes             4317/tcp, 55679-55680/tcp                                    clickhouse-setup_otel-collector-metrics_1
@@ -96,7 +96,7 @@ d1706dd5903e   grubykarol/locust:1.2.3-python3.9-alpine3.12   "/docker-entrypoin
 a5360a1d773f   signoz/alertmanager:0.5.0                      "/bin/alertmanager -…"   4 minutes ago   Up 4 minutes             9093/tcp                                                     clickhouse-setup_alertmanager_1
 874b01ec9d4d   yandex/clickhouse-server:21.12.3.32            "/entrypoint.sh"         4 minutes ago   Up 4 minutes (healthy)   8123/tcp, 9000/tcp, 9009/tcp                                 clickhouse-setup_clickhouse_1
 3694594501fa   jaegertracing/example-hotrod:1.30              "/go/bin/hotrod-linu…"   4 minutes ago   Up 4 minutes             8080-8083/tcp                                                hotrod
-  ```
+```
 
 2. Wait for all the pods to be in running state, and then point your browser to `http://<IP-ADDRESS>:3301/` to access the dashboard, replacing `<IP-ADDRESS>` with the IP address of the machine where you installed SigNoz.
 
@@ -124,15 +124,17 @@ The `docker-compose.yaml` installs a sample application named [HotR.O.D](https:/
 1. <CloneRepo />
 
 2. Checkout to the specific version tag. For example, to install SigNoz version `v0.5.4`:
-  ```
+```
 git checkout v0.5.4
-  ```
+```
 
 3. Run the `install.sh` script:
 
-  ```bash
+```bash
 ./install.sh
-  ```
+```
+
+Go to [Docker Standalone Operate](/docs/operate/docker-standalone) section for detailed instructions.
 
 ## Related Topics
 
