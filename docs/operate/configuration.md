@@ -22,7 +22,6 @@ Here is a comprehensive list of all of them. However, for general use, you most 
 | -------- | ----------- | ------------- |
 | `STORAGE` | Database for the storage (one of `clickhouse` or `druid`(deprecated) | `clickhouse` |
 | `GODEBUG` | Go runtime name resolver (one of `netdns=go` or `netdns=cgo`). [More info](https://pkg.go.dev/net#hdr-Name_Resolution). | `netdns=go` |
-| `TELEMETRY_ENABLED` | Enable telemetry events collection. | `true` |
 | `ALERTMANAGER_API_PREFIX` | Endpoint of alertmanager with API prefix. | `http://alertmanager:9093/api/` |
 | `ClickHouseUrl`| ClickHouse database endpoint with TCP port | `tcp://localhost:9000` |
 
@@ -46,8 +45,9 @@ Hence, you will find the configuration similarities of that of [Otel Collector](
 By default, SigNoz runs with [this default Otel Collector Metrics configuration](https://github.com/SigNoz/signoz/blob/main/deploy/docker/clickhouse-setup/otel-collector-metrics-config.yaml).
 For any configuration changes in **Docker**, you would have to update `/deploy/docker/clickhouse-setup/otel-collector-metrics-config.yaml` and bring up Otel Collector.
 
+<p>&nbsp;</p>
 
 ## Kubernetes Configuration
 
-The latest helm chart configuration settings can be found:
+The latest helm chart configuration settings can be found at:
 - https://github.com/signoz/charts/blob/main/charts/signoz/README.md#configuration
