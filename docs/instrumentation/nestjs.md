@@ -31,10 +31,10 @@ Let us see how to instrument your application with OpenTelemetry, so that you ca
 
 1. **Install below dependencies**
    ```jsx
-   npm install --save @opentelemetry/api
-   npm install --save @opentelemetry/sdk-node
-   npm install --save @opentelemetry/auto-instrumentations-node
-   npm install --save @opentelemetry/exporter-trace-otlp-proto@0.27.0
+    "@opentelemetry/api": "^1.0.4",
+    "@opentelemetry/auto-instrumentations-node": "^0.27.1",
+    "@opentelemetry/exporter-otlp-grpc": "^0.26.0",
+    "@opentelemetry/sdk-node": "^0.27.0",
    ```
 
 2. **Create a `tracer.ts` file**<br></br>
@@ -42,45 +42,35 @@ Let us see how to instrument your application with OpenTelemetry, so that you ca
    The `IP of SIgNoz` will be localhost if you are running SigNoz on local. If you are not running SigNoz on local machine, then please use the IP of the machine where SigNoz is installed.
    
    ```jsx
-   // tracing.ts
+// tracing.js
 
-   'use strict'
+'use strict'
 
-  const opentelemetry = require('@opentelemetry/sdk-node');
-  const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
-  const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-proto');
-  const { Resource } = require('@opentelemetry/resources');
-  const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
-
-  // configure the SDK to export telemetry data to the console
-  // enable all auto-instrumentations from the meta package
-  const exporterOptions = {
-  url: 'http://<IP of SigNoz>:4317/v1/trace',
-  }
-  const traceExporter = new OTLPTraceExporter(exporterOptions);
-  const sdk = new opentelemetry.NodeSDK({
-  resource: new Resource({
-    [SemanticResourceAttributes.SERVICE_NAME]: 'sampleNestJsApp'
-  }),
+const process = require('process');
+const opentelemetry = require('@opentelemetry/sdk-node');
+const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
+const { OTLPTraceExporter } = require('@opentelemetry/exporter-otlp-grpc');
+// configure the SDK to export telemetry data to the console
+// enable all auto-instrumentations from the meta package
+const traceExporter = new OTLPTraceExporter();
+const sdk = new opentelemetry.NodeSDK({
   traceExporter,
   instrumentations: [getNodeAutoInstrumentations()]
-  });
+});
 
-  // initialize the SDK and register with the OpenTelemetry API
-  // this enables the API to record telemetry
-  sdk.start()
+// initialize the SDK and register with the OpenTelemetry API
+// this enables the API to record telemetry
+sdk.start()
   .then(() => console.log('Tracing initialized'))
   .catch((error) => console.log('Error initializing tracing', error));
 
-  // gracefully shut down the SDK on process exit
-  process.on('SIGTERM', () => {
+// gracefully shut down the SDK on process exit
+process.on('SIGTERM', () => {
   sdk.shutdown()
     .then(() => console.log('Tracing terminated'))
     .catch((error) => console.log('Error terminating tracing', error))
     .finally(() => process.exit(0));
-  });
-
-  module.exports = sdk 
+});
   ```
 
 
