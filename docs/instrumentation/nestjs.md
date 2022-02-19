@@ -55,7 +55,7 @@ Let us see how to instrument your application with OpenTelemetry, so that you ca
   // configure the SDK to export telemetry data to the console
   // enable all auto-instrumentations from the meta package
   const exporterOptions = {
-  url: 'http://<IP of SigNoz>:55681/v1/trace',
+  url: 'http://<IP of SigNoz>:4317/v1/trace',
   }
   const traceExporter = new OTLPTraceExporter(exporterOptions);
   const sdk = new opentelemetry.NodeSDK({
