@@ -19,8 +19,8 @@ module.exports = {
     announcementBar: {
       id: "support_us", // Any value that will identify this message.
       content:
-        '⭐️ If you like SigNoz, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/SigNoz/signoz">GitHub</a>! ⭐️ ',
-      backgroundColor: "#ca4127", // #151515, #dddddd Defaults to `#fff`.
+        'We tweet about DevOps, DevTools and fun stuff. Let\'s be friends on <a target="_blank" rel="noopener noreferrer" href="https://bit.ly/3H7bXwd">Twitter</a> 🙋🏼‍♀️ ',
+      backgroundColor: "#CF2E09", // #151515, #dddddd Defaults to `#fff`.
       textColor: "#eeeeee", // Defaults to `#000`.
       isCloseable: false, // Defaults to `true`.
     },
