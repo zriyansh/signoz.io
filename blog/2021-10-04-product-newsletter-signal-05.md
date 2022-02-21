@@ -11,6 +11,10 @@ keywords:
  - SigNoz Product Update
  - Dev community
 ---
+
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+
+
 <head>
   <link rel="canonical" href="https://signoz.io/blog/community-update-05/"/>
 </head>
@@ -88,20 +92,11 @@ In our monthly community call, [Ankit Nayan](https://github.com/ankitnayan) gave
 
 You can find the full recordings of the call here 👇
 
+<p>&nbsp;</p>
 
-export const YoutubeWrapper = ({children, url}) => (
-  <div 
-    style={{
-    position: 'relative', 
-    width: '100%',
-    paddingBottom: '56.25%', 
-    height: "0",
-    }} >
-    <iframe width="560" height="315" style={{ position: 'absolute', top:'0', left: '0', width: '100%', height: '100%'}} src={ url } title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-);
+<LiteYoutubeEmbed id="fy1K5PifDDU" mute={false} />
 
-<YoutubeWrapper url="https://www.youtube.com/embed/fy1K5PifDDU"> </YoutubeWrapper>
+<p>&nbsp;</p>
 
 
 ### Features 📸
@@ -131,8 +126,11 @@ Here's a complete architecture and configuration guide on OpenTelemetry collecto
 ### Custom metrics monitoring with SigNoz
 Learn how to monitor custom metrics of your Nodejs application with OpenTelemetry and SigNoz 👇
 
+<p>&nbsp;</p>
 
-<YoutubeWrapper url="https://www.youtube.com/embed/7Ni78SajFLM"> </YoutubeWrapper>
+<LiteYoutubeEmbed id="7Ni78SajFLM" mute={false} />
+
+<p>&nbsp;</p>
 
 ---
 

@@ -11,6 +11,9 @@ keywords:
  - SigNoz Product Update
  - Dev community
 ---
+
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+
 <head>
   <link rel="canonical" href="https://signoz.io/blog/community-update-07/"/>
 </head>
@@ -72,19 +75,11 @@ In the current release, we support slack as a notification channel. We will be e
 
 Here's a quick video on how to set alerts and receive notifications on Slack channels:
 
-export const YoutubeWrapper = ({children, url}) => (
-  <div 
-    style={{
-    position: 'relative', 
-    width: '100%',
-    paddingBottom: '56.25%', 
-    height: "0",
-    }} >
-    <iframe width="560" height="315" style={{ position: 'absolute', top:'0', left: '0', width: '100%', height: '100%'}} src={ url } title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-);
+<p>&nbsp;</p>
 
-<YoutubeWrapper url="https://www.youtube.com/embed/HBLtC3UKpmA"> </YoutubeWrapper><br></br>
+<LiteYoutubeEmbed id="HBLtC3UKpmA" mute={false} />
+
+<p>&nbsp;</p>
 
 We would love to hear your feedback on alerts. Join our slack community to pass on any suggestions for improvement.
 

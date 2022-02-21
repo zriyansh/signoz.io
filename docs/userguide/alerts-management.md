@@ -3,6 +3,8 @@ id: alerts-management
 title: Alerts 
 ---
 
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+
 # Setting alerts in SigNoz  
 
 With [v0.5.0](https://github.com/SigNoz/signoz/releases/tag/v0.5.0) you can set alerts in SigNoz.
@@ -97,19 +99,10 @@ Now you can stay relaxed that SigNoz will promptly alert you whenever something 
 
 Whew! That was a lot of instruction to follow. If you instead prefer to see how it works in a demo environment, here you go 👇
 
+<p>&nbsp;</p>
 
-export const YoutubeWrapper = ({children, url}) => (
-  <div 
-    style={{
-    position: 'relative', 
-    width: '100%',
-    paddingBottom: '56.25%', 
-    height: "0",
-    }} >
-    <iframe width="560" height="315" style={{ position: 'absolute', top:'0', left: '0', width: '100%', height: '100%'}} src={ url } title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-);
+<LiteYoutubeEmbed id="HBLtC3UKpmA" mute={false} />
 
-<YoutubeWrapper url="https://www.youtube.com/embed/HBLtC3UKpmA"> </YoutubeWrapper><br></br>
+<p>&nbsp;</p>
 
 
