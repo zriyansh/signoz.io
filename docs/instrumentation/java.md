@@ -7,6 +7,7 @@ description: Send events from your Java application to SigNoz
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 
 <p align="center">
 
@@ -106,21 +107,9 @@ and `IP of SigNoz Backend` is the IP where SigNoz backend is accessible
 <p>&nbsp;</p>
 
 
-Here's a video on how to instrument Tomcat applications with SigNoz and a set by step [blog](https://signoz.io/opentelemetry/tomcat/).
+Here's a video on how to instrument Tomcat applications with SigNoz and a [blog](https://signoz.io/opentelemetry/tomcat/) with step by step instructions.
 
-export const YoutubeWrapper = ({children, url}) => (
-  <div 
-    style={{
-    position: 'relative', 
-    width: '100%',
-    paddingBottom: '56.25%', 
-    height: "0",
-    }} >
-    <iframe width="560" height="315" style={{ position: 'absolute', top:'0', left: '0', width: '100%', height: '100%'}} src={ url } title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-);
-
-<YoutubeWrapper url="https://www.youtube.com/embed/4obQilMqU4E"> </YoutubeWrapper><br></br>
+<LiteYoutubeEmbed id="4obQilMqU4E" mute={false} />
 
 <p>&nbsp;</p>
 
