@@ -7,17 +7,7 @@ description: Instructions that should resolve most installation issues
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-export const YoutubeWrapper = ({children, url}) => (
-  <div 
-    style={{
-    position: 'relative', 
-    width: '100%',
-    paddingBottom: '56.25%', 
-    height: "0",
-    }} >
-    <iframe width="560" height="315" style={{ position: 'absolute', top:'0', left: '0', width: '100%', height: '100%'}} src={ url } title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-);
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 
 
 <p align="center">
@@ -90,7 +80,8 @@ helm upgrade --install -n platform my-release signoz/signoz \
 Whew! That was a lot of instruction to follow. If you instead prefer to watch a video, here you go 👇
 
 
-<YoutubeWrapper url="https://www.youtube.com/embed/Y7OkvmuTRQ8"> </YoutubeWrapper><br></br>
+<LiteYoutubeEmbed id="Y7OkvmuTRQ8" mute={false} />
+
 
 <p>&nbsp;</p>
 
