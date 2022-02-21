@@ -3,21 +3,15 @@ id: prometheus-metrics
 title: Prometheus Metrics
 ---
 
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+
 Here's how you can visualise Prometheus metrics in SigNoz
 
-export const YoutubeWrapper = ({children, url}) => (
-  <div 
-    style={{
-    position: 'relative', 
-    width: '100%',
-    paddingBottom: '56.25%', 
-    height: "0",
-    }} >
-    <iframe width="560" height="315" style={{ position: 'absolute', top:'0', left: '0', width: '100%', height: '100%'}} src={ url } title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-);
+<p>&nbsp;</p>
 
-<YoutubeWrapper url="https://www.youtube.com/embed/QGJYNYzfM9o"> </YoutubeWrapper><br></br>
+<LiteYoutubeEmbed id="QGJYNYzfM9o" mute={false} />
+
+<p>&nbsp;</p>
 
 The [code section](https://github.com/SigNoz/signoz/blob/510815655fe6cc9ac3e86b62e218132d8dc47c51/deploy/docker/clickhouse-setup/otel-collector-metrics-config.yaml#L10) where you need to update prometheus scrape configs. 
 
