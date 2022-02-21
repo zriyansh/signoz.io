@@ -4,3 +4,4 @@
 /docs/deployment/docker_swarm   /docs/install/docker-swarm
 /docs/deployment/helm_chart     /docs/install/kubernetes
 /docs/deployment/troubleshooting    /docs/install/troubleshooting
+/docs/installation  /docs/install
