@@ -15,7 +15,7 @@ This section provides information on installing SigNoz on Docker Swarm.
 <!-- Double-check if this list is comprehensive about memory, disk space, etc. -->
 <!-- This section should focus on SigNoz, hence we could assume that Docker Swarm is already installed, similar to the Docker Standalone or Kubernetes sections. Not sure why we show to initialize a swarm or add more nodes here.  -->
 
-- A Linux or macOS machine.
+- A Linux or macOS machine. Microsoft Windows is not supported.
 - [Docker Engine](https://docs.docker.com/get-docker/). A minimum of 2GB of memory must be allocated to each Docker node.
 - [Docker Compose](https://docs.docker.com/compose/install/)
 - [Git client](https://desktop.github.com/)
