@@ -123,9 +123,9 @@ The `docker-compose.yaml` installs a sample application named [HotR.O.D](https:/
 
 1. <CloneRepo />
 
-2. Checkout to the specific version tag. For example, to install SigNoz version `v0.5.4`:
+2. Checkout to the specific version tag. For example, to install SigNoz version `v0.6.1`:
 ```
-git checkout v0.5.4
+git checkout v0.6.1
 ```
 
 3. Run the `install.sh` script:
