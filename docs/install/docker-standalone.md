@@ -115,9 +115,8 @@ You should see a page similar to the one in the image below:
 How is this helpful? I suggest we create something similar to the Kubernetes section. Do we have a blog post to which I could link out?
 -->
 :::info
-The `docker-compose.yaml` installs a sample application named [HotR.O.D](https://github.com/jaegertracing/jaeger/tree/master/examples/hotrod) that generates tracing data. You can explore the SigNoz dashboard with the data provided by the sample application.
+The `docker-compose.yaml` installs a sample application named [HotR.O.D](https://github.com/jaegertracing/jaeger/tree/master/examples/hotrod) that generates tracing data. You can explore the SigNoz dashboard with the data provided by the sample application. If you wish to remove the sample application, follow the steps in the [Remove the Sample Application](/docs/operate/docker-standalone/#remove-the-sample-application) section.
 :::
-
 
 ## Install specific version of SigNoz
 
