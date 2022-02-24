@@ -38,6 +38,26 @@ _*Note:_
 - Be careful! There might be configuration changes and version mismatch.
 - Before upgrading, checkout to the release tag: for example `git checkout v0.6.1` and compare the Docker Compose YAML and config files.
 
+
+## Remove the Sample Application
+
+Follow the steps in this section to remove the sample application that comes installed with SigNoz:
+
+1. From the directory in which you installed SigNoz, open your Docker Compose file in a plain-text editor. 
+     - **Linux users**: you must open the `deploy/docker/clickhouse-setup/docker-compose.yaml` file.
+     - **macOS users**: you must open the `deploy/docker/clickhouse-setup/docker-compose.arm.yaml` file.
+
+
+2. Comment out or remove the `services.hotrod` and `services.load-hotrod` sections:
+
+  ![Remove the sample application on Docker Standalone](/img/docker-standalone-remove-the-sample-application.png)
+
+3. Move into the `deploy` directory and run the `install.sh` script again:
+
+  ```bash
+  cd deploy && ./install.sh
+  ```
+
 ## Uninstall
 
 Enter the following command to uninstall SigNoz:
