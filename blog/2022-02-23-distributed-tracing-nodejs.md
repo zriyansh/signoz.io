@@ -126,8 +126,8 @@ Below are the steps to run the sample nodejs application with OpenTelemetry:
    We will be using a sample nodejs app at this [GitHub repo](https://github.com/SigNoz/distributed-tracing-nodejs-sample).
     
     ```jsx
-    git clone https://github.com/ganny26/opentelemetry-nodejs-distributed-tracing.git
-    cd opentelemetry-nodejs-distributed-tracing
+    git clone git@github.com:SigNoz/distributed-tracing-nodejs-sample.git
+    cd distributed-tracing-nodejs-sample
     ```
     
 
