@@ -29,7 +29,7 @@ If you're using a different Linux distribution, see the [Install SigNoz Using Do
 
 ## Prerequisites
 
-- A Linux or macOS machine.
+- A Linux or macOS machine. Microsoft Windows is not supported.
 - On macOS, you must manually install [Docker Engine](https://docs.docker.com/engine/install/) before you run the install script. The install script automatically installs Docker Engine on Linux.
 - A minimum of 2GB of memory must be allocated to Docker. <!-- Existing documentation is somehow unclear. Are there different memory requirements based on the operating system? -->
 - [Git client](https://desktop.github.com/)
