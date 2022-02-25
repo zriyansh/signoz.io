@@ -208,7 +208,7 @@ Below are the steps to run the sample nodejs application with OpenTelemetry:
    <Screenshot
    alt="Screenshot of terminal showing mircroservices running on different ports"
    height={500}
-   src="/img/blog/2022/02/nodejs_app_flow.webp"
+   src="/img/blog/2022/02/running_microservices.webp"
    title="Running microservices on different ports"
    width={700}
    />
