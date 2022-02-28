@@ -170,12 +170,12 @@ Below are the steps to run the sample nodejs application with OpenTelemetry:
    OTLP endpoint for SigNoz - `<IP of the machine>:4317`
    
    
-   If you have installed SigNoz on your local machine, then your endpoint is `127.0.0.0:4317`.
+   If you have installed SigNoz on your local machine, then your endpoint is `127.0.0.1:4317`.
    
    Ports are setup in the `.env` file as shown below:
    
    ```jsx
-   OTEL_EXPORTER_OTLP_ENDPOINT="127.0.0.0:4317"
+   OTEL_EXPORTER_OTLP_ENDPOINT="127.0.0.1:4317"
    ORDER_PORT=8082
    USERS_PORT=8081
    PAYMENT_PORT=8080
