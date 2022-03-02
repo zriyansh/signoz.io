@@ -117,6 +117,7 @@ Once installation is complete, run the below commands to create a database for o
 mysql> create database signoz;
 mysql> use signoz;
 ```
+If you have MySQL already installed and is configured with a password, you might need to update the password in the sample app [here](https://github.com/SigNoz/distributed-tracing-nodejs-sample/blob/d34e63d3bf6c996c020a58a05d84a39132934e5d/src/model/index.ts#L6).
 
 ### Running sample application
 
@@ -132,10 +133,12 @@ Below are the steps to run the sample nodejs application with OpenTelemetry:
     
 
 2. **Install the required dependencies**<br></br>
-   You can check out the depencies required from `package.json` file. Install all the required dependencies for the sample application using `npm`
+   You can check out the depencies required from `package.json` file. Install all the required dependencies for the sample application using `npm`. Also, install typescript and ts-node-dev globally.
    
    ```jsx
    npm install
+   npm install -g typescript
+   npm install -g ts-node-dev
    ```
    
    OpenTelemetry needs the following packages to instrument the nodejs app.
@@ -150,6 +153,8 @@ Below are the steps to run the sample nodejs application with OpenTelemetry:
    "@opentelemetry/sdk-trace-node": "^1.0.1",
    "@opentelemetry/semantic-conventions": "^0.24.0",
    ```
+
+
     
 
 3. **`tracer.ts` file**<br></br>
@@ -168,42 +173,55 @@ Below are the steps to run the sample nodejs application with OpenTelemetry:
    To set up OpenTelemetry to collect and export telemetry data, you need to specify OTLP (OpenTelemetry Protocol) endpoint. It consists of the IP of the machine where SigNoz is installed and the port number at which SigNoz listens.
    
    OTLP endpoint for SigNoz - `<IP of the machine>:4317`
+
+   Here's the code to run a microservice along with the environment variables needed for OpenTelemetry and SigNoz:
+
+   ```jsx
+   OTEL_EXPORTER_OTLP_ENDPOINT=<IP of the machine>:4317 \
+   OTEL_RESOURCE_ATTRIBUTES=service.name=UserService \
+   ts-node-dev -r ./src/tracer.ts ./src/user-service.ts
+   ```
    
    
    If you have installed SigNoz on your local machine, then your endpoint is `127.0.0.1:4317`.
+
+   If you have installed SigNoz on some domain, then your endpoint is `https://test.com:4317`
    
-   Ports are setup in the `.env` file as shown below:
-   
-   ```jsx
-   OTEL_EXPORTER_OTLP_ENDPOINT="127.0.0.1:4317"
-   ORDER_PORT=8082
-   USERS_PORT=8081
-   PAYMENT_PORT=8080
-   ```
-   
-   You can check the [file](https://github.com/SigNoz/distributed-tracing-nodejs-sample/blob/main/.env) in the cloned repo.
     
 3. **Run the microservices**<br></br>
-   From the root folder of your application on your terminal, run each microservice. Run `users` service:
+   From the root folder of your application on your terminal, run each microservice. As we have installed SigNoz on the local host, we will be using its ip.  Run `users` service:
    
    ```jsx
-   npm run users
+   OTEL_EXPORTER_OTLP_ENDPOINT=127.0.0.1:4317 \
+   OTEL_RESOURCE_ATTRIBUTES=service.name=UserService \
+   ts-node-dev -r ./src/tracer.ts ./src/user-service.ts
    ```
    
    Open a new tab of your terminal, and run `payment` service:
    
    ```jsx
-   npm run payment
+   OTEL_EXPORTER_OTLP_ENDPOINT=127.0.0.1:4317 \
+   OTEL_RESOURCE_ATTRIBUTES=service.name=PaymentService \
+   ts-node-dev -r ./src/tracer.ts ./src/payment-service.ts
    ```
    
    Open a new tab of your terminal, and run `orders` service:
    
    ```jsx
-   npm run orders
+   OTEL_EXPORTER_OTLP_ENDPOINT=127.0.0.1:4317 \
+   OTEL_RESOURCE_ATTRIBUTES=service.name=OrderService \
+   ts-node-dev -r ./src/tracer.ts ./src/order-service.ts
    ```
    
    Ensure that the microservices are running on different ports. As earlier mentioned, you can set ports using the
-   `.env` file.
+   `.env` file. Your microservices ports are setup in the `.env` file as shown below:
+   
+   ```jsx
+   ORDER_PORT=8082
+   USERS_PORT=8081
+   PAYMENT_PORT=8080
+   ```
+   You can check the [file](https://github.com/SigNoz/distributed-tracing-nodejs-sample/blob/main/.env) in the cloned repo.
 
    <Screenshot
    alt="Screenshot of terminal showing mircroservices running on different ports"
