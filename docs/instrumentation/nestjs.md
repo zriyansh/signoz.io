@@ -48,8 +48,6 @@ Let us see how to instrument your application with OpenTelemetry, so that you ca
       const opentelemetry = require('@opentelemetry/sdk-node');
       const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
       const { OTLPTraceExporter } = require('@opentelemetry/exporter-otlp-grpc');
-
-
       const { Resource } = require('@opentelemetry/resources');
       const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
 
@@ -80,10 +78,7 @@ Let us see how to instrument your application with OpenTelemetry, so that you ca
       });
 
       module.exports = sdk
-
-
   ```
-
 
 3. **Import the tracer module where your app starts**<br></br>
 

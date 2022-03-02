@@ -82,29 +82,31 @@ npm install --save @opentelemetry/exporter-trace-otlp-proto@0.27.0
 
 <br></br>
 
-2. **Create a `tracer.ts` file**<br></br>
+2. **Create a `tracer.ts` file**
+<br></br>
+
 The `IP of SIgNoz` will be localhost if you are running SigNoz on local.
    
 ```jsx
-// tracing.ts
-
 'use strict'
 
 const opentelemetry = require('@opentelemetry/sdk-node');
 const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
-const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-proto');
+const { OTLPTraceExporter } = require('@opentelemetry/exporter-otlp-grpc');
+
+
 const { Resource } = require('@opentelemetry/resources');
 const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
 
 // configure the SDK to export telemetry data to the console
 // enable all auto-instrumentations from the meta package
 const exporterOptions = {
-  url: 'http://<IP of SigNoz>:4317/v1/trace',
+  url: 'http://localhost:4317',
  }
 const traceExporter = new OTLPTraceExporter(exporterOptions);
 const sdk = new opentelemetry.NodeSDK({
   resource: new Resource({
-    [SemanticResourceAttributes.SERVICE_NAME]: 'sampleNestJsApp'
+    [SemanticResourceAttributes.SERVICE_NAME]: 'sampleNestJsApp-local'
   }),
   traceExporter,
   instrumentations: [getNodeAutoInstrumentations()]
@@ -124,7 +126,7 @@ process.on('SIGTERM', () => {
     .finally(() => process.exit(0));
 });
 
-module.exports = sdk 
+module.exports = sdk
 ```
 
 <br></br>
