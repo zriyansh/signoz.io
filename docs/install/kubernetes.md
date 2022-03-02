@@ -20,17 +20,15 @@ The SigNoz Helm chart will install the following components into your Kubernetes
 <!-- TODO: Flesh out the Architecture section and link out to it.-->
 ## Prerequisites
 
-<!-- Need a comprehensive list of requirements. Example:
-- TBC worker nodes
-- TBC CPU cores
-- TBC GB of memory
-- A minimum of TBC disk with 100 GB, ideally 2 disks on each node with at least 100 GB each
-- Kubernetes version TBC
--->
-
 - You must have a Kubernetes cluster.
 - You must have `kubectl` access to your cluster.
+- The following table describes the hardware requirements that are needed to install SigNoz on Kubernetes:
 
+  | Component   | Minimal Requirements | Recommended |
+  | ----------- | ---------------------| ----------- |
+  | Memory      | 4 GB                 | 16 GB       |
+  | CPU         | 2 cores              | 4 cores     |
+  | Storage     | 10 GB                | 50 GB       |
 
 ## Install SigNoz on Kubernetes with Helm
 
