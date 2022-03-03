@@ -1,7 +1,7 @@
 ---
 id: metrics
-title: Metrics
-sidebar_label: Metrics
+title: View Metrics
+sidebar_label: View Metrics
 ---
 
 import GetHelp from '../shared/get-help.md'

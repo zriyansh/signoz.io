@@ -1,7 +1,7 @@
 ---
 id: traces
-title: Traces
-sidebar_label: Traces
+title: View Traces
+sidebar_label: View Traces
 ---
 
 import GetHelp from '../shared/get-help.md'

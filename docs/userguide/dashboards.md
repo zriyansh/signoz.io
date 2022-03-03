@@ -1,7 +1,7 @@
 ---
 id: dashboards
-title: Dashboards
-sidebar_label: Dashboards
+title: Manage Dashboards and Graphs
+sidebar_label: Manage Dashboards and Graphs
 ---
 
 import GetHelp from '../shared/get-help.md'
