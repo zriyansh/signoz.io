@@ -30,7 +30,7 @@ A dashboard is a set of one or more graphs. In the **Dashboard** section, you ca
 
 The following example screenshot shows a dashboard named **CPU Load** containing two graphs - **Load Average** and **Total CPU Time**:
 
-![CPU Load Dashboard](/img/cpu-load-v0.6.2.png)
+![CPU Load Dashboard](/img/CPU-Load-v0.6.2.png)
 
 ### Predefined and Custom Graphs
 
