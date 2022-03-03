@@ -185,7 +185,7 @@ Below are the steps to run the sample nodejs application with OpenTelemetry:
    
    If you have installed SigNoz on your local machine, then your endpoint is `127.0.0.1:4317`.
 
-   If you have installed SigNoz on some domain, then your endpoint is `https://test.com:4317`
+   If you have installed SigNoz on some domain, then your endpoint is `http://test.com:4317`
    
     
 3. **Run the microservices**<br></br>
@@ -313,6 +313,35 @@ Now go to SigNoz dashboard, you will notice the list of service names that we co
 
 
 You can play around with the dashboard to see what data is captured. Below is a handy guide on how to use the SigNoz dashboard to see the captured data.
+
+### Capturing MySQL traces
+To view MySQL traces add below opentelemetry package:
+
+```jsx
+npm install @opentelemetry/instrumentation-mysql2
+```
+
+Now, make the following changes in your `tracer.ts` file:
+
+```jsx
+const { MySQL2Instrumentation } = require('@opentelemetry/instrumentation-mysql2')
+
+.....
+const sdk = new opentelemetry.NodeSDK({
+    traceExporter,
+    instrumentations: [
+			getNodeAutoInstrumentations(), 
+      new MySQL2Instrumentation()
+	 ],
+    resource: new Resource({
+      [SemanticResourceAttributes.SERVICE_NAME]: serviceName,
+    }),
+  })
+.....
+```
+
+Restart the microservices, and generate new usage data in order to see traces related to MySQL events.
+
 
 ## How to use SigNoz dashboard to analyze traces
 
