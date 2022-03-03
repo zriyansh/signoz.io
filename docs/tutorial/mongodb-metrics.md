@@ -62,7 +62,7 @@ sudo docker ps
 
 [Good guide on metrics you may want to monitor](https://www.mongodb.com/basics/how-to-monitor-mongodb-and-what-metrics-to-monitor)
 
-Create new panels in [Dashboard section](/docs/userguide/metrics-dashboard/) of SigNoz and add the following queries for example. 
+Create new panels in [Dashboard section](/docs/userguide/dashboards/) of SigNoz and add the following queries for example. 
 
 ```java
 PromQL query - mongodb_ss_connections
