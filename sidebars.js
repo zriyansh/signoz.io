@@ -61,16 +61,18 @@ module.exports = {
       ],
     },
     {
-      label: "User Guides",
+      label: "Use SigNoz",
       type: "category",
       items: [
         'userguide/overview',
-        'userguide/metrics-dashboard',
-        'userguide/prometheus-metrics',
+        'userguide/send-metrics',
+        'userguide/navigate-user-interface',
+        'userguide/metrics',
+        'userguide/traces',
+        'userguide/dashboards',
         'userguide/alerts-management',
         'userguide/retention-period',
         'userguide/service-map',
-        'userguide/trace-details',
       ],
     },
     {
