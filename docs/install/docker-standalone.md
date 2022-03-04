@@ -41,10 +41,9 @@ If you're using a different Linux distribution, see the [Install SigNoz Using Do
 1. <CloneRepo />
 
 2. Run the `install.sh` script:
-
-```bash
-./install.sh
-```
+   ```bash
+   ./install.sh
+   ```
 
 ## Install SigNoz Using Docker Compose
 
