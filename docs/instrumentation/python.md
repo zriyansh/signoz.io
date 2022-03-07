@@ -149,7 +149,7 @@ Check this [documentation](https://opentelemetry-python.readthedocs.io/en/latest
   
 <p>&nbsp;</p>
 
-::: note
+:::note
 
 `psycopg2-binary` is not supported by opentelemetry auto instrumentation libraries as it is not recommended for production use. Please use `psycopg2` to see DB calls also in your trace data in SigNoz
 
