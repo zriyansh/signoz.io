@@ -73,15 +73,9 @@ Sometimes everything doesn't get properly removed. If that happens try deleting 
 kubectl delete namespace platform
 ```
 
-## Stop Load Generation using Sample Application
-
-```bash
-kubectl -n sample-application run strzal --image=djbingham/curl \
-  --restart='OnFailure' -i --tty --rm --command -- curl \
-  http://locust-master:8089/stop
-```
-
 ## Remove the Sample Application
+
+Use the command below to remove the sample application:
 
 ```bash
 curl -sL https://github.com/SigNoz/signoz/raw/main/sample-apps/hotrod/hotrod-delete.sh \
