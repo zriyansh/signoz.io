@@ -13,30 +13,75 @@ Once you have successfully installed SigNoz on Docker Standalone, the following 
 
 To stop the running SigNoz cluster:
 
-```bash
-sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
-```
+<Tabs
+  defaultValue="x86"
+  values={[
+    {label: 'x86', value: 'x86'},
+    {label: 'Apple M1', value: 'arm64'},
+  ]}>
+  <TabItem value="x86">
+
+    sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
+
+  </TabItem>
+  <TabItem value="arm64">
+
+    sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml stop
+
+  </TabItem>
+</Tabs>
 
 To start/resume the running SigNoz cluster:
 
-```bash
-sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up
-```
+<Tabs
+    defaultValue="x86"
+    values={[
+      {label: 'x86', value: 'x86'},
+      {label: 'Apple M1', value: 'arm64'},
+    ]}>
+  <TabItem value="x86">
 
-_*Note: The stopped SigNoz cluster should resume and mount volumes to the existing local path._
+    sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up
+
+  </TabItem>
+  <TabItem value="arm64">
+
+    sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml up
+
+  </TabItem>
+</Tabs>
+
+_*Note: The stopped SigNoz cluster should resume and mount to the existing docker volumes._
 
 ## Upgrade
 
 To upgrade, you can manually update the image tag for `query-service`, `frontend` and `otel-collector`.
 And run the command to start the cluster:
 
-```bash
-sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up
-```
+<Tabs
+  defaultValue="x86"
+  values={[
+    {label: 'x86', value: 'x86'},
+    {label: 'Apple M1', value: 'arm64'},
+  ]}>
+  <TabItem value="x86">
+
+      sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up -d
+    
+  </TabItem>
+
+  <TabItem value="arm64">
+
+      sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml up -d
+
+  </TabItem>
+</Tabs>
+
 
 _*Note:_
 - Be careful! There might be configuration changes and version mismatch.
-- Before upgrading, checkout to the release tag: for example `git checkout v0.6.1` and compare the Docker Compose YAML and config files.
+- Before upgrading, checkout to the release tag: for example `git checkout v0.6.1`
+and compare the Docker Compose YAML and config files.
 
 
 ## Remove the Sample Application
@@ -73,14 +118,9 @@ Enter the following command to uninstall SigNoz:
     sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml down -v
 
   </TabItem>
-
   <TabItem value="arm64">
 
     sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml down -v
-  
+
   </TabItem>
-
 </Tabs>
-
-
-
