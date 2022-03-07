@@ -48,7 +48,6 @@ signoz/clickhouse  	9.1.0        	21.7       	A Helm chart for ClickHouse
 helm --namespace platform install my-release signoz/signoz --version 0.0.4
 ```
 
-
 ## Uninstall
 
 To uninstall/delete the `my-release` resources:
@@ -74,8 +73,16 @@ Sometimes everything doesn't get properly removed. If that happens try deleting 
 kubectl delete namespace platform
 ```
 
-##  Increase the ClickHouse Persistent Volume Size on EKS/GKE
+## Remove the Sample Application
 
+Use the command below to remove the sample application:
+
+```bash
+curl -sL https://github.com/SigNoz/signoz/raw/main/sample-apps/hotrod/hotrod-delete.sh \
+  | HOTROD_NAMESPACE=sample-application bash
+```
+
+##  Increase the ClickHouse Persistent Volume Size on EKS/GKE
 
 You can use the following `helm upgrade` command to increase the size of the persistent volume used by SigNoz on EKS/GKE, replacing the following values to match your environment:
 
