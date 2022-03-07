@@ -57,7 +57,15 @@ _*Notes: SigNoz Otel Collector should be accessible in `172.17.0.1:4317` from yo
 
 #### Kubernetes
 
-You can also spin up a pod in Kubernetes with same namespace as your application:
+Let's spin up a pod in Kubernetes with `platform` namespace to check if `otel collector` is running properly:
+
+```bash
+kubectl -n platform run troubleshoot --image=signoz/troubleshoot \
+  --restart='OnFailure' -i --tty --rm --command -- ./troubleshoot checkEndpoint \
+  --endpoint=my-release-signoz-otel-collector.platform.svc.cluster.local:4317
+```
+
+You can also spin up a pod in Kubernetes with same namespace as your application to check if `otel collector` is accessible:
 
 ```bash
 kubectl -n app-namespace run troubleshoot --image=signoz/troubleshoot \
@@ -68,6 +76,7 @@ kubectl -n app-namespace run troubleshoot --image=signoz/troubleshoot \
 _*Notes:_
   1. Replace `app-namespace` with your application namespace, `my-release` with SigNoz helm release name, and `platform` with SigNoz namespace.
   2. In case on multiple k8s cluster, you might have to set otel collector service type as `NodePort` or `LoadBalancer`.
+
 ```bash
 helm upgrade --install -n platform my-release signoz/signoz \
   --set otelCollector.serviceType="<NodePort or LoadBalancer>"
