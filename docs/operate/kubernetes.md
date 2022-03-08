@@ -4,6 +4,9 @@ title: Kubernetes
 description: Learn how to operate SigNoz on Kubernetes.
 ---
 
+import UpgradeInfo from '../shared/helm-upgrade-info.md'
+import UpgradeWarning from '../shared/upgrade-warning.md'
+
 Once you have successfully installed SigNoz on Kubernetes, the following sections provide an overview of the activities that are required to successfully operate SigNoz.
 
 ## Stop/Start
@@ -22,31 +25,47 @@ helm -n platform install "my-release"
 
 _*Note: The newly created release aka SigNoz cluster should mount to the existing persistent volume as long as the *namespace* and the *release name* matches to the old one._
 
-## Upgrade/Downgrade
+## Upgrade
 
-Here are the instructions to upgrade/downgrade the SigNoz cluster:
+Use the steps below to upgrade to the latest:
+
+1. Fetch the latest chart information from the Helm repositories
+```bash
+helm repo update
+```
+
+2. Upgrade to the latest available version of the chart
+```bash
+helm -n platform upgrade my-release signoz/signoz
+```
+
+<UpgradeInfo/>
+
+In case you wish to upgrade the SigNoz cluster to a specific version, follow the steps below:
 
 1. List the available SigNoz Helm charts with their version and supported app version.
 ```bash
 helm search repo signoz --versions
 ```
+
 The output should look similar to the following:
 ```output
 NAME               	CHART VERSION	APP VERSION	DESCRIPTION
+signoz/signoz      	0.0.9        	0.7.1      	SigNoz Observability Platform Helm Chart
+signoz/signoz      	0.0.8        	0.6.2      	SigNoz Observability Platform Helm Chart
+signoz/signoz      	0.0.7        	0.6.1      	SigNoz Observability Platform Helm Chart
 signoz/signoz      	0.0.6        	0.6.1      	SigNoz Observability Platform Helm Chart
-signoz/signoz      	0.0.5        	0.6.0      	SigNoz Observability Platform Helm Chart
-signoz/signoz      	0.0.4        	0.5.4      	SigNoz Observability Platform Helm Chart
-signoz/signoz      	0.0.3        	0.5.4      	SigNoz Observability Platform Helm Chart
-signoz/signoz      	0.0.2        	0.5.4      	SigNoz Observability Platform Helm Chart
-signoz/alertmanager	0.5.1        	0.5.0      	The Alertmanager handles alerts for SigNoz.
-signoz/alertmanager	0.5.0        	0.5.0      	The Alertmanager handles alerts for SigNoz.
-signoz/clickhouse  	9.1.0        	21.7       	A Helm chart for ClickHouse
+signoz/alertmanager	0.5.2        	0.5.0      	The Alertmanager handles alerts for SigNoz.
+signoz/clickhouse  	16.0.2       	21.12.3.32 	A Helm chart for ClickHouse
 ```
 
-2. Run the following command to install the chart version `0.0.4` running SigNoz version `0.5.4` with the release name `my-release` and namespace `platform`:
+2. Run the following command to install the chart version `0.0.8` running SigNoz version `0.6.2` with the release name `my-release` and namespace `platform`:
+
 ```bash
-helm --namespace platform install my-release signoz/signoz --version 0.0.4
+helm -n platform upgrade my-release signoz/signoz --version 0.0.8
 ```
+
+<UpgradeWarning/>
 
 ## Uninstall
 
@@ -92,9 +111,8 @@ You can use the following `helm upgrade` command to increase the size of the per
 - The new size of the persistent volume (this example uses `25Gi`)
 
 ```bash
-helm -n platform upgrade my-release signoz/signoz --set clickhouseOperator.storage=25Gi
+helm -n platform upgrade my-release signoz/signoz \
+  --set clickhouseOperator.storage=25Gi
 ```
 
-:::info
-To override values in a Helm chart, you can also use the `values`/`-f` flag. See the [Helm Upgrade](https://helm.sh/docs/helm/helm_upgrade/) page of the Helm documentation for more details.
-:::
+<UpgradeInfo/>
