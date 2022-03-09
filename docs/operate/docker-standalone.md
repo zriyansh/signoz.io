@@ -7,6 +7,8 @@ description: Learn how to operate SigNoz on Docker Standalone
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import UpgradeWarning from '../shared/upgrade-warning.md'
+
 Once you have successfully installed SigNoz on Docker Standalone, the following sections provide an overview of the activities that are required to successfully operate SigNoz.
 
 ## Stop/Start
@@ -55,53 +57,36 @@ _*Note: The stopped SigNoz cluster should resume and mount to the existing docke
 
 ## Upgrade
 
-To upgrade, you can manually update the image tag for `query-service`, `frontend` and `otel-collector`.
-And run the command to start the cluster:
+Use the commands below to sync to the [latest](https://github.com/SigNoz/signoz/releases/latest) release.
 
-<Tabs
-  defaultValue="x86"
-  values={[
-    {label: 'x86', value: 'x86'},
-    {label: 'Apple M1', value: 'arm64'},
-  ]}>
-  <TabItem value="x86">
+1. Checkout to `main` branch:
+```bash
+git checkout main
+```
 
-      sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up -d
-    
-  </TabItem>
+2. Pull the `latest` changes from the [SigNoz GitHub repository](https://github.com/SigNoz/signoz):
+```bash
+git pull origin main
+```
 
-  <TabItem value="arm64">
+3. Go to `deploy` folder and run the `install.sh` script:
+```bash
+cd deploy && ./install.sh
+```
 
-      sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml up -d
+In case you wish to upgrade the SigNoz cluster to a specific version, let's say `v0.6.2`, follow the steps below:
 
-  </TabItem>
-</Tabs>
+1. Checkout to the [v0.6.2](https://github.com/SigNoz/signoz/releases/tag/v0.6.2) tag:
+```bash
+git checkout v0.6.2
+```
 
+2. Go to `deploy` folder and run the `install.sh` script:
+```bash
+cd deploy && ./install.sh
+```
 
-_*Note:_
-- Be careful! There might be configuration changes and version mismatch.
-- Before upgrading, checkout to the release tag: for example `git checkout v0.6.1`
-and compare the Docker Compose YAML and config files.
-
-
-## Remove the Sample Application
-
-Follow the steps in this section to remove the sample application that comes installed with SigNoz:
-
-1. From the directory in which you installed SigNoz, open your Docker Compose file in a plain-text editor. 
-     - **Linux users**: you must open the `deploy/docker/clickhouse-setup/docker-compose.yaml` file.
-     - **macOS users**: you must open the `deploy/docker/clickhouse-setup/docker-compose.arm.yaml` file.
-
-
-2. Comment out or remove the `services.hotrod` and `services.load-hotrod` sections:
-
-  ![Remove the sample application on Docker Standalone](/img/docker-standalone-remove-the-sample-application.png)
-
-3. Move into the `deploy` directory and run the `install.sh` script again:
-
-  ```bash
-  cd deploy && ./install.sh
-  ```
+<UpgradeWarning/>
 
 ## Uninstall
 
@@ -124,3 +109,22 @@ Enter the following command to uninstall SigNoz:
 
   </TabItem>
 </Tabs>
+
+## Remove the Sample Application
+
+Follow the steps in this section to remove the sample application that comes installed with SigNoz:
+
+1. From the directory in which you installed SigNoz, open your Docker Compose file in a plain-text editor. 
+     - **Linux users**: you must open the `deploy/docker/clickhouse-setup/docker-compose.yaml` file.
+     - **macOS users**: you must open the `deploy/docker/clickhouse-setup/docker-compose.arm.yaml` file.
+
+
+2. Comment out or remove the `services.hotrod` and `services.load-hotrod` sections:
+
+  ![Remove the sample application on Docker Standalone](/img/docker-standalone-remove-the-sample-application.png)
+
+3. Move into the `deploy` directory and run the `install.sh` script again:
+
+```bash
+cd deploy && ./install.sh
+```
