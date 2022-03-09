@@ -53,11 +53,15 @@ We are looking for developers who can create content around these topics:
 
 - **Observability**. The new buzz in the town, or quite old already? We will love to have both beginner and experienced perspectives on this.
 
-- Anything and everything that relates to monitoring applications or improving application performance. A few examples of articles can be
+Here's the [list](https://signoz.notion.site/SigNoz-Blog-Topics-5f49ef00b94b484eb010d07375521325) of topics which you can take up for the SigNoz blog. But it's not limited to this. We're open to your creative ideas, so feel free to apply.
+
+<!-- - Anything and everything that relates to monitoring applications or improving application performance. A few examples of articles can be
     - <a href = "https://medium.com/ivymobility-developers/understanding-high-availability-how-to-achieve-it-11a045584f29" rel="noopener noreferrer nofollow" target="_blank" >Understanding High Availability & How to achieve it?</a>
     - <a href = "https://www.digitalocean.com/community/tutorials/an-introduction-to-metrics-monitoring-and-alerting" rel="noopener noreferrer nofollow" target="_blank" >Introduction to metrics, monitoring, and alerting</a>
     - <a href = "https://medium.com/skyshidigital/6-tricks-to-speed-up-and-improve-your-node-js-performance-fadc06d15cbe" rel="noopener noreferrer nofollow" target="_blank" >Tips to improve your nodejs performance</a>
-    - <a href = "https://expressjs.com/en/advanced/best-practice-performance.html" rel="noopener noreferrer nofollow" target="_blank" >Performance Best Practices Using Express in Production</a>
+    - <a href = "https://expressjs.com/en/advanced/best-practice-performance.html" rel="noopener noreferrer nofollow" target="_blank" >Performance Best Practices Using Express in Production</a> -->
+
+
 
 <div align="center">
 <a href = "https://forms.gle/CXG3YUEaYXAjrmn6A">
@@ -65,7 +69,7 @@ We are looking for developers who can create content around these topics:
        height = "124" width = "750"/> </a>
 </div>
 
-If you’re wondering why do this, then let us convince you.
+You can also just reach out directly to ankit.anand@signoz.io with an introduction and few samples of your work. If you’re wondering why do this, then let us convince you.
 
 ## Why write technical content for us?
 
