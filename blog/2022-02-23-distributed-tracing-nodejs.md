@@ -1,5 +1,5 @@
 ---
-title: Implementing distributed tracing in a nodejs application
+title: Implementing Distributed Tracing in a Java application
 slug: distributed-tracing-nodejs
 date: 2022-02-23
 tags: [distributed-tracing, javascript-monitoring]
@@ -440,7 +440,7 @@ The traces tab of SigNoz dashboard provides powerful filters to analyze the trac
 
 Distributed tracing is a powerful and critical toolkit for developers creating applications based on microservices architecture. For nodejs applications based on microservices architecture, distributed tracing can enable a central overview of how requests are performing across services which is needed for quick debugging.
 
-OpenTelemetry and SigNoz provides a great open-source solution to implement distributed tracing for your applications. You can check out SigNoz by visiting its GitHub repo 👇
+OpenTelemetry and SigNoz provide a great open-source combo to implement distributed tracing for your nodejs applications. You can check out SigNoz by visiting its GitHub repo 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 

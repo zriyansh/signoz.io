@@ -1,7 +1,7 @@
 ---
 title: Monitor your Spring Boot application with OpenTelemetry and SigNoz
 slug: opentelemetry-spring-boot
-date: 2021-10-06
+date: 2022-03-06
 tags: [application-monitoring, java-monitoring]
 authors: ankit_anand
 description: End-to-end performance monitoring of Spring Boot application with OpenTelemetry. Get your telemetry data visualized with SigNoz.
@@ -20,13 +20,15 @@ import { LiteYoutubeEmbed } from "react-lite-yt-embed";
   <link rel="canonical" href="https://signoz.io/blog/opentelemetry-spring-boot/"/>
 </head>
 
-OpenTelemetry can auto-instrument your Spring Boot application to capture telemetry data from a number of popular libraries and frameworks. Let's learn how it works.
+OpenTelemetry can auto-instrument your Java Spring Boot application to capture telemetry data from a number of popular libraries and frameworks that your application might be using. Let's learn how it works.
 
 <!--truncate-->
 
 ![Cover Image](/img/blog/2021/08/opentelemetry_springboot_hc-min.webp)
 
 OpenTelemetry is a vendor-agnostic instrumentation library. In this article, let's explore how you can auto-instrument your Java Spring Boot application with OpenTelemetry and get the data reported through SigNoz - an open-source APM and observability tool.
+
+Auto-instrumentation is a process by which you can capture telemetry data from your application without making any code changes. OpenTelemetry provides a Java Jar agent which can auto-instrument a lot of popular libraries. 
 
 Steps to get started with OpenTelemetry for Spring Boot application:
 
@@ -36,7 +38,33 @@ Steps to get started with OpenTelemetry for Spring Boot application:
 
 ## Installing SigNoz
 
-You can get started with SigNoz using just three commands at your terminal.
+SigNoz can be installed on macOS or Linux computers in just three steps by using a simple install script.
+
+The install script automatically installs Docker Engine on Linux. However, on macOS, you must manually install [Docker Engine](https://docs.docker.com/engine/install/) before running the install script.
+
+```jsx
+git clone -b main https://github.com/SigNoz/signoz.git
+cd signoz/deploy/
+./install.sh
+```
+
+You can visit our documentation for instructions on how to install SigNoz using Docker Swarm and Helm Charts.
+
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/install/docker/?utm_source=blog&utm_medium=distributed_tracing_nodejs)
+
+When you are done installing SigNoz, you can access the UI at [http://localhost:3301](http://localhost:3301/application)
+
+import Screenshot from "@theme/Screenshot"
+
+<Screenshot
+   alt="SigNoz dashboard"
+   height={500}
+   src="/img/blog/2022/02/signoz_dashboard.webp"
+   title="SigNoz dashboard - It shows services from a sample app that comes bundled with the application"
+   width={700}
+/>
+
+<!-- You can get started with SigNoz using just three commands at your terminal.
 
 ```jsx
 git clone -b main https://github.com/SigNoz/signoz.git
@@ -51,17 +79,7 @@ For detailed instructions, you can visit our documentation.
 
 When you are done installing SigNoz, you can access the UI at: [http://localhost:3301](http://localhost:3301/application)
 
-The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
-
-import Screenshot from "@theme/Screenshot"
-
-<Screenshot
-   alt="SigNoz dashboard showing application list"
-   height={500}
-   src="/img/blog/2021/08/signoz_dashboard_hc.webp"
-   title="SigNoz Dashboard"
-   width={700}
-/>
+The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package. -->
 
 ## Installing sample Spring Boot app
 
