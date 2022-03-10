@@ -1,7 +1,7 @@
 ---
 title: Everything you need to know about OpenTelemetry Java agent
 slug: java-agent
-date: 2021-08-16
+date: 2022-03-10
 tags: [java-monitoring]
 author: Ankit Anand
 author_title: SigNoz Team
