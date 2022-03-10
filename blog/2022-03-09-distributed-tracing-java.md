@@ -231,39 +231,41 @@ Below are the steps to run the sample Java application with OpenTelemetry:
     cd scripts
     sh ./start.sh # Run user-service with OTEL java agent
     ```
-<Screenshot
+
+   Open a new tab of your terminal, and run `payment-service`:
+   
+   ```java
+   cd payment-service
+   mvn clean install -Dmaven.test.skip 
+   cd scripts
+   sh ./start.sh 
+   ```
+   
+   Open a new tab of your terminal, and run `order-service`:
+   
+   ```java
+   cd order-service
+   mvn clean install -Dmaven.test.skip 
+   cd scripts
+   sh ./start.sh 
+   ```
+<!-- <Screenshot
 alt="Running user service"
 height={500}
 src="/img/blog/2022/03/running_user_service.webp"
 title="Running user service"
 width={700}
-/>
+/> -->
     
-Open a new tab of your terminal, and run `payment-service`:
-    
-  ```java
-  cd payment-service
-  mvn clean install -Dmaven.test.skip 
-  cd scripts
-  sh ./start.sh 
-  ```
 
-Open a new tab of your terminal, and run `order-service`:
-    
-  ```java
-  cd order-service
-  mvn clean install -Dmaven.test.skip 
-  cd scripts
-  sh ./start.sh 
-  ```
 
-<Screenshot
+<!-- <Screenshot
 alt="Running all microservices"
 height={500}
 src="/img/blog/2022/03/running_all_microservices.webp"
 title="Running all microservices using different tabs in the terminal"
 width={700}
-/>
+/> -->
 
 <Screenshot
 alt="Running microservices on different ports using service registry"
