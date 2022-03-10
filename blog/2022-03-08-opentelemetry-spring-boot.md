@@ -109,7 +109,7 @@ Steps to get the app set up and running:
 <Screenshot
    alt="Spring PetClinic app accessed at port:8090"
    height={500}
-   src="/img/blog/2021/08/spring_petclinic_hc.webp"
+   src="/img/blog/2022/03/spring_boot_app.webp"
    title="Sample Spring Boot application running in your local host."
    width={700}
 />
@@ -160,7 +160,7 @@ Below you can find your `javaApp` in the list of applications being monitored.
 <Screenshot
    alt="`Javaapp` appears in the list of applications monitored through SigNoz"
    height={500}
-   src="/img/blog/2021/08/javaapp_boxed_hc.webp"
+   src="/img/blog/2022/03/java_app_signoz_dashboard.webp"
    title="`javaApp` in the list of applications monitored"
    width={700}
 />
@@ -177,7 +177,7 @@ SigNoz comes with out of box RED metrics charts and visualization. RED metrics s
   <Screenshot
        alt="SigNoz dashboard showing application latency, requests per sec, error percentage and top endpoints"
        height={500}
-       src="/img/blog/2021/08/signoz_charts_hc.webp"
+       src="/img/blog/common/signoz_charts_application_metrics.webp"
        title="Measure things like application latency, requests per sec, error percentage and see your top endpoints with SigNoz."
        width={700}
   />
@@ -186,7 +186,7 @@ You can then choose a particular timestamp where latency is high to drill down t
 <Screenshot
      alt="List of traces shown on SigNoz dashboard"
      height={500}
-     src="/img/blog/2021/08/signoz_visualization_hc.webp"
+     src="/img/blog/common/signoz_list_of_traces_hc.webp"
      title="View of traces at a particular timestamp"
      width={700}
 />
@@ -196,7 +196,7 @@ You can use flamegraphs to exactly identify the issue causing the latency.
 <Screenshot
      alt="Flamegraphs and gantt charts to visualize time taken by requests"
      height={500}
-     src="/img/blog/2021/08/signoz_flamegraphs_hc.webp"
+     src="/img/blog/common/signoz_flamegraphs.webp"
      title="Flamegraphs showing exact duration taken by each spans - a concept of distributed tracing"
      width={700}
 />
@@ -206,7 +206,7 @@ You can also build custom metrics dashboard for your infrastructure.
 <Screenshot
     alt="SigNoz custom metrics dashboard"
     height={500}
-    src="/img/blog/2021/10/signoz_custom_dashboard-min.webp"
+    src="/img/blog/common/signoz_custom_dashboard-min.webp"
     title="You can also build a custom metrics dashboard for your infrastructure"
     width={700}
 />
@@ -237,8 +237,6 @@ If you have any questions or need any help in setting things up, join our slack 
 [![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://signoz.io/slack)
 
 
-If you want to read more about SigNoz 👇
+If your Spring Boot application is based on microservices architecture, check out this blog 👇
 
-[Golang Aplication Monitoring with OpenTelemetry and SigNoz](https://signoz.io/opentelemetry/go/)
-
-[Nodejs Application Monitoring with OpenTelemetry and SigNoz](https://signoz.io/opentelemetry/nodejs/)
+[Implementing Distributed Tracing in a Java application](https://signoz.io/blog/distributed-tracing-java/)
