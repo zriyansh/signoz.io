@@ -391,7 +391,7 @@ function Home() {
                         id={"demo-video-cover"}
                         onClick={setShowVideo.bind(this, true)}
                         style={{
-                          background: "url('/videos/demo_cover.webp')",
+                          background: "url('/videos/demo-mar10-cover.webp')",
                           height: 426,
                           width: "100%",
                         }}
@@ -420,7 +420,7 @@ function Home() {
                           id={"demo-video-player"}
                         >
                           <source
-                            src="https://demo-video-1.s3.us-east-2.amazonaws.com/demo.mp4"
+                            src="https://demo-video-1.s3.us-east-2.amazonaws.com/demo-mar10.mp4"
                             type="video/mp4"
                           />
                           Your browser does not support the video tag.
