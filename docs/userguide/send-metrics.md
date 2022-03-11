@@ -148,6 +148,31 @@ To enable a Prometheus receiver, follow the steps below:
       - [Jobs and Instances](https://prometheus.io/docs/concepts/jobs_instances/)
 3. <SaveChangesRestart />
 
+## Find Metrics available in SigNoz
+
+You can connect to SigNoz'a clickhouse instance and find the metrics SigNoz is storing. As of now this is bit of manual process, we are bringing capbilities to auto-suggest available metrics soon.
+
+You can follow the below steps
+
+1. Install Clickhouse client
+2. Connect to clickhouse instance in SigNoz
+  ```
+  ./clickhouse client --host <SigNoz IP>  --port 9001
+  select * from signoz_metrics.time_series 
+  ```
+  _signoz_metrics.time_series is a table_
+
+3. Find distinct labels available ( this may  not be very accessible so we recommend step 4)
+  ```
+  select DISTINCT(labels) from signoz_metrics.time_series
+  ```
+4. If needed, dump in a csv file and parse it locally
+  ```
+  select DISTINCT(labels) from signoz_metrics.time_series INTO OUTFILE 'output.csv' 
+  ```
+
+You can use this metrics to plot in the [Dashboard](/docs/userguide/dashboards) section
+
 ## Related Videos
 
 - [How to view Prometheus Metrics in SigNoz](https://youtu.be/QGJYNYzfM9o)
