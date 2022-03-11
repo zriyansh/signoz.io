@@ -5,7 +5,7 @@ date: 2022-03-06
 tags: [application-monitoring, java-monitoring]
 authors: ankit_anand
 description: End-to-end performance monitoring of Spring Boot application with OpenTelemetry. Get your telemetry data visualized with SigNoz.
-image: /img/blog/2021/08/opentelemetry_springboot_hc.webp
+image: /img/blog/2022/03/opentelemetry_spring_boot.webp
 keywords:
   - OpenTelemetry
   - OpenTelemetry java
@@ -24,11 +24,39 @@ OpenTelemetry can auto-instrument your Java Spring Boot application to capture t
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2021/08/opentelemetry_springboot_hc-min.webp)
+![Cover Image](/img/blog/2022/03/opentelemetry_spring_boot.webp)
 
 OpenTelemetry is a vendor-agnostic instrumentation library. In this article, let's explore how you can auto-instrument your Java Spring Boot application with OpenTelemetry and get the data reported through SigNoz - an open-source APM and observability tool.
 
-Auto-instrumentation is a process by which you can capture telemetry data from your application without making any code changes. OpenTelemetry provides a Java Jar agent which can auto-instrument a lot of popular libraries. 
+But before that, let's have a brief overview of OpenTelemetry.
+
+## What is OpenTelemetry?
+[OpenTelemetry](https://opentelemetry.io/) is a set of API, SDKs, libraries, and integrations aiming to standardize the generation, collection, and management of telemetry data(logs, metrics, and traces). OpenTelemetry is a Cloud Native Computing Foundation project created after the merger of OpenCensus(from Google) and OpenTracing(From Uber).
+
+The data you collect with OpenTelemetry is vendor-agnostic and can be exported in many formats. Telemetry data has become critical to observe the state of distributed systems. With microservices and polyglot architectures, there was a need to have a global standard. OpenTelemetry aims to fill that space and is doing a great job at it thus far.
+
+OpenTelemetry provides client libraries and agents for most of the popular programming languages. There are two types of implementation of OpenTelemetry libraries:
+
+- **Auto-instrumentation**<br></br>
+OpenTelmetry can collect data for many popular frameworks and libraries automatically. You don’t have to make any code changes.
+- **Manual instrumentation**<br></br>
+If you want more application-specific data, OpenTelemetry SDK provides you with the capabilities to capture that data using OpenTelemetry APIs and SDKs.
+
+For Spring Boot applications, we can use the OpenTelemetry Java Jar agent. We just need to download the latest version of the Java Jar agent and run the application with it.
+
+import Screenshot from "@theme/Screenshot"
+
+<Screenshot
+   alt="Spring Boot application with OpenTelemetry"
+   height={500}
+   src="/img/blog/2022/03/opentelemetry_springboot.webp"
+   title="OpenTelemetry provides a Java Jar agent that can auto-instrument Spring Boot applications"
+   width={700}
+/>
+
+OpenTelemetry does not provide storage and visualization layer for the collected data. The advantage of using OpenTelemetry is that it can export the collected data in many different formats. So you're free to choose your telemetry backend. Natively, OpenTelemetry supports a wire protocol known as `OTLP`. This protocol sends the data to OpenTelemetry Collector as shown in the diagram above.
+
+In this tutorial, we will use [SigNoz](https://signoz.io/docs/), an open-source APM as the backend and visualization layer.
 
 Steps to get started with OpenTelemetry for Spring Boot application:
 
@@ -53,8 +81,6 @@ You can visit our documentation for instructions on how to install SigNoz using 
 [![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/install/docker/?utm_source=blog&utm_medium=distributed_tracing_nodejs)
 
 When you are done installing SigNoz, you can access the UI at [http://localhost:3301](http://localhost:3301/application)
-
-import Screenshot from "@theme/Screenshot"
 
 <Screenshot
    alt="SigNoz dashboard"
