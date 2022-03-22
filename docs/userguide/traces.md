@@ -62,12 +62,7 @@ Select a column heading to sort the list by the values in that column. Select th
 
 ## Inspect a Span
 
-Choose a span from the list, and SigNoz will open the **Span Details** page where you can see the following:
-
-- The list of tags and errors associated with the currently selected trace
-- A flame graph for the currently selected trace. For details about flame graphs, see the [Flame Graphs](https://www.brendangregg.com/flamegraphs.html) page.
-- A Gantt chart that helps you visualize your services and events as a parent-child tree.
-
+To further troubleshoot your application, you can select a span from the list to view its details. For details, see the [Span Details](/docs/userguide/span-details) page.
 ## Get Help
 
 <GetHelp />
