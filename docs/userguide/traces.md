@@ -11,7 +11,7 @@ import UseHotRod from '../shared/use-hotrod.md'
 This page shows how you can use distributed tracing to retrieve detailed telemetry data and see how your applications are performing. You’ll learn the following:
 
 - What is distributed tracing
-- How to customize the graph
+- How to visualize aggregate metrics from traces
 - How to filter your spans
 - How to inspect a span
 
@@ -37,9 +37,23 @@ From the sidebar, select **Traces**:
 
 ![Open the Traces section](/img/open-traces-section-v0.6.2.png)
 
-## Customize the Graph
+## Visualize Aggregate Metrics from Traces
 
-SigNoz allows you to specify the function you wish to graph and indicate how the system should group data. Use the dropdown list to select a function from the list, and then use the **Group By** clause to break the results into separate data series. The following example screenshot shows how you can plot the number of invocations for each of your services:
+SigNoz allows you to see aggregates of your filtered traces. The following functions are available for calculating aggregate values:
+
+- Count
+- Rate per second
+- Sum
+- Average
+- Max
+- Min
+- 50th percentile
+- 90th percentile
+- 95th percentile
+- 99th percentile
+
+To specify the function you wish to graph and indicate how the system should group data, you must use the dropdown list to select a function from the list, and then use the Group By clause to break the results into separate data series. The following example screenshot shows how you can plot the number of invocations for each of your services:
+
 ![Customize the graph](/img/customize-the-graph-v0.6.2.png)
 
 ## Filter Spans by Tags
