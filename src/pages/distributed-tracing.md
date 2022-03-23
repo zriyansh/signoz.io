@@ -61,13 +61,13 @@ A trace in distributed tracing represents an end-to-end user request and is comp
 
 The key components and data points that make up a trace are as follows:
 
-- Root Span
+- **Root Span**<br></br>
 It’s the parent span that represents the first span in a trace.
-- Child Span
+- **Child Span**<br></br>
 A child span is triggered by a parent span and can be a function call, DB calls, calls to another service, etc.
-- Duration or Latency
+- **Duration or Latency**<br></br>
 It’s the time taken by each span to complete its process. It’s a key data point used to analyze application performance.
-- Causal relationship
+- **Causal relationship**<br></br>
 A trace relates all the spans involved in the request in a sequential relationship.
 
 A trace is usually visualized as Flamegraphs or Gantt charts. Below is a snapshot from the traces dashboard of [SigNoz](https://signoz.io/). In the trace diagram below, the root span spawns two child spans which call more inner processes.
