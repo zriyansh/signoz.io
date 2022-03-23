@@ -68,7 +68,17 @@ module.exports = {
         'userguide/send-metrics',
         'userguide/navigate-user-interface',
         'userguide/metrics',
-        'userguide/traces',
+        {
+          type: 'category',
+          label: 'View Traces',
+          link: {
+            type: 'doc',
+            id: 'userguide/traces',
+          },
+          items: [
+            'userguide/span-details'
+          ]
+        },
         'userguide/dashboards',
         'userguide/alerts-management',
         'userguide/retention-period',
