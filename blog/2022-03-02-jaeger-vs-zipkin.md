@@ -179,6 +179,10 @@ You can check out SigNoz's GitHub repo here 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
+We also have an active slack community. Feel free to join in and say hi! 👋
+
+[![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://signoz.io/slack)
+
 ___
 
 #### **Related Content**
