@@ -444,6 +444,11 @@ OpenTelemetry and SigNoz provide a great open-source combo to implement distribu
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
+
+If you have any questions or need any help in setting things up, join our slack community and ping us in `#support` channel.
+
+[![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://signoz.io/slack)
+
 ---
 Read more about distributed tracing from SigNoz blog 👇
 

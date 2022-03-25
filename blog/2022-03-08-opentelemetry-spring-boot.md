@@ -258,7 +258,7 @@ If you are someone who understands more from video, then you can watch the tutor
 
 <p>&nbsp;</p>
 
-If you have any questions or need any help in setting things up, join our slack community and ping us in `#help` channel.
+If you have any questions or need any help in setting things up, join our slack community and ping us in `#support` channel.
 
 [![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://signoz.io/slack)
 
