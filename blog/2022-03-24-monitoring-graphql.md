@@ -1,5 +1,5 @@
 ---
-title: Monitoring GraphQL APIs with open-source
+title: Monitoring GraphQL APIs with OpenTelemetry
 slug: monitoring-graphql
 date: 2022-03-24
 tags: [application-monitoring]
@@ -20,7 +20,7 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/monitoring-graphql/"/>
 </head>
 
-GraphQL is a query language for APIs developed by Facebook in 2012. It was then open-sourced in 2015. GraphQL enables frontend developers or consumers of APIs to request the exact data that they need, with no over-fetching or under-fetching. In this article, we will learn how to monitor GraphQL APIs with the open-source APM tool, [SigNoz](https://signoz.io/).
+GraphQL is a query language for APIs developed by Facebook in 2012. It was then open-sourced in 2015. GraphQL enables frontend developers or consumers of APIs to request the exact data that they need, with no over-fetching or under-fetching. In this article, we will learn how to monitor GraphQL APIs with OpenTelemetry and SigNoz.
 
 <!--truncate-->
 
@@ -53,7 +53,7 @@ By using OpenTelemetry libraries, you can monitor application code written in al
 
 OpenTelemetry provides a library to monitor GraphQL APIs. The library will monitor your GraphQL queries without any code changes. OpenTelemetry libraries are used to generate and capture telemetry data. 
 
-Once the data is captured, it needs to be sent to a backend tool of your choice for storage and visualization. We will send the monitoring data captured by OpenTelemetry from the GraphQL application to SigNoz, which is also an open-source APM tool.
+Once the data is captured, it needs to be sent to a backend tool of your choice for storage and visualization. We will send the monitoring data captured by OpenTelemetry from the GraphQL application to [SigNoz](https://signoz.io/), an open-source APM tool.
 
 ## Running a sample GraphQL application with OpenTelemetry
 
