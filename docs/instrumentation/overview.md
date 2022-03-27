@@ -29,7 +29,7 @@ SigNoz currently provides simple ways to instrument NodeJS, Java, Python and Gol
 5. [OpenTelemetry Java Instrumentation](/docs/instrumentation/java)
 6. [OpenTelemetry Go Instrumentation](/docs/instrumentation/golang)
 7. [OpenTelemetry .NET Instrumentation](/docs/instrumentation/dotnet)
-8. [OpenTelemetry Ruby on Rails Instrumentation](/docs/instrumentation/ruby-on-rails/)
+8. [OpenTelemetry Ruby on Rails Instrumentation](/docs/instrumentation/ruby-on-rails)
 
 
 
