@@ -37,6 +37,8 @@ Before we deep dive into context propagation, let’s understand what distribute
 ## Distributed Tracing - a brief overview
 A modern internet-scale application is built on distributed systems leveraging cloud-native, serverless, and software architectures like microservices. Unfortunately, while bringing many benefits to the companies implementing them, these systems also make it harder to maintain software performance and debug issues.
 
+[Read our complete guide on Distributed Tracing](http://signoz.io/distributed-tracing/)
+
 The operational challenge of maintaining a distributed system has increased, and troubleshooting is more complicated.
 
 Distributed tracing is becoming the go-to solution for solving this complexity and helping engineering teams have a much-needed central overview of distributed systems. With distributed tracing, transactions and user requests are tracked across each software component they traverse to help identify bottlenecks.
