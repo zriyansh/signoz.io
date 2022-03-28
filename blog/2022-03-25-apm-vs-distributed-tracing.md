@@ -66,7 +66,7 @@ Distributed tracing is a technology that tracks user requests across services, n
 
 In modern-day cloud-native applications, a single user request triggered at the frontend web or mobile client can go through hundreds or thousands of services before serving the user what they need. As a result, it’s almost impossible for a single team to keep track of everything that happens to a user request. That’s where distributed tracing comes into the picture.
 
-[Read our full guide on Distributed Tracing](https://signoz.io/distributed-tracing/)
+[Read our complete guide on Distributed Tracing](https://signoz.io/distributed-tracing/)
 
 Distributed tracing works by passing by context object along the execution path of a user request. The context ID correlates a user request across network boundaries, processes, and protocols.
 

@@ -44,6 +44,8 @@ import Screenshot from "@theme/Screenshot"
 
 Distributed tracing gives you insight into how a particular service is performing as part of the whole in a distributed software system. There are two essential concepts involved in distributed tracing: **Spans** and **trace context**.
 
+[Read our complete guide on Distributed Tracing](http://signoz.io/distributed-tracing/)
+
 User requests are broken down into spans.
 
 > What are spans?<br></br>

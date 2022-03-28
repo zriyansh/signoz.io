@@ -33,6 +33,8 @@ Let’s have a brief overview of distributed tracing.
 
 In a microservices architecture, a user request travels through hundreds, even thousands of services before serving the user what they need. Engineering teams often responsible for maintaining single services have no visibility over how the system performs as a whole.
 
+[Read our complete guide on Distributed Tracing](http://signoz.io/distributed-tracing/)
+
 Distributed tracing gives insights into how a particular service is performing as part of the whole in a distributed software system. It involves passing a trace context with each user request which is then passed across hosts, services, and protocols to track the user request.
 
 In this article, we will use OpenTelemetry and SigNoz to enable distributed tracing in a sample nodejs application.
