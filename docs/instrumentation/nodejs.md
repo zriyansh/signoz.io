@@ -62,13 +62,26 @@ Steps to create a sample Express application:
     a. `IP of SigNoz backend` - IP of the machine where SigNoz is installed. In case you have installed SigNoz on your local machine, you can use `localhost`
 
     b. `service_name` - the service you are monitoring (you can name it anything)
+    :::note
+      Node SDK doesn't automatically detect the `OTEL_RESOURCE_ATTRIBUTES` as of today. Please edit the
+      `tracing.js` to include the service name.
+      ```js
+      const sdk = new opentelemetry.NodeSDK({
+        resource: new Resource({
+          [SemanticResourceAttributes.SERVICE_NAME]: 'my-service',
+        }),
+        traceExporter,
+        instrumentations: [getNodeAutoInstrumentations()]
+      });
+      ```
+
+    :::
    
    
     You need to put these environment variables in the below command and run it at your terminal.
   
     ```jsx
     OTEL_EXPORTER_OTLP_ENDPOINT="<IP of SigNoz>:4317" \
-    OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> \
     node -r ./tracing.js index.js
     ```
 
@@ -76,7 +89,6 @@ Steps to create a sample Express application:
 
     ```jsx
     OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" \
-    OTEL_RESOURCE_ATTRIBUTES=service.name=node_app \
     node -r ./tracing.js index.js
     ```
     <br></br>

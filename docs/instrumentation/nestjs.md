@@ -32,6 +32,7 @@ Let us see how to instrument your application with OpenTelemetry, so that you ca
 1. **Install below dependencies**
    ```jsx
     "@opentelemetry/api": "^1.0.4",
+    "@opentelemetry/resources": "^1.0.4",
     "@opentelemetry/auto-instrumentations-node": "^0.27.1",
     "@opentelemetry/exporter-otlp-grpc": "^0.26.0",
     "@opentelemetry/sdk-node": "^0.27.0",

@@ -25,25 +25,24 @@ This guide explains how to download, install, and run OpenTelemetry in Python.
 
 ### Requirements
 
-- Python 3.4 or newer
+- Python 3.6 or newer
 - An app to add OpenTelemetry to
 
-We follow [OpenTelemetry python instrumentation library](https://github.com/open-telemetry/opentelemetry-python). **We shall be exporting data in Jaeger Thrift protocol.**
+We follow [OpenTelemetry python instrumentation library](https://github.com/open-telemetry/opentelemetry-python). **We shall be exporting data in OTLP protocol.**
 
-```bash
-pip3 install opentelemetry-distro
-pip3 install opentelemetry-instrumentation
-pip3 install opentelemetry-exporter-otlp
+Start by creating a separate virtual environment.
+
+```
+python3 -m venv instrumentation_env
+source instrumentation_env/bin/activate
 ```
 
-If it hangs while installing `grpcio` during **pip3 install opentelemetry-exporter-otlp** then follow below steps as suggested in **[this stackoverflow link](https://stackoverflow.com/a/62500932/3243212)**
+#### Install
 
-- pip3 install --upgrade pip
-- python3 -m pip install --upgrade setuptools
-- pip3 install --no-cache-dir --force-reinstall -Iv grpcio
-
-Retry installing `opentelemetry-exporter-otlp` by doing
-- pip3 install opentelemetry-exporter-otlp
+```bash
+pip install opentelemetry-distro
+pip install opentelemetry-exporter-otlp-proto-http
+```
 
 
 The below command inspects the Python dependencies of your application and installs the instrumentation packages relevant for your Python application.
@@ -51,11 +50,6 @@ The below command inspects the Python dependencies of your application and insta
 ```bash
 opentelemetry-bootstrap --action=install
 ```
-
-:::note
-If it says cannot find command `opentelemetry-bootstrap` then you need to specify the path of the file. In ubuntu, it is at `/home/ubuntu/.local/bin/opentelemetry-bootstrap`. So your command becomes,
-`/home/ubuntu/.local/bin/opentelemetry-bootstrap --action=install`
-:::
 
 
 <p>&nbsp;</p>
@@ -75,7 +69,7 @@ If it says cannot find command `opentelemetry-bootstrap` then you need to specif
 Finally, to start sending data to SigNoz, use the following command:
 
 ```bash
-OTEL_METRICS_EXPORTER=none OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz Backend>:4317"  opentelemetry-instrument <your run command>
+OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz Backend>:4317"  opentelemetry-instrument --traces_exporter otlp_proto_http <your run command>
 ```
 
 _<service_name>_ is the name of service you want
@@ -85,7 +79,6 @@ _<your_run_command>_ can be `python3 app.py` or `flask run`
 
 :::note
 
-- If _opentelemetry-instrument_ command is not found then use full path of executable. In ubuntu it is at _/home/ubuntu/.local/bin/opentelemetry-instrument_
 - Remember to allow incoming requests to port **4317** of machine where SigNoz backend is hosted
 
 :::
@@ -129,7 +122,7 @@ Feel free to use this repo to test out OpenTelemetry instrumentation and how to 
 
 For instrumenting Django applications, the instructions are same as for a Flask app as mentioned above. 
 
-Though for Django, you must define `DJANGO_SETTINGS_MODULE` correctly. If your project is called `mysite`, somwthing like following should work
+Though for Django, you must define `DJANGO_SETTINGS_MODULE` correctly. If your project is called `mysite`, something like following should work
 
 ```
 export DJANGO_SETTINGS_MODULE=mysite.settings
@@ -141,9 +134,9 @@ Please refer the official [Django docs](https://docs.djangoproject.com/en/1.10/t
 
 ### Running applications with Gunicorn, uWSGI
 
-For application servers which are based on pre fork model like Gunicorn, uWSGI you have to add a `post_fork` hook or a `postfork decorator` in your configuration. 
+For application servers which are based on pre fork model like Gunicorn, uWSGI you have to add a `post_fork` hook or a `@postfork` decorator in your configuration.
 
-Check this [documentation](https://opentelemetry-python.readthedocs.io/en/latest/examples/fork-process-model/README.html) from OpenTelemetry om how to set it up. 
+Check this [documentation](https://opentelemetry-python.readthedocs.io/en/latest/examples/fork-process-model/README.html) from OpenTelemetry on how to set it up.
 
 [Here's](https://github.com/SigNoz/opentelemetry-python/tree/main/docs/examples/fork-process-model) a working example where we have configured a gunicorn server with `post_fork` hook.
   
@@ -158,44 +151,35 @@ Check this [documentation](https://opentelemetry-python.readthedocs.io/en/latest
 
 ### Troubleshooting your installation
 
-If spans are not being reported to SigNoz, try running in debug mode by setting `OTEL_LOG_LEVEL=debug`:
+If spans are not being reported to SigNoz, try enabling debug exporter which writes the json formatted trace data to console.
 
-The debug log level will print out the configuration information. It will also emit every span to the console, which should look something like:
+`opentelemetry-instrument --traces_exporter otlp_proto_http,console <your run command>`:
 
-```bash
-Span {
-  attributes: {},
-  links: [],
-  events: [],
-  status: { code: 0 },
-  endTime: [ 1597810686, 885498645 ],
-  _ended: true,
-  _duration: [ 0, 43333 ],
-  name: 'bar',
-  spanContext: {
-    traceId: 'eca3cc297720bd705e734f4941bca45a',
-    spanId: '891016e5f8c134ad',
-    traceFlags: 1,
-    traceState: undefined
-  },
-  parentSpanId: 'cff3a2c6bfd4bbef',
-  kind: 0,
-  startTime: [ 1597810686, 885455312 ],
-  resource: Resource { labels: [Object] },
-  instrumentationLibrary: { name: 'example', version: '*' },
-  _logger: ConsoleLogger {
-    debug: [Function],
-    info: [Function],
-    warn: [Function],
-    error: [Function]
-  },
-  _traceParams: {
-    numberOfAttributesPerSpan: 32,
-    numberOfLinksPerSpan: 32,
-    numberOfEventsPerSpan: 128
-  },
-  _spanProcessor: MultiSpanProcessor { _spanProcessors: [Array] }
-},
+```json
+{
+    "name": "alice",
+    "context": {
+        "trace_id": "0xedb7caf0c8b082a9578460a201759193",
+        "span_id": "0x57cf7eee198e1fed",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2022-03-27T14:55:18.804758Z",
+    "end_time": "2022-03-27T14:55:18.804805Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.10.0",
+        "service.name": "my-service"
+    }
+}
 ```
 
 <p>&nbsp;</p>
