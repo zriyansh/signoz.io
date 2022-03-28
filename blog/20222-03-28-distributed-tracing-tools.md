@@ -1,7 +1,7 @@
 ---
 title: Latest top 11 distributed tracing tools [perfect for microservices]
 slug: distributed-tracing-tools
-date: 2021-12-03
+date: 20212-03-28
 tags: [distributed-tracing, application-monitoring, apm-tools]
 authors: ankit_anand
 description: Latest top distributed tracing tools list - 1.SigNoz 2.Dynatrace 3.New Relic 4.Honeycomb 5.Lightstep 6.Instana 7.Jaeger 8.DataDog 9.Zipkin..
@@ -72,6 +72,8 @@ import Screenshot from "@theme/Screenshot"
 
 Distributed tracing gives you insight into how a particular service is performing as part of the whole in a distributed software system. There are two essential concepts involved in distributed tracing: **Spans** and **trace context**.
 
+**[Read our complete guide on Distributed Tracing](https://signoz.io/distributed-tracing/)**
+
 User requests are broken down into spans.
 
 > What are spans?<br></br>
@@ -117,10 +119,10 @@ An open-source tool with the capabilities of SaaS vendors, SigNoz is a great cho
 
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
-    height={500}
-    src="/img/blog/2021/09/SigNoz_architecture_clickhouse.webp"
+    height={600}
+    src="/img/architecture-signoz-clickhouse.svg"
     title="Architecture of SigNoz with ClickHouse as storage backend and OpenTelemetry for code instrumentatiion"
-    width={700}
+    width={800}
 />
 
 SigNoz uses OpenTelemetry for code instrumentation. OpenTelemetry provides vendor-agnostic instrumentation libraries and is quietly becoming the world standard for generating and managing telemetry data.
@@ -133,7 +135,7 @@ SigNoz uses OpenTelemetry for code instrumentation. OpenTelemetry provides vendo
     width={700}
 />
 
-You can also use flamegraphs to visualize spans from your trace data. All of this comes out of the box with SigNoz.
+SigNoz also provides detailed views of tracing data in the form of Flamegraphs and Gantt charts. Gantt charts make it easy to visualize your services and events in a parent-child relationship tree. You can easily figure out which events are causing latency in a request call. All of this comes out of the box with SigNoz.
 
 <Screenshot
     alt="Flamegraphs used to visualize spans of distributed tracing in SigNoz UI"
@@ -143,15 +145,13 @@ You can also use flamegraphs to visualize spans from your trace data. All of thi
     width={700}
 />
 
-Gantt charts make it easy to visualize your services and events in a parent-child relationship tree. You can easily figure out which events are causing latency in a request call.
-
-<Screenshot
+<!-- <Screenshot
     alt="Gantt charts on SigNoz dashboard"
     height={500}
     src="/img/blog/2021/09/signoz_gantt_chart-min.webp"
     title="Gantt charts on SigNoz dashboard to visualize your spans in a parent-child relationship"
     width={700}
-/>
+/> -->
 
 
 ### Jaeger
