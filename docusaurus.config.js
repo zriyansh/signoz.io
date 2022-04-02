@@ -1,4 +1,7 @@
-module.exports = {
+// @ts-check
+
+/** @type {import('@docusaurus/types').Config} */
+const config = {
   title: "SigNoz",
   tagline: "Open source Observability platform",
   url: "https://signoz.io",
@@ -57,15 +60,15 @@ module.exports = {
           position: "left",
         },
         {
-          to: 'opentelemetry/',
-          activeBasePath: 'opentelemetry',
-          label: 'OpenTelemetry',
-          position: 'left',
+          to: "opentelemetry/",
+          activeBasePath: "opentelemetry",
+          label: "OpenTelemetry",
+          position: "left",
         },
         {
-          href: 'https://github.com/SigNoz/signoz',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/SigNoz/signoz",
+          label: "GitHub",
+          position: "right",
         },
         {
           href: "https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA",
@@ -129,13 +132,11 @@ module.exports = {
               label: "Learn",
               to: "learn/",
             },
-
           ],
         },
         {
           title: "More",
           items: [
-            
             {
               label: "About",
               to: "about-us/",
@@ -147,7 +148,7 @@ module.exports = {
             {
               label: "Privacy",
               to: "privacy/",
-            }
+            },
           ],
         },
       ],
@@ -161,10 +162,10 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl: ({docPath}) => {
+          editUrl: ({ docPath }) => {
             // We want users to submit doc updates to the upstream/next version!
             // Otherwise we risk losing the update on the next release.
-            const nextVersionDocsDirPath = 'docs';
+            const nextVersionDocsDirPath = "docs";
             return `https://github.com/SigNoz/signoz.io/edit/main/${nextVersionDocsDirPath}/${docPath}`;
           },
         },
@@ -183,7 +184,7 @@ module.exports = {
         },
         gtag: {
           // You can also use your "G-" Measurement ID here.
-          trackingID: 'UA-152867655-1',
+          trackingID: "UA-152867655-1",
           // Optional fields.
           // anonymizeIP: true, // Should IPs be anonymized?
         },
@@ -208,7 +209,7 @@ module.exports = {
          * Path to data on filesystem relative to site dir.
          */
         path: "./opentelemetry",
-        blogTitle: 'OpenTelemetry',
+        blogTitle: "OpenTelemetry",
       },
     ],
     [
@@ -227,33 +228,33 @@ module.exports = {
          * Path to data on filesystem relative to site dir.
          */
         path: "./learn",
-        blogTitle: 'Learn with SigNoz',
+        blogTitle: "Learn with SigNoz",
       },
     ],
     [
-      '@docusaurus/plugin-pwa',
+      "@docusaurus/plugin-pwa",
       {
         debug: true,
         offlineModeActivationStrategies: [
-          'appInstalled',
-          'standalone',
-          'queryString',
+          "appInstalled",
+          "standalone",
+          "queryString",
         ],
         pwaHead: [
           {
-            tagName: 'link',
-            rel: 'icon',
-            href: '/img/icons/icon-512x512.png',
+            tagName: "link",
+            rel: "icon",
+            href: "/img/icons/icon-512x512.png",
           },
           {
-            tagName: 'link',
-            rel: 'manifest',
-            href: '/manifest.json', // your PWA manifest
+            tagName: "link",
+            rel: "manifest",
+            href: "/manifest.json", // your PWA manifest
           },
           {
-            tagName: 'meta',
-            name: 'theme-color',
-            content: 'rgb(95, 34, 20)',
+            tagName: "meta",
+            name: "theme-color",
+            content: "rgb(95, 34, 20)",
           },
         ],
       },
@@ -275,3 +276,5 @@ module.exports = {
   //   ],
   // ],
 };
+
+module.exports = config;
