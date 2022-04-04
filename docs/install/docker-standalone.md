@@ -71,7 +71,7 @@ Before you install Signoz, ensure that [Docker Compose](https://docs.docker.com/
 
     <TabItem value="arm64">
 
-      sudo docker-compose docker/clickhouse-setup/docker-compose.arm.yaml up -d
+      sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml up -d
 
     </TabItem>
   </Tabs>
