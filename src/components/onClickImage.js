@@ -2,9 +2,9 @@ import React from "react";
 import "react-medium-image-zoom/dist/styles.css";
 import Zoom from "react-medium-image-zoom";
 
-const onClickImage = ({ image }) => (
+const onClickImage = ({ image, alt }) => (
   <Zoom zoomMargin={100}>
-    <img src={image} />
+    <img src={image} alt={alt} />
   </Zoom>
 );
 
