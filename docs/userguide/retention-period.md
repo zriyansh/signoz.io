@@ -8,10 +8,12 @@ To set retention period for metrics and traces, you can navigate to the `General
 ![retention-period](../../static/img/docs/retention-period.webp)
 
 - You can select independent retention period for traces and metrics.
-- Also you can set the retention period for cold storage (S3) for both traces and metrics respectively. This can be only set if Cold Storage (eg. S3) is enabled from the backend.
-- Click `Save` to save the new retention period after making changes to change the retention period.
+- You can also set the duration after which the data will be moved to cold storage (S3) for both traces and metrics. This can be only set if Cold Storage (eg. S3) is enabled from the backend.
+- Click `Save` to update the new retention periods..
 
 ### Configuring Cold Storage - Amazon S3
+
+#### Docker
 
 In case of docker, uncomment `storage_configuration` from `clickhouse-config.xml`. Also configure the endpoint, access key and secret.
 
@@ -41,6 +43,8 @@ In case of docker, uncomment `storage_configuration` from `clickhouse-config.xml
 	</policies>
 </storage_configuration>
 ```
+
+#### Kubernetes
 
 In case of helm charts, update the `clickhouse.coldStorage` in `values.yaml`.
 
