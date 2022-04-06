@@ -56,9 +56,9 @@ To specify the function you wish to graph and indicate how the system should gro
 
 ![Customize the graph](/img/customize-the-graph-v0.6.2.png)
 
-## Filter Spans by Tags
+## Filter Spans by Tags/Attributes
 
-Tags are key-value pairs that allow you to filter spans by their characteristics. You can create multiple filters to filter by multiple tags. Note that SigNoz uses OpenTelemetry’s semantic conventions described on the [Trace Semantic Conventions](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/semantic_conventions/README.md) page of the OpenTelemetry specification.
+Tags/Attributes are key-value pairs that allow you to filter spans by their characteristics. SigNoz supports multi-selection criterion. And the characteristics include, but are not limited to HTTP headers, DB systems, and Messaging destinations etc. For exhaustive list please refer to OpenTelemetry’s semantic conventions described on the [Trace Semantic Conventions](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/semantic_conventions/README.md) page of the OpenTelemetry specification.
 
 There are two ways in which you can filter traces by tags:
 - You can enter plain text in the **Quick Filter** input box and then select the **Run** button at the far right. Note that text is interpreted as case-sensitive.
