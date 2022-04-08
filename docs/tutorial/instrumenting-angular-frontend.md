@@ -4,6 +4,8 @@ title: Instrumenting Angular Frontend Web App
 description: Instrument your angular frontend app.
 ---
 
+![Angular Instrumentation](../../static/img/angular-instrumentation.webp)
+
 ### Why you need to instrument your frontend application 🤔
 
 We all are familiar with instrumenting backend services but have you ever thought about instrumenting frontend application. Let us first understand why do we need to instrument frontend application and why reliability is a priority.
