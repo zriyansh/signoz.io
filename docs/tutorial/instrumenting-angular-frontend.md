@@ -54,6 +54,7 @@ import {
         console: true, // Display trace on console (only in DEV env)
         production: false, // Send Trace with BatchSpanProcessor (true) or SimpleSpanProcessor (false)
         serviceName: 'Angular Sample App', // Service name send in trace
+        probabilitySampler: '1',
       },
       otelcolConfig: {
         url: 'http://127.0.0.1:4318/v1/traces', // URL of opentelemetry collector
