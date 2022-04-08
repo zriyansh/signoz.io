@@ -154,7 +154,7 @@ SigNoz is a full-stack open-source application performance monitoring and observ
 
 SigNoz can be used as a distributed tracing tool for a microservice architecture. 
 
-SigNoz also provides users flexibility in terms of data storage.You can choose between ClickHouse or Kafka + Druid as your backend storage while installing SigNoz. Both are industry-proven and highly scalable databases.
+It also provides a fast OLAP datastore, ClickHouse as the storage backend.
 
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"

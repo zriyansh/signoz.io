@@ -97,7 +97,7 @@ As already mentioned, OpenTracing merged with OpenCensus into a single project c
 
 The data collected with OpenTelemetry can also be sent to Jaeger's backend. But Jaeger is limited in terms of its UI and does only distributed tracing. For a robust monitoring and observability framework, you need a unified UI for both metrics and traces. And that's where SigNoz is far [more suited](https://signoz.io/blog/jaeger-vs-signoz/) than Jaeger as a distributed tracing tool.
 
-SigNoz is a full-stack open-source application performance monitoring and observability tool which can be used in place of Jaeger. SigNoz is built to support OpenTelemetry natively. It also provides users flexibility in terms of storage. You can choose between ClickHouse or Kafka + Druid as your backend storage while installing SigNoz.
+SigNoz is a full-stack open-source application performance monitoring and observability tool which can be used in place of Jaeger. SigNoz is built to support OpenTelemetry natively. It provides a fast OLAP datastore, ClickHouse as the storage backend.
 
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
