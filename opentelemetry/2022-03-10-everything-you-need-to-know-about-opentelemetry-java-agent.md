@@ -142,7 +142,7 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
   alt="SigNoz UI showing RED metrics"
   height={500}
-  src="/img/SigNoz_UI_hc.png"
+  src="/img/blog/common/signoz_charts_application_metrics.webp"
   title="SigNoz Dashboard with visualization of the popular RED metrics for your application (Number of requests, rate of error & duration)"
   width={700}
 />
@@ -150,10 +150,11 @@ import Screenshot from "@theme/Screenshot"
 <Screenshot
   alt="SigNoz UI showing RED metrics"
   height={500}
-  src="/img/signoz_flamegraphs_hc.png"
+  src="/img/blog/common/signoz_flamegraphs.webp"
   title="Flamegraphs and Gantt Charts for visualizing distributed tracing"
   width={700}
 />
+
 
 Read how to monitor your Spring Boot application with OpenTelemetry Java agent and SigNoz 👇<br></br>
 [Monitor your Spring Boot application with OpenTelemetry and SigNoz](https://signoz.io/blog/opentelemetry-spring-boot/)
