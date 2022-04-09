@@ -146,7 +146,7 @@ That's where [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=jaeger_vs_zi
 ## A better to alternative to Jaeger and Zipkin - SigNoz
 SigNoz is a full-stack open-source application performance monitoring and observability tool which can be used in place of Jaeger and Zipkin. It provides advanced distributed tracing capabilities along with metrics under a single dashboard.
 
-SigNoz is built to support OpenTelemetry natively. It also provides users flexibility in terms of storage. You can choose between ClickHouse or Kafka + Druid as your backend storage while installing SigNoz.
+SigNoz is built to support OpenTelemetry natively. It also provides a fast OLAP datastore, ClickHouse as the storage backend.
 
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
