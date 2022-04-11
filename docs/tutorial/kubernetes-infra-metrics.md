@@ -55,7 +55,7 @@ You need to update the below section.
    [List of metrics from Kubernetes receiver](#list-of-metrics-from-kubernetes-receiver)
 
 3. **Plot Metrics in SigNoz UI**<br></br>
-   To plot these metrics, follow the instructions given in the docs [here](https://signoz.io/docs/userguide/metrics-dashboard/)
+   To plot these metrics, follow the instructions given in the docs [here](https://signoz.io/docs/userguide/dashboards/)
 
 
 ---
