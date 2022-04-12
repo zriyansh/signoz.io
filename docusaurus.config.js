@@ -13,6 +13,16 @@ const config = {
   organizationName: "SigNoz", // Usually your GitHub org/user name.
   projectName: "signoz", // Usually your repo name.
   themeConfig: {
+    zoom: {
+      selector: '.markdown :not(em) > img',
+      config: {
+        // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+        background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)'
+        }
+      }
+    },
     // googleAnalytics: {
     //   trackingID: 'UA-152867655-1',
     //   // Optional fields.
@@ -193,6 +203,7 @@ const config = {
   ],
   // plugins: ["posthog-docusaurus"],
   plugins: [
+    require.resolve('docusaurus-plugin-image-zoom'),
     [
       "@docusaurus/plugin-content-blog",
       {
