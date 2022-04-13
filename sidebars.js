@@ -98,6 +98,7 @@ module.exports = {
         'tutorial/jvm-metrics',
         'tutorial/kubernetes-infra-metrics',
         'tutorial/mongodb-metrics',
+        'tutorial/instrumenting-angular-frontend'
       ],
     },
     {
