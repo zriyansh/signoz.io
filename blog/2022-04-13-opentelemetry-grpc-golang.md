@@ -265,14 +265,20 @@ Now that the sample Golang gRPC application is set up with OpenTelemetry, let’
 
 ## Monitoring Golang gRPC and MongoDB with SigNoz dashboards
 
-You need to generate some data to see how traces are captured in the SigNoz dashboard.
 
-Run the below commands which make a set of CRUD operations in MongoDB such as `create Employee`, `Read Employee`, `Update Employee` and `Delete Employee` so that it generates some monitoring data to be explored on the SigNoz dashboard.
+You need to generate some data to see how traces are captured in the SigNoz dashboard. From the root of our project,
 
-From the root of our project,
+1. `cd` to the server directory and then run the go grpc server
+   ```jsx
+   go run server.go
+   ```
 
-1. You need to *cd* to the *server* directory and then run ***go run server.go***
-2. You need to *cd* to *client* directory and then run ***go run client.go***
+2. `cd` to the client directory and then run the go grpc client
+   ```jsx
+   go run client.go
+   ```
+
+Running the client makes a set of CRUD operations in MongoDB such as create Employee, Read Employee, Update Employee and Delete Employee. We have added traces for all these operations so that it generates some monitoring data to be explored on the SigNoz dashboard.
 
 Now, open the SigNoz dashboard in your browser at [http://localhost:3301/dashboard](http://localhost:3301/dashboard). You should now be able to notice ***Go-Grpc-Otel-Server*** in the list of services being monitored on the dashboard.
 
