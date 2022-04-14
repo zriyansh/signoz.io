@@ -19,6 +19,7 @@ const config = {
 
       // Public API key: it is safe to commit it
       apiKey: '1061c173ae001d5f5aaa4f0354e373a0',
+      indexName: 'signoz',
     },
     zoom: {
       selector: 'figure[data-zoomable] > img',
