@@ -14,7 +14,7 @@ const config = {
   projectName: "signoz", // Usually your repo name.
   themeConfig: {
     zoom: {
-      selector: 'figure[data-zoomable] > img',
+      selector: 'img',
       config: {
         // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
         background: {
