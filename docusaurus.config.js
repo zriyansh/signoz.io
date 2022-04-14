@@ -13,6 +13,13 @@ const config = {
   organizationName: "SigNoz", // Usually your GitHub org/user name.
   projectName: "signoz", // Usually your repo name.
   themeConfig: {
+    algolia: {
+      // The application ID provided by Algolia
+      appId: 'E88QYIQ6K4',
+
+      // Public API key: it is safe to commit it
+      apiKey: '1061c173ae001d5f5aaa4f0354e373a0',
+    },
     zoom: {
       selector: 'figure[data-zoomable] > img',
       config: {
