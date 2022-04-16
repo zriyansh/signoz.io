@@ -242,7 +242,7 @@ You can also monitor errors that takes place in your Angular application. SigNoz
 
 <br></br>
 
-## Conculsion
+## Conclusion
 
 Using OpenTelemetry Angular libraries, you can instrument your frontend applications for end-to-end tracing. You can then use an open-source APM tool like SigNoz to ensure the smooth performance of your Angular apps.
 
