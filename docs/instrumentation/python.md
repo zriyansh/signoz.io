@@ -128,7 +128,9 @@ Though for Django, you must define `DJANGO_SETTINGS_MODULE` correctly. If your p
 export DJANGO_SETTINGS_MODULE=mysite.settings
 ```
 
-Please refer the official [Django docs](https://docs.djangoproject.com/en/1.10/topics/settings/#designating-the-settings) for more details
+Please refer the official [Django docs](https://docs.djangoproject.com/en/1.10/topics/settings/#designating-the-settings) for more details.
+
+You can also read this [blog](https://signoz.io/blog/opentelemetry-django/) to see how OpenTelemetry is implemented in a Django application.
 
 <p>&nbsp;</p>
 
