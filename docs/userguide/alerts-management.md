@@ -104,11 +104,19 @@ Now you can stay relaxed that SigNoz will promptly alert you whenever something 
 
 ### Configure Webhook 
 #### Pre-requisite
-You must have a webhook URL and your application ready to accept the messages in this format.
+You must have a valid webhook URL (reachable from SigNoz Alert Manager) and an application ready to accept webhook messages.
+
 #### Creating a new Notification channel
+Enter Webhook URL endpoint, username and password (if needed). Use _Test_ button to test the connection with your application. 
+
 
 #### Editing a Notification channel
-#### Receive Alert in Slack
+Similar to Slack, you can edit most of the webhook parameters except the channel name and type. 
+
+#### Receive Alert in Webhook
+
+![image](https://user-images.githubusercontent.com/10277894/165078852-d3ae7571-bfa2-409a-93aa-2a870b379cb1.png)
+
 
 #### Sample Format of Webhook messages
 ```
