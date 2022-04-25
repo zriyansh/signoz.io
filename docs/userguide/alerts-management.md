@@ -76,7 +76,7 @@ The alert channel tabs can be accessed from `Settings > Alert Channels` tab. Thi
 
 
 ### Configure Slack 
-#### Pre-requisite
+#### Prerequisite
 For setting up Slack as a notification channel, you need to first configure an Incoming Webhook in Slack. The following article explains how to do that - [Sending messages to slack using Incoming Webhook](https://api.slack.com/messaging/webhooks)
 
 #### Creating a new Notification channel
@@ -103,7 +103,7 @@ Now you can stay relaxed that SigNoz will promptly alert you whenever something 
 ![alerts-in-slack](../../static/img/docs/alerts-in-slack.webp)
 
 ### Configure Webhook 
-#### Pre-requisite
+#### Prerequisite
 You must have a valid webhook URL (reachable from SigNoz Alert Manager) and an application ready to accept webhook messages.
 
 #### Creating a new Notification channel
