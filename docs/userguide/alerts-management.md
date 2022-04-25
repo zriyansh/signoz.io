@@ -115,7 +115,7 @@ Enter Webhook URL endpoint, username and password (if needed). Use _Test_ button
 Similar to Slack, you can edit most of the webhook parameters except the channel name and type. 
 ![image](https://user-images.githubusercontent.com/10277894/165084529-bf0aa817-5c4e-4f45-98bd-eeb33eb02547.png)
 
-#### Receive Alert in Webhook
+#### Receive Alert through Webhook
 
 ![image](https://user-images.githubusercontent.com/10277894/165078852-d3ae7571-bfa2-409a-93aa-2a870b379cb1.png)
 
