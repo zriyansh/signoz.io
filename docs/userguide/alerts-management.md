@@ -63,7 +63,7 @@ For grouping, you can use any of the tags like `severity`, `alertname` or any ot
 
 ## Setting Notification channel
 
-You can setup notification channels for sending the generated alerts to other applications. Currently, We support the following channels: 
+You can setup notification channels for sending the generated alerts to other applications. Currently, the following channels are supported: 
 - Slack ([v0.5.0](https://github.com/SigNoz/signoz/releases/tag/v0.5.0) onwards)
 - Webhook ([v0.7.4](https://github.com/SigNoz/signoz/releases/tag/v0.7.4) onwards)
 - Pagerduty (coming soon)
@@ -85,7 +85,7 @@ You have to provide a name, webhook URL and channel name (with # prefix) to conf
 
 ![new-notification-channel](../../static/img/docs/new-notification-channel.webp)
 
-Using _Test_ button you can also verify your configuration. When you click the button, a test alert will be sent to the configured slack channel.
+You can also verify the configuration by using the _Test_ button. When you click _Test_, a test alert will be sent to the configured slack channel. The purpose of this feature is to confirm that signoz alert manager can talk to your webhook URL. 
 
 #### Editing a Notification channel
 
@@ -104,9 +104,55 @@ Now you can stay relaxed that SigNoz will promptly alert you whenever something 
 
 ### Configure Webhook 
 #### Pre-requisite
+You must have a webhook URL and your application ready to accept the messages in this format.
 #### Creating a new Notification channel
+
 #### Editing a Notification channel
 #### Receive Alert in Slack
+
+#### Sample Format of Webhook messages
+```
+{
+   "receiver":"w1",
+   "status":"firing",
+   "alerts":[
+      {
+         "status":"firing",
+         "labels":{
+            "alertname":"DiskRunningFull",
+            "dev":"sda3",
+            "instance":"example3",
+            "severity":"critical"
+         },
+         "annotations":{
+            "info":"The disk sda3 is running full",
+            "summary":"please check the instance example1"
+         },
+         "startsAt":"2022-04-25T14:35:19.490146+05:30",
+         "endsAt":"0001-01-01T00:00:00Z",
+         "generatorURL":"",
+         "fingerprint":"ad592b0afcbe2e79"
+      }
+   ],
+   "groupLabels":{
+      "alertname":"DiskRunningFull"
+   },
+   "commonLabels":{
+      "alertname":"DiskRunningFull",
+      "dev":"sda3",
+      "instance":"example3",
+      "severity":"critical"
+   },
+   "commonAnnotations":{
+      "info":"The disk sda3 is running full",
+      "summary":"please check the instance example1"
+   },
+   "externalURL":"http://Apples-MacBook-Pro-3.local:9093",
+   "version":"4",
+   "groupKey":"{}/{}:{alertname=\"DiskRunningFull\"}",
+   "truncatedAlerts":0
+}
+
 
 ## Demo video 
 
