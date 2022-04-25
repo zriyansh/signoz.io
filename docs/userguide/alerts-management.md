@@ -7,7 +7,7 @@ import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 
 # Setting alerts in SigNoz  
 
-With [v0.5.0](https://github.com/SigNoz/signoz/releases/tag/v0.5.0) you can set alerts in SigNoz.
+Starting with [v0.5.0](https://github.com/SigNoz/signoz/releases/tag/v0.5.0) you can set alerts in SigNoz.
 
 
 ## Setting Alert Rules
