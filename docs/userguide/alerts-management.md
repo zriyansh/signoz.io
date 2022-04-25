@@ -63,30 +63,38 @@ For grouping, you can use any of the tags like `severity`, `alertname` or any ot
 
 ## Setting Notification channel
 
-In [v0.5.0](https://github.com/SigNoz/signoz/releases/tag/v0.5.0) we only support slack as a notification channel. We will add support for other channels like Email, OpsGenie, PagerDuty, etc. in upcoming releases.
+You can setup notification channels for sending the generated alerts to other applications. Currently, We support the following channels: 
+- Slack ([v0.5.0](https://github.com/SigNoz/signoz/releases/tag/v0.5.0) onwards)
+- Webhook ([v0.7.4](https://github.com/SigNoz/signoz/releases/tag/v0.7.4) onwards)
+- Pagerduty (coming soon)
 
-For setting up Slack as a notification channel, you need to first configure an Incoming Webhook in Slack. The following article explains how to do that - [Sending messages to slack using Incoming Webhook](https://api.slack.com/messaging/webhooks)
+We are also working towards adding more channels (like OpsGenie, Email) in the upcoming releases.
 
-
-The alert channel tabs can be accessed from `Settings > Alert Channels` tab. This shows a list of configured alert channels. For v0.5.0, the latest added Alert channel is taken as the default channel to send notifications. In upcoming releases, we will add support for mapping different channels with Alert rules in a more granular way.
+The alert channel tabs can be accessed from `Settings > Alert Channels` tab. This shows a list of configured alert channels. When multiple channels are setup, the alerts will be sent to all the configured channels.
 
 ![alert-channels](../../static/img/docs/alert-channels.webp)
 
 
-### Creating a new Notification channel
+### Configure Slack 
+#### Pre-requisite
+For setting up Slack as a notification channel, you need to first configure an Incoming Webhook in Slack. The following article explains how to do that - [Sending messages to slack using Incoming Webhook](https://api.slack.com/messaging/webhooks)
 
-You have to provide a name, webhook URL and channel name (with # prefix) to configure a notification channel.
+#### Creating a new Notification channel
+
+You have to provide a name, webhook URL and channel name (with # prefix) to configure a notification channel. 
 
 ![new-notification-channel](../../static/img/docs/new-notification-channel.webp)
 
-### Editing a Notification channel
+Using _Test_ button you can also verify your configuration. When you click the button, a test alert will be sent to the configured slack channel.
 
-You can also edit a notification channel with new webhook URL or channel name. You can't edit a channel name though in v0.5.0
+#### Editing a Notification channel
+
+You can edit slack webhook URL or other parameters except the channel name and channel type. 
 
 ![edit-notification-channel](../../static/img/docs/edit-notification-channel.webp)
 
 
-## Alerts in Slack
+#### Receive Alert in Slack
 
 Once everything is set up correctly, you should see your alerts in the configured slack channel whenever the monitored metrics cross the threshold specified in the alert rules.
 
@@ -94,6 +102,11 @@ Now you can stay relaxed that SigNoz will promptly alert you whenever something 
 
 ![alerts-in-slack](../../static/img/docs/alerts-in-slack.webp)
 
+### Configure Webhook 
+#### Pre-requisite
+#### Creating a new Notification channel
+#### Editing a Notification channel
+#### Receive Alert in Slack
 
 ## Demo video 
 
