@@ -108,19 +108,20 @@ You must have a valid webhook URL (reachable from SigNoz Alert Manager) and an a
 
 #### Creating a new Webhook channel
 Enter Webhook URL endpoint, username and password (if needed). Use _Test_ button to test the connection with your application. 
+
 ![image](https://user-images.githubusercontent.com/10277894/165084693-8034b65a-f0f4-4ff4-8a72-88fb7b8726b4.png)
 
 
 #### Editing a Webhook channel
-Similar to Slack, you can edit most of the webhook parameters except the channel name and type. 
+Similar to slack, you can edit most of the webhook parameters except the channel name and type. 
+
 ![image](https://user-images.githubusercontent.com/10277894/165084529-bf0aa817-5c4e-4f45-98bd-eeb33eb02547.png)
 
 #### Receive Alert through Webhook
 
 ![image](https://user-images.githubusercontent.com/10277894/165078852-d3ae7571-bfa2-409a-93aa-2a870b379cb1.png)
 
-
-#### Sample Format of Webhook messages
+#### Sample format of a Webhook message
 ```
 {
    "receiver":"w1",
