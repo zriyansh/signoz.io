@@ -122,6 +122,10 @@ Similar to slack, you can edit most of the webhook parameters except the channel
 ![image](https://user-images.githubusercontent.com/10277894/165078852-d3ae7571-bfa2-409a-93aa-2a870b379cb1.png)
 
 #### Sample format of a Webhook message
+A webhook message may contain multiple alerts. By default, the SigNoz alert manager groups alerts by the alert name and the messages in a group are delivered every 5 minutes. 
+
+For resolved alerts, the alert manager will set _endsAt_ property to indicate the time of resolution. 
+
 ```
 {
    "receiver":"w1",
