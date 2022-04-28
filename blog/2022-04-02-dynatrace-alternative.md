@@ -1,7 +1,7 @@
 ---
 title: SigNoz - Open-source alternative to Dynatrace
 slug: dynatrace-alternative
-date: 2021-09-27
+date: 2022-04-02
 tags: [application-monitoring, apm-tools]
 authors: ankit_anand
 description: If you're looking for an open-source alternative to Dynatrace, then you're at the right place. SigNoz is a perfect open-source alternative to Dynatrace. SigNoz provides a unified UI for both metrics and traces with advanced tagging and filtering capabilities...
@@ -86,29 +86,21 @@ Some of our key features which makes SigNoz vastly superior to current open-sour
 
 Get p90, p99 latencies, RPS, Error rates, and top endpoints for a service out of the box.
 
-import Screenshot from "@theme/Screenshot"
-
-<Screenshot
-    alt="SigNoz dashboard showing popular RED metrics"
-    height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.webp"
-    title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
-    width={700}
-/>
+<figure data-zoomable>
+    <img src="/img/blog/common/signoz_charts_application_metrics.webp" alt="SigNoz dashboard showing popular RED metrics"/>
+    <figcaption><i>SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate</i></figcaption>
+</figure>
 
 ### Seamless flow between metrics & traces
 
 Found something suspicious in a metric, just click that point in the graph & get details of traces that may be causing the issues. Seamless, Intuitive.
 
-<Screenshot
-    alt="Seamless flow between metrics and traces"
-    height={500}
-    src="/img/blog/2021/08/metrics_to_traces_signoz-min.webp"
-    title="Move from metrics to traces at any point of time which needs more analysis"
-    width={700}
-/>
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2022/04/metrics_to_traces.webp" alt="Seamless flow between metrics and traces"/>
+    <figcaption><i>Move from metrics to traces at any point of time which needs more analysis</i></figcaption>
+</figure>
 
-### Filtering based on tags
+<!-- ### Filtering based on tags
 
 For example, you can find latency experienced by customers who have customer_type set as `premium`.
 
@@ -118,19 +110,27 @@ For example, you can find latency experienced by customers who have customer_typ
     src="/img/blog/2021/08/tags_based_filtering_signoz-min.webp"
     title="Filter traces for a specific user group using tags"
     width={700}
-/>
+/> -->
+
+### Advanced filters on trace data
+
+Under our traces tab, you can analyze the traces data using filters based on tags, status codes, service names, operation, etc.
+
+Using tags, you can find latency experienced by customers who have customer_type set as `premium`.
+
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2022/04/powerful_filters_on_traces_data.webp" alt="Filters on trace data"/>
+    <figcaption><i>Use advanced filters to analyze your trace data</i></figcaption>
+</figure>
 
 ### Custom aggregates on filtered traces
 
 Create custom metrics from filtered traces to find metrics of any type of request. Want to find p99 latency of customer_type: premium who are seeing status_code:400. Just set the filters, and you have the graph.
 
-<Screenshot
-    alt="Custom aggregates on filtered traces"
-    height={500}
-    src="/img/blog/2021/08/metrics_on_filtered_traces-min.webp"
-    title="Find custom aggregates on filtered traces"
-    width={700}
-/>
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2022/04/custom_aggregates_filtered_data.webp" alt="Custom aggregates on filtered traces"/>
+    <figcaption><i>Find custom aggregates on filtered traces</i></figcaption>
+</figure>
 
 ### Natively built to support OpenTelemetry
 
@@ -160,13 +160,10 @@ You can drill down details of how many events is each application sending or at 
 
 Detailed flamegraph & Gantt charts to find the exact cause of the issue and which underlying requests are causing the problem. Is it a SQL query gone rogue or a Redis operation is causing an issue?
 
-<Screenshot
-    alt="Detailed Flamegraphs & Gantt charts"
-    height={500}
-    src="/img/blog/common/signoz_flamegraphs.webp"
-    title="Spans of a trace visualized with the help of flamegraphs and gantt charts in SigNoz dashboard"
-    width={700}
-/>
+<figure data-zoomable align='center'>
+    <img src="/img/blog/common/signoz_flamegraphs.webp" alt="Detailed Flamegraphs & Gantt charts"/>
+    <figcaption><i>Spans of a trace visualized with the help of flamegraphs and gantt charts in SigNoz dashboard</i></figcaption>
+</figure>
 
 ## Getting started with SigNoz
 
