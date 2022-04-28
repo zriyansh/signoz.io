@@ -27,6 +27,11 @@ figure {
   margin: 0;
 }
 
+figure > figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
 nav.navbar {
   z-index: 10 !important;
 }
