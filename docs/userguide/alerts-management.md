@@ -172,10 +172,14 @@ For resolved alerts, the alert manager will send the time of resolution in _ends
 #### Prerequisite
 You must have a valid Integration Key (aka Routing Key) before you setup a pagerduty channel in SigNoz Dashboard. Presently, integration through [events API v2](https://developer.pagerduty.com/docs/ZG9jOjExMDI5NTgx-sending-an-alert-event) is supported. 
 
+#### Send alert to a service
 The alerts can be sent to individual services by adding [events API v2](https://developer.pagerduty.com/docs/ZG9jOjExMDI5NTgx-sending-an-alert-event) in the integrations tab of the service details page. Once the integration is added, you can obtain the copy of the integration key (see below) and use it as Routing Key in SigNoz. For more details on the setup, visit [here](https://support.pagerduty.com/docs/services-and-integrations)
+
 ![image](https://user-images.githubusercontent.com/10277894/165688334-a1129c34-710e-485a-aa44-ab8054a6807d.png)
 
+#### Send alert to an orchestration
 If you wish to automate incident creation or create alerts globally in pagerduty then you can setup Event Orchestration. The following screenshot shows integration or routing key tied to an orchestration.  
+
 ![image](https://user-images.githubusercontent.com/10277894/165689058-69a7b742-7415-4824-812f-b5cfa1f6abbe.png)
 
 
