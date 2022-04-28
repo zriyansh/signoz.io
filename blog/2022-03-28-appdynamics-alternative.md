@@ -130,18 +130,6 @@ Create custom metrics from filtered traces to find metrics of any type of reques
     <figcaption><i>Find custom aggregates on filtered traces</i></figcaption>
 </figure>
 
-### Transparent usage Data
-
-You can drill down details of how many events is each application sending or at what granularity so that you can adjust your sampling rate as needed and not get a shock at the end of the month (case with SaaS vendors many times)
-
-<Screenshot
-    alt="Transparent usage data"
-    height={500}
-    src="/img/blog/2021/08/transparent_usage_data-min.webp"
-    title="SigNoz provides usage explorer so that you are always informed about your usage"
-    width={700}
-/>
-
 ### Detailed Flamegraphs & Gantt charts
 
 Detailed flamegraph & Gantt charts to find the exact cause of the issue and which underlying requests are causing the problem. Is it a SQL query gone rogue or a Redis operation is causing an issue?
@@ -149,6 +137,15 @@ Detailed flamegraph & Gantt charts to find the exact cause of the issue and whic
 <figure data-zoomable align='center'>
     <img src="/img/blog/common/signoz_flamegraphs.webp" alt="Detailed Flamegraphs & Gantt charts"/>
     <figcaption><i>Spans of a trace visualized with the help of flamegraphs and gantt charts in SigNoz dashboard</i></figcaption>
+</figure>
+
+### Transparent usage Data
+
+You can drill down details of how many events is each application sending or at what granularity so that you can adjust your sampling rate as needed and not get a shock at the end of the month (case with SaaS vendors many times)
+
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2022/04/transparent_usage_data.webp" alt="Transparent usage data"/>
+    <figcaption><i>SigNoz provides usage explorer so that you are always informed about your usage</i></figcaption>
 </figure>
 
 ### Natively built to support OpenTelemetry
