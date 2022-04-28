@@ -167,7 +167,7 @@ For resolved alerts, the alert manager will send the time of resolution in _ends
    "groupKey":"{}/{}:{alertname=\"DiskRunningFull\"}",
    "truncatedAlerts":0
 }
-
+```
 ### Configure Pagerduty Channel
 #### Prerequisite
 You must have a valid Integration Key (aka Routing Key) before you setup a pagerduty channel in SigNoz Dashboard. Presently, integration through [events API v2](https://developer.pagerduty.com/docs/ZG9jOjExMDI5NTgx-sending-an-alert-event) is supported. 
