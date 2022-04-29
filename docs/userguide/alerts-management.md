@@ -195,7 +195,7 @@ For more details on pagerduty service setup, visit [here](https://support.pagerd
 You must have a valid Integration Key (aka Routing Key) before you setup a pagerduty channel in SigNoz Dashboard. 
 
 #### Create a new Pagerduty channel
-1. Navigate to `Settings > Alert Channels` 
+1. Go to **Settings > Alert Channels**
 2. Click **New Channel**
 3. Enter a **name** and select **Pagerduty** as channel type
 4. Enter **Routing Key (aka Integration Key)** obtained from pagerduty (described at the start of this section)
