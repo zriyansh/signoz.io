@@ -203,6 +203,8 @@ You must have a valid Integration Key (aka Routing Key) before you setup a pager
 6. Test the connect with **Test** button
 7. **Save** the channel 
 
+![image](https://user-images.githubusercontent.com/10277894/165889927-4dfc8765-6ff1-4b2e-9796-d40bbf71c489.png)
+
 ## Demo video 
 
 Whew! That was a lot of instruction to follow. If you instead prefer to see how it works in a demo environment, here you go 👇
