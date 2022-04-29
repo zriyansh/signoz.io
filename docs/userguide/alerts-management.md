@@ -169,7 +169,7 @@ For resolved alerts, the alert manager will send the time of resolution in _ends
 }
 ```
 ### Configure Pagerduty Channel
-There are two ways to integrate with Pagerduty: via global [event orchestration](https://support.pagerduty.com/docs/event-orchestration) or directly through an integration on [pagerduty service]https://support.pagerduty.com/docs/services-and-integrations). Integrating alerts with global event orchestration is beneficial if you want to automate incident creation or management. 
+There are two ways to integrate with Pagerduty: via global [event orchestration](https://support.pagerduty.com/docs/event-orchestration) or directly through an integration on [pagerduty service](https://support.pagerduty.com/docs/services-and-integrations). Integrating alerts with global event orchestration is beneficial if you want to automate incident creation or management. 
 
 #### Get Integration or Routing key to integrate with event orchestration
 1. From the **Automation** menu, select **Event Orchestration**
