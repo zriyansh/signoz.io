@@ -81,7 +81,7 @@ For setting up Slack as a notification channel, you need to first configure an I
 
 #### Creating a new Notification channel (Slack)
 
-You have to provide a name, webhook URL and channel name (with # prefix) to configure a notification channel. 
+You have to provide a name, webhook URL and channel name (with # prefix) to configure a notification channel. You may use [go templates](https://prometheus.io/docs/alerting/latest/notifications/) for the title and description. 
 
 ![new-notification-channel](../../static/img/docs/new-notification-channel.webp)
 
@@ -107,7 +107,7 @@ Now you can stay relaxed that SigNoz will promptly alert you whenever something 
 You must have a valid webhook URL (reachable from SigNoz Alert Manager) and an application ready to accept webhook messages.
 
 #### Creating a new Webhook channel
-Enter Webhook URL endpoint, username and password (if needed). Use _Test_ button to test the connection with your application. 
+Enter Webhook URL endpoint, username and password (if needed). Use _Test_ button to test the connection with your application.  
 
 ![image](https://user-images.githubusercontent.com/10277894/165084693-8034b65a-f0f4-4ff4-8a72-88fb7b8726b4.png)
 
@@ -199,7 +199,7 @@ You must have a valid Integration Key (aka Routing Key) before you setup a pager
 2. Click **New Channel**
 3. Enter a **name** and select **Pagerduty** as channel type
 4. Enter **Routing Key (aka Integration Key)** obtained from pagerduty (described at the start of this section)
-5. Enter more information as necessary. More details on the fields can be found [here](https://developer.pagerduty.com/docs/ZG9jOjExMDI5NTgw-events-api-v2-overview).
+5. Enter more information as necessary. More details on the fields can be found [here](https://developer.pagerduty.com/docs/ZG9jOjExMDI5NTgw-events-api-v2-overview). You may also use [go templates](https://prometheus.io/docs/alerting/latest/notifications/) for dynamically setting the fields.
 6. Test the connect with **Test** button
 7. **Save** the channel 
 
