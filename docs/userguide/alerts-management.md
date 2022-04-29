@@ -197,11 +197,11 @@ You must have a valid Integration Key (aka Routing Key) before you setup a pager
 #### Create a new Pagerduty channel
 1. Navigate to `Settings > Alert Channels` 
 2. Click **New Channel**
-3. Enter a name and select Pagerduty as channel type
-4. Enter Routing or Integration Key obtained from pagerduty (described in steps above)
+3. Enter a **name** and select **Pagerduty** as channel type
+4. Enter **Routing Key (aka Integration Key)** obtained from pagerduty (described at the start of this section)
 5. Enter more information as necessary. More details on the fields can be found [here](https://developer.pagerduty.com/docs/ZG9jOjExMDI5NTgw-events-api-v2-overview).
 6. Test the connect with **Test** button
-7. Save the channel 
+7. **Save** the channel 
 
 ## Demo video 
 
