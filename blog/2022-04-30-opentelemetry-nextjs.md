@@ -102,7 +102,7 @@ To create a new Nextjs app, you can use `create-next-app` which sets up everyth
 
 Steps to get the app set up and ready:
 
-**Step 1:** **Create a project using any of these commands**
+**Step 1: Create a project using any of these commands**
 
 ```
 npx create-next-app@latest
@@ -133,7 +133,7 @@ You can check if your app is up and running on `[http://localhost:3000](http://l
 
 <br></br>
 
-### **Instrumenting the Nextjs application with OpenTelemetry**
+### Instrumenting the Nextjs application with OpenTelemetry
 
 **Step 1: Install OpenTelemetry packages**
 
@@ -149,7 +149,7 @@ npm i @opentelemetry/sdk-node
 > Note: You can use yarn or npm as per the package manager that you’re using for the project
 > 
 
-**Step 2:** **Create a `tracing.js` file**
+**Step 2: Create a `tracing.js` file**
 
 Instantiate tracing by creating a `tracing.js` file and using the below code. 
 
@@ -203,7 +203,7 @@ module.exports = sdk
 
 Now we will have to create the `server.js` file that we have imported into the `tracing.js` file.
 
-**Step 4: Create a custom Nextjs server**
+**Step 3: Create a custom Nextjs server**
 
 Create a `server.js` file in the source folder using the following code.
 
@@ -233,7 +233,7 @@ module.exports = {
 
 You can use whichever port is available, for this example we’ve used port 8080.
 
- **Step 4: Adding the script to start the server**
+**Step 4: Adding the script to start the server**
 
 Now we will have to run the server in order to trace the data,
 
@@ -250,7 +250,7 @@ With this `scripts` JSON in the `package.json` file looks something like this.
   }
 ```
 
-**5.** **Run the server and monitor the application**
+**Step 5: Run the server and monitor the application**
 
 Run the application using `npm run start:server` or `yarn start:server` , and your application should be available on [`http://localhost:8080`](http://localhost:8080/) .
 
