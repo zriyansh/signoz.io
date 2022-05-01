@@ -346,6 +346,11 @@ SigNoz is an open-source observability tool that comes with a SaaS-like experien
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
+
+If you face any issues while trying out SigNoz, you can reach out with your questions in #support channel 👇
+
+[![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://signoz.io/slack)
+
 ---
 
 ## Further Reading
