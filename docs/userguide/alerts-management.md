@@ -66,7 +66,7 @@ For grouping, you can use any of the tags like `severity`, `alertname` or any ot
 You can setup notification channels for sending the generated alerts to other applications. Currently, the following channels are supported: 
 - Slack ([v0.5.0](https://github.com/SigNoz/signoz/releases/tag/v0.5.0) onwards)
 - Webhook ([v0.7.4](https://github.com/SigNoz/signoz/releases/tag/v0.7.4) onwards)
-- Pagerduty (coming soon)
+- Pagerduty
 
 We are also working towards adding more channels (like OpsGenie, Email) in the upcoming releases.
 
