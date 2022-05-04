@@ -28,14 +28,13 @@ OpenTelemetry can auto-instrument many common modules for a Javascript applicati
 
 <!--truncate-->
 
-import Screenshot from "@theme/Screenshot"
+<figure data-zoomable align='center'>
+    <img src="/img/blog/common/signoz_charts_application_metrics.png" alt="Monitor your Nodejs applications with SigNoz"/>
+</figure>
 
-<Screenshot
-  alt="Monitor your Nodejs applications with SigNoz"
-  height={500}
-  src="/img/blog/common/signoz_charts_application_metrics.png"
-  width={700}
-/>
+<br></br>
+
+
 OpenTelemetry is a set of tools, APIs, and SDKs used to instrument applications to create and manage telemetry data(Logs, metrics, and traces). For any distributed system based on microservice architecture, it's an operational challenge to solve performance issues quickly.
 
 Telemetry data helps engineering teams to troubleshoot issues across services and identify the root causes. In other words, telemetry data powers observability for your distributed applications.
