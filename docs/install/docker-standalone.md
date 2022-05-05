@@ -55,7 +55,7 @@ Before you install Signoz, ensure that [Docker Compose](https://docs.docker.com/
 
 2. To install SigNoz, enter the `sudo docker-compose up` command, specifying the following:
     - `-f` and the path to your configuration file
-    - `-d` to un containers in the background
+    - `-d` to run containers in the background
 
   <Tabs
     defaultValue="x86"
