@@ -10,7 +10,7 @@ v0.8.0 is a breaking release which requires data migration, if you are upgrading
 
 ### First upgrade to 0.8.0
 
-- `git clone -b main [https://github.com/SigNoz/signoz.git](https://github.com/SigNoz/signoz.git) && cd signoz/deploy/`
+- `git clone -b main https://github.com/SigNoz/signoz.git && cd signoz/deploy/`
 - `git checkout v0.8.0`
 - `./install.sh`
 
