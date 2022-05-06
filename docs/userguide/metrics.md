@@ -48,20 +48,23 @@ Select a column heading to sort the list by the values in that column. Select th
 
 You can add attributes to applications and filter based on these attributes. 
 
+![resource-attribute-filtering](/img/docs/resource-attribute-filtering.png)
+
 ### Steps to add resource attributes
 
-You can add attributes like `service.namespace` as `OTEL_RESOURCE_ATTRIBUTES` flag when starting the application.
+You can add attributes as `OTEL_RESOURCE_ATTRIBUTES` flag when starting the application. The below example shows how to set values for `service.namespace` and `deployment.environment`
 
+For example
 
 ```
-OTEL_RESOURCE_ATTRIBUTES="service.name=flaskApp,service.namespace=sampleapps,deployment.environment=play" OTEL_EXPORTER_OTLP_ENDPOINT="http://3.15.13.109:4317" opentelemetry-instrument python3 app.py
+OTEL_RESOURCE_ATTRIBUTES="service.name=flaskApp,service.namespace=sampleapps,deployment.environment=play" OTEL_EXPORTER_OTLP_ENDPOINT="http://3.11.144.34:4317" opentelemetry-instrument python3 app.py
 ```
 
-By default, you can filter based on `service.namespace` and `dimension.environment` dimensions.
+By default, you can filter based on `service.namespace` and `deployment.environment` dimensions.
 
 To add another dimension, update the dimension fields at https://github.com/SigNoz/signoz/blob/develop/deploy/docker/clickhouse-setup/otel-collector-config.yaml#L34
  and then deploy the yaml file again.
- 
+
 ## View Details About an Application
 
 The RED metrics help you spot performance bottlenecks or failures  across all your applications.  For example, if the error rate of an application increases, you can assume that these errors will impact the experience of your customers. Once you’ve identified a potential issue, select a row to open the application details page:

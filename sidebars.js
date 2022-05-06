@@ -54,6 +54,7 @@ module.exports = {
       },
       items: [
         'operate/configuration',
+        'operate/upgrade',
         'operate/docker-standalone',
         'operate/docker-swarm',
         'operate/kubernetes'
@@ -80,6 +81,7 @@ module.exports = {
           ]
         },
         'userguide/dashboards',
+        'userguide/exceptions',
         'userguide/alerts-management',
         'userguide/authentication',
         'userguide/retention-period',
