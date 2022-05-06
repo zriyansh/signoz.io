@@ -81,6 +81,7 @@ module.exports = {
         },
         'userguide/dashboards',
         'userguide/alerts-management',
+        'userguide/authentication',
         'userguide/retention-period',
         'userguide/service-map',
       ],
