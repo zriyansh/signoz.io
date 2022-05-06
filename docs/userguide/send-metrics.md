@@ -157,7 +157,7 @@ You can follow the below steps
 1. Install Clickhouse client
 2. Connect to clickhouse instance in SigNoz
   ```
-  ./clickhouse client --host <SigNoz IP>  --port 9001
+  ./clickhouse client --host <SigNoz IP>  --port 9000
   select * from signoz_metrics.time_series 
   ```
   _signoz_metrics.time_series is a table_
@@ -172,6 +172,30 @@ You can follow the below steps
   ```
 
 You can use this metrics to plot in the [Dashboard](/docs/userguide/dashboards) section
+
+### Metrics from Hostmetrics receiver
+
+Metrics which are available if hostmetrics is enabled. This is enabled in SigNoz default installation.
+
+| Metrics | Description |
+| --- | ----- |
+| `system_filesystem_usage_total` | |
+| `system_network_dropped_total` | |
+| `system_cpu_time_total` | |
+| `system_disk_merged_total` | |
+| `system_disk_io_time_total` | |
+| `system_disk_operations_total` | |
+| `system_network_errors_total` | |
+| `system_network_io_total` | |
+| `system_disk_weighted_io_time_total` | |
+| `system_network_packets_total` | |
+| `system_disk_operation_time_total` | |
+| `system_cpu_load_average_5m` | |
+| `system_memory_usage_total` | |
+| `system_disk_pending_operations_total` | |
+| `system_disk_io_total` | |
+| `system_cpu_load_average_15m` | |
+| `system_cpu_load_average_1m` | |
 
 ## Related Videos
 
