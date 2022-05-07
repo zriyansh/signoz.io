@@ -3,8 +3,9 @@ id: upgrade
 title: Upgrading to newer versions
 sidebar_label: Upgrade 
 ---
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 
-# Upgrade to 0.8.0
+# Upgrade to 0.8.0 from earlier versions
 
 v0.8.0 is a breaking release which requires data migration, if you are upgrading from an older version then you have to run the data migration scripts to be able to see past data.
 
@@ -71,3 +72,9 @@ Flags:
 - `-dropOldTable` : If it is set to true then the old tables will be dropped after data migration is successful `default=true`
 - `-service` : If you want to restart the migration starting with the service after it has failed specify the service name with -service. `default=""`
 - `-timeNano` : Timestamp in nano after which the migration needs to be restarted. `default=""`
+
+### Steps to be taken in the browser after upgrade
+
+### For firefox
+
+<LiteYoutubeEmbed id="ESivE729ZTs" mute={false} />

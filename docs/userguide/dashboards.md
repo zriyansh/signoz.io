@@ -26,6 +26,13 @@ You’ll learn the following:
 From the sidebar, select **Dashboard**:
 ![Open the Dashboard section](/img/open-dashboard-section-v0.6.2.png)
 
+## Filter Dashboards
+
+You can filter dashboards list based on Tite, Tag or Description.
+
+![Filter Dashboards list](/img/docs/filtering-dashboard.png)
+
+
 ## Manage Dashboards
 
 This section shows how you can create, update, and remove a custom dashboard.
