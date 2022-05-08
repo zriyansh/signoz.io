@@ -75,6 +75,16 @@ Flags:
 
 ### Steps to be taken in the browser after upgrade
 
-### For firefox
+### For Chrome
+
+<LiteYoutubeEmbed id="PmbfbTKKxmk" mute={false} />
+
+### For Firefox
 
 <LiteYoutubeEmbed id="ESivE729ZTs" mute={false} />
+
+
+### For Safari
+
+<LiteYoutubeEmbed id="T_ovOttPRhA" mute={false} />
+
