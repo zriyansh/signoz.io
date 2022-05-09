@@ -67,7 +67,7 @@ Now let’s get down to how to implement OpenTelemetry Angular libraries and the
 
 **Step 1: Install SigNoz**
 
-Frist, you need to install SigNoz so that OpenTelemetry can send the data to it.
+First, you need to install SigNoz so that OpenTelemetry can send the data to it.
 
 SigNoz can be installed on macOS or Linux computers in just three steps by using a simple install script.
 
