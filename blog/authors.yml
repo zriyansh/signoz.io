@@ -58,8 +58,6 @@ sai_deepesh:
   image_url: https://signoz.io/img/authors/sai_deepesh_profile.jpeg
 
 
-
-
 srikanth:
   name: Srikanth Chekuri
   title: SigNoz Team
@@ -67,3 +65,8 @@ srikanth:
   image_url: https://signoz.io/img/authors/srikanth_profile.webp
   
 
+ricardo:
+  name: Ricardo Paiva
+  title: SigNoz Community
+  url: https://www.linkedin.com/in/ricardoccpaiva/
+  image_url: https://signoz.io/img/authors/ricardo_profile_pic.webp
