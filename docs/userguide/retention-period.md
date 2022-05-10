@@ -5,7 +5,7 @@ title: Retention Period
 
 To set retention period for metrics and traces, you can navigate to the `General` tab on the `Settings` page.
 
-![retention-period](../../static/img/docs/retention-period.webp)
+![retention-period](../../static/img/docs/retention_settings.webp)
 
 - You can select independent retention period for traces and metrics.
 - You can also set the duration after which the data will be moved to cold storage (S3) for both traces and metrics. This can be only set if Cold Storage (eg. S3) is enabled from the backend.
