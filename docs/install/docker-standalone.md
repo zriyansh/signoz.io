@@ -29,11 +29,11 @@ If you're using a different Linux distribution, see the [Install SigNoz Using Do
 
 ## Prerequisites
 
-- A Linux or macOS machine. Microsoft Windows is not supported.
+- A Linux or macOS machine. Microsoft Windows is not officially supported.
 - On macOS, you must manually install [Docker Engine](https://docs.docker.com/engine/install/) before you run the install script. The install script automatically installs Docker Engine on Linux.
-- A minimum of 2GB of memory must be allocated to Docker. <!-- Existing documentation is somehow unclear. Are there different memory requirements based on the operating system? -->
+- A minimum of 4GB of memory must be allocated to Docker. <!-- Existing documentation is somehow unclear. Are there different memory requirements based on the operating system? -->
 - [Git client](https://desktop.github.com/)
-- Ensure that the port `3301` is open on the machine where you install SigNoz.
+- Ensure that the ports `3301`, `4317` and `4318` are open on the machine where you install SigNoz.
 
 
 ## Install SigNoz Using the Install Script
@@ -86,15 +86,15 @@ docker ps
   The output should look similar to the following:
 
 ```output
-CONTAINER ID   IMAGE                                          COMMAND                  CREATED         STATUS                   PORTS                                                        NAMES
-130fee61f894   signoz/frontend:0.6.1                          "nginx -g 'daemon of…"   4 minutes ago   Up 4 minutes             80/tcp, 0.0.0.0:3301->3301/tcp, :::3301->3301/tcp            frontend
-7c957db328d3   signoz/otelcontribcol:0.5.0                    "/otelcontribcol --c…"   4 minutes ago   Up 4 minutes             4317/tcp, 55679-55680/tcp                                    clickhouse-setup_otel-collector-metrics_1
-ee8c2ec75926   signoz/query-service:0.6.1                     "./query-service -co…"   4 minutes ago   Up 4 minutes             8080/tcp                                                     query-service
-7eb27952387b   signoz/otelcontribcol:0.5.0                    "/otelcontribcol --c…"   4 minutes ago   Up 4 minutes             0.0.0.0:4317->4317/tcp, :::4317->4317/tcp, 55679-55680/tcp   clickhouse-setup_otel-collector_1
-d1706dd5903e   grubykarol/locust:1.2.3-python3.9-alpine3.12   "/docker-entrypoint.…"   4 minutes ago   Up 4 minutes             5557-5558/tcp, 8089/tcp                                      load-hotrod
-a5360a1d773f   signoz/alertmanager:0.5.0                      "/bin/alertmanager -…"   4 minutes ago   Up 4 minutes             9093/tcp                                                     clickhouse-setup_alertmanager_1
-874b01ec9d4d   yandex/clickhouse-server:21.12.3.32            "/entrypoint.sh"         4 minutes ago   Up 4 minutes (healthy)   8123/tcp, 9000/tcp, 9009/tcp                                 clickhouse-setup_clickhouse_1
-3694594501fa   jaegertracing/example-hotrod:1.30              "/go/bin/hotrod-linu…"   4 minutes ago   Up 4 minutes             8080-8083/tcp                                                hotrod
+CONTAINER ID   IMAGE                                          COMMAND                  CREATED          STATUS                    PORTS                                                                            NAMES
+1ad413fc12aa   signoz/frontend:0.8.0                          "nginx -g 'daemon of…"   20 minutes ago   Up 20 minutes             80/tcp, 0.0.0.0:3301->3301/tcp, :::3301->3301/tcp                                frontend
+419f7b440412   signoz/alertmanager:0.23.0-0.1                 "/bin/alertmanager -…"   20 minutes ago   Up 20 minutes             9093/tcp                                                                         clickhouse-setup_alertmanager_1
+95f5fab00c3c   signoz/otelcontribcol:0.43.0-0.1               "/otelcontribcol --c…"   21 minutes ago   Up 21 minutes             0.0.0.0:4317-4318->4317-4318/tcp, :::4317-4318->4317-4318/tcp, 55679-55680/tcp   clickhouse-setup_otel-collector_1
+c1640c215d10   signoz/otelcontribcol:0.43.0-0.1               "/otelcontribcol --c…"   21 minutes ago   Up 21 minutes             4317/tcp, 55679-55680/tcp                                                        clickhouse-setup_otel-collector-metrics_1
+9db88c61f7fd   signoz/query-service:0.8.0                     "./query-service -co…"   21 minutes ago   Up 21 minutes (healthy)   8080/tcp                                                                         query-service
+509ab96c5393   clickhouse/clickhouse-server:22.4-alpine       "/entrypoint.sh"         22 minutes ago   Up 21 minutes (healthy)   8123/tcp, 9000/tcp, 9009/tcp                                                     clickhouse-setup_clickhouse_1
+eb7a2e23c0c0   grubykarol/locust:1.2.3-python3.9-alpine3.12   "/docker-entrypoint.…"   22 minutes ago   Up 21 minutes             5557-5558/tcp, 8089/tcp                                                          load-hotrod
+f234b5cb4512   jaegertracing/example-hotrod:1.30              "/go/bin/hotrod-linu…"   22 minutes ago   Up 21 minutes             8080-8083/tcp                                                                    hotrod
 ```
 
 2. Wait for all the pods to be in running state, and then point your browser to `http://<IP-ADDRESS>:3301/` to access the dashboard, replacing `<IP-ADDRESS>` with the IP address of the machine where you installed SigNoz.

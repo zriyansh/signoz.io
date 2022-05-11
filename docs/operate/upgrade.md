@@ -9,15 +9,25 @@ import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 
 v0.8.0 is a breaking release which requires data migration, if you are upgrading from an older version then you have to run the data migration scripts to be able to see past data.
 
-### First upgrade to 0.8.0
+## First upgrade to 0.8.0
+
+Follow the plaform specific instructions to upgrade to 0.8.0 and above.
+
+Note that the past data will not be visible on the new application until you run the migration script.
+
+### Docker
 
 - `git clone -b main https://github.com/SigNoz/signoz.git && cd signoz/deploy/`
 - `git checkout v0.8.0`
 - `./install.sh`
 
-The past data won’t be visible on the new application until you run the migration script.
+### Kubernetes
 
-### Steps to run migration script:
+- `helm repo update`
+- `helm search repo signoz --versions`
+- `helm -n platform upgrade my-release signoz/signoz`
+
+## Steps to run migration script:
 
 ### Docker
 
@@ -43,7 +53,7 @@ docker rm signoz_migrate
 ### Kubernetes
 
 ```bash
-kubectl -n platform run -i -t signoz-migrate --image=signoz/migrate:0.8 \
+kubectl -n platform run -i -t signoz_migrate --image=signoz/migrate:0.8 \
   -- -host=my-release-clickhouse -port=9000 -userName=admin -password=27ff0399-0d3a-4bd8-919d-17c2181e6fb9
 ```
 
@@ -73,7 +83,7 @@ Flags:
 - `-service` : If you want to restart the migration starting with the service after it has failed specify the service name with -service. `default=""`
 - `-timeNano` : Timestamp in nano after which the migration needs to be restarted. `default=""`
 
-### Steps to be taken in the browser after upgrade
+### Steps to be taken in the browser to clear cache after upgrade
 
 ### For Chrome
 
@@ -83,8 +93,6 @@ Flags:
 
 <LiteYoutubeEmbed id="ESivE729ZTs" mute={false} />
 
-
 ### For Safari
 
 <LiteYoutubeEmbed id="T_ovOttPRhA" mute={false} />
-
