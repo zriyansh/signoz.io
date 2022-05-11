@@ -116,7 +116,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 }
 ```
 
-**Step 4:  Add the OpenTelemetry instrumentation for fibonacci**<br></br>
+**Step 4:  Add the OpenTelemetry instrumentation for your sample Rust app**<br></br>
 
 ```jsx
     let parent_cx = global::get_text_map_propagator(|propagator| {
