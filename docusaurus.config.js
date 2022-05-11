@@ -156,6 +156,10 @@ const config = {
           title: "More",
           items: [
             {
+              label: "Technical Writer Program",
+              to: "technical-writer-program/",
+            },
+            {
               label: "About",
               to: "about-us/",
             },
