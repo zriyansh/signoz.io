@@ -49,13 +49,11 @@ The telemetry data is then sent to an observability tool for storage and visuali
 
 <br></br>
 
-OpenTelemetry libraries instrument application code to generate telemetry data that is then sent to an observability tool for storage & visualization
-
 OpenTelemetry is the bedrock for setting up an observability framework. It also provides you the freedom to choose a backend analysis tool of your choice. You will never get locked in with any vendor if you use OpenTelemetry for your instrumentation layer.
 
 ## OpenTelemetry and SigNoz
 
-In this article, we will use SigNoz as our backend analysis tool. SigNoz is a full-stack open-source APM tool that can be used for storing and visualizing the telemetry data collected with OpenTelemetry. It is built natively on OpenTelemetry and works on the OTLP data formats.
+In this tutorial, we will use SigNoz as our backend analysis tool. SigNoz is a full-stack open-source APM tool that can be used for storing and visualizing the telemetry data collected with OpenTelemetry. It is built natively on OpenTelemetry and works on the OTLP data formats.
 
 SigNoz provides query and visualization capabilities for the end-user and comes with out-of-box charts for application metrics and traces.
 
