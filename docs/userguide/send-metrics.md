@@ -154,24 +154,50 @@ You can connect to SigNoz'a clickhouse instance and find the metrics SigNoz is s
 
 You can follow the below steps
 
-1. Install Clickhouse client
-2. Connect to clickhouse instance in SigNoz
-  ```
-  ./clickhouse client --host <SigNoz IP>  --port 9001
-  select * from signoz_metrics.time_series 
-  ```
-  _signoz_metrics.time_series is a table_
+1. [Install Clickhouse client](https://clickhouse.com/docs/en/getting-started/install/)
 
-3. Find distinct labels available ( this may  not be very accessible so we recommend step 4)
-  ```
-  select DISTINCT(labels) from signoz_metrics.time_series
-  ```
-4. If needed, dump in a csv file and parse it locally
+2. Connect to the ClickHouse container
+  ````
+  docker exec -it clickhouse-setup_clickhouse_1 bash
+  ````
+3. Run the clickhouse-client command to connect to the database service
+  ````
+  clickhouse client --host <SigNoz IP>  --port 9000
+  ````
+4. Run the query to list metrics
+  ````
+  select DISTINCT(JSONExtractString(time_series.labels,'__name__')) as metrics from signoz_metrics.time_series
+  ````
+5. If needed, dump in a csv file and parse it locally
   ```
   select DISTINCT(labels) from signoz_metrics.time_series INTO OUTFILE 'output.csv' 
   ```
 
 You can use this metrics to plot in the [Dashboard](/docs/userguide/dashboards) section
+
+### Metrics from Hostmetrics receiver
+
+Metrics which are available if hostmetrics is enabled. This is enabled in SigNoz default installation.
+
+| Metrics | Description |
+| --- | ----- |
+| `system_filesystem_usage_total` | |
+| `system_network_dropped_total` | |
+| `system_cpu_time_total` | |
+| `system_disk_merged_total` | |
+| `system_disk_io_time_total` | |
+| `system_disk_operations_total` | |
+| `system_network_errors_total` | |
+| `system_network_io_total` | |
+| `system_disk_weighted_io_time_total` | |
+| `system_network_packets_total` | |
+| `system_disk_operation_time_total` | |
+| `system_cpu_load_average_5m` | |
+| `system_memory_usage_total` | |
+| `system_disk_pending_operations_total` | |
+| `system_disk_io_total` | |
+| `system_cpu_load_average_15m` | |
+| `system_cpu_load_average_1m` | |
 
 ## Related Videos
 

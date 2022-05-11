@@ -54,6 +54,7 @@ module.exports = {
       },
       items: [
         'operate/configuration',
+        'operate/upgrade',
         'operate/docker-standalone',
         'operate/docker-swarm',
         'operate/kubernetes'
@@ -80,7 +81,9 @@ module.exports = {
           ]
         },
         'userguide/dashboards',
+        'userguide/exceptions',
         'userguide/alerts-management',
+        'userguide/authentication',
         'userguide/retention-period',
         'userguide/service-map',
       ],
@@ -98,6 +101,7 @@ module.exports = {
         'tutorial/jvm-metrics',
         'tutorial/kubernetes-infra-metrics',
         'tutorial/mongodb-metrics',
+        'tutorial/instrumenting-angular-frontend'
       ],
     },
     {

@@ -5,13 +5,11 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { Collapse } from "antd";
-import { CaretRightOutlined } from "@ant-design/icons";
 import ReactGA from "react-ga";
 import styles from "./styles.module.css";
 import { PlaySVG } from "../svgs/common";
 
-const { Panel } = Collapse;
+import FAQBody from "@site/src/components/FAQ";
 
 ReactGA.initialize("UA-152867655-1"); // How to make it appear only for production?
 // ReactGA.pageview("Home Page");
@@ -265,28 +263,16 @@ function ShowCompanyLogos() {
         <p className={styles.tagline}> Used by teams at </p>
         <ul>
           <li>
-            <img
-              src="img/users/naver_white2_hie7gu.svg"
-              alt="naver logo"
-            />
+            <img src="img/users/naver_white2_hie7gu.svg" alt="naver logo" />
           </li>
           <li>
-            <img
-              src="img/users/solve_white_njrutq.svg"
-              alt="solve logo"
-            />
+            <img src="img/users/solve_white_njrutq.svg" alt="solve logo" />
           </li>
           <li>
-            <img
-              src="img/users/Outplay.webp"
-              alt="outplay logo"
-            />
+            <img src="img/users/Outplay.webp" alt="outplay logo" />
           </li>
           <li>
-            <img
-              src="img/users/cafe21_1_vlrznt.svg"
-              alt="cafe24 logo"
-            />
+            <img src="img/users/cafe21_1_vlrznt.svg" alt="cafe24 logo" />
           </li>
           <li>
             <img
@@ -623,7 +609,6 @@ function Home() {
               {/* <h5 className="hero__subtitle text--center">Don't just take our word for it..</h5> */}
 
               <div class="row">
-
                 <div class="col col--4">
                   <div class="card-demo margin--md">
                     <div class="card">
@@ -633,7 +618,6 @@ function Home() {
                             class="avatar__photo"
                             src="img/users/aloysius.webp"
                             alt="aloysius"
-
                           />
                           <div class="avatar__intro">
                             <h4 class="avatar__name">Aloysius Coelho</h4>
@@ -699,7 +683,6 @@ function Home() {
                             class="avatar__photo"
                             src="img/users/pawan-outplay.webp"
                             alt="pawan bhadauria"
-
                           />
                           <div class="avatar__intro">
                             <h4 class="avatar__name">Pawan Bhadauria</h4>
@@ -748,7 +731,8 @@ function Home() {
 
                       <div class="card__body padding--md">
                         <p>
-                        We are using Signoz at Outplay & our experience has been great. It has 5.4k stars on Github.
+                          We are using Signoz at Outplay & our experience has
+                          been great. It has 5.4k stars on Github.
                         </p>
                       </div>
                     </div>
@@ -842,78 +826,7 @@ function Home() {
                     Frequently Asked Questions
                   </p>
                   <div class="card-demo margin--md">
-                    <Collapse
-                      bordered={false}
-                      // defaultActiveKey={['1']}
-                      expandIcon={({ isActive }) => (
-                        <CaretRightOutlined rotate={isActive ? 90 : 0} />
-                      )}
-                      className="site-collapse-custom-collapse"
-                    >
-                      <Panel
-                        header=" I am looking for an application monitoring tool, is SigNoz an APM?"
-                        key="1"
-                        className="card"
-                        style={{
-                          marginTop: "1rem",
-                          marginBottom: "1rem",
-                          padding: "1rem",
-                        }}
-                      >
-                        <div class="card__body">
-                          <p>
-                            SigNoz is more than an APM. We provide all features
-                            like metrics and request traces which APMs provide.
-                            On top of that. we provide advanced filtering on
-                            trace data and custom aggregation on it
-                          </p>
-                        </div>
-                      </Panel>
-
-                      <Panel
-                        header="How does SigNoz compare to Jaeger?"
-                        key="2"
-                        className="card"
-                        style={{
-                          marginTop: "1rem",
-                          marginBottom: "1rem",
-                          padding: "1rem",
-                        }}
-                      >
-                        <div class="card__body">
-                          <p>
-                            Few ways in which SigNoz is more advanced than
-                            Jaeger : Jaeger UI doesn’t show any metrics on
-                            traces or on filtered traces, and Jaeger can’t get
-                            aggregates on filtered traces. For example,
-                            Cassandra doesn’t support Group By, Max, etc.
-                          </p>
-                        </div>
-                      </Panel>
-
-                      <Panel
-                        header="What will be your paid plan like?"
-                        key="3"
-                        className="card"
-                        style={{
-                          marginTop: "1rem",
-                          marginBottom: "1rem",
-                          padding: "1rem",
-                        }}
-                      >
-                        <div class="card__body">
-                          <p>
-                            SigNoz will be always open-source and free to be
-                            self-hosted for smaller teams. We will have role
-                            based Pricing for our enterprise edition which will
-                            have advanced features needed by bigger teams.
-                            <br></br>
-                            Though for users who want hosted version of SigNoz,
-                            we do have cloud plans.
-                          </p>
-                        </div>
-                      </Panel>
-                    </Collapse>
+                    <FAQBody />
                   </div>
                 </div>
               </div>

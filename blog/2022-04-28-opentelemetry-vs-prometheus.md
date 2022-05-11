@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry vs Prometheus - differences, use-cases and alternatives
 slug: opentelemetry-vs-prometheus
-date: 2021-09-01
+date: 2022-04-28
 tags: [opentelemetry, prometheus, apm-tools]
 authors: ankit_anand
 description: OpenTelemetry and Prometheus are both open-source projects under Cloud Native Computing Foundation. One is used for managing telemetry data and the other is a metrics monitoring tool..
@@ -42,15 +42,10 @@ OpenTelemetry is a set of API, SDKs, libraries, and integrations that is aiming 
 
 The data you collect with OpenTelemetry is vendor-agnostic and can be exported in many formats. Telemetry data has become critical to observe the state of distributed systems. With microservices and polyglot architectures, there was a need to have a global standard. OpenTelemetry aims to fill that space and is doing a great job at it thus far.
 
-import Screenshot from "@theme/Screenshot"
-
-<Screenshot
-    alt="OpenTelemetry Architecture"
-    height={500}
-    src="/img/blog/2021/08/opentelemetry_architecture-min.webp"
-    title="OpenTelemetry architecture - client libraries instrument application code to send telemetry data to a collector agent which then exports the data to a backend analysis tool."
-    width={700}
-/>
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2021/08/opentelemetry_architecture-min.webp" alt="OpenTelemetry Architecture"/>
+    <figcaption><i>OpenTelemetry architecture - client libraries instrument application code to send telemetry data to a collector agent which then exports the data to a backend analysis tool.</i></figcaption>
+</figure>
 
 ### Advantages of OpenTelemetry
 
@@ -128,13 +123,18 @@ And that's where [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=opentele
 
 SigNoz comes with out of box visualization of things like RED metrics. There is a unified UI of metrics and traces, unlike Prometheus, so that you can easily identify the root cause of issues causing things like latency in your apps.
 
-<Screenshot
+<!-- <Screenshot
     alt="SigNoz UI"
     height={500}
     src="/img/blog/common/signoz_charts_application_metrics.webp"
     title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
     width={700}
-/>
+/> -->
+
+<figure data-zoomable align='center'>
+    <img src="/img/blog/common/signoz_flamegraphs.webp" alt="Detailed Flamegraphs & Gantt charts"/>
+    <figcaption><i>Spans of a trace visualized with the help of flamegraphs and gantt charts in SigNoz dashboard</i></figcaption>
+</figure>
 
 ## Getting started with SigNoz
 

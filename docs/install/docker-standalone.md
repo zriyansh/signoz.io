@@ -55,7 +55,7 @@ Before you install Signoz, ensure that [Docker Compose](https://docs.docker.com/
 
 2. To install SigNoz, enter the `sudo docker-compose up` command, specifying the following:
     - `-f` and the path to your configuration file
-    - `-d` to un containers in the background
+    - `-d` to run containers in the background
 
   <Tabs
     defaultValue="x86"
@@ -122,15 +122,15 @@ The `docker-compose.yaml` installs a sample application named [HotR.O.D](https:/
 1. <CloneRepo />
 
 2. Checkout to the specific version tag. For example, to install SigNoz version `v0.6.1`:
-```
-git checkout v0.6.1
-```
+	```
+	git checkout v0.6.1
+	```
 
 3. Run the `install.sh` script:
 
-```bash
-./install.sh
-```
+	```bash
+	./install.sh
+	```
 
 Go to [Docker Standalone Operate](/docs/operate/docker-standalone) section for detailed instructions.
 

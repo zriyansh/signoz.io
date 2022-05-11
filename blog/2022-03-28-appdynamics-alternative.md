@@ -1,38 +1,46 @@
 ---
-title: SigNoz - Open-source alternative to Dynatrace
-slug: dynatrace-alternative
-date: 2021-09-27
+title: SigNoz - Open-source alternative to AppDynamics
+slug: appdynamics-alternative
+date: 2022-03-28
 tags: [application-monitoring, apm-tools]
 authors: ankit_anand
-description: If you're looking for an open-source alternative to Dynatrace, then you're at the right place. SigNoz is a perfect open-source alternative to Dynatrace. SigNoz provides a unified UI for both metrics and traces with advanced tagging and filtering capabilities...
-image: /img/blog/2021/09/dynatrace_alternative_cover-min.webp
+description: If you're looking for an open-source alternative to AppDynamics, then you're at the right place. SigNoz is a perfect open-source alternative to AppDynamics. SigNoz provides a unified UI for both metrics and traces with advanced tagging and filtering capabilities...
+image: /img/blog/2021/09/appdynamics_alternative_cover-min.webp
 keywords:
-  - dynatrace
-  - dynatrace alternative
-  - dynatrace open source alternative
+  - appdynamics
+  - appdynamics alternative
+  - appdynamics open source alternative
   - apm tools
   - microservice architecture
   - application performance monitoring
 ---
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/dynatrace-alternative/"/>
+  <link rel="canonical" href="https://signoz.io/blog/appdynamics-alternative/"/>
 </head>
 
-If you're looking for an open-source alternative to Dynatrace, then you're at the right place. SigNoz is a perfect open-source alternative to Dynatrace. SigNoz provides a unified UI for both metrics and traces with advanced tagging and filtering capabilities.
+If you're looking for an open-source alternative to AppDynamics, then you're at the right place. SigNoz is a perfect open-source alternative to AppDynamics. SigNoz provides a unified UI for both metrics and traces with advanced tagging and filtering capabilities.
 
 <!--truncate-->
 
-![cover image](/img/blog/2021/09/dynatrace_alternative_cover-min.webp)
+![cover image](/img/blog/2021/09/appdynamics_alternative_cover-min.webp)
 
 In today's digital economy, more and more companies are shifting to cloud-native and microservice architecture to support global scale and distributed teams. But distributed systems also make it impossible for engineering teams to track how user requests perform across services. Application performance monitoring tools provide the visibility needed to resolve performance issues quickly.
 
-Dynatrace is a great SaaS tool when it comes to application performance monitoring. But there are a few challenges when it comes to enterprise SaaS products, and it's just not a great fit for every company.
+AppDynamics is a great SaaS tool when it comes to application performance monitoring. But there are a few challenges when it comes to enterprise SaaS products, and it's just not a great fit for every company.
 
-Some of the challenges with tools like Dynatrace includes:
+Some of the challenges with tools like Appdynamics includes:
 
-- It is cloud-only, so not suitable for companies that have concerns with sending data outside their infra
-- For any small feature, you are dependent on their roadmap. We think this is an unnecessary restriction for a product which developers use. A product used by developers should be extendible
-- Too costly. Thier full-stack monitoring plan starts at $69/month for 8GB per host. Pricing plans of enterprise tools can also sometimes leave you in a lurch with frequent changes.
+- **Vendor lock-in**<br></br>
+AppDynamics provides agents and controllers to collect data from your application. It is not built to natively support open-source standards. It's difficult to migrate or use different tools in such a scenario.
+
+- **Cloud-Only**<br></br>
+It is cloud-only, so not suitable for companies that have concerns with sending data outside their infra
+
+- **Product roadmap dependency**<br></br>
+For any small feature, you are dependent on their roadmap. We think this is an unnecessary restriction for a product which developers use. A product used by developers should be extendible
+
+- **Costly and non-reliable pricing**<br></br>
+Pricing plans of enterprise tools can sometimes leave you in a lurch with frequent changes.
 
 A relatively newer concept in the field of application performance monitoring is observability. Making a system observable is the pursuit of achieving a state of proactiveness to solve unknown issues. Logs, metrics, and traces are usually considered the three pillars of observability.
 
@@ -46,7 +54,8 @@ Some of the key features of good observability tools are:
 - Transparency in pricing
 
 
-## Why choose an open-Source alternative to Dynatrace?
+## Why choose an open-Source alternative to AppDynamics?
+
 APM and observability tools are critical tools in a developer's kit. These tools improve developer efficiency, save bandwidth by resolving issues quickly, and increase developer productivity.
 
 An open-source product is always a better choice for any developer tool. Some of the key advantages of open-source developer tools are:
@@ -70,9 +79,9 @@ But most open-source projects don't provide a great user experience as SaaS prod
 
 And that's where SigNoz shines. It is very simple to get started, supports multiple tech-stack, and comes with a SaaS-like web user experience.
 
-## Key Features of SigNoz - a Dynatrace alternative
+## Key Features of SigNoz - an AppDynamics alternative
 
-Some of our key features which makes SigNoz vastly superior to current open-source products and a great alternative to Dynatrace are:
+Some of our key features which makes SigNoz vastly superior to current open-source products and a great alternative to AppDynamics are:
 
 - Out of the box application metrics
 - Seamless flow between metrics & traces
@@ -86,51 +95,58 @@ Some of our key features which makes SigNoz vastly superior to current open-sour
 
 Get p90, p99 latencies, RPS, Error rates, and top endpoints for a service out of the box.
 
-import Screenshot from "@theme/Screenshot"
-
-<Screenshot
-    alt="SigNoz dashboard showing popular RED metrics"
-    height={500}
-    src="/img/blog/common/signoz_charts_application_metrics.webp"
-    title="SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate"
-    width={700}
-/>
+<figure data-zoomable>
+    <img src="/img/blog/common/signoz_charts_application_metrics.webp" alt="SigNoz dashboard showing popular RED metrics"/>
+    <figcaption><i>SigNoz UI showing application overview metrics like RPS, 50th/90th/99th Percentile latencies, and Error Rate</i></figcaption>
+</figure>
 
 ### Seamless flow between metrics & traces
 
 Found something suspicious in a metric, just click that point in the graph & get details of traces that may be causing the issues. Seamless, Intuitive.
 
-<Screenshot
-    alt="Seamless flow between metrics and traces"
-    height={500}
-    src="/img/blog/2021/08/metrics_to_traces_signoz-min.webp"
-    title="Move from metrics to traces at any point of time which needs more analysis"
-    width={700}
-/>
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2022/04/metrics_to_traces.webp" alt="Seamless flow between metrics and traces"/>
+    <figcaption><i>Move from metrics to traces at any point of time which needs more analysis</i></figcaption>
+</figure>
 
-### Filtering based on tags
 
-For example, you can find latency experienced by customers who have customer_type set as `premium`.
+### Advanced filters on trace data
 
-<Screenshot
-    alt="Filtering based on tags"
-    height={500}
-    src="/img/blog/2021/08/tags_based_filtering_signoz-min.webp"
-    title="Filter traces for a specific user group using tags"
-    width={700}
-/>
+Under our traces tab, you can analyze the traces data using filters based on tags, status codes, service names, operation, etc.
+
+Using tags, you can find latency experienced by customers who have customer_type set as `premium`.
+
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2022/04/powerful_filters_on_traces_data.webp" alt="Filters on trace data"/>
+    <figcaption><i>Use advanced filters to analyze your trace data</i></figcaption>
+</figure>
 
 ### Custom aggregates on filtered traces
 
 Create custom metrics from filtered traces to find metrics of any type of request. Want to find p99 latency of customer_type: premium who are seeing status_code:400. Just set the filters, and you have the graph.
 
-<Screenshot
-    alt="Custom aggregates on filtered traces"
-    height={500}
-    src="/img/blog/2021/08/metrics_on_filtered_traces-min.webp"
-    title="Find custom aggregates on filtered traces"
-    width={700}
-/>
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2022/04/custom_aggregates_filtered_data.webp" alt="Custom aggregates on filtered traces"/>
+    <figcaption><i>Find custom aggregates on filtered traces</i></figcaption>
+</figure>
+
+### Detailed Flamegraphs & Gantt charts
+
+Detailed flamegraph & Gantt charts to find the exact cause of the issue and which underlying requests are causing the problem. Is it a SQL query gone rogue or a Redis operation is causing an issue?
+
+<figure data-zoomable align='center'>
+    <img src="/img/blog/common/signoz_flamegraphs.webp" alt="Detailed Flamegraphs & Gantt charts"/>
+    <figcaption><i>Spans of a trace visualized with the help of flamegraphs and gantt charts in SigNoz dashboard</i></figcaption>
+</figure>
+
+### Transparent usage Data
+
+You can drill down details of how many events is each application sending or at what granularity so that you can adjust your sampling rate as needed and not get a shock at the end of the month (case with SaaS vendors many times)
+
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2022/04/transparent_usage_data.webp" alt="Transparent usage data"/>
+    <figcaption><i>SigNoz provides usage explorer so that you are always informed about your usage</i></figcaption>
+</figure>
 
 ### Natively built to support OpenTelemetry
 
@@ -143,30 +159,6 @@ Some of the key advantages of using OpenTelemetry are:
 - Provides libraries and agents to auto-instrument popular libraries and frameworks requiring minimal changes to your codebase
 - Backed by technology giants like Google, Microsoft, and other big cloud vendors.
 - No vendor lock-in. Freedom to switch to new backend analysis tools by using relevant exporters
-
-### Transparent usage Data
-
-You can drill down details of how many events is each application sending or at what granularity so that you can adjust your sampling rate as needed and not get a shock at the end of the month (case with SaaS vendors many times)
-
-<Screenshot
-    alt="Transparent usage data"
-    height={500}
-    src="/img/blog/2021/08/transparent_usage_data-min.webp"
-    title="SigNoz provides usage explorer so that you are always informed about your usage"
-    width={700}
-/>
-
-### Detailed Flamegraphs & Gantt charts
-
-Detailed flamegraph & Gantt charts to find the exact cause of the issue and which underlying requests are causing the problem. Is it a SQL query gone rogue or a Redis operation is causing an issue?
-
-<Screenshot
-    alt="Detailed Flamegraphs & Gantt charts"
-    height={500}
-    src="/img/blog/common/signoz_flamegraphs.webp"
-    title="Spans of a trace visualized with the help of flamegraphs and gantt charts in SigNoz dashboard"
-    width={700}
-/>
 
 ## Getting started with SigNoz
 
@@ -181,7 +173,7 @@ cd signoz/deploy/
 
 For detailed instructions, you can visit our documentation.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/install/docker/?utm_source=blog&utm_medium=dynatrace_alternative)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/install/docker/?utm_source=blog&utm_medium=appdynamics_alternative)
 
 If you liked what you read, then check out our GitHub repo 👇
 
@@ -197,7 +189,6 @@ Our slack community is a great place to get your queries solved instantly and ge
 
 **[DataDog Alternative](https://signoz.io/blog/open-source-datadog-alternative/)**<br></br>
 **[New Relic Alternative](https://signoz.io/blog/open-source-newrelic-alternative/)**<br></br>
-**[AppDynamics Alternative](https://signoz.io/blog/appdynamics-alternative/)**<br></br>
-
+**[Dynatrace Alternative](https://signoz.io/blog/dynatrace-alternative/)**<br></br>
 
 

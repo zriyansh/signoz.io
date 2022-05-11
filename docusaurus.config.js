@@ -13,6 +13,24 @@ const config = {
   organizationName: "SigNoz", // Usually your GitHub org/user name.
   projectName: "signoz", // Usually your repo name.
   themeConfig: {
+    algolia: {
+      // The application ID provided by Algolia
+      appId: 'E88QYIQ6K4',
+
+      // Public API key: it is safe to commit it
+      apiKey: '1061c173ae001d5f5aaa4f0354e373a0',
+      indexName: 'signoz',
+    },
+    zoom: {
+      selector: 'figure[data-zoomable] > img',
+      config: {
+        // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+        background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)'
+        }
+      }
+    },
     // googleAnalytics: {
     //   trackingID: 'UA-152867655-1',
     //   // Optional fields.
@@ -138,6 +156,10 @@ const config = {
           title: "More",
           items: [
             {
+              label: "Technical Writer Program",
+              to: "technical-writer-program/",
+            },
+            {
               label: "About",
               to: "about-us/",
             },
@@ -193,6 +215,7 @@ const config = {
   ],
   // plugins: ["posthog-docusaurus"],
   plugins: [
+    require.resolve('docusaurus-plugin-image-zoom'),
     [
       "@docusaurus/plugin-content-blog",
       {
