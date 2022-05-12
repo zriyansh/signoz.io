@@ -276,8 +276,8 @@ function ShowCompanyLogos() {
           </li>
           <li>
             <img
-              src="img/users/instasafe-cropped.png"
-              alt="instasafe logo"
+              src="img/users/wpromote_white_1_njjebt.svg"
+              alt="wpromote logo"
             />
           </li>
         </ul>
