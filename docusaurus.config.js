@@ -37,14 +37,15 @@ const config = {
     //   // anonymizeIP: true, // Should IPs be anonymized?
     // },
 
-    announcementBar: {
-      id: "support_us", // Any value that will identify this message.
-      content:
-        'We tweet about DevOps, DevTools and fun stuff. Let\'s be friends on <a target="_blank" rel="noopener noreferrer" href="https://bit.ly/3H7bXwd">Twitter</a> 🙋🏼‍♀️ ',
-      backgroundColor: "#CF2E09", // #151515, #dddddd Defaults to `#fff`.
-      textColor: "#eeeeee", // Defaults to `#000`.
-      isCloseable: false, // Defaults to `true`.
-    },
+    // announcementBar: {
+    //   id: "support_us", // Any value that will identify this message.
+    //   content:
+    //     'We tweet about DevOps, DevTools and fun stuff. Let\'s be friends on <a target="_blank" rel="noopener noreferrer" href="https://bit.ly/3H7bXwd">Twitter</a> 🙋🏼‍♀️ ',
+    //   backgroundColor: "#CF2E09", // #151515, #dddddd Defaults to `#fff`.
+    //   textColor: "#eeeeee", // Defaults to `#000`.
+    //   isCloseable: false, // Defaults to `true`.
+    // },
+    
     // posthog: {
     //   apiKey: "H-htDCae7CR3RV57gUzmol6IAKtm5IMCvbcm_fwnL-w",
     //   appUrl: "https://app.posthog.com", // optional

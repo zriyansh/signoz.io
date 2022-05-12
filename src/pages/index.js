@@ -266,7 +266,7 @@ function ShowCompanyLogos() {
             <img src="img/users/naver_white2_hie7gu.svg" alt="naver logo" />
           </li>
           <li>
-            <img src="img/users/solve_white_njrutq.svg" alt="solve logo" />
+            <img src="img/users/epifi.jpeg" alt="epifi logo" />
           </li>
           <li>
             <img src="img/users/Outplay.webp" alt="outplay logo" />
@@ -276,8 +276,8 @@ function ShowCompanyLogos() {
           </li>
           <li>
             <img
-              src="img/users/wpromote_white_1_njjebt.svg"
-              alt="wpromote logo"
+              src="img/users/instasafe-cropped.png"
+              alt="instasafe logo"
             />
           </li>
         </ul>
