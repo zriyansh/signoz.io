@@ -205,6 +205,12 @@ You must have a valid Integration Key (aka Routing Key) before you setup a pager
 
 ![image](https://user-images.githubusercontent.com/10277894/165889927-4dfc8765-6ff1-4b2e-9796-d40bbf71c489.png)
 
+:::note
+
+If you encounter any unexpected challenges during the use of this integration, please contact SigNoz Support at support@signoz.io
+
+:::
+
 ## Demo video 
 
 Whew! That was a lot of instruction to follow. If you instead prefer to see how it works in a demo environment, here you go 👇
