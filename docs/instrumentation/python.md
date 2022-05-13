@@ -153,6 +153,8 @@ Check this [documentation](https://opentelemetry-python.readthedocs.io/en/latest
 
 ### Troubleshooting your installation
 
+#### Spans are not being reported
+
 If spans are not being reported to SigNoz, try enabling debug exporter which writes the json formatted trace data to console.
 
 `opentelemetry-instrument --traces_exporter otlp_proto_http,console <your run command>`:
@@ -185,3 +187,12 @@ If spans are not being reported to SigNoz, try enabling debug exporter which wri
 ```
 
 <p>&nbsp;</p>
+
+#### DB Calls are not reported in spans
+
+Ensure you have the correct opentelemetry instrumentations:
+
+- [opentelemetry-instrumentation-psycopg2](https://pypi.org/project/opentelemetry-instrumentation-psycopg2/) for Postgres
+- [opentelemetry-instrumentation-pymysql](https://pypi.org/project/opentelemetry-instrumentation-pymysql/) for MySQL
+- [opentelemetry-instrumentation-sqlite3](https://pypi.org/project/opentelemetry-instrumentation-sqlite3/) for SQLite3
+- Complete list [here](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/main/instrumentation)
