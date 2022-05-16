@@ -40,6 +40,8 @@ module.exports = {
         'instrumentation/golang',   
         'instrumentation/dotnet',
         'instrumentation/ruby-on-rails',
+        'instrumentation/elixir',
+        'instrumentation/rust',
         'instrumentation/troubleshoot-instrumentation',
       ],
     },

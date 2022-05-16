@@ -1,6 +1,6 @@
 ---
 id: golang
-title: OpenTelemetry Go Instrumentation
+title: Go OpenTelemetry Instrumentation
 description: Send events from your Go application to SigNoz
 
 ---

@@ -276,8 +276,8 @@ function ShowCompanyLogos() {
           </li>
           <li>
             <img
-              src="img/users/wpromote_white_1_njjebt.svg"
-              alt="wpromote logo"
+              src="img/users/turvo-logo-white.png"
+              alt="turvo logo"
             />
           </li>
         </ul>
