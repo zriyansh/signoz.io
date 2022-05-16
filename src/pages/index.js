@@ -51,7 +51,7 @@ const WhySigNoz = () => {
     <div className="container">
       <div className="container">
         <div className="row">
-          <div className={clsx("col col--4", styles.menu__list)}>
+          <div className={clsx("col col--3", styles.menu__list)}>
             <button
               onClick={handlePricing}
               className={`button button--lg ${
@@ -72,7 +72,7 @@ const WhySigNoz = () => {
               }`}
               style={{ marginBottom: 20, marginTop: 20, whiteSpace: "normal" }}
             >
-              Run business specific queries{" "}
+              Advanced traces filtering{" "}
             </button>
             <button
               onClick={handleExtendibility}
@@ -83,10 +83,10 @@ const WhySigNoz = () => {
               }`}
               style={{ marginBottom: 20, marginTop: 20, whiteSpace: "normal" }}
             >
-              Run aggregates on custom tags
+              Drill down into interesting traces 
             </button>
           </div>
-          <div className="col col--8">
+          <div className="col col--9">
             <div
               className="hero__screenshot"
               style={{ display: feature === "pricing" ? "block" : "none" }}
@@ -101,7 +101,7 @@ const WhySigNoz = () => {
               style={{ display: feature === "olap" ? "block" : "none" }}
             >
               <img
-                src={useBaseUrl("img/business-metrics-light-v2.webp")}
+                src={useBaseUrl("img/advanced-trace-filtering.webp")}
                 alt="SigNoz screenshot"
               />
             </div>
@@ -112,7 +112,7 @@ const WhySigNoz = () => {
               }}
             >
               <img
-                src={useBaseUrl("img/custom-aggregates.webp")}
+                src={useBaseUrl("img/trace-detail.webp")}
                 alt="SigNoz screenshot"
               />
             </div>
