@@ -1,5 +1,5 @@
 ---
-title: Tracing a Ruby application with OpenTelemetry and SigNoz 
+title: Tracing a Ruby application with OpenTelemetry for performance monitoring 
 slug: opentelemetry-ruby
 date: 2022-05-16
 tags: [opentelemetry-tutorials]
