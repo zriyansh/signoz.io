@@ -128,12 +128,12 @@ yarn add -D @opentelemetry/api@1.0.3 @opentelemetry/context-zone@1.0.0 @opentele
 **Step 5: Update Service Name and CollectorTrace Exporter**
 
 ```jsx
-const serviceName = 'link-frontend'
-const resource = new Resource({ 'service.name': serviceName })
-const provider = new* WebTracerProvider({ resource })
+const serviceName = "link-frontend";
+const resource = new Resource({ "service.name": serviceName });
+const provider = new WebTracerProvider({ resource });
 const collector = new CollectorTraceExporter({
-	url: 'http://localhost:4318/v1/traces'
-})
+  url: "http://localhost:4318/v1/traces",
+});
 ```
 
 **Step 6: Start the React app**
