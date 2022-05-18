@@ -1,5 +1,5 @@
 ---
-title: Implementing OpenTelemetry in React applications 
+title: Implementing OpenTelemetry in React applications
 slug: opentelemetry-react
 date: 2022-05-17
 tags: [opentelemetry-tutorials]
@@ -17,6 +17,7 @@ keywords:
   - apm tools
   - application performance monitoring
 ---
+
 <head>
   <link rel="canonical" href="https://signoz.io/blog/opentelemetry-react/"/>
 </head>
@@ -90,7 +91,7 @@ When you are done installing SigNoz, you can access the UI at [http://localhost
 **Step 2: Get sample React app**
 
 [Sample React App](https://github.com/SigNoz/sample-reactjs-app/tree/master)<br></br>
-It contains the sample boilerplate code that we will instrument. 
+It contains the sample boilerplate code that we will instrument.
 
 **Step 3: Enable CORS in the OTel Receiver**
 
@@ -127,15 +128,15 @@ yarn add -D @opentelemetry/api@1.0.3 @opentelemetry/context-zone@1.0.0 @opentele
 **Step 5: Update Service Name and CollectorTrace Exporter**
 
 ```jsx
-*const* serviceName *=* 'link-frontend'
-*const* resource *=* *new* Resource({ 'service.name': serviceName })
-*const* provider *=* *new* WebTracerProvider({ resource })
-*const* collector *=* *new* CollectorTraceExporter({
-	url: 'http://localhost:4318/v1/traces'
-})
+const serviceName = "link-frontend";
+const resource = new Resource({ "service.name": serviceName });
+const provider = new WebTracerProvider({ resource });
+const collector = new CollectorTraceExporter({
+  url: "http://localhost:4318/v1/traces",
+});
 ```
 
-**Step 6: Start the React app** 
+**Step 6: Start the React app**
 
 Go to the root folder of your React application, and run the following command:
 
@@ -164,8 +165,6 @@ Visit [http://localhost:4200/](http://localhost:4200/) to access your frontend a
 </figure>
 
 <br></br>
-
-
 
 **Step 8: Monitor your application with SigNoz**
 
