@@ -7,10 +7,12 @@ authors: ankit_anand
 description: Latest top distributed tracing tools list - 1.SigNoz 2.Dynatrace 3.New Relic 4.Honeycomb 5.Lightstep 6.Instana 7.Jaeger 8.DataDog 9.Zipkin..
 image: /img/blog/2022/01/distributed_tracing_tools_cover.webp
 keywords:
+  - signoz
   - jaeger
   - tempo
   - grafana tempo
   - distributed tracing
+  - distributed tracing tools
   - apm tools
   - application performance monitoring
 ---
@@ -60,15 +62,12 @@ Before we deep dive into each of these distributed tracing tools, let's take a s
 ## What is distributed tracing?
 In the world of microservices, a user request travels through hundreds of services before serving a user what they need. To make a business scalable, engineering teams are responsible for particular services with no insight into how the system performs as a whole. And that's where distributed tracing comes into the picture.
 
-import Screenshot from "@theme/Screenshot"
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2021/09/jaeger_vs_zipkin_microservices_architecture.webp" alt="Microservices architecture"/>
+    <figcaption><i>Microservice architecture of a fictional e-commerce application</i></figcaption>
+</figure>
 
-<Screenshot
-    alt="Microservices architecture"
-    height={500}
-    src="/img/blog/2021/09/jaeger_vs_zipkin_microservices_architecture.webp"
-    title="Microservice architecture of a fictional e-commerce application"
-    width={700}
-/>
+<br></br>
 
 Distributed tracing gives you insight into how a particular service is performing as part of the whole in a distributed software system. There are two essential concepts involved in distributed tracing: **Spans** and **trace context**.
 
@@ -81,23 +80,21 @@ User requests are broken down into spans.
 
 A **trace context** is passed along when requests travel between services, which tracks a user request across services. Thus, you can see how a user request performs across services and identify what exactly needs your attention without manually shifting through multiple dashboards.
 
-<Screenshot
-    alt="Trace context is passed to track user requests across services"
-    height={500}
-    src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.webp"
-    title="A trace context is passed when user requests pass from one service to another"
-    width={700}
-/>
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2021/09/opentelemetry_distributed_tracing-min.webp" alt="Trace context is passed to track user requests across services"/>
+    <figcaption><i>A trace context is passed when user requests pass from one service to another</i></figcaption>
+</figure>
+
+<br></br>
 
 Below is a snapshot from SigNoz dashboard showing spans from a request as rectangular blocks.
 
-<Screenshot
-    alt="SigNoz dashboard showing spans from a request"
-    height={500}
-    src="/img/blog/2021/09/spans_traces-min.webp"
-    title="Spans representing logical operations within a trace as rectangular blocks (Source: SigNoz dashboard)"
-    width={700}
-/>
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2022/05/distributed_tracing_tools_spans_snapshot.webp" alt="SigNoz dashboard showing spans from a request"/>
+    <figcaption><i>Spans representing logical operations within a trace as rectangular blocks (Source: SigNoz dashboard)</i></figcaption>
+</figure>
+
+<br></br>
 
 ## Top 11 distributed tracing tools
 Now let's explore the top 11 distributed tracing tools in 2022.
@@ -116,6 +113,8 @@ Using SigNoz, you can track things like:
 - User requests across different microservices using distributed tracing
 
 An open-source tool with the capabilities of SaaS vendors, SigNoz is a great choice for a distributed tracing tool.
+
+import Screenshot from "@theme/Screenshot"
 
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
