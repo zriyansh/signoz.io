@@ -588,14 +588,8 @@ A full-stack APM solution like [SigNoz](https://signoz.io/) can help you monitor
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
----
+OpenTelemetry is an open-source project that aims to standardize the process of generating telemetry data, i.e, logs, metrics and traces. It supports all the major programming languages includer Angular and technologies like Graphql. If you want to learn more about monitoring your Angular Graphql apps with OpenTelemetry and SigNoz, feel free to follow the links below.
+- [Implementing OpenTelemetry in Angular application](https://signoz.io/blog/opentelemetry-angular/)
+- [Monitoring GraphQL APIs with OpenTelemetry](https://signoz.io/blog/monitoring-graphql/)
 
-## Further Reading
 
-Learn how to monitor Angular applications with SigNoz:
-
-[Implementing OpenTelemetry in Angular application](https://signoz.io/blog/opentelemetry-angular/)
-
-Learn how to monitor GraphQL APIs with SigNoz:
-
-[Monitoring GraphQL APIs with OpenTelemetry](https://signoz.io/blog/monitoring-graphql/)
