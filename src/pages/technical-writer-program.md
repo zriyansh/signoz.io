@@ -90,6 +90,7 @@ You just need to reach out to ankit.anand@signoz.io with an interesting idea and
 
 ## General FAQs
 
+- We pay $150 per published article. We pay via PayPal for international transfers, and via bank accounts for Indian transfers.
 - How long should the article be?
     - We expect the articles to be somewhere between 1000-1500 words.
 - How long should each article take?
@@ -98,13 +99,13 @@ You just need to reach out to ankit.anand@signoz.io with an interesting idea and
     - We will give you access to a Notion page for writing the article. We will get back with comments within 2-3 business days on the article and will try to keep the back and forth to the minimum
 
 
-## FAQs on Payment
+<!-- ## FAQs on Payment
 
 - We will pay out **$150 or 11,300 INR per published article**. We pay via PayPal for international transfers, and via bank accounts for Indian transfers. If you have any issues with Paypal, let us know beforehand.
 - Payment is processed after the article is published. It can take **3-5 working days** to reflect in your account.
 - We will need your **PAN number** to process the payment(for Indian nationals)
 - **10% TDS** at source will be deducted
-- You will have to provide us with a receipt. You can do so easily using any online receipt generator like: [https://freeinvoicebuilder.com/](https://freeinvoicebuilder.com/)
+- You will have to provide us with a receipt. You can do so easily using any online receipt generator like: [https://freeinvoicebuilder.com/](https://freeinvoicebuilder.com/) -->
 
 If you have any questions about the program, join our slack community and ping us in the **#write-for-signoz** channel.
 
