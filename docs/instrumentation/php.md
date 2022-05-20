@@ -123,4 +123,4 @@ OTEL_SERVICE_NAME=signoz-php-app php FILENAME.php
 
 #### Testing with sample PHP application
 
-If you want to test out how SigNoz works with a sample PHP application, check out a sample Nestjs application at this [GitHub](https://github.com/SigNoz/sample-php-app).
+If you want to test out how SigNoz works with a sample PHP application, check out a sample PHP application at this [GitHub](https://github.com/SigNoz/sample-php-app).
