@@ -42,6 +42,7 @@ module.exports = {
         'instrumentation/ruby-on-rails',
         'instrumentation/elixir',
         'instrumentation/rust',
+        'instrumentation/php',
         'instrumentation/troubleshoot-instrumentation',
       ],
     },
