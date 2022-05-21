@@ -100,19 +100,3 @@ Use the command below to remove the sample application:
 curl -sL https://github.com/SigNoz/signoz/raw/main/sample-apps/hotrod/hotrod-delete.sh \
   | HOTROD_NAMESPACE=sample-application bash
 ```
-
-##  Increase the ClickHouse Persistent Volume Size on EKS/GKE
-
-You can use the following `helm upgrade` command to increase the size of the persistent volume used by SigNoz on EKS/GKE, replacing the following values to match your environment:
-
-- Your namespace (this example uses `platform`)
-- Your release (this example uses `my-release`)
-- Your chart (this example uses `signoz/signoz`)
-- The new size of the persistent volume (this example uses `25Gi`)
-
-```bash
-helm -n platform upgrade my-release signoz/signoz \
-  --set clickhouseOperator.storage=25Gi
-```
-
-<UpgradeInfo/>
