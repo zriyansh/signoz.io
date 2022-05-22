@@ -60,8 +60,20 @@ module.exports = {
         'operate/upgrade',
         'operate/docker-standalone',
         'operate/docker-swarm',
-        'operate/kubernetes'
-
+        'operate/kubernetes',
+        {
+          type: 'category',
+          label: 'Clickhouse',
+          link: {
+            type: 'generated-index',
+            title: 'Clickhouse',
+            description: 'The following sections provide instructions to operate Clickhouse. Based on your environment, proceed to one of the sections below.',
+            slug: '/operate/clickhouse',
+          },
+          items: [
+            'operate/clickhouse/increase-clickhouse-pv'
+          ]
+        },
       ],
     },
     {
@@ -88,7 +100,7 @@ module.exports = {
         'userguide/alerts-management',
         'userguide/authentication',
         'userguide/retention-period',
-        'userguide/service-map',
+        'userguide/service-map'
       ],
     },
     {
