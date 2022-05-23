@@ -17,8 +17,26 @@ module.exports = {
       items: [
         "install/docker-standalone",
         'install/docker-swarm',
-        'install/kubernetes',
-        'install/troubleshooting'
+        {
+          type: 'category',
+          label: 'Kubernetes',
+          link: {
+            type: 'generated-index',
+            title: 'Kubernetes',
+            description: 'Learn how to install SigNoz on Kubernetes with Helm',
+            slug: '/install/kubernetes',
+          },
+          items: [
+            'install/kubernetes/aws',
+            'install/kubernetes/gcp',
+            {
+              id: 'install/kubernetes/others',
+              type: 'doc',
+              label: 'Other Platform',
+            },
+          ]
+        },
+        'install/troubleshooting',
       ],
     },
     {
