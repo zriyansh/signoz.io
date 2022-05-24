@@ -16,6 +16,38 @@ Replace the following values to match your environment:
 - Your chart (this example uses `signoz/signoz`)
 - The new size of the persistent volume (this example uses `25Gi`)
 
+## Check if Volume Expansion is Allowed
+
+Before you proceed, run the following command to check if
+your storage class allows volume expansion:
+
+```bash
+kubectl get storageclass -o json | jq '.items[]|.metadata.name + ": " + (.allowVolumeExpansion|tostring)'
+```
+
+Output should be similar as below:
+```
+"standard: false"
+"standard-resizable: true"
+```
+
+If the storage class used by SigNoz cluster PVCs returns `true`, that means
+you can directly proceed with [increase persistent volume section](#increase-persisent-volume).
+
+If `false`, proceed with any of the following relevent section:
+- [AWS - EKS](#eks---amazon-web-service-aws)
+- [GCP - GKE](#gke---google-cloud-platform-gcp)
+- [Other Platform](#other-kubernetes-cloud-platform-and-bare-metal-servers)
+
+:::info
+If you are unsure about storage class used by SigNoz Cluster PVC,
+run the command below:
+
+```bash
+kubectl get -n platform pvc
+```
+:::
+
 ## Increase Persistent Volume
 
 You should be able to increase clickhouse persistent volume size easily with
@@ -28,23 +60,7 @@ helm -n platform upgrade my-release signoz/signoz \
 
 <UpgradeInfo/>
 
-By default, SigNoz cluster picks the default storage class which is
-usually not expandable unless previously modified.
-
-Thus, you would be required to follow few extra steps below to not lose any data.
-
-### Check if Volume Expansion is Allowed
-
-Before you proceed, run the following command to check if
-your storage class allows volume expansion:
-
-```bash
-kubectl get storageclass -o json | jq '.items[].allowVolumeExpansion'
-```
-
-It should return `true` if volume expansion is allowed.
-
-### EKS - Amazon Web Service (AWS)
+## EKS - Amazon Web Service (AWS)
 
 :::info
 For setting up kubernetes cluster in AWS, refer to
@@ -85,7 +101,7 @@ helm -n platform upgrade my-release signoz/signoz \
 3. (Optional) After the size change reflects in few minutes, you could edit
 the default storage class `gp2` back to its previous state.
 
-### GKE - Google Cloud Platform (GCP)
+## GKE - Google Cloud Platform (GCP)
 
 :::info
 For setting up kubernetes cluster in GCP, refer to
@@ -126,7 +142,7 @@ helm -n platform upgrade my-release signoz/signoz \
 3. (Optional) After the size change reflects in few minutes, you could edit
 the default storage class `pd-standard` back to its previous state.
 
-### Other Kubernetes Cloud Platform and Bare-Metal Servers
+## Other Kubernetes Cloud Platform and Bare-Metal Servers
 
 :::info
 For setting up kubernetes cluster in other cloud platform or bare-metal servers, refer
