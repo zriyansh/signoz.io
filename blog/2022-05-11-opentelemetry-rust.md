@@ -79,10 +79,10 @@ When you are done installing SigNoz, you can access the UI at [http://localhost
 
 <br></br>
 
-**Step 3: Get sample Rust application**<br></br>
+**Step 2: Get sample Rust application**<br></br>
 If you have your own Rust application, follow along the steps mentioned below. We have prepared a <a href = "https://github.com/SigNoz/sample-rust-app" rel="noopener noreferrer nofollow" target="_blank">sample Rust application</a> which is already instrumented with OpenTelemetry.
 
-**Step 2:  Instrument your application with OpenTelemetry**<br></br>
+**Step 3:  Instrument your application with OpenTelemetry**<br></br>
 To configure your application to send data we will need a function to initialize OpenTelemetry. Add the following snippet of code in your `main.rs` file.
 
 ```jsx
@@ -104,7 +104,7 @@ fn init_tracer() -> Result<sdktrace::Tracer, TraceError> {
 }
 ```
 
-**Step 3:  Initialize the tracer in main.rs**<br></br>
+**Step 4:  Initialize the tracer in main.rs**<br></br>
 Modify the main function to initialise the tracer  in `main.rs`
 
 ```jsx
@@ -116,7 +116,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 }
 ```
 
-**Step 4:  Add the OpenTelemetry instrumentation for your sample Rust app**<br></br>
+**Step 5:  Add the OpenTelemetry instrumentation for your sample Rust app**<br></br>
 
 ```jsx
     let parent_cx = global::get_text_map_propagator(|propagator| {
@@ -125,7 +125,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     tracer.start_with_context("fibonacci", &parent_cx);
 ```
 
-**Step 5: Set environment variables and run your Rust application**<br></br>
+**Step 6: Set environment variables and run your Rust application**<br></br>
 Now that you have instrumented your Rust application with OpenTelemetry, you need to set some environment variables to send data to SigNoz backend:
 
 `OTEL_RESOURCE_ATTRIBUTES`: service.name=rust-app (you can name it whatever you want)
@@ -140,7 +140,7 @@ Hence, the final run command looks like this:
 OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317 OTEL_RESOURCE_ATTRIBUTES=service.name=rust-app cargo run
 ```
 
-**Step 8:** **Generate some data**<br></br>
+**Step 7:** **Generate some data**<br></br>
 In order to monitor your Rust application with SigNoz, you first need to generate some data.
 
 Visit home page of your Rust application at localhost:1337 and enter some details. Alternatively you can just send curl request
@@ -152,7 +152,7 @@ curl -d "name=Baymax&number=42" \
 ```
         
 
-**Step 9: Visualize the collected data in SigNoz**<br></br>
+**Step 8: Visualize the collected data in SigNoz**<br></br>
 Access the signoz UI on [http://localhost:3301/application](http://localhost:3301/application). You will find your sample Rust application in the list of applications being monitored by SigNoz.
 
 <figure data-zoomable align='center'>
