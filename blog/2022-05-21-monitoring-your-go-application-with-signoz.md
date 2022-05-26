@@ -1,7 +1,7 @@
 ---
 title: How to set up Golang application performance monitoring with open source monitoring tool - SigNoz
 slug: monitoring-your-go-application-with-signoz
-date: 2022-05-21
+date: 2022-05-26
 tags: [Product Tutorial]
 authors: ankit_anand
 description: In this article, learn how to setup application monitoring for Golang apps using an open-source solution, SigNoz.
@@ -198,7 +198,6 @@ Declare the following variables in `main.go` which we will use to configure Open
 ```bash
 var (
 	serviceName  = os.Getenv("SERVICE_NAME")
-	signozToken  = os.Getenv("SIGNOZ_ACCESS_TOKEN")
 	collectorURL = os.Getenv("OTEL_EXPORTER_OTLP_ENDPOINT")
 	insecure     = os.Getenv("INSECURE_MODE")
 )
@@ -210,7 +209,7 @@ To configure your application to send data we will need a function to initialize
 
 ```bash
 import (
-  .....
+  	.....
 
 	"github.com/gin-gonic/gin"
 	"go.opentelemetry.io/otel"
@@ -224,10 +223,6 @@ import (
 
 func initTracer() func(context.Context) error {
 
-	headers := map[string]string{
-		"signoz-access-token": signozToken,
-	}
-
 	secureOption := otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
 	if len(insecure) > 0 {
 		secureOption = otlptracegrpc.WithInsecure()
@@ -238,7 +233,6 @@ func initTracer() func(context.Context) error {
 		otlptracegrpc.NewClient(
 			secureOption,
 			otlptracegrpc.WithEndpoint(collectorURL),
-			otlptracegrpc.WithHeaders(headers),
 		),
 	)
 
