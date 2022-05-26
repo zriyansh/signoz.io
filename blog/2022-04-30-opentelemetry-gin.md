@@ -1,7 +1,7 @@
 ---
 title: Implementing OpenTelemetry in a Gin application 
 slug: opentelemetry-gin
-date: 2022-04-30
+date: 2022-05-26
 tags: [opentelemetry-tutorials]
 authors: [nitya, ankit_anand]
 description:  It is essential to monitor your Gin apps in Go(Golang). OpenTelemetry can help instrument Gin apps and provide you with end-to-end tracing. In this guide, we will demonstrate how to instrument your Gin app with OpenTelemetry...
@@ -108,7 +108,6 @@ Declare the following variables in main.go which we will use to configure OpenTe
 ```go
 var (
 	serviceName  = os.Getenv("SERVICE_NAME")
-	signozToken  = os.Getenv("SIGNOZ_ACCESS_TOKEN")
 	collectorURL = os.Getenv("OTEL_EXPORTER_OTLP_ENDPOINT")
 	insecure     = os.Getenv("INSECURE_MODE")
 )
@@ -133,10 +132,6 @@ import (
 
 func initTracer() func(context.Context) error {
 
-	headers := map[string]string{
-		"signoz-access-token": signozToken,
-	}
-
 	secureOption := otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
 	if len(insecure) > 0 {
 		secureOption = otlptracegrpc.WithInsecure()
@@ -147,7 +142,6 @@ func initTracer() func(context.Context) error {
 		otlptracegrpc.NewClient(
 			secureOption,
 			otlptracegrpc.WithEndpoint(collectorURL),
-			otlptracegrpc.WithHeaders(headers),
 		),
 	)
 
