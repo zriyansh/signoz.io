@@ -1,8 +1,8 @@
 ---
 title: DataDog vs Grafana - Key features & differences
 slug: datadog-vs-grafana
-date: 2021-10-11
-tags: [datadog, apm-tools]
+date: 2022-05-20
+tags: [Tools Comparison]
 authors: ankit_anand
 description: In this article, we will compare DataDog with Grafana. Both are monitoring tools but differ significantly in their offerings. DataDog is a paid SaaS monitoring tool, while Grafana is an open-source metrics...
 image: /img/blog/2021/10/datadog_vs_grafana_cover-min.webp
