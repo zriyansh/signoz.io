@@ -1,10 +1,10 @@
 ---
-title: Celery worker tutorial with Flask & Redis
+title: Celery worker | Tutorial on how to set up with Flask & Redis
 slug: celery-worker
 date: 2022-05-27
 tags: [Tutorial]
 authors: [ezz]
-description: In this tutorial, learn how to implement a Celery worker with Flask and Redis. Celery is a task queue with a focus on real-time processing while also supporting task scheduling...
+description: In this tutorial, learn how to implement a Celery worker with Flask and Redis. Celery worker is a simple and reliable task queue with a focus on real-time processing while also supporting task scheduling...
 image: /img/blog/2022/05/celery_worker_cover.webp
 keywords:
   - celery worker
@@ -18,7 +18,7 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/celery-worker/"/>
 </head>
 
-Celery is a simple, flexible, and reliable distributed system to process vast amounts of messages while providing operations with the tools required to maintain such a system. In this tutorial, we will learn how to implement Celery with Flask and Redis.
+Celery worker is a simple, flexible, and reliable distributed system to process vast amounts of messages while providing operations with the tools required to maintain such a system. In this tutorial, we will learn how to implement Celery with Flask and Redis.
 
 <!--truncate-->
 
@@ -32,13 +32,13 @@ Before we deep dive into the tutorial, let’s have a brief overview of Celery w
 
 Let's try to understand the role of a Celery worker with the help of an example. Imagine you're at a car service station to get your car serviced. You place a request at the reception to get your car serviced.
 
-1. Message
+1. Message<br></br>
 You place a request at the reception to get your car serviced. This request is a message.
-2. Task
+2. Task<br></br>
 Servicing your car is the task to be executed.
-3. Task Queue
+3. Task Queue<br></br>
 Like yourself, there will be other customers at the station. All the customer cars waiting to be serviced is part of the task queue.
-4. Worker
+4. Worker<br></br>
 The mechanics at the station are workers who execute the tasks.
 
 Celery makes use of brokers to distribute tasks across multiple workers and to manage the task queue. In the example above, the attendant who takes your car service request from the reception to the workshop is the broker. The role of the broker is to deliver messages between clients and workers.
