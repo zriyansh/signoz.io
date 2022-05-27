@@ -69,7 +69,7 @@ opentelemetry-bootstrap --action=install
 Finally, to start sending data to SigNoz, use the following command:
 
 ```bash
-OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz Backend>:4317"  opentelemetry-instrument --traces_exporter otlp_proto_http <your run command>
+OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz Backend>:4318"  opentelemetry-instrument --traces_exporter otlp_proto_http <your run command>
 ```
 
 _<service_name>_ is the name of service you want
@@ -79,7 +79,8 @@ _<your_run_command>_ can be `python3 app.py` or `flask run`
 
 :::note
 
-- Remember to allow incoming requests to port **4317** of machine where SigNoz backend is hosted
+- The port numbers are 4317 and 4318 for the gRPC and HTTP exporters respectively.
+- Remember to allow incoming requests to port **4317**/**4318** of machine where SigNoz backend is hosted
 
 :::
 
