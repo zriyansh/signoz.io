@@ -21,8 +21,6 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/distributed-tracing-java/"/>
 </head>
 
-
-
 Monitoring and troubleshooting distributed systems like those built with microservices is challenging. Traditional monitoring tools struggle with distributed systems as they were made for a single component. Distributed tracing solves this problem by tracking a transaction across components. 
 
 <!--truncate-->
