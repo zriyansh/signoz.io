@@ -7,6 +7,8 @@ description: Send events from your Python application to SigNoz
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import InstrumentationFAQ from '../shared/instrumentation-faq.md'
+
 
 <p align="center">
 
@@ -189,7 +191,7 @@ If spans are not being reported to SigNoz, try enabling debug exporter which wri
 
 <p>&nbsp;</p>
 
-#### DB Calls are not reported in spans
+#### If DB Calls are not reported in spans
 
 Ensure you have the correct opentelemetry instrumentations:
 
@@ -197,3 +199,6 @@ Ensure you have the correct opentelemetry instrumentations:
 - [opentelemetry-instrumentation-pymysql](https://pypi.org/project/opentelemetry-instrumentation-pymysql/) for MySQL
 - [opentelemetry-instrumentation-sqlite3](https://pypi.org/project/opentelemetry-instrumentation-sqlite3/) for SQLite3
 - Complete list [here](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/main/instrumentation)
+
+
+<InstrumentationFAQ />

@@ -4,6 +4,8 @@ title: Elixir Opentelemetry Instrumentation
 description: Send events from your Elixir application to SigNoz
 
 ---
+import InstrumentationFAQ from '../shared/instrumentation-faq.md'
+
 We’ll focus on instrumenting one of the most common combos of the Elixir world: `Phoenix + Ecto`.
 
 ### **Step 1:** **Add the required dependencies**
@@ -54,3 +56,5 @@ OpentelemetryEcto.setup([:your_app_name, :repo])
 Here's a [tutorial](https://signoz.io/blog/opentelemetry-elixir/) with step by step guide on how to install SigNoz and start monitoring a sample Rust app. 
 
 Thanks to our community member [Ricardo](https://github.com/ricardoccpaiva) for creating this guide.
+
+<InstrumentationFAQ />

@@ -7,6 +7,7 @@ description: Send events from your NodeJS application to SigNoz
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import InstrumentationFAQ from '../shared/instrumentation-faq.md'
 
 <p align="center">
 
@@ -162,3 +163,4 @@ opentelemetry.trace.getTracer('your_tracer_name').getActiveSpanProcessor().shutd
 
 <p>&nbsp;</p>
 
+<InstrumentationFAQ />

@@ -64,3 +64,8 @@ _*Notes:_
 helm upgrade --install -n platform my-release signoz/signoz \
   --set otelCollector.serviceType="<NodePort or LoadBalancer>"
   ```
+
+
+### Troubleshooting SigNoz installation
+
+[This guide](/docs/install/troubleshooting/) shares detailed steps on how to find if your SigNoz installation is accessible from your application to send telemetry data

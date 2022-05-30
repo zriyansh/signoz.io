@@ -8,6 +8,7 @@ description: Send events from your Java application to SigNoz
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+import InstrumentationFAQ from '../shared/instrumentation-faq.md'
 
 <p align="center">
 
@@ -158,3 +159,4 @@ Span {
 
 <p>&nbsp;</p>
 
+<InstrumentationFAQ />

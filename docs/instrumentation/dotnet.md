@@ -5,6 +5,9 @@ description: Send events from your .NET application to SigNoz
 
 ---
 
+import InstrumentationFAQ from '../shared/instrumentation-faq.md'
+
+
 SigNoz supports opentelemetry natively for instrumnetation
 
 - For instrumenting .NET applications, please check the official [opentelemetry .NET repo](https://github.com/open-telemetry/opentelemetry-dotnet)
@@ -13,8 +16,10 @@ SigNoz supports opentelemetry natively for instrumnetation
 
 <p>&nbsp;</p>
 
-<p align="center">
+<!-- <p align="center">
 
 [![Book meeting](/img/docs/ZoomCTA1.png)](https://calendly.com/pranay-signoz/instrumentation-office-hrs)
 
-</p>
+</p> -->
+
+<InstrumentationFAQ />

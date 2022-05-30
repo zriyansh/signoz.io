@@ -4,6 +4,7 @@ title: Rust Opentelemetry Instrumentation
 description: Send events from your Rust application to SigNoz
 
 ---
+import InstrumentationFAQ from '../shared/instrumentation-faq.md'
 
 - If you have your own Rust application, follow along the steps mentioned below. 
 
@@ -74,3 +75,5 @@ OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317 OTEL_RESOURCE_ATTRIBUTES=servi
 ## Tutorial 
 
 Here's a [tutorial](https://signoz.io/blog/opentelemetry-rust/) with step by step guide on how to install SigNoz and start monitoring a sample Rust app. 
+
+<InstrumentationFAQ />

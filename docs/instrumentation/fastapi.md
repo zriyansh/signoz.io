@@ -7,6 +7,8 @@ description: Send events from your FastAPI application to SigNoz
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import InstrumentationFAQ from '../shared/instrumentation-faq.md'
+
 
 <p align="center">
 
@@ -139,6 +141,6 @@ Python 3.6 or newer
    -p 5002:5002 sample-fastapi-app
    ```
 
-
+<InstrumentationFAQ />
 
 

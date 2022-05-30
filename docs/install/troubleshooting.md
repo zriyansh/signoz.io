@@ -88,11 +88,7 @@ helm upgrade --install -n platform my-release signoz/signoz \
 
 Whew! That was a lot of instruction to follow. If you instead prefer to watch a video, here you go 👇
 
-
 <LiteYoutubeEmbed id="Y7OkvmuTRQ8" mute={false} />
-
-
-<p>&nbsp;</p>
 
 
 ## Docker Standalone

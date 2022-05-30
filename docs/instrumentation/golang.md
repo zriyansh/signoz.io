@@ -7,6 +7,7 @@ description: Send events from your Go application to SigNoz
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import InstrumentationFAQ from '../shared/instrumentation-faq.md'
 
 
 <p align="center">
@@ -213,3 +214,5 @@ The full list of supported instrumentation can be found in the [README](https://
 
 
 <p>&nbsp;</p>
+
+<InstrumentationFAQ />

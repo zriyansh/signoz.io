@@ -7,6 +7,7 @@ description: Send events from your NestJS application to SigNoz
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import InstrumentationFAQ from '../shared/instrumentation-faq.md'
 
 <p align="center">
 
@@ -100,3 +101,5 @@ You can now run your Nestjs application. The data captured with OpenTelemetry fr
 
 ### Testing with sample Nestjs application
 If you want to test out how SigNoz works with a sample Nestjs application, check out a sample Nestjs application at this [GitHub repo](https://github.com/SigNoz/sample-NestJs-app).
+
+<InstrumentationFAQ />

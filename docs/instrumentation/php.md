@@ -6,6 +6,7 @@ description: Send events from your PHP application to SigNoz
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import InstrumentationFAQ from '../shared/instrumentation-faq.md'
 
 <p align="center">
 
@@ -124,3 +125,5 @@ OTEL_SERVICE_NAME=signoz-php-app php FILENAME.php
 #### Testing with sample PHP application
 
 If you want to test out how SigNoz works with a sample PHP application, check out a sample PHP application at this [GitHub](https://github.com/SigNoz/sample-php-app).
+
+<InstrumentationFAQ />
