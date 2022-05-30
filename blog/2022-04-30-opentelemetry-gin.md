@@ -1,7 +1,7 @@
 ---
 title: Implementing OpenTelemetry in a Gin application 
 slug: opentelemetry-gin
-date: 2022-05-26
+date: 2022-05-30
 tags: [opentelemetry-tutorials]
 authors: [nitya, ankit_anand]
 description:  It is essential to monitor your Gin apps in Go(Golang). OpenTelemetry can help instrument Gin apps and provide you with end-to-end tracing. In this guide, we will demonstrate how to instrument your Gin app with OpenTelemetry...
@@ -162,8 +162,7 @@ func initTracer() func(context.Context) error {
 	otel.SetTracerProvider(
 		sdktrace.NewTracerProvider(
 			sdktrace.WithSampler(sdktrace.AlwaysSample()),
-			sdktrace.WithSpanProcessor(sdktrace.NewBatchSpanProcessor(exporter)),
-			sdktrace.WithSyncer(exporter),
+			sdktrace.WithBatcher(exporter),
 			sdktrace.WithResource(resources),
 		),
 	)

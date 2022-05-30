@@ -1,7 +1,7 @@
 ---
 title: Complete guide to implementing OpenTelemetry in Go applications
 slug: go
-date: 2022-05-20
+date: 2022-05-30
 tags: [opentelemetry-tutorials]
 authors: [vishal, ankit_anand]
 description: Learn how to use the language-specific implementation of OpenTelemetry in Go. OpenTelemetry Go libraries can be used to generate telemetry data from your Go applications which can then be sent to an observability tool for storage and…
@@ -75,7 +75,7 @@ If you want to follow along with the tutorial, then you should follow the `witho
 
 Dependencies related to OpenTelemetry exporter and SDK have to be installed first. Run the below commands after navigating to the application source folder:
 
-```bash
+```go
 go get go.opentelemetry.io/otel \
   go.opentelemetry.io/otel/trace \
   go.opentelemetry.io/otel/sdk \
@@ -88,7 +88,7 @@ go get go.opentelemetry.io/otel \
 
 Declare the following variables in `main.go` which we will use to configure OpenTelemetry:
 
-```bash
+```go
 var (
 	serviceName  = os.Getenv("SERVICE_NAME")
 	signozToken  = os.Getenv("SIGNOZ_ACCESS_TOKEN")
@@ -101,9 +101,9 @@ var (
 
 To configure your application to send data we will need a function to initialize OpenTelemetry. Add the following snippet of code in your `main.go` file.
 
-```bash
+```go
 import (
-  .....
+  	.....
 
 	"github.com/gin-gonic/gin"
 	"go.opentelemetry.io/otel"
@@ -117,9 +117,6 @@ import (
 
 func initTracer() func(context.Context) error {
 
-	headers := map[string]string{
-		"signoz-access-token": signozToken,
-	}
 
 	secureOption := otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
 	if len(insecure) > 0 {
@@ -131,7 +128,6 @@ func initTracer() func(context.Context) error {
 		otlptracegrpc.NewClient(
 			secureOption,
 			otlptracegrpc.WithEndpoint(collectorURL),
-			otlptracegrpc.WithHeaders(headers),
 		),
 	)
 
@@ -152,8 +148,7 @@ func initTracer() func(context.Context) error {
 	otel.SetTracerProvider(
 		sdktrace.NewTracerProvider(
 			sdktrace.WithSampler(sdktrace.AlwaysSample()),
-			sdktrace.WithSpanProcessor(sdktrace.NewBatchSpanProcessor(exporter)),
-			sdktrace.WithSyncer(exporter),
+			sdktrace.WithBatcher(exporter),
 			sdktrace.WithResource(resources),
 		),
 	)
@@ -219,7 +214,7 @@ It’s also possible to set custom attributes or tags to a span. To add custom a
 
 **Step 1: Import trace and attribute libraries**
 
-```bash
+```go
 import (
 	...
 	"go.opentelemetry.io/otel/attribute"
@@ -229,13 +224,13 @@ import (
 
 **Step 2: Fetch current span from context**
 
-```bash
+```go
 span := trace.SpanFromContext(c.Request.Context())
 ```
 
 **Step 3: Set attribute on current**
 
-```bash
+```go
 span.SetAttributes(attribute.String("controller", "books"))
 ```
 
@@ -250,7 +245,7 @@ SigNoz dashboards can be used to track these custom attributes.
 
 We can also set custom event on the span with it’s own attribute.
 
-```bash
+```go
 span.AddEvent("This is a sample event", trace.WithAttributes(attribute.Int("pid", 4328), attribute.String("sampleAttribute", "Test")))
 ```
 
