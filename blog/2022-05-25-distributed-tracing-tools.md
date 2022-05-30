@@ -1,10 +1,10 @@
 ---
 title: Latest top 11 distributed tracing tools [perfect for microservices]
 slug: distributed-tracing-tools
-date: 2022-03-28
+date: 2022-05-25
 tags: [distributed-tracing, application-monitoring, apm-tools]
 authors: ankit_anand
-description: Latest top distributed tracing tools list - 1.SigNoz 2.Dynatrace 3.New Relic 4.Honeycomb 5.Lightstep 6.Instana 7.Jaeger 8.DataDog 9.Zipkin..
+description: Latest top distributed tracing tools list - 1.SigNoz 2.Dynatrace 3.New Relic 4.Honeycomb 5.Lightstep 6.Elastic APM 7.Jaeger 8.DataDog 9.Zipkin..
 image: /img/blog/2022/01/distributed_tracing_tools_cover.webp
 keywords:
   - signoz
@@ -48,11 +48,12 @@ Here's the list of the top 11 distributed tracing tools we will be looking at in
 - [SigNoz](#signoz)
 - [Jaeger](#jaeger)
 - [Zipkin](#zipkin)
+- [Serverless360](#serverless360)
 - [Dynatrace](#dynatrace)
 - [New Relic](#new-relic)
 - [Honeycomb](#honeycomb)
 - [Lightstep](#lightstep)
-- [Instana](#instana)
+<!-- - [Instana](#instana) -->
 - [DataDog](#datadog)
 - [Elastic APM](#elastic-apm)
 - [Splunk](#splunk)
@@ -224,6 +225,47 @@ It also includes a dependency diagram that shows how many user requests went thr
     width={700}
 />
 
+### Serverless360
+
+<a href = "https://www.serverless360.com/" rel="noopener" target="_blank" ><b>Serverless360</b></a> is an enterprise tool ideal for distributed tracing in cloud-native and hybrid
+microservice architectures.
+
+For distributed tracing, it provides checkpoints that act as a milestone and indicate the business
+process's completion. It provides message-level insights, including the metadata and properties of
+the message flowing across the applications.
+
+The platform provides a simplified end-to-end representation of underlying complex architecture, to
+help the business users and support operators troubleshoot bottlenecks at ease.
+
+Some of its key features include:
+- End-to-end tracking of message flow
+- Intuitive UI to see individual transactions with an advanced filter on Id, tags, property
+names, durations & more
+- Provides simplified live performance tracking for microservices
+- Ideal for scenarios like correlation, dynamic reprocessing, de-batching transactions, and
+more
+- Facilitates team collaboration in resolving issues.
+
+<Screenshot
+    alt="Serverless360 use case"
+    height={500}
+    src="/img/blog/2022/05/serverless360_use_case.webp"
+    title="Serverless360 use case"
+    width={700}
+/>
+
+With Serverless360 BAM, track key properties and allow users to locate a transaction by querying for the property value. This also enables dynamic monitoring of transaction exceptions and any violations in the threshold limits set.
+
+<Screenshot
+    alt="Serverless360 UI"
+    height={500}
+    src="/img/blog/2022/05/serverless360_bam_ui.webp"
+    title="Serverless360 UI showcasing message flow"
+    width={700}
+/>
+
+
+
 ### Dynatrace
 
 <a href = "https://www.dynatrace.com/" rel="noopener noreferrer nofollow" target="_blank" ><b>Dynatrace</b></a> is an extensive SaaS enterprise tool targeting a broad spectrum of monitoring needs of large-scale enterprises. For distributed tracing, it provides a technology called [Purepath](https://www.dynatrace.com/platform/purepath/), which combines distributed tracing with code-level insights. When a user initiates a transaction with the application, PurePath gives the transaction a unique ID.
@@ -305,7 +347,7 @@ Some of the key features of the Lightstep distributed tracing tool includes:
     width={700}
 />
 
-### Instana
+<!-- ### Instana
 
 <a href = "https://www.instana.com/" rel="noopener noreferrer nofollow" target="_blank" ><b>Instana</b></a> is a distributed tracing tool aimed at microservice applications. The Instana platform offers website monitoring, cloud & infrastructure monitoring, observability platform apart from distributed tracing of microservice applications.
 
@@ -322,7 +364,7 @@ Some of the key features of the Instana distributed tracing tool includes:
     src="/img/blog/2021/09/instana_distributed_tracing_dashboard-min.webp"
     title="Instana distributed tracing dashboard (Source: Instana website)"
     width={700}
-/>
+/> -->
 
 ### DataDog
 
