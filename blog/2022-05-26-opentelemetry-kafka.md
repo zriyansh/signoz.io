@@ -1,7 +1,7 @@
 ---
 title: Complete Guide to tracing Kafka clients with OpenTelemetry in Go
 slug: opentelemetry-kafka
-date: 2022-05-26
+date: 2022-05-30
 tags: [opentelemetry-tutorials]
 authors: [nitya, ankit_anand]
 description: In this tutorial, we will learn how to use OpenTelemtry for Kafka-based applications. OpenTelemetry can help instrument Kafka clients and provide an end-to-end tracing. In this guide, we will demonstrate how to instrument a Go application that uses Kafka with OpenTelemetry...
@@ -159,7 +159,7 @@ go mod init github.com/SigNoz/sample-golang-kafka-app/config
 
 Now we will initialize OpenTelemetry. Create a file named `config.go` and paste the following snippet:
 
-```jsx
+```go
 package config
 
 import (
@@ -213,8 +213,7 @@ func InitTracer() func(context.Context) error {
 
 	tp := sdktrace.NewTracerProvider(
 		sdktrace.WithSampler(sdktrace.AlwaysSample()),
-		sdktrace.WithSpanProcessor(sdktrace.NewBatchSpanProcessor(exporter)),
-		sdktrace.WithSyncer(exporter),
+		sdktrace.WithBatcher(exporter),
 		sdktrace.WithResource(resources),
 	)
 	otel.SetTracerProvider(tp)
@@ -243,7 +242,7 @@ import (
 
 To initialise OpenTelemetry, call the `InitTracer` function from both `consumer.go` and `producer.go`:
 
-```jsx
+```go
 func main(){
 	cleanup := config.InitTracer()
 	defer cleanup(context.Background())
@@ -254,7 +253,7 @@ func main(){
 
 In `main` function inside `consumer.go` wrap the consumer with the OTel library. This is done so that the consumer is instrumented by OpenTelemetry.
 
-```jsx
+```go
 func main(){
 	.....
 	consumer := Consumer{
@@ -269,7 +268,7 @@ func main(){
 
 Since we wrapped our consumer with the open-telemetry library, in `consumer.go` modify the `client.Consume`  function call and pass `handler` instead of `&consumer`.
 
-```jsx
+```go
 .......
 if err := client.Consume(ctx, strings.Split("quickstart", ","), handler); err != nil {
 			log.Panicf("Error from consumer: %v", err)
@@ -278,7 +277,7 @@ if err := client.Consume(ctx, strings.Split("quickstart", ","), handler); err !=
 
 In `producer.go` wrap the producer. This is done so that the producer is instrumented by OpenTelemetry.
 
-```jsx
+```go
 func main() {
 	....
 

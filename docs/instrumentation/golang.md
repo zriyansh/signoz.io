@@ -129,7 +129,7 @@ To do this, you need to make sure that your application is actually generating d
 
 ### Configuring to send data to SigNoz
 
-```bash
+```go
     // main.go
     package main
 
@@ -137,15 +137,15 @@ To do this, you need to make sure that your application is actually generating d
       "context"
       "log"
       "google.golang.org/grpc/credentials"
+
       "go.opentelemetry.io/otel"
-      "go.opentelemetry.io/otel/exporters/otlp"
-      "go.opentelemetry.io/otel/exporters/otlp/otlpgrpc"
-      "go.opentelemetry.io/otel/label"
+      "go.opentelemetry.io/otel/attribute"
+      "go.opentelemetry.io/otel/exporters/otlp/otlptrace"
+      "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
 
       "go.opentelemetry.io/otel/sdk/resource"
       sdktrace "go.opentelemetry.io/otel/sdk/trace"
     )
-
 
     var (
       serviceName  = os.Getenv("SERVICE_NAME")
@@ -155,18 +155,16 @@ To do this, you need to make sure that your application is actually generating d
 
     func initTracer() func(context.Context) error {
 
-
-      secureOption := otlpgrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
+      secureOption := otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
       if len(insecure) > 0 {
-        secureOption = otlpgrpc.WithInsecure()
+        secureOption = otlptracegrpc.WithInsecure()
       }
 
-      exporter, err := otlp.NewExporter(
+      exporter, err := otlptrace.New(
         context.Background(),
-        otlpgrpc.NewDriver(
+        otlptracegrpc.NewClient(
           secureOption,
-          otlpgrpc.WithEndpoint(collectorURL),
-          otlpgrpc.WithHeaders(headers),
+          otlptracegrpc.WithEndpoint(collectorURL),
         ),
       )
 
@@ -176,8 +174,8 @@ To do this, you need to make sure that your application is actually generating d
       resources, err := resource.New(
         context.Background(),
         resource.WithAttributes(
-          label.String("service.name", serviceName),
-          label.String("library.language", "go"),
+          attribute.String("service.name", serviceName),
+          attribute.String("library.language", "go"),
         ),
       )
       if err != nil {
@@ -186,9 +184,8 @@ To do this, you need to make sure that your application is actually generating d
 
       otel.SetTracerProvider(
         sdktrace.NewTracerProvider(
-          sdktrace.WithConfig(sdktrace.Config{DefaultSampler: sdktrace.AlwaysSample()}),
-          sdktrace.WithSpanProcessor(sdktrace.NewBatchSpanProcessor(exporter)),
-          sdktrace.WithSyncer(exporter),
+          sdktrace.WithSampler(sdktrace.AlwaysSample()),
+          sdktrace.WithBatcher(exporter),
           sdktrace.WithResource(resources),
         ),
       )

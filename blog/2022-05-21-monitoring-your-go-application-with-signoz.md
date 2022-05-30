@@ -1,7 +1,7 @@
 ---
 title: How to set up Golang application performance monitoring with open source monitoring tool - SigNoz
 slug: monitoring-your-go-application-with-signoz
-date: 2022-05-26
+date: 2022-05-30
 tags: [Product Tutorial]
 authors: ankit_anand
 description: In this article, learn how to setup application monitoring for Golang apps using an open-source solution, SigNoz.
@@ -182,7 +182,7 @@ If you want to follow along with the tutorial, then you should follow the `witho
 
 Dependencies related to OpenTelemetry exporter and SDK have to be installed first. Run the below commands after navigating to the application source folder:
 
-```bash
+```go
 go get go.opentelemetry.io/otel \
   go.opentelemetry.io/otel/trace \
   go.opentelemetry.io/otel/sdk \
@@ -195,7 +195,7 @@ go get go.opentelemetry.io/otel \
 
 Declare the following variables in `main.go` which we will use to configure OpenTelemetry:
 
-```bash
+```go
 var (
 	serviceName  = os.Getenv("SERVICE_NAME")
 	collectorURL = os.Getenv("OTEL_EXPORTER_OTLP_ENDPOINT")
@@ -207,7 +207,7 @@ var (
 
 To configure your application to send data we will need a function to initialize OpenTelemetry. Add the following snippet of code in your `main.go` file.
 
-```bash
+```go
 import (
   	.....
 
@@ -252,9 +252,8 @@ func initTracer() func(context.Context) error {
 
 	otel.SetTracerProvider(
 		sdktrace.NewTracerProvider(
-			sdktrace.WithSampler(sdktrace.AlwaysSample()),
-			sdktrace.WithSpanProcessor(sdktrace.NewBatchSpanProcessor(exporter)),
-			sdktrace.WithSyncer(exporter),
+            sdktrace.WithSampler(sdktrace.AlwaysSample()),
+			sdktrace.WithBatcher(exporter),
 			sdktrace.WithResource(resources),
 		),
 	)
