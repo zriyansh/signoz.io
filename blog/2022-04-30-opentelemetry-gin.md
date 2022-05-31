@@ -22,7 +22,7 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/opentelemetry-gin/"/>
 </head>
 
-OpenTelemetry can be used to trace Gin applications for performance issues and bugs. OpenTelemetry is an open-source project under the Cloud Native Computing Foundation (<a href = "https://www.cncf.io/" rel="noopener noreferrer nofollow" target="_blank">CNCF</a>) that aims to standardize the generation and collection of telemetry data. Telemetry data includes logs, metrics, and traces.
+OpenTelemetry can be used to trace Gin applications for performance issues and bugs. OpenTelemetry is an open-source project under the Cloud Native Computing Foundation (<a href = "https://www.cncf.io/" rel="noopener noreferrer nofollow" target="_blank">CNCF</a>) that aims to standardize the generation and collection of telemetry data like logs, metrics, and traces.
 
 <!--truncate-->
 
