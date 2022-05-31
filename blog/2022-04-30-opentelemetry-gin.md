@@ -46,7 +46,7 @@ Before we demonstrate how to implement the OpenTelemetry libraries, let’s have
 
 ## What is OpenTelemetry?
 
-<a href = "https://opentelemetry.io/" rel="noopener noreferrer nofollow" target="_blank">OpenTelemetry</a> is an open-source vendor-agnostic set of tools, APIs, and SDKs used to instrument applications to create and manage telemetry data(logs, metrics, and traces). It aims to make telemetry data(logs, metrics, and traces) a built-in feature of cloud-native software applications.
+<a href = "https://opentelemetry.io/" rel="noopener noreferrer nofollow" target="_blank">OpenTelemetry</a> is an open-source vendor-agnostic set of tools, APIs, and SDKs used to instrument applications to create and manage telemetry data (logs, metrics, and traces). It aims to make telemetry data, a built-in feature of cloud-native software applications.
 
 The telemetry data is then sent to an observability tool for storage and visualization.
 
@@ -200,12 +200,12 @@ func main() {
 ```
 
 **Step 7: Set environment variables and run your Gin application**<br></br>
-Now that you have instrumented your Gin application with OpenTelemetry, you need to set some environment variables to send data to SigNoz backend:
+Now that you have instrumented your Gin application with OpenTelemetry, you need to set some environment variables to send data to the SigNoz backend:
 `SERVICE_NAME`: goGinApp (you can name it whatever you want)
 
 `OTEL_EXPORTER_OTLP_ENDPOINT`: localhost:4317
 
-Since, we have installed SigNoz on our local machine, we use the above IP. If you install SigNoz on a different machine, you can update it with the relevant IP.
+Since we have installed SigNoz on our local machine, we use the above IP. If you install SigNoz on a different machine, you can update it with the relevant IP.
 
 Hence, the final run command looks like this:
 
@@ -338,7 +338,7 @@ SigNoz is an open-source observability tool that comes with a SaaS-like experien
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
 
 
-If you face any issues while trying out SigNoz, you can reach out with your questions in #support channel 👇
+If you face any issues while trying out SigNoz, you can reach out with your questions in the #support channel 👇
 
 [![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://signoz.io/slack)
 
