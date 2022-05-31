@@ -4,12 +4,19 @@ title: K8s Infra Metrics
 description: View Kubernetes infrastructure metrics in SigNoz
 ---
 
+import K8sMetrics from '../shared/k8s-metrics-list.md'
+import HostMetrics from '../shared/hostmetrics-list.md'
+
 ### Overview
-To export k8s metrics, you can enable different receivers in OpenTelemetry collector which will send metrics about your Kubernetes infrastructure to SigNoz. These OpenTelemetry collectors will act as agents which send metrics about K8s to SigNoz.
+To export K8s metrics, you can enable different receivers in OpenTelemetry
+collector which will send metrics about your Kubernetes infrastructure
+to SigNoz. These OpenTelemetry collectors will act as agents which send
+metrics about K8s to SigNoz.
 
-Based on where you are running SigNoz ( e.g. in an independent VM or k8s cluster), you have to provide the address to send data from the above receivers.
+Based on where you are running SigNoz ( e.g. in an independent VM or K8s cluster),
+you have to provide the address to send data from the above receivers.
 
-### Steps to export k8s metrics to SigNoz
+### Steps to export K8s metrics to SigNoz
 
 1. **Clone Otel collector repo**
 
@@ -18,12 +25,14 @@ Based on where you are running SigNoz ( e.g. in an independent VM or k8s cluster
    ```
 
 2. **Set up the address to SigNoz in your OTel collectors**<br></br>
-   You need to set up the address to SigNoz in your OTel collector which is collecting the k8s metrics.
+   You need to set up the address to SigNoz in your OTel collector which
+   is collecting the K8s metrics.
 
-   a. If you are running SigNoz in an independent VM, you need to change the placeholder IPs in the following files with the IP of machine where you are hosting signoz.
+   a. If you are running SigNoz in an independent VM, you need to change the placeholder
+   IPs in the following files with the IP of machine where you are hosting signoz.
    
-   -  [agent/infra-metrics.yaml](https://github.com/SigNoz/otel-collector-k8s/blob/main/agent/infra-metrics.yaml#L47) 
-   -  [deployment/all-in-one.yaml](https://github.com/SigNoz/otel-collector-k8s/blob/main/deployment/all-in-one.yaml#L19)  
+   -  [agent/infra-metrics.yaml][1]
+   -  [deployment/all-in-one.yaml][2]
 
    You need to update the below section.
    
@@ -35,7 +44,9 @@ Based on where you are running SigNoz ( e.g. in an independent VM or k8s cluster
           insecure: true
    ```
 
-   b. If you are running SigNoz in the same Kubernetes cluster where your applications are, you have to replace the above endpoint in [agent/infra-metrics.yaml](https://github.com/SigNoz/otel-collector-k8s/blob/main/agent/infra-metrics.yaml#L47) and [deployment/all-in-one.yaml](https://github.com/SigNoz/otel-collector-k8s/blob/main/deployment/all-in-one.yaml#L19) by
+   b. If you are running SigNoz in the same Kubernetes cluster where your applications
+   are, you have to replace the above endpoint in [agent/infra-metrics.yaml][1] and
+   [deployment/all-in-one.yaml][2] by
 
    ```jsx
    <helm_release_name>-signoz-otel-collector.<namespace_hosting_signoz>.svc.cluster.local:4317
@@ -52,80 +63,47 @@ Based on where you are running SigNoz ( e.g. in an independent VM or k8s cluster
    kubectl -n signoz-infra-metrics get pods
    ```
 
-   [List of metrics from Kubernetes receiver](#list-of-metrics-from-kubernetes-receiver).
+   [List of metrics from Kubernetes receiver][3].
 
 4. **Plot Metrics in SigNoz UI**
 
-   To plot these metrics, follow the instructions given in the docs [here](https://signoz.io/docs/userguide/dashboards/).
+   To plot these metrics, follow the instructions given in the docs [here][4].
 
 5. **Import Dashboard with CPU and Memory Metrics**
 
-   You can import basic dashboard with CPU and Memory metrics of K8s cluster containers
-   from [here](https://github.com/SigNoz/benchmark/raw/main/dashboards/k8s-infra-metrics/cpu-memory-metrics.json).
+   You can import basic dashboard with CPU and Memory metrics of K8s cluster
+   containers from [here][5].
 
-   After importing, you can include more widgets using other metrics to the same dashboard.
+   After importing, you can include more widgets using other metrics from
+   the [list below][3].
+
+6. **Generate and Import Dashboard with Node Metrics**
+   
+   To generate node metrics dashboards for each nodes of K8s cluster:
+
+   ```bash
+   for node in $(kubectl get nodes -o name | sed -e "s/^node\///");
+   do
+   curl -sL https://github.com/SigNoz/benchmark/raw/main/dashboards/hostmetrics/hostmetrics-import.sh \
+      | HOSTNAME="$node" DASHBOARD_TITLE="Node Metrics Dashboard for $node" bash
+   done
+   ```
+
+   After importing the generated dashboards, you can include more widgets as
+   per you need using metrics from the [list below][3].
 
 ---
 
-### List of metrics from Kubernetes receiver
+### List of metrics
 
-```jsx
-container_cpu_time
-container_cpu_utilization
-container_filesystem_available
-container_filesystem_capacity
-container_filesystem_usage
-container_memory_available
-container_memory_major_page_faults
-container_memory_page_faults
-container_memory_rss
-container_memory_usage
-container_memory_working_set
-k8s_container_cpu_limit
-k8s_container_cpu_request
-k8s_container_ephemeral_storage_request
-k8s_container_memory_limit
-k8s_container_memory_request
-k8s_container_ready
-k8s_container_restarts
-k8s_daemonset_current_scheduled_nodes
-k8s_daemonset_desired_scheduled_nodes
-k8s_daemonset_misscheduled_nodes
-k8s_daemonset_ready_nodes
-k8s_deployment_available
-k8s_deployment_desired
-k8s_namespace_phase
-k8s_node_condition_memory_pressure
-k8s_node_condition_ready
-k8s_node_cpu_time
-k8s_node_cpu_utilization
-k8s_node_filesystem_available
-k8s_node_filesystem_capacity
-k8s_node_filesystem_usage
-k8s_node_memory_available
-k8s_node_memory_major_page_faults
-k8s_node_memory_page_faults
-k8s_node_memory_rss
-k8s_node_memory_usage
-k8s_node_memory_working_set
-k8s_node_network_errors
-k8s_node_network_io
-k8s_pod_cpu_time
-k8s_pod_cpu_utilization
-k8s_pod_filesystem_available
-k8s_pod_filesystem_capacity
-k8s_pod_filesystem_usage
-k8s_pod_memory_available
-k8s_pod_memory_major_page_faults
-k8s_pod_memory_page_faults
-k8s_pod_memory_rss
-k8s_pod_memory_usage
-k8s_pod_memory_working_set
-k8s_pod_phase
-k8s_replicaset_available
-k8s_replicaset_desired
-k8s_statefulset_current_pods
-k8s_statefulset_desired_pods
-k8s_statefulset_ready_pods
-k8s_statefulset_updated_pods
-```
+<K8sMetrics />
+
+<HostMetrics name="Node Metrics"/>
+
+---
+
+[1]: https://github.com/SigNoz/otel-collector-k8s/blob/main/agent/infra-metrics.yaml#L47
+[2]: https://github.com/SigNoz/otel-collector-k8s/blob/main/deployment/all-in-one.yaml#L19
+[3]: #list-of-metrics
+[4]: https://signoz.io/docs/userguide/dashboards/
+[5]: https://github.com/SigNoz/benchmark/raw/main/dashboards/k8s-infra-metrics/cpu-memory-metrics.json
