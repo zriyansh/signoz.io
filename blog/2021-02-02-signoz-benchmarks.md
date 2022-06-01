@@ -65,7 +65,7 @@ Disc cost for 15 day retention at 0.08 USD/GB-month"
   width={700}
 />
 
-Total SigNoz cost ~** 338 USD per montt**
+Total SigNoz cost ~** 338 USD per month**
 
 Although this setup works at less than 60% utilisation, some users may still want to have redundancy.
 
