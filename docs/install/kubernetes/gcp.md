@@ -34,7 +34,8 @@ an overview of the parameters that can be configured during installation under
 clickhouse:
   cloud: gcp
   installCustomStorageClass: true
-  storageClass: gce-resizable
+  persistence:
+    storageClass: gce-resizable
 ```
 
 ## Install SigNoz on Kubernetes with Helm
