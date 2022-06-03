@@ -1,21 +1,25 @@
 ---
-title: OpenTelemetry MongoDB | Monitor and visualize your MongoDB database calls
+title: Tracing MongoDB calls with OpenTelemetry
 slug: opentelemetry-mongodb
 date: 2022-05-20
 tags: [opentelemetry-tutorials]
 authors: [pranshu, ankit_anand]
 description: In this tutorial, we will learn how to use OpenTelemetry to trace MongoDB calls. OpenTelemetry provides client libraries for instrumentation of application code in major programming languages & technologies, including databases like MongoDB...
-image: /img/blog/2022/06/opentelemetry_mongodb_cover.webp
-  - opentelemetry mongodb
-  - mongodb
+image: /img/blog/2022/05/opentelemetry_mongodb_cover.webp
+keywords:
   - opentelemetry
-  - monitor mongodb
-  - tracing mongodb
+  - react
+  - opentelemetry react
+  - reactjs
+  - frontend observability
   - distributed tracing
+  - distributed tracing tool
+  - apm tools
+  - application performance monitoring
 ---
 
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/opentelemetry-mongodb/"/>
+  <link rel="canonical" href="https://signoz.io/blog/opentelemetry-react/"/>
 </head>
 
 OpenTelemetry libraries can be used to trace MongoDB interactions. In this tutorial, we will learn how we can trace MongoDB with OpenTelemetry libraries to analyze query execution and identify performance bottlenecks. 
