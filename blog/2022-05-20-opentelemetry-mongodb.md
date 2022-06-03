@@ -1,32 +1,29 @@
 ---
-title: Tracing MongoDB calls with OpenTelemetry
+title: OpenTelemetry MongoDB | Monitor and visualize your MongoDB database calls
 slug: opentelemetry-mongodb
 date: 2022-05-20
 tags: [opentelemetry-tutorials]
 authors: [pranshu, ankit_anand]
 description: In this tutorial, we will learn how to use OpenTelemetry to trace MongoDB calls. OpenTelemetry provides client libraries for instrumentation of application code in major programming languages & technologies, including databases like MongoDB...
-image: /img/blog/2022/05/opentelemetry_mongodb_cover.webp
+image: /img/blog/2022/06/opentelemetry_mongodb_cover.webp
 keywords:
   - opentelemetry
-  - react
-  - opentelemetry react
-  - reactjs
-  - frontend observability
-  - distributed tracing
-  - distributed tracing tool
-  - apm tools
-  - application performance monitoring
+  - mongoDB
+  - opentelemetry mongodb
+  - monitor mongodb
+  - database monitoring
+  - mongodb performance
 ---
 
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/opentelemetry-react/"/>
+  <link rel="canonical" href="https://signoz.io/blog/opentelemetry-mongodb/"/>
 </head>
 
-OpenTelemetry libraries can be used to trace MongoDB interactions. In this tutorial, we will learn how we can trace MongoDB with OpenTelemetry libraries to analyze query execution and identify performance bottlenecks. 
+OpenTelemetry libraries can be used to monitor MongoDB interactions. In this tutorial, we will learn how we can monitor MongoDB with OpenTelemetry libraries to analyze query execution and identify performance bottlenecks. 
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2022/05/opentelemetry_mongodb_cover.webp)
+![Cover Image](/img/blog/2022/06/opentelemetry_mongodb_cover.webp)
 
 Most modern applications have distributed architecture thanks to cloud and containerization. In cloud-native applications, it is necessary to track user requests across services and components like databases. Distributed tracing is the technology that enables tracing of user requests across different components of your application.
 
