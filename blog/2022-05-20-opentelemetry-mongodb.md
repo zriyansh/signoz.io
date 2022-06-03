@@ -1,5 +1,5 @@
 ---
-title: Monitor your MongoDB calls with OpenTelemetry
+title: OpenTelemetry MongoDB | Monitor and visualize your MongoDB database calls
 slug: opentelemetry-mongodb
 date: 2022-05-20
 tags: [opentelemetry-tutorials]
