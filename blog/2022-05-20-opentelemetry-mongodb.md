@@ -5,8 +5,7 @@ date: 2022-05-20
 tags: [opentelemetry-tutorials]
 authors: [pranshu, ankit_anand]
 description: In this tutorial, we will learn how to use OpenTelemetry to trace MongoDB calls. OpenTelemetry provides client libraries for instrumentation of application code in major programming languages & technologies, including databases like MongoDB...
-image: /img/blog/2022/05/opentelemetry_mongodb_cover.webp
-keywords:
+image: /img/blog/2022/06/opentelemetry_mongodb_cover.webp
   - opentelemetry mongodb
   - mongodb
   - opentelemetry
