@@ -16,10 +16,6 @@ keywords:
   - distributed tracing
 ---
 
-<head>
-  <link rel="canonical" href="https://signoz.io/blog/monitoring-your-go-application-with-signoz/"/>
-</head>
-
 In this article, learn how to setup application monitoring for Golang apps using an open-source solution, SigNoz.
 
 <!--truncate-->
