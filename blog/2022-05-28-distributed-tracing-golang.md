@@ -317,7 +317,7 @@ You need to generate some user data to see how it appears in the SigNoz dashboar
 serve -l 5000 frontend
 ```
 
-Now go to the app frontend running at `[localhost:5000](http://localhost:5000)`. Perform the below given steps 4-5 times to generate some data.
+Now go to the app frontend running at [localhost:5000](http://localhost:5000). Perform the below given steps 4-5 times to generate some data.
 
 1. Create a user:<br></br>
    Click `Create User` button to create a new user in the MySQL db.
