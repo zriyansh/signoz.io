@@ -93,6 +93,10 @@ When you are done installing SigNoz, you can access the UI at [http://localhost
 [Sample React App](https://github.com/SigNoz/sample-reactjs-app/tree/master)<br></br>
 It contains the sample boilerplate code that we will instrument.
 
+```bash
+git clone -b master git@github.com:SigNoz/sample-reactjs-app.git
+```
+
 **Step 3: Enable CORS in the OTel Receiver**
 
 Enable CORS in the OTel Receiver. Under SigNoz folder, open the `otel-collector-config.yaml` file. The file is located at `deploy/docker/clickhouse-setup/otel-collector-config.yaml`
@@ -101,12 +105,19 @@ You can view the file at [SigNoz GitHub repo](https://github.com/SigNoz/signoz/b
 
 ```go
 http:
-+        cors:
-+          allowed_origins:
-+            - https://netflix.com  # URL of your Frontend application
+  cors:
+    allowed_origins:
+      - https://netflix.com  # URL of your Frontend application
 ```
 
-You need to update the URL of your frontend application. For this tutorial, we will be running our frontend application on `http://localhost:3000`.
+You need to update the URL in the config file to match your frontend application URL. For this tutorial, we will be running our frontend application on `http://localhost:3000`.
+
+```go
+http:
+  cors:
+    allowed_origins:
+      - http://localhost:3000 
+```
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2022/05/opentelemetry_react_update_frontend_port.webp" alt="Setting frontend UI port number"/>
@@ -116,12 +127,13 @@ You need to update the URL of your frontend application. For this tutorial, we w
 
 Once you make the changes, you need to restart the Docker containers.
 
+
+
 **Step 4: Instrument React app with OpenTelemetry**
 
 To instrument the React app with OpenTelemetry, we need to install the OpenTelemetry dependencies.
 
 ```bash
-
 yarn add -D @opentelemetry/api@1.0.3 @opentelemetry/context-zone@1.0.0 @opentelemetry/exporter-collector@0.25.0@opentelemetry/instrumentation-fetch@0.25.0
 ```
 
