@@ -138,6 +138,7 @@ yarn add -D @opentelemetry/api@1.0.3 @opentelemetry/context-zone@1.0.0 @opentele
 ```
 
 **Step 5: Update Service Name and CollectorTrace Exporter**
+The file is located at `src/helpers/tracing/index.ts`, in the sample react app codebase.  
 
 ```jsx
 const serviceName = "link-frontend";
