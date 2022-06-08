@@ -21,6 +21,9 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import UpgradeWarning from '../shared/upgrade-warning.md'
+
+
 <head>
   <link rel="canonical" href="https://signoz.io/blog/opentelemetry-react/"/>
 </head>
@@ -129,6 +132,33 @@ http:
 <br></br>
 
 Once you make the changes, you need to restart the Docker containers.
+
+**To stop the running SigNoz cluster:**
+
+x86:
+```
+sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
+```
+Apple M1(arm):
+```
+sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml stop
+```
+
+**To start/resume the SigNoz cluster:**
+
+x86:
+```
+sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up
+```
+
+Apple M1 (arm):
+```
+sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml up
+```
+
+
+
+
 ## Stop/Start
 
 To stop the running SigNoz cluster:
@@ -172,6 +202,8 @@ To start/resume the running SigNoz cluster:
 </Tabs>
 
 _*Note: The stopped SigNoz cluster should resume and mount to the existing docker volumes._
+
+
 
 
 
