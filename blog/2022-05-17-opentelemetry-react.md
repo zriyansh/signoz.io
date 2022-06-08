@@ -18,6 +18,9 @@ keywords:
   - application performance monitoring
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <head>
   <link rel="canonical" href="https://signoz.io/blog/opentelemetry-react/"/>
 </head>
@@ -94,7 +97,7 @@ When you are done installing SigNoz, you can access the UI at [http://localhost
 It contains the sample boilerplate code that we will instrument.
 
 ```bash
-git clone -b master git@github.com:SigNoz/sample-reactjs-app.git
+git clone git@github.com:SigNoz/sample-reactjs-app.git
 ```
 
 **Step 3: Enable CORS in the OTel Receiver**
@@ -126,6 +129,49 @@ http:
 <br></br>
 
 Once you make the changes, you need to restart the Docker containers.
+## Stop/Start
+
+To stop the running SigNoz cluster:
+
+<Tabs
+  defaultValue="x86"
+  values={[
+    {label: 'x86', value: 'x86'},
+    {label: 'Apple M1', value: 'arm64'},
+  ]}>
+  <TabItem value="x86">
+
+    sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
+
+  </TabItem>
+  <TabItem value="arm64">
+
+    sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml stop
+
+  </TabItem>
+</Tabs>
+
+To start/resume the running SigNoz cluster:
+
+<Tabs
+    defaultValue="x86"
+    values={[
+      {label: 'x86', value: 'x86'},
+      {label: 'Apple M1', value: 'arm64'},
+    ]}>
+  <TabItem value="x86">
+
+    sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up
+
+  </TabItem>
+  <TabItem value="arm64">
+
+    sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml up
+
+  </TabItem>
+</Tabs>
+
+_*Note: The stopped SigNoz cluster should resume and mount to the existing docker volumes._
 
 
 
@@ -163,7 +209,7 @@ Congratulations! You have successfully run your React application with OpenTelem
 
 In order to monitor your React application with SigNoz, you first need to generate some data.
 
-Visit [http://localhost:4200/](http://localhost:4200/) to access your frontend application. Using the UI, make some calls to the backend API. You can check the network tab in your browser to see the requests that you have made.
+Visit [http://localhost:3000/](http://localhost:3000/) to access your frontend application. Using the UI, make some calls to the backend API. You can check the network tab in your browser to see the requests that you have made.
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2022/05/opentelemetry_react_network_requests.webp" alt="Network request"/>
