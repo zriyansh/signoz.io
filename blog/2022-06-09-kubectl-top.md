@@ -46,7 +46,7 @@ Pods are groups of one or more containers with shared resources like storage and
 
 ## What is a node in Kubernetes?
 
-They are the smallest unit of computing hardware in Kubernetes clusters. They are single machines where applications run, which could be a physical server or a virtual machine. They help in load distribution for cases where there is an error or failure in a node.
+Nodes are where Kubernetes pods run. Nodes can be virtual machines, bare metal servers in a data center, or instances in a private or public cloud. Kubernetes uses nodes to handle on-demand scaling of resources.
 
 A single node can have multiple pods separated by namespaces.
 
@@ -90,11 +90,12 @@ It is also displayed only for nodes, and it stands for total memory usage percen
 
 Running the `kubectl top pod` command displays the metrics about pods from the `default` namespace which looks like this:
 
-```docker
-NAME	                             CPU (CORES)	MEMORY (BYTES)
-nginx                              3m           1Mi
-nginx-653c7b42sd-4g5ce	           3m         	1Mi
-nginx-653c7b42sd-7c9ae	           3m	          1Mi
+```bash
+
+NAME                     CPU(Cores)   MEMORY(Bytes)
+nginx                    3m           1Mi
+nginx-653c7b42sd-4g5ce   3m           1Mi
+nginx-653c7b42sd-7c9ae	 3m	          1Mi
 ```
 
 Here `Mi` under memory stands for mebibytes.
