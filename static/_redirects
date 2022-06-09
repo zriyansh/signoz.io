@@ -6,3 +6,4 @@
 /docs/deployment/troubleshooting    /docs/install/troubleshooting
 /docs/installation                  /docs/install
 /docs/userguide/metrics-dashboard   /docs/userguide/dashboards
+/docs/operate/upgrade               /docs/operate/migration/upgrade-0.8.0

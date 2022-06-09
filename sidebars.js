@@ -75,10 +75,23 @@ module.exports = {
       },
       items: [
         'operate/configuration',
-        'operate/upgrade',
         'operate/docker-standalone',
         'operate/docker-swarm',
         'operate/kubernetes',
+        {
+          type: 'category',
+          label: 'Migration Guides',
+          link: {
+            type: 'generated-index',
+            title: 'Migration Guides',
+            description: 'The following sections provide instructions to migrate SigNoz components across newer versions. Based on your need, proceed to one of the sections below.',
+            slug: '/operate/migration',
+          },
+          items: [
+            'operate/migration/upgrade-0.8.0',
+            'operate/migration/upgrade-0.8.1'
+          ]
+        },
         {
           type: 'category',
           label: 'Clickhouse',
