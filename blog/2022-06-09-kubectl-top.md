@@ -77,13 +77,13 @@ kind-control-plane   338m         4%     1662Mi          10%
 
 The output from `kubectl top node` gives you information about CPU(cores), CPU%, memory, and memory%. Let’s see what these terms mean:
 
-- CPU(cores)
+- CPU(cores)<br></br>
 `338m` means 338 millicpu. `1000m` is equal to 1 CPU, hence 338m means 33.8% of 1 CPU.
-- CPU%
+- CPU%<br></br>
 It is displayed only for nodes, and it stands for the total CPU usage percentage of that node.
-- Memory
+- Memory<br></br>
 Memory being used by that node
-- Memory%
+- Memory%<br></br>
 It is also displayed only for nodes, and it stands for total memory usage percentage of that node.
 
 ## Using `kubectl top pod` command
