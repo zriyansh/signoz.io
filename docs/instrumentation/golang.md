@@ -108,8 +108,8 @@ func main() {
   [...]
 
 	s := grpc.NewServer(
-		grpc.UnaryInterceptor(otelgrpc.UnaryServerInterceptor()),
-		grpc.StreamInterceptor(otelgrpc.StreamServerInterceptor()),
+		grpc.UnaryInterceptor(grpcotel.UnaryServerInterceptor()),
+		grpc.StreamInterceptor(grpcotel.StreamServerInterceptor()),
 	)
 
 }
