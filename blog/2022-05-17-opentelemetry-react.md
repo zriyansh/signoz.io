@@ -188,7 +188,7 @@ yarn add -D @opentelemetry/api@1.0.3 @opentelemetry/context-zone@1.0.0 @opentele
 The file is located at `src/helpers/tracing/index.ts`, in the sample react app codebase.  
 
 ```jsx
-const serviceName = "link-frontend";
+const serviceName = "sample-react-app";
 const resource = new Resource({ "service.name": serviceName });
 const provider = new WebTracerProvider({ resource });
 const collector = new CollectorTraceExporter({
