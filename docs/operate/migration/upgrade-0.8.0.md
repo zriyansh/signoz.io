@@ -1,7 +1,7 @@
 ---
-id: upgrade
-title: Upgrading to newer versions
-sidebar_label: Upgrade 
+id: upgrade-0.8.0
+title: Upgrade to 0.8.0
+sidebar_label: Upgrade to 0.8.0
 ---
 import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 
