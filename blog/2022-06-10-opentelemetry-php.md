@@ -69,7 +69,18 @@ When you are done installing SigNoz, you can access the UI at [http://localhost
 
 ## Instrument your PHP app with OpenTelemetry
 
-**Step 1: Install the required dependencies from OTel PHP library:**
+**Step 1: Get sample React app**
+
+[Sample React App](https://github.com/SigNoz/sample-php-app)
+It contains the sample boilerplate code that we will instrument.
+
+
+```
+git clone git@github.com:SigNoz/sample-php-app.git
+```
+
+
+**Step 2: Install the required dependencies from OTel PHP library:**
 
 ```go
 use OpenTelemetry\SDK\Trace\SpanExporter\ConsoleSpanExporter;
@@ -78,7 +89,9 @@ use OpenTelemetry\SDK\Trace\TracerProvider;
 use OpenTelemetry\API\Trace\SpanKind;
 ```
 
-**Step 2: Initialise the tracer module and create tracer:**
+**Step 3: Initialise the tracer module and create tracer:**
+
+File location: `src/1-getting-started-console-exporter.php`
 
 ```go
 $tracerProvider =  new TracerProvider(
@@ -90,7 +103,7 @@ $tracerProvider =  new TracerProvider(
 $tracer = $tracerProvider->getTracer('io.opentelemetry.contrib.php',);
 ```
 
-**Step 3: Creating spans**
+**Step 4: Creating spans**
 
 Create root span and activate it:
 
@@ -126,6 +139,9 @@ $rootSpan->end();
 ```
 
 Here’s how it looks when everything is assembled with a bit of error handling:
+
+File location: `src/1-getting-started-console-exporter.php`
+
 
 ```go
 <?php
@@ -167,9 +183,10 @@ try {
 $rootSpan->end();
 ```
 
-**Step 4: Running the PHP application**
+**Step 5: Running the PHP application**
 
-Run your PHP application with the following command:
+Run your PHP application with the following command: <br>
+Make sure you cd to the src directory to run the below command:
 
 ```go
 php 1-getting-started-console-exporter.php
@@ -315,6 +332,8 @@ For this, we will be generating spans using a for loop. Also, we will be attachi
 
 Import OTel and Guzzle (for HTTP) dependencies:
 
+File location: `src/2-send-trace-to-collector.php`
+
 ```go
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\HttpFactory;
@@ -396,8 +415,10 @@ Run your PHP application:
 ```php
 > OTEL_SERVICE_NAME=signoz-php-app php ./src/2-send-trace-to-collector.php
 ```
+Note: Make sure you are in the root dir of sample-php-app. 
 
-Once you run your application, you can interact with it a bit to generate some dummy monitoring data.
+
+Once you run your application, you can interact with it a bit to generate some dummy monitoring data. You can run the above command a few number of times to generate the data. 
 
 Now open SigNoz UI at: [http://localhost:3301](http://localhost:3301/application), and go to the `Traces` tab, and select the span from service `signoz-php-app`.
 
