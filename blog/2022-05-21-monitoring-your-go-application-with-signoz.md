@@ -16,6 +16,8 @@ keywords:
   - distributed tracing
 ---
 
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+
 In this article, learn how to setup application monitoring for Golang apps using an open-source solution, SigNoz.
 
 <!--truncate-->
@@ -369,6 +371,14 @@ Using OpenTelemetry and SigNoz, you can set up a robust monitoring framework for
 You can then use SigNoz to store and visualize your telemetry data. SigNoz is an open-source observability tool that comes with a SaaS-like experience. You can try out SigNoz by visiting its GitHub repo 👇 
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
+
+
+If you are someone who understands more from video, then you can watch the our video tutorial on how to implement OpenTelemetry Golang libraries and monitor the application with SigNoz.
+<p>&nbsp;</p>
+
+<LiteYoutubeEmbed id="kTHW4VYnISQ" mute={false} />
+
+<p>&nbsp;</p>
 
 If you have any questions or need any help in setting things up, join our slack community and ping us in `#support` channel.
 
