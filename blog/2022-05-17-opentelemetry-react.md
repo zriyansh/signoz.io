@@ -25,6 +25,8 @@ import TabItem from '@theme/TabItem';
   <link rel="canonical" href="https://signoz.io/blog/opentelemetry-react/"/>
 </head>
 
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+
 OpenTelemetry can be used to trace React applications for performance issues and bugs. You can trace user requests from your frontend web application to your downstream services. OpenTelemetry is an open-source project under the Cloud Native Computing Foundation (<a href = "https://www.cncf.io/" rel="noopener noreferrer nofollow" target="_blank">CNCF</a>) that aims to standardize the generation and collection of telemetry data.
 
 <!--truncate-->
@@ -257,6 +259,14 @@ OpenTelemetry is the future for setting up observability for cloud-native apps. 
 SigNoz is an open-source observability tool that comes with a SaaS-like experience. You can try out SigNoz by visiting its GitHub repo 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
+
+
+If you are someone who understands more from video, then you can watch the our video tutorial on how to implement OpenTelemetry React libraries and monitor the application with SigNoz.
+<p>&nbsp;</p>
+
+<LiteYoutubeEmbed id="IsOQxc3wqyc" mute={false} />
+
+<p>&nbsp;</p>
 
 If you have any questions or need any help in setting things up, join our slack community and ping us in `#support` channel.
 
