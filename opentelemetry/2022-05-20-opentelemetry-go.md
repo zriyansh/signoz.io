@@ -20,6 +20,8 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/opentelemetry-react/"/>
 </head>
 
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+
 OpenTelemetry can be used to generate telemetry data from your Go applications. The collected data can then be sent to an observability tool for storage and visualization. OpenTelemetry is an open-source project under the Cloud Native Computing Foundation ([CNCF](https://www.cncf.io/)) that aims to standardize the generation and collection of telemetry data.
 
 <!--truncate-->
@@ -315,6 +317,14 @@ OpenTelemetry is the future for setting up observability for cloud-native apps. 
 SigNoz is an open-source observability tool that comes with a SaaS-like experience. You can try out SigNoz by visiting its GitHub repo 👇 
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
+
+
+If you are someone who understands more from video, then you can watch the our video tutorial on how to implement OpenTelemetry Golang libraries and monitor the application with SigNoz.
+ <p>&nbsp;</p>
+
+ <LiteYoutubeEmbed id="kTHW4VYnISQ" mute={false} />
+
+ <p>&nbsp;</p>
 
 If you face any issues while trying out SigNoz, feel free to write to us at: support@signoz.io
 
