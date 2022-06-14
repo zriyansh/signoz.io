@@ -69,10 +69,10 @@ When you are done installing SigNoz, you can access the UI at [http://localhost
 
 ## Instrument your PHP app with OpenTelemetry
 
-**Step 1: Get sample React app**
+**Step 1: Get sample PHP app**
 
-[Sample React App](https://github.com/SigNoz/sample-php-app)
-It contains the sample boilerplate code that we will instrument.
+[Sample PHP App](https://github.com/SigNoz/sample-php-app)
+It contains the already instrumented sample boilerplate code. The below mentioned steps will tell us how we did it. 
 
 
 ```
@@ -186,7 +186,7 @@ $rootSpan->end();
 **Step 5: Running the PHP application**
 
 Run your PHP application with the following command: <br>
-Make sure you cd to the src directory to run the below command:
+Make sure you cd into the src directory of sample-php-app to run the below command:
 
 ```go
 php 1-getting-started-console-exporter.php
