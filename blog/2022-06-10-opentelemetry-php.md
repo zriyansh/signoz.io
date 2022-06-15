@@ -185,7 +185,7 @@ $rootSpan->end();
 
 **Step 5: Running the PHP application**
 
-Run your PHP application with the following command: <br>
+Run your PHP application with the following command: <br/>
 Make sure you cd into the src directory of sample-php-app to run the below command:
 
 ```go
