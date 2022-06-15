@@ -72,6 +72,7 @@ When you are done installing SigNoz, you can access the UI at [http://localhost
 **Step 1: Get sample PHP app**
 
 [Sample PHP App](https://github.com/SigNoz/sample-php-app)
+
 It contains the already instrumented sample boilerplate code. The below mentioned steps will tell us how we did it. 
 
 
