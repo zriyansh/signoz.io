@@ -187,9 +187,16 @@ $rootSpan->end();
 **Step 5: Running the PHP application**
 
 Run your PHP application with the following command: <br/>
-Make sure you cd into the src directory of sample-php-app to run the below command:
 
 ```go
+# at the root of the dir run
+composer install
+```
+
+then, 
+
+```
+# cd into the src
 php 1-getting-started-console-exporter.php
 ```
 
