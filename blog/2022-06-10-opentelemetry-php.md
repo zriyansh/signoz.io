@@ -72,6 +72,7 @@ When you are done installing SigNoz, you can access the UI at [http://localhost
 **Step 1: Get sample PHP app**
 
 [Sample PHP App](https://github.com/SigNoz/sample-php-app)
+
 It contains the already instrumented sample boilerplate code. The below mentioned steps will tell us how we did it. 
 
 
@@ -186,9 +187,16 @@ $rootSpan->end();
 **Step 5: Running the PHP application**
 
 Run your PHP application with the following command: <br/>
-Make sure you cd into the src directory of sample-php-app to run the below command:
 
 ```go
+# at the root of the dir run
+composer install
+```
+
+then, 
+
+```
+# cd into the src
 php 1-getting-started-console-exporter.php
 ```
 

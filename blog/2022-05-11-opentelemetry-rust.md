@@ -143,7 +143,7 @@ OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317 OTEL_RESOURCE_ATTRIBUTES=servi
 **Step 7:** **Generate some data**<br></br>
 In order to monitor your Rust application with SigNoz, you first need to generate some data.
 
-Visit home page of your Rust application at localhost:1337 and enter some details. Alternatively you can just send curl request
+Visit home page of your Rust application at [http://localhost:1337](http://localhost:1337) and enter some details. Alternatively you can just send curl request
 
 ```jsx
 curl -d "name=Baymax&number=42" \

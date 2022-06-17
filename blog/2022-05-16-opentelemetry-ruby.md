@@ -148,7 +148,7 @@ To run the sample app use below commands
 - Run the app with env variables:
 
 ```jsx
-OTEL_EXPORTER=otlp OTEL_SERVICE_NAME=sampleRailsApp OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318 OTEL_RESOURCE_ATTRIBUTES=application=sparkapp rails server rails server
+OTEL_EXPORTER=otlp OTEL_SERVICE_NAME=sampleRailsApp OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318 OTEL_RESOURCE_ATTRIBUTES=application=sparkapp rails server
 ```
 
 Now the app should be running at [http://localhost:3000/](http://localhost:3000/)
