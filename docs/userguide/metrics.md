@@ -36,7 +36,9 @@ From the sidebar, select **Metrics**:
 
 ![Open the Metrics section](/img/open-metrics-v0.6.2.png)
 
-This page provides an overview of your applications’ health and performance. It shows the list of your applications formatted as a table and, for each application, SigNoz displays the RED metrics mentioned above:
+This page provides an overview of your applications’ health and performance. It shows the list of your applications formatted as a table and, for each application, SigNoz displays the RED metrics mentioned above.
+
+The services list only shows services which are serving API calls. If a service is only making client calls to APIs of other services, it will not be shown in the services list page
 
 ![RED metrics](/img/red-metrics-v0.6.2.png)
 
