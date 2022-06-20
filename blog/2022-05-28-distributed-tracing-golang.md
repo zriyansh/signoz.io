@@ -1,5 +1,5 @@
 ---
-title: Distributed Tracing in Golang applications | Complete Guide
+title: Implementing Distributed Tracing in a Golang application
 slug: distributed-tracing-golang
 date: 2022-05-28
 tags: [distributed-tracing]
@@ -19,7 +19,7 @@ keywords:
   - signoz
 ---
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/distributed-tracing-java/"/>
+  <link rel="canonical" href="https://signoz.io/blog/distributed-tracing-golang/"/>
 </head>
 
 In this article, we will implement distributed tracing for a Golang application with three microservices. To implement distributed tracing, we will be using open-source solutions - SigNoz and OpenTelemetry, so you can easily follow the tutorial.
