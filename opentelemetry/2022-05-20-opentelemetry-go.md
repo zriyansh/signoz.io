@@ -93,7 +93,6 @@ Declare the following variables in `main.go` which we will use to configure Open
 ```go
 var (
 	serviceName  = os.Getenv("SERVICE_NAME")
-	signozToken  = os.Getenv("SIGNOZ_ACCESS_TOKEN")
 	collectorURL = os.Getenv("OTEL_EXPORTER_OTLP_ENDPOINT")
 	insecure     = os.Getenv("INSECURE_MODE")
 )
