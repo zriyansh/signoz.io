@@ -98,11 +98,18 @@ gem 'opentelemetry-exporter-otlp'
 gem 'opentelemetry-instrumentation-all'
 ```
 
-Run the bundle install command:
+To install dependencies run: 
 
-```go
+```
 bundle install
 ```
+
+Next, migrate the database: 
+
+```
+rails db:migrate
+```
+
 
 **Step 2: Initialize the OpenTelemetry SDK**
 
