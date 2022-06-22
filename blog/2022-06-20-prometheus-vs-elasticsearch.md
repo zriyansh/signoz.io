@@ -6,6 +6,7 @@ tags: [Tools Comparison]
 authors: ankit_anand
 description: Both Prometheus and Elasticsearch stack provide monitoring solutions for applications in production. But while Prometheus is focused on metrics monitoring, the Elasticsearch stack or the ELK stack specializes in logs...
 image: /img/blog/2022/06/prometheus_vs_elasticsearch.webp
+hide_table_of_contents: false
 keywords:
   - prometheus
   - elasticsearch
