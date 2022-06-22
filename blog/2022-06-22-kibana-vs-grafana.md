@@ -205,17 +205,17 @@ Modern observability trends show that for effective monitoring of application, a
 - Metrics
 - Traces
 
-Grafana Labs provide multiple solutions to collect and monitor the above three signals:
+The above three signals are popularly known as the three pillars of observability. The easier a tool makes it to get started with these three signals, the better. Grafana Labs provide multiple solutions to collect and monitor logs, metrics, and traces. You need to stitch together the following three tools for a full-stack observability solution:
 
 - Loki for logs
 - Prometheus - Grafana combo for metrics
 - Tempo for traces
 
-Elastic, on the other hand, provides Elastic APM, its observability solution meant for cloud-native applications. The issue with Elastic APM is that it provides its propriety agent for collecting telemetry data from applications. If you use Elastic APM, you get locked in with the platform.
+Elastic, on the other hand, provides Elastic APM, its observability solution meant for cloud-native applications. The cloud-native ecosystem is moving towards open standards for application instrumentation. OpenTelemetry, a Cloud Native Computing Foundation project is quietly becoming the world standard for instrumenting cloud-native applications.
 
-OpenTelemetry, a Cloud Native Computing Foundation project, aims to solve this issue by providing vendor-agnostic instrumentation. It provides client libraries in multiple programming languages to generate telemetry data(logs, metrics, and traces) from applications. If you use OpenTelemetry, you can choose a backend analysis tool of your choice to store and visualize your observability data. And that’s where [SigNoz](https://signoz.io/) comes into the picture.
+It provides client libraries in multiple programming languages to generate telemetry data(logs, metrics, and traces) from applications. If you use OpenTelemetry, you can choose a backend analysis tool of your choice to store and visualize your observability data. And that’s where [SigNoz](https://signoz.io/) comes into the picture.
 
-SigNoz is an open-source APM that is built natively on OpenTelemetry. It provides metrics monitoring, distributed tracing, and logs(currently under active development).
+SigNoz is an open-source APM that is built natively on OpenTelemetry. It provides metrics monitoring, distributed tracing, and logs(currently under active development), everything under a single pane of glass. 
 
 It comes with out-of-box application metrics charts.
 
