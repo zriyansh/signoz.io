@@ -107,7 +107,7 @@ You just need to reach out to ankit.anand@signoz.io with an interesting idea and
 - **10% TDS** at source will be deducted
 - You will have to provide us with a receipt. You can do so easily using any online receipt generator like: [https://freeinvoicebuilder.com/](https://freeinvoicebuilder.com/) -->
 
-If you have any questions about the program, join our slack community and ping us in the **#write-for-signoz** channel.
+If you have any questions about the program, join our slack community and reach out to **Ashu** directly 👋
 
 [![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://signoz.io/slack)
 
