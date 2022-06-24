@@ -148,6 +148,10 @@ const config = {
               to: "support/",
             },
             {
+              label: "Community Archive",
+              href: "https://community-chat.signoz.io/",
+            },
+            {
               label: "Learn",
               to: "learn/",
             },
