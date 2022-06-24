@@ -85,6 +85,10 @@ git clone https://github.com/SigNoz/sample-fastAPI-app.git
 cd sample-fastapi-app/
 cd app
 ```
+
+
+Note: We will using a virtual python environment for this sample fastAPI app. Learn how to do it [here](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/).
+
 <br></br>
 
 **2. Run instructions for sending data to SigNoz**<br></br>
