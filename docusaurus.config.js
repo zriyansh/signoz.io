@@ -151,6 +151,10 @@ const config = {
               label: "Learn",
               to: "learn/",
             },
+            {
+              label: "Community Chat",
+              href: "https://community-chat.signoz.io/",
+            },
           ],
         },
         {
