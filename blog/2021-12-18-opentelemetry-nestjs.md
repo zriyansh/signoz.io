@@ -1,7 +1,7 @@
 ---
 title: Monitoring your Nestjs application using OpenTelemetry
 slug: opentelemetry-nestjs
-date: 2021-12-18
+date: 2022-07-27
 tags: [opentelemetry, javascript-monitoring]
 authors: [ankit_anand, vishal]
 description: OpenTelemetry is a vendor-agnostic isntrumentation library. In this article, learn how to set up monitoring for a Nestjs application using OpenTelemetry.
@@ -89,46 +89,45 @@ npm install --save @grpc/grpc-js@1.3.7
 The `IP of SIgNoz` will be localhost if you are running SigNoz on local.
    
 ```jsx
+'use strict'
 
-    'use strict'
+const opentelemetry = require('@opentelemetry/sdk-node');
+const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
+const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-grpc');
+const { Resource } = require('@opentelemetry/resources');
+const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
+const grpc = require('@grpc/grpc-js');
 
-    const opentelemetry = require('@opentelemetry/sdk-node');
-    const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
-    const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-grpc');
-    const { Resource } = require('@opentelemetry/resources');
-    const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
-    const grpc = require('@grpc/grpc-js');
+// configure the SDK to export telemetry data to the console
+// enable all auto-instrumentations from the meta package
+const exporterOptions = {
+  url: 'http://localhost:4317',
+  credentials: grpc.credentials.createInsecure(),
+}
+const traceExporter = new OTLPTraceExporter(exporterOptions);
+const sdk = new opentelemetry.NodeSDK({
+  traceExporter,
+  instrumentations: [getNodeAutoInstrumentations()],
+  resource: new Resource({
+    [SemanticResourceAttributes.SERVICE_NAME]: 'sampleNestJsApp'
+  }),
+});
 
-    // configure the SDK to export telemetry data to the console
-    // enable all auto-instrumentations from the meta package
-    const exporterOptions = {
-      url: 'http://localhost:4317',
-      credentials: grpc.credentials.createInsecure(),
-    }
-    const traceExporter = new OTLPTraceExporter(exporterOptions);
-    const sdk = new opentelemetry.NodeSDK({
-      traceExporter,
-      instrumentations: [getNodeAutoInstrumentations()],
-      resource: new Resource({
-        [SemanticResourceAttributes.SERVICE_NAME]: 'sampleNestJsApp'
-      }),
-    });
+// initialize the SDK and register with the OpenTelemetry API
+// this enables the API to record telemetry
+sdk.start()
+  .then(() => console.log('Tracing initialized'))
+  .catch((error) => console.log('Error initializing tracing', error));
 
-    // initialize the SDK and register with the OpenTelemetry API
-    // this enables the API to record telemetry
-    sdk.start()
-      .then(() => console.log('Tracing initialized'))
-      .catch((error) => console.log('Error initializing tracing', error));
+// gracefully shut down the SDK on process exit
+process.on('SIGTERM', () => {
+  sdk.shutdown()
+    .then(() => console.log('Tracing terminated'))
+    .catch((error) => console.log('Error terminating tracing', error))
+    .finally(() => process.exit(0));
+});
 
-    // gracefully shut down the SDK on process exit
-    process.on('SIGTERM', () => {
-      sdk.shutdown()
-        .then(() => console.log('Tracing terminated'))
-        .catch((error) => console.log('Error terminating tracing', error))
-        .finally(() => process.exit(0));
-    });
-
-    module.exports = sdk
+module.exports = sdk
 ```
 
 <br></br>
