@@ -152,7 +152,7 @@ const config = {
               to: "learn/",
             },
             {
-              label: "Community Chat",
+              label: "Community Archive",
               href: "https://community-chat.signoz.io/",
             },
           ],

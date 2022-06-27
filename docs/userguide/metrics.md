@@ -97,6 +97,13 @@ The application metrics pane is comprised of four graphs:
 
 The external calls pane allows you to track the external services your applications depend on. Note that these graphs do not display the interactions with your back-end components, such as database calls.
 
+The spans should have the following span attributes to be counted in this panel
+
+- `span.kind=2` which means these are spans of kind `SERVER`. You can read more details on SpanKinds [here](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/api.md#spankind)
+- `http.url` should be present as span attribute
+
+If your services are making external calls but External Call panels show as empty, please make sure that your spans have the above attributes.
+
 The graphs in this pane provide the following information:
 - The percentage of external calls that resulted in errors.
 - The average duration of all your external calls.
@@ -105,7 +112,14 @@ The graphs in this pane provide the following information:
 
 ### Database Calls
 
-This pane shows details about the database calls that your application makes.
+This pane shows details about the database calls that your application makes. The spans should have the following span attributes to be counted in this panel
+
+- `span.kind=3` which means these are spans of kind `CLIENT`. You can read more details on SpanKinds [here](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/api.md#spankind)
+- `db.system` should be present as span attribute
+
+If your services are making DB calls and your Database Call panels show as empty, please make sure that:
+1. Your spans have the above attributes.
+2. You have used appropripriate libraries for instrumenting packages which you use to make DB calls from your application
 
 The graphs in this pane provide the following information:
 - The number of database calls per second
