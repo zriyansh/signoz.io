@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
-import FAQBody from "@site/src/components/FAQ";
+import FAQBody from "@site/src/components/FAQPricing";
 
 
 function pricingTest() {
@@ -17,8 +17,8 @@ function pricingTest() {
             <div className={"col col--4 margin-vert--md col--offset-2"}>
                 <div class="card">
                     <div class="card__header">
-                        <h3>Community</h3>
-                        <p>Free</p>
+                        <h3 style={{marginBottom:'0'}}>Community</h3>
+                        <p style={{fontSize:'medium'}}>Free</p>
                     </div>
                     <div class="card__body">
                         <p>
@@ -44,8 +44,8 @@ function pricingTest() {
             <div className={"col col--4 margin-vert--md"}>
                 <div class="card">
                     <div class="card__header">
-                        <h3>Enterprise</h3>
-                        <p>Coming Soon..</p>
+                        <h3 style={{marginBottom:'0'}}>Enterprise</h3>
+                        <p style={{fontSize:'medium'}}>Write to <a href="mailto:hello@signoz.io">hello@signoz.io</a> for early access</p>
                     </div>
                     <div class="card__body">
                         <p>
@@ -70,7 +70,7 @@ function pricingTest() {
 
         <div className={"row"}>
             <div className={"col col--8 col--offset-2 margin-vert--md"}>
-                Enterprise support can be added onto any plan, email <a href="mailto:hello@signoz.io?subject=Enterprise support">hello@signoz.io</a> for details.
+                Enterprise support can be added onto any plan, email <a href="mailto:support@signoz.io?subject=Enterprise support">support@signoz.io</a> for details.
             </div>
         </div>
 
