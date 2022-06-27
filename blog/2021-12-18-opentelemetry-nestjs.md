@@ -1,7 +1,7 @@
 ---
 title: Monitoring your Nestjs application using OpenTelemetry
 slug: opentelemetry-nestjs
-date: 2021-12-18
+date: 2022-07-27
 tags: [opentelemetry, javascript-monitoring]
 authors: [ankit_anand, vishal]
 description: OpenTelemetry is a vendor-agnostic isntrumentation library. In this article, learn how to set up monitoring for a Nestjs application using OpenTelemetry.
@@ -74,10 +74,11 @@ For instrumenting a Nestjs application with OpenTelemetry, you need to install t
 1. **Install below dependencies<br></br>**
 
 ```jsx
-npm install --save @opentelemetry/api
-npm install --save @opentelemetry/sdk-node
-npm install --save @opentelemetry/auto-instrumentations-node
-npm install --save @opentelemetry/exporter-trace-otlp-proto@0.27.0
+npm install --save @opentelemetry/api@1.1.0
+npm install --save @opentelemetry/sdk-node@0.29.2
+npm install --save @opentelemetry/auto-instrumentations-node@0.31.0
+npm install --save @opentelemetry/exporter-trace-otlp-grpc@0.29.2
+npm install --save @grpc/grpc-js@1.3.7
 ```
 
 <br></br>
@@ -92,24 +93,24 @@ The `IP of SIgNoz` will be localhost if you are running SigNoz on local.
 
 const opentelemetry = require('@opentelemetry/sdk-node');
 const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
-const { OTLPTraceExporter } = require('@opentelemetry/exporter-otlp-grpc');
-
-
+const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-grpc');
 const { Resource } = require('@opentelemetry/resources');
 const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
+const grpc = require('@grpc/grpc-js');
 
 // configure the SDK to export telemetry data to the console
 // enable all auto-instrumentations from the meta package
 const exporterOptions = {
   url: 'http://localhost:4317',
- }
+  credentials: grpc.credentials.createInsecure(),
+}
 const traceExporter = new OTLPTraceExporter(exporterOptions);
 const sdk = new opentelemetry.NodeSDK({
-  resource: new Resource({
-    [SemanticResourceAttributes.SERVICE_NAME]: 'sampleNestJsApp-local'
-  }),
   traceExporter,
-  instrumentations: [getNodeAutoInstrumentations()]
+  instrumentations: [getNodeAutoInstrumentations()],
+  resource: new Resource({
+    [SemanticResourceAttributes.SERVICE_NAME]: 'sampleNestJsApp'
+  }),
 });
 
 // initialize the SDK and register with the OpenTelemetry API
