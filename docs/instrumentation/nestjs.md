@@ -32,11 +32,11 @@ Let us see how to instrument your application with OpenTelemetry, so that you ca
 
 1. **Install below dependencies**
    ```jsx
-    "@opentelemetry/api": "^1.0.4",
-    "@opentelemetry/resources": "^1.0.4",
-    "@opentelemetry/auto-instrumentations-node": "^0.27.1",
-    "@opentelemetry/exporter-otlp-grpc": "^0.26.0",
-    "@opentelemetry/sdk-node": "^0.27.0",
+    "@opentelemetry/api": "^1.1.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.31.0",
+    "@opentelemetry/exporter-trace-otlp-grpc": "^0.29.2",
+    "@opentelemetry/sdk-node": "^0.29.2",
+    "@grpc/grpc-js": "^1.3.7",
    ```
 
 2. **Create a `tracer.ts` file**<br></br>
@@ -44,42 +44,45 @@ Let us see how to instrument your application with OpenTelemetry, so that you ca
    The `IP of SIgNoz` will be localhost if you are running SigNoz on local. If you are not running SigNoz on local machine, then please use the IP of the machine where SigNoz is installed.
    
    ```jsx
-   
-      'use strict'
+    'use strict'
 
-      const opentelemetry = require('@opentelemetry/sdk-node');
-      const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
-      const { OTLPTraceExporter } = require('@opentelemetry/exporter-otlp-grpc');
-      const { Resource } = require('@opentelemetry/resources');
-      const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
+    const opentelemetry = require('@opentelemetry/sdk-node');
+    const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
+    const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-grpc');
+    const { Resource } = require('@opentelemetry/resources');
+    const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
+    const grpc = require('@grpc/grpc-js');
 
-      // configure the SDK to export telemetry data to the console
-      // enable all auto-instrumentations from the meta package
-      const exporterOptions = {
-        url: 'http://<IP of SigNoz>:4317',
-       }
-      const traceExporter = new OTLPTraceExporter(exporterOptions);
-      const sdk = new opentelemetry.NodeSDK({
-        resource: new Resource({
-          [SemanticResourceAttributes.SERVICE_NAME]: 'sampleNestJsApp-local'
-        }),
-        traceExporter,
-        instrumentations: [getNodeAutoInstrumentations()]
-      });
+    // configure the SDK to export telemetry data to the console
+    // enable all auto-instrumentations from the meta package
+    const exporterOptions = {
+      url: 'http://localhost:4317',
+      credentials: grpc.credentials.createInsecure(),
+    }
+    const traceExporter = new OTLPTraceExporter(exporterOptions);
+    const sdk = new opentelemetry.NodeSDK({
+      traceExporter,
+      instrumentations: [getNodeAutoInstrumentations()],
+      resource: new Resource({
+        [SemanticResourceAttributes.SERVICE_NAME]: 'sampleNestJsApp'
+      }),
+    });
 
-      sdk.start()
-        .then(() => console.log('Tracing initialized'))
-        .catch((error) => console.log('Error initializing tracing', error));
+    // initialize the SDK and register with the OpenTelemetry API
+    // this enables the API to record telemetry
+    sdk.start()
+      .then(() => console.log('Tracing initialized'))
+      .catch((error) => console.log('Error initializing tracing', error));
 
-      // gracefully shut down the SDK on process exit
-      process.on('SIGTERM', () => {
-        sdk.shutdown()
-          .then(() => console.log('Tracing terminated'))
-          .catch((error) => console.log('Error terminating tracing', error))
-          .finally(() => process.exit(0));
-      });
+    // gracefully shut down the SDK on process exit
+    process.on('SIGTERM', () => {
+      sdk.shutdown()
+        .then(() => console.log('Tracing terminated'))
+        .catch((error) => console.log('Error terminating tracing', error))
+        .finally(() => process.exit(0));
+    });
 
-      module.exports = sdk
+    module.exports = sdk
   ```
 
 3. **Import the tracer module where your app starts**<br></br>
