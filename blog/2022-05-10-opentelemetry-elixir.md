@@ -1,7 +1,7 @@
 ---
 title: Monitor your Elixir application with OpenTelemetry and SigNoz 
 slug: opentelemetry-elixir
-date: 2022-05-10
+date: 2022-06-27
 tags: [opentelemetry-tutorials]
 authors: [ricardo]
 description:  In this tutorial, we'll show you how to monitor your Elixir application using OpenTelemetry and Signoz. OpenTelemetry can be used to instrument your Elixir applications to generate telemetry data. The telemetry data can then be visualized using an observability tool to monitor your Elixir application performance...
@@ -116,7 +116,37 @@ You can now monitor your Elixir application with SigNoz. Whether you’re using 
 
 In this [GitHub repository](https://github.com/SigNoz/elixir_otel_sample) you’ll find an Elixir Phoenix API that exposes a couple of endpoints but we’ll focus on one:  `/api/users` that will return a list of users that are stored on the respective database table.
 
-If you want to use this sample application, please refer to the README file in the repository in order to make it run locally.
+If you want to use this sample application, please refer to the README file in the repository in order to make it run locally, or follow the steps mentioned below to run the sample Elixir application.
+
+
+To start your Phoenix server:
+
+Install dependencies with:
+```
+mix deps.get
+```
+
+<br/>
+
+Create and migrate your database with:
+```
+mix ecto.create
+```
+
+<br/>
+
+Runs the repository migrations:
+```
+mix ecto.migrate
+```
+
+<br/>
+
+Start Phoenix endpoint with: 
+```
+mix phx.server
+``` 
+
 
 Now, let’s do a couple of calls to one of the endpoints.
 
