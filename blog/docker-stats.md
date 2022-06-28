@@ -121,7 +121,7 @@ These display options allow you to specify how you want the output to be shown.
 
 Docker stats offers the following options for display:
 
-1.  `--all` which show all containers, whether stopped or running.
+1.  `--all` which shows all containers, whether stopped or running.
 2. `--format` which uses the [Go Template syntax](https://pkg.go.dev/text/template) to print images out.
 3. `--no-stream` which disables streaming stats and only pulls the first result
 4. `--no-trunc` which instructs Docker not to truncate (shorten) output.
