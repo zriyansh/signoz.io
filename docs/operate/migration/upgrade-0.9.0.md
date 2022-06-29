@@ -72,3 +72,46 @@ Flags:
 
 #### SQLite
 
+```bash
+wget https://github.com/SigNoz/migration-0.9/releases/download/v0.9.0/migration-sqlite-v0.9.0-linux-amd64
+
+```
+
+To copy the binary in persistent volume path `/var/lib/signoz` in `query-service`:
+
+```bash
+kubectl cp -n platform ./migration-sqlite-v0.9.0-linux-amd64 my-release-signoz-query-service-0:/var/lib/signoz/migration-0.9
+```
+
+To `exec` into the `query-service` container:
+
+```bash
+kubectl -n platform exec -it pod/my-release-signoz-query-service-0 -- sh
+```
+
+Now, change directory to the `/var/lib/signoz` and run the migration script:
+
+```bash
+cd /var/lib/signoz
+
+./migration-0.9
+```
+
+You should see output similar to this:
+
+```bash
+2022/06/08 18:27:49 Total Dashboard found: 3
+2022/06/08 18:27:49 e2e2ff6d-29ca-444c-8625-d64218a990bc
+2022/06/08 18:27:49 683ac919-b858-4387-b14f-bebd55f074fa
+2022/06/08 18:27:49 f10d6c5e-fb2d-4e4c-9c37-f0b2fdf7f3db
+2022/06/08 18:27:49 Dashboard e2e2ff6d-29ca-444c-8625-d64218a990bc updated
+2022/06/08 18:27:49 Dashboard 683ac919-b858-4387-b14f-bebd55f074fa updated
+2022/06/08 18:27:49 Dashboard f10d6c5e-fb2d-4e4c-9c37-f0b2fdf7f3db updated
+2022/06/08 18:27:49 Dashboards migrated
+```
+
+At last, clean up the binary:
+
+```bash
+rm migration-0.9
+```
