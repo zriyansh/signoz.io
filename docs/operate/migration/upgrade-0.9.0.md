@@ -26,13 +26,13 @@ cd deploy/docker/clickhouse-setup
 #### ClickHouse
 
 ```bash
-docker run --name signoz-migrate-clickhouse --network clickhouse-setup_default -it signoz/migrate-clickhouse:0.9.0 -host=clickhouse -port=9000
+docker run --name signoz-migrate-clickhouse --network clickhouse-setup_default -it signoz/migrate:0.9-clickhouse -host=clickhouse -port=9000
 ```
 
 #### SQLite
 
 ```bash
-docker run --name signoz-migrate-sqlite --network clickhouse-setup_default -it -v $PWD/data/signoz/:/var/lib/signoz/ signoz/migrate-sqlite:0.9.0
+docker run --name signoz-migrate-sqlite --network clickhouse-setup_default -it -v $PWD/data/signoz/:/var/lib/signoz/ signoz/migrate:0.9-sqlite
  -dataSource /var/lib/signoz/signoz.db
 ```
 
@@ -42,7 +42,7 @@ docker run --name signoz-migrate-sqlite --network clickhouse-setup_default -it -
 #### ClickHouse
 
 ```bash
-kubectl -n platform run -i -t signoz-migrate-clickhouse --image=signoz/migrate-clickhouse:0.9.0 \
+kubectl -n platform run -i -t signoz-migrate-clickhouse --image=signoz/migrate:0.9-clickhouse \
   -- -host=my-release-clickhouse -port=9000 -userName=admin -password=27ff0399-0d3a-4bd8-919d-17c2181e6fb9
 ```
 
