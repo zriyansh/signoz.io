@@ -32,8 +32,7 @@ docker run --name signoz-migrate-clickhouse --network clickhouse-setup_default -
 #### SQLite
 
 ```bash
-docker run --name signoz-migrate-sqlite --network clickhouse-setup_default -it -v $PWD/data/signoz/:/var/lib/signoz/ signoz/migrate:0.9-sqlite
- -dataSource /var/lib/signoz/signoz.db
+docker run --name signoz-migrate-sqlite --network clickhouse-setup_default -it -v $PWD/data/signoz/:/var/lib/signoz/ signoz/migrate:0.9-sqlite -dataSource /var/lib/signoz/signoz.db
 ```
 
 
