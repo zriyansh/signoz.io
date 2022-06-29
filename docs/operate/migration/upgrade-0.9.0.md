@@ -75,6 +75,8 @@ Flags:
 ```bash
 wget https://github.com/SigNoz/migration-0.9/releases/download/v0.9.0/migration-sqlite-v0.9.0-linux-amd64
 
+chmod +x migration-sqlite-v0.9.0-linux-amd64 
+
 ```
 
 To copy the binary in persistent volume path `/var/lib/signoz` in `query-service`:
