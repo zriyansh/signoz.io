@@ -23,38 +23,26 @@ Change the directory to SigNoz repo and run following commands:
 cd deploy/docker/clickhouse-setup
 ```
 
-Migrating ClickHouse
+#### ClickHouse
 
 ```bash
-docker run --name signoz-migrate-clickhouse --network clickhouse-setup_default -it -d signoz/migrate-clickhouse:0.9.0 -host=clickhouse -port=9000
+docker run --name signoz-migrate-clickhouse --network clickhouse-setup_default -it signoz/migrate-clickhouse:0.9.0 -host=clickhouse -port=9000
 ```
 
-Migrating Sqlite
+#### SQLite
 
-```
-docker run --name signoz-migrate-sqlite --network clickhouse-setup_default -it -v $PWD/data/signoz/:/var/lib/signoz/ migration-0.9
+```bash
+docker run --name signoz-migrate-sqlite --network clickhouse-setup_default -it -v $PWD/data/signoz/:/var/lib/signoz/ signoz/migrate-sqlite:0.9.0
  -dataSource /var/lib/signoz/signoz.db
 ```
-
-Steps to check logs:
-
-```bash
-docker logs -f signoz-migrate-clickhouse
-```
-
-```bash
-docker logs -f signoz-migrate-sqlite
-```
-
-In case of failure and have to run again, make sure to cleanup the container before running the migration script (only the failed one) again.
 
 
 ### Kubernetes
 
-Migrating ClickHouse
+#### ClickHouse
 
 ```bash
-kubectl -n platform run -i -t signoz-migrate-clickhouse --image=signoz/migrate:0.8 \
+kubectl -n platform run -i -t signoz-migrate-clickhouse --image=signoz/migrate-clickhouse:0.9.0 \
   -- -host=my-release-clickhouse -port=9000 -userName=admin -password=27ff0399-0d3a-4bd8-919d-17c2181e6fb9
 ```
 
@@ -82,6 +70,5 @@ Flags:
 - `-password` : Specify password of clickhouse. `default=""`
 - `-dropOldTable` : If it is set to true then the old tables will be dropped after data migration is successful `default=true`
 
-Migrating sqlite
+#### SQLite
 
-TODO
