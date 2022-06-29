@@ -119,8 +119,8 @@ Our application is a simple Employee Service. Here is the architecture of the ap
         export PATH="$PATH:$(go env GOPATH)/bin"
         ```
         
-- MongoDB<br></br>
-Follow the steps in this <a href = "https://www.geeksforgeeks.org/how-to-install-mongodb-on-macos/" rel="noopener noreferrer nofollow" target="_blank">link</a> for how to install MongoDB.
+- MongoDB Compass <br></br>
+Download from Official site here <a href = "https://www.mongodb.com/try/download/compass" rel="noopener noreferrer nofollow" target="_blank">link</a>.
 
 ### Running a sample application with OpenTelemetry
 
