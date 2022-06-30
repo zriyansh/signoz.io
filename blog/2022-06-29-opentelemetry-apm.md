@@ -1,5 +1,5 @@
 ---
-title: An open source OpenTelemetry APM for full-stack Observability - SigNoz
+title: An open source OpenTelemetry APM | SigNoz
 slug: opentelemetry-apm
 date: 2022-06-29
 tags: [opentelemetry-tutorials]
@@ -22,7 +22,7 @@ keywords:
 
 <head>
   <link rel="canonical" href="https://signoz.io/blog/opentelemetry-apm/"/>
-  <title>An open source OpenTelemetry APM for full-stack Observability - SigNoz</title>
+  <title>An open source OpenTelemetry APM | SigNoz</title>
 </head>
 
 OpenTelemetry is a Cloud Native Computing Foundation(<a href = "https://www.cncf.io/" rel="noopener noreferrer nofollow" target="_blank">CNCF</a>) project aimed at standardizing the way we instrument applications for generating telemetry data(logs, metrics, and traces). However, OpenTelemetry does not provide storage and visualization for the collected telemetry data. An APM that can ingest telemetry data collected by OpenTelemetry can help you set up a robust observability stack.
