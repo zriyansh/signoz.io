@@ -1,17 +1,17 @@
 ---
-id: upgrade-0.9.0
-title: Upgrade to 0.9.0
-sidebar_label: Upgrade to 0.9.0
+id: upgrade-0.9
+title: Upgrade to 0.9
+sidebar_label: Upgrade to 0.9
 ---
 import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 
-# Upgrade to 0.9.0 from earlier versions
+# Upgrade to 0.9 from earlier versions
 
-v0.9.0 is a breaking release which requires data migration, if you are upgrading from an older version then you have to run the data migration scripts to be able to see past data.
+v0.9 is a breaking release which requires data migration, if you are upgrading from an older version then you have to run the data migration scripts to be able to see past data.
 
-## First upgrade to 0.9.0
+## First upgrade to 0.9
 
-Follow the plaform specific instructions to upgrade to 0.9.0 and above.
+Follow the plaform specific instructions to upgrade to 0.9 and above.
 
 ## Steps to run migration script:
 
@@ -72,16 +72,16 @@ Flags:
 #### SQLite
 
 ```bash
-wget https://github.com/SigNoz/migration-0.9/releases/download/v0.9.0/migration-sqlite-v0.9.0-linux-amd64
+wget https://github.com/SigNoz/migration-0.9/releases/download/v0.9/migration-sqlite-v0.9-linux-amd64
 
-chmod +x migration-sqlite-v0.9.0-linux-amd64 
+chmod +x migration-sqlite-v0.9-linux-amd64
 
 ```
 
 To copy the binary in persistent volume path `/var/lib/signoz` in `query-service`:
 
 ```bash
-kubectl cp -n platform ./migration-sqlite-v0.9.0-linux-amd64 my-release-signoz-query-service-0:/var/lib/signoz/migration-0.9
+kubectl cp -n platform ./migration-sqlite-v0.9-linux-amd64 my-release-signoz-query-service-0:/var/lib/signoz/migration-0.9
 ```
 
 To `exec` into the `query-service` container:
@@ -101,14 +101,10 @@ cd /var/lib/signoz
 You should see output similar to this:
 
 ```bash
-2022/06/08 18:27:49 Total Dashboard found: 3
-2022/06/08 18:27:49 e2e2ff6d-29ca-444c-8625-d64218a990bc
-2022/06/08 18:27:49 683ac919-b858-4387-b14f-bebd55f074fa
-2022/06/08 18:27:49 f10d6c5e-fb2d-4e4c-9c37-f0b2fdf7f3db
-2022/06/08 18:27:49 Dashboard e2e2ff6d-29ca-444c-8625-d64218a990bc updated
-2022/06/08 18:27:49 Dashboard 683ac919-b858-4387-b14f-bebd55f074fa updated
-2022/06/08 18:27:49 Dashboard f10d6c5e-fb2d-4e4c-9c37-f0b2fdf7f3db updated
-2022/06/08 18:27:49 Dashboards migrated
+2022/06/30 14:41:27 Total Dashboard found: 1
+2022/06/30 14:41:27 a8763330-3828-4aa1-853d-b32a021117be
+2022/06/30 14:41:27 Dashboard a8763330-3828-4aa1-853d-b32a021117be updated
+2022/06/30 14:41:27 Dashboards migrated
 ```
 
 At last, clean up the binary:
