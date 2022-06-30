@@ -114,6 +114,7 @@ module.exports = {
       items: [
         'userguide/overview',
         'userguide/send-metrics',
+        'userguide/query-builder',
         'userguide/navigate-user-interface',
         'userguide/metrics',
         {
