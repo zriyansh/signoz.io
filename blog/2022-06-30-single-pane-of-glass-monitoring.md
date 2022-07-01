@@ -1,5 +1,5 @@
 ---
-title: Single Pane of Glass Monitoring with Open Source | SigNoz
+title: Open Source Single Pane of Glass Monitoring | SigNoz
 slug: single-pane-of-glass-monitoring
 date: 2022-06-30
 tags: [Product]
@@ -16,7 +16,7 @@ keywords:
 
 <head>
   <link rel="canonical" href="https://signoz.io/blog/single-pane-of-glass-monitoring/"/>
-  <title>Single Pane of Glass Monitoring with Open Source | SigNoz</title>
+  <title>Open Source Single Pane of Glass Monitoring | SigNoz</title>
 </head>
 
 Single pane of glass monitoring is a term used to denote monitoring applications with a single tool that provides a comprehensive set of dashboards for the entire software system of an organization. Managing multiple monitoring tools for different aspects of the IT system becomes too cumbersome. And that’s how the concept of a single pane of glass monitoring evolved.
