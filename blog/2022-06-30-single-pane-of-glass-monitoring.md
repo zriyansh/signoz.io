@@ -43,7 +43,7 @@ Moreover, having multiple monitoring tools slows down engineering teams. It is d
 
 For cloud-native applications, a single pane of glass monitoring can enable engineering teams to act fast while serving as a knowledge base for new team members. One concern that organizations have while selecting a single monitoring tool is that of creating vendor lock-in. 
 
-Open source tools provide a way out. In fact, [OpenTelemetry](https://opentelemetry.io/), an open source project that aims to standardize the way telemetry data is generated, is solving this particular problem.
+Open source tools provide a way out. In fact, <a href = "https://opentelemetry.io/" rel="noopener noreferrer nofollow" target="_blank">OpenTelemetry</a>, an open source project that aims to standardize the way telemetry data is generated, is solving this particular problem.
 
 ## Challenges with Open Source Monitoring Tools
 
@@ -97,7 +97,7 @@ SigNoz also lets you run aggregates on trace data. Running aggregates on tracing
 
 ### Infrastructure Monitoring
 
-OpenTelemetry provides [receivers](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver) for receiving metrics from metrics exporters of a lot of common technologies. Using these receivers, you can build custom dashboards for your infrastructure with SigNoz.
+OpenTelemetry provides <a href = "https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver" rel="noopener noreferrer nofollow" target="_blank">receivers</a> for receiving metrics from metrics exporters of a lot of common technologies. Using these receivers, you can build custom dashboards for your infrastructure with SigNoz.
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2022/06/k8s_node_monitoring.webp" alt="Node metrics monitoring with SigNoz"/>
