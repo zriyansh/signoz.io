@@ -25,13 +25,7 @@ I was super scared and really felt as if I am going to be fired (Nevermind, this
 
 You might have faced a similar situation, and started exploring Docker after that. It is now a ubiquitous container technology used by many organizations.
 
-We will be learning about Docker container lifecycle in depth. Before diving into Docker container lifecycle, let's have a brief overview of a few concepts of the Docker world.
-
-I was super scared and felt as if I would be fired (Nevermind, this was just a feeling :p). But my manager just said, "Now that you know what sort of problems we face during deployment of applications, go and explore the solution, aka Docker."
-
-You might have faced a similar situation and started exploring Docker after that. It is now a ubiquitous container technology used by many organizations.
-
-We will be learning about Docker container lifecycle in depth. Before diving into the Docker container lifecycle, let's have a brief overview of a few concepts of the Docker world.
+We will be learning about Docker container lifecycle in depth. But before diving into Docker container lifecycle, let's have a brief overview of a few concepts of the Docker world.
 
 ## Why did Docker come into the picture?
 
