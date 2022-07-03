@@ -32,11 +32,13 @@ OpenTelemetry is a Cloud Native Computing Foundation(<a href = "https://www.cncf
 
 OpenTelemetry is quietly becoming the web standard for instrumenting cloud-native applications. For applications based on distributed systems, OpenTelemetry becomes a natural choice for instrumentation. Few reasons why OpenTelemetry is the preferred choice for generating telemetry data:
 
-- Lightweight
+- Lightweight<br></br>
 OpenTelemetry APIs are lightweight and are completely decoupled from any implementation. By default, OpenTelemetry APIs are no-op implementation.
-- Diverse
+
+- Diverse<br></br>
 OpenTelemetry provides instrumentation in almost all the major programming languages. It also covers instrumentation for a large number of open source libraries and frameworks.
-- Community
+
+- Community<br></br>
 OpenTelemetry is backed by a huge community and is incubating under CNCF. It is also backed by major cloud vendors. The huge community support makes it a safe choice for future-proofing your instrumentation layer.
 
 But once the telemetry data is collected with OpenTelemetry, it needs to be stored and visualized for end-user consumption. A good visualization of telemetry data collected by OpenTelemetry can lead to quicker insights to debug performance issues.
