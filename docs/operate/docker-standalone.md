@@ -15,43 +15,15 @@ Once you have successfully installed SigNoz on Docker Standalone, the following 
 
 To stop the running SigNoz cluster:
 
-<Tabs
-  defaultValue="x86"
-  values={[
-    {label: 'x86', value: 'x86'},
-    {label: 'Apple M1', value: 'arm64'},
-  ]}>
-  <TabItem value="x86">
-
-    sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
-
-  </TabItem>
-  <TabItem value="arm64">
-
-    sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml stop
-
-  </TabItem>
-</Tabs>
+```bash
+docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
+```
 
 To start/resume the running SigNoz cluster:
 
-<Tabs
-    defaultValue="x86"
-    values={[
-      {label: 'x86', value: 'x86'},
-      {label: 'Apple M1', value: 'arm64'},
-    ]}>
-  <TabItem value="x86">
-
-    sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up
-
-  </TabItem>
-  <TabItem value="arm64">
-
-    sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml up
-
-  </TabItem>
-</Tabs>
+```bash
+docker-compose -f docker/clickhouse-setup/docker-compose.yaml up
+```
 
 _*Note: The stopped SigNoz cluster should resume and mount to the existing docker volumes._
 
@@ -92,32 +64,15 @@ cd deploy && ./install.sh
 
 Enter the following command to uninstall SigNoz:
 
-<Tabs
-  defaultValue="x86"
-  values={[
-    {label: "x86", value: 'x86'},
-    {label: "Apple M1", value: 'arm64'},
-  ]}>
-  <TabItem value="x86">
-
-    sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml down -v
-
-  </TabItem>
-  <TabItem value="arm64">
-
-    sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml down -v
-
-  </TabItem>
-</Tabs>
+```bash
+docker-compose -f docker/clickhouse-setup/docker-compose.yaml down -v
+```
 
 ## Remove the Sample Application
 
 Follow the steps in this section to remove the sample application that comes installed with SigNoz:
 
-1. From the directory in which you installed SigNoz, open your Docker Compose file in a plain-text editor. 
-     - **Linux users**: you must open the `deploy/docker/clickhouse-setup/docker-compose.yaml` file.
-     - **macOS users**: you must open the `deploy/docker/clickhouse-setup/docker-compose.arm.yaml` file.
-
+1. From the directory in which you installed SigNoz, open Docker Compose file `deploy/docker/clickhouse-setup/docker-compose.yaml` in a plain-text editor. 
 
 2. Comment out or remove the `services.hotrod` and `services.load-hotrod` sections:
 
