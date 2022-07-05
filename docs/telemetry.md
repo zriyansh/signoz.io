@@ -41,7 +41,7 @@ Sample Event
 
 ### SigNoz Server
 
-The SigNoz backend server sends a keep-alive ping every 6 hours to indicate that it is still running without any errors.
+The SigNoz backend server sends a keep-alive ping every 6 hours to indicate that it is still running without any errors. We also send some metrics around usage like number of spans and timeseries to understand the scale at which signoz is being deployed and hence helps us to proactively run benchmarks on similar scale and fix any performance issues that users might be facing.
 
 Sample event
 ```
@@ -51,7 +51,13 @@ Sample event
   "messageId": "61b423f7-3faa-4ed8-9be0-2b1f58b5bfde",
   "originalTimestamp": "2022-02-16T17:26:21.680714337Z",
   "properties": {
-    "version": "v0.6.1"
+      "deploymentType": "kubernetes-helm",
+      "getSamplesInfoInLastHeartBeatInterval": 94297,
+      "maxTS": 2527,
+      "spansInLastHeartBeatInterval": 774662,
+      "totalSpans": 9328025,
+      "totalTS": 3702,
+      "version": "v0.9.2"
   },
   "receivedAt": "2022-02-16T17:26:26.665Z",
   "sentAt": "2022-02-16T17:26:25.490Z",
