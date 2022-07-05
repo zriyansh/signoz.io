@@ -106,9 +106,10 @@ const config = {
         //   position: "right",
         // },
         {
-          href: "https://www.ycombinator.com/companies/signoz",
-          label: "Careers",
-          position: "right",
+          to: "pricing/",
+          activeBasePath: "pricing",
+          label: "Pricing",
+          position: "left",
         },
       ],
     },

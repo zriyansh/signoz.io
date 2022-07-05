@@ -34,7 +34,7 @@ const Card = ({ title, body }: CardProps): JSX.Element => {
             {title}
           </div>
         </div>
-        {isActive && <div className="card__body">{body}</div>}
+        {isActive && <div className="card__body" dangerouslySetInnerHTML={{__html:body}}>{}</div>}
       </div>
     </div>
   );

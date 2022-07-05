@@ -11,7 +11,7 @@ function pricingTest() {
       <div className="container" style={{marginTop: '2rem', marginBottom:'4rem'}}>
         
         <h2 style={{textAlign: "center"}} > A Plan for team of Every size </h2>
-        <p style={{textAlign: "center"}}> Our aim is to make SigNoz accessible to everyone. Read our philosophy on pricing</p>
+        <p style={{textAlign: "center"}}> Our aim is to make SigNoz accessible to everyone. Read our philosophy on pricing <a target="_blank" href="https://signoz.notion.site/Our-Thoughts-on-Pricing-73f5e6939c1f42be905fe937b4107dad">here</a></p>
 
         <div className={"row"}>
             <div className={"col col--4 margin-vert--md col--offset-2"}>
@@ -49,20 +49,19 @@ function pricingTest() {
                     </div>
                     <div class="card__body">
                         <p>
-                            Our enterprise product which will include features needed by
-                            larger teams
-                            <br></br>
-                            <br></br>
 
-                            Planned features
-                            <li> SSO support for Okta</li>
+                            <i>Planned features</i>
+                            <li> SLO Dashboards </li>
+                            <li> Single Sign On support</li>
                             <li> SAML and LDAP support</li>
                             <li> Audit Logs </li>
+                            <li> Team KPI dashboards </li>
+                            <li> Dashboard configuration support</li>
 
                         </p>
                     </div>
                     <div class="card__footer">
-                        <button class="button button--secondary button--block">Contact Us to know more</button>
+                    <a class="button button--primary" href="mailto:hello@signoz.io">Write to us</a>
                     </div>
                 </div>
             </div>

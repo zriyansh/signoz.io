@@ -4,17 +4,15 @@ import Card from "./Card";
 const FAQBody = () => (
   <>
     <Card
-      body="Features like SSO, Granular RBAC, "
+      body="The framework behind deciding which features will be in open source and which will be in enterprise plan is that if a feature is needed by an individual developer or small team running the product it should be in open source.
+      <br/><br/>
+      If a capability is uniquely valuable to enterprise requirements and are especially important when used in production and at scale like SSO, LDAP/SAML support,  audit logs, etc. would likely be in an enterprise plan.
+      Read more on our thoughts on pricing <a href='https://signoz.notion.site/Our-Thoughts-on-Pricing-73f5e6939c1f42be905fe937b4107dad'>here</a> "
       title="What type of features will be there in paid plans?"
     />
     <Card
-      body="Few ways in which SigNoz is more advanced than Jaeger : Jaeger UI doesn’t show any metrics on traces or on filtered traces, and Jaeger can’t get aggregates on filtered traces. For example, Cassandra doesn’t support Group By, Max, etc."
+      body="Teams which need enterprise support or features like SSO, Audit logs, etc. may find our enterprise plans valuable"
       title="Who should use Enterprise plans?"
-    />
-    <Card
-      body="SigNoz will be always open-source and free to be self-hosted for smaller teams. We will have role based Pricing for our enterprise edition which will have advanced features needed by bigger teams.
-Though for users who want hosted version of SigNoz, we do have cloud plans."
-      title="What will be your paid plan like?"
     />
   </>
 );
