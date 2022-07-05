@@ -135,18 +135,7 @@ module.exports = {
             id: 'userguide/manage-dashboards-and-panels',
           },
           items: [
-            'userguide/manage-dashboards',
-            {
-              type: 'category',
-              label: 'Manage Panels',
-              link: {
-                type: 'doc',
-                id: 'userguide/manage-panels'
-              },
-              items: [
-                'userguide/create-a-custom-query'
-              ]
-            }
+            'userguide/manage-dashboards', 'userguide/manage-panels', 'userguide/create-a-custom-query'
           ]
         },
         'userguide/exceptions',
