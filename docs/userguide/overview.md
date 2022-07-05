@@ -11,7 +11,7 @@ In this section:
 - [Navigate the User Interface](/docs/userguide/navigate-user-interface/). Learn how to use the elements that comprise the user interface.
 - [Metrics](/docs/userguide/metrics/). Understand how to see an overview of your applications.
 - [Traces](/docs/userguide/traces/). Learn how to retrieve detailed telemetry data.
-- [Dashboards](/docs/userguide/dashboards/). Learn how to use custom dashboards to get insight into how well your application is performing.
+- [Dashboards and Panels](/docs/userguide/manage-dashboards-and-panels). Learn how to use custom dashboards and panels to get insight into how well your application is performing.
 
 ## Related Topics
 

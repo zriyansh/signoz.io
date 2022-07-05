@@ -7,6 +7,7 @@ sidebar_label: View Metrics
 import GetHelp from '../shared/get-help.md'
 import PrereqsInstrument from '../shared/prereqs-instrument.md'
 import UseHotRod from '../shared/use-hotrod.md'
+import MetricsDefinition from '../shared/metrics-definition.md'
 
 This page walks you through the **Metrics** section and gets you started with monitoring your application. You’ll learn the following:
 
@@ -22,7 +23,7 @@ This page walks you through the **Metrics** section and gets you started with mo
 
 ## What Are Application Metrics
 
-Application metrics represent a characteristic of your application as a value at a specific point in time. For example, an application metric is the number of requests per second your application serves. SigNoz collects information as a sequence of data points every minute and then represents the data through time in a graphical form. The X-axis is time, and the Y-axis is the value.
+<MetricsDefinition />
 
 The **Metrics** section relies on the rate, errors, and duration (”RED”) method to help you predict the experience of your users and includes the following keys metrics:
 

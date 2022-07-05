@@ -114,7 +114,6 @@ module.exports = {
       items: [
         'userguide/overview',
         'userguide/send-metrics',
-        'userguide/query-builder',
         'userguide/navigate-user-interface',
         'userguide/metrics',
         {
@@ -128,7 +127,28 @@ module.exports = {
             'userguide/span-details'
           ]
         },
-        'userguide/dashboards',
+        {
+          type: 'category',
+          label: 'Manage Dashboards and Panels',
+          link: {
+            type: 'doc',
+            id: 'userguide/manage-dashboards-and-panels',
+          },
+          items: [
+            'userguide/manage-dashboards',
+            {
+              type: 'category',
+              label: 'Manage Panels',
+              link: {
+                type: 'doc',
+                id: 'userguide/manage-panels'
+              },
+              items: [
+                'userguide/create-a-custom-query'
+              ]
+            }
+          ]
+        },
         'userguide/exceptions',
         'userguide/alerts-management',
         'userguide/authentication',
