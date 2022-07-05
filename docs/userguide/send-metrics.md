@@ -13,6 +13,10 @@ By default, when you install SigNoz, only the [Hostmetric receiver](https://gith
 There are two ways in which you can send metrics to SigNoz using OpenTelemetry:
 - [Enable a Specific Metric Receiver](#enable-a-specific-metric-receiver)
 - [Enable a Prometheus Receiver](#enable-a-prometheus-receiver)
+- [Find Metrics available in SigNoz](#find-metrics-available-in-signoz)
+  - [Metrics from Hostmetrics receiver](#metrics-from-hostmetrics-receiver)
+- [Related Videos](#related-videos)
+- [Get Help](#get-help)
 
 Depending on your choice, use one of the sections below.
 
@@ -173,7 +177,7 @@ You can follow the below steps
   select DISTINCT(labels) from signoz_metrics.time_series INTO OUTFILE 'output.csv' 
   ```
 
-You can use this metrics to plot in the [Dashboard](/docs/userguide/dashboards) section
+You can use this metrics to plot in the [Dashboard](/docs/userguide/manage-dashboards) section
 
 ### Metrics from Hostmetrics receiver
 
