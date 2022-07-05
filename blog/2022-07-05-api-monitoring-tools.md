@@ -116,7 +116,7 @@ You can also visualize your API calls as part of the whole user request using Fl
 
 ### Prometheus (Open Source)
 
-[Prometheus](https://prometheus.io/) is an open source metrics monitoring tool. It was initially developed at SoundCloud in 2012 before being released as an open-source project. It got accepted into the CloudNative Computing Foundation in 2016 and was the second project to graduate from the foundation, following Kubernetes.
+<a href = "https://prometheus.io/" rel="noopener noreferrer nofollow" target="_blank">Prometheus</a> is an open source metrics monitoring tool. It was initially developed at SoundCloud in 2012 before being released as an open-source project. It got accepted into the CloudNative Computing Foundation in 2016 and was the second project to graduate from the foundation, following Kubernetes.
 
 You can use Prometheus to monitor your REST APIs. Prometheus is a good tool for monitoring any kind of time-series data. By time-series data, we mean metrics that change over time. For example, requests per second on an endpoint.
 
@@ -131,7 +131,7 @@ Prometheus provides a very basic visualization layer, and it is usually combined
 
 ### Graphite (Open Source)
 
-[Graphite](https://graphiteapp.org/) is an open-source monitoring tool focused on storing time-series data. It has three main components: Carbon, Whisper, and Graphite. Carbon listens for time-series data. Whisper is used for storing the time-series data, and Graphite web is used to render graphs.
+<a href = "https://graphiteapp.org/" rel="noopener noreferrer nofollow" target="_blank">Graphite</a> is an open-source monitoring tool focused on storing time-series data. It has three main components: Carbon, Whisper, and Graphite. Carbon listens for time-series data. Whisper is used for storing the time-series data, and Graphite web is used to render graphs.
 
 Graphite’s UI is not that great, and they provide integration with Grafana to build better charts for visualization.
 
@@ -157,7 +157,7 @@ Just like Prometheus, Graphite can be used to monitor API performance.
 
 <br></br>
 
-[Datadog](https://www.datadoghq.com/) **Synthetic Monitoring** allows you to create code-free tests that actively simulate user transactions on your applications and monitor key network endpoints across various layers of your systems. It detects user-facing issues with API and browser tests—and jump-starts system-wide investigations so you can optimize performance and enhance your end-user experience.
+<a href = "https://www.datadoghq.com/" rel="noopener noreferrer nofollow" target="_blank">Datadog</a> **Synthetic Monitoring** allows you to create code-free tests that actively simulate user transactions on your applications and monitor key network endpoints across various layers of your systems. It detects user-facing issues with API and browser tests—and jump-starts system-wide investigations so you can optimize performance and enhance your end-user experience.
 
 **Some of the features it provides are:** 
 
@@ -176,7 +176,7 @@ Just like Prometheus, Graphite can be used to monitor API performance.
 
 <br></br>
 
-[New Relic](https://newrelic.com/) is an application monitoring enterprise tool that provides a range of solutions from **application monitoring and infrastructure monitoring to log management.**
+<a href = "https://newrelic.com/" rel="noopener noreferrer nofollow" target="_blank">New Relic</a> is an application monitoring enterprise tool that provides a range of solutions from **application monitoring and infrastructure monitoring to log management.**
 
 **Newrelic Synthetics** feature improves the quality of builds to ensure availability by simulating the traffic across thousands of public locations and private locations to proactively detect and resolve issues. It also provides alerts on the performance of APIs.
 
@@ -191,7 +191,7 @@ It allows you to troubleshoot the API endpoint failures link to the health of yo
 
 <br></br>
 
-[Sauce Labs](https://saucelabs.com) provides an **All-in-One API Testing Platform** that ensures quality at speed across all microservices which can be automated with a CI/CD pipeline.
+<a href = "https://saucelabs.com" rel="noopener noreferrer nofollow" target="_blank">Sauce Labs</a> provides an **All-in-One API Testing Platform** that ensures quality at speed across all microservices which can be automated with a CI/CD pipeline.
 
 Some of the features it provides are:
 
@@ -212,7 +212,7 @@ Some of the features it provides are:
 
 <br></br>
 
-[SmartBear](https://smartbear.com) provides software tools to developers across the software development lifecycle in a very low friction, low-cost manner. One of the products of SmartBear, AlertSite, is the 'Early Warning System' you can trust to monitor your websites, web apps, and APIs from all over the world and within your private networks. 
+<a href = "https://smartbear.com" rel="noopener noreferrer nofollow" target="_blank">SmartBear</a> provides software tools to developers across the software development lifecycle in a very low friction, low-cost manner. One of the products of SmartBear, AlertSite, is the 'Early Warning System' you can trust to monitor your websites, web apps, and APIs from all over the world and within your private networks. 
 
 They also claim that AlertSite outmatches Runscope and Postman in monitoring capabilities, alerting, and support.
 
@@ -235,7 +235,7 @@ Some of the main features of SmartBear are:
 
 <br></br>
 
-[Moesif](https://www.moesif.com) **API Monitoring and Observability tool monitors end-to-end user experience** and automatically gets alerted on **API performance issues, security threats, and more**.
+<a href = "https://www.moesif.com" rel="noopener noreferrer nofollow" target="_blank">Moesif</a> **API Monitoring and Observability tool monitors end-to-end user experience** and automatically gets alerted on **API performance issues, security threats, and more**.
 
 Unlike the other synthetic tools, Moesif's user-centric API observability tracks how your actual users experience your APIs and applications. Leverage advanced anomaly detection to detect unknown unknowns with an easy-to-install monitoring agent.
 
@@ -256,7 +256,7 @@ Unlike the other synthetic tools, Moesif's user-centric API observability tracks
 
 <br></br>
 
-[AppDynamics](https://www.appdynamics.com/) is a full-stack application monitoring tool that provides solutions for Observability, Monitoring, Log Management, etc. **Synthetic API monitoring** feature enables you to monitor the performance and availability of HTTP(s) based APIs. These APIs can be external, internal, or third-party APIs and from different geo-locations across the globe. You can monitor private and public APIs in these scenarios:
+<a href = "https://www.appdynamics.com/" rel="noopener noreferrer nofollow" target="_blank">AppDynamics</a> is a full-stack application monitoring tool that provides solutions for Observability, Monitoring, Log Management, etc. **Synthetic API monitoring** feature enables you to monitor the performance and availability of HTTP(s) based APIs. These APIs can be external, internal, or third-party APIs and from different geo-locations across the globe. You can monitor private and public APIs in these scenarios:
 
 - **Private APIs**
     - APIs are exposed by microservices or web services.
@@ -277,7 +277,7 @@ Unlike the other synthetic tools, Moesif's user-centric API observability tracks
 
 <br></br>
 
-[Sematext](https://sematext.com/) provides monitoring tools for full-stack monitoring, metrics & logs, alerts, events, etc for DevOps teams that want to move faster.
+<a href = "https://sematext.com/" rel="noopener noreferrer nofollow" target="_blank">Sematext</a> provides monitoring tools for full-stack monitoring, metrics & logs, alerts, events, etc for DevOps teams that want to move faster.
 
 API monitoring is a tool that ensures the **performance, health, and availability of APIs** and web services with reliable and intuitive API monitoring tools.
 
@@ -300,7 +300,7 @@ Some of the features it provides are:
 
 <br></br>
 
-[RapidAPI](https://rapidapi.com/) is the **world’s largest API Hub**, it makes it easier to find, connect to, and manage APIs across multiple cloud environments. **RapidAPI Testing** is a functional API testing and monitoring solution that provides an intuitive UX, support for any API type, and integration with RapidAPI Hub and RapidAPI Enterprise Hub.
+<a href = "https://rapidapi.com/" rel="noopener noreferrer nofollow" target="_blank">RapidAPI</a> is the **world’s largest API Hub**, it makes it easier to find, connect to, and manage APIs across multiple cloud environments. **RapidAPI Testing** is a functional API testing and monitoring solution that provides an intuitive UX, support for any API type, and integration with RapidAPI Hub and RapidAPI Enterprise Hub.
 
 Some of the features it provides are:
 
@@ -319,7 +319,7 @@ Some of the features it provides are:
 
 <br></br>
 
-[CloudWatch](https://aws.amazon.com/cloudwatch/) is **a monitoring and management service that provides data and actionable insights for AWS, hybrid, and on-premises applications and infrastructure resources**. It collects and processes raw data from API Gateway into readable, near-real-time metrics. These statistics are recorded for a period of 15 months so you can access historical information and gain a better perspective on how your web application or service is performing. 
+<a href = "https://aws.amazon.com/cloudwatch/" rel="noopener noreferrer nofollow" target="_blank">CloudWatch</a> is **a monitoring and management service that provides data and actionable insights for AWS, hybrid, and on-premises applications and infrastructure resources**. It collects and processes raw data from API Gateway into readable, near-real-time metrics. These statistics are recorded for a period of 15 months so you can access historical information and gain a better perspective on how your web application or service is performing. 
 
 The metrics reported by API Gateway provide information that you can analyze in different ways. It can monitor the metrics to measure the responsiveness of the backend,  measure the overall responsiveness of your API calls, and optimize cache capacities to achieve the desired performance.
 
@@ -332,7 +332,7 @@ The metrics reported by API Gateway provide information that you can analyze in 
 
 <br></br>
 
-[Postman](https://www.postman.com/) Monitors give you continuous visibility into the health and performance of your APIs. **Uptime monitors** (open beta) enable you to keep watch on a single API endpoint, while **collection-based monitors** enable you to run API test scripts, chain together multiple requests, and validate critical API flows.
+<a href = "https://www.postman.com/" rel="noopener noreferrer nofollow" target="_blank">Postman</a>  Monitors give you continuous visibility into the health and performance of your APIs. **Uptime monitors** (open beta) enable you to keep watch on a single API endpoint, while **collection-based monitors** enable you to run API test scripts, chain together multiple requests, and validate critical API flows.
 
 Once the monitor is running you’ll be alerted to any system outages or test failures, so you can identify and address issues before your API’s consumers are affected.
 
@@ -350,7 +350,7 @@ Once the monitor is running you’ll be alerted to any system outages or test fa
 
 <br></br>
 
-[Assertible](https://assertible.com/) is a reliable and intuitive tool for API performance and uptime monitoring.
+<a href = "https://assertible.com/" rel="noopener noreferrer nofollow" target="_blank">Assertible</a> is a reliable and intuitive tool for API performance and uptime monitoring.
 
 Some of the features it provides are:
 
@@ -371,7 +371,7 @@ Some of the features it provides are:
 
 <br></br>
 
-[APIMetrics](https://apimetrics.io/) is an elegant, powerful, **functional API measurement & monitoring** tool that is used to measure performance, see the quality, get trusted, and independent measurements of the APIs you provide or rely on.
+<a href = "https://apimetrics.io/" rel="noopener noreferrer nofollow" target="_blank">APIMetrics</a> is an elegant, powerful, **functional API measurement & monitoring** tool that is used to measure performance, see the quality, get trusted, and independent measurements of the APIs you provide or rely on.
 
 Setting up API monitoring is as simple as entering a URL. The APImetrics user-friendly interface lets you make any type of HTTP call, and test it right there in the browser – or from 80+ locations around the world and the cloud. You can create complex sequences of calls for **API monitoring workflows, Configure alerts and assertions,** and easily manage variables across different calls and call types.
 
@@ -384,7 +384,7 @@ Setting up API monitoring is as simple as entering a URL. The APImetrics user-fr
 
 <br></br>
 
-[API Science](https://www.apiscience.com/) can help keep track of a **web API’s health, availability, and performance and alerts** you when something goes wrong. The monitors are simple to set up, and you can build multiple-step monitors in a short amount of time.
+<a href = "https://www.apiscience.com/" rel="noopener noreferrer nofollow" target="_blank">API Science</a> can help keep track of a **web API’s health, availability, and performance and alerts** you when something goes wrong. The monitors are simple to set up, and you can build multiple-step monitors in a short amount of time.
 
 APIscience was developed with the sole purpose of supporting and monitoring REST-based API services. You can expect a **quality UI and quick access to analytics** from the reporting dashboard. APIscience monitors the APIs from **several locations worldwide** and informs you on how they are doing in various places.
 
@@ -397,7 +397,7 @@ APIscience was developed with the sole purpose of supporting and monitoring REST
 
 <br></br>
 
-[Atatus](https://www.atatus.com/) **Synthetic Monitoring** tool ensures availability and uptime across endpoints with synthetic monitoring and simulates user API calls on your applications.
+<a href = "https://www.atatus.com/" rel="noopener noreferrer nofollow" target="_blank">Atatus</a> **Synthetic Monitoring** tool ensures availability and uptime across endpoints with synthetic monitoring and simulates user API calls on your applications.
 
 Some of the features it provides are:
 
