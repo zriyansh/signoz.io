@@ -36,9 +36,9 @@ A good observability tool has many components:
 
 3. It should have a good visualization layer for your teams to consume and take action.
 
-In this article, let's explore the top 9 observability tools in 2021 which can be perfect for your microservice application.
+In this article, let's explore the top 9 observability tools in 2022 which can be perfect for your microservice application.
 
-List of Top 9 observability tools in 2021
+List of Top 9 observability tools in 2022
 
 - SigNoz
 - Instana
@@ -50,9 +50,9 @@ List of Top 9 observability tools in 2021
 - Datadog
 - Splunk
 
-## Top observability tools in 2021
+## Top observability tools in 2022
 
-Now let's explore the top observability tools in 2021.
+Now let's explore the top observability tools in 2022.
 
 ### SigNoz
 

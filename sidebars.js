@@ -89,7 +89,8 @@ module.exports = {
           },
           items: [
             'operate/migration/upgrade-0.8.0',
-            'operate/migration/upgrade-0.8.1'
+            'operate/migration/upgrade-0.8.1',
+            'operate/migration/upgrade-0.9',
           ]
         },
         {
@@ -113,6 +114,7 @@ module.exports = {
       items: [
         'userguide/overview',
         'userguide/send-metrics',
+        'userguide/query-builder',
         'userguide/navigate-user-interface',
         'userguide/metrics',
         {

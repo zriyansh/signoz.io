@@ -1,11 +1,11 @@
 ---
-title: Latest top 11 distributed tracing tools [perfect for microservices]
+title: Latest top 13 distributed tracing tools [perfect for microservices]
 slug: distributed-tracing-tools
-date: 2022-05-25
+date: 2022-06-28
 tags: [distributed-tracing, application-monitoring, apm-tools]
 authors: ankit_anand
-description: Latest top distributed tracing tools list - 1.SigNoz 2.Dynatrace 3.New Relic 4.Honeycomb 5.Lightstep 6.Elastic APM 7.Jaeger 8.DataDog 9.Zipkin..
-image: /img/blog/2022/01/distributed_tracing_tools_cover.webp
+description: Latest top distributed tracing tools list in 2022 - 1.SigNoz 2.Dynatrace 3.New Relic 4.Honeycomb 5.Lightstep 6.Elastic APM 7.Jaeger 8.DataDog 9.Zipkin..
+image: /img/blog/2022/06/distributed_tracing_tools_cover.webp
 keywords:
   - signoz
   - jaeger
@@ -20,11 +20,11 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/distributed-tracing-tools/"/>
 </head>
 
-Choosing the right distributed tracing tool is critical. How do you know which is the right one for you? Here are the top 11 distributed tracing tools that can solve your monitoring and observability needs.
+Choosing the right distributed tracing tool is critical. How do you know which is the right one for you? Here are the top 13 distributed tracing tools in 2022 that can solve your monitoring and observability needs.
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2022/01/distributed_tracing_tools_cover.webp)
+![Cover Image](/img/blog/2022/06/distributed_tracing_tools_cover.webp)
 
 > What is a distributed tracing tool?<br></br>
 > A distributed tracing tool enables you to track user requests across multiple servers and services in a microservice architecture. It gives you a central overview of how user requests are performing in different services.
@@ -43,17 +43,18 @@ Distributed tracing tools capture user requests as they travel through every ser
 
 A great distributed tracing tool can improve your team's response to performance issues, thereby improving the end-user experience.
 
-Here's the list of the top 11 distributed tracing tools we will be looking at in this article:
+Here's the list of the top 13 distributed tracing tools we will be looking at in this article:
 
 - [SigNoz](#signoz)
 - [Jaeger](#jaeger)
 - [Zipkin](#zipkin)
+- [Grafana Tempo](#grafana-tempo)
 - [Serverless360](#serverless360)
 - [Dynatrace](#dynatrace)
 - [New Relic](#new-relic)
 - [Honeycomb](#honeycomb)
 - [Lightstep](#lightstep)
-<!-- - [Instana](#instana) -->
+- [Instana](#instana)
 - [DataDog](#datadog)
 - [Elastic APM](#elastic-apm)
 - [Splunk](#splunk)
@@ -97,8 +98,8 @@ Below is a snapshot from SigNoz dashboard showing spans from a request as rectan
 
 <br></br>
 
-## Top 11 distributed tracing tools
-Now let's explore the top 11 distributed tracing tools in 2022.
+## Top 13 distributed tracing tools
+Now let's explore the top 13 distributed tracing tools in 2022.
 
 ### SigNoz
 [SigNoz](https://signoz.io/?utm_source=blog&utm_medium=article) is a full-stack open-source APM and observability tool. It captures both metrics and traces with log management currently in the product roadmap. Logs, metrics, and traces are considered to be the three pillars of observability in modern-day distributed systems.
@@ -225,8 +226,27 @@ It also includes a dependency diagram that shows how many user requests went thr
     width={700}
 />
 
-### Serverless360
+### Grafana Tempo
 
+<a href = "https://grafana.com/docs/tempo/latest/" rel="noopener noreferrer nofollow" target="_blank" ><b>Grafana Tempo</b></a>  is an open-source tracing backend which was started by Grafana Labs. It was announced at Grafana ObservabilityCON in October 2020, and became generally available in June 2021.
+
+Some of the key features of Grafana Tempo includes:
+- compatible with popular open source tracing protocols like Zipkin and Jaeger
+- Supported by Grafana as a separate data source for trace visualizations
+- Available as self-hosted and cloud version
+- Provides service graph
+
+<Screenshot
+    alt="Grafana Tempo dashboard"
+    height={500}
+    src="/img/blog/2022/06/dt_tools_grafana_tempo.webp"
+    title="Serverless360 use case"
+    width={700}
+/>
+
+
+### Serverless360
+ 
 <a href = "https://www.serverless360.com/" rel="noopener" target="_blank" ><b>Serverless360</b></a> is an enterprise tool ideal for distributed tracing in cloud-native and hybrid
 microservice architectures.
 
@@ -347,7 +367,7 @@ Some of the key features of the Lightstep distributed tracing tool includes:
     width={700}
 />
 
-<!-- ### Instana
+### Instana
 
 <a href = "https://www.instana.com/" rel="noopener noreferrer nofollow" target="_blank" ><b>Instana</b></a> is a distributed tracing tool aimed at microservice applications. The Instana platform offers website monitoring, cloud & infrastructure monitoring, observability platform apart from distributed tracing of microservice applications.
 
@@ -364,7 +384,7 @@ Some of the key features of the Instana distributed tracing tool includes:
     src="/img/blog/2021/09/instana_distributed_tracing_dashboard-min.webp"
     title="Instana distributed tracing dashboard (Source: Instana website)"
     width={700}
-/> -->
+/>
 
 ### DataDog
 
