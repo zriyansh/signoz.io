@@ -30,8 +30,10 @@ If you're using a different Linux distribution, see the [Install SigNoz Using Do
 ## Prerequisites
 
 - A Linux or macOS machine. Microsoft Windows is not officially supported.
-- On macOS, you must manually install [Docker Engine](https://docs.docker.com/engine/install/) before you run the install script. The install script automatically installs Docker Engine on Linux.
-- A minimum of 4GB of memory must be allocated to Docker. <!-- Existing documentation is somehow unclear. Are there different memory requirements based on the operating system? -->
+- On macOS, you must manually install [Docker Engine](https://docs.docker.com/engine/install/)
+before you run the install script. The install script automatically installs Docker Engine on Linux.
+- A minimum of 4GB of memory must be allocated to Docker.
+<!-- Existing documentation is somehow unclear. Are there different memory requirements based on the operating system? -->
 - [Git client](https://desktop.github.com/)
 - Ensure that the ports `3301`, `4317` and `4318` are open on the machine where you install SigNoz.
 
@@ -53,28 +55,13 @@ Before you install Signoz, ensure that [Docker Compose](https://docs.docker.com/
 
 1. <CloneRepo />
 
-2. To install SigNoz, enter the `sudo docker-compose up` command, specifying the following:
+2. To install SigNoz, enter the `docker-compose up` command, specifying the following:
     - `-f` and the path to your configuration file
     - `-d` to run containers in the background
 
-  <Tabs
-    defaultValue="x86"
-    values={[
-      {label: 'x86', value: 'x86'},
-      {label: 'Apple M1', value: 'arm64'},
-    ]}>
-    <TabItem value="x86">
-
-      sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up -d
-    
-    </TabItem>
-
-    <TabItem value="arm64">
-
-      sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml up -d
-
-    </TabItem>
-  </Tabs>
+  ```bash
+  docker-compose -f docker/clickhouse-setup/docker-compose.yaml up -d
+  ```
 
 ## Verify the Installation
 
