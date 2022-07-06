@@ -263,7 +263,7 @@ function ShowCompanyLogos() {
         <p className={styles.tagline}> Used by teams at </p>
         <ul>
           <li>
-            <img src="img/users/naver_white2_hie7gu.svg" alt="naver logo" />
+            <img src="img/users/phenom.png" alt="phenom logo" />
           </li>
           <li>
             <img src="img/users/epifi.jpeg" alt="epifi logo" />
@@ -272,7 +272,7 @@ function ShowCompanyLogos() {
             <img src="img/users/Outplay.webp" alt="outplay logo" />
           </li>
           <li>
-            <img src="img/users/cafe21_1_vlrznt.svg" alt="cafe24 logo" />
+            <img src="img/users/instasafe-cropped.png" alt="instasafe logo" />
           </li>
           <li>
             <img
