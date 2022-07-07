@@ -18,6 +18,9 @@ keywords:
   - open source
   - signoz
 ---
+
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+
 <head>
   <link rel="canonical" href="https://signoz.io/blog/distributed-tracing-golang/"/>
 </head>
@@ -410,6 +413,14 @@ This lets application owners reconstruct the whole path of the request and see h
 OpenTelemetry and SigNoz provide a great open-source solution to implement distributed tracing for your applications. You can try out SigNoz by visiting its GitHub repo 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
+
+If you are someone who understands more from video, then you can watch the below video tutorial on the same with SigNoz.
+
+<p>&nbsp;</p>
+
+<LiteYoutubeEmbed id="pDl6N62ZYQI" mute={false} />
+
+<p>&nbsp;</p>
 
 If you have any questions or need any help in setting things up, join our slack community and ping us in `#support` channel
 

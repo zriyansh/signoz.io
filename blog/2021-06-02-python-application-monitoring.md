@@ -15,6 +15,8 @@ keywords:
   - distributed tracing
 ---
 
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+
 In this article, learn how to setup application monitoring for Python apps using an open-source solution, SigNoz.
 
 <!--truncate-->
@@ -262,6 +264,14 @@ In just 5 easy steps, our dashboard lets you drill down to events causing a dela
 If you need any help with trying out SigNoz, feel free to mail me at ankit.anand@signoz.io.
 
 Check out our [documentation](https://signoz.io/docs/install/docker) for more installation guides and troubleshooting instructions.
+
+If you are someone who understands more from video, then you can watch the below video tutorial on the same with SigNoz.
+
+<p>&nbsp;</p>
+
+<LiteYoutubeEmbed id="oZkFfMN57yI" mute={false} />
+
+<p>&nbsp;</p>
 
 They say, "If it's not monitored, then it's not in production." And with SigNoz you can start monitoring your applications now. Enabling your team to resolve issues quickly in production is critical to maintaining complex distributed systems in fine health.
 

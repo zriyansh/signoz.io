@@ -17,6 +17,9 @@ keywords:
   - apm tools
   - application performance monitoring
 ---
+
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+
 <head>
   <link rel="canonical" href="https://signoz.io/blog/opentelemetry-grpc-golang/"/>
 </head>
@@ -363,6 +366,15 @@ OpenTelemetry and SigNoz provide a great open-source solution to monitor gRPC ca
 <!-- [signoz_github.webp](Ashu%20-%20Mon%2092dcf/signoz_github.webp) -->
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
+
+If you are someone who understands more from video, then you can watch the below video tutorial on the same with SigNoz.
+
+<p>&nbsp;</p>
+
+<LiteYoutubeEmbed id="HUf4sETktQY" mute={false} />
+
+<p>&nbsp;</p>
+
 
 If you have any questions or need any help in setting things up, join our slack community and ping us in `#support` channel.
 
