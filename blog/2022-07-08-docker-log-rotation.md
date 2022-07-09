@@ -69,8 +69,9 @@ Let’s first configure the Docker daemon to a particular log driver.
 
 To configure the Docker Daemon to a particular log driver:
 
-**Step 1:** Go to the Docker daemon configuration file location
+**Step 1:** Go to the Docker daemon configuration file location:<br></br>
 On Linux: `/etc/docker/` directory
+
 On Windows: `C:\ProgramData\docker\config\daemon.json`
 
 **Step 2:** If your logging driver hasn’t been set yet, use the following command to set it up:
@@ -90,7 +91,7 @@ or
 
 You can specify any log driver of your choice but **Docker recommends** using the `local` logging driver to prevent disk exhaustion because it performs log rotation by default.
 
-**Step 3:** Add configuration for log rotation
+**Step 3:** Add configuration for log rotation<br></br>
 Add the following code to the daemon.json file after editing or creating it to rotate the log.
 
 The final file, when using `json-file` driver looks like this:
@@ -122,10 +123,10 @@ Step 4: Save the file and restart docker.
 ```bash
 systemctl restart docker
 ```
-The change in the default logging driver impacts only the containers created after modifying the daemon configuration. The existing containers carry the initial configuration of the logging driver. In order to update their logging driver for exiting containers, they must be recreated with the preferred options.
+The change in the default logging driver impacts only the containers created after modifying the daemon configuration. The existing containers carry the initial configuration of the logging driver. In order to update their logging driver for existing containers, they must be recreated with the preferred options.
 
 
-## Configuring Log Drivers and rotation for specific containers
+## Configuring Log Drivers and Rotation for specific containers
 To configure a container to use a different logging driver than the Docker daemon’s default, use the `--log-driver` flag. You need to include the container ID or container name alongside the command.
 
 ```bash
@@ -159,13 +160,13 @@ docker run  --log-opt max-size=15m --log-opt max-file=5 nginx:latest
 
 Simplifying the above command:
 
-`docker run --log-opt max-size=15m` 
-It tells Docker to limit the size of your Docker log file,
+`docker run --log-opt max-size=15m` <br></br>
+It tells Docker to limit the size of your Docker log file.
 
 `--log-opt max-file=5`  
 It instructs Docker to store no more than 5 log files. When the limit is met, Docker is instructed to destroy the older files. 
 
-`nginx:latest` 
+`nginx:latest`<br></br>
 The container image name
 
 You can also have a look at the <a href = "https://docs.docker.com/config/containers/logging/json-file/#options" rel="noopener noreferrer nofollow" target="_blank">logging options</a> the JSON-file accepts.
