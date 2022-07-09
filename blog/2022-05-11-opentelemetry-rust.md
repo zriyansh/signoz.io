@@ -13,6 +13,9 @@ keywords:
   - apm tools
   - application performance monitoring
 ---
+
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+
 <head>
   <link rel="canonical" href="https://signoz.io/blog/opentelemetry-rust/"/>
 </head>
@@ -191,6 +194,14 @@ OpenTelemetry is the future for setting up observability for cloud-native apps. 
 SigNoz is an open-source observability tool that comes with a SaaS-like experience. You can try out SigNoz by visiting its GitHub repo 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
+
+If you are someone who understands more from video, then you can watch the below video tutorial on the same with SigNoz.
+
+<p>&nbsp;</p>
+
+<LiteYoutubeEmbed id="yPt1Pc3_tls" mute={false} />
+
+<p>&nbsp;</p>
 
 
 If you face any issues while trying out SigNoz, you can reach out with your questions in #support channel 👇

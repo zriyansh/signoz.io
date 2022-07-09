@@ -17,6 +17,9 @@ keywords:
   - flask instrumentation
   - signoz
 ---
+
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+
 <head>
   <link rel="canonical" href="https://signoz.io/blog/opentelemetry-flask/"/>
 </head>
@@ -226,6 +229,15 @@ OpenTelemetry makes it very convenient to instrument your Flask application. You
 You can try out SigNoz by visiting its GitHub repo 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
+
+If you are someone who understands more from video, then you can watch the below video tutorial on the same with SigNoz.
+
+<p>&nbsp;</p>
+
+<LiteYoutubeEmbed id="_URJaj0dYz8" mute={false} />
+
+<p>&nbsp;</p>
+
 
 If you have any questions or need any help in setting things up, join our slack community and ping us in `#support` channel.
 

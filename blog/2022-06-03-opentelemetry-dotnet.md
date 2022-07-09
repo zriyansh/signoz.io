@@ -20,6 +20,8 @@ keywords:
   - application performance monitoring
 ---
 
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+
 <head>
   <link rel="canonical" href="https://signoz.io/blog/opentelemetry-dotnet/"/>
   <title>OpenTelemetry .NET | Monitor a .NET application with OpenTelemetry & SigNoz</title>
@@ -380,9 +382,19 @@ Using OpenTelemetry .NET client libraries, you can instrument your .NET applicat
 
 OpenTelemetry is the future for setting up observability for cloud-native apps. It is backed by a huge community and covers a wide variety of technology and frameworks. Using OpenTelemetry, engineering teams can instrument polyglot and distributed applications with peace of mind.
 
+
 SigNoz is an open-source observability tool that comes with a SaaS-like experience. You can try out SigNoz by visiting its GitHub repo 👇
 
 [![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
+
+If you are someone who understands more from video, then you can watch the below video tutorial on the same with SigNoz.
+
+<p>&nbsp;</p>
+
+<LiteYoutubeEmbed id="9SwL5kMDcvY" mute={false} />
+
+<p>&nbsp;</p>
+
 
 If you have any questions or need any help in setting things up, join our slack community and ping us in `#support` channel.
 
