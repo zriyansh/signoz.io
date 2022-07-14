@@ -10,21 +10,13 @@ v0.10.0 is a breaking release which requires data migration, if you are upgradin
 
 ## First upgrade to 0.10.0
 
-Follow the plaform specific instructions to upgrade to 0.10.0 and above.
+Follow the platform specific instructions to upgrade to 0.10.0 and above.
 
-Note that the past data will not be visible on the new application until you run the migration script.
+Note that the past exceptions/error data will not be visible on the new application until you run the migration script.
 
-### Docker
-
-- `git clone -b main https://github.com/SigNoz/signoz.git && cd signoz/deploy/`
-- `git checkout v0.10.0`
-- `./install.sh`
-
-### Kubernetes
-
-- `helm repo update`
-- `helm search repo signoz --versions`
-- `helm -n platform upgrade my-release signoz/signoz`
+- [Docker Standalone](https://signoz.io/docs/operate/docker-standalone/#upgrade)
+- [Docker Swarm](https://signoz.io/docs/operate/docker-swarm/#upgrade)
+- [Kubernetes](https://signoz.io/docs/operate/kubernetes/#upgrade)
 
 ## Steps to run migration script:
 
@@ -32,7 +24,7 @@ Note that the past data will not be visible on the new application until you run
 
 ```bash
 docker run --name signoz_migrate --network clickhouse-setup_default \
-  -it -d signoz/migrate:0.8 -host=clickhouse -port=9000
+  -it -d signoz/migrate:0.10 -host=clickhouse -port=9000
 ```
 
 Steps to check logs:
@@ -52,7 +44,7 @@ docker rm signoz_migrate
 ### Kubernetes
 
 ```bash
-kubectl -n platform run -i -t signoz_migrate --image=signoz/migrate:0.8 \
+kubectl -n platform run -i -t signoz_migrate --image=signoz/migrate:0.10 \
   -- -host=my-release-clickhouse -port=9000 -userName=admin -password=27ff0399-0d3a-4bd8-919d-17c2181e6fb9
 ```
 

@@ -11,7 +11,7 @@ v0.8.0 is a breaking release which requires data migration, if you are upgrading
 
 ## First upgrade to 0.8.0
 
-Follow the plaform specific instructions to upgrade to 0.8.0 and above.
+Follow the platform specific instructions to upgrade to 0.8.0 and above.
 
 Note that the past data will not be visible on the new application until you run the migration script.
 

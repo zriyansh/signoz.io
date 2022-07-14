@@ -11,7 +11,7 @@ v0.9 is a breaking release which requires data migration, if you are upgrading f
 
 ## First upgrade to 0.9
 
-Follow the plaform specific instructions to upgrade to 0.9 and above.
+Follow the platform specific instructions to upgrade to 0.9 and above.
 
 ## Steps to run migration script:
 
