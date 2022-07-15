@@ -11,7 +11,7 @@ Hi there! We're thrilled that you'd like to contribute to this project, thank yo
 
 Please read through this document before submitting any issues or pull requests to ensure we have all the necessary information to effectively respond to your bug report or contribution.
 
-- We accept contributions made to the [SigNoz `develop` branch]()
+- We accept contributions made to the [SigNoz `develop` branch](https://github.com/SigNoz/signoz/tree/develop)
 - Find all SigNoz Docker Hub images here 
     - [signoz/frontend](https://hub.docker.com/r/signoz/frontend)
     - [signoz/query-service](https://hub.docker.com/r/signoz/query-service)
