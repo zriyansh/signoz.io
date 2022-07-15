@@ -115,6 +115,7 @@ func main() {
 }
 
 ```
+We have a blog [Monitor gRPC calls with OpenTelemetry - explained with a Golang example](https://signoz.io/blog/opentelemetry-grpc-golang/), do refer to that in case you need a helping hand to work with gRPC server.
 
 ### Instrumentation of a sample Golang application
 
