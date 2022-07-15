@@ -96,12 +96,23 @@ The application metrics pane is comprised of four graphs:
 
 ### External Calls
 
-The external calls pane allows you to track the external services your applications depend on. Note that these graphs do not display the interactions with your back-end components, such as database calls.
+The external calls pane allows you to track the external services your applications depend on.
 
 The spans should have the following span attributes to be counted in this panel
 
-- `span.kind=2` which means these are spans of kind `SERVER`. You can read more details on SpanKinds [here](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/api.md#spankind)
-- `http.url` should be present as span attribute
+- `span.kind=3` which means these are spans of kind [`CLIENT`](https://github.com/open-telemetry/opentelemetry-proto/blob/main/opentelemetry/proto/trace/v1/trace.proto#L139). You can read more details on SpanKinds [here](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/api.md#spankind)
+- One of the following sets of attributes
+    * rpc.system, rps.service, rpc.method
+    * rpc.system, net.peer.name, net.peer.port
+    * rpc.system, net.peer.ip, net.peer.port
+    * http.host
+    * net.peer.name, net.peer.port
+    * net.peer.ip, net.peer.port
+    * http.url
+    * peer.service
+
+The remote host address is constructed from one of the attribute sets in the order listed above. This
+includes any database calls that have transport other than unix domain socket or pipe, or a call to another http host, or an aws lambda function and generally any out of process call over the network.
 
 If your services are making external calls but External Call panels show as empty, please make sure that your spans have the above attributes.
 
@@ -115,7 +126,7 @@ The graphs in this pane provide the following information:
 
 This pane shows details about the database calls that your application makes. The spans should have the following span attributes to be counted in this panel
 
-- `span.kind=3` which means these are spans of kind `CLIENT`. You can read more details on SpanKinds [here](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/api.md#spankind)
+- `span.kind!=2` which means these are spans of kind anything except `SERVER`. You can read more details on SpanKinds [here](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/api.md#spankind)
 - `db.system` should be present as span attribute
 
 If your services are making DB calls and your Database Call panels show as empty, please make sure that:
