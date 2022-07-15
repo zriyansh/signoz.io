@@ -106,6 +106,8 @@ Remember to allow incoming requests to port **4317** of machine where SigNoz bac
 
    ![nodejs-app-instrumentation](../../static/img/docs/nodejs_app_instrumentation.gif)
 
+You can also refer to the blog titled [Monitoring your Express application using OpenTelemetry](https://signoz.io/blog/opentelemetry-express/) for further reading on the same. 
+
 
 ### Troubleshooting your installation
 
@@ -162,5 +164,11 @@ opentelemetry.trace.getTracer('your_tracer_name').getActiveSpanProcessor().shutd
 ```
 
 <p>&nbsp;</p>
+
+### Further Reading:
+- [Nodejs Performance Monitoring](https://signoz.io/blog/nodejs-performance-monitoring/)
+- [Implementing Distributed Tracing in a Nodejs application](https://signoz.io/blog/distributed-tracing-nodejs/)
+
+
 
 <InstrumentationFAQ />
