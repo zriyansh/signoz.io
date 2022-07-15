@@ -83,3 +83,5 @@ Follow the steps in this section to remove the sample application that comes ins
 ```bash
 cd deploy && ./install.sh
 ```
+
+Note: If you still see the HotROD services on the dashboard, just wait for a few minutes and the changes will reflect.
