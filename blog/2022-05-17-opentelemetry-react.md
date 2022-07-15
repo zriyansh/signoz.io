@@ -133,44 +133,15 @@ http:
 Once you make the changes, you need to restart the Docker containers.
 
 **To stop the running SigNoz cluster:**
-
-<Tabs
-  defaultValue="x86"
-  values={[
-    {label: 'x86', value: 'x86'},
-    {label: 'Apple M1', value: 'arm64'},
-  ]}>
-  <TabItem value="x86">
-
-    sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
-
-  </TabItem>
-  <TabItem value="arm64">
-
-    sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml stop
-
-  </TabItem>
-</Tabs>
+```
+sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
+```
 
 **To start/resume the running SigNoz cluster:**
+```
+sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up
+```
 
-<Tabs
-    defaultValue="x86"
-    values={[
-      {label: 'x86', value: 'x86'},
-      {label: 'Apple M1', value: 'arm64'},
-    ]}>
-  <TabItem value="x86">
-
-    sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up
-
-  </TabItem>
-  <TabItem value="arm64">
-
-    sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml up
-
-  </TabItem>
-</Tabs>
 
 _*Note: The stopped SigNoz cluster should resume and mount to the existing docker volumes._
 
