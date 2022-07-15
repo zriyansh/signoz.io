@@ -40,28 +40,29 @@ You can also generate password reset link if they have forgotten their password 
 
 ## Permission Matrix
 
-|  | Admin | Editor | Viewer |
-| --- | --- | --- | --- |
-| View application list | Y | Y | Y |
-| Search/Filter application list | Y | Y | Y |
-| View metrics detail page | Y | Y | Y |
-| View Dashboards | Y | Y | Y |
-| Create new Dashboards | Y | Y | N |
-| Import Dashboard | Y | Y | N |
-| Export Dashboard | Y | Y | Y |
-| View Tracefilter page & do filtering | Y | Y | Y |
-| View Trace Detail page | Y | Y | Y |
-| View Alerts | Y | Y | Y |
-| Search/Filter Alerts | Y | Y | Y |
-| Add new alerts | Y | Y | N |
-| View Settings page | Y | N | N |
-| View Service Map | Y | Y | Y |
-| Invite New Members | Y | N | N |
-| Revoke Invite of members | Y | N | N |
-| Create New Alert Channels | Y | N | N |
-| Set Retention period | Y | N | N |
-| Set own password and name | Y | Y | Y |
-| Change Org Name | Y | N | N |
-| Edit/Delete member details | Y | N | N |
-| View version information  page(from left panel) | Y | Y  | Y |
-| Change theme (dark/light) | Y | Y | Y |
+| Features                                        | Admin | Editor | Viewer |
+| ----------------------------------------------- | ----- | ------ | ------ |
+| View Application List                           | ✅    | ✅     | ✅     |
+| Search/Filter Application List                  | ✅    | ✅     | ✅     |
+| View Metrics Detail Page                        | ✅    | ✅     | ✅     |
+| View Dashboards                                 | ✅    | ✅     | ✅     |
+| Create New Dashboards                           | ✅    | ✅     | ❌     |
+| Import Dashboards                               | ✅    | ✅     | ❌     |
+| Export Dashboards                               | ✅    | ✅     | ✅     |
+| View Trace Filter Page & do Filtering           | ✅    | ✅     | ✅     |
+| View Trace Detail Page                          | ✅    | ✅     | ✅     |
+| View Alerts                                     | ✅    | ✅     | ✅     |
+| Search / Filter Alerts                          | ✅    | ✅     | ✅     |
+| Add New Alerts                                  | ✅    | ✅     | ❌     |
+| View Settings Page                              | ✅    | ❌     | ❌     |
+| View Service Map                                | ✅    | ✅     | ✅     |
+| Invite New Members                              | ✅    | ❌     | ❌     |
+| Revoke Invite of Members                        | ✅    | ❌     | ❌     |
+| Create New Alert Channels                       | ✅    | ❌     | ❌     |
+| Set Retention Period                            | ✅    | ❌     | ❌     |
+| Set own Password and Name                       | ✅    | ✅     | ✅     |
+| Change Org Name                                 | ✅    | ❌     | ❌     |
+| Edit / Delete Member Details                    | ✅    | ❌     | ❌     |
+| View Version Information Page (from left panel) | ✅    | ✅     | ✅     |
+| Change Theme (dark/light)                       | ✅    | ✅     | ✅     |
+
