@@ -316,14 +316,17 @@ Here’s a snapshot from the GitHub repo. You can find the file [here](https://g
 After adding the changes, you need to restart the SigNoz Docker containers.
 
 **To stop the running SigNoz cluster:**
+```
+sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
+```
 
-- x86 - `sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop`
-- Apple M1 - `sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml stop`
 
 **To start/resume the running SigNoz cluster:**
 
-- x86 - `sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml start`
-- Apple M1 - `sudo docker-compose -f docker/clickhouse-setup/docker-compose.arm.yaml start`
+```
+sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml start
+```
+
 
 **Note: The stopped SigNoz cluster should resume and mount to the existing docker volumes.*
 
