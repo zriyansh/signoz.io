@@ -21,6 +21,11 @@ const config = {
       apiKey: '1061c173ae001d5f5aaa4f0354e373a0',
       indexName: 'signoz',
     },
+    prism: {
+      // Supported languages are:
+      // https://prismjs.com/index.html#supported-languages
+      additionalLanguages: ["ruby", "csharp", "php", "java"],
+    },
     zoom: {
       selector: 'figure[data-zoomable] > img',
       config: {
