@@ -76,7 +76,7 @@ Get into `/server` and initialize an npm project using the following command.
 Initialize npm project:
 
 ```jsx
-npm init --y
+npm init -y
 ```
 
 Install required packages:
