@@ -102,7 +102,7 @@ The spans should have the following span attributes to be counted in this panel
 
 - `span.kind=3` which means these are spans of kind [`CLIENT`](https://github.com/open-telemetry/opentelemetry-proto/blob/main/opentelemetry/proto/trace/v1/trace.proto#L139). You can read more details on SpanKinds [here](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/api.md#spankind)
 - One of the following sets of attributes
-    * rpc.system, rps.service, rpc.method
+    * rpc.system, rpc.service, rpc.method
     * rpc.system, net.peer.name, net.peer.port
     * rpc.system, net.peer.ip, net.peer.port
     * http.host
