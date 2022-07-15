@@ -125,7 +125,7 @@ yarn dev
 pnpm dev
 ```
 
-You can check if your app is up and running on `[http://localhost:3000](http://localhost:3000)` 
+You can check if your app is up and running on [http://localhost:3000](http://localhost:3000)
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2022/04/nextjs_app_running.webp" alt="Nextjs app running in your local"/>
@@ -253,7 +253,7 @@ With this `scripts` JSON in the `package.json` file looks something like this.
 
 **Step 5: Run the server and monitor the application**
 
-Run the application using `npm run start:server` or `yarn start:server` , and your application should be available on [`http://localhost:8080`](http://localhost:8080/) .
+Run the application using `npm run start:server` or `yarn start:server` , and your application should be available on [http://localhost:8080](http://localhost:8080/) .
 
 Hit the URL a couple of times to generate some dummy data and wait for the `SigNoz-Nextjs-Example` application to be visible on the SigNoz dashboard.
 
