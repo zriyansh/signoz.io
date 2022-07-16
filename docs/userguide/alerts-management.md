@@ -7,20 +7,23 @@ import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 
 # Setting alerts in SigNoz  
 
-Starting with [v0.5.0](https://github.com/SigNoz/signoz/releases/tag/v0.5.0) you can set alerts in SigNoz.
+Starting with [v0.10.0](https://github.com/SigNoz/signoz/releases/tag/v0.10.0) you can set alerts on metrics using query builder.
 
 
 ## Setting Alert Rules
 
-Alerts in SigNoz are heavily inspired by how Prometheus manages alerts, as we found that as the most flexible way of setting alerts. So, if you have set up alerts in Prometheus, the following should sound very familiar.
+You can set Alert Rules in SigNoz in the following 2 ways:
+1. Query Builder - This is DIY way to build alerts by selecting metrics from dropdowns. You can also set filter and group by conditions by selecting options from the dashboard.
+2. PromQL - You can use [Prometheus Query Language](https://prometheus.io/docs/prometheus/latest/querying/basics/) to write expressions for alerts which will be evaluated in regular time interval. If you have set up alerts in Prometheus, this method should be very familiar.
+
+
+
+#### Alert Rules
 
 Navigate to Alerts page from the left panel. It has 2 tabs:
 
 1. Alert Rules
 2. Triggered Alerts
-
-
-#### Alert Rules
 
 Alert Rules set the expression you want to evaluate to start firing alerts. The Alert Rules tab shows a list of currently configured alert rules and labels like `severity` and `Alert Name`. It also shows the current status of this Alert rules. If any alerts are `firing` because of this or everything is `Ok`
 
@@ -32,13 +35,30 @@ Alert Rules set the expression you want to evaluate to start firing alerts. The 
 
 #### Create Alert Rules
 
-To create new alert rules, you can click the `New Alert Rules` button. This would open a Prometheus like Alert rule editor for you. If you haven't used Prometheus before, don't worry this is pretty simple.
+To create new alert rules, you can click the `New Alerts` button. This would open a pane with an empty graph. As mentioned above, there are 2 ways to create Alert Rules
 
-- Set the expression you want to evaluate to true to trigger alerts
-- Set the period for which you want to wait (after the expression is true) to start firing alerts
+1. Query Builder
+2. PromQL
+
+##### Query Builder
+In Query Builder, you can use the dropdowns in the dashboard to select the right metric. 
+- Then create an expression with WHERE and GROUPBY clauses which represents the expression to evaluate for alerting
+- Threshold which the value of expression should cross ( above or below) to trigger an alert.
+- Evaluation period of the expression
+- Set name, descriptions and tags about the alert to make it more informative
+
+![alerts-query-builder](../../static/img/docs/alerts-query-builder.webp)
+
+
+##### PromQL
+
+In PromQL, you can write the Prometheus expression to evaluate. 
+
+- Set the expression you want to evaluate to trigger alerts. The expression also includes the evaluation interval.
+- Threshold which the value of expression should cross ( above or below) to trigger an alert.
 - Set labels like `severity` to communicate how severe the issue is if this alert starts firing
 
-![new-alert-rules](../../static/img/docs/new-alert-rules.webp)
+![prometheus-alert-rules](../../static/img/docs/promql-alerts.webp)
 
 
 #### Triggered Alerts
@@ -217,7 +237,7 @@ Whew! That was a lot of instruction to follow. If you instead prefer to see how 
 
 <p>&nbsp;</p>
 
-<LiteYoutubeEmbed id="HBLtC3UKpmA" mute={false} />
+<!-- <LiteYoutubeEmbed id="HBLtC3UKpmA" mute={false} /> -->
 
 <p>&nbsp;</p>
 
