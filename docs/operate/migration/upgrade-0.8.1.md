@@ -12,7 +12,7 @@ If you had created dashboard in 0.8.0 and before, you would need to run this scr
 
 ## First Upgrade to 0.8.1
 
-Follow the plaform specific instructions to upgrade to 0.8.1 and above.
+Follow the platform specific instructions to upgrade to 0.8.1 and above.
 
 - [Docker Standalone](https://signoz.io/docs/operate/docker-standalone/#upgrade)
 - [Docker Swarm](https://signoz.io/docs/operate/docker-swarm/#upgrade)
