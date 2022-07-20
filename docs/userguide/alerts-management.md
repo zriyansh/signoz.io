@@ -228,9 +228,10 @@ You must have a valid Integration Key (aka Routing Key) before you setup a pager
 
    ![image](https://user-images.githubusercontent.com/10277894/179949345-f242f0da-2afb-4041-ab72-3390d645dd77.png)
 
-2. We will now **review the graph** to identify a threshold that will definitely cause an alert. Here, anything below 0.2 looks like a good condition for threshold.
+2. We can now **review the graph** to identify a threshold that will definitely cause an alert. Here, anything below 0.2 looks like a good condition for threshold.
 
-   ![image](https://user-images.githubusercontent.com/10277894/179949471-5de3458d-7b43-4f60-8004-902d06909f22.png)
+   ![image](https://user-images.githubusercontent.com/10277894/179957078-b7e430ab-95c2-4d5d-8eac-10670f1e0e52.png)
+
 
 
 3. Let's **set threshold to 0.12** to be sure that alert will be raised in next few minutes.
