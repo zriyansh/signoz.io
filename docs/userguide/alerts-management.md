@@ -224,22 +224,23 @@ You must have a valid Integration Key (aka Routing Key) before you setup a pager
 ![image](https://user-images.githubusercontent.com/10277894/179944648-a9f3b558-2687-4132-a6ce-bc5d69f59368.png)
 
 #### Test the pagerduty channel
-1. Let's create a simple alert rule that monitors average CPU performance for each host. Go to `SigNoz alerts` page and click `New Alert` button. When the new alert page opens, edit metric query as shown below. Feel free to choose any other metric, the idea is to pick a metric with sufficient data to raise an alert. 
+1. Let's create a simple alert rule that monitors average CPU performance for each host. Go to **Alerts** page in **your SigNoz app** and click `New Alert` button. When the new alert page opens, edit metric query as shown below. Feel free to choose any other metric, the idea is to pick a metric with sufficient data to raise an alert. 
 
    ![image](https://user-images.githubusercontent.com/10277894/179949345-f242f0da-2afb-4041-ab72-3390d645dd77.png)
 
-2. We will now review the graph to identify a threshold that will definitely cause an alert. Here, anything below 0.2 looks like a good condition for threshold.
+2. We will now **review the graph** to identify a threshold that will definitely cause an alert. Here, anything below 0.2 looks like a good condition for threshold.
 
    ![image](https://user-images.githubusercontent.com/10277894/179949471-5de3458d-7b43-4f60-8004-902d06909f22.png)
 
 
-3. Let's set threshold to 0.12 to be sure that alert will be raised in next few minutes.
+3. Let's **set threshold to 0.12** to be sure that alert will be raised in next few minutes.
 
    ![image](https://user-images.githubusercontent.com/10277894/179949589-17cab9a8-640d-422a-a22a-f4e5ebd6f5c7.png)
 
-4. Save the alert rule. Feel free to edit severity and labels as necessary.
+4. **Save the alert** rule. Feel free to edit severity and labels as necessary.
 
-5. Go to your pagerduty alerts page (`Pagerduty Home >> Incident >> Alerts`) and wait for a few minutes. If all goes well, you will see an incident. You may have to refresh the page few times to see the alert. 
+5. Go to your **pagerduty alerts page** (`Pagerduty Home >> Incident >> Alerts`) and wait for a few minutes. If all goes well, you will **see an incident**. You may have to refresh the page few times to see the alert. 
+
 
    ![image](https://user-images.githubusercontent.com/10277894/179950962-c1aa1a5a-697b-4c1b-a8b2-ae366858b351.png)
 
