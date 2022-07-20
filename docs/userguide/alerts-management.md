@@ -196,9 +196,7 @@ There are two ways to integrate with Pagerduty: via global [event orchestration]
 2. Create a new orchestration 
 3. Click on **Global Orchestration Key**, copy your **integration key** and keep it safe for later use. 
 
-![image](https://user-images.githubusercontent.com/10277894/165689058-69a7b742-7415-4824-812f-b5cfa1f6abbe.png)
-
-
+![image](https://user-images.githubusercontent.com/10277894/179944393-02d2bb02-41ba-46ac-8700-33f37a971d42.png)
 
 #### Get Integration or Routing key to integrate with pagerduty service
 1. Go to **Services > Service Directory** and select the **service** where you’d like to add the integration.
@@ -209,7 +207,7 @@ There are two ways to integrate with Pagerduty: via global [event orchestration]
 
 For more details on pagerduty service setup, visit [here](https://support.pagerduty.com/docs/services-and-integrations#add-integrations-to-an-existing-service).
 
-![image](https://user-images.githubusercontent.com/10277894/165688334-a1129c34-710e-485a-aa44-ab8054a6807d.png)
+![image](https://user-images.githubusercontent.com/10277894/179944431-4e7ebb09-c6ca-455f-88b5-02e0f7ccfd8a.png)
 
 #### Prerequisite
 You must have a valid Integration Key (aka Routing Key) before you setup a pagerduty channel in SigNoz Dashboard. 
@@ -223,7 +221,8 @@ You must have a valid Integration Key (aka Routing Key) before you setup a pager
 6. Test the connect with **Test** button
 7. **Save** the channel 
 
-![image](https://user-images.githubusercontent.com/10277894/165889927-4dfc8765-6ff1-4b2e-9796-d40bbf71c489.png)
+![image](https://user-images.githubusercontent.com/10277894/179944648-a9f3b558-2687-4132-a6ce-bc5d69f59368.png)
+
 
 :::note
 
