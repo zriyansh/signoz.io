@@ -241,10 +241,9 @@ You must have a valid Integration Key (aka Routing Key) before you setup a pager
 
 5. Go to your **pagerduty alerts page** (`Pagerduty Home >> Incident >> Alerts`) and wait for a few minutes. If all goes well, you will **see an incident**. You may have to refresh the page few times to see the alert. 
 
+   ![image](https://user-images.githubusercontent.com/10277894/179956540-0eae3553-c813-4d39-8484-bba2c6d939c5.png)
 
-   ![image](https://user-images.githubusercontent.com/10277894/179950962-c1aa1a5a-697b-4c1b-a8b2-ae366858b351.png)
-
-   ![image](https://user-images.githubusercontent.com/10277894/179950146-8484017c-a645-461f-b130-af980849f2a6.png)
+   ![image](https://user-images.githubusercontent.com/10277894/179956567-d4de2d44-4510-46bb-80df-13ecefc08064.png)
 
 
 ::: note
