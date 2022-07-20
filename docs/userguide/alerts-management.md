@@ -247,7 +247,8 @@ You must have a valid Integration Key (aka Routing Key) before you setup a pager
    ![image](https://user-images.githubusercontent.com/10277894/179956567-d4de2d44-4510-46bb-80df-13ecefc08064.png)
 
 
-::: note
+
+:::note
 
 If you encounter any unexpected challenges during the use of this integration, please contact SigNoz Support at support@signoz.io
 
