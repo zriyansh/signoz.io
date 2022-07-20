@@ -254,10 +254,11 @@ If you encounter any unexpected challenges during the use of this integration, p
 
 :::
 
+<!---
 ## Demo video 
 
 Whew! That was a lot of instruction to follow. If you instead prefer to see how it works in a demo environment, here you go 👇
-
+-->
 <p>&nbsp;</p>
 
 <!-- <LiteYoutubeEmbed id="HBLtC3UKpmA" mute={false} /> -->
