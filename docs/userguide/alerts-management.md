@@ -224,7 +224,7 @@ You must have a valid Integration Key (aka Routing Key) before you setup a pager
 ![image](https://user-images.githubusercontent.com/10277894/179944648-a9f3b558-2687-4132-a6ce-bc5d69f59368.png)
 
 #### Test the pagerduty channel
-1. Let's create a simple alert rule that monitors average CPU performance for each host. Feel free to choose any other metric, the idea is to pick a metric with sufficient data to raise an alert. 
+1. Let's create a simple alert rule that monitors average CPU performance for each host. Go to `SigNoz alerts` page and click `New Alert` button. When the new alert page opens, edit metric query as shown below. Feel free to choose any other metric, the idea is to pick a metric with sufficient data to raise an alert. 
 
    ![image](https://user-images.githubusercontent.com/10277894/179949345-f242f0da-2afb-4041-ab72-3390d645dd77.png)
 
