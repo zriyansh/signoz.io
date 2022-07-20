@@ -196,9 +196,7 @@ There are two ways to integrate with Pagerduty: via global [event orchestration]
 2. Create a new orchestration 
 3. Click on **Global Orchestration Key**, copy your **integration key** and keep it safe for later use. 
 
-![image](https://user-images.githubusercontent.com/10277894/165689058-69a7b742-7415-4824-812f-b5cfa1f6abbe.png)
-
-
+![image](https://user-images.githubusercontent.com/10277894/179944393-02d2bb02-41ba-46ac-8700-33f37a971d42.png)
 
 #### Get Integration or Routing key to integrate with pagerduty service
 1. Go to **Services > Service Directory** and select the **service** where you’d like to add the integration.
@@ -209,7 +207,7 @@ There are two ways to integrate with Pagerduty: via global [event orchestration]
 
 For more details on pagerduty service setup, visit [here](https://support.pagerduty.com/docs/services-and-integrations#add-integrations-to-an-existing-service).
 
-![image](https://user-images.githubusercontent.com/10277894/165688334-a1129c34-710e-485a-aa44-ab8054a6807d.png)
+![image](https://user-images.githubusercontent.com/10277894/179944431-4e7ebb09-c6ca-455f-88b5-02e0f7ccfd8a.png)
 
 #### Prerequisite
 You must have a valid Integration Key (aka Routing Key) before you setup a pagerduty channel in SigNoz Dashboard. 
@@ -223,7 +221,32 @@ You must have a valid Integration Key (aka Routing Key) before you setup a pager
 6. Test the connect with **Test** button
 7. **Save** the channel 
 
-![image](https://user-images.githubusercontent.com/10277894/165889927-4dfc8765-6ff1-4b2e-9796-d40bbf71c489.png)
+![image](https://user-images.githubusercontent.com/10277894/179944648-a9f3b558-2687-4132-a6ce-bc5d69f59368.png)
+
+#### Test the pagerduty channel
+1. Let's create a simple alert rule that monitors average CPU performance for each host. Go to **Alerts** page in **your SigNoz app** and click `New Alert` button. When the new alert page opens, edit metric query as shown below. Feel free to choose any other metric, the idea is to pick a metric with sufficient data to raise an alert. 
+
+   ![image](https://user-images.githubusercontent.com/10277894/179949345-f242f0da-2afb-4041-ab72-3390d645dd77.png)
+
+2. We can now **review the graph** to identify a threshold that will definitely cause an alert. Here, anything below 0.2 looks like a good condition for threshold.
+
+   ![image](https://user-images.githubusercontent.com/10277894/179957078-b7e430ab-95c2-4d5d-8eac-10670f1e0e52.png)
+
+
+
+3. Let's **set threshold to 0.12** to be sure that alert will be raised in next few minutes.
+
+   ![image](https://user-images.githubusercontent.com/10277894/179949589-17cab9a8-640d-422a-a22a-f4e5ebd6f5c7.png)
+
+4. **Save the alert** rule. Feel free to edit severity and labels as necessary.
+
+5. Go to your **pagerduty alerts page** (`Pagerduty Home >> Incident >> Alerts`) and wait for a few minutes. If all goes well, you will **see an incident**. You may have to refresh the page few times to see the alert. 
+
+   ![image](https://user-images.githubusercontent.com/10277894/179956540-0eae3553-c813-4d39-8484-bba2c6d939c5.png)
+
+   ![image](https://user-images.githubusercontent.com/10277894/179956567-d4de2d44-4510-46bb-80df-13ecefc08064.png)
+
+
 
 :::note
 
@@ -231,10 +254,11 @@ If you encounter any unexpected challenges during the use of this integration, p
 
 :::
 
+<!---
 ## Demo video 
 
 Whew! That was a lot of instruction to follow. If you instead prefer to see how it works in a demo environment, here you go 👇
-
+-->
 <p>&nbsp;</p>
 
 <!-- <LiteYoutubeEmbed id="HBLtC3UKpmA" mute={false} /> -->
