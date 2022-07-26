@@ -6,7 +6,7 @@ authors: [pranay]
 
 ---
 
-# How InstaSafe chose SigNoz over Grafana and Elastic APM to scale to power their observability needs
+# How InstaSafe chose SigNoz over Grafana and Elastic APM to power their observability needs
 
 <head>
   <link rel="canonical" href="https://signoz.io/case-study/instasafe/"/>
