@@ -8,6 +8,13 @@ authors: [pranay]
 
 # How InstaSafe chose SigNoz over Grafana and Elastic APM to scale to power their observability needs
 
+<head>
+  <link rel="canonical" href="https://signoz.io/case-study/instasafe/"/>
+  <meta property="og:image" content="https://signoz.io/img/case_study/instasafe-banner.png"/>
+  <meta name ="twitter:image" content="https://signoz.io/img/case_study/instasafe-banner.png"/>
+
+</head>
+
 <div class="avatar">
   <a
     class="avatar__photo-link avatar__photo avatar__photo--lg"
@@ -95,7 +102,7 @@ How much ever resources we had ELK was eating up all of it and was very slow. It
 
 ### *What did you like about SigNoz?*
 
- “I was looking for common platforms and exploring some upcoming open source tracing products. Then I found out SigNoz.I thought to give it a try. I think I spent around maybe 20-30 minutes to apply and everything was up. End to end. It's not just the server side, including the endpoint et al. 
+ “I was looking for common platforms and exploring some upcoming open source tracing products. Then I found out SigNoz.I thought to give it a try. I think I spent around maybe 20-30 minutes to apply and everything was up. End to end. It's not just the server side metrics, but including the endpoint latencies, et al. 
 So I was able to run a script and then configure everything.”
 
 ”This was the turning point for me to look at the SigNoz. What I liked was that you have both metrics and traces and logs in the roadmap potential one. And second, simplicity and easier to maintain for a team like ours.”
@@ -105,3 +112,9 @@ So I was able to run a script and then configure everything.”
 “I think one mistake, which I have done in that past is - that when we look at a platform we want to use all its feature rather than thinking what problem is it solving for us. If we start collecting data for something which we don’t need now, but may be in the future - it might just add more load to the system, without giving us any benefit today - and may lead to bottlenecks.” 
 
 So, I would suggest to understand what data do you need today - and only send that data to the platform.
+
+----
+
+Check out our GitHub repo to get started with your observability journey
+
+[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
