@@ -6,7 +6,7 @@ sidebar_label: Upgrade to 0.10
 
 # Upgrade to 0.10 from earlier versions
 
-v0.10 is a breaking release which requires data migration, if you are upgrading from an older version then you have to run the data migration scripts to be able to see past data.
+v0.10 is a breaking release which requires data migration for errors and exceptions section, if you are upgrading from an older version then you have to run the data migration scripts to be able to see past errors and exceptions data.
 
 ## First upgrade to 0.10
 
@@ -120,6 +120,13 @@ In case of failure and have to run again, make sure to cleanup the pod before ru
 kubectl -n platform delete pod signoz-migrate
 ```
 
+## In case of failure
+
+1. Note the `ServiceName: xxxxx` and `TimeNano: xxxxx` in the logs of the migration script
+2. Check the recommneded batch size section at the end of this page and use a runtime flag if needed
+3. Re-run migration command using flags `service` and `timeNano` and `batchSize` with values from above as mentioned in the `CLI Flags` section below
+4. Reach out to us at [slack](https://join.slack.com/t/signoz-community/shared_invite/zt-lrjknbbp-J_mI13rlw8pGF4EWBnorJA)
+
 ## CLI Flags
 
 There are some custom flags which can be enabled based on different usecases.
@@ -134,3 +141,25 @@ Flags:
 - `-dropOldTable` : If it is set to true then the old tables will be dropped after data migration is successful `default=true`
 - `-service` : If you want to restart the migration starting with the service after it has failed specify the service name with -service. `default=""`
 - `-timeNano` : Timestamp in nano after which the migration needs to be restarted. `default=""`
+- `-batchSize` : Batch size of the reading/writing to clickhouse as part of migration. `default="70000"`
+
+:::info
+**Recommended batch size:** Larger batch size leads to faster migration. But large batch size requires more memory. On average 1 row takes around 1.5 KBytes uncompressed data. So 70,000 rows uses around ~105 MBytes of data storage. So if you are migrating large data then you should use a larger batch size based on available memory on clickhouse and migration pods.
+Average row size varies for each system, so you should check the average row size of your system and use a proper batch size.
+To get the average row size of your table, you can use the following command after [connecting to clickhouse](https://signoz.io/docs/operate/clickhouse/connect-to-clickhouse/):
+
+``` sql
+SELECT
+    database,
+    table,
+    formatReadableSize(sum(data_uncompressed_bytes) AS usize) AS uncompressed, 
+    sum(rows) AS total_rows,
+    formatReadableSize(usize/sum(rows)) AS avg_rows_size
+FROM system.parts
+WHERE (active = 1) AND (database LIKE 'signoz_traces') AND (table LIKE 'signoz_error_index')
+GROUP BY
+    database,
+    table;
+```
+
+:::
