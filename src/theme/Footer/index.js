@@ -44,10 +44,10 @@ function NewsletterSignup() {
 
   const onSubscribe = () => {
     if (email.length < 4) {
-      setEmail("Please add an correct email");
+      setEmail("Please enter correct email");
     } else {
       fetch(
-        `https://api.telegram.org/bot1641579317:AAGHqzQKOT9R3Wcxx7ZgHZcI0Vi6CzjmncY/sendMessage?chat_id=521831111&text=Email subscription - ${email}`
+        `https://hook.integromat.com/cyoxzygiy8klhr1fxe4r5x58mlkxi1vu?email=${email}`
       )
         .then(() => {
           setEmail("Subscribed successfully.");
