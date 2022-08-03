@@ -14,7 +14,7 @@ function pricingTest() {
         <p style={{textAlign: "center"}}> Our aim is to make SigNoz accessible to everyone. Read our philosophy on pricing <a target="_blank" href="https://signoz.notion.site/Our-Thoughts-on-Pricing-73f5e6939c1f42be905fe937b4107dad">here</a></p>
 
         <div className={"row"}>
-            <div className={"col col--4 margin-vert--md col--offset-2"}>
+            <div className={"col col--4 margin-vert--md"}>
                 <div class="card">
                     <div class="card__header">
                         <h3 style={{marginBottom:'0'}}>Community</h3>
@@ -44,8 +44,32 @@ function pricingTest() {
             <div className={"col col--4 margin-vert--md"}>
                 <div class="card">
                     <div class="card__header">
-                        <h3 style={{marginBottom:'0'}}>Enterprise</h3>
-                        <p style={{fontSize:'medium'}}>Write to <a href="mailto:hello@signoz.io">hello@signoz.io</a> for early access</p>
+                        <h3 style={{marginBottom:'0'}}>SigNoz Cloud</h3>
+                        <p style={{fontSize:'medium'}}>Starts from USD 200/month</p>
+                    </div>
+                    <div class="card__body">
+                        <p>
+
+                            <li> Hosted and Managed by SigNoz </li>
+                            <li> Single tenant - We host a separate instance for you</li>
+                            <li> Easily shift to self hosted if needed</li>
+                            <li> Slack Support for initial setup </li>
+                            <li> Usage based pricing based on data you send us</li>
+
+                        
+
+                        </p>
+                    </div>
+                    <div class="card__footer">
+                    <a class="button button--primary" href="https://forms.gle/yYSkntXRRPU3MHRL7">Reach out to us</a>
+                    </div>
+                </div>
+            </div>
+            <div className={"col col--4 margin-vert--md"}>
+                <div class="card">
+                    <div class="card__header">
+                        <h3 style={{marginBottom:'0'}}>Enterprise Self Hosted</h3>
+                        <p style={{fontSize:'medium'}}>Coming soon. Open for Early access</p>
                     </div>
                     <div class="card__body">
                         <p>
@@ -61,21 +85,75 @@ function pricingTest() {
                         </p>
                     </div>
                     <div class="card__footer">
-                    <a class="button button--primary" href="mailto:hello@signoz.io">Write to us</a>
+                    <a class="button button--primary" href="https://forms.gle/KajUYE73Xf1NXx5Z6">Get Early Access</a>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div className={"row"}>
-            <div className={"col col--8 col--offset-2 margin-vert--md"}>
-                Enterprise support can be added onto any plan, email <a href="mailto:support@signoz.io?subject=Enterprise support">support@signoz.io</a> for details.
-            </div>
-        </div>
-
-
       </div>  
       </section>
+
+      {/* Add ons section */}
+      <section>
+            <div className="container" style={{ marginTop: "2rem", marginBottom: "3rem" }} >
+            <h2 style={{textAlign: "center"}} className={"margin-vert--md"} >Need more help?</h2>
+
+              <div class="row">
+                <div className={"col col--4 col--offset-2 margin-vert--md"}>
+                <div class="card">
+                    <div class="card__header">
+                        <h3 style={{marginBottom:'0'}}>Setup Support</h3>
+                        <p style={{fontSize:'medium'}}>200 to 1000 USD based on scale. One time fee</p>
+                    </div>
+                    <div class="card__body">
+                        <p>
+
+
+                            <li> We will help you setup your applications and infrastructure for SigNoz  </li>
+                            <li> Help instrument your application with Opentelemetry libraries</li>
+                            <li> Setup Dashboards and Alerts</li>
+
+
+                        </p>
+                    </div>
+                    <div class="card__footer">
+                    <a class="button button--primary" href="https://forms.gle/qpoi1XndtCyYz9EQ7">Join the waitlist</a>
+                    </div>
+                </div>
+                </div> 
+
+                <div className={"col col--4 margin-vert--md"}>
+                <div class="card">
+                    <div class="card__header">
+                        <h3 style={{marginBottom:'0'}}>Enterprise Support</h3>
+                        <p style={{fontSize:'medium'}}> Longer term support contracts</p>
+                    </div>
+                    <div class="card__body">
+                        <p>
+
+
+                            <li> SLA guarantees</li>
+                            <li> Includes installation support and upgrade assitance</li>
+                            <li> Can be added onto any plan</li>
+                            <li> Dedicated email/slack support</li>
+
+
+                        </p>
+                    </div>
+                    <div class="card__footer">
+                    <a class="button button--primary" href="https://forms.gle/CiUe2cCSSM9eqGmg9">Reach out to us</a>
+                    </div>
+                </div>
+                </div> 
+
+              </div>
+            </div>
+      </section>      
+
+          
+
+
+      {/* FAQ section */}
       <section>
             <div
               className="container"
