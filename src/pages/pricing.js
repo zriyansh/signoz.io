@@ -72,7 +72,7 @@ function pricingTest() {
                         </p>
                     </div>
                     <div class="card__footer">
-                    <a class="button button--primary" href="https://forms.gle/yYSkntXRRPU3MHRL7">Reach out to us</a>
+                    <a class="button button--primary" href="https://forms.gle/yYSkntXRRPU3MHRL7" onClick={handleButtonClick('SigNozCloud')}>Reach out to us</a>
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@ function pricingTest() {
                         </p>
                     </div>
                     <div class="card__footer">
-                    <a class="button button--primary" href="https://forms.gle/KajUYE73Xf1NXx5Z6">Get Early Access</a>
+                    <a class="button button--primary" href="https://forms.gle/KajUYE73Xf1NXx5Z6" onClick={handleButtonClick('SelfHostedEnterprise')}>Get Early Access</a>
                     </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@ function pricingTest() {
                         </p>
                     </div>
                     <div class="card__footer">
-                    <a class="button button--primary" href="https://forms.gle/qpoi1XndtCyYz9EQ7">Join the waitlist</a>
+                    <a class="button button--primary" href="https://forms.gle/qpoi1XndtCyYz9EQ7" onClick={handleButtonClick('SetupSupport')}>Join the waitlist</a>
                     </div>
                 </div>
                 </div> 
@@ -152,7 +152,7 @@ function pricingTest() {
                         </p>
                     </div>
                     <div class="card__footer">
-                    <a class="button button--primary" href="https://forms.gle/CiUe2cCSSM9eqGmg9">Reach out to us</a>
+                    <a class="button button--primary" href="https://forms.gle/CiUe2cCSSM9eqGmg9" onClick={handleButtonClick('SLA Support')}>Reach out to us</a>
                     </div>
                 </div>
                 </div> 
