@@ -5,12 +5,13 @@ import FAQBody from "@site/src/components/FAQPricing";
 import ReactGA from "react-ga";
 
 
-ReactGA.initialize("UA-152867655-1"); 
+// ReactGA.initialize("UA-152867655-1"); 
 
-const handleButtonClick = (action) => {
+const handleClick = (message) => {
+  console.log(message)
   ReactGA.event({
     category: "User",
-    action: action,
+    action: message,
   });
 };
 
@@ -44,7 +45,7 @@ function pricingTest() {
                     <Link
                       className="button button--primary"
                       href={"/docs/"}
-                      onClick={handleButtonClick('CommunityEdition')}
+                      onClick={() => handleClick('CommunityEdition')}
                     >
                      Get Started 
                     </Link>
@@ -72,7 +73,10 @@ function pricingTest() {
                         </p>
                     </div>
                     <div class="card__footer">
-                    <a class="button button--primary" href="https://forms.gle/yYSkntXRRPU3MHRL7" onClick={handleButtonClick('SigNozCloud')}>Reach out to us</a>
+                    <a class="button button--primary"
+                     href="https://forms.gle/yYSkntXRRPU3MHRL7" 
+                     onClick={() => handleClick('SigNozCloud')}
+                     >Reach out to us</a>
                     </div>
                 </div>
             </div>
@@ -96,7 +100,7 @@ function pricingTest() {
                         </p>
                     </div>
                     <div class="card__footer">
-                    <a class="button button--primary" href="https://forms.gle/KajUYE73Xf1NXx5Z6" onClick={handleButtonClick('SelfHostedEnterprise')}>Get Early Access</a>
+                    <a class="button button--primary" href="https://forms.gle/KajUYE73Xf1NXx5Z6" onClick={() => handleClick('SelfHostedEnterprise')}>Get Early Access</a>
                     </div>
                 </div>
             </div>
@@ -128,7 +132,7 @@ function pricingTest() {
                         </p>
                     </div>
                     <div class="card__footer">
-                    <a class="button button--primary" href="https://forms.gle/qpoi1XndtCyYz9EQ7" onClick={handleButtonClick('SetupSupport')}>Join the waitlist</a>
+                    <a class="button button--primary" href="https://forms.gle/qpoi1XndtCyYz9EQ7" onClick={() => handleClick('SetupSupport')}>Join the waitlist</a>
                     </div>
                 </div>
                 </div> 
@@ -152,7 +156,7 @@ function pricingTest() {
                         </p>
                     </div>
                     <div class="card__footer">
-                    <a class="button button--primary" href="https://forms.gle/CiUe2cCSSM9eqGmg9" onClick={handleButtonClick('SLA Support')}>Reach out to us</a>
+                    <a class="button button--primary" href="https://forms.gle/CiUe2cCSSM9eqGmg9" onClick={() => handleClick("SLASupport")}>Reach out to us</a>
                     </div>
                 </div>
                 </div> 
