@@ -8,7 +8,7 @@ import ReactGA from "react-ga";
 // ReactGA.initialize("UA-152867655-1"); 
 
 const handleClick = (message) => {
-  console.log(message)
+  // console.log(message)
   ReactGA.event({
     category: "User",
     action: message,
