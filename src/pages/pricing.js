@@ -2,7 +2,17 @@ import React from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import FAQBody from "@site/src/components/FAQPricing";
+import ReactGA from "react-ga";
 
+
+ReactGA.initialize("UA-152867655-1"); 
+
+const handleButtonClick = (action) => {
+  ReactGA.event({
+    category: "User",
+    action: action,
+  });
+};
 
 function pricingTest() {
   return (
@@ -34,6 +44,7 @@ function pricingTest() {
                     <Link
                       className="button button--primary"
                       href={"/docs/"}
+                      onClick={handleButtonClick('CommunityEdition')}
                     >
                      Get Started 
                     </Link>
