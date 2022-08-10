@@ -8,6 +8,8 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import ReactGA from "react-ga";
 import styles from "./styles.module.css";
 import { PlaySVG } from "../svgs/common";
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+
 
 import FAQBody from "@site/src/components/FAQ";
 
@@ -800,6 +802,68 @@ function Home() {
                           alternative has born in the name of SigNoz. It could
                           offer a serious challenger to Datadog / New Relic and
                           other SaaS solutions.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+
+          <section>
+            <div
+              className="container"
+              style={{ marginTop: "6rem", marginBottom: "2rem" }}
+            >
+              {/* <img src="https://res.cloudinary.com/dcv3epinx/image/upload/v1621017373/social-icons_vyaa6h.svg" alt="Twitter and LinkedIn logos" /> */}
+              <h1 class="text--center ">
+                {" "}
+                SigNoz Office Hour & Demo videos
+              </h1>
+              <p className="hero__subtitle text--center">Check our <a href={"https://www.youtube.com/channel/UC_A6j9YeM33SCDEY7BaPCBw"} target={'_blank'}> youtube channel </a> for more tutorials</p>
+
+              <div class="row">
+                <div class="col col--4">
+                  <div class="card-demo margin--sm">
+                    <div class="card">
+                   
+
+                      <div class="card__body">
+                        <p>
+                        <LiteYoutubeEmbed id="oQFMfEc9JNI" mute={false} />
+
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col col--4">
+                  <div class="card-demo margin--sm">
+                    <div class="card">
+   
+                      <div class="card__body padding--md">
+                        <p>
+                        <LiteYoutubeEmbed id="u2PiWKEdjCw" mute={false} />
+
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col col--4">
+                  <div class="card-demo margin--sm">
+                    <div class="card">
+                      
+
+                      <div class="card__body padding--md">
+                        <p>
+                        <LiteYoutubeEmbed id="CgByZJeuRZY" mute={false} />
+
                         </p>
                       </div>
                     </div>
