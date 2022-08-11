@@ -28,16 +28,16 @@ This query language for logs is a simplified version of SQL. The current state o
 ## Operators 
 * Here is a list of all the operators that are supported
 
-    | operator  | multivalued | examples                                           |
-    |-----------|-------------|----------------------------------------------------|
-    | IN        | yes         |  num in (1,2,3)<br></br> strdata in ('a', 'b', 'c')   |
-    | NIN       | yes         |  num nin (1,2,3)<br></br> strdata nin ('a', 'b', 'c') |
-    | GTE       | no          |  num gte 10<br></br> dict_word gte 'cat'              |
-    | GT        | no          |  num gt 10<br></br> dict_word gt 'cat'                |
-    | LTE       | no          |  num lte 10<br></br> dict_word lte 'cat'              |
-    | LT        | no          |  num lt 10<br></br> dict_word lt 'cat'                |
-    | CONTAINS  | no          |  stream contains 'err'                            |
-    | NCONTAINS | no          |  stream ncontains 'err'                           |
+    | operator  | multivalued | examples                                           | Meaning |
+    |-----------|-------------|----------------------------------------------------|---------|
+    | IN        | yes         |  num in (1,2,3)<br></br> strdata in ('a', 'b', 'c')   | In |
+    | NIN       | yes         |  num nin (1,2,3)<br></br> strdata nin ('a', 'b', 'c') | Not In |
+    | GTE       | no          |  num gte 10<br></br> dict_word gte 'cat'              | Greater than or Equal to |
+    | GT        | no          |  num gt 10<br></br> dict_word gt 'cat'                | Greater than |
+    | LTE       | no          |  num lte 10<br></br> dict_word lte 'cat'              | Less than or Equal to |
+    | LT        | no          |  num lt 10<br></br> dict_word lt 'cat'                | Less than |
+    | CONTAINS  | no          |  stream contains 'err'                            | Contains |
+    | NCONTAINS | no          |  stream ncontains 'err'                           | Doesn't Contain |
     
 ## Fulltext Key
     
