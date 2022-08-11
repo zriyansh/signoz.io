@@ -7,7 +7,9 @@ id: logs_query_builder
 
 This page will walk you through the query language that is used by SigNoz for filtering logs.
 
-This query language for logs is a simplified version of SQL. The current state of the query language is good enough for daily uses. As of now we don't support nesting and parenthesis for explicit ordering due to added complexity. If you have a use case and you are not able to fullfill that with the current features please reach out to us.
+This query language for logs is a simplified version of SQL. The current state of the query language is good enough for daily uses. As of now we don't support nesting and parenthesis for explicit ordering due to added complexity. 
+
+If you have a use case which you are not able to fullfill with the current features please reach out to us on our slack community or Github issues. We plan to improve the query as we go forward while keeping it simple 
 
 ## Types of queries supported by SigNoz:
 *  **Freehand query** <br></br>
@@ -28,7 +30,7 @@ This query language for logs is a simplified version of SQL. The current state o
 ## Operators 
 * Here is a list of all the operators that are supported
 
-    | operator  | multivalued | examples                                           | Meaning |
+    | Operator  | Multivalued | Examples                                           | Meaning |
     |-----------|-------------|----------------------------------------------------|---------|
     | IN        | yes         |  num in (1,2,3)<br></br> strdata in ('a', 'b', 'c')   | In |
     | NIN       | yes         |  num nin (1,2,3)<br></br> strdata nin ('a', 'b', 'c') | Not In |
@@ -78,7 +80,7 @@ Here are a few examples of valid and invalid queries
 
 * **Valid Queries**
 
-    | query                                                      | Description                   |
+    | Query                                                      | Description                   |
     |------------------------------------------------------------|-------------------------------|
     | OPERATION in ('add') AND FULLTEXT contains 'search string' | fulltext with filtering query |
     | my fulltext search                                         | fulltext search query         |
@@ -91,7 +93,7 @@ Here are a few examples of valid and invalid queries
 
 * **Invalid Queries**
 
-    | query                                                             | Description                             |
+    | Query                                                             | Description                             |
     |-------------------------------------------------------------------|-----------------------------------------|
-    | OPERATION in ('bcd') AND 'abcd' FULLTEXT contains 'search string' | AND missing between 'abcd' and FUllTEXT | 
+    | OPERATION in ('bcd') AND 'abcd' FULLTEXT contains 'search string' | AND missing between 'abcd' and FULLTEXT | 
     | OPERATION in ('bcd') AND 'search string'                          | Operator missing before 'search string' | 
