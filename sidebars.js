@@ -56,7 +56,7 @@ module.exports = {
         'instrumentation/nestjs',
         'instrumentation/java',
         'instrumentation/golang',
-        'instrumentation/php',   
+        'instrumentation/php',
         'instrumentation/dotnet',
         'instrumentation/ruby-on-rails',
         'instrumentation/elixir',
@@ -131,6 +131,32 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Logs (WIP)',
+          link: {
+            type: 'doc',
+            id: 'userguide/logs',
+          },
+          items: [
+            'userguide/logs_query_builder',
+            'userguide/logs_fields',
+            {
+              type: 'category',
+              label: 'Collecting Logs',
+              items: [
+                'userguide/collect_docker_logs',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Existing Collectors to SigNoz',
+              items: [
+                'userguide/fluentbit_to_signoz', 'userguide/fluentd_to_signoz', 'userguide/logstash_to_signoz'
+              ]
+            }
+          ]
+        },
+        {
+          type: 'category',
           label: 'Manage Dashboards and Panels',
           link: {
             type: 'doc',
@@ -144,7 +170,7 @@ module.exports = {
         'userguide/alerts-management',
         'userguide/authentication',
         'userguide/retention-period',
-        'userguide/service-map'
+        'userguide/service-map',
       ],
     },
     {
