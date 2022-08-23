@@ -63,7 +63,7 @@ const WhySigNoz = () => {
               }`}
               style={{ marginBottom: 20, marginTop: 0, whiteSpace: "normal" }}
             >
-              Integrated UI for metrics and traces
+              Integrated UI for metrics, traces and logs
             </button>
             <button
               onClick={handlePrivacy}
@@ -137,22 +137,20 @@ const features = [
     ),
   },
   {
-    title: "Forget HUGE SaaS bills",
+    title: "Metrics, Traces and Logs in one app",
     imageUrl: "img/Vector_2.svg",
     description: (
       <>
-        No abrupt pricing changes. No unexpected month-end bills. Get
-        transparent usage data.
+        Easily correlate from metrics, traces and logs with seamless click through from one to other
       </>
     ),
   },
   {
-    title: "Take Control",
+    title: "OpenTelemetry Native",
     imageUrl: "img/Vector_3v5.svg",
     description: (
       <>
-        No need to spend weeks in vendor slack for that one small feature.
-        Extend SigNoz to suit your needs.
+        Take advantage of rich OpenTelemetry ecosystem for instrumentation. 
       </>
     ),
   },
@@ -479,9 +477,9 @@ function Home() {
                 </div> */}
                       <div class="card__body">
                         <p>
-                          No fear of SaaS service getting hacked and your
-                          customer’s data getting compromised. Have complete
-                          control on your data.
+                          SigNoz is based natively on OpenTelemetry, a vendor neutral 
+                          open source standard for instrumentation. No fear of instrumenting 
+                          with vendor SDK and getting locked in.
                         </p>
                       </div>
                       {/* <div class="card__footer">
