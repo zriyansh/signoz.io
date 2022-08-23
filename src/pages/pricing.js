@@ -109,7 +109,7 @@ function pricingTest() {
       </section>
 
       {/* Add ons section */}
-      <section>
+      {/* <section>
             <div className="container" style={{ marginTop: "2rem", marginBottom: "3rem" }} >
             <h2 style={{textAlign: "center"}} className={"margin-vert--md"} >Need more help?</h2>
 
@@ -163,7 +163,7 @@ function pricingTest() {
 
               </div>
             </div>
-      </section>      
+      </section>       */}
 
           
 
