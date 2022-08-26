@@ -31,7 +31,7 @@ SigNoz natively supports OpenTelemetry for collecting logs. OpenTelemetry provid
     
     - **Via File or Stdout Logs**
         
-        Here, the logs of the application are directly collected by the OpeTelemetry receiver using collectors like **filelog receiver** and operators and processors to parse them into the OTEL model.
+        Here, the logs of the application are directly collected by the OpenTelemetry receiver using collectors like **filelog receiver** and operators and processors to parse them into the OTEL model.
         
         ![Untitled](../../static/img/logs/file_stdout.png)
         
