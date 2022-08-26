@@ -5,10 +5,11 @@ description: Integrate S3 cold storage in aws eks with IAM Role.
 ---
 
 ### Overview
-In signoz we can configure retention period of traces and metrics separately and also set the duration after which the data will be moved to cold storage (S3) for both traces and metrics.
+In SigNoz we can configure retention period of traces and metrics separately and also set the duration after which the data will be moved to cold storage (S3) for both traces and metrics.
+
 In AWS eks we can integrate the S3 cold storage in two ways.
-1. **Using AWS access and secret keys.(For this you can refer this doc https://signoz.io/docs/userguide/retention-period/)**
-2. **Using AWS IAM Role.**
+1. Using AWS access and secret keys.(For this you can refer this [doc](https://signoz.io/docs/userguide/retention-period/)
+2. Using AWS IAM Role
 
 To use AWS role to configure S3 cloud storage in signoz we need to add the role arn in the helm **overwrite-values.yaml** and run the helm upgrade.
    ```jsx
