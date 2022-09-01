@@ -50,10 +50,23 @@ module.exports = {
       },
       items: [
         'instrumentation/overview',
-        'instrumentation/python',
-        'instrumentation/fastapi',
-        'instrumentation/nodejs',
-        'instrumentation/nestjs',
+        {
+          type: 'category',
+          label: 'Python',
+          link: {
+            type: 'doc',
+            id: 'instrumentation/python'
+            // title: 'Python',
+            // description: 'Learn how to instrument Python applications with OpenTelemetry',
+            // slug: 'instrumentation/python',
+          },
+          items: [
+            'instrumentation/django',
+            'instrumentation/fastapi',
+            'instrumentation/flask',
+            'instrumentation/falcon']
+        },
+        'instrumentation/javascript',
         'instrumentation/java',
         'instrumentation/golang',
         'instrumentation/php',
@@ -131,7 +144,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Logs (WIP)',
+          label: 'Logs',
           link: {
             type: 'doc',
             id: 'userguide/logs',
@@ -143,10 +156,18 @@ module.exports = {
               type: 'category',
               label: 'Collecting Logs',
               items: [
+                'userguide/collect_kubernetes_pod_logs',
                 'userguide/collect_docker_logs',
                 'userguide/collecting_syslogs',
                 'userguide/collect_logs_from_file',
-                'userguide/collecting_application_logs_otel_sdk'
+                {
+                  type: 'category',
+                  label: 'Collecting Application Logs Using OTEL SDK',
+                  items: [
+                    'userguide/collecting_application_logs_otel_sdk_python',
+                    'userguide/collecting_application_logs_otel_sdk_java'
+                  ]
+                }
               ]
             },
             {
@@ -189,7 +210,8 @@ module.exports = {
         'tutorial/jvm-metrics',
         'tutorial/kubernetes-infra-metrics',
         'tutorial/mongodb-metrics',
-        'tutorial/instrumenting-angular-frontend'
+        'tutorial/instrumenting-angular-frontend',
+        'tutorial/s3-integration-iam-role-eks'
       ],
     },
     {

@@ -1,7 +1,7 @@
 ---
-id: fastapi
-title: FastAPI OpenTelemetry Instrumentation
-description: Instrument your FastAPI application with OpenTelemetry and send data to SigNoz
+id: django
+title: Django OpenTelemetry Instrumentation
+description: Instrument your Django application with OpenTelemetry and send data to SigNoz
 
 ---
 
@@ -10,13 +10,13 @@ import TabItem from "@theme/TabItem";
 import InstrumentationFAQ from '../shared/instrumentation-faq.md'
 
 
-This document contains instructions on how to set up OpenTelemetry instrumentation in your FastAPI applications. OpenTelemetry, also known as OTel for short, is an open source observability framework that can help you generate and collect telemetry data - traces, metrics, and logs from your FastAPI application.
+This document contains instructions on how to set up OpenTelemetry instrumentation in your Django applications. OpenTelemetry, also known as OTel for short, is an open source observability framework that can help you generate and collect telemetry data - traces, metrics, and logs from your Django application.
 
 Once the telemetry data is collected, you can configure an exporter to send the data to SigNoz.
 
 There are three major steps to using OpenTelemetry:
 
-- Instrumenting your FastAPI application with OpenTelemetry
+- Instrumenting your Django application with OpenTelemetry
 - Configuring exporter to send data to SigNoz
 - Validating that configuration to ensure that data is being sent as expected.
 
@@ -27,17 +27,25 @@ There are three major steps to using OpenTelemetry:
 
 <br></br>
 
-Let’s understand how to download, install, and run OpenTelemetry in FastAPI.
+Let’s understand how to download, install, and run OpenTelemetry in Django.
 
 ## Requirements
 
 - Python 3.6 or newer
 
+- for Django, you must define `DJANGO_SETTINGS_MODULE`correctly. If your project is called `mysite`, something like following should work:
+
+```jsx
+export DJANGO_SETTINGS_MODULE=mysite.settings
+```
+
+  Please refer the official [Django docs](https://docs.djangoproject.com/en/1.10/topics/settings/#designating-the-settings) for more details.
+
 ## Traces
 
 You can use OpenTelemetry to send your traces directly to SigNoz. OpenTelemetry provides a handy distro in Python that can help you get started with automatic instrumentation. We recommend using it to get started quickly.
 
-### Steps to auto-instrument FastAPI app for traces
+### Steps to auto-instrument Django app for traces
 
 1. **Create a virtual environment**<br></br>
     
@@ -68,7 +76,7 @@ You can use OpenTelemetry to send your traces directly to SigNoz. OpenTelemetry 
     :::
     
 3. **Add automatic instrumentation**<br></br>
-     The below command inspects the dependencies of your application and installs the instrumentation packages relevant for your FastAPI application.
+     The below command inspects the dependencies of your application and installs the instrumentation packages relevant for your Django application.
     
     ```bash
     opentelemetry-bootstrap --action=install

@@ -53,7 +53,7 @@ OpentelemetryEcto.setup([:your_app_name, :repo])
 
 ## Tutorial 
 
-Here's a [tutorial](https://signoz.io/blog/opentelemetry-elixir/) with step by step guide on how to install SigNoz and start monitoring a sample Rust app. 
+Here's a [tutorial](https://signoz.io/blog/opentelemetry-elixir/) with step by step guide on how to install SigNoz and start monitoring a sample Elixir app. 
 
 Thanks to our community member [Ricardo](https://github.com/ricardoccpaiva) for creating this guide.
 

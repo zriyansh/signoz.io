@@ -1,7 +1,7 @@
 ---
-id: fastapi
-title: FastAPI OpenTelemetry Instrumentation
-description: Instrument your FastAPI application with OpenTelemetry and send data to SigNoz
+id: flask
+title: Flask OpenTelemetry Instrumentation
+description: Instrument your Flask application with OpenTelemetry and send data to SigNoz
 
 ---
 
@@ -10,13 +10,13 @@ import TabItem from "@theme/TabItem";
 import InstrumentationFAQ from '../shared/instrumentation-faq.md'
 
 
-This document contains instructions on how to set up OpenTelemetry instrumentation in your FastAPI applications. OpenTelemetry, also known as OTel for short, is an open source observability framework that can help you generate and collect telemetry data - traces, metrics, and logs from your FastAPI application.
+This document contains instructions on how to set up OpenTelemetry instrumentation in your Flask applications. OpenTelemetry, also known as OTel for short, is an open source observability framework that can help you generate and collect telemetry data - traces, metrics, and logs from your Flask application.
 
 Once the telemetry data is collected, you can configure an exporter to send the data to SigNoz.
 
 There are three major steps to using OpenTelemetry:
 
-- Instrumenting your FastAPI application with OpenTelemetry
+- Instrumenting your Flask application with OpenTelemetry
 - Configuring exporter to send data to SigNoz
 - Validating that configuration to ensure that data is being sent as expected.
 
@@ -27,7 +27,7 @@ There are three major steps to using OpenTelemetry:
 
 <br></br>
 
-Let’s understand how to download, install, and run OpenTelemetry in FastAPI.
+Let’s understand how to download, install, and run OpenTelemetry in Flask.
 
 ## Requirements
 
@@ -37,7 +37,7 @@ Let’s understand how to download, install, and run OpenTelemetry in FastAPI.
 
 You can use OpenTelemetry to send your traces directly to SigNoz. OpenTelemetry provides a handy distro in Python that can help you get started with automatic instrumentation. We recommend using it to get started quickly.
 
-### Steps to auto-instrument FastAPI app for traces
+### Steps to auto-instrument Flask app for traces
 
 1. **Create a virtual environment**<br></br>
     
@@ -66,9 +66,15 @@ You can use OpenTelemetry to send your traces directly to SigNoz. OpenTelemetry 
     
     We recommend using the http exporter for sending data to SigNoz.
     :::
+
+    If it hangs while installing grpcio during pip3 install opentelemetry-exporter-otlp then follow below steps as suggested in this [stackoverflow link](https://stackoverflow.com/questions/56357794/unable-to-install-grpcio-using-pip-install-grpcio/62500932#62500932).
+
+    - pip3 install --upgrade pip
+    - python3 -m pip install --upgrade setuptools
+    - pip3 install --no-cache-dir --force-reinstall -Iv grpcio
     
 3. **Add automatic instrumentation**<br></br>
-     The below command inspects the dependencies of your application and installs the instrumentation packages relevant for your FastAPI application.
+     The below command inspects the dependencies of your application and installs the instrumentation packages relevant for your Flask application.
     
     ```bash
     opentelemetry-bootstrap --action=install
@@ -84,7 +90,7 @@ You can use OpenTelemetry to send your traces directly to SigNoz. OpenTelemetry 
      
      For running your application, there are a few things that you need to keep in mind. Below are the notes:
     :::note
-     Don’t run app in reloader/hot-reload mode as it breaks instrumentation. For example, if you use `export FLASK_ENV=development`, it enables the reloader mode which breaks OpenTelemetry isntrumentation.
+     Don’t run app in reloader/hot-reload mode as it breaks instrumentation. For example, if you use `export Flask_ENV=development`, it enables the reloader mode which breaks OpenTelemetry isntrumentation.
     :::
 
     
@@ -98,7 +104,7 @@ You can use OpenTelemetry to send your traces directly to SigNoz. OpenTelemetry 
 
      *<service_name>* is the name of service you want
 
-     *<your_run_command>* can be `python3 app.py` or `python manage.py runserver --noreload`
+     *<your_run_command>* can be `python3 app.py` or `flask run`
 
      `IP of SigNoz backend` is the IP of the machine where you installed SigNoz. If you have installed SigNoz on `localhost`, the endpoint will be `http://localhost:4318`.
      
