@@ -406,7 +406,7 @@ function Home() {
                           id={"demo-video-player"}
                         >
                           <source
-                            src="https://demo-video-1.s3.us-east-2.amazonaws.com/demo-mar10.mp4"
+                            src="https://demo-video-1.s3.us-east-2.amazonaws.com/SigNoz-Demo-Sept2-2022.mp4"
                             type="video/mp4"
                           />
                           Your browser does not support the video tag.
@@ -447,7 +447,7 @@ function Home() {
             >
               {/* <p className="hero__title ">Single pane for complete metrics and traces, no need to shift to different systems</p> */}
               <h1 class="text--center">
-                Single pane for complete metrics and traces, no need to shift to
+                Single pane for metrics, traces and logs. No need to shift to
                 different systems{" "}
               </h1>
               <p className="hero__subtitle text--center">
