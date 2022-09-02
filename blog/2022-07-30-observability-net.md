@@ -41,16 +41,49 @@ They just care about their problem being solved. And FAST.
 
 ### Solving customer problems
 
-Like any other tool, an observability tool also solves a problem and one of the main problems it solves is this: if something is going wrong in my applications, can I find what it is and then fix it fast?
+Like any other tool, an observability tool also solves a problem and one of the main problems it solves is this: if something is going wrong in my applications, can I find what it is and then fix it fast.
 
 In my experience, finding what exactly is wrong is the bulk of the problem.
 
-Is it a DB that is getting slow because of a particular type of query or your machine CPU usage is peaking, causing the service to take a longer time to respond, or is it a third-party API that suddenly decided to die down on you?
+Is it a DB that is getting slow because of a particular type of query or your machine CPU usage is peaking, causing the service to take a longer time to respond. Or is it a third-party API that suddenly decided to die down on you?
 
 Modern engineering systems are complex and involve many moving components. Finding where things are going wrong is non-trivial.
 And in our view, solving such complex problems need correlation across different signals.
 
 Okay, so you find in your trace graph that an operation is taking more time. What could be the reason for that - is the VM's CPU getting saturated? Or are there some logs from that service that show that there was a mutex locking problem? You want to see everything in context.
+
+### False dichotomy of the three pillars
+
+Talking about metrics, traces and logs as three pillars creates a flase dichotomy in our mind that they are independent things. Though that is entirely not true.
+
+- You can create application metrics like latency, error rates, etc. by processing trace span data. For example, SigNoz uses `spansmetric` processor to create application metrics chart from trace data.
+
+<br />
+
+
+- You can add logs and events in traces, which can help you get more context on the specific spans.
+
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2022/08/logs_traces.webp" alt="Logs in Traces"/>
+    <figcaption><i>Events can be added in traces to give more context</i></figcaption>
+</figure>
+
+<br />
+
+- Logs can be aggregated to create metrics. e.g. using logs data you can create chart of requests which gave `STATUS_CODE=400` in the last 1 hr and show it as a graph. 
+
+<br />
+
+
+- Trace data can be aggregated to plot granular graphs on count of specific attributes in a time range. e.g. if you have an attribute of `customer_type` in your span, you can plot graphs of request made by premium customers by just filtering on `customer_type=premium` and showing that over a given time range. This would be good example of generating metrics from trace data.
+
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2022/08/trace_aggregation.webp" alt="Trace aggregation"/>
+    <figcaption><i>Creating metrics from traces: Trace aggregates showing p90 latency group by `operation name`</i></figcaption>
+</figure>
+
+<br />
+
 
 ### A better model for observability
 
