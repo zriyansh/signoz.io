@@ -19,15 +19,18 @@ import { LiteYoutubeEmbed } from "react-lite-yt-embed";
   <link rel="canonical" href="https://signoz.io/blog/podcast-genesis-of-signoz/"/>
 </head>
 
-In this blog, we are excited to announce **Pranay Prateek**, the co-founder and creator of **SigNoz**, was invited as a guest speaker with [**Jonah Kowall**](https://twitter.com/jkowall), on this episode of **OpenObservability Talks**.
+<a href="https://twitter.com/pranay01" rel="nofollow">Pranay</a>, one of the the co-founders at <b>SigNoz</b> , was recently invited as a guest speaker by <a href="https://twitter.com/jkowall" rel="nofollow">Jonah Kowall</a>, CTO at Logz.io on his <b>OpenObservability Podcast</b>.
 
-We are building an interesting and exciting Open-Source observability platform. The goal is a unified interface and data storage system which is scalable and manageable much more easily than today’s disjointed open-source tools. 
+<br />
+<br />
 
-SigNoz has a goal of unifying tracing, metrics and logging in a single platform and interface. We discussed the evolution of this unique project from its creation until today, along with the adoption of the technology and contribution from the community. 
+He discusses about the mission behind SigNoz of unifying tracing, metrics and logging in a single platform and interface. Evolution of SigNoz from its inception until today, along with the adoption of the technology and contribution from the community. 
 
-We discussed the data architecture and our move from Druid towards ClickHouse, which is always a fascinating topic. Finally, we elaborated on the future of SigNoz and where things are going with the project. 
+He discussed SigNoz's data architecture, move from Druid towards ClickHouse and upcoming roadmap of the project and how people can contribute.
 
-**Join me as I speak with Jonah Kowall, on this episode of OpenObservability Talks.**
+Below is the recording and an edited transcript of the conversation.
+
+
 
 <LiteYoutubeEmbed id="Vhvxv9B8HDE" mute={false} />
 
@@ -37,9 +40,9 @@ We discussed the data architecture and our move from Druid towards ClickHouse, w
 
 ***Jonah:***
 
-Hey everyone, welcome to another open observability talks podcast my name is Jonah Kowall, the CTO at [Logz.io](http://logz.io/), and I'm excited to chat with Pranay Prateek, the Co-founder, and creator of [SigNoz.io](https://signoz.io/)
+Hey everyone, welcome to another open observability talks podcast my name is Jonah Kowall, the CTO at *Logz.io*, and I'm excited to chat with Pranay Prateek, the Co-founder, and creator of [SigNoz.io](https://signoz.io/)
 
-I want to thank our sponsor, [Logz.io](https://logz.io/), for putting on this podcast and I'm looking forward to the discussion today.
+I want to thank our sponsor, *Logz.io*, for putting on this podcast and I'm looking forward to the discussion today.
 
 Something we all hold near and dear to our hearts is the idea of open-source observability!
 
@@ -561,7 +564,7 @@ So, before we cover a couple of news items I just wanted to thank you for joinin
 You can stick around I'm just gonna talk about a couple of news items going on around observability but I did want to thank you for joining us and best of luck on the project. 
 
 ***Pranay:***
-Thank you for like inviting me and I think I learned a lot from [logz.io](http://logz.io/) io and should chat more about what we're doing there.
+Thank you for like inviting me and I think I learned a lot from *Logz.io* io and should chat more about what we're doing there.
 
 ***Jonah:***
 Yeah, I'm sure we'll be in touch. 
@@ -580,13 +583,13 @@ So you can see Pranay at KubeCon. Do you have a booth this time or are you just 
 No, I'm just showing up, you can ping me on my slack and we can chat.
 
 ***Jonah:***
-Yes slack or LinkedIn Pranay’s always around and there are lots of great discussions going on at KubeCon and around KubeCon not just for sponsors obviously, I'll be there, [logz.io](http://logz.io/) will be there and there'll be lots of other great open sources companies at the event. 
+Yes slack or LinkedIn Pranay’s always around and there are lots of great discussions going on at KubeCon and around KubeCon not just for sponsors obviously, I'll be there, *Logz.io* will be there and there'll be lots of other great open sources companies at the event. 
 
 So super looking forward to that I did also want to mention in November, for those who are unaware there's another open source conference in Germany called OSMC, which I've never been to but I'm going to be speaking there as well and so will dalton, who's the other co-host of this podcast so definitely check out this conference.
 
 I haven't been to it but I've heard good things I'm throwing it in chat. 
 
-[osmc.de](http://osmc.de/), it's a german open source conference, looks pretty good. It's rather small especially compared to KubeCon and I will also be in Chicago next week for the AWS summit, so I'm always happy to meet folks there in terms of project news there's been a couple of new things: a new release of Prometheus that just came out last week, and it's got some great new capabilities.
+<a href="https://osmc.de" rel="nofollow">osmc.de</a>, it's a german open source conference, looks pretty good. It's rather small especially compared to KubeCon and I will also be in Chicago next week for the AWS summit, so I'm always happy to meet folks there in terms of project news there's been a couple of new things: a new release of Prometheus that just came out last week, and it's got some great new capabilities.
 
 They're improving the web UI a little bit that lets you do things in the management console. 
 
