@@ -22,7 +22,7 @@ Wherever you read about observability, you are told that there are "3 pillars" o
 An image that is generally projected is something like this.
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2022/07/3-pillars.png" alt="3 Pillars of observabiltiy"/>
+    <img src="/img/blog/2022/09/3-pillars-new.webp" alt="3 Pillars of observabiltiy"/>
     <figcaption><i>Today observability is generally projected as having 3 siloed pillars. But is this accurate?</i></figcaption>
 </figure>
 
@@ -129,7 +129,7 @@ Currently, people think of observability systems as a dashboard that they can us
 Think Siri rather than dashboards. At least, this is what we at SigNoz are building towards.
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2022/07/dashboard-or-alexa.png" alt="Dashboard or Siri"/>
+    <img src="/img/blog/2022/09/unknown-questions.webp" alt="Dashboard or Siri"/>
     <figcaption><i>Dashboards or Siri? Observability systems can be much more powerful than just a bunch of dials.</i></figcaption>
 </figure>
 
