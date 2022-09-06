@@ -28,7 +28,7 @@ SigNoz uses industry proven Kafka and Druid to power highly scalable data ingest
 - Query Service
 - Frontend -->
 
-**OpenTelemetry Collector** can receive data in multiple formats. It currently has receivers for below formats
+**OpenTelemetry Collector** can receive data in multiple formats. Here are some of the commonly used receivers:
 
 - Jaeger Receiver
 - Kafka Receiver
