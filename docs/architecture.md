@@ -7,10 +7,11 @@ title: Technical Architecture
 
 ### Architecture Components
 
-- OpenTelemetry Collector
+- SigNoz OpenTelemetry Collector
 - ClickHouse
 - Query Service
 - Frontend
+- Alert Manager
 
 <!-- ## Kafka + Druid Setup Architecture
 
@@ -34,6 +35,8 @@ SigNoz uses industry proven Kafka and Druid to power highly scalable data ingest
 - OpenCensus Receiver
 - OTLP Receiver
 - Zipkin Receiver
+
+One can send data from their applications directly to SigNoz Otel collector or external otel collectors can be used for collecting telemetry data & sending to SigNoz otel collector. These external otel collectors are then working effectively as an agent to collect data first and then send to SigNoz Otel collector. 
 
 <!-- OpenTelemetry Collector then exports those traces to a kafka topic, `otlp_spans`.
 
@@ -60,3 +63,5 @@ The flattened data is then ingested to **Druid** _which is a real-time analytics
 **Query Service** is the interface between Frontend and ClickHouse. It provides APIs to be consumed by frontend application and queries ClickHouse to fetch data and processes data before responding back to the frontend.
 
 **Frontend** is the UI, built in ReactJS and Typescript and provides advanced trace/span filtering capabilities and plot metrics to provide service overviews.
+
+**Alert Manager** evaluates different alert rules set by the users and triggers an alert if a threshold is crossed.
