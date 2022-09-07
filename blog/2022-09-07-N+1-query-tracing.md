@@ -88,7 +88,7 @@ You've removed the "N" part from the page's query plan and are no longer paying 
 
 Well, a simple way is to have good code review practices and good engineers in your team who can catch such issues in the review phase itself. 
 
-But sometimes, these patterns are embedded so deep into calling patterns that it is not apparent when the code is being reviewed. 
+But sometimes, developers use ORM to do DB queries which abstracts things to provide a common interface for multiple databases. Such unoptimised queries can be due to bad ORM implementations
 
 And let’s face it, many teams don’t spend too much time in code reviews to detect performance anti-patterns that are not apparent in the first go.
 
@@ -135,7 +135,7 @@ Well, not really. What is essential, as you can see, is to get the structure of 
 
 Logs may give you details about each DB call, but they don’t have the exact hierarchical call sequence. This is one of the most remarkable things about distributed tracing and why you may  want to take a look at it.
 
-To share an example, one of users of SigNoz recently shared with us that they could detect such N+1 query issues in their code which led to reducing execution time for specific APIs from 180 s to 2s. 
+To share an example, one of users of SigNoz recently shared with us that they could detect such N+1 query issues in their code which led to reducing execution time for specific APIs from 180s to 2s. 
 
 A 90x improvement in performance 🤯
 
