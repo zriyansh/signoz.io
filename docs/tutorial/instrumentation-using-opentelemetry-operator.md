@@ -14,22 +14,23 @@ import OtelOperatorCleanUp from '../shared/otel-operator-cleanup.md'
 In this tutorial, we would like to introduce [OpenTelemetry Operator][1] which makes
 it very easy to set up Collector and instrument workloads deployed on Kubernetes.
 
-In general, OpenTelemetry deployments and instrumentations is known to be a tedious
-process. An application can be instrumented either automatically or manually.
+Using **OpenTelemetry Operator** will make instrumentation much easier.
+There are various ways to deploy OpenTelemetry Collector.
+An application can be instrumented either automatically or manually.
 
-[OpenTelemetry Operator][1] significantly helps a lot in managing OpenTelemetry
-collectors. There are three modes to deploy OpenTelemetry Collector: Deployment,
-DaemonSet and Sidecar.
+**OpenTelemetry Operator** helps a lot in managing OpenTelemetry
+collectors and auto-instrumentation.
 
 ## Prerequisite
 
 - You must have a K8s cluster up and running
 - You must have `kubectl` access to your cluster
-- Make sure [SigNoz is up and running][2]
+- Make sure that [SigNoz cluster is up and running][2]
 - Make sure to install [`cert-manager`][3]:
 ```bash
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.9.1/cert-manager.yaml
 ```
+- Suggestion: Make sure [Golang](https://go.dev/doc/install) is installed for [tracegen][4]
 
 ## Set up OpenTelemetry Operator
 
@@ -84,22 +85,24 @@ The above simplest `otelcol` example receives OTLP traces data using gRPC and HT
 batches the data and logs it to the console.
 :::
 
-To test sending traces using [tracegen][4] follow the steps below:
+Follow the steps below to set up [tracegen][4] and send sample traces to
+the sample collector:
 
-- Install `tracegen` binary
+- To install `tracegen` binary:
   ```bash
   go install github.com/open-telemetry/opentelemetry-collector-contrib/tracegen@v0.55.0
   ```
-- To forward gRPC port of the OTLP service
+- To forward gRPC port of the OTLP service:
   ```bash
   kubectl port-forward service/simplest-collector 4317
   ```
-- (In another terminal) Send trace data using `tracegen`
+- In another terminal, execute the command below to send trace data
+using `tracegen`:
   ```bash
   tracegen -traces 1 -otlp-endpoint localhost:4317 -otlp-insecure
   ```
 
-To see logs of simplest collector:
+To view logs of simplest collector:
 
 ```bash
 kubectl logs -l app.kubernetes.io/name=simplest-collector
@@ -119,11 +122,11 @@ kubectl delete otelcol/simplest
 
 ### Across the Nodes - DaemonSet
 
-Similarly, OpenTelemetry Collector instance can be deployment with `DaemonSet` mode.
-`DaemonSet` ensures that all (or some) nodes run copy of the collector pod.
+Similarly, OpenTelemetry Collector instance can be deployed with `DaemonSet` mode,
+which ensures that all (or some) nodes run copy of the collector pod.
 
-In case of `DaemonSet`, only `spec.mode` property would be updated to `daemonset`
-from the previous example of `otelcol` YAML and config can either be kept as it
+In case of `DaemonSet`, only `Spec.Mode` property would be updated to `daemonset`.
+While config from the previous example of `otelcol` YAML can either be kept as it
 is or updated as per the need.
 
 :::info
@@ -131,13 +134,15 @@ is or updated as per the need.
 and node monitoring daemons.
 :::
 
-### Sidecar Injection 
+### Sidecar Injection
 
-A sidecar with the OpenTelemetry Collector can be injected into pod-based workloads
-by setting the pod annotation `sidecar.opentelemetry.io/inject` to either `"true"`,
-or to the name of a concrete `OpenTelemetryCollector` from the same namespace.
+A sidecar with the OpenTelemetry Collector can be injected into pod-based
+workloads by setting the pod annotation `sidecar.opentelemetry.io/inject`
+to either `"true"`, or to the name of a concrete `OpenTelemetryCollector`
+from the same namespace.
 
-Here is an example to create a `Sidecar` with `jaeger` as input and logs output to console:
+Here is an example to create a `Sidecar` with `jaeger` as input and logs
+output to console:
 
 ```bash
 kubectl apply -f - <<EOF
@@ -164,8 +169,8 @@ spec:
 EOF
 ```
 
-Next, let us create a `Pod` using `jaeger` example image and set `sidecar.opentelemetry.io/inject`
-annotations to `"true"`:
+Next, let us create a `Pod` using `jaeger` example image and set
+`sidecar.opentelemetry.io/inject` annotations to `"true"`:
 
 ```bash
 kubectl apply -f - <<EOF
@@ -185,26 +190,7 @@ spec:
 EOF
 ```
 
----
-To obtain name of the Pet Clinic pod:
-
-```bash
-export POD_NAME=$(kubectl get pod -l app=spring-petclinic -o jsonpath="{.items[0].metadata.name}")
-```
-
-To forward port of the Pet Clinic pod:
-
-```bash
-kubectl port-forward ${POD_NAME} 8080:8080
-```
-
-Now, let's use Pet Clinic UI for a while in browser to generate telemetry
-data: [http://localhost:8080](http://localhost:8080).
-
-![Spring Pet Clinic metrics page](/img/docs/otel-operator-spring-pet-clinic.png)
----
-
-To forward port of the `myapp` pod:
+To forward port `8080` of the `myapp` pod:
 
 ```bash
 kubectl port-forward pod/myapp 8080:8080
@@ -230,9 +216,9 @@ Output should look something like this:
 2022-09-05T17:07:37.322Z	INFO	loggingexporter/logging_exporter.go:43	TracesExporter	{"#spans": 9}
 ```
 
-At last make sure to clean up `Sidecar` and `myapp` pod:
+At last, make sure to clean up: `Sidecar` and `myapp` pod:
 
-To remove sidecar otelcol named `my-sidecar`:
+To remove `Sidecar` collector named `my-sidecar`:
 
 ```bash
 kubectl delete otelcol/my-sidecar
@@ -265,18 +251,19 @@ The possible values for the annotation can be:
  - `"false"` - do not inject.
 
 :::info
-Support for `DotNet` will be bundled in near future after [signoz-otel-collector][5]
-is synced with OpenTelemetry Collector `v0.57.2` or above.
+Support for `DotNet` is out, however it can be used only after
+[signoz-otel-collector][5] is synced with OpenTelemetry Collector
+`v0.57.2` or above in near future.
 :::
 
 Before using auto-instrumentation, we would need to configure an `Instrumentation`
 resource with the configuration for the SDK and instrumentation.
 
-Instrumentation` consists of following properties:
+`Instrumentation` consists of following properties:
 
  - `exporter.endpoint` - (optional) The address where telemetry data is to be sent
  in OTLP format.
- 
+
  - `propagators` - Enables all data sources to share an underlying context mechanism
  for storing state and accessing data across the lifespan of a transaction.
 
@@ -290,8 +277,8 @@ Instrumentation` consists of following properties:
 
 ### Using Sidecar
 
-To create a `Sidecar` which has `OTLP` receivers as input while sending traces
-data to SigNoz Collector as well logs to console:
+To create a `Sidecar` which has `OTLP` receivers as input and as output
+send telemetry data to SigNoz Collector as well logs to console:
 
 ```bash {19}
 kubectl apply -f - <<EOF
@@ -356,13 +343,13 @@ EOF
 
 Now, we would have to set the pod annotations `instrumentation.opentelemetry.io/inject-java`
 and `sidecar.opentelemetry.io/inject` to `"true"`, for setting up auto-instrumentation of
-workload deployed in K8s. It would sends OTLP data to `Sidecar` which would in turn relay
+workload deployed in the K8s. It would sends OTLP data to `Sidecar` which would in turn relay
 it to SigNoz collector.
 
 Here is an example of pet clinic with auto-instrumentation:
 
 ```bash {16-17}
-kubectl apply -f - <<EOF                                    
+kubectl apply -f - <<EOF
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -392,7 +379,7 @@ EOF
 
 <OtelOperatorCleanUp/>
 
-To remove `Sidecar` collector:
+To remove `Sidecar` instance of `otelcol`:
 
 ```bash
 kubectl delete otelcol/my-sidecar
@@ -429,13 +416,13 @@ EOF
 
 <OtelOperatorOTLPEndpoint/>
 
-Now, we would just have set the pod annotation `instrumentation.opentelemetry.io/inject-java`
+We would just have set the pod annotation `instrumentation.opentelemetry.io/inject-java`
 to `"true"` for our Java Springboot workload deployed in K8s.
 
 Here is an example of pet clinic with auto-instrumentation:
 
 ```bash {16}
-kubectl apply -f - <<EOF                                    
+kubectl apply -f - <<EOF
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -467,8 +454,8 @@ EOF
 ---
 
 [1]: https://github.com/open-telemetry/opentelemetry-operator
-[2]: https://cert-manager.io/docs/
-[3]: https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/tracegen#section-readme
-[4]: /docs/install/
+[2]: /docs/install
+[3]: https://cert-manager.io/docs/
+[4]: https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/tracegen#section-readme
 [5]: https://github.com/SigNoz/signoz-otel-collector
 [6]: http://localhost:8080
