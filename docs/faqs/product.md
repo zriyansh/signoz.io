@@ -1,13 +1,15 @@
 ---
-id: faq
-title: Frequently Asked Questions
+id: product
+title: Product - FAQs
+description: Frequently Asked Questions About SigNoz
+
 ---
 
 ### I am looking for an application monitoring tool, is SigNoz an APM?
 
 SigNoz is a full-stack open source APM tool. It provides logs, metrics, and traces under a single dashboard. You can correlate these signals to debug performance issues quickly. SigNoz uses OpenTelemetry for instrumentation. OpenTelemetry is quietly becoming the world standard for instrumenting cloud-native applications.
 
-SigNoz is an [open source alternative](https://signoz.io/blog/open-source-datadog-alternative/) to traditional APMs like DataDog.
+SigNoz is an [open source alternative](https://signoz.io/blog/open-source-datadog-alternative/) to traditional SaaS APMs like DataDog.
 
 ### How is SigNoz different from Prometheus?
 
