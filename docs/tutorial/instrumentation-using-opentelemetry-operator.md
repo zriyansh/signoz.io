@@ -11,15 +11,10 @@ import OtelOperatorCleanUp from '../shared/otel-operator-cleanup.md'
 
 ## Overview
 
-In this tutorial, we would like to introduce [OpenTelemetry Operator][1] which makes
-it very easy to set up Collector and instrument workloads deployed on Kubernetes.
+In this tutorial, we would introduce [OpenTelemetry Operator][1] which makes
+it very easy to set up opentelemetry collector and instrument workloads deployed on Kubernetes.
 
-Using **OpenTelemetry Operator** will make instrumentation much easier.
-There are various ways to deploy OpenTelemetry Collector.
-An application can be instrumented either automatically or manually.
-
-**OpenTelemetry Operator** helps a lot in managing OpenTelemetry
-collectors and auto-instrumentation.
+A Kubernetes operator is a method of packaging, deploying, and managing a Kubernetes application. OpenTelemetry Operator helps a lot in managing OpenTelemetry collectors and enables auto-instrumentation.
 
 ## Prerequisite
 
@@ -44,6 +39,11 @@ Once the `opentelemetry-operator` deployment is ready, we can proceed with creat
 OpenTelemetry Collector (`otelcol`) instance and autoinstrumentation.
 
 ## Deployment Modes
+
+There are 3 deployment modes available for OpenTelemetry Operator
+- Daemonset
+- Sidecar
+- Deployment ( default mode)
 
 The `CustomResource` of the `OpenTelemetryCollector` kind exposes a property named
 `.Spec.Mode`, which can be used to specify whether the collector should run as a

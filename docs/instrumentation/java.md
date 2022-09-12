@@ -33,6 +33,12 @@ There are two types of application instrumentation:
 - **Auto Instrumentation**<br></br>
 A completely automatic and out of box experience, with minimal code changes. For your Java application, we recommend getting started with auto instrumentation.
 
+:::info
+
+  If you are on K8s, you should checkout [opentelemetry operators](/docs/tutorial/opentelemetry-operator-usage/#opentelemetry-auto-instrumentation-injection) which enable auto instrumenting Java applications very easily.
+
+:::
+
 - **Manual Instrumentation**<br></br>
 It involves writing instrumentation using OpenTelemetry SDK and API manually. You would need to get a handle to an instance of the `OpenTelemetry` interface, acquire a tracer, and create spans manually. Manual isntrumentation might also be used along with auto instrumentation.
 

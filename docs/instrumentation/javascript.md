@@ -25,6 +25,12 @@ You can use OpenTelemetry Nodejs client libraries to send your traces directly t
 - **[Use the all-in-one auto-instrumentation library(Recommended)](#using-the-all-in-one-auto-instrumentation-library)**<br></br>
 The auto-instrumentation library of OpenTelemetry is a meta package that provides a simple way to initialize multiple Nodejs instrumnetations.
 
+:::info
+
+  If you are on K8s, you should checkout [opentelemetry operators](/docs/tutorial/opentelemetry-operator-usage/#opentelemetry-auto-instrumentation-injection) which enable auto instrumenting Java applications very easily.
+
+:::
+
 - **[Use a specific auto-instrumentation library](#using-a-specific-auto-instrumentation-library)**<br></br>
 You can use individual auto-instrumentation libraries too for a specific component of your application. For example, you can use `@opentelemetry/instrumentation-express` for instrumenting the Express web framework.
 
