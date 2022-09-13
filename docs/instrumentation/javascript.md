@@ -328,6 +328,8 @@ OpenTelemetry Nest instrumentation allows the user to automatically collect trac
         .catch((error) => console.log('Error terminating tracing', error))
         .finally(() => process.exit(0));
         });
+        
+      module.exports = sdk
     ```
     
 
