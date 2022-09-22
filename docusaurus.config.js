@@ -90,9 +90,9 @@ const config = {
           position: "left",
         },
         {
-          to: "case-study/instasafe/",
-          activeBasePath: "case-study/instasafe/",
-          label: "Case Study",
+          to: "case-study/",
+          activeBasePath: "case-study/",
+          label: "Customer Stories",
           position: "right",
         },
       
