@@ -8,3 +8,4 @@
 /docs/userguide/metrics-dashboard   /docs/userguide/dashboards
 /docs/operate/upgrade               /docs/operate/migration/upgrade-0.8.0
 /docs/userguide/dashboards/         /docs/userguide/manage-dashboards/
+/distributed-tracing/               /blog/distributed-tracing/
