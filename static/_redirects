@@ -9,3 +9,4 @@
 /docs/operate/upgrade               /docs/operate/migration/upgrade-0.8.0
 /docs/userguide/dashboards/         /docs/userguide/manage-dashboards/
 /distributed-tracing/               /blog/distributed-tracing/
+/docs/instrumentation/nodejs/       /docs/instrumentation/javascript/
