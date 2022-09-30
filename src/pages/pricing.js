@@ -67,7 +67,6 @@ function pricingTest() {
                             <li> Easily shift to self hosted if needed</li>
                             <li> Slack Support for initial setup </li>
                             <li> Usage based pricing based on data you send us</li>
-
                         
 
                         </p>
@@ -84,23 +83,23 @@ function pricingTest() {
                 <div class="card">
                     <div class="card__header">
                         <h3 style={{marginBottom:'0'}}>Enterprise Self Hosted</h3>
-                        <p style={{fontSize:'medium'}}>Coming soon. Open for Early access</p>
+                        <p style={{fontSize:'medium'}}>Open for Early access</p>
                     </div>
                     <div class="card__body">
                         <p>
-
-                            <i>Planned features</i>
-                            <li> SLO Dashboards </li>
                             <li> Single Sign On support</li>
                             <li> SAML and LDAP support</li>
+                            <br></br>
+                            <div style={{fontSize:'medium'}}>Upcoming features</div>
+                            <li> SLO Dashboards </li>
                             <li> Audit Logs </li>
-                            <li> Team KPI dashboards </li>
+                            {/* <li> Team KPI dashboards </li> */}
                             <li> Dashboard configuration support</li>
 
                         </p>
                     </div>
                     <div class="card__footer">
-                    <a class="button button--primary" href="https://forms.gle/KajUYE73Xf1NXx5Z6" onClick={() => handleClick('SelfHostedEnterprise')}>Get Early Access</a>
+                    <a class="button button--primary" href="https://calendly.com/pranay-signoz/signoz-enterprise/" onClick={() => handleClick('SelfHostedEnterprise')}>Book a Demo</a>
                     </div>
                 </div>
             </div>
