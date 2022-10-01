@@ -40,7 +40,7 @@ We support PromQL and Prometheus remote read for users to shift seamlessly from 
 
 SigNoz supports all the exporters that are listed on the <a href="https://prometheus.io/docs/instrumenting/exporters/" rel="noopener noreferrer nofollow" target="_blank">Exporters and Integrations</a> page of the Prometheus documentation. If you have a running Prometheus instance and you expose metrics in Prometheus, then you can scrape them in SigNoz by [configuring Prometheus receivers](https://signoz.io/docs/userguide/send-metrics/#enable-a-prometheus-receiver).
 
-### I am using Jaeger, can I use SigNoz? How does it differ from Jager?
+### I am using Jaeger, can I use SigNoz? How does it differ from Jaeger?
 
 Yes, you can. SigNoz provides better distributed tracing capabilities than Jaeger. The traces tab of SigNoz provides advanced filtering based on different attributes. Moreover, you can also run aggregates on filtered traces. For example, you can get the p99 latency of spans with a tag of premium_customers.
 
