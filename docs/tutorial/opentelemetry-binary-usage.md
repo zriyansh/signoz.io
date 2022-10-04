@@ -14,7 +14,7 @@ by applications most likely running in the same virtual machine (VM).
 
 It can also be used for collecting data from other VMs in the same cluster,
 data center or region, however binary is not recommended in that scenerio but
-container or depoyment which can be easily scaled.
+container or deployment which can be easily scaled.
 
 In this guide, you will also learn to set up hostmetrics receiver to collect
 metrics from the VM and view in SigNoz.
