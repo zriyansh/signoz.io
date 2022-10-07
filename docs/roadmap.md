@@ -15,12 +15,6 @@ The decision of which spans to sample is crucial in distributed tracing. "Tail-b
 
 We plan to focus on this to ensure that only 'interesting' traces are ingested. This will ensure that we don't miss any interesting traces, even though the actual number of traces ingested/retained is much lower.
 
-#### Log Management
-
-We are primarily focused on metrics & traces at the moment and a seamless experience between them.
-
-However, we do have log management in our roadmap. But we are waiting for OpenTelemetry logs to get mature (it is in alpha currently) and plan to support it, as we have native support for OpenTelemetry.
-
 
 #### Anomaly detection framework
 
