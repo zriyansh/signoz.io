@@ -261,7 +261,7 @@ function Navbar() {
             src={`https://ghbtns.com/github-btn.html?user=signoz&repo=signoz&type=star&count=true&size=large`}
             frameBorder="0"
             scrolling="0"
-            width="150"
+            width="180"
             height="30"
             title="Star SigNoz on GitHub"
           ></iframe>
