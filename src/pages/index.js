@@ -706,6 +706,54 @@ function Home() {
                       </div>
                     </div>
                   </div>
+
+                  <div class="row">
+                    <div class="card-demo margin--md">
+                      <div class="card">
+                        <div class="card__header">
+                          <div class="avatar">
+                            <img
+                              class="avatar__photo"
+                              src="img/users/pawan-outplay.webp"
+                              alt="pawan bhadauria"
+                            />
+                            <div class="avatar__intro">
+                              <h4 class="avatar__name" style={{ marginBottom: "0" }}>Pawan Bhadauria</h4>
+                              <small class="avatar__subtitle">
+                                VP - Engineering, Outplay
+                              </small>
+                            </div>
+
+                            <a
+                              class="platform-icon linkedin"
+                              href="https://www.linkedin.com/posts/pawan-bhadauria-25980b7_seed-to-scale-podcast-series-by-accel-insights-activity-6877448856892768256-Fapw"
+                              target="_blank"
+                              aria-label="Link to Twitter/LinkedIn mention"
+                            >
+                              <svg
+                                alt="LinkedIn icon"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                              <path d="M20.4482 20.4487H16.8921V14.8796C16.8921 13.5516 16.8684 11.8421 15.0426 11.8421C13.1905 11.8421 12.9071 13.289 12.9071 14.7829V20.4483H9.35106V8.99608H12.7649V10.5612H12.8127C13.5088 9.37094 14.8031 8.66008 16.1809 8.71122C19.7851 8.71122 20.4496 11.082 20.4496 14.1662L20.4482 20.4487ZM5.33865 7.43065C4.19895 7.43085 3.27487 6.50708 3.27466 5.36735C3.27446 4.22762 4.19821 3.30352 5.33791 3.30332C6.47762 3.30311 7.4017 4.22688 7.4019 5.36661C7.402 5.91393 7.18468 6.43887 6.79775 6.82595C6.41081 7.21303 5.88596 7.43055 5.33865 7.43065ZM7.11668 20.4487H3.55693V8.99608H7.11668V20.4487ZM22.221 0.000935081H1.77001C0.803454 -0.00997274 0.0108197 0.764276 -0.000976562 1.73084V22.2671C0.0104158 23.2341 0.802986 24.0092 1.77001 23.999H22.221C23.1899 24.011 23.9856 23.236 23.999 22.2671V1.72936C23.9852 0.760885 23.1895 -0.0133197 22.221 -0.000702441" fill="#03A9F4"/>
+
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+
+                        <div class="card__body padding--md">
+                          <p>
+                            We are using Signoz at Outplay & our experience has
+                            been great. It has 5.4k stars on Github.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 
@@ -760,56 +808,6 @@ function Home() {
                   </div>
 
                   <div class="row">
-                    <div class="card-demo margin--md">
-                      <div class="card">
-                        <div class="card__header">
-                          <div class="avatar">
-                            <img
-                              class="avatar__photo"
-                              src="img/users/pawan-outplay.webp"
-                              alt="pawan bhadauria"
-                            />
-                            <div class="avatar__intro">
-                              <h4 class="avatar__name" style={{ marginBottom: "0" }}>Pawan Bhadauria</h4>
-                              <small class="avatar__subtitle">
-                                VP - Engineering, Outplay
-                              </small>
-                            </div>
-
-                            <a
-                              class="platform-icon linkedin"
-                              href="https://www.linkedin.com/posts/pawan-bhadauria-25980b7_seed-to-scale-podcast-series-by-accel-insights-activity-6877448856892768256-Fapw"
-                              target="_blank"
-                              aria-label="Link to Twitter/LinkedIn mention"
-                            >
-                              <svg
-                                alt="LinkedIn icon"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                              <path d="M20.4482 20.4487H16.8921V14.8796C16.8921 13.5516 16.8684 11.8421 15.0426 11.8421C13.1905 11.8421 12.9071 13.289 12.9071 14.7829V20.4483H9.35106V8.99608H12.7649V10.5612H12.8127C13.5088 9.37094 14.8031 8.66008 16.1809 8.71122C19.7851 8.71122 20.4496 11.082 20.4496 14.1662L20.4482 20.4487ZM5.33865 7.43065C4.19895 7.43085 3.27487 6.50708 3.27466 5.36735C3.27446 4.22762 4.19821 3.30352 5.33791 3.30332C6.47762 3.30311 7.4017 4.22688 7.4019 5.36661C7.402 5.91393 7.18468 6.43887 6.79775 6.82595C6.41081 7.21303 5.88596 7.43055 5.33865 7.43065ZM7.11668 20.4487H3.55693V8.99608H7.11668V20.4487ZM22.221 0.000935081H1.77001C0.803454 -0.00997274 0.0108197 0.764276 -0.000976562 1.73084V22.2671C0.0104158 23.2341 0.802986 24.0092 1.77001 23.999H22.221C23.1899 24.011 23.9856 23.236 23.999 22.2671V1.72936C23.9852 0.760885 23.1895 -0.0133197 22.221 -0.000702441" fill="#03A9F4"/>
-
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="card__body padding--md">
-                          <p>
-                            We are using Signoz at Outplay & our experience has
-                            been great. It has 5.4k stars on Github.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col--4">
-                  <div class="row">
                   <div class="card-demo margin--md">
                     <div class="card">
                       <div class="card__header">
@@ -858,6 +856,63 @@ function Home() {
                     </div>
                   </div>
                   </div>
+
+                </div>
+
+                <div class="col col--4">
+                <div class="row">
+                    <div class="card-demo margin--md">
+                      <div class="card">
+                        <div class="card__header">
+                          <div class="avatar">
+                            <img
+                              class="avatar__photo"
+                              src="img/users/apoorva-kumar.webp"
+                              alt="apoorva kumar"
+                            />
+                            <div class="avatar__intro">
+                              <h4 class="avatar__name" style={{ marginBottom: "0" }}>Apoorva Kumar</h4>
+                              <small class="avatar__subtitle">
+                              Lead Backend Infra Eng, NuCash
+                              </small>
+                            </div>
+
+                            <a
+                              class="platform-icon linkedin"
+                              href="https://www.linkedin.com/posts/apoorva-kumar_its-0319-am-ist-just-deployed-signoz-activity-6988981099896967168-c7yf"
+                              target="_blank"
+                              aria-label="Link to Twitter/LinkedIn mention"
+                            >
+                              <svg
+                                alt="LinkedIn icon"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                              <path d="M20.4482 20.4487H16.8921V14.8796C16.8921 13.5516 16.8684 11.8421 15.0426 11.8421C13.1905 11.8421 12.9071 13.289 12.9071 14.7829V20.4483H9.35106V8.99608H12.7649V10.5612H12.8127C13.5088 9.37094 14.8031 8.66008 16.1809 8.71122C19.7851 8.71122 20.4496 11.082 20.4496 14.1662L20.4482 20.4487ZM5.33865 7.43065C4.19895 7.43085 3.27487 6.50708 3.27466 5.36735C3.27446 4.22762 4.19821 3.30352 5.33791 3.30332C6.47762 3.30311 7.4017 4.22688 7.4019 5.36661C7.402 5.91393 7.18468 6.43887 6.79775 6.82595C6.41081 7.21303 5.88596 7.43055 5.33865 7.43065ZM7.11668 20.4487H3.55693V8.99608H7.11668V20.4487ZM22.221 0.000935081H1.77001C0.803454 -0.00997274 0.0108197 0.764276 -0.000976562 1.73084V22.2671C0.0104158 23.2341 0.802986 24.0092 1.77001 23.999H22.221C23.1899 24.011 23.9856 23.236 23.999 22.2671V1.72936C23.9852 0.760885 23.1895 -0.0133197 22.221 -0.000702441" fill="#03A9F4"/>
+
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+
+                        <div class="card__body padding--md">
+                          <p>
+                          Just deployed SigNoz to an EKS cluster.Still can't believe this is free, everything works like a charm.
+                          I am really really impressed with the documentation and dashboard.
+                          
+                          <br/><br/>
+
+
+                          Still in awe. Sneak peek into running the product, you can easily set retention period for metrics, traces and logs with one click and set cold storage for old logs to s3 with few config changes.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
 
                   <div class="row">
                   <div class="card-demo margin--md">
