@@ -65,3 +65,13 @@ The flattened data is then ingested to **Druid** _which is a real-time analytics
 **Frontend** is the UI, built in ReactJS and Typescript and provides advanced trace/span filtering capabilities and plot metrics to provide service overviews.
 
 **Alert Manager** evaluates different alert rules set by the users and triggers an alert if a threshold is crossed.
+
+
+### Opentelemetry Introduction
+
+SigNoz uses OpenTelemetry for instrumenting applications and for collecting telemetry data. The following docs may be useful to get familiar with the basic concepts of OpenTelemetry
+
+- [OpenTelemetry Data Collection](https://opentelemetry.io/docs/concepts/data-collection/)
+
+- [OpenTelemetry Collector Configuration](https://opentelemetry.io/docs/collector/configuration/)
+
