@@ -4,7 +4,7 @@ import Card from "./Card";
 const FAQBody = () => (
   <>
     <Card
-      body="Yes, feel free to reach out to us on <a mailto='hello@signoz.io'>hello@signoz.io</a> if you need a dedicated support plan or paid support for setting your initial SigNoz setup"
+      body="Yes, feel free to reach out to us on <a mailto='hello@signoz.io'>hello@signoz.io</a> if you need a dedicated support plan or paid support for setting up your initial SigNoz setup"
       title="Do you offer enterprise support plans?"
     />
     <Card
