@@ -63,7 +63,7 @@ function pricingTest() {
                         <p>
 
                             <li> Hosted and Managed by SigNoz </li>
-                            <li> Single tenant - We host a separate instance for you</li>
+                            <li> Single Sign On and SAML support included</li>
                             <li> Easily shift to self hosted if needed</li>
                             <li> Slack Support for initial setup </li>
                             <li> Usage based pricing based on data you send us</li>
@@ -83,18 +83,19 @@ function pricingTest() {
                 <div class="card">
                     <div class="card__header">
                         <h3 style={{marginBottom:'0'}}>Enterprise Self Hosted</h3>
-                        <p style={{fontSize:'medium'}}>Open for Early access</p>
+                        {/* <p style={{fontSize:'medium'}}>Open for Early access</p> */}
                     </div>
                     <div class="card__body">
                         <p>
                             <li> Single Sign On support</li>
                             <li> SAML and LDAP support</li>
+                            <li> Visualise very large traces with hierarchical navigation</li>
+                            <li> Dashboard configuration support</li>
                             <br></br>
                             <div style={{fontSize:'medium'}}>Upcoming features</div>
                             <li> SLO Dashboards </li>
                             <li> Audit Logs </li>
                             {/* <li> Team KPI dashboards </li> */}
-                            <li> Dashboard configuration support</li>
 
                         </p>
                     </div>
