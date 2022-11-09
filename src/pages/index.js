@@ -316,8 +316,8 @@ function Home() {
           <div className="container">
             <div className="row">
               <div className="col col--4">
-                <p className="hero__title " style={{ fontWeight: "bold" }}>
-                  Open-source APM
+                <p className="" style={{ fontWeight: "bold", fontSize: "32px" }}>
+                Open Source Metrics, Traces and Logs in a single pane
                   {/* Open-source application monitoring platform */}
                 </p>
                 <p className="hero__subtitle">
