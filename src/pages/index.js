@@ -345,10 +345,10 @@ function Home() {
                       paddingRight: "10px",
                     }}
                     className="button button--outline button--secondary "
-                    href={"https://calendly.com/pranay-signoz/signoz-demo"}
+                    href={"https://forms.gle/YDJ3wBFx7nhDnUbr5"}
                     onClick={requestDemoClicked}
                   >
-                    Book a Demo
+                    Request a Demo
                   </Link>
                 </div>
 

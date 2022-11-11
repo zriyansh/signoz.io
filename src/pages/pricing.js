@@ -73,6 +73,7 @@ function pricingTest() {
                     </div>
                     <div class="card__footer">
                     <a class="button button--primary"
+                     target="_blank"
                      href="https://forms.gle/yYSkntXRRPU3MHRL7" 
                      onClick={() => handleClick('SigNozCloud')}
                      >Reach out to us</a>
@@ -89,18 +90,17 @@ function pricingTest() {
                         <p>
                             <li> Single Sign On support</li>
                             <li> SAML and LDAP support</li>
-                            <li> Visualise very large traces with hierarchical navigation</li>
+                            <li> Visualise very large traces (>10k spans) with hierarchical navigation</li>
                             <li> Dashboard configuration support</li>
                             <br></br>
                             <div style={{fontSize:'medium'}}>Upcoming features</div>
-                            <li> SLO Dashboards </li>
-                            <li> Audit Logs </li>
+                            <li> Predictive Resource Optimization  </li>
                             {/* <li> Team KPI dashboards </li> */}
 
                         </p>
                     </div>
                     <div class="card__footer">
-                    <a class="button button--primary" href="https://calendly.com/pranay-signoz/signoz-enterprise/" onClick={() => handleClick('SelfHostedEnterprise')}>Book a Demo</a>
+                    <a class="button button--primary" target="_blank" href="https://forms.gle/zxCEoSbnnPv6mSX57" onClick={() => handleClick('SelfHostedEnterprise')}>Request Access</a>
                     </div>
                 </div>
             </div>
