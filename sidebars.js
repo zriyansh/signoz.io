@@ -7,7 +7,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Install',
+      label: 'Installation',
       link: {
         type: 'generated-index',
         title: 'Install SigNoz',
@@ -40,76 +40,8 @@ module.exports = {
       ],
     },
     {
-      label: "Instrument your app",
-      type: "category",
-      link: {
-        type: 'generated-index',
-        title: 'Instrument your Application',
-        description: 'To instrument your applications and send data to SigNoz, follow the instructions in the sections below.',
-        slug: '/instrumentation',
-      },
-      items: [
-        'instrumentation/overview',
-        {
-          type: 'category',
-          label: 'Python',
-          link: {
-            type: 'doc',
-            id: 'instrumentation/python'
-            // title: 'Python',
-            // description: 'Learn how to instrument Python applications with OpenTelemetry',
-            // slug: 'instrumentation/python',
-          },
-          items: [
-            'instrumentation/django',
-            'instrumentation/fastapi',
-            'instrumentation/flask',
-            'instrumentation/falcon']
-        },
-        {
-          type: 'category',
-          label: 'Java',
-          link: {
-            type: 'doc',
-            id: 'instrumentation/java'
-            // title: 'Python',
-            // description: 'Learn how to instrument Python applications with OpenTelemetry',
-            // slug: 'instrumentation/python',
-          },
-          items: [
-            'instrumentation/springboot',
-            'instrumentation/tomcat',
-            'instrumentation/jboss'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Javascript',
-          link: {
-            type: 'doc',
-            id: 'instrumentation/javascript'
-            // title: 'Python',
-            // description: 'Learn how to instrument Python applications with OpenTelemetry',
-            // slug: 'instrumentation/python',
-          },
-          items: [
-            'instrumentation/express',
-            'instrumentation/nestjs',
-            'instrumentation/angular'
-          ]
-        },
-        'instrumentation/golang',
-        'instrumentation/php',
-        'instrumentation/dotnet',
-        'instrumentation/ruby-on-rails',
-        'instrumentation/elixir',
-        'instrumentation/rust',
-        'instrumentation/troubleshoot-instrumentation',
-      ],
-    },
-    {
       type: 'category',
-      label: 'Operate',
+      label: 'Operate SigNoz',
       link: {
         type: 'generated-index',
         title: 'Operate',
@@ -154,78 +86,162 @@ module.exports = {
       ],
     },
     {
-      label: "Use SigNoz",
+      label: "APM & Distributed Tracing",
+      type: "category",
+      items:[          'instrumentation/overview',
+      'userguide/metrics',
+      {
+        type: 'category',
+        label: 'View Traces',
+        link: {
+          type: 'doc',
+          id: 'userguide/traces',
+        },
+        items: [
+          'userguide/span-details'
+        ]
+      },
+      {
+        label: "Instrument your app",
+        type: "category",
+        link: {
+          type: 'generated-index',
+          title: 'Instrument your Application',
+          description: 'To instrument your applications and send data to SigNoz, follow the instructions in the sections below.',
+          slug: '/instrumentation',
+        },
+        items: [
+          {
+            type: 'category',
+            label: 'Python',
+            link: {
+              type: 'doc',
+              id: 'instrumentation/python'
+              // title: 'Python',
+              // description: 'Learn how to instrument Python applications with OpenTelemetry',
+              // slug: 'instrumentation/python',
+            },
+            items: [
+              'instrumentation/django',
+              'instrumentation/fastapi',
+              'instrumentation/flask',
+              'instrumentation/falcon']
+          },
+          {
+            type: 'category',
+            label: 'Java',
+            link: {
+              type: 'doc',
+              id: 'instrumentation/java'
+              // title: 'Python',
+              // description: 'Learn how to instrument Python applications with OpenTelemetry',
+              // slug: 'instrumentation/python',
+            },
+            items: [
+              'instrumentation/springboot',
+              'instrumentation/tomcat',
+              'instrumentation/jboss'
+            ]
+          },
+          {
+            type: 'category',
+            label: 'Javascript',
+            link: {
+              type: 'doc',
+              id: 'instrumentation/javascript'
+              // title: 'Python',
+              // description: 'Learn how to instrument Python applications with OpenTelemetry',
+              // slug: 'instrumentation/python',
+            },
+            items: [
+              'instrumentation/express',
+              'instrumentation/nestjs',
+              'instrumentation/angular'
+            ]
+          },
+          'instrumentation/golang',
+          'instrumentation/php',
+          'instrumentation/dotnet',
+          'instrumentation/ruby-on-rails',
+          'instrumentation/elixir',
+          'instrumentation/rust',
+        ],
+      },
+      'instrumentation/troubleshoot-instrumentation',
+    ],
+    },
+    {
+      label: "Infrastructure Monitoring",
+      type: "category",
+      items:['userguide/send-metrics',
+      'userguide/navigate-user-interface',],
+    },
+    {
+      label: "Logs Management",
+      type: "category",
+      
+        link: {
+          type: 'doc',
+          id: 'userguide/logs',
+        },
+        items: [
+          'userguide/logs_query_builder',
+          'userguide/logs_fields',
+         
+              'userguide/collect_kubernetes_pod_logs',
+              'userguide/collect_docker_logs',
+              'userguide/collecting_syslogs',
+              'userguide/collect_logs_from_file',
+              'userguide/collecting_nodejs_winston_logs',
+              {
+                type: 'category',
+                label: 'Collecting Application Logs Using OTEL SDK',
+                items: [
+                  'userguide/collecting_application_logs_otel_sdk_python',
+                  'userguide/collecting_application_logs_otel_sdk_java'
+                ]
+              },
+          {
+            type: 'category',
+            label: 'Existing Collectors to SigNoz',
+            items: [
+              'userguide/fluentbit_to_signoz', 'userguide/fluentd_to_signoz', 'userguide/logstash_to_signoz'
+            ]
+          }
+        ],
+    },
+    {
+      label: "Dashboards",
+      type: "category",
+      link: {
+        type: 'doc',
+        id: 'userguide/manage-dashboards-and-panels',
+      },
+      items: [
+        'userguide/manage-dashboards', 'userguide/manage-panels', 'userguide/manage-variables', 'userguide/create-a-custom-query'
+      ]
+    },
+    {
+      type: 'doc',
+      id:'userguide/alerts-management',
+     
+    },
+    {
+      type: 'doc',
+      id:'userguide/service-map',
+
+    },
+    {
+      type: 'doc',
+      id: 'userguide/exceptions',
+    },
+    {
+      label: "Configuration",
       type: "category",
       items: [
-        'userguide/overview',
-        'userguide/send-metrics',
-        'userguide/navigate-user-interface',
-        'userguide/metrics',
-        {
-          type: 'category',
-          label: 'View Traces',
-          link: {
-            type: 'doc',
-            id: 'userguide/traces',
-          },
-          items: [
-            'userguide/span-details'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Logs',
-          link: {
-            type: 'doc',
-            id: 'userguide/logs',
-          },
-          items: [
-            'userguide/logs_query_builder',
-            'userguide/logs_fields',
-            {
-              type: 'category',
-              label: 'Collecting Logs',
-              items: [
-                'userguide/collect_kubernetes_pod_logs',
-                'userguide/collect_docker_logs',
-                'userguide/collecting_syslogs',
-                'userguide/collect_logs_from_file',
-                'userguide/collecting_nodejs_winston_logs',
-                {
-                  type: 'category',
-                  label: 'Collecting Application Logs Using OTEL SDK',
-                  items: [
-                    'userguide/collecting_application_logs_otel_sdk_python',
-                    'userguide/collecting_application_logs_otel_sdk_java'
-                  ]
-                }
-              ]
-            },
-            {
-              type: 'category',
-              label: 'Existing Collectors to SigNoz',
-              items: [
-                'userguide/fluentbit_to_signoz', 'userguide/fluentd_to_signoz', 'userguide/logstash_to_signoz'
-              ]
-            }
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Manage Dashboards and Panels',
-          link: {
-            type: 'doc',
-            id: 'userguide/manage-dashboards-and-panels',
-          },
-          items: [
-            'userguide/manage-dashboards', 'userguide/manage-panels', 'userguide/manage-variables', 'userguide/create-a-custom-query'
-          ]
-        },
-        'userguide/exceptions',
-        'userguide/alerts-management',
+   //     'userguide/overview',
         'userguide/authentication',
         'userguide/retention-period',
-        'userguide/service-map',
       ],
     },
     {
@@ -270,11 +286,6 @@ module.exports = {
       id: "roadmap",
       type: "doc",
     },
-    // {
-    //   id: "faq",
-    //   type: "doc",
-    // },
-
     {
       label: "FAQ",
       type: "category",
