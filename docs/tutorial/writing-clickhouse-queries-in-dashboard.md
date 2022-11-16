@@ -1,10 +1,12 @@
 ---
-id: writing-clickhuse-queries-in-dashboard
-title: Clickhouse queries for building dashboards
+id: writing-clickhouse-queries-in-dashboard
+title: ClickHouse queries for building dashboards
 description: Example clickhouse queries to run analytics on observability data
 ---
 
-SigNoz gives you ability to write powerful clickhouse queries to plot charts. You can run sql queries supported by clickhouse to extract immense value out of your distributed tracing data or logs data. Sharing a few examples of some queries which might be helpful in building dashboards.
+SigNoz gives you ability to write powerful clickhouse queries to plot charts. You can run SQL queries supported by ClickHouse to extract immense value out of your distributed tracing data or logs data. 
+
+Sharing a few examples of some queries which might be helpful in building dashboards.
 
 ### GroupBy a tag/attribute in distributed tracing data
 
