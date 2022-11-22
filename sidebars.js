@@ -234,7 +234,7 @@ module.exports = {
     },
     {
       type: 'doc',
-      id: 'userguide/monitor-http-endpoints',
+      id: 'monitor-http-endpoints',
     },
     {
       type: 'doc',

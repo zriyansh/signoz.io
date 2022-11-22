@@ -4,7 +4,7 @@ id: monitor-http-endpoints
 ---
 
 :::note
-This feature is available `0.11.3` onwards. If you are on a lower version, please follow these instructions to upgrade
+This feature is available [0.11.3](https://github.com/SigNoz/signoz/releases/tag/v0.11.3) onwards. If you are on a lower version, please follow these instructions to upgrade
 
 [Docker](/docs/operate/docker-standalone/#upgrade)
 

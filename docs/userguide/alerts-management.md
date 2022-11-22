@@ -7,8 +7,6 @@ import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 
 # Setting alerts in SigNoz  
 
-Starting with [v0.10.0](https://github.com/SigNoz/signoz/releases/tag/v0.10.0) you can set alerts on metrics using query builder.
-
 
 ## Setting Alert Rules
 
