@@ -234,6 +234,10 @@ module.exports = {
     },
     {
       type: 'doc',
+      id: 'userguide/monitor-http-endpoints',
+    },
+    {
+      type: 'doc',
       id: 'userguide/exceptions',
     },
     {
