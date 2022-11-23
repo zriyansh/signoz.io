@@ -8,6 +8,12 @@ import GetHelp from '../shared/get-help.md'
 
 This section shows how you can create, update, and remove dashboards.
 
+:::tip
+
+We have shared some commonly used dashboard JSON files [here](https://github.com/SigNoz/dashboards). You can import them directly to create dashboards in SigNoz.
+
+:::
+
 ## Create a Custom Dashboard
 
 1. From the sidebar, choose **Dashboards**.
