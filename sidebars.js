@@ -168,6 +168,11 @@ module.exports = {
           'instrumentation/rust',
         ],
       },
+      {type: 'doc',
+      id:'application-monitoring/api-monitoring',
+      label: 'API Monitoring',
+      },
+      
       'instrumentation/troubleshoot-instrumentation',
     ],
     },
