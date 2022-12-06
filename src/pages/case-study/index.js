@@ -67,14 +67,14 @@ function caseStudies() {
                       </div>
                   </div>
               </div>
-              {/* <div className={"col col--6 margin-vert--md"}>
+              <div className={"col col--6 margin-vert--md"}>
                   <div class="card">
                       <div class="card__header">
                           <h3>Outplay</h3>
                       </div>
                       <div class="card__image">
                         <img
-                            src="/img/case_study/Instasafe-summary.png"
+                            src="/img/case_study/outplay-list.webp"
                             alt="Image alt text"
                             title="Logo Title Text 1" />
                       </div>
@@ -88,7 +88,7 @@ function caseStudies() {
                       <a class="button button--primary" href="/case-study/outplay/" >Read more</a>
                       </div>
                   </div>
-              </div> */}
+              </div>
           </div>
         </div>  
         </section>
