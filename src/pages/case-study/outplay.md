@@ -101,3 +101,15 @@ Try to have back end storage for storing the observability data. Something like 
 SigNoz provides that option where you can connect your S3 to ClickHouse and configure it in such a way that after 80% of disk storage is used, it automatically shifts data to s3.
 
 Now with open telemetry becoming a standard, which supports all kinds of programming languages, you don't have to worry about how we are exporting the data. The devops teams should focus on the right tools to store the data and visualising it.
+
+<p>&nbsp;</p>
+
+---
+
+Thank you for taking out the time to read this case study. If you have any feedback or want to share your story using SigNoz, please feel free to reach out to `hello@signoz.io` with `Case Study` as subject.
+
+Sharing stories of how different teams are using SigNoz helps the community in learning different use cases and problems SigNoz can solve and also showcases how you are solving issues in a unique way.
+
+Feel free to join our slack community and say hi! 👋
+
+[![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://signoz.io/slack)

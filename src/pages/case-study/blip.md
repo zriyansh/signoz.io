@@ -3,7 +3,7 @@ title:  How Blip uses SigNoz to improve their issue resolution time by 14x
 slug: blipbillboards
 image: /img/case_study/BlipBillBoards.png
 authors: [pranay]
-hide_table_of_contents: true
+# hide_table_of_contents: true
 
 ---
 import { LiteYoutubeEmbed } from "react-lite-yt-embed";
@@ -39,10 +39,7 @@ import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 <br />
 <br />
 
-## About Blip
 Blip provides self-service subscription-based digital ad space across 1000’s of digital billboards in the US and Canada. Many small and medium-sized businesses use Blip services to reach their audience anytime, anywhere they want. 
-
-
 
 <!-- *I sat down with Nate, Senior DevOps engineer at [BlipBillBoards](https://www.blipbillboards.com/) to understand how they use SigNoz at BlipBillBoards. Here’s a few snippets from our conversation (edited for legibility)* -->
 
@@ -76,7 +73,7 @@ And so we kind of stepped in in the middle there and said, hey, there's this adv
 
 
 
-### *What were the business problems you're trying to solve with SigNoz? Any details you can share on your current scale with SigNoz?*
+### *What were the business problems you're trying to solve with SigNoz? *
 
 <LiteYoutubeEmbed id="ISPfqGmJGYE" mute={false} />
 
@@ -147,7 +144,7 @@ Data is right there in memory, and you're able to iterate through it and do what
 And by seeing the trace details in SigNoz, I showed the developers what exactly was going on. I showed them the data that was being passed in. And now, instead of three minutes, it takes 2 seconds to complete the exact same request.
 
 
-### What made you choose SigNoz over other solutions? What solutions were you trying, and then what made you choose SigNoz?
+### What made you choose SigNoz over other solutions? 
 
 <LiteYoutubeEmbed id="8b3rutiPnTc" mute={false} />
 
@@ -207,8 +204,14 @@ The second thing I would suggest is that if you have a place where there's a com
 If you have to instrument one place, make sure you instrument the place where everything enters your system. So if there's a routing handling system, or if there's a piece of code that handles requests, you can wrap that in a single span, and then all of those database calls get tied together, and it's wonderful.
 
 
-----
+<p>&nbsp;</p>
 
-Check out our GitHub repo to get started with your observability journey
+-----
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
+Thank you for taking out the time to read this case study. If you have any feedback or want to share your story using SigNoz, please feel free to reach out to `hello@signoz.io` with `Case Study` as subject.
+
+Sharing stories of how different teams are using SigNoz helps the community in learning different use cases and problems SigNoz can solve and also showcases how you are solving issues in a unique way.
+
+Feel free to join our slack community and say hi! 👋
+
+[![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://signoz.io/slack)

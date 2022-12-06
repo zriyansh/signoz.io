@@ -113,8 +113,14 @@ So I was able to run a script and then configure everything.”
 
 So, I would suggest to understand what data do you need today - and only send that data to the platform.
 
-----
+<p>&nbsp;</p>
 
-Check out our GitHub repo to get started with your observability journey
+---
 
-[![SigNoz GitHub repo](/img/blog/common/signoz_github.webp)](https://github.com/SigNoz/signoz)
+Thank you for taking out the time to read this case study. If you have any feedback or want to share your story using SigNoz, please feel free to reach out to `hello@signoz.io` with `Case Study` as subject.
+
+Sharing stories of how different teams are using SigNoz helps the community in learning different use cases and problems SigNoz can solve and also showcases how you are solving issues in a unique way.
+
+Feel free to join our slack community and say hi! 👋
+
+[![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://signoz.io/slack)
