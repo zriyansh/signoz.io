@@ -273,7 +273,7 @@ We have ingested 500GB of logs data for each of the stacks. The table below show
 ## Conclusion
 
 - For ingestion SigNoz is **2.5x faster** than ELK and uses **50% less resources**.
-- Loki is not a tool to be used when you want to index and query high-cardinality data.
+- Loki is not suitable for indexing and querying high-cardinality data.
 - SigNoz is about **13 times** faster than ELK for aggregation queries.
 - **Storage** used by SigNoz for the same amount of logs is about **half of what ELK uses.**
 
