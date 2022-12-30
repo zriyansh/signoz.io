@@ -1073,12 +1073,17 @@ function Home() {
                       Get Started
                     </Link>
                     <Link
-                      className="button button--secondary margin--md"
-                      href={"https://calendly.com/pranay-signoz/signoz-demo"}
-                      onClick={requestDemoClicked}
-                    >
-                      Book a Demo
-                    </Link>
+                    style={{
+                      margin: "6px",
+                      paddingLeft: "10px",
+                      paddingRight: "10px",
+                    }}
+                    className="button button--outline button--secondary "
+                    href={"https://forms.gle/YDJ3wBFx7nhDnUbr5"}
+                    onClick={requestDemoClicked}
+                  >
+                    Request a Demo
+                  </Link>
                   </div>
                 </div>
               </div>
