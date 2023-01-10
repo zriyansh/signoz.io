@@ -107,7 +107,7 @@ function caseStudies() {
                           </p>
                       </div>
                       <div class="card__footer">
-                      <a class="button button--primary" href="/case-study/wombo-ai/" >Read more</a>
+                      <a class="button button--primary" href="/case-study/wombo/" >Read more</a>
                       </div>
                   </div>
               </div>
