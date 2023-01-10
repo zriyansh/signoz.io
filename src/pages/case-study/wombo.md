@@ -9,14 +9,14 @@ import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 # How Generative AI co Wombo provides great experience to its 5mn MAU using SigNoz for Observability
 
 <head>
-  <link rel="canonical" href="https://signoz.io/case-study/wombo-ai/"/>
+  <link rel="canonical" href="https://signoz.io/case-study/wombo/"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://signoz.io/case-study/wombo-ai/"/>
+  <meta property="og:url" content="https://signoz.io/case-study/wombo/"/>
   <meta property="og:title" content="How Generative AI co Wombo provides great experience to its 5mn MAU using SigNoz for Observability | SigNoz"/>
   <meta property="og:description" content=""/>
   <meta property="og:image" content="https://signoz.io/img/case_study/wombo-banner.jpg"/>
   <meta property="twitter:card" content="summary_large_image"/>
-  <meta property="twitter:url" content="https://signoz.io/case-study/wombo-ai/"/>
+  <meta property="twitter:url" content="https://signoz.io/case-study/wombo/"/>
   <meta property="twitter:title" content="How Generative AI co Wombo provides great experience to its 5mn MAU using SigNoz for Observability | SigNoz"/>
   <meta property="twitter:description" content=""/>
   <meta property="twitter:image" content="https://signoz.io/img/case_study/wombo-banner.jpg"/>
