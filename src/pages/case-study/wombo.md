@@ -16,7 +16,6 @@ import { LiteYoutubeEmbed } from "react-lite-yt-embed";
   <meta property="og:description" content="">
   <meta property="og:image" content="https://signoz.io/img/case_study/wombo-banner.jpg">
 
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://signoz.io/case-study/wombo/">
   <meta property="twitter:title" content="How Generative AI co Wombo provides great experience to its 5mn MAU using SigNoz for Observability | SigNoz">
