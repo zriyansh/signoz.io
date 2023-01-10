@@ -1,11 +1,8 @@
-
 ---
 title:  How Generative AI co Wombo provides great experience to its 5mn MAU using SigNoz for Observability
 slug: wombo
 image: /img/case_study/wombo-banner.webp
 authors: [pranay]
-# hide_table_of_contents: true
-
 ---
 import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 
