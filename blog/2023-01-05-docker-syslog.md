@@ -5,7 +5,7 @@ date: 2023-01-10
 tags: [Tech Tutorial, Docker, Log Management]
 authors: [daniel]
 description: Logs are useful for troubleshooting and identifying issues in applications, as they provide a record of events and activities. However, managing log data can be challenging due to ...
-image: /img/blog/2023/01/docker_syslog_cover.webp
+image: /img/blog/2023/01/docker_syslog_cover.jpeg
 keywords:
   - docker syslog
   - docker logs
@@ -163,23 +163,22 @@ The logs tab in SigNoz has advanced features like a log query builder, search ac
 
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2023/01/docker_syslog_logs_1.webp" alt="Log Query Builder."/>
+    <img src="/img/blog/common/signoz_logs.webp" alt="Log management in SigNoz"/>
     <figcaption><i>Log management in SigNoz</i></figcaption>
 </figure>
-
 
 SigNoz offers real-time analysis of logs, enabling you to search, filter, and visualize them as they are generated. This can assist in identifying patterns, trends, and problems in the logs and resolving issues efficiently.
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2023/01/docker_syslog_logs_2.webp" alt="Real Time Analysis of Logs."/>
-    <figcaption><i>Real Time Analysis of Logs.</i></figcaption>
+    <img src="/img/blog/common/signoz_live_logs.webp" alt="Live tail logging in SigNoz"/>
+    <figcaption><i>Live tail logging in SigNoz</i></figcaption>
 </figure>
 
 With the advanced Log Query Builder, you can filter out logs quickly with a mix and match of fields.
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2023/01/docker_syslog_logs_3.webp" alt="Advanced Log Query Builder."/>
-    <figcaption><i>Advanced Log Query Builder.</i></figcaption>
+    <img src="/img/blog/2022/10/signoz_log_query_builder.webp" alt="Advanced Log Query Builder in SigNoz"/>
+    <figcaption><i>Advanced Log Query Builder in SigNoz</i></figcaption>
 </figure>
 
 ## Getting started with SigNoz
@@ -196,7 +195,8 @@ cd signoz/deploy/
 
 You can visit our documentation for instructions on how to install SigNoz using Docker Swarm and Helm Charts.
 
-![SigNoz Installation](/img/blog/2023/01/signoz_strip.webp)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/install/docker/?utm_source=blog&utm_medium=docker_syslog)
+
 
 ---
 
