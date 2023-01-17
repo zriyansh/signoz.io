@@ -26,6 +26,10 @@ Logs are an integral part of any system that helps you get information about the
 
 ![cover image](/img/blog/2022/12/benchmark-cover.jpg)
 
+Though the performance benchmarks in our tests represent a very specific scenario and use cases, our results seem to directionally agree with what other observability teams have reported, especially wrt. Elastic stack. 
+
+Many big companies like <a href="https://www.uber.com/en-IN/blog/logging/" rel="noopener noreferrer nofollow" target="_blank">Uber</a> and Cloudflare have been shifting to ClickHouse as their main workhorse for Logs management seeing much better performance. for e.g Cloudflare recently shifted from Elastic to ClickHouse and are seeing  <a href="https://blog.cloudflare.com/log-analytics-using-clickhouse/" rel="noopener noreferrer nofollow" target="_blank">8x improvement</a> in memory/cpu resource requirement in ingestion.
+
 Performance benchmarks are not easy to execute. Each tool has nuances, and the testing environments must aim to provide a level playing field for all tools. We have tried our best to be transparent about the setup and configurations used in this performance benchmark. We are open to receiving feedback from the community on what can be done better. Please feel free to create issues in the following repo.
 
 [https://github.com/SigNoz/logs-benchmark](https://github.com/SigNoz/logs-benchmark).
@@ -171,6 +175,8 @@ Here ClickHouse is able to ingest very fast regardless of the number of indexes 
 
 ### CPU usage during ingestion
 
+Generally, ingestion processes are CPU intensive. So, an application which is more CPU efficient during ingestion allows you to handle the same data ingestion rate in a machine with smaller number of CPU cores.
+
 <figure data-zoomable align='center'>
     <img src="/img/blog/2022/12/signoz-logs-insertion-cpu.webp" alt="SigNoz VM using 40% of the CPU"/>
     <figcaption><i>SigNoz VM using 40% of the CPU</i></figcaption>
@@ -195,6 +201,12 @@ Here ClickHouse is able to ingest very fast regardless of the number of indexes 
 From the above three graphs of CPU usage for SigNoz, Elasticsearch and Loki we can see that the CPU usage was **40%, 75%, and 15%** respectively. The high usage of Elasticsearch is mainly due to the amount of indexing and processing that it has to do internally. Since the **number of indexes is lowest in Loki**, it has to do the minimum processing because of which the usage is very low with respect to others. SigNoz  CPU usage is the sum of CPU used by different components such as the three collectors used for receiving logs because of which it stands in a very good position with respect to Elasticsearch and Loki.
 
 ### Memory usage during ingestion
+
+Some terminologies on how memory is measured and what the graphs below indicate:
+
+`used`: memory in use by the OS. <br></br>
+`free`: memory not in use. <br></br>
+`shared` / `buffers` / `cached`: This shows memory usage for specific purposes, these values are included in the value for `used`.
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2022/12/signoz-logs-insertion-memory.webp" alt="SigNoz VM using 20% of the available memory"/>
@@ -295,6 +307,13 @@ We chose different types of queries to compare.
 | Get logs corresponding to a trace_id (**log corresponding to high cardinality field**) | 0.137s | 0.001s | - |
 | Get first 100 logs with method GET (**logs based on filters**) | 0.20s | 0.014s | - |
 
+At SigNoz, we believe that observability is fundamentally a data analytics problems and a lot of querying esp. for Logs happens around aggregation and slicing and dicing of data. 
+
+Companies like Uber have found that in production environment, more than <a href = "https://www.uber.com/en-IN/blog/logging/" rel="noopener noreferrer nofollow" target="_blank" >80% queries</a>  are aggregation queries, such as terms, histogram and percentile aggregations. 
+
+Hence, we think that fast aggregation queries will greatly improve the user querying experience in SigNoz compared to ELK stack.
+
+For other type of queries, like `Get logs based on filters`, though Elastic has numerically beter performance, it won't matter from a user experience perspective as  users can hardly detect the difference between `0.2s` response time vs `0.014s`.
 
 In all of our above test queries, Loki was not able to return results. This is consistent with some of the open issues in Loki community around performance with high cardinality data.
 
@@ -305,6 +324,8 @@ In all of our above test queries, Loki was not able to return results. This is c
 ## Storage Comparison
 
 We have ingested 500GB of logs data for each of the stacks. The table below show us how much space is occupied by each of the logging solution. While Loki is taking the least amount of storage, it has also not indexed anything apart from the `method` and `protocol` keys.
+
+ClickHouse which is the datastore for SigNoz uses <a href = "https://clickhouse.com/docs/en/guides/improving-query-performance/skipping-indexes/#introduction-to-skipping-indexes" rel="noopener noreferrer nofollow" target="_blank" >Skip Index</a> while Elastic indexes everything, which increase the storage needed by Elastic.
 
 | Name | Space Used | Document Count |
 | --- | --- | --- |
