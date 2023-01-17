@@ -1,11 +1,11 @@
 ---
 title: SigNoz - Logs Performance Benchmark
 slug: logs-performance-benchmark
-date: 2022-12-22
+date: 2023-01-17
 tags: [SigNoz, Open Source]
 authors: [nitya, ankit_anand]
 description: We found SigNoz to be 2.5x faster than ELK. For querying benchmarks, we tested out different types of commonly used queries. While ELK was better at performing queries like COUNT, SigNoz is 13x faster than ELK for aggregate queries...
-image: /img/blog/2022/12/logs_performance_benchmark_cover.jpeg
+image: /img/blog/2022/12/benchmark-cover.jpg
 keywords:
   - logs management
   - log analytics
@@ -23,7 +23,7 @@ Logs are an integral part of any system that helps you get information about the
 
 <!--truncate-->
 
-![cover image](/img/blog/2022/12/logs_performance_benchmark_cover.webp)
+![cover image](/img/blog/2022/12/benchmark-cover.jpg)
 
 Performance benchmarks are not easy to execute. Each tool has nuances, and the testing environments must aim to provide a level playing field for all tools. We have tried our best to be transparent about the setup and configurations used in this performance benchmark. We are open to receiving feedback from the community on what can be done better. Please feel free to create issues in the following repo.
 
