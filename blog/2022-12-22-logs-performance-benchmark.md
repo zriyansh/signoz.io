@@ -6,6 +6,7 @@ tags: [SigNoz, Open Source]
 authors: [nitya, ankit_anand]
 description: We found SigNoz to be 2.5x faster than ELK. For querying benchmarks, we tested out different types of commonly used queries. While ELK was better at performing queries like COUNT, SigNoz is 13x faster than ELK for aggregate queries...
 image: /img/blog/2022/12/benchmark-cover.jpg
+hide_table_of_contents: true
 keywords:
   - logs management
   - log analytics
@@ -19,7 +20,7 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/logs-performance-benchmark/"/>
 </head>
 
-Logs are an integral part of any system that helps you get information about the application state and how it handles its operations. The goal of this blog is to compare the commonly used logging solutions, i.e., ElasticSearch(ELK stack) and Loki(PLG stack), with SigNoz on three parameters: ingestion, query, and storage.
+Logs are an integral part of any system that helps you get information about the application state and how it handles its operations. The goal of this blog is to compare the commonly used logging solutions, i.e., ElasticSearch (ELK stack) and Loki (PLG stack), with SigNoz on three parameters: ingestion, query, and storage.
 
 <!--truncate-->
 
@@ -44,7 +45,12 @@ Logs help in troubleshooting, and troubleshooting should be fast. The end-user e
 - **Storage**<br></br>
 Storage is costly and logs data is often huge. Log management tools need to be efficient in storing logs.
 
-**For ingestion**, we found SigNoz to be **2.5x faster** than ELK. For querying benchmarks, we tested out different types of commonly used queries. While ELK was better at performing queries like COUNT, SigNoz is **13x faster than ELK** for **aggregate queries**. **Storage** used by SigNoz for the same amount of logs is about **half of what ELK uses.**
+### Findings
+
+- **For ingestion**, we found SigNoz to be **2.5x faster** than ELK and consumed **50% less resources**.
+- For querying benchmarks, we tested out different types of commonly used queries. While ELK was better at performing queries like COUNT, SigNoz is **13x faster than ELK** for **aggregate queries**.
+- **Storage** used by SigNoz for the same amount of logs is about **half of what ELK uses.**
+- Loki doesn’t perform well if you want to index and query high cardinality data. 
 
 ## Benchmark Methodology and Setup
 
@@ -159,7 +165,9 @@ Now let's go through each of them individually.
 
 <br></br>
 
-From the above three graphs of Signoz, Elasticsearch and Loki we can see that the number of log lines inserted by each is about 55K/s, 20K/s, and 21K/s respectively. Here ClickHouse is able to ingest very fast regardless of the number of indexes as it was designed for faster ingestion and uses skip index for indexing because of which the footprint is less. On the other hand, Elasticsearch indexes everything automatically which impacts the ingestion performance. For Loki, ingestion is mostly limited by the number of streams that it can handle.
+From the above three graphs of SigNoz, Elasticsearch and Loki we can see that the number of log lines inserted by each is about 55K/s, 20K/s, and 21K/s respectively. 
+
+Here ClickHouse is able to ingest very fast regardless of the number of indexes as it was designed for faster ingestion and uses skip index for indexing because of which the footprint is less. On the other hand, Elasticsearch indexes everything automatically which impacts the ingestion performance. For Loki, ingestion is mostly limited by the number of streams that it can handle.
 
 ### CPU usage during ingestion
 
@@ -184,61 +192,88 @@ From the above three graphs of Signoz, Elasticsearch and Loki we can see that th
 
 <br></br>
 
-From the above three graphs of CPU usage for Signoz, Elasticsearch and Loki we can see that the CPU usage was **40%, 75%, and 15%** respectively. The high usage of Elasticsearch is mainly due to the amount of indexing and processing that it has to do internally. Since the **number of indexes is lowest in Loki**, it has to do the minimum processing because of which the usage is very low with respect to others. SigNoz  CPU usage is the sum of CPU used by different components such as the three collectors used for receiving logs because of which it stands in a very good position with respect to Elasticsearch and Loki.
+From the above three graphs of CPU usage for SigNoz, Elasticsearch and Loki we can see that the CPU usage was **40%, 75%, and 15%** respectively. The high usage of Elasticsearch is mainly due to the amount of indexing and processing that it has to do internally. Since the **number of indexes is lowest in Loki**, it has to do the minimum processing because of which the usage is very low with respect to others. SigNoz  CPU usage is the sum of CPU used by different components such as the three collectors used for receiving logs because of which it stands in a very good position with respect to Elasticsearch and Loki.
 
 ### Memory usage during ingestion
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2022/12/signoz-logs-insertion-memory.webp" alt="SigNoz VM using 20% of the available memory"/>
-    <figcaption><i>SigNoz VM using 20% of the available memory</i></figcaption>
+    <figcaption><i>SigNoz VM using 20% of the available memory (~6GB out of 32 GB)</i></figcaption>
 </figure>
 
 <br></br>
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2022/12/elk-memory.webp" alt="ElasticSearch VM using 60% of the available memory"/>
-    <figcaption><i>ElasticSearch VM using 60% of the available memory</i></figcaption>
+    <img src="/img/blog/2022/12/elk-memory-new.webp" alt="ElasticSearch VM using 60% of the available memory"/>
+    <figcaption><i>ElasticSearch VM using 60% of the available memory (~18GB out of 32 GB)</i></figcaption>
 </figure>
 
 <br></br>
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2022/12/loki-memory.webp" alt="Loki VM using 8.3% of the available memory"/>
-    <figcaption><i>Loki VM using 8.3% of the available memory</i></figcaption>
+    <img src="/img/blog/2022/12/loki-memory-new.webp" alt="Loki VM using 30% of the available memory"/>
+    <figcaption><i>Loki VM using 30% of the available memory (~9.6GB out of 32 GB)</i></figcaption>
 </figure>
 
 <br></br>
 
-From the above graphs for memory usage of SigNoz, Elasticsearch and Loki we can see the memory usage to be of 20%, 60%, and 8.3% respectively. Elasticsearch constantly uses about 60% of the memory as it is defined through the heap size. By default, it allocates 50% of the available memory for heap size as mentioned <a href = "https://www.elastic.co/guide/en/elasticsearch/reference/master/advanced-configuration.html#set-jvm-options" rel="noopener noreferrer nofollow" target="_blank" >here</a>.
+From the above graphs for memory usage of SigNoz, Elasticsearch and Loki we can see the memory usage to be of 20%, 60%, and 30% respectively.
+
+For this benchmark for Elasticsearch, we kept the default recommended heap size memory of 50% of available memory (as shown in Elastic docs <a href = "https://www.elastic.co/guide/en/elasticsearch/reference/master/advanced-configuration.html#set-jvm-options" rel="noopener noreferrer nofollow" target="_blank" >here</a>). This determines caching capabilities and hence the query performance. 
+
+We could have tried to tinker with the different heap sizes ( as a % of total memory) but that would impact query performance and hence we kept the default Elastic recommendation.
 
 ### Disk usage during ingestion
 
+During ingestion, we want to measure at what speed read and write speeds are performed at the node disk.  A higher write speed means faster ingestion of data.
+
+So, as you can see from the below disk utilization graphs, SigNoz is able to utlisize more of the disk write speed
+
+Here we are using [gp2 disk](https://aws.amazon.com/ebs/volume-types/) for all the ingestion. The max throughput for gp2 is ~250 MB/s
+
+
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2022/12/signoz-logs-insertion-diskio.webp" alt="SigNoz VM Disk I/O"/>
-    <figcaption><i>SigNoz VM Disk I/O</i></figcaption>
+    <img src="/img/blog/2022/12/signoz-logs-insertion-diskio.webp" alt="SigNoz VM Disk I/O "/>
+    <figcaption><i>SigNoz VM Disk I/O (avg. Write ~145 MiB/s, Read ~48 MiB/s)</i></figcaption>
 </figure>
 
 <br></br>
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2022/12/elk-diskio.webp" alt="ElasticSearch VM Disk I/O"/>
-    <figcaption><i>ElasticSearch VM Disk I/O</i></figcaption>
+    <figcaption><i>ElasticSearch VM Disk I/O (avg. Write ~180 MiB/s, Read ~40 MiB/s)</i></figcaption>
 </figure>
 
 <br></br>
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2022/12/loki-diskio.webp" alt="Loki VM Disk I/O"/>
-    <figcaption><i>Loki VM Disk I/O</i></figcaption>
+    <figcaption><i>Loki VM Disk I/O (avg. Write ~50 MiB/s, Read ~40 MiB/s)</i></figcaption>
 </figure>
 
 <br></br>
 
 From the above graphs of Disk I/O we can see that Elasticsearch has higher disk I/O then SigNoz for less number of log lines ingested per second. One of the other reasons why elasticsearch disk usage is high is because of translogs that getting writting to disk. Elasticsearch writes all insert and delete operations to a translog because of which there is extra disk usage.
 
-Signoz uses clickhouse for storage, clickhouse provides various codecs and compression mechanism which is used by signoz for storing logs. Thus it reduces that amount of data that is getting written to disk.
+SigNoz uses clickhouse for storage, clickhouse provides various codecs and compression mechanism which is used by signoz for storing logs. Thus it reduces that amount of data that is getting written to disk.
 
 The disk usage of Loki is low because it has only four labels(indexes) and there is nothing else apart from it which is getting written to the disk.
+
+
+### Note on importance of high disk utilization
+
+SigNoz and Elasticsearch are able to utilise the disk in a better way compared to Loki as they are able to process more data and write to disk
+
+This is also helpful because if your disk throughput  is low then it would keep more things in buffer and utilise more of its RAM. So, a lower disk throughput is likely to hog more of RAM and eventually lead to dropping of data
+
+
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2022/12/back-pressure.webp" alt="Back pressure with poor disk utilization"/>
+    <figcaption><i>Data Drop due to backpressure from Disk running at 100%</i></figcaption>
+</figure>
+
+<br></br>
+
 
 ## Query Benchmark Results
 
@@ -260,6 +295,13 @@ We chose different types of queries to compare.
 | Get logs corresponding to a trace_id (**log corresponding to high cardinality field**) | 0.137s | 0.001s | - |
 | Get first 100 logs with method GET (**logs based on filters**) | 0.20s | 0.014s | - |
 
+
+In all of our above test queries, Loki was not able to return results. This is consistent with some of the open issues in Loki community around performance with high cardinality data.
+
+
+[![Loki High Cardinality Issue](/img/blog/2022/12/loki-issue.png)](https://github.com/grafana/loki/issues/91)
+
+
 ## Storage Comparison
 
 We have ingested 500GB of logs data for each of the stacks. The table below show us how much space is occupied by each of the logging solution. While Loki is taking the least amount of storage, it has also not indexed anything apart from the `method` and `protocol` keys.
@@ -273,7 +315,7 @@ We have ingested 500GB of logs data for each of the stacks. The table below show
 ## Conclusion
 
 - For ingestion SigNoz is **2.5x faster** than ELK and uses **50% less resources**.
-- Loki is not suitable for indexing and querying high-cardinality data.
+- Loki doesn’t perform well if you want to index and query high cardinality data. 
 - SigNoz is about **13 times** faster than ELK for aggregation queries.
 - **Storage** used by SigNoz for the same amount of logs is about **half of what ELK uses.**
 
