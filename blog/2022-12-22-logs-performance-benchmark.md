@@ -32,7 +32,9 @@ Many big companies like <a href="https://www.uber.com/en-IN/blog/logging/" rel="
 
 Performance benchmarks are not easy to execute. Each tool has nuances, and the testing environments must aim to provide a level playing field for all tools. We have tried our best to be transparent about the setup and configurations used in this performance benchmark. We are open to receiving feedback from the community on what can be done better. Please feel free to create issues in the following repo.
 
-[https://github.com/SigNoz/logs-benchmark](https://github.com/SigNoz/logs-benchmark).
+
+[![Logs Benchmark Repo](/img/blog/2022/12/benchmark-repo-new.png)](https://github.com/SigNoz/logs-benchmark)
+
 
 We will go through how we have created the environment for benchmarking the different solutions and compare the results that can help you choose a tool based on your logging requirements. But before that, let’s give you a brief overview of the key findings.
 
@@ -54,7 +56,10 @@ Storage is costly and logs data is often huge. Log management tools need to be e
 - **For ingestion**, we found SigNoz to be **2.5x faster** than ELK and consumed **50% less resources**.
 - For querying benchmarks, we tested out different types of commonly used queries. While ELK was better at performing queries like COUNT, SigNoz is **13x faster than ELK** for **aggregate queries**.
 - **Storage** used by SigNoz for the same amount of logs is about **half of what ELK uses.**
-- Loki doesn’t perform well if you want to index and query high cardinality data. 
+- Loki doesn’t perform well if you want to index and query high cardinality data. In our setup for Loki we we not able to push it to ingest high cardinality labels/indexes. 
+
+We saw Loki team has [recently shared](https://twitter.com/sukhanisandeep/status/1615243908241588224) some improvements in querying speed, but this benchmark is not updated based on this update and we have not verified if it would help in high cardinality data. If anyone in the community has been able to get good performance for high cardinality data, we would love to learn more.
+
 
 ## Benchmark Methodology and Setup
 
@@ -89,7 +94,10 @@ For deployment and benchmarking, we have used four VMs. Three of the VMs are use
 
 The three VMs for generating logs is **`c6a.2xlarge`** EC2 instance with 8vCPU, 16GB of RAM, and network bandwidth of up to 12.5 Gbps. While the VM used for deploying the logging solution is a **`c6a.4xlarge`** EC2 instance with 16vCPU, 32GB of RAM, and network bandwidth up to 12.5 Gbps.
 
-All the configurations used for performing the benchmark can be found here: [https://github.com/SigNoz/logs-benchmark](https://github.com/SigNoz/logs-benchmark).
+All the configurations used for performing the benchmark can be found in the SigNoz Logs benchmark repo
+
+[![Logs Benchmark Repo](/img/blog/2022/12/benchmark-repo-new.png)](https://github.com/SigNoz/logs-benchmark)
+
 
 ## Preparing SigNoz
 
@@ -102,11 +110,13 @@ SigNoz cluster architecture for the performance benchmark looks as the following
 
 <br></br>
 
-The three VMs are generating logs and sending it to signoz-otel-collector using OTLP. The reason we are using OTEL collectors on the receiver side instead of directly writing to ClickHouse from the generator VM's is that the OTEL collectors running in the generator VM's may or maynot be the distribution from SigNoz.
+The three VMs are generating logs and sending it to signoz-otel-collector using OTLP. The reason we are using OTEL collectors on the receiver side instead of directly writing to ClickHouse from the generator VMs is that the OTEL collectors running in the generator VM's may or maynot be the distribution from SigNoz.
 
 In our otel collector configuration, we have extracted all fields, and we have converted all the fields from interesting fields  to selected fields in the UI, which means they all are indexed.
 
 ## Preparing Elasticsearch
+
+For this benchmark, we used Elastic version `8.4.3` and Logstash version `8.4.3`
 
 Elasticsearch cluster architecture for the performance benchmark looks as the following:
 
@@ -121,6 +131,8 @@ In the three generators’ virtual machines, the logs are generated using flog, 
 
 ## Preparing Loki
 
+For this benchmark, we used Loki version `2.6.1` and Promtail version `2.6.1`
+
 Loki cluster architecture for the performance benchmark looks as the following:
 
 <figure data-zoomable align='center'>
@@ -132,7 +144,7 @@ Loki cluster architecture for the performance benchmark looks as the following:
 
 Here we have used only two `flog` containers for generating logs. If we try to increase the number of `flog` containers, Loki errors out with `max` stream errors as the number of files increases and thus resulting in a higher number of streams. Also we were able to only index two attributes which are **protocol and method**. If we try to create more labels, it reaches `max` stream error.
 
-It is also recommended by Grafana to keep the number of labels as low as possible and not to index high cardinality data.
+It is also <a href = "https://grafana.com/blog/2020/08/27/the-concise-guide-to-labels-in-loki/" rel="noopener noreferrer nofollow" target="_blank" >recommended by Grafana</a> to keep the number of labels as low as possible and not to index high cardinality data.
 
 ## Ingestion Benchmark Results
 
@@ -175,7 +187,7 @@ Here ClickHouse is able to ingest very fast regardless of the number of indexes 
 
 ### CPU usage during ingestion
 
-Generally, ingestion processes are CPU intensive. So, an application which is more CPU efficient during ingestion allows you to handle the same data ingestion rate in a machine with smaller number of CPU cores.
+Many a times, ingestion processes are CPU intensive. In such scenario, an application which is more CPU efficient during ingestion allows you to handle the same data ingestion rate in a machine with smaller number of CPU cores.
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2022/12/signoz-logs-insertion-cpu.webp" alt="SigNoz VM using 40% of the CPU"/>
@@ -206,7 +218,7 @@ Some terminologies on how memory is measured and what the graphs below indicate:
 
 `used`: memory in use by the OS. <br></br>
 `free`: memory not in use. <br></br>
-`shared` / `buffers` / `cached`: This shows memory usage for specific purposes, these values are included in the value for `used`.
+`shared` / `buffers` : This shows memory usage for specific purposes, these values are included in the value for `used`.
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2022/12/signoz-logs-insertion-memory.webp" alt="SigNoz VM using 20% of the available memory"/>
@@ -265,7 +277,7 @@ Here we are using [gp2 disk](https://aws.amazon.com/ebs/volume-types/) for all t
 
 <br></br>
 
-From the above graphs of Disk I/O we can see that Elasticsearch has higher disk I/O then SigNoz for less number of log lines ingested per second. One of the other reasons why elasticsearch disk usage is high is because of translogs that getting writting to disk. Elasticsearch writes all insert and delete operations to a translog because of which there is extra disk usage.
+From the above graphs of Disk I/O we can see that Elasticsearch has higher disk I/O than SigNoz for less number of log lines ingested per second. One of the other reasons why elasticsearch disk usage is high is because of translogs that getting writting to disk. Elasticsearch writes all insert and delete operations to a translog because of which there is extra disk usage.
 
 SigNoz uses clickhouse for storage, clickhouse provides various codecs and compression mechanism which is used by signoz for storing logs. Thus it reduces that amount of data that is getting written to disk.
 
@@ -312,8 +324,6 @@ At SigNoz, we believe that observability is fundamentally a data analytics probl
 Companies like Uber have found that in production environment, more than <a href = "https://www.uber.com/en-IN/blog/logging/" rel="noopener noreferrer nofollow" target="_blank" >80% queries</a>  are aggregation queries, such as terms, histogram and percentile aggregations. 
 
 Hence, we think that fast aggregation queries will greatly improve the user querying experience in SigNoz compared to ELK stack.
-
-For other type of queries, like `Get logs based on filters`, though Elastic has numerically beter performance, it won't matter from a user experience perspective as  users can hardly detect the difference between `0.2s` response time vs `0.014s`.
 
 In all of our above test queries, Loki was not able to return results. This is consistent with some of the open issues in Loki community around performance with high cardinality data.
 
