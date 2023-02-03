@@ -88,13 +88,15 @@ function pricingTest() {
                     </div>
                     <div class="card__body">
                         <p>
-                            <li> Single Sign On support</li>
+                            <li> Single Sign On </li>
                             <li> SAML and LDAP support</li>
                             {/* <li> Visualise very large traces (>10k spans) with hierarchical navigation</li> */}
+                            <li> AWS PrivateLink </li>
                             <li> Dashboard configuration support</li>
+
                             <br></br>
                             <div style={{fontSize:'medium'}}>Upcoming features</div>
-                            <li> Predictive Resource Optimization  </li>
+                            {/* <li> Predictive Resource Optimization  </li> */}
                             <li> Finer RBAC with custom roles</li>
                             <li> Audit Logs</li>
 
