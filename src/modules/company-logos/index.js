@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import styles from "./styles.module.css"
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
 export const ShowCompanyLogos = () => {
@@ -16,20 +17,20 @@ return(
               <p className={styles.tagline}> Used by teams at </p>
               <ul>
                 <li>
-                  <img src="img/users/wonder_logo.png" alt="wonder logo" />
+                  <img src="/img/users/wonder_logo.png"  alt="wonder logo" />
                 </li>
                 <li>
-                  <img src="img/users/epifi.jpeg" alt="epifi logo" />
+                  <img src="/img/users/epifi.jpeg" alt="epifi logo" />
                 </li>
                 <li>
-                  <img src="img/users/outplay_logo.png" alt="outplay logo" />
+                  <img src="/img/users/outplay_logo.png" alt="outplay logo" />
                 </li>
                 <li>
-                  <img src="img/users/instasafe_logo.png" alt="instasafe logo" />
+                  <img src="/img/users/instasafe_logo.png" alt="instasafe logo" />
                 </li>
                 <li>
                   <img
-                    src="img/users/wombo_logo.png"
+                    src="/img/users/wombo_logo.png"
                     alt="wombo logo"
                   />
                 </li>

@@ -3,6 +3,8 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import FAQBody from "@site/src/components/FAQPricing";
 import ReactGA from "react-ga";
+import { ShowCompanyLogos } from "../modules/company-logos";
+
 
 
 // ReactGA.initialize("UA-152867655-1"); 
@@ -170,7 +172,7 @@ function pricingTest() {
             </div>
       </section>       */}
 
-          
+      <ShowCompanyLogos/>
 
 
       {/* FAQ section */}
