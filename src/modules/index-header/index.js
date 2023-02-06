@@ -19,8 +19,8 @@ export const Header = () => {
 
         
         <p className="" style={{ fontWeight: "bold", fontSize: "42px" }}>
-            Self Hosted observability with 
-            traces, <br></br> logs and metrics in a single pane            {/* Open-source application monitoring platform */}
+            Self Hosted Observability with 
+            Traces, <br></br> Logs and Metrics in a single pane            {/* Open-source application monitoring platform */}
         </p>
 
         <p className="hero__subtitle">
