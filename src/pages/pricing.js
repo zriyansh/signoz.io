@@ -85,7 +85,7 @@ function pricingTest() {
             <div className={"col col--4 margin-vert--md"}>
                 <div class="card">
                     <div class="card__header">
-                        <h3 style={{marginBottom:'0'}}>Enterprise Self Hosted</h3>
+                        <h3 style={{marginBottom:'0'}}>Enterprise </h3>
                         {/* <p style={{fontSize:'medium'}}>Open for Early access</p> */}
                     </div>
                     <div class="card__body">
@@ -95,6 +95,7 @@ function pricingTest() {
                             {/* <li> Visualise very large traces (>10k spans) with hierarchical navigation</li> */}
                             <li> AWS PrivateLink </li>
                             <li> Dashboard configuration support</li>
+                            <li> Managed in your Cloud by SigNoz</li>
 
                             <br></br>
                             <div style={{fontSize:'medium'}}>Upcoming features</div>
