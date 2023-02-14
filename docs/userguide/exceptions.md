@@ -151,3 +151,49 @@ Exception detail page includes the stack trace of the exception, exception attri
 By clicking `errors in the trace page` you can see the exceptions in the context of the trace request in which the exception was thrown
 
 ![exception-detail-2](../../static/img/docs/exception-detail-2.png)
+
+
+## Grouping Exceptions
+
+By default, exceptions on **Exception List page** are grouped by service name, exception type
+and exception message. This might result in high cardinality of exception groups, especially
+if exception messages contains UUIDs or randomly generated IDs.
+
+To reduce the cardinality of the exception grouping, set the `low_cardinal_exception_grouping`
+to `true` in `clickhousetraces` exporter configuration. This will result in exception grouping
+by name of service and exception type.
+
+:::info
+This new grouping strategy will only be applied to new data injected after new instance of
+`otel-collector` with updated the environment variable.
+:::
+
+### Docker Standalone and Docker Swarm
+
+To enable exception grouping, users can set `LOW_CARDINAL_EXCEPTION_GROUPING=true` as an
+environment variable for otel collector service in `docker-compose.yaml`.
+
+```yaml {4}
+services:
+  otel-collector:
+    environment:
+      - LOW_CARDINAL_EXCEPTION_GROUPING=true
+```
+
+### Kubernetes (Helm)
+
+To enable exception grouping, include the following in `override-values.yaml`:
+
+```yaml
+otelCollector:
+  lowCardinalityExceptionGrouping: true
+```
+
+To install or upgrade SigNoz release with the updated configurations in `override-values.yaml`:
+
+```yaml
+helm -n platform upgrade \
+    --create-namespace --install \
+    my-release signoz/signoz \
+    -f override-values.yaml
+```
