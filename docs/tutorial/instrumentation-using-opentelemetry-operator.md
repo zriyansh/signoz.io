@@ -87,7 +87,7 @@ the sample collector:
 
 - To install `telemetrygen` binary:
   ```bash
-  go install github.com/open-telemetry/opentelemetry-collector-contrib/telemetrygen@latest
+  go install github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemetrygen@latest
   ```
 - To forward gRPC port of the OTLP service:
   ```bash
