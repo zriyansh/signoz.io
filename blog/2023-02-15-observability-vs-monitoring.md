@@ -6,7 +6,7 @@ tags: [Tools Comparison]
 authors: tiago
 description: While observability is more about correlated telemetry signals to drive contextual insights, monitoring is about capturing metrics and keeping a check on thresholds...
 image: /img/blog/2023/02/observability_vs_monitoring_cover.jpeg
-hide_table_of_contents: false
+hide_table_of_contents: true
 keywords:
   - Observability
   - Monitoring
@@ -186,7 +186,7 @@ It also provides an intelligent correlation between these telemetry signals.
 
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/common/signoz_dashboard_homepage.webp" alt="At points of high application latency"/>
+    <img src="/img/blog/2023/02/metrics_to_traces.webp" alt="You can switch from metrics to traces easily"/>
     <figcaption><i>At points of high application latency, as shown by application metrics, you can hump into traces to investigate further</i></figcaption>
 </figure>
 
