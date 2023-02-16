@@ -92,3 +92,9 @@ This config would be enough to get you up and running. For more tweaks refer to 
 Facing difficulties with instrumenting your application? Check out this video tutorial 👇
 
 <LiteYoutubeEmbed id="g-I-v1FtMoM" mute={false} />
+
+## Sample Angular App
+- [Sample Angular App](https://github.com/SigNoz/sample-angular-app/) - Contains without-instrumentation branch as well as instrumented branch `main`.
+
+
+<InstrumentationFAQ />
