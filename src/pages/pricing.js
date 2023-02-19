@@ -111,7 +111,7 @@ function pricingTest() {
                      target="_blank"
                      href="https://forms.gle/yYSkntXRRPU3MHRL7" 
                      onClick={() => handleClick('SigNozCloud')}
-                     >Reach out to us</a>
+                     >Request Access</a>
                     </div>
                 </div>
             </div>
