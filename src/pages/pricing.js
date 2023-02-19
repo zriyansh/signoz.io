@@ -95,7 +95,6 @@ function pricingTest() {
                             {/* <li> Visualise very large traces (>10k spans) with hierarchical navigation</li> */}
                             <li> AWS PrivateLink </li>
                             <li> Dashboard configuration support</li>
-                            <li> Managed in your Cloud by SigNoz</li>
 
                             <br></br>
                             <div style={{fontSize:'medium'}}>Upcoming features</div>
