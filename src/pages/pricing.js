@@ -28,19 +28,30 @@ function pricingTest() {
 
         <div className={"row"}>
             <div className={"col col--4 margin-vert--md"}>
-                <div class="card" style={{height:'24rem'}}>
+                <div class="card" style={{height:'32rem'}}>
                     <div class="card__header">
                         <h3 style={{marginBottom:'0'}}>Community</h3>
                         <p style={{fontSize:'medium'}}>Free</p>
                     </div>
                     <div class="card__body">
                         <p>
-                            <li> Open Source </li>
-                            <li> Self Hosted </li>
-                            <li> Key metrics like Latency, Error rates </li>
-                            <li> Debug performance issues with Traces </li>
-                            <li> Dashboard for Infrastructure and custom metrics </li>
-                            <li> Community Support </li>
+                            <li>Open Source</li>
+
+                            <li>Self Hosted</li>
+
+                            <li> Key metrics like Latency, Error rates</li>
+
+                            <li>Debug performance issues with Traces</li>
+
+                            <li>Dashboard for Infrastructure and custom metrics</li>
+
+                            <li>Alerts</li>
+
+                            <li> 
+                              Exceptions Monitoring 
+                            </li>
+
+                            <li>Community Support</li>
                         </p>
                     </div>
                     <div class="card__footer">
@@ -56,7 +67,7 @@ function pricingTest() {
                 </div>
             </div>
             <div className={"col col--4 margin-vert--md"}>
-                <div class="card" style={{height:'24rem'}}>
+                <div class="card" style={{height:'32rem'}}>
                     <div class="card__header">
                         <h3 style={{marginBottom:'0'}}>SigNoz Cloud</h3>
                         <p style={{fontSize:'medium'}}>Starts from USD 200/month</p>
@@ -64,11 +75,33 @@ function pricingTest() {
                     <div class="card__body">
                         <p>
 
-                            <li> Hosted and Managed by SigNoz </li>
-                            <li> Single Sign On and SAML support included</li>
-                            <li> Easily shift to self hosted if needed</li>
-                            <li> Slack Support for initial setup </li>
-                            <li> Usage based pricing based on data you send us</li>
+                            <li>Hosted and Managed by SigNoz</li>
+
+                            <li>SSO and SAML support</li>
+                          
+
+                            <li>Easily shift to self hosted if needed</li>
+                            
+
+                            <br></br>
+                            <b>Pricing</b>
+                            <br></br>
+                            Logs & Traces : $0.4 per GB ingested
+                            <br></br>
+                            Metrics : $0.1 per mn samples
+                            <br></br>
+                            <br></br>
+
+                            <div style={{fontSize:'medium'}}>
+                            Retention: 15 days for Traces & Logs, 30 days for Metrics
+                            <br></br>
+                            No user based pricing
+                            <br></br>
+
+                            Custom Retention periods available
+                            </div>
+
+
                         
 
                         </p>
@@ -83,7 +116,7 @@ function pricingTest() {
                 </div>
             </div>
             <div className={"col col--4 margin-vert--md"}>
-                <div class="card" style={{height:'24rem'}}>
+                <div class="card" style={{height:'32rem'}}>
                     <div class="card__header">
                         <h3 style={{marginBottom:'0'}}>Enterprise </h3>
                         {/* <p style={{fontSize:'medium'}}>Open for Early access</p> */}
@@ -95,6 +128,7 @@ function pricingTest() {
                             {/* <li> Visualise very large traces (>10k spans) with hierarchical navigation</li> */}
                             <li> AWS PrivateLink </li>
                             <li> Dashboard configuration support</li>
+                            <li> Support Plan with SLAs</li>
 
                             <br></br>
                             <div style={{fontSize:'medium'}}>Upcoming features</div>
