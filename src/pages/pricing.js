@@ -123,6 +123,7 @@ function pricingTest() {
                     </div>
                     <div class="card__body">
                         <p>
+                            <li> Self Host or Managed by SigNoz in Your Cloud </li>
                             <li> Single Sign On </li>
                             <li> SAML and LDAP support</li>
                             {/* <li> Visualise very large traces (>10k spans) with hierarchical navigation</li> */}

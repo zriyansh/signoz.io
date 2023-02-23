@@ -19,7 +19,7 @@ export const Header = () => {
 
         
         <p className="" style={{ fontWeight: "bold", fontSize: "42px" }}>
-            Self Hosted Observability with 
+            Open Source Observability with 
             Traces, <br></br> Logs and Metrics in a single pane            {/* Open-source application monitoring platform */}
         </p>
 
@@ -48,10 +48,11 @@ export const Header = () => {
                 paddingRight: "10px",
             }}
             className="button button--outline button--secondary "
-            href={"https://forms.gle/YDJ3wBFx7nhDnUbr5"}
+            href={"/pricing/"}
+            // href={"https://forms.gle/YDJ3wBFx7nhDnUbr5"}
             //   onClick={requestDemoClicked}
             >
-            Request a Demo
+            Hosted & Enterprise Plans
             </Link>
 
 
