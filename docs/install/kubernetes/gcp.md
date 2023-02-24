@@ -13,15 +13,14 @@ import K8sHotrod from '../../shared/k8s-hotrod.md'
 import NextSteps from '../../shared/next-steps.md'
 import StorageClass from '../../shared/k8s-storageclass.md'
 
-First, we need to set up a Kubernetes cluster (see the
-[official GCP documentation](https://cloud.google.com/kubernetes-engine/)
+First, we need to set up a Kubernetes cluster (see the [official GCP documentation][1]
 for more info).
  
 <K8sComponents />
 
 ## Prerequisites
 
-- You must have a GKE cluster
+- You must have a GKE cluster. Both Standard and Autopilot are supported.
 
 <CommonPrerequisites />
 
@@ -29,16 +28,47 @@ for more info).
 
 Here's the minimal required `override-values.yaml` that we'll be using later. You can find
 an overview of the parameters that can be configured during installation under
-[chart configuration](https://github.com/SigNoz/charts/tree/main/charts/signoz#configuration).
+[chart configuration][2].
+
+### GKE Standard
+
+In GKE Standard, you can either install with default configurations or make
+use of the following `override-values.yaml`:
 
 ```yaml
 global:
   storageClass: gce-resizable
+  cloud: gcp
 
 clickhouse:
-  cloud: gcp
   installCustomStorageClass: true
 ```
+
+### GKE Autopilot
+
+In GKE Autopilot, you must set `cloud` to `gcp/autogke` as well as
+update `kubeletMetrics` to use read-only Kubelet endpoint as shown
+below in the `override-values.yaml`:
+
+```yaml
+global:
+  storageClass: gce-resizable
+  cloud: gcp/autogke
+
+clickhouse:
+  installCustomStorageClass: true
+
+k8s-infra:
+  presets:
+    kubeletMetrics:
+      authType: none
+      endpoint: ${K8S_NODE_NAME}:10255
+```
+
+GKE Autopilot automatically overriddes resource requests/limits. In our case,
+all `signoz` chart components as well as components from `clickhouse` and
+`k8s-infra` charts, if enabled. Therefore, make sure to have enough resource
+quota for the region where the cluster is deployed. Read more about it [here][3].
 
 <StorageClass />
 
@@ -63,3 +93,9 @@ helm --namespace platform install my-release signoz/signoz -f override-values.ya
 ## Next Steps
 
 <NextSteps />
+
+---
+
+[1]: https://cloud.google.com/kubernetes-engine/
+[2]: https://github.com/SigNoz/charts/tree/main/charts/signoz#configuration
+[3]: https://cloud.google.com/kubernetes-engine/docs/concepts/autopilot-resource-requests#defaults
