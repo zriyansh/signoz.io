@@ -125,11 +125,8 @@ The receivers FluentForward and OTLP doesn’t have operators. But for parsing t
 - **[recombine](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/recombine.md)** :-  The `recombine` operator combines consecutive logs into single logs based on simple expression rules.
 - **[remove](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/remove.md)** :-  The `remove` operator removes a field from a record.
 - **[retain](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/retain.md)** :- The `retain` operator keeps the specified list of fields, and removes the rest.
-- **[router](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/router.md)** :-  The `router` operator allows logs to be routed dynamically based on their content.
-    
-    The operator is configured with a list of routes, where each route has an associated expression. An entry sent to the router operator is forwarded to the first route in the list whose associated expression returns `true`.
-    
-    An entry that does not match any of the routes is dropped and not processed further
+- **[router](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/router.md)** :-  The `router` operator allows logs to be routed dynamically based on their content. The operator is configured with a list of routes, where each route has an associated expression. An entry sent to the router operator is forwarded to the first route in the list whose associated expression returns `true`. An entry that does not match any of the routes is dropped and not processed further
+- **[key_value_parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/key_value_parser.md)** :- The `key_value_parser` operator parses the string-type field selected by parse_from into key value pairs. All values are of type string.
     
 
 ## Processors available for processing logs
