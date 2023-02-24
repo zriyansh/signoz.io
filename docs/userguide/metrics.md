@@ -144,7 +144,7 @@ This pane shows details about the database calls that your application makes. Th
 
 If your services are making DB calls and your Database Call panels show as empty, please make sure that:
 1. Your spans have the above attributes.
-2. You have used appropripriate libraries for instrumenting packages which you use to make DB calls from your application
+2. You have used appropriate libraries for instrumenting packages which you use to make DB calls from your application
 
 The graphs in this pane provide the following information:
 - The number of database calls per second
