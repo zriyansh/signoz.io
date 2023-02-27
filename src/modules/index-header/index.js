@@ -36,23 +36,24 @@ export const Header = () => {
             }}
             className="button button--primary "
             // onClick={setShowTrySignozModal.bind(this,true)}
-            href={"/docs/install/docker"}
+            href={"/pricing/"}
             //   onClick={getStartedClicked}
             >
-            Get Started for free
+            Try SigNoz Cloud
             </Link>
             <Link
             style={{
                 margin: "6px",
-                paddingLeft: "10px",
-                paddingRight: "10px",
+                paddingLeft: "30px",
+                paddingRight: "30px",
             }}
             className="button button--outline button--secondary "
-            href={"/pricing/"}
+            href={"/docs/install/"}
+
             // href={"https://forms.gle/YDJ3wBFx7nhDnUbr5"}
             //   onClick={requestDemoClicked}
             >
-            Hosted & Enterprise Plans
+            Self Host
             </Link>
 
 
