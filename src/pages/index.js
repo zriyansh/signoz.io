@@ -934,21 +934,23 @@ function Home() {
                     <Link
                       className="button button--primary margin--md "
                       //  onClick={setShowTrySignozModal.bind(this,true)}>
-                      href={"/docs/"}
+                      href={"/pricing/"}
                     >
-                      Get Started
+                      Try SigNoz Cloud
+
                     </Link>
                     <Link
                     style={{
                       margin: "6px",
-                      paddingLeft: "10px",
-                      paddingRight: "10px",
+                      paddingLeft: "30px",
+                      paddingRight: "30px",
                     }}
                     className="button button--outline button--secondary "
-                    href={"https://forms.gle/YDJ3wBFx7nhDnUbr5"}
+                    href={"/docs/install/"}
                     onClick={requestDemoClicked}
                   >
-                    Request a Demo
+                    Self Host
+
                   </Link>
                   </div>
                 </div>
