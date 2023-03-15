@@ -90,7 +90,17 @@ If you instead prefer to watch a video, check out this video:
 
  <p>&nbsp;</p>
 
+<!-- <div style={{
+  position:"relative",
+  width:"100%",
+  
+}}>
+<LiteYoutubeEmbed id="Y7OkvmuTRQ8" mute={false} />¿
+</div> -->
+
+<div>
 <LiteYoutubeEmbed id="Y7OkvmuTRQ8" mute={false} />
+</div>
 
 <p>&nbsp;</p>
 
