@@ -90,7 +90,13 @@ If you instead prefer to watch a video, check out this video:
 
  <p>&nbsp;</p>
 
+<div style={{
+  maxHeight:"535px",
+  overflow:"hidden",
+  postiton:"relative"
+}}>
 <LiteYoutubeEmbed id="Y7OkvmuTRQ8" mute={false} />
+</div>
 
 <p>&nbsp;</p>
 
