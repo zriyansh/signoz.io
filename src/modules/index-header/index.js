@@ -20,7 +20,7 @@ export const Header = () => {
         
         <p className="" style={{ fontWeight: "bold", fontSize: "42px" }}>
             Open Source Observability with 
-            Traces, <br></br> Logs and Metrics in a single pane            {/* Open-source application monitoring platform */}
+            <span className={styles.highlight}> Traces</span>, <br></br> <span className={styles.highlight}>Logs </span>and<span className={styles.highlight}> Metrics </span>in a single pane            {/* Open-source application monitoring platform */}
         </p>
 
         <p className="hero__subtitle">
