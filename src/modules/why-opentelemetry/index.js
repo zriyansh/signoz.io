@@ -19,7 +19,7 @@ export const WhyOpenTelemetry = () => {
 
         <div class="row">
                 <div  style={{textAlign:"center"}} class="col col--4">
-                        <img  className={styles.iconImage}  src="/img/website/vendorlockin-otel.png" alt="opentelemetry" />
+                        <img  className={styles.iconImage}  src="/img/website/vendorlockin-otel.svg" alt="opentelemetry" />
 
                         <h4>
                         No vendor lock-in with OpenTelemetry
@@ -28,7 +28,7 @@ export const WhyOpenTelemetry = () => {
                 </div>
 
                 <div  style={{textAlign:"center"}} class="col col--4">
-                        <img  className={styles.iconImage} src="/img/website/standardise-otel.png" alt="opentelemetry" />
+                        <img  className={styles.iconImage} src="/img/website/standardise-otel.svg" alt="opentelemetry" />
 
                         <h4>
                         Standardize Observability with one open source standard
@@ -37,7 +37,7 @@ export const WhyOpenTelemetry = () => {
                 </div>
 
                 <div  style={{textAlign:"center"}} class="col col--4">
-                        <img  className={styles.iconImage} src="/img/website/high-quality-otel.png" alt="opentelemetry" />
+                        <img  className={styles.iconImage} src="/img/website/high-quality-otel.svg" alt="opentelemetry" />
 
                         <h4>
                         High Quality Telemetry with intelligent correlation
