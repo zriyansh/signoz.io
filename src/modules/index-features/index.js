@@ -67,7 +67,7 @@ export const SigNozFeatures = () => {
                 <li> Native Support for OpenTelemetry Logs </li>
                 <li> Advanced Log Query Builder to help you search & filter logs easily </li>
                 <li> Automatic Log Collection from K8s cluster </li>
-                <li> Uses Columnar Database (ClickHouse)  for lightening quick Log analytics [Logs Perf. benchmark] </li>
+                <li> Uses Columnar Database (ClickHouse)  for lightening quick Log analytics <a target='_blank' href='https://signoz.io/blog/logs-performance-benchmark/'>[Logs Perf. Benchmark]</a> </li>
             </ul>
 
         </div>
