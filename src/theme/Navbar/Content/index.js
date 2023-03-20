@@ -11,6 +11,8 @@ import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarSearch from '@theme/Navbar/Search';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
+
 function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved
   return useThemeConfig().navbar.items;
@@ -60,6 +62,14 @@ export default function NavbarContent() {
             height="30"
             title="Star SigNoz on GitHub"
           ></iframe>
+          <Link
+                      className="button button--primary "
+                      //  onClick={setShowTrySignozModal.bind(this,true)}>
+                      href={"/pricing/?utm_source=website&utm_medium=navbar&utm_campaign=try_cloud"}
+                    >
+                      Try SigNoz Cloud
+
+          </Link>
           <NavbarItems items={rightItems} />
           <NavbarColorModeToggle className={styles.colorModeToggle} />
           {!searchBarItem && (

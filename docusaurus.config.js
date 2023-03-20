@@ -96,11 +96,11 @@ const config = {
           position: "right",
         },
       
-        {
-          href: "https://signoz.io/slack",
-          label: "Slack",
-          position: "right",
-        },
+        // {
+        //   href: "https://signoz.io/pricing/",
+        //   label: "Try SigNoz Cloud",
+        //   position: "right",
+        // },
         // {
         //   to: 'pricing/',
         //   activeBasePath: 'pricing',
