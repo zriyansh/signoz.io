@@ -37,6 +37,7 @@ clickhouse:
          annotations:
             eks.amazonaws.com/role-arn: arn:aws:iam::*********:role/********
 ```
+`endpoint` would look something like `https://BUCKET_NAME.s3.REGION.amazonaws.com/data/`
 
 However, just adding the AWS role arn will not complete the integration,
 because here we need to associate the given IAM role with a Kubernetes
@@ -126,7 +127,7 @@ clickhouse:
    coldStorage:
       enabled: true
       defaultKeepFreeSpaceBytes: "10485760"
-      endpoint: https://demo-cold-storage.s3.amazonaws.com/data/
+      endpoint: https://demo-cold-storage.s3.us-east-2.amazonaws.com/data/
       role:
          enabled: true
          annotations:
