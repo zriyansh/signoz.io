@@ -12,7 +12,7 @@
 .used_by .tagline {
   margin-bottom: 4rem;
   text-align: center;
-  font-family: "Work Sans";
+  font-family: var(--ifm-font-family-work-sans);
   font-style: normal;
   font-weight: 700;
   font-size: 2.5rem;
@@ -35,12 +35,9 @@
   list-style-type: none;
 }
 
-@media (max-width: 996px) {
-}
-@media (max-width: 568px) {
+
+@media (max-width: 768px) {
   .used_by .tagline {
     font-size: 1.6rem;
   }
-}
-@media (max-width: 410px) {
 }

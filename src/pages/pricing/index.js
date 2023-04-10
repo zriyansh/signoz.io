@@ -3,18 +3,20 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import FAQBody from "@site/src/components/FAQPricing";
 import ReactGA from "react-ga";
-import { ShowCompanyLogos } from "../modules/company-logos";
-import { RightSVG, WrongSVG } from "../svgs/common";
-import { TalkToExpert } from "../modules/talk-to-expert";
-import { CommunityEdition } from "../modules/community-edition";
-import { UserReview } from "../modules/user-review";
-import { TrySigNozCTA } from "../modules/try-signoz-cta";
-import { DataProtection } from "../modules/data-protection";
+import { ShowCompanyLogos } from "../../modules/company-logos";
+import { RightSVG, WrongSVG } from "../../svgs/common";
+import { TalkToExpert } from "../../modules/talk-to-expert";
+import { CommunityEdition } from "../../modules/community-edition";
+import { UserReview } from "../../modules/user-review";
+import { TrySigNozCTA } from "../../modules/try-signoz-cta";
+import { DataProtection } from "../../modules/data-protection";
+import clsx from "clsx";
+import styles from "./styles.module.css";
+// import "./styles.css";
 
 // ReactGA.initialize("UA-152867655-1");
 
 const handleClick = (message) => {
-  // console.log(message)
   ReactGA.event({
     category: "User",
     action: message,
@@ -24,13 +26,15 @@ const handleClick = (message) => {
 function pricingTest() {
   return (
     <Layout title="SigNoz Plans">
-      <section className="pricing">
+      <section className={styles.pricing}>
         <div
-          className="container"
-          style={{ marginTop: "3rem", marginBottom: "4rem" }}
+          className={clsx({
+            container: true,
+            [styles.pricingContainer]: true,
+          })}
         >
-          <h2 className="title">Transparent & Predictable Pricing</h2>
-          <p className="subtitle">
+          <h2 className={styles.title}>Transparent & Predictable Pricing</h2>
+          <p className={styles.subtitle}>
             OpenTelemetry-Native <span className="highlight">Metrics</span>,{" "}
             <span className="highlight">Logs</span>, and{" "}
             <span className="highlight">Traces</span> in{" "}
@@ -38,16 +42,33 @@ function pricingTest() {
           </p>
           <div className={"row"}>
             <div className={"col col--6 margin-vert--md"}>
-              <div className="card">
-                <div className="card__header">
+              <div
+                className={clsx({
+                  card: true,
+                  [styles.card]: true,
+                })}
+              >
+                <div
+                  className={clsx({
+                    card__header: true,
+                    [styles.card__header]: true,
+                  })}
+                >
                   <div>
                     <h3>Team</h3>
                     <p>For teams that need high-performing applications</p>
                   </div>
-                  <div className="price-cta">
-                    <div className="price-cta-desc">
+                  <div className={styles.priceCta}>
+                    <div className={styles.priceCtaDesc}>
                       <span>starts at just</span>
-                      <span className="price highlight">$199/month</span>
+                      <span
+                        className={clsx({
+                          [styles.price]: true,
+                          highlight: true,
+                        })}
+                      >
+                        $199/month
+                      </span>
                     </div>
                     <div>
                       <a
@@ -63,8 +84,13 @@ function pricingTest() {
                   <hr />
                 </div>
                 <div className="card__body">
-                  <div className="pricing-details package-detail-block">
-                    <h4 className="package-detail-title">Pricing</h4>
+                  <div
+                    className={clsx({
+                      [styles.pricingDetails]: true,
+                      [styles.packageDetailBlock]: true,
+                    })}
+                  >
+                    <h4 className={styles.packageDetailTitle}>Pricing</h4>
                     <div>
                       <span>Logs</span>
                       <span>$0.4 per GB ingested</span>
@@ -79,12 +105,19 @@ function pricingTest() {
                     </div>
                   </div>
                   <hr />
-                  <p className="retention">
+                  <p className={styles.retention}>
                     Retention: 15 days for Traces & Logs, 30 days for Metrics
                   </p>
                   <hr />
-                  <div className="deployment-options package-detail-block">
-                    <h4 className="package-detail-title">Deployment Options</h4>
+                  <div
+                    className={clsx({
+                      [styles.deploymentOptions]: true,
+                      [styles.packageDetailBlock]: true,
+                    })}
+                  >
+                    <h4 className={styles.packageDetailTitle}>
+                      Deployment Options
+                    </h4>
                     <div>
                       <span>SaaS</span>
                       <span>
@@ -105,8 +138,13 @@ function pricingTest() {
                     </div>
                   </div>
                   <hr />
-                  <div className="support package-detail-block">
-                    <h4 className="package-detail-title">Support</h4>
+                  <div
+                    className={clsx({
+                      [styles.support]: true,
+                      [styles.packageDetailBlock]: true,
+                    })}
+                  >
+                    <h4 className={styles.packageDetailTitle}>Support</h4>
                     <div>
                       <span>Community Slack</span>
                       <span>
@@ -121,12 +159,12 @@ function pricingTest() {
                     </div>
                     <div>
                       <span>Dedicated Slack Channel</span>
-                      <span>On spends above $999</span>
+                      <span className="text-right">On spends above $999</span>
                     </div>
                   </div>
                   <hr />
-                  <div className="package-detail-block">
-                    <h4 className="package-detail-title">Features</h4>
+                  <div className={styles.packageDetailBlock}>
+                    <h4 className={styles.packageDetailTitle}>Features</h4>
                     <ul className="list-icon-right">
                       <li>APM & Distributed Tracing</li>
                       <li>Log Management</li>
@@ -145,7 +183,12 @@ function pricingTest() {
                     </span> */}
                   </div>
                 </div>
-                <div className="card__footer">
+                <div
+                  className={clsx({
+                    card__footer: true,
+                    [styles.card__footer]: true,
+                  })}
+                >
                   <a
                     className="button button--primary"
                     target="_blank"
@@ -158,8 +201,18 @@ function pricingTest() {
               </div>
             </div>
             <div className={"col col--6 margin-vert--md"}>
-              <div className="card">
-                <div className="card__header">
+              <div
+                className={clsx({
+                  card: true,
+                  [styles.card]: true,
+                })}
+              >
+                <div
+                  className={clsx({
+                    card__header: true,
+                    [styles.card__header]: true,
+                  })}
+                >
                   <div>
                     <h3>Enterprise</h3>
                     <p>
@@ -167,10 +220,17 @@ function pricingTest() {
                       and awesome support
                     </p>
                   </div>
-                  <div className="price-cta">
-                    <div className="price-cta-desc">
+                  <div className={styles.priceCta}>
+                    <div className={styles.priceCtaDesc}>
                       <span>starts at just</span>
-                      <span className="price highlight">$999/month</span>
+                      <span
+                        className={clsx({
+                          [styles.price]: true,
+                          highlight: true,
+                        })}
+                      >
+                        $999/month
+                      </span>
                     </div>
                     <div>
                       <a
@@ -186,8 +246,13 @@ function pricingTest() {
                   <hr />
                 </div>
                 <div className="card__body">
-                  <div className="pricing-details package-detail-block">
-                    <h4 className="package-detail-title">Pricing</h4>
+                  <div
+                    className={clsx({
+                      [styles.pricingDetails]: true,
+                      [styles.packageDetailBlock]: true,
+                    })}
+                  >
+                    <h4 className={styles.packageDetailTitle}>Pricing</h4>
                     <div>
                       <span>Custom Pricing</span>
                       <span>
@@ -202,8 +267,15 @@ function pricingTest() {
                     </div>
                   </div>
                   <hr />
-                  <div className="deployment-options package-detail-block">
-                    <h4 className="package-detail-title">Deployment Options</h4>
+                  <div
+                    className={clsx({
+                      [styles.deploymentOptions]: true,
+                      [styles.packageDetailBlock]: true,
+                    })}
+                  >
+                    <h4 className={styles.packageDetailTitle}>
+                      Deployment Options
+                    </h4>
                     <div>
                       <span>SaaS</span>
                       <span>
@@ -224,8 +296,13 @@ function pricingTest() {
                     </div>
                   </div>
                   <hr />
-                  <div className="support package-detail-block">
-                    <h4 className="package-detail-title">Support</h4>
+                  <div
+                    className={clsx({
+                      [styles.support]: true,
+                      [styles.packageDetailBlock]: true,
+                    })}
+                  >
+                    <h4 className={styles.packageDetailTitle}>Support</h4>
                     <div>
                       <span>Email</span>
                       <span>
@@ -264,9 +341,9 @@ function pricingTest() {
                     </div>
                   </div>
                   <hr />
-                  <div className="package-detail-block">
-                    <h4 className="package-detail-title">Features</h4>
-                    <p className="feature-blur">
+                  <div className={styles.packageDetailBlock}>
+                    <h4 className={styles.packageDetailTitle}>Features</h4>
+                    <p className={styles.featureBlur}>
                       Includes all features in Team
                     </p>
                     <ul className="list-icon-right">
@@ -282,15 +359,20 @@ function pricingTest() {
                     </span> */}
                   </div>
                   <hr />
-                  <div className="package-detail-block">
-                    <h4 className="package-detail-title">Upcoming</h4>
+                  <div className={styles.packageDetailBlock}>
+                    <h4 className={styles.packageDetailTitle}>Upcoming</h4>
                     <ul className="list-icon-right">
                       <li>Finer RBAC with custom roles</li>
                       <li>Audit Logs</li>
                     </ul>
                   </div>
                 </div>
-                <div className="card__footer">
+                <div
+                  className={clsx({
+                    card__footer: true,
+                    [styles.card__footer]: true,
+                  })}
+                >
                   <a
                     className="button button--primary"
                     target="_blank"
@@ -308,15 +390,15 @@ function pricingTest() {
 
       {/* Add ons section */}
       {/* <section>
-            <div className="container" style={{ marginTop: "2rem", marginBottom: "3rem" }} >
-            <h2 style={{textAlign: "center"}} className={"margin-vert--md"} >Need more help?</h2>
+            <div className="container" >
+            <h2 className={"margin-vert--md"} >Need more help?</h2>
 
               <div className="row">
                 <div className={"col col--4 col--offset-2 margin-vert--md"}>
                 <div className="card">
                     <div className="card__header">
-                        <h3 style={{marginBottom:'0'}}>Setup Support</h3>
-                        <p style={{fontSize:'medium'}}>200 to 1000 USD based on scale. One time fee</p>
+                        <h3>Setup Support</h3>
+                        <p>200 to 1000 USD based on scale. One time fee</p>
                     </div>
                     <div className="card__body">
                         <p>
@@ -338,8 +420,8 @@ function pricingTest() {
                 <div className={"col col--4 margin-vert--md"}>
                 <div className="card">
                     <div className="card__header">
-                        <h3 style={{marginBottom:'0'}}>Enterprise Support</h3>
-                        <p style={{fontSize:'medium'}}> Longer term support contracts</p>
+                        <h3>Enterprise Support</h3>
+                        <p> Longer term support contracts</p>
                     </div>
                     <div className="card__body">
                         <p>
@@ -378,8 +460,10 @@ function pricingTest() {
       {/* FAQ section */}
       <section className="faq">
         <div
-          className="container"
-          style={{ marginTop: "2rem", marginBottom: "3rem" }}
+          className={clsx({
+            container: true,
+            [styles.faqContainer]: true,
+          })}
         >
           <div className="row">
             <div className="col col--8 col--offset-2">

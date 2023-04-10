@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./styles.module.css";
+import clsx from "clsx";
 
 export const CommunityEdition = () => {
   return (
     <section className={styles.options}>
       <div className="container">
         <h3 className={styles.title}>Community Edition</h3>
-        <p className={styles.subTagline}>Open source version of SigNoz to get started with observability.</p>
+        <p className={styles.subTagline}>
+          Open source version of SigNoz to get started with observability.
+        </p>
         <Link
-          style={{
-            margin: "6px",
-            paddingLeft: "10px !important",
-            paddingRight: "10px !important",
-          }}
-          className="button button--primary"
+          className={clsx({
+            "button button--primary": true,
+            [styles.readDocsBtn]: true,
+          })}
           href={"/docs/"}
         >
           Read docs

@@ -65,7 +65,7 @@
   color: rgb(185, 28, 28);
   font-size: 1rem;
 }
-@media (max-width: 568px) {
+@media (max-width: 768px) {
   .subscribeForm {
     flex-direction: column;
   }

@@ -6,7 +6,7 @@
   margin: 4.5rem 0;
 }
 .cta .tagline {
-  font-family: "Work Sans";
+  font-family: var(--ifm-font-family-work-sans);
   font-style: normal;
   font-weight: 700;
   font-size: 2.5rem;
@@ -20,12 +20,12 @@
   padding: 3.5rem 0;
   text-align: center;
 }
-@media (max-width: 996px) {
+.cta .ctaBtn {
+  color: var(--ifm-color-primary) !important;
 }
-@media (max-width: 568px) {
+
+@media (max-width: 768px) {
   .cta .tagline {
     font-size: 1.5rem;
   }
-}
-@media (max-width: 410px) {
 }

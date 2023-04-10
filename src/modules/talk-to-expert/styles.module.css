@@ -9,7 +9,7 @@
 .expert .tagline {
   margin-bottom: 1rem;
   text-align: center;
-  font-family: "Work Sans";
+  font-family: var(--ifm-font-family-work-sans);
   font-style: normal;
   font-weight: 700;
   font-size: 2rem;
@@ -20,7 +20,7 @@
 .expert .subTagline {
   margin-bottom: 1rem;
   text-align: center;
-  font-family: "Work Sans";
+  font-family: var(--ifm-font-family-work-sans);
   font-style: normal;
   font-size: 1.2rem;
   line-height: 110%;
@@ -42,9 +42,8 @@
   list-style-type: none;
 }
 
-@media (max-width: 996px) {
-}
-@media (max-width: 568px) {
+
+@media (max-width: 768px) {
 .expert .tagline {
   font-size: 1.4rem;
   width: 100%;
@@ -54,6 +53,4 @@
   width: 65%;
   margin: 0 auto 1rem;
 }
-}
-@media (max-width: 410px) {
 }

@@ -9,7 +9,7 @@
 }
 
 .options .title {
-  font-family: "Work Sans";
+  font-family: var(--ifm-font-family-work-sans);
   font-style: normal;
   font-weight: 700;
   font-size: 2.5rem;
@@ -19,7 +19,7 @@
 
 .options .tagline {
   margin-bottom: 1rem;
-  font-family: "Work Sans";
+  font-family: var(--ifm-font-family-work-sans);
   font-style: normal;
   font-weight: 700;
   font-size: 2rem;
@@ -29,12 +29,17 @@
 }
 .options .subTagline {
   margin-bottom: 1.2rem;
-  font-family: "Work Sans";
+  font-family: var(--ifm-font-family-work-sans);
   font-style: normal;
   font-size: 1.2rem;
   line-height: 110%;
   letter-spacing: -0.015em;
   color: #ffffff;
+}
+.options .readDocsBtn {
+  margin: 6px;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
 }
 
 .options ul {
@@ -50,9 +55,8 @@
   margin: 0 1rem 1rem;
   list-style-type: none;
 }
-@media (max-width: 996px) {
-}
-@media (max-width: 568px) {
+
+@media (max-width: 768px) {
   .options .title {
     font-size: 1.5rem;
   }
@@ -64,5 +68,4 @@
     margin: 1rem auto;
   }
 }
-@media (max-width: 410px) {
-}
+

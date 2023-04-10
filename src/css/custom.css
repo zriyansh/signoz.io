@@ -21,6 +21,8 @@
   /* --ifm-font-family-base: "Space Grotesk"; */
   --ifm-font-family-base: arial;
   --ifm-font-size-base: 14pt;
+  --ifm-font-family-work-sans: "Work Sans", sans-serif;
+
 }
 
 figure {
@@ -406,7 +408,7 @@ table.custom-table tbody tr {
   line-height: 110%;
   margin-bottom: 0.5rem;
 }
-@media (max-width: 568px) {
+@media (max-width: 768px) {
   .list-icon-right li {
     font-size: 0.9rem;
   }
@@ -414,201 +416,11 @@ table.custom-table tbody tr {
 .text-center {
   text-align: center;
 }
-/* secondary button */
-.button--secondary {
-  color: var(--ifm-color-primary) !important;
+.text-right {
+  text-align: right;
 }
 
-/* pricing */
-.pricing * {
-  font-family: "Work Sans", sans-serif !important;
-}
-.pricing hr {
-  margin: 1.2rem 0;
-  border: 0.5px solid #464646 !important;
-}
-.pricing .title {
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: -0.015em;
-  color: #fff;
-}
-.pricing .subtitle {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.5rem;
-  text-align: center;
-  letter-spacing: -0.015em;
-  line-height: 110%;
-  width: 50%;
-  margin: 0 auto 1rem;
-}
-.pricing .card {
-  padding: 2.5rem;
-  margin: 0 1rem;
-  height: 76rem;
-}
-.pricing .card__header {
-  min-height: 12rem !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.pricing .card__header h3 {
-  margin-bottom: 0.3rem;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  letter-spacing: -0.015em;
-}
-.pricing .card__header p {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 0.9rem;
-  letter-spacing: -0.015em;
-  line-height: 1rem;
-}
-.pricing .price-cta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.pricing .price-cta-desc {
-  display: flex;
-  flex-direction: column;
-}
-.pricing .price-cta-desc span {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1rem;
-  letter-spacing: -0.015em;
-  line-height: 1.5rem;
-}
-.pricing .price-cta-desc .price {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: -0.015em;
-}
-.pricing .retention {
-  width: 75%;
-  line-height: 110%;
-}
-.pricing .package-detail-block {
-  margin-bottom: 1rem;
-}
-.pricing .package-detail-block div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.pricing .package-detail-block span {
-  line-height: 110%;
-  margin-bottom: 0.5rem;
-}
-.pricing .package-detail-title {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: -0.015em;
-  margin-bottom: 0.5rem;
-}
-.pricing .package-detail-title span {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 0.8rem;
-  letter-spacing: -0.015em;
-}
-.pricing .feature-blur {
-  font-style: normal;
-  font-size: 0.9rem;
-  line-height: 110%;
-  letter-spacing: -0.015em;
-  color: #cbcbcb;
-  margin-top: -0.5rem;
-}
-.pricing .explore {
-  font-weight: 500;
-  font-size: 1rem;
-  letter-spacing: -0.015em;
-  text-decoration-line: underline;
-  color: #f25733;
-  margin-left: 35px;
-}
-.pricing .card__footer {
-  text-align: center;
-}
-.faq .title {
-  font-family: "Work Sans";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 2.5rem;
-  line-height: 110%;
-  letter-spacing: -0.015em;
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 3rem !important;
-}
-/* Responsive styles */
-@media (max-width: 996px) {
-}
-@media (max-width: 568px) {
-  .pricing .title {
-    font-size: 1.5rem;
-  }
-  .pricing .subtitle {
-    font-size: 0.9rem;
-    width: 90%;
-  }
-  .pricing .card {
-    padding: 1rem;
-    margin: 0 1rem;
-    height: auto;
-  }
-  .pricing .card__header {
-    height: 12rem !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .pricing .price-cta-desc span {
-    font-size: 0.9rem;
-    line-height: 1.3rem;
-  }
-  .pricing .price-cta-desc .price {
-    font-size: 1.1rem;
-  }
-  .pricing .retention {
-    width: 100%;
-    font-size: 0.9rem;
-  }
-  .pricing .support span {
-    line-height: 110%;
-    margin-bottom: 0.5rem;
-  }
-  .pricing .package-detail-block {
-    margin-bottom: 1rem;
-  }
-  .pricing .package-detail-block span {
-    font-size: 0.9rem;
-  }
-  .faq .title {
-    font-size: 2rem;
-    line-height: 110%;
-    margin-bottom: 2rem !important;
-  }
-}
-@media (max-width: 410px) {
-  .pricing .card {
-    padding: 1rem;
-    margin: 0;
-    height: auto;
-  }
-}
-
-@media (max-width: 568px) {
+@media (max-width: 768px) {
   .navbar__items.navbar__items--right .button--primary{
     margin-right: 45px;
     font-size: 0.8rem !important;
