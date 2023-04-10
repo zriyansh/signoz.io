@@ -4,8 +4,7 @@ import Card from "./Card";
 const FAQBody = () => (
   <>
     <Card
-      body="If a timeseries sends data every 30s, then it will generate 2 samples per min. So, if you have 10,000 time series sending data every 30s then you will be sending 20,000 samples per min to SigNoz. This will be around 864 mn samples per month and would cost 86.4 USD/month
-      "
+      body="If a timeseries sends data every 30s, then it will generate 2 samples per min. So, if you have 10,000 time series sending data every 30s then you will be sending 20,000 samples per min to SigNoz. This will be around 864 mn samples per month and would cost 86.4 USD/month"
       title="How are number of samples calculated for metrics pricing?"
     />
     <Card
