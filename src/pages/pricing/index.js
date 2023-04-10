@@ -458,7 +458,7 @@ function pricingTest() {
       <CommunityEdition />
 
       {/* FAQ section */}
-      <section className="faq">
+      <section className={styles.faq}>
         <div
           className={clsx({
             container: true,
@@ -467,7 +467,15 @@ function pricingTest() {
         >
           <div className="row">
             <div className="col col--8 col--offset-2">
-              <p className="hero__subtitle margin--md title">FAQs</p>
+              <p
+                className={clsx({
+                  "hero__subtitle ": true,
+                  "margin--md ": true,
+                  [styles.title]: true,
+                })}
+              >
+                FAQs
+              </p>
               <div className="card-demo margin--md">
                 <FAQBody />
               </div>
