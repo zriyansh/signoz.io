@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./styles.module.css";
 import clsx from "clsx";
 

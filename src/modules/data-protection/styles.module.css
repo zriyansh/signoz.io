@@ -13,7 +13,7 @@
   font-style: normal;
   font-weight: 700;
   font-size: 2.5rem;
-  line-height: 110%;
+  line-height: var(--ifm-font-line-height);
   letter-spacing: -0.015em;
 }
 .data .subTagline {
@@ -21,14 +21,18 @@
   font-family: var(--ifm-font-family-work-sans);
   font-style: normal;
   font-size: 1.2rem;
-  line-height: 110%;
+  line-height: var(--ifm-font-line-height);
   letter-spacing: -0.015em;
-  color: #ffffff;
+  color: var(--ifm-color-white);
   width: 60%;
   margin: 0 auto;
 }
 
 @media (max-width: 768px) {
+  .data {
+    padding: 1rem 0;
+    margin-top: 1rem;
+  }
   .data .title {
     font-size: 1.5rem;
   }

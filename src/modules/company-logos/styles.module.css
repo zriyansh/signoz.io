@@ -6,7 +6,6 @@
   background: #282828;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  /* background-color: #1a1a1a; */
 }
 
 .used_by .tagline {
@@ -16,9 +15,9 @@
   font-style: normal;
   font-weight: 700;
   font-size: 2.5rem;
-  line-height: 110%;
+  line-height: var(--ifm-font-line-height);
   letter-spacing: -0.015em;
-  color: #ffffff;
+  color: var(--ifm-color-white);
 }
 
 .used_by ul {
@@ -34,7 +33,6 @@
   margin: 0 1rem 1rem;
   list-style-type: none;
 }
-
 
 @media (max-width: 768px) {
   .used_by .tagline {

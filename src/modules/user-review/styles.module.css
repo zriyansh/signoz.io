@@ -3,18 +3,18 @@
   align-items: center;
   padding: 4rem 0 3rem;
   width: 100%;
-  background: #ffefe7;
-  color: #000000;
+  background: var(--ifm-color-salmon-lightest);
+  color: var(--ifm-color-black);
 }
 .review .subTagline {
   margin-bottom: 1rem;
   font-family: var(--ifm-font-family-work-sans);
   font-style: normal;
   font-size: 1.2rem;
-  line-height: 110%;
+  line-height: var(--ifm-font-line-height);
   font-weight: 500;
   letter-spacing: -0.015em;
-  color: #000000;
+  color: var(--ifm-color-black);
 }
 
 .review .user {
@@ -22,23 +22,26 @@
   font-style: normal;
   font-weight: 700;
   font-size: 1rem;
-  line-height: 110%;
+  line-height: var(--ifm-font-line-height);
   letter-spacing: -0.015em;
-  color: #000000;
+  color: var(--ifm-color-black);
 }
 
 .review .userRole {
   font-family: var(--ifm-font-family-work-sans);
   font-style: italic;
   font-weight: 400;
-  line-height: 110%;
+  line-height: var(--ifm-font-line-height);
   font-size: 0.8rem;
   letter-spacing: -0.015em;
-  color: #000000;
+  color: var(--ifm-color-black);
   margin-left: 0.5rem;
 }
 
 @media (max-width: 768px) {
+  .review {
+    padding: 2.5rem 0 1rem;
+  }
   .review .subTagline {
     font-size: 0.9rem;
   }

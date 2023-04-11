@@ -13,9 +13,9 @@
   font-style: normal;
   font-weight: 700;
   font-size: 2rem;
-  line-height: 110%;
+  line-height: var(--ifm-font-line-height);
   letter-spacing: -0.015em;
-  color: #ffffff;
+  color: var(--ifm-color-white);
 }
 .expert .subTagline {
   margin-bottom: 1rem;
@@ -23,9 +23,9 @@
   font-family: var(--ifm-font-family-work-sans);
   font-style: normal;
   font-size: 1.2rem;
-  line-height: 110%;
+  line-height: var(--ifm-font-line-height);
   letter-spacing: -0.015em;
-  color: #ffffff;
+  color: var(--ifm-color-white);
 }
 
 .expert ul {
@@ -42,15 +42,18 @@
   list-style-type: none;
 }
 
-
 @media (max-width: 768px) {
-.expert .tagline {
-  font-size: 1.4rem;
-  width: 100%;
-}
-.expert .subTagline {
-  font-size: 0.9rem;
-  width: 65%;
-  margin: 0 auto 1rem;
-}
+  .expert {
+    padding: 1rem 0;
+    margin: 1.5rem 0 0.5rem;
+  }
+  .expert .tagline {
+    font-size: 1.4rem;
+    width: 100%;
+  }
+  .expert .subTagline {
+    font-size: 0.9rem;
+    width: 65%;
+    margin: 0 auto 1rem;
+  }
 }

@@ -1,7 +1,6 @@
 .cta {
   display: flex;
   align-items: center;
-  /* padding: 4rem 0 3rem; */
   width: 100%;
   margin: 4.5rem 0;
 }
@@ -10,12 +9,12 @@
   font-style: normal;
   font-weight: 700;
   font-size: 2.5rem;
-  line-height: 110%;
+  line-height: var(--ifm-font-line-height);
   letter-spacing: -0.015em;
   margin-bottom: 1.5rem;
 }
 .cta .contentWrapper {
-  background: #f25733;
+  background: var(--ifm-color-primary);
   border-radius: 6px;
   padding: 3.5rem 0;
   text-align: center;
@@ -25,6 +24,9 @@
 }
 
 @media (max-width: 768px) {
+  .cta {
+    margin: 2.5rem 0;
+  }
   .cta .tagline {
     font-size: 1.5rem;
   }
