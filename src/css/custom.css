@@ -18,9 +18,26 @@
   --ifm-color-primary-lightest: #fda693;
   --ifm-color-salmon-lightest: #ffefe7;
   --ifm-link-color: #f99781;
-  --ifm-button-color: white;
-  --ifm-color-white: #ffffff;
+  --ifm-button-color: #ffffff;
+  /* BLACK */
+  --ifm-color-black-lightest: #282828;
+  --ifm-color-black-light: #252526;
   --ifm-color-black: #000000;
+  --ifm-color-black-dark: #1a1a1a;
+  --ifm-color-black-darkest: #151515;
+  /* WHITE */
+  --ifm-color-white-lightest: #f2f2f2;
+  --ifm-color-white-light: #eeeeee;
+  --ifm-color-white: #ffffff;
+  --ifm-color-white-dark: #e8e1e1;
+  --ifm-color-white-darkest: #d1d5db;
+  --ifm-color-white-grey: #bcbcbc;/*cbcbcb*/
+  /* GRAY */
+  --ifm-color-gray-darkest: #333333;
+  --ifm-color-gray-dark: #464646;
+  --ifm-color-gray: #4f4f4f;
+  --ifm-color-gray-light: #6b7280;
+  --ifm-color-gray-lightest: #828282;
   /* FONT */
   --ifm-code-font-size: 95%;
   --ifm-font-line-height: 110%;
@@ -28,6 +45,17 @@
   --ifm-font-family-base: arial;
   --ifm-font-size-base: 14pt;
   --ifm-font-family-work-sans: "Work Sans", sans-serif;
+  --ifm-font-letter-spacing: -0.015rem;
+  /* MEDIA BREAKPOINT */
+  --ifm-mobile-start: 320px;
+  --ifm-mobile-end: 480px;
+  --ifm-tablet-start: 481px;
+  --ifm-tablet-end: 768px;
+  --ifm-laptop-start: 769px;
+  --ifm-laptop-end: 1024px;
+  --ifm-desktop-start: 1025px;
+  --ifm-desktop-end: 1200px;
+  --ifm--large-desktop: 1201px;
 }
 
 figure {
@@ -172,14 +200,14 @@ hero__screenshot {
 }
 
 .try-signoz-modal .card {
-  border: 1px solid #bcbcbc;
+  border: 1px solid var(--ifm-color-white-grey);
   background: var(--ifm-color-white) !important;
   border-radius: 4px;
 }
 
 .try-signoz-modal .card:hover {
-  border: 1px solid #bcbcbc;
-  background: #f2f2f2 !important;
+  border: 1px solid var(--ifm-color-white-grey);
+  background: var(--ifm-color-white-lightest) !important;
 }
 
 .Overlay {
@@ -198,8 +226,8 @@ hero__screenshot {
   border-width: 0px;
 }
 .pricingTabsContainer .tabs__item {
-  background: #f2f2f2;
-  color: #4f4f4f;
+  background: var(--ifm-color-white-lightest);
+  color: var(--ifm-color-gray);
   padding: 0.375rem 1rem;
   border-radius: 0px;
   min-width: 5rem;
@@ -282,7 +310,7 @@ hero__screenshot {
 }
 
 #demo-video-cover #play-icon path {
-  fill: #eeeeee;
+  fill: var(--ifm-color-white-light);
 }
 
 #demo-video-cover {
@@ -344,9 +372,9 @@ hero__screenshot {
   margin-bottom: 20px;
   margin-top: 20px;
   white-space: normal;
-  background: #252526;
+  background: var(--ifm-color-black-light);
   color: var(--ifm-color-white);
-  border: 1px solid #333333;
+  border: 1px solid var(--ifm-color-gray-darkest);
 }
 
 .feature-tab-css__selected {

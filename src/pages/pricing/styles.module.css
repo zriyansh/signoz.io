@@ -5,7 +5,7 @@
 }
 .pricing hr {
   margin: 1.2rem 0;
-  border: 0.5px solid #464646 !important;
+  border: 0.5px solid var(--ifm-color-gray-dark);
 }
 .pricing .pricingContainer {
   margin-top: 3rem;
@@ -16,7 +16,7 @@
   font-style: normal;
   font-weight: 700;
   text-align: center;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--ifm-font-letter-spacing);
   color: var(--ifm-color-white);
 }
 .pricing .subtitle {
@@ -24,7 +24,7 @@
   font-weight: 400;
   font-size: 1.5rem;
   text-align: center;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--ifm-font-letter-spacing);
   line-height: var(--ifm-font-line-height);
   width: 50%;
   margin: 0 auto 1rem;
@@ -45,13 +45,13 @@
   font-style: normal;
   font-weight: 700;
   font-size: 2rem;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--ifm-font-letter-spacing);
 }
 .pricing .card__header p {
   font-style: normal;
   font-weight: 400;
   font-size: 0.9rem;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--ifm-font-letter-spacing);
   line-height: var(--ifm-font-line-height);
 }
 .pricing .card__footer {
@@ -70,14 +70,14 @@
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--ifm-font-letter-spacing);
   line-height: var(--ifm-font-line-height);
 }
 .pricing .priceCtaDesc .price {
   font-style: normal;
   font-weight: 700;
   font-size: 1.5rem;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--ifm-font-letter-spacing);
 }
 .pricing .retention {
   width: 75%;
@@ -99,27 +99,27 @@
   font-style: normal;
   font-weight: 700;
   font-size: 1.25rem;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--ifm-font-letter-spacing);
   margin-bottom: 0.5rem;
 }
 .pricing .packageDetailTitle span {
   font-style: normal;
   font-weight: 400;
   font-size: 0.8rem;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--ifm-font-letter-spacing);
 }
 .pricing .featureBlur {
   font-style: normal;
   font-size: 0.9rem;
   line-height: var(--ifm-font-line-height);
-  letter-spacing: -0.015em;
-  color: #cbcbcb;
+  letter-spacing: var(--ifm-font-letter-spacing);
+  color: var(--ifm-color-white-grey);
   margin-top: -0.5rem;
 }
 .pricing .explore {
   font-weight: 500;
   font-size: 1rem;
-  letter-spacing: -0.015em;
+  letter-spacing: var(--ifm-font-letter-spacing);
   text-decoration-line: underline;
   color: var(--ifm-color-primary);
   margin-left: 2.188rem;
@@ -135,7 +135,7 @@
   font-weight: 700;
   font-size: 2.5rem;
   line-height: var(--ifm-font-line-height);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--ifm-font-letter-spacing);
   color: var(--ifm-color-white);
   text-align: center;
   margin-bottom: 3rem !important;

@@ -14,7 +14,7 @@
   font-weight: 700;
   font-size: 2.5rem;
   line-height: var(--ifm-font-line-height);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--ifm-font-letter-spacing);
 }
 .data .subTagline {
   margin-bottom: 1.2rem;
@@ -22,7 +22,7 @@
   font-style: normal;
   font-size: 1.2rem;
   line-height: var(--ifm-font-line-height);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--ifm-font-letter-spacing);
   color: var(--ifm-color-white);
   width: 60%;
   margin: 0 auto;

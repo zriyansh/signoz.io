@@ -13,7 +13,7 @@
   max-width: 300px;
   min-width: 100px;
   background: var(--ifm-color-white);
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--ifm-color-white-darkest);
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
   border-radius: 6px;
@@ -22,7 +22,7 @@
 }
 .successMessage {
   font-family: "Inter", sans-serif;
-  color: #e8e1e1;
+  color: var(--ifm-color-white-dark);
   font-size: 1rem;
 }
 .submitBtn {
@@ -49,7 +49,7 @@
   white-space: nowrap !important;
 }
 .backBtn {
-  color: #6b7280;
+  color: var(--ifm-color-gray-light);
   font-size: 1rem;
   margin: .625rem auto;
   text-align: center;
