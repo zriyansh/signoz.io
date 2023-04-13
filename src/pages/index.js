@@ -6,7 +6,6 @@ import { ShowCompanyLogos } from "../modules/company-logos"
 import { WhyOpenTelemetry } from "../modules/why-opentelemetry";
 import { SigNozFeatures } from "../modules/index-features";
 
-import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -58,7 +57,7 @@ const WhySigNoz = () => {
     <div className="container">
       <div className="container">
         <div className="row">
-          <div className={clsx("col col--3", styles.menu__list)}>
+          <div className={`col col--3 ${styles.menu__list}`}>
             <button
               onClick={handlePricing}
               className={`button button--lg ${
@@ -164,7 +163,7 @@ const features = [
 function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className={clsx("col col--4", styles.feature)}>
+    <div className={`col col--4 ${styles.feature}`}>
       {imgUrl && (
         <div className="text--center">
           <img className={styles.featureImage} src={imgUrl} alt={title} />

@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "@docusaurus/Link";
 import styles from "./styles.module.css";
-import clsx from "clsx";
 
 export const CommunityEdition = () => {
   return (
@@ -12,10 +11,7 @@ export const CommunityEdition = () => {
           Open source version of SigNoz to get started with observability.
         </p>
         <Link
-          className={clsx(
-            "button button--primary",
-            [styles.readDocsBtn],
-          )}
+          className={`button button--primary ${styles.readDocsBtn}`}
           href={"/docs/"}
         >
           Read docs

@@ -10,11 +10,9 @@ import { CommunityEdition } from "../../modules/community-edition";
 import { UserReview } from "../../modules/user-review";
 import { TrySigNozCTA } from "../../modules/try-signoz-cta";
 import { DataProtection } from "../../modules/data-protection";
-import clsx from "clsx";
 import styles from "./styles.module.css";
-// import "./styles.css";
 
-// ReactGA.initialize("UA-152867655-1");
+ReactGA.initialize("UA-152867655-1");
 
 const handleClick = (message) => {
   ReactGA.event({
@@ -28,10 +26,7 @@ function pricingTest() {
     <Layout title="SigNoz Plans">
       <section className={styles.pricing}>
         <div
-          className={clsx({
-            container: true,
-            [styles.pricingContainer]: true,
-          })}
+          className={`container ${styles.pricingContainer}`}
         >
           <h2 className={styles.title}>Transparent & Predictable Pricing</h2>
           <p className={styles.subtitle}>
@@ -43,16 +38,10 @@ function pricingTest() {
           <div className={"row"}>
             <div className={"col col--6 margin-vert--md"}>
               <div
-                className={clsx({
-                  card: true,
-                  [styles.card]: true,
-                })}
+                className={`card ${styles.card}`}
               >
                 <div
-                  className={clsx({
-                    card__header: true,
-                    [styles.card__header]: true,
-                  })}
+                  className={`card__header ${styles.card__header}`}
                 >
                   <div>
                     <h3>Team</h3>
@@ -62,10 +51,7 @@ function pricingTest() {
                     <div className={styles.priceCtaDesc}>
                       <span>starts at just</span>
                       <span
-                        className={clsx({
-                          [styles.price]: true,
-                          highlight: true,
-                        })}
+                        className={`${styles.price} highlight`}
                       >
                         $199/month
                       </span>
@@ -85,10 +71,7 @@ function pricingTest() {
                 </div>
                 <div className="card__body">
                   <div
-                    className={clsx({
-                      [styles.pricingDetails]: true,
-                      [styles.packageDetailBlock]: true,
-                    })}
+                    className={`${styles.pricingDetails} ${styles.packageDetailBlock}`}
                   >
                     <h4 className={styles.packageDetailTitle}>Pricing</h4>
                     <div>
@@ -110,10 +93,7 @@ function pricingTest() {
                   </p>
                   <hr />
                   <div
-                    className={clsx({
-                      [styles.deploymentOptions]: true,
-                      [styles.packageDetailBlock]: true,
-                    })}
+                    className={`${styles.deploymentOptions} ${styles.packageDetailBlock}`}
                   >
                     <h4 className={styles.packageDetailTitle}>
                       Deployment Options
@@ -139,10 +119,7 @@ function pricingTest() {
                   </div>
                   <hr />
                   <div
-                    className={clsx({
-                      [styles.support]: true,
-                      [styles.packageDetailBlock]: true,
-                    })}
+                    className={`${styles.support} ${styles.packageDetailBlock}`}
                   >
                     <h4 className={styles.packageDetailTitle}>Support</h4>
                     <div>
@@ -184,10 +161,7 @@ function pricingTest() {
                   </div>
                 </div>
                 <div
-                  className={clsx({
-                    card__footer: true,
-                    [styles.card__footer]: true,
-                  })}
+                  className={`card__footer ${styles.card__footer}`}
                 >
                   <a
                     className="button button--primary"
@@ -202,16 +176,10 @@ function pricingTest() {
             </div>
             <div className={"col col--6 margin-vert--md"}>
               <div
-                className={clsx({
-                  card: true,
-                  [styles.card]: true,
-                })}
+                className={`card ${styles.card}`}
               >
                 <div
-                  className={clsx({
-                    card__header: true,
-                    [styles.card__header]: true,
-                  })}
+                  className={`card__header ${styles.card__header}`}
                 >
                   <div>
                     <h3>Enterprise</h3>
@@ -224,10 +192,7 @@ function pricingTest() {
                     <div className={styles.priceCtaDesc}>
                       <span>starts at just</span>
                       <span
-                        className={clsx({
-                          [styles.price]: true,
-                          highlight: true,
-                        })}
+                        className={`${styles.price} highlight`}
                       >
                         $999/month
                       </span>
@@ -247,10 +212,7 @@ function pricingTest() {
                 </div>
                 <div className="card__body">
                   <div
-                    className={clsx({
-                      [styles.pricingDetails]: true,
-                      [styles.packageDetailBlock]: true,
-                    })}
+                    className={`${styles.pricingDetails} ${styles.packageDetailBlock}`}
                   >
                     <h4 className={styles.packageDetailTitle}>Pricing</h4>
                     <div>
@@ -268,10 +230,7 @@ function pricingTest() {
                   </div>
                   <hr />
                   <div
-                    className={clsx({
-                      [styles.deploymentOptions]: true,
-                      [styles.packageDetailBlock]: true,
-                    })}
+                    className={`${styles.deploymentOptions} ${styles.packageDetailBlock}`}
                   >
                     <h4 className={styles.packageDetailTitle}>
                       Deployment Options
@@ -297,10 +256,7 @@ function pricingTest() {
                   </div>
                   <hr />
                   <div
-                    className={clsx({
-                      [styles.support]: true,
-                      [styles.packageDetailBlock]: true,
-                    })}
+                    className={`${styles.support} ${styles.packageDetailBlock}`}
                   >
                     <h4 className={styles.packageDetailTitle}>Support</h4>
                     <div>
@@ -368,10 +324,7 @@ function pricingTest() {
                   </div>
                 </div>
                 <div
-                  className={clsx({
-                    card__footer: true,
-                    [styles.card__footer]: true,
-                  })}
+                  className={`card__footer ${styles.card__footer}`}
                 >
                   <a
                     className="button button--primary"
@@ -460,19 +413,12 @@ function pricingTest() {
       {/* FAQ section */}
       <section className={styles.faq}>
         <div
-          className={clsx({
-            container: true,
-            [styles.faqContainer]: true,
-          })}
+          className={`container ${styles.faqContainer}`}
         >
           <div className="row">
             <div className="col col--8 col--offset-2">
               <p
-                className={clsx({
-                  "hero__subtitle ": true,
-                  "margin--md ": true,
-                  [styles.title]: true,
-                })}
+                className={`hero__subtitle margin--md ${styles.title}`}
               >
                 FAQs
               </p>
