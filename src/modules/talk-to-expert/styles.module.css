@@ -15,7 +15,6 @@
   font-size: 2rem;
   line-height: var(--ifm-font-line-height);
   letter-spacing: var(--ifm-font-letter-spacing);
-  color: var(--ifm-color-white);
 }
 .expert .subTagline {
   margin-bottom: 1rem;
@@ -25,7 +24,6 @@
   font-size: 1.2rem;
   line-height: var(--ifm-font-line-height);
   letter-spacing: var(--ifm-font-letter-spacing);
-  color: var(--ifm-color-white);
 }
 
 .expert ul {

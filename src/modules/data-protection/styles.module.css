@@ -23,7 +23,6 @@
   font-size: 1.2rem;
   line-height: var(--ifm-font-line-height);
   letter-spacing: var(--ifm-font-letter-spacing);
-  color: var(--ifm-color-white);
   width: 60%;
   margin: 0 auto;
 }
