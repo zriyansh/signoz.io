@@ -272,8 +272,10 @@ function pricingTest() {
                     <ul className="list-icon-right">
                       <li>Single Sign On</li>
                       <li>SAML and LDAP support</li>
+                      <li>Custom integration for metrics and logs (Cloudwatch, etc)</li>
                       <li>AWS Private Link</li>
                       <li>VPC Peering</li>
+                      <li>Security tightening for on-prem installation</li>
                     </ul>
                     {/* <span>
                       <a href="#" className="explore">
@@ -287,6 +289,8 @@ function pricingTest() {
                     <ul className="list-icon-right">
                       <li>Finer RBAC with custom roles</li>
                       <li>Audit Logs</li>
+                      <li>Custom retention for different sources of logs</li>
+                      <li>Multi-tenancy</li>
                     </ul>
                   </div>
                 </div>
