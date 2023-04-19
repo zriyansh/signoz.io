@@ -146,7 +146,7 @@ export default function SignUpFormReact() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required={true}
-              className={`${styles.newsletterInput}`}
+              className={styles.newsletterInput}
             />
             <SignUpFormButton />
           </form>
