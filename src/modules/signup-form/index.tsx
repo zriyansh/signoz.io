@@ -174,7 +174,7 @@ export default function SignUpFormReact() {
     return (
       <button
         type="submit"
-        className={styles.submitBtn}}
+        className={styles.submitBtn}
       >
         {formState === SUBMITTING ? "Please wait..." : formStyles.buttonText}
       </button>
