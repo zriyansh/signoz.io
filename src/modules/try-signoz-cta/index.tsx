@@ -17,6 +17,7 @@ export const TrySigNozCTA = () => {
         <div className={styles.contentWrapper}>
           <h3 className={styles.tagline}>Give SigNoz a try</h3>
           <a
+            id="btn-pricing-give-signoz-try"
             className={`button button--secondary ${styles.ctaBtn}`}
             target="_blank"
             href="https://forms.gle/yYSkntXRRPU3MHRL7"
