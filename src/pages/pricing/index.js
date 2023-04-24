@@ -58,6 +58,7 @@ function pricingTest() {
                     </div>
                     <div>
                       <a
+                        id="btn-pricing-signoz-cloud-1"
                         className="button button--primary"
                         target="_blank"
                         href="https://forms.gle/yYSkntXRRPU3MHRL7"
@@ -164,6 +165,7 @@ function pricingTest() {
                   className={`card__footer ${styles.card__footer}`}
                 >
                   <a
+                    id="btn-pricing-signoz-cloud-2"
                     className="button button--primary"
                     target="_blank"
                     href="https://forms.gle/yYSkntXRRPU3MHRL7"
@@ -199,6 +201,7 @@ function pricingTest() {
                     </div>
                     <div>
                       <a
+                        id="btn-pricing-signoz-enterprise-1"
                         className="button button--primary"
                         target="_blank"
                         href="https://forms.gle/zxCEoSbnnPv6mSX57"
@@ -331,6 +334,7 @@ function pricingTest() {
                   className={`card__footer ${styles.card__footer}`}
                 >
                   <a
+                    id="btn-pricing-signoz-enterprise-2"
                     className="button button--primary"
                     target="_blank"
                     href="https://forms.gle/zxCEoSbnnPv6mSX57"
