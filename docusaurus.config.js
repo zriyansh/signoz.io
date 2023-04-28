@@ -227,6 +227,9 @@ const config = {
           // Optional fields.
           // anonymizeIP: true, // Should IPs be anonymized?
         },
+        googleTagManager: {
+          containerId: 'GTM-N9B6D4H',
+        },
       },
     ],
   ],
