@@ -34,6 +34,7 @@
 .pricing .card {
   padding: 2rem;
   height: 80rem;
+  box-shadow: var(--ifm-box-shadow-light);
 }
 .pricing .card__header {
   min-height: 12rem !important;
@@ -219,4 +220,7 @@
     margin: 0;
     height: auto;
   }
+}
+html[data-theme="light"] .pricing .card {
+  box-shadow: var(--ifm-box-shadow-dark);
 }
