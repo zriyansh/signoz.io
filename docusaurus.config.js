@@ -169,6 +169,10 @@ const config = {
           title: "More",
           items: [
             {
+              label: "Careers",
+              href: "https://www.ycombinator.com/companies/signoz/jobs",
+            },
+            {
               label: "Technical Writer Program",
               to: "technical-writer-program/",
             },
