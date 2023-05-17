@@ -134,6 +134,10 @@ const config = {
               label: "Contributing",
               to: "docs/contributing",
             },
+            {
+              label: "Knowledge Base",
+              href: "https://knowledgebase.signoz.io/kb",
+            },
           ],
         },
         {
