@@ -174,7 +174,7 @@ const config = {
           items: [
             {
               label: "Careers",
-              href: "https://www.ycombinator.com/companies/signoz/jobs",
+              href: "https://www.ycombinator.com/companies/signoz/jobs/",
             },
             {
               label: "Technical Writer Program",
