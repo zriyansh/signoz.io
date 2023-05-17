@@ -16,7 +16,7 @@ export const ShowCompanyLogos = () => {
   return (
     <section className={styles.used_by}>
       <div className="container">
-        <p className={styles.tagline}>Trusted By Teams</p>
+        <p className={styles.tagline}>Trusted by teams at</p>
         <ul className={`${styles.logoContainer} row`}>
           {COMPANIES.map((company, idx) => (
             <li key={`${idx}-${company.image}`} className="col col--3">

@@ -13,12 +13,12 @@
   font-family: var(--ifm-font-family-work-sans);
   font-style: normal;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 1rem;
   line-height: var(--ifm-font-line-height);
   letter-spacing: var(--ifm-font-letter-spacing);
 }
 .used_by .logoContainer{
-  margin: 0 5rem;
+  margin: 0 2rem;
   padding: 0;
 }
 .used_by ul li {
@@ -27,7 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .used_by ul li img{
   aspect-ratio: 3/2;
