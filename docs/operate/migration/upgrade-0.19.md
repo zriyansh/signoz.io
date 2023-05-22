@@ -34,7 +34,7 @@ potentially cause irreversible changes to alerts/dashboard data.
 ```bash
 cd deploy/docker/clickhouse-setup
 
-docker run -it -v $PWD/data/signoz/:/var/lib/signoz/ signoz/migrate:0.19
+docker run -it -v $PWD/data/signoz/signoz.db:/signoz.db signoz/migrate:0.19
 ```
 
 Output should be similar as below:
@@ -50,6 +50,12 @@ Data Source path:  signoz.db
 2023/05/20 15:28:22 Migrating 1 rules
 2023/05/20 15:28:22 Migrating rule 1
 2023/05/20 15:28:22 Migrated 1 rules
+```
+
+At last, trigger a restart of the query-service container:
+
+```bash
+docker restart query-service
 ```
 
 ### For Docker Swarm
@@ -59,7 +65,7 @@ Data Source path:  signoz.db
 ```bash
 cd deploy/swarm/clickhouse-setup
 
-docker run -it -v $PWD/data/signoz/:/var/lib/signoz/ signoz/migrate:0.19
+docker run -it -v $PWD/data/signoz/signoz.db:/signoz.db signoz/migrate:0.19
 ```
 
 Output should be similar as below:
@@ -75,6 +81,12 @@ Data Source path:  signoz.db
 2023/05/20 15:28:22 Migrating 1 rules
 2023/05/20 15:28:22 Migrating rule 1
 2023/05/20 15:28:22 Migrated 1 rules
+```
+
+At last, trigger a restart of the query-service container:
+
+```bash
+docker restart query-service
 ```
 
 :::info
