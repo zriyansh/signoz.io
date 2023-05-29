@@ -11,3 +11,4 @@
 /distributed-tracing/               /blog/distributed-tracing/
 /docs/instrumentation/nodejs/       /docs/instrumentation/javascript/
 /gh                                 https://github.com/SigNoz/signoz
+/blog/signoz-benchmarks/            /blog/pricing-comparison-signoz-vs-datadog-vs-newrelic-vs-grafana/
