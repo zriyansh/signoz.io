@@ -69,6 +69,7 @@ export default function NavbarContent() {
             href={
               "/teams/?utm_source=website&utm_medium=navbar&utm_campaign=try_cloud"
             }
+            id="btn-get-started-website-navbar"
           >
             Get started - free
           </Link>

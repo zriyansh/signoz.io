@@ -29,31 +29,32 @@ export const Header = () => {
 
         <div style={{ margin: "1rem 0" }}>
             <Link
-            style={{
-                margin: "6px",
-                paddingLeft: "10px",
-                paddingRight: "10px",
-            }}
-            className="button button--primary "
-            // onClick={setShowTrySignozModal.bind(this,true)}
-            href={"/teams/?utm_source=website&utm_medium=home_page_hero&utm_campaign=try_cloud"}
-            //   onClick={getStartedClicked}
+              style={{
+                  margin: "6px",
+                  paddingLeft: "10px",
+                  paddingRight: "10px",
+              }}
+              className="button button--primary "
+              // onClick={setShowTrySignozModal.bind(this,true)}
+              href={"/teams/?utm_source=website&utm_medium=home_page_hero&utm_campaign=try_cloud"}
+              //   onClick={getStartedClicked}
+              id="btn-get-started-homepage-hero"
             >
-            Get started - free
+              Get started - free
             </Link>
             <Link
-            style={{
-                margin: "6px",
-                paddingLeft: "30px",
-                paddingRight: "30px",
-            }}
-            className="button button--outline button--secondary "
-            href={"/docs/install/"}
-
-            // href={"https://forms.gle/YDJ3wBFx7nhDnUbr5"}
-            //   onClick={requestDemoClicked}
+              style={{
+                  margin: "6px",
+                  paddingLeft: "30px",
+                  paddingRight: "30px",
+              }}
+              className="button button--outline button--secondary "
+              href={"/docs/install/"}
+              id="btn-self-host-homepage-hero"
+              // href={"https://forms.gle/YDJ3wBFx7nhDnUbr5"}
+              //   onClick={requestDemoClicked}
             >
-            Self Host
+              Self Host
             </Link>
 
 

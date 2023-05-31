@@ -948,22 +948,23 @@ function Home() {
                       className="button button--primary margin--md "
                       //  onClick={setShowTrySignozModal.bind(this,true)}>
                       href={"/teams/?utm_source=website&utm_medium=home_page_bottom&utm_campaign=try_cloud"}
+                      id="btn-get-started-homepage-bottom"
                     >
                       Get started - free
 
                     </Link>
                     <Link
-                    style={{
-                      margin: "6px",
-                      paddingLeft: "30px",
-                      paddingRight: "30px",
-                    }}
-                    className="button button--outline button--secondary "
-                    href={"/docs/install/"}
-                    onClick={requestDemoClicked}
+                      style={{
+                        margin: "6px",
+                        paddingLeft: "30px",
+                        paddingRight: "30px",
+                      }}
+                      className="button button--outline button--secondary "
+                      href={"/docs/install/"}
+                      onClick={requestDemoClicked}
+                      id="btn-self-hosted-homepage-bottom"
                   >
                     Self Host
-
                   </Link>
                   </div>
                 </div>
