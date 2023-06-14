@@ -1,5 +1,5 @@
 ---
-title: Working at dev infra open source startup - A view from the trenches 
+title: Working at a dev infra open source startup - A view from the trenches 
 slug: srikanth-signoz
 date: 2023-06-13
 tags: [Hiring, Open Source]
