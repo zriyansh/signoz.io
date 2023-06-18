@@ -18,6 +18,14 @@
   line-height: var(--ifm-font-line-height);
   letter-spacing: var(--ifm-font-letter-spacing);
 }
+.yourProject .title::after {
+  content: "";
+  background-color: var(--ifm-color-primary);
+  display: block;
+  height: 0.3rem;
+  margin: 2rem auto;
+  width: 15%;
+}
 .yourProject .subTagline {
   margin-bottom: 1.2rem;
   font-family: var(--ifm-font-family-work-sans);
@@ -39,5 +47,12 @@
   .yourProject .subTagline {
     font-size: 0.9rem;
     width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .yourProject .title::after {
+    width: 40%;
+    margin: 1.5rem auto;
   }
 }
