@@ -129,8 +129,14 @@ function Pricing() {
                       <li>Service Dependency Visualization</li>
                       <li>Run aggregates on ingested spans</li>
                       <li>Live Tail Logging</li>
-                      <li>AWS Cloudwatch Integration</li>
                       <li>Unlimited Logs & Traces based Dashboards</li>
+                    </ul>
+                  </div>
+                  <hr />
+                  <div className={styles.packageDetailBlock}>
+                    <h4 className={styles.packageDetailTitle}>Upcoming</h4>
+                    <ul className="list-icon-right">
+                      <li>AWS Cloudwatch Integration</li>
                     </ul>
                   </div>
                 </div>
