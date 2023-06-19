@@ -46,7 +46,7 @@ function Pricing() {
                         className={`button button--primary ${styles.pricingCtaBtn}`}
                         href={"/teams/"}
                       >
-                        Get started - free
+                        Get started
                       </Link>
                     </div>
                   </div>
@@ -88,10 +88,10 @@ function Pricing() {
                       </span>
                     </div>
                     <div>
-                      <span>Managed by SigNoz in your cloud</span>
+                      {/* <span>Managed by SigNoz in your cloud</span>
                       <span>
                         <RightSVG />
-                      </span>
+                      </span> */}
                     </div>
                   </div>
                   <hr />
@@ -130,6 +130,7 @@ function Pricing() {
                       <li>Run aggregates on ingested spans</li>
                       <li>Live Tail Logging</li>
                       <li>AWS Cloudwatch Integration</li>
+                      <li>Unlimited Logs & Traces based Dashboards</li>
                     </ul>
                   </div>
                 </div>
@@ -139,7 +140,7 @@ function Pricing() {
                     className={`button button--primary ${styles.pricingCtaBtn}`}
                     href={"/teams/"}
                   >
-                    Get started - free
+                    Get started
                   </Link>
                 </div>
               </div>
