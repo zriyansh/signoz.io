@@ -18,7 +18,7 @@
   line-height: var(--ifm-font-line-height);
   letter-spacing: var(--ifm-font-letter-spacing);
 }
-.yourProject .title::after {
+.yourProject .title.withUnderline::after {
   content: "";
   background-color: var(--ifm-color-primary);
   display: block;
@@ -51,7 +51,7 @@
 }
 
 @media (max-width: 480px) {
-  .yourProject .title::after {
+  .yourProject .title.withUnderline::after {
     width: 40%;
     margin: 1.5rem auto;
   }

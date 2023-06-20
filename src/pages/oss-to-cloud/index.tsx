@@ -60,6 +60,7 @@ function OSSToCloud() {
     <Layout title="OSS to Cloud">
       <section className={styles.oss}>
         <DiscussYourProject
+          withUnderline
           title={OSS_TO_CLOUD_DATA.TITLE}
           desc={OSS_TO_CLOUD_DATA.DESC}
         />
