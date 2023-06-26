@@ -289,6 +289,7 @@ module.exports = {
         'tutorial/setting-up-tls-for-signoz',
         'tutorial/setting-up-sso-saml-with-keycloak',
         'tutorial/writing-clickhouse-queries-in-dashboard',
+        'tutorial/traefik-observability',
       ],
     },
     {
