@@ -59,11 +59,11 @@ function Pricing() {
                     <h4 className={styles.packageDetailTitle}>Pricing</h4>
                     <div>
                       <span>Logs</span>
-                      <span>$0.4 per GB ingested</span>
+                      <span>$0.3 per GB ingested</span>
                     </div>
                     <div>
                       <span>Traces</span>
-                      <span>$0.4 per GB ingested</span>
+                      <span>$0.3 per GB ingested</span>
                     </div>
                     <div>
                       <span>Metrics</span>
