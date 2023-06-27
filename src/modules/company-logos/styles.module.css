@@ -13,13 +13,14 @@
   font-family: var(--ifm-font-family-work-sans);
   font-style: normal;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: var(--ifm-font-line-height);
   letter-spacing: var(--ifm-font-letter-spacing);
 }
-.used_by .logoContainer{
+.used_by .logoContainer {
   margin: 0 2rem;
   padding: 0;
+  justify-content: center;
 }
 .used_by ul li {
   margin: 0 0 1rem;
@@ -29,7 +30,7 @@
   align-items: center;
   margin-bottom: 2rem;
 }
-.used_by ul li img{
+.used_by ul li img {
   aspect-ratio: 3/2;
   object-fit: contain;
   height: 5rem;
@@ -37,11 +38,9 @@
 }
 
 @media (max-width: 996px) {
-  .used_by .logoContainer{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .used_by .logoContainer {
     margin: 0 1rem;
-}
+  }
 }
 @media (max-width: 768px) {
   .used_by .tagline {
@@ -49,5 +48,9 @@
   }
   .used_by ul li {
     margin-bottom: 0.5rem;
+    width: 50% !important;
+    display: flex;
+    flex-basis: 50% !important;
+    justify-content: center;
   }
 }
