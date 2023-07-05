@@ -46,6 +46,9 @@
 .trySigNozContainer.withoutHackerNews {
   transform: translateY(0%);
 }
+.trySigNozContainer.withoutMigrationSupport {
+  margin-bottom: 5rem;
+}
 .trySigNozContainer::before {
   content: "";
   position: absolute;
@@ -83,8 +86,13 @@
   margin-top: 2rem;
 }
 .migrationSupportContainer.withoutHackerNews {
-  padding: 2rem 4rem 0;
-  margin-top: 6rem;
+  margin-top: 8rem;
+}
+.migrationSupportContainer.withoutMigrationSupport {
+  margin-top: 4rem;
+}
+.migrationSupportContainer.withoutHackerNews.withoutMigrationSupport {
+  margin-top: 0rem;
 }
 .migrationSupportContainer .tagline {
   font-weight: 600;

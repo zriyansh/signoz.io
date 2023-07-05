@@ -3,15 +3,19 @@ import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
 
 const GetStarted = (props) => {
-  const { withHackerNews, data } = props;
+  const { withHackerNews, withMigrationSupport, data } = props;
   return (
     <>
       <HackerNewsThread
         withHackerNews={withHackerNews}
         title={data.HACKER_THREAD_TITLE}
       />
-      <GetStartedSection withHackerNews={withHackerNews} />
+      <GetStartedSection
+        withHackerNews={withHackerNews}
+        withMigrationSupport={withMigrationSupport}
+      />
       <MigrationSupport
+        withMigrationSupport={withMigrationSupport}
         withHackerNews={withHackerNews}
         title={data.TITLE}
         desc={data.DESC}
@@ -35,24 +39,26 @@ const HackerNewsThread = (props) => {
 };
 
 const GetStartedSection = (props) => {
-  const { withHackerNews } = props;
+  const { withHackerNews, withMigrationSupport } = props;
   return (
     <div className="container">
       <div
-        className={`${styles.trySigNozContainer} ${
-          !withHackerNews && styles.withoutHackerNews
-        }`}
+        className={`${styles.trySigNozContainer} 
+        ${!withHackerNews && styles.withoutHackerNews} 
+        ${!withMigrationSupport && styles.withoutMigrationSupport}`}
       >
         <h3 className={styles.tagline}>
           OpenTelemetry-Native Metrics, Logs, and Traces in a single pane of
           glass
         </h3>
-        <p className={styles.desc}>Sign up for SigNoz Cloud.</p>
+        <p className={styles.desc}>
+          SigNoz Cloud is the easiest way to run SigNoz
+        </p>
         <Link
           className={`button button--secondary ${styles.trySigNozCtaBtn}`}
           href="/teams/"
         >
-          Get started
+          Try SigNoz Cloud
         </Link>
       </div>
     </div>
@@ -60,13 +66,16 @@ const GetStartedSection = (props) => {
 };
 
 const MigrationSupport = (props) => {
-  const { withHackerNews, title, desc } = props;
+  const { withMigrationSupport, withHackerNews, title, desc } = props;
+  if (!withMigrationSupport) {
+    return null;
+  }
   return (
     <div className="container">
       <div
-        className={`${styles.migrationSupportContainer} ${
-          !withHackerNews && styles.withoutHackerNews
-        }`}
+        className={`${styles.migrationSupportContainer} 
+        ${!withMigrationSupport && styles.withoutMigrationSupport} 
+        ${!withHackerNews && styles.withoutHackerNews} `}
       >
         <h4 className={styles.tagline}>{title}</h4>
         <p className={styles.desc}>{desc}</p>

@@ -16,6 +16,8 @@ function SigNozVSNewRelic() {
           title={COMPARISON_DATA.HERO.TITLE}
           desc={COMPARISON_DATA.HERO.DESC}
           billForComparison={COMPARISON_DATA.HERO.BILL_FOR_COMPARISON}
+          trySigNozCloud={COMPARISON_DATA.HERO.TRY_SIGNOZ_CLOUD}
+          selfHost={COMPARISON_DATA.HERO.SELF_HOST}
         />
         <Migration
           title={COMPARISON_DATA.MIGRATE.TITLE}
@@ -24,9 +26,13 @@ function SigNozVSNewRelic() {
         <TopReasons
           title={COMPARISON_DATA.REASON_TITLE}
           reasons={COMPARISON_DATA.REASONS}
+          withElonMuskReason
         />
         <ComparisonGrid comparisonData={COMPARISON_DATA.COMPARISON} />
-        <GetStarted data={COMPARISON_DATA.MIGRATION_SUPPORT} />
+        <GetStarted
+          withMigrationSupport
+          data={COMPARISON_DATA.MIGRATION_SUPPORT}
+        />
       </ComparisonLayout>
     </Layout>
   );
@@ -51,7 +57,21 @@ const COMPARISON_DATA = {
         .
       </>
     ),
-    BILL_FOR_COMPARISON: "/comparisons/newrelic-savings/",
+    BILL_FOR_COMPARISON: {
+      path: "/comparisons/newrelic-savings/",
+      className: "button--primary",
+      isVisible: true,
+    },
+    TRY_SIGNOZ_CLOUD: {
+      path: "/teams/",
+      className: "button--outline button--secondary",
+      isVisible: true,
+    },
+    SELF_HOST: {
+      path: "/comparisons/newrelic-savings/",
+      className: "button--outline button--secondary",
+      isVisible: false,
+    },
   },
   MIGRATE: {
     TITLE: <>Migrate from New Relic to SigNoz with ease.</>,
@@ -93,6 +113,8 @@ const COMPARISON_DATA = {
           <Link
             href="https://clickhouse.com/docs/en/concepts/why-clickhouse-is-so-fast"
             className="highlight"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
           >
             why is ClickHouse so fast
           </Link>
@@ -218,8 +240,7 @@ const COMPARISON_DATA = {
         sideHeader: "Host Yourself",
         isAvailableInSignoz: true,
         isAvailableInOther: false,
-        signozExtraDetail:
-          "Managed self-hosting also available",
+        signozExtraDetail: "Managed self-hosting also available",
       },
     ],
   },

@@ -3,12 +3,46 @@ import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
 
 const TopReasons = (props) => {
+  if (props?.points) {
+    return (
+      <section className={`container`}>
+        <div className={`${styles.reasonsPoints}`}>
+          <h3 className={`${styles.reasonsPointTitle} highlight`}>
+            In-depth: SigNoz vs Grafana
+          </h3>
+          <h4 className={styles.reasonMainPointTitle}>
+            Why do devs choose SigNoz over Grafana?
+          </h4>
+          <p className={styles.reasonMainPointDesc}>
+            SigNoz is loved by developers. With over 13k+ Github stars, 100+
+            contributors, and 20k+ community members, it’s one of the top open
+            source projects in the observability domain. Many of our users have
+            switched from Grafana. <br />
+            Here are a few reasons why.
+          </p>
+          {props.reasons.map(({ reason, reasonDesc }, idx) => {
+            return (
+              <React.Fragment key={idx + new Date().getSeconds()}>
+                <h4 className={styles.reasonTitle}>
+                  {idx + 1}. {reason}
+                </h4>
+                <div className={styles.reasonDesc}>{reasonDesc}</div>
+              </React.Fragment>
+            );
+          })}
+        </div>
+      </section>
+    );
+  }
+
   return (
     <>
       <div className={styles.svsdReasonContainer}>
-        <h3 className={styles.reasonHeaderTitle}>{props.title}</h3>
+        {props.title && (
+          <h3 className={styles.reasonHeaderTitle}>{props.title}</h3>
+        )}
         <div className="container">
-          <OpenSourceReason />
+          {props.withElonMuskReason && <OpenSourceReason />}
           {(props.reasons || []).map(({ TITLE, DESC, FIGURE }, index) => {
             return (
               <div

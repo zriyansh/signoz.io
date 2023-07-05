@@ -16,6 +16,8 @@ function SigNozVSDatadog() {
           title={COMPARISON_DATA.HERO.TITLE}
           desc={COMPARISON_DATA.HERO.DESC}
           billForComparison={COMPARISON_DATA.HERO.BILL_FOR_COMPARISON}
+          trySigNozCloud={COMPARISON_DATA.HERO.TRY_SIGNOZ_CLOUD}
+          selfHost={COMPARISON_DATA.HERO.SELF_HOST}
         />
         <Migration
           title={COMPARISON_DATA.MIGRATE.TITLE}
@@ -24,9 +26,14 @@ function SigNozVSDatadog() {
         <TopReasons
           title={COMPARISON_DATA.REASON_TITLE}
           reasons={COMPARISON_DATA.REASONS}
+          withElonMuskReason
         />
         <ComparisonGrid comparisonData={COMPARISON_DATA.COMPARISON} />
-        <GetStarted withHackerNews data={COMPARISON_DATA.MIGRATION_SUPPORT} />
+        <GetStarted
+          withHackerNews
+          withMigrationSupport
+          data={COMPARISON_DATA.MIGRATION_SUPPORT}
+        />
       </ComparisonLayout>
     </Layout>
   );
@@ -50,17 +57,28 @@ const COMPARISON_DATA = {
         .
       </>
     ),
-    BILL_FOR_COMPARISON: "/comparisons/datadog-savings/",
+    BILL_FOR_COMPARISON: {
+      path: "/comparisons/datadog-savings/",
+      className: "button--primary",
+      isVisible: true,
+    },
+    TRY_SIGNOZ_CLOUD: {
+      path: "/teams/",
+      className: "button--outline button--secondary",
+      isVisible: true,
+    },
+    SELF_HOST: {
+      path: "/comparisons/newrelic-savings/",
+      className: "button--outline button--secondary",
+      isVisible: false,
+    },
   },
   MIGRATE: {
     TITLE: <>Migrate from Datadog to SigNoz with ease.</>,
     DESC: (
       <>
         We provide support for migrating from Datadog to SigNoz. <br />
-        <Link
-          href="/comparisons/migrate-from-datadog/"
-          className={`highlight`}
-        >
+        <Link href="/comparisons/migrate-from-datadog/" className={`highlight`}>
           Request a migration support
         </Link>{" "}
         from one of our experts and get started with SigNoz quickly.
@@ -77,11 +95,13 @@ const COMPARISON_DATA = {
           ​OpenTelemetry is the second most active project in the CNCF, with
           only Kubernetes being more active. Using an open source standard like
           OpenTelemetry frees you from vendor lock-in. SigNoz is built to
-          support OpenTelemetry from Day 1. However, Datadog does not support OTel as
-          its primary data format, and it even tried to{" "}
+          support OpenTelemetry from Day 1. However, Datadog does not support
+          OTel as its primary data format, and it even tried to{" "}
           <Link
             href="https://news.ycombinator.com/item?id=34540419"
             className="highlight"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
           >
             kill an OTel pull request
           </Link>
@@ -101,6 +121,8 @@ const COMPARISON_DATA = {
           <Link
             href="https://clickhouse.com/docs/en/concepts/why-clickhouse-is-so-fast"
             className={`highlight`}
+            rel="noopener noreferrer nofollow"
+            target="_blank"
           >
             why is ClickHouse so fast
           </Link>
@@ -233,6 +255,8 @@ const COMPARISON_DATA = {
         <Link
           href="https://news.ycombinator.com/item?id=35837330"
           className={`highlight`}
+          rel="noopener noreferrer nofollow"
+          target="_blank"
         >
           HackerNews thread.
         </Link>

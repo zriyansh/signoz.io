@@ -1,5 +1,5 @@
 .svsdReasonContainer {
-  padding: 5rem 0;
+  padding: 4rem 0;
 }
 .reasonHeaderTitle {
   font-size: 2rem;
@@ -20,6 +20,12 @@
 }
 .reasonRow {
   margin: 0 4rem 2rem;
+}
+.reasonsPoints {
+  margin: 0 10rem 5rem;
+}
+.reasonsPointTitle {
+  font-size: 2.5rem;
 }
 .reasonImageCol {
   display: flex;
@@ -100,6 +106,18 @@
   justify-content: center;
   align-items: flex-start;
 }
+.reasonMainPointTitle {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 110%;
+  letter-spacing: var(--ifm-font-letter-spacing);
+}
+.reasonMainPointDesc {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 160%;
+  letter-spacing: var(--ifm-font-letter-spacing);
+}
 .reasonTitle {
   font-weight: 600;
   font-size: 1.6rem;
@@ -110,7 +128,6 @@
   font-weight: 400;
   font-size: 0.9rem;
   line-height: 160%;
-
   letter-spacing: var(--ifm-font-letter-spacing);
 }
 /* media */
@@ -131,6 +148,9 @@
 @media (max-width: 768px) {
   .reasonElonMusk .reasonImageContainer {
     margin-bottom: 2rem;
+  }
+  .reasonsPoints {
+    margin: 0 2rem 5rem;
   }
   .svsdReasonContainer {
     padding: 3rem 0;
@@ -156,6 +176,15 @@
     width: 90%;
     font-size: 1.2rem;
     margin: 0 auto 2rem;
+  }
+  .reasonsPoints {
+    margin: 0 0.5rem 5rem;
+  }
+  .reasonsPointTitle {
+    font-size: 1.8rem;
+  }
+  .reasonMainPointTitle {
+    font-size: 1.5rem;
   }
   .reasonElonMusk .reasonImageContainer {
     margin-bottom: 4rem;
