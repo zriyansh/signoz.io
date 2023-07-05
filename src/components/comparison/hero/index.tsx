@@ -28,7 +28,7 @@ const Hero = (props) => {
         {selfHost.isVisible && (
           <Link
             className={`button ${selfHost.className} ${styles.ctaButton}`}
-            href="/teams/"
+            href={selfHost.path}
           >
             Self-Host
           </Link>
