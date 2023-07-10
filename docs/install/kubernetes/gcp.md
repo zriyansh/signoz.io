@@ -15,7 +15,7 @@ import StorageClass from '../../shared/k8s-storageclass.md'
 
 First, we need to set up a Kubernetes cluster (see the [official GCP documentation][1]
 for more info).
- 
+
 <K8sComponents />
 
 ## Prerequisites
@@ -32,7 +32,7 @@ an overview of the parameters that can be configured during installation under
 
 ### GKE Standard
 
-In GKE Standard, you can either install with default configurations or make
+In GKE Standard, you can either install with the default configuration or make
 use of the following `override-values.yaml`:
 
 ```yaml

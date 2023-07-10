@@ -24,13 +24,13 @@ To start/resume SigNoz cluster:
 helm -n platform install "my-release"
 ```
 
-_*Note: The newly created release aka SigNoz cluster should mount to
-the existing persistent volume as long as the *namespace* and the
-*release name* matches to the old one._
+*Note: The newly created release aka SigNoz cluster should mount to
+the existing persistent volume as long as the **namespace** and the
+**release name** matches the old one.*
 
 ## Upgrade SigNoz Cluster
 
-Use the steps below to upgrade to the latest:
+Use the steps below to upgrade to the latest version:
 
 1. Fetch the latest chart information from the Helm repositories
 ```bash
