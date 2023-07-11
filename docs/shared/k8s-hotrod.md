@@ -6,7 +6,7 @@ and generate tracing data.
 and deploy HotROD application on it:
 
 ```bash
-curl -sL https://github.com/SigNoz/signoz/raw/main/sample-apps/hotrod/hotrod-install.sh \
+curl -sL https://github.com/SigNoz/signoz/raw/develop/sample-apps/hotrod/hotrod-install.sh \
   | HELM_RELEASE=my-release SIGNOZ_NAMESPACE=platform bash
 ```
 
@@ -30,7 +30,7 @@ locust-slave-688c86bcb7-ngx7w   1/1     Running   0          2m
 ```bash
 kubectl --namespace sample-application run strzal --image=djbingham/curl \
   --restart='OnFailure' -i --tty --rm --command -- curl -X POST -F \
-  'locust_count=6' -F 'hatch_rate=2' http://locust-master:8089/swarm
+  'user_count=6' -F 'spawn_rate=2' http://locust-master:8089/swarm
 ```
 
 4. Browse to `http://localhost:3301` and see the metrics and traces for your sample application.
