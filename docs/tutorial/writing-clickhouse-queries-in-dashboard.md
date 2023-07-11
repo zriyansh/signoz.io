@@ -46,6 +46,36 @@ AND timestamp > toUnixTimestamp(now() - INTERVAL 30 MINUTE)
 GROUP BY (resultArray, interval) order by (resultArray, interval) ASC;
 ```
 
+### Avg latency between 2 spans of interest (part of the trace tree)
+
+```sql
+SELECT
+    interval,
+    round(avg(time_diff), 2) AS result
+FROM
+(
+    SELECT
+        interval,
+        traceID,
+        if(startTime1 != 0, if(startTime2 != 0, (toUnixTimestamp64Nano(startTime2) - toUnixTimestamp64Nano(startTime1)) / 1000000, nan), nan) AS time_diff
+    FROM
+    (
+        SELECT
+            toStartOfInterval(timestamp, toIntervalMinute(1)) AS interval,
+            traceID,
+            minIf(timestamp, if(serviceName='driver', if(name = '/driver.DriverService/FindNearest', if((stringTagMap['component']) = 'gRPC', true, false), false), false)) AS startTime1,
+            minIf(timestamp, if(serviceName='route', if(name = 'HTTP GET /route', true, false), false)) AS startTime2
+        FROM signoz_traces.distributed_signoz_index_v2
+        WHERE (timestamp BETWEEN {{.start_datetime}} AND {{.end_datetime}}) AND (serviceName IN ('driver', 'route'))
+        GROUP BY (interval, traceID)
+        ORDER BY (interval, traceID) ASC
+    )
+)
+WHERE isNaN(time_diff) = 0
+GROUP BY interval
+ORDER BY interval ASC;
+```
+
 
 ### Show sum of values  of `customer_id` which is present as attribute of a span event
 
