@@ -19,13 +19,16 @@ Moreover, it’s not trivial to get application metrics with Prometheus. SigNoz 
 
 Our goal is to provide an integrated UI between all telemetry signals - metrics, traces, and logs - similar to what SaaS vendors like Datadog provide.
 
+### What is the difference between `signoz/alertmanager` and `prometheus/alertmanager`?
+
+`prometheus/alertmanager` mostly works via config and needs to restart for every change. The SigNoz team forked and created APIs to create, test and manage channels dynamically along with other functionalities like muting, inhibiting, etc
+
 ### How does SigNoz compare to Grafana stack ( Prometheus, Loki, Tempo)?
 
 The advantages of SigNoz are powered by the choice of columnar database underlying it. Running aggregates on traces and logs would be much more efficient when doing in a columnar db. So, if you use Tempo you won't be able to get sum/rate/count/percentile on spans filtered by tags/labels. Similarly, for Loki if you look into their open issues on performance, you will find issues in running fast aggregations on millions of log lines.
 Moreover, running 3 stacks for metrics, traces and logs would prove to be more cumbersome for millions of events.
 
 Using a single underlying datastore helps us in switching context from metrics to traces. Say, you see a spike in latency or error % of external calls or db calls from a service, SigNoz can take you to relevant traces on the click of a button which may not be as simple in Grafana (as far as we know).
-
 
 #### To Summarise
 
