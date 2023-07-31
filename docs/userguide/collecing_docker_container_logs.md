@@ -57,6 +57,16 @@ If you want to exclude certain logs you can exclude them based the container nam
 
 If you have a signoz running on a different host then you can run logspout on the host and send logs to SigNoz cluster.
 
+* Expose port `2255` of otel-collector by modifying the `docker-compose.yaml` file present inside `deploy/docker/clickhouse-setup`
+  ```yaml {6}
+  ...
+  otel-collector:
+      image: signoz/signoz-otel-collector:latest
+      command: ["--config=/etc/otel-collector-config.yaml"]
+      ports:
+        - "2255:2255"
+  ```
+
 * Run logspout 
   ```
   docker run --net=host --rm --name="logspout" \
