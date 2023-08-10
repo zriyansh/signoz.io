@@ -38,7 +38,7 @@ I'll say that as a die-hard SQL user, you absolutely *can* explore your data jus
 </figure>
 
 
-Let's talk about what else these features enable:
+Let's talk about what else the new Explorer pages enable:
 
 ### 1. Compare results by charting multiple queries together
 
