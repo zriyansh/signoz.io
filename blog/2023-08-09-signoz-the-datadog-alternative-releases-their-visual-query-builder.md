@@ -30,7 +30,7 @@ We've talked recently about how ClickHouse, the datastore that SigNoz uses, [all
 While ClickHouse queries are written in SQL and should be familiar to many many developers, the goal of DevOps is, after all, a sharing of operational and dev knowledge as far as possible. Requiring everyone to write queries will always have limits, creating one group who create dashboards and another who just view them.
 
 * You often have to know what data is present to work with it
-I'll say that as a die-hard SQL user you absolutely *can* explore your data just using queries. But it's immensely helpful in this query builder that completions for your queries, both with attribute names *and* attribute values. Like in this example where I wanted to look at log lines only for a single container ID. Instead of having to query and pick an ID, some frequent values are suggested by the explorer
+I'll say that as a die-hard SQL user, you absolutely *can* explore your data just using queries. But it's immensely helpful in this query builder that completions for your queries, both with attribute names *and* attribute values. For example, I wanted to look at log lines only for a single container ID. Instead of having to query and pick an ID, the explorer suggests some frequent values.
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2023/08/query-builder/suggestion-values.webp" alt="The newly shipped logs explorer will help you create powerful queries on your logs data"/>
