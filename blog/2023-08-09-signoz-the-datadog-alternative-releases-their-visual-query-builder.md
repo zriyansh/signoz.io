@@ -1,6 +1,6 @@
 ---
-title: SigNoz, the open-source DataDog alternative, releases our visual query builder
-slug: signoz-the-datadog-alternative-releases-their-visual-query-builder
+title: Diving in to OpenTelemetry data with our new Trace and Logs Explorer
+slug: diving-in-to-opentelemetry-data-with-our-new-trace-and-logs-explorer
 date: 2023-08-10
 tags: [OpenTelemetry, Product]
 authors: nicamellifera
@@ -13,7 +13,7 @@ keywords:
 ---
 
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/clickhouse-query-compare-two-spans/"/>
+  <link rel="canonical" href="https://signoz.io/blog/diving-in-to-opentelemetry-data-with-our-new-trace-and-logs-explorer/"/>
 </head>
 
 The team at SigNoz would like to share recent developments released this month that greatly enhance the ability to dynamically query your trace and log data. With these tools anyone can explore complex OpenTelemetry data and gain insight into their stack.
@@ -26,10 +26,10 @@ The team at SigNoz would like to share recent developments released this month t
 
 We've talked recently about how ClickHouse, the datastore that SigNoz uses, [allows powerful queries into your observability data.](https://signoz.io/blog/clickhouse-query-compare-two-spans/) But with any query language you're going to limit the reach of your data for two reasons:
 
-* Only those who can write queries can build new charts
+**Only those who can write queries can build new charts**<br></br>
 While ClickHouse queries are written in SQL and should be familiar to many many developers, the goal of DevOps is, after all, a sharing of operational and dev knowledge as far as possible. Requiring everyone to write queries will always have limits, creating one group who create dashboards and another who just view them.
 
-* You often have to know what data is present to work with it
+**You often have to know what data is present to work with it**<br></br>
 I'll say that as a die-hard SQL user, you absolutely *can* explore your data just using queries. But it's immensely helpful in this query builder that completions for your queries, both with attribute names *and* attribute values. For example, I wanted to look at log lines only for a single container ID. Instead of having to query and pick an ID, the explorer suggests some frequent values.
 
 <figure data-zoomable align='center'>
@@ -53,7 +53,7 @@ You can customize the legends on charts to make the results more readable
 
 ### 2. Timeseries, tables, and lists
 
-Every observability dashboard tool is going to need custom data views, because no one knows what your data really means better than you do. It may be that timeseries like the one above are meaningful, but you may prefer a simple list of results
+Every observability dashboard tool is going to need custom data views, because no one knows what your data really means better than you do. It may be that timeseries like the one above are meaningful, but you may prefer a simple list of results.
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2023/08/query-builder/list.webp" alt="The newly shipped logs explorer will help you create powerful queries on your logs data"/>
@@ -78,10 +78,10 @@ Directly from results you can add the query to a dashboard and set up an alert. 
 </figure>
 
 ## Conclusion
-In the ever-evolving landscape of observability tools, SigNoz continues to make significant strides towards providing an open-source alternative to proprietary solutions. The latest addition to their arsenal, the visual query builder, represents a pivotal step in democratizing the accessibility and utility of complex OpenTelemetry data.
+In the ever-evolving landscape of observability tools, SigNoz continues to make significant strides towards providing an open-source alternative to proprietary solutions.
 
-By addressing the inherent limitations of query-based exploration, SigNoz has broken down barriers that often restrict meaningful engagement with observability data.
+By addressing the inherent limitations of query-based exploration, SigNoz has broken down barriers that often restrict meaningful engagement with observability data. Our new query builder for logs and traces allows teams to bring in SRE's and Operations Engineers to the process of querying their observability data.
 
-SigNoz's visual query builder is a testament to the project's commitment to accessibility, user-friendliness, and community-driven development. With this month's release, SigNoz solidifies our position as a compelling alternative to proprietary tools, offering a comprehensive toolkit to unlock the full potential of OpenTelemetry data exploration and analysis.
+Once you're getting good OpenTelemetry data, you'll be amazed by how many teams want access to it. After that, the need for custom views, dashboards, and visualizations is sure to follow. Our query tools will allow you to share OpenTelemetry data further within your team.
 
 [Try SigNoz cloud](https://signoz.io/teams/) to get started quickly and unlock the full potential of your OpenTelemetry data.
