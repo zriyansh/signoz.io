@@ -83,3 +83,5 @@ In the ever-evolving landscape of observability tools, SigNoz continues to make 
 By addressing the inherent limitations of query-based exploration, SigNoz has broken down barriers that often restrict meaningful engagement with observability data.
 
 SigNoz's visual query builder is a testament to the project's commitment to accessibility, user-friendliness, and community-driven development. With this month's release, SigNoz solidifies our position as a compelling alternative to proprietary tools, offering a comprehensive toolkit to unlock the full potential of OpenTelemetry data exploration and analysis.
+
+[Try SigNoz cloud](https://signoz.io/teams/) to get started today gathering and sharing your OpenTelemetry data.
