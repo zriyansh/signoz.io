@@ -75,14 +75,16 @@ docker ps
 
 ```output
 CONTAINER ID   IMAGE                                          COMMAND                  CREATED          STATUS                    PORTS                                                                            NAMES
-1ad413fc12aa   signoz/frontend:0.8.0                          "nginx -g 'daemon of…"   20 minutes ago   Up 20 minutes             80/tcp, 0.0.0.0:3301->3301/tcp, :::3301->3301/tcp                                frontend
-419f7b440412   signoz/alertmanager:0.23.0-0.1                 "/bin/alertmanager -…"   20 minutes ago   Up 20 minutes             9093/tcp                                                                         clickhouse-setup_alertmanager_1
-95f5fab00c3c   signoz/otelcontribcol:0.43.0-0.1               "/otelcontribcol --c…"   21 minutes ago   Up 21 minutes             0.0.0.0:4317-4318->4317-4318/tcp, :::4317-4318->4317-4318/tcp, 55679-55680/tcp   clickhouse-setup_otel-collector_1
-c1640c215d10   signoz/otelcontribcol:0.43.0-0.1               "/otelcontribcol --c…"   21 minutes ago   Up 21 minutes             4317/tcp, 55679-55680/tcp                                                        clickhouse-setup_otel-collector-metrics_1
-9db88c61f7fd   signoz/query-service:0.8.0                     "./query-service -co…"   21 minutes ago   Up 21 minutes (healthy)   8080/tcp                                                                         query-service
-509ab96c5393   clickhouse/clickhouse-server:22.4-alpine       "/entrypoint.sh"         22 minutes ago   Up 21 minutes (healthy)   8123/tcp, 9000/tcp, 9009/tcp                                                     clickhouse-setup_clickhouse_1
-eb7a2e23c0c0   grubykarol/locust:1.2.3-python3.9-alpine3.12   "/docker-entrypoint.…"   22 minutes ago   Up 21 minutes             5557-5558/tcp, 8089/tcp                                                          load-hotrod
-f234b5cb4512   jaegertracing/example-hotrod:1.30              "/go/bin/hotrod-linu…"   22 minutes ago   Up 21 minutes             8080-8083/tcp                                                                    hotrod
+01f044c4686a   signoz/frontend:0.25.4                       "nginx -g 'daemon of…"   2 minutes ago   Up 9 seconds                  80/tcp, 0.0.0.0:3301->3301/tcp                                                     signoz-frontend
+86aa5b875f9f   gliderlabs/logspout:v3.2.14                  "/bin/logspout syslo…"   2 minutes ago   Up 1 second                   80/tcp                                                                             signoz-logspout
+58746f684630   signoz/alertmanager:0.23.1                   "/bin/alertmanager -…"   2 minutes ago   Up 9 seconds                  9093/tcp                                                                           signoz-alertmanager
+2cf1ec96bdb3   signoz/query-service:0.25.4                  "./query-service -co…"   2 minutes ago   Up About a minute (healthy)   8080/tcp                                                                           signoz-query-service
+e9f0aa66d884   signoz/signoz-otel-collector:0.79.5          "/signoz-collector -…"   2 minutes ago   Up 10 seconds                 0.0.0.0:4317-4318->4317-4318/tcp                                                   signoz-otel-collector
+8ff17aadac6a   signoz/signoz-otel-collector:0.79.5          "/signoz-collector -…"   2 minutes ago   Up About a minute             4317-4318/tcp                                                                      signoz-otel-collector-metrics
+d3d89d7d4581   clickhouse/clickhouse-server:22.8.8-alpine   "/entrypoint.sh"         2 minutes ago   Up 2 minutes (healthy)        0.0.0.0:8123->8123/tcp, 0.0.0.0:9000->9000/tcp, 0.0.0.0:9181->9181/tcp, 9009/tcp   signoz-clickhouse
+9db88aefb6ed   signoz/locust:1.2.3                          "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes                  5557-5558/tcp, 8089/tcp                                                            load-hotrod
+60bb3b77b4f7   bitnami/zookeeper:3.7.1                      "/opt/bitnami/script…"   2 minutes ago   Up 2 minutes                  0.0.0.0:2181->2181/tcp, 0.0.0.0:2888->2888/tcp, 0.0.0.0:3888->3888/tcp, 8080/tcp   signoz-zookeeper-1
+98c7178b4004   jaegertracing/example-hotrod:1.30            "/go/bin/hotrod-linu…"   9 days ago      Up 2 minutes                  8080-8083/tcp                                                                      hotrod
 ```
 
 2. Wait for all the pods to be in running state, and then point your browser to `http://<IP-ADDRESS>:3301/` to access the dashboard, replacing `<IP-ADDRESS>` with the IP address of the machine where you installed SigNoz.

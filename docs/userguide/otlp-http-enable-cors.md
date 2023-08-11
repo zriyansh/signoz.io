@@ -65,8 +65,8 @@ configuration and restart the SigNoz OtelCollector using `docker-compose`:
 
 ```bash
 # clean remove SigNoz OtelCollector
-docker stop clickhouse-setup-otel-collector-1
-docker rm clickhouse-setup-otel-collector-1
+docker stop signoz-otel-collector
+docker rm signoz-otel-collector
 
 # restart SigNoz OtelCollector using `docker-compose`
 cd deploy
