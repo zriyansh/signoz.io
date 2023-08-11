@@ -181,6 +181,16 @@ const config = {
               to: "comparisons/signoz-vs-newrelic/",
             },
             {
+              label: "SigNoz vs Grafana",
+              to: "comparisons/signoz-vs-grafana/",
+
+            },
+            {
+              label: "SigNoz vs Dynatrace",
+              to: "comparisons/signoz-vs-dynatrace/",
+
+            },
+            {
               label: "Careers",
               href: "https://www.ycombinator.com/companies/signoz/jobs/",
             },

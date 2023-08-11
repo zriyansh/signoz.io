@@ -84,7 +84,7 @@ cd signoz/deploy/
 
 You can visit our documentation for instructions on how to install SigNoz using Docker Swarm and Helm Charts.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/install/docker/)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/install/)
 
 ### Collecting syslogs with SigNoz
 
@@ -96,7 +96,7 @@ Below are the steps to collect syslogs.
     ```yaml {8}
     ...
     otel-collector:
-        image: signoz/signoz-otel-collector:0.55.0-rc.3
+        image: signoz/signoz-otel-collector:0.79.5
         command: ["--config=/etc/otel-collector-config.yaml"]
         volumes:
           - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml

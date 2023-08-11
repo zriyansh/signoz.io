@@ -28,12 +28,6 @@ SigNoz recommends you to use the [install script](#install-signoz-using-the-inst
 If you're using a different Linux distribution, see the [Install SigNoz Using Docker Compose](#install-signoz-using-docker-compose) section.
 :::
 
-:::caution
-[Update 26 Jan 2023] There's a known issue in installing SigNoz in Mac M1 laptop. If you are facing any issues please refer to this [GitHub Issue](https://github.com/SigNoz/signoz/issues/2126) for the next steps.
-
-We are working on shipping a fix for the issue soon.
-:::
-
 ## Prerequisites
 
 - A Linux or macOS machine. Microsoft Windows is not officially supported.

@@ -84,7 +84,7 @@ cd signoz/deploy/
 
 You can visit the documentation for instructions on how to install SigNoz using Docker Swarm and Helm Charts.
 
-[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/install/docker/)
+[![Deployment Docs](/img/blog/common/deploy_docker_documentation.webp)](https://signoz.io/docs/install/)
 
 
 ## Installing Nginx
@@ -301,7 +301,7 @@ Modify the `docker-compose.yaml` file present inside `deploy/docker/clickhouse-s
 
 ```jsx
 otel-collector:
-    image: signoz/signoz-otel-collector:0.66.0
+    image: signoz/signoz-otel-collector:0.79.5
     command: ["--config=/etc/otel-collector-config.yaml"]
     user: root # required for reading docker container logs
     volumes:
