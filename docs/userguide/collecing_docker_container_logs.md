@@ -24,23 +24,24 @@ You can disable automatic container logs collection by modifying the `otel-colle
         exporters: [clickhouselogsexporter]
   ...
   ```
-  Here we have modified the value of recerivers from `[otlp, tcplog/docker]` to `[otlp]`.
+  Here we have modified the value of receivers from `[otlp, tcplog/docker]` to `[otlp]`.
   Now you can restart SigNoz and the changes will be applied.
 
 ### Filter/Exclude logs
-If you want to exclude certain logs you can exclude them based the container name or using a filter operator.
+If you want to exclude certain logs you can exclude them based the container name or based on pattern.
 
-* **Using container name** : We will modify the `tcplog/docker` reciever in `otel-collector-config.yaml` file which is present inside `deploy/docker/clickhouse-setup`
+* **Using container name** : We will modify the `tcplog/docker` reciever in `otel-collector-config.yaml` file which is present inside `deploy/docker/clickhouse-setup` and add a new operator after `signoz_logs_filter`
   ```yaml {2}
+  ...
   - type: filter
-    expr: 'attributes.container_name matches "^(logspout|frontend|.......|<container_name>)'
+    expr: 'attributes.container_name matches "^(<container_name>|<container_name>)'
   ...
   ```
-  Replace `<container_name>` with the name of the container that you want to exclude.
+  Replace `<container_name>` with the name of the containers that you want to exclude.
 
-  If you want to collect logs of signoz containers you can remove the the names from the operator.
+  If you want to collect logs of signoz containers you can remove the names of signoz containers from the filter operator with id `signoz_logs_filter` operator.
 
-* **Using filter operator in filelog receiver** : You can also use the filter operator to filter out logs
+* **Based on pattern** : You can also use the filter operator to filter out logs based on a pattern
   ```yaml {3-6}
   ....
     operators:
@@ -51,7 +52,7 @@ If you want to exclude certain logs you can exclude them based the container nam
   ```
   Here we are matching logs using an expression and dropping the entire log by setting `drop_ratio: 1.0` . You can read more about the filter operator [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/filter.md)
 
-* Now we can restart the otel collector container so that new changes are applied and the docker container logs will be visible in SigNoz.
+* Now we can restart the otel collector container so that new changes are applied and the docker container logs will be dropped for the specified containers.
 
 ## Steps for collecting logs if SigNoz is running on a different host.
 
