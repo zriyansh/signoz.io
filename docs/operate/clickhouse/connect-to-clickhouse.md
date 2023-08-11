@@ -13,7 +13,7 @@ Follow the instructions below for connecting to your ClickHouse database:
 1. To exec to `clickhouse` container:
 
 ```bash
-docker exec -it clickhouse-setup_clickhouse_1 bash
+docker exec -it signoz-clickhouse bash
 ```
 
 <CHClientWithOutput/>

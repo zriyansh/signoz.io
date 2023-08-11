@@ -17,7 +17,7 @@ The guide mainly covers the following:
 ### Docker Standalone
 
 ```bash
-docker exec -it query-service sh
+docker exec -it signoz-query-service sh
 ```
 
 ### Docker Swarm

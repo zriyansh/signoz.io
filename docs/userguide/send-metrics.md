@@ -162,7 +162,7 @@ You can follow the below steps
 
 2. Connect to the ClickHouse container
   ````
-  docker exec -it clickhouse-setup_clickhouse_1 bash
+  docker exec -it signoz-clickhouse bash
   ````
 3. Run the clickhouse-client command to connect to the database service
   ````
@@ -183,25 +183,25 @@ You can use this metrics to plot in the [Dashboard](/docs/userguide/manage-dashb
 
 Metrics which are available if hostmetrics is enabled. This is enabled in SigNoz default installation.
 
-| Metrics | Description |
-| --- | ----- |
-| `system_filesystem_usage_total` | |
-| `system_network_dropped_total` | |
-| `system_cpu_time_total` | |
-| `system_disk_merged_total` | |
-| `system_disk_io_time_total` | |
-| `system_disk_operations_total` | |
-| `system_network_errors_total` | |
-| `system_network_io_total` | |
-| `system_disk_weighted_io_time_total` | |
-| `system_network_packets_total` | |
-| `system_disk_operation_time_total` | |
-| `system_cpu_load_average_5m` | |
-| `system_memory_usage_total` | |
-| `system_disk_pending_operations_total` | |
-| `system_disk_io_total` | |
-| `system_cpu_load_average_15m` | |
-| `system_cpu_load_average_1m` | |
+| Metrics                                | Description |
+| -------------------------------------- | ----------- |
+| `system_filesystem_usage_total`        |             |
+| `system_network_dropped_total`         |             |
+| `system_cpu_time_total`                |             |
+| `system_disk_merged_total`             |             |
+| `system_disk_io_time_total`            |             |
+| `system_disk_operations_total`         |             |
+| `system_network_errors_total`          |             |
+| `system_network_io_total`              |             |
+| `system_disk_weighted_io_time_total`   |             |
+| `system_network_packets_total`         |             |
+| `system_disk_operation_time_total`     |             |
+| `system_cpu_load_average_5m`           |             |
+| `system_memory_usage_total`            |             |
+| `system_disk_pending_operations_total` |             |
+| `system_disk_io_total`                 |             |
+| `system_cpu_load_average_15m`          |             |
+| `system_cpu_load_average_1m`           |             |
 
 ## Related Videos
 
