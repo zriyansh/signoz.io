@@ -17,7 +17,7 @@ function freetrial() {
           <div class="row">
             <div class="col col--6 col--offset-3">
               <div class="card-demo margin--md">
-                <div class="card">
+                <div class="card">s
                   <div class="avatar margin--md">
                 
                     <div>
