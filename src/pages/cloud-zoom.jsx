@@ -7,7 +7,7 @@ function cloudzoom() {
     <Layout title="Book a Call">
     <Head>
         <meta name="robots" content="noindex" />  
-        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+        <script src="https://assets.calendly.com/assets/external/widget.js"></script>
     </Head>
       <section>
         <div
