@@ -1,10 +1,13 @@
 import React from "react";
 import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
+import Head from '@docusaurus/Head';
 
 function freetrial() {
   return (
     <Layout title="Free Trial End">
+      <Head>
+        <meta name="robots" content="noindex" />  
+      </Head>
       <section>
         <div
           className="container"
