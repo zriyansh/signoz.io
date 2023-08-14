@@ -16,7 +16,7 @@ function demo() {
 <div class="hero shadow--lw">
   <div class="container">
     <h1 class="hero__title">SigNoz Demo</h1>
-    <p class="hero__subtitle"> An expert will reach out shortly to understand your requirements and get you started with your SigNoz cloud instance.
+    <p class="hero__subtitle"> A quick demo of SigNoz features and capabilities.
     </p>
 
 
