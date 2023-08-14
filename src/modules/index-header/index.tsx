@@ -19,13 +19,13 @@ export const Header = () => {
 
         
         <p className="" style={{ fontWeight: "bold", fontSize: "42px" }}>
-            Open Source Observability with 
+        OpenTelemetry-Native 
             <span className={styles.highlight}> Traces</span>, <br></br> <span className={styles.highlight}>Logs </span>and<span className={styles.highlight}> Metrics </span>in a single pane            {/* Open-source application monitoring platform */}
         </p>
 
         <p className="hero__subtitle">
-        With our open source platform, customer data never has to leave your infrastructure
-        </p>
+        SigNoz is an open source Datadog and New Relic alternative. A single tool for all your observability
+needs - APM, logs, metrics, exceptions, alerts, and dashboards powered by a powerful query builder.        </p>
 
         <div style={{ margin: "1rem 0" }}>
             <Link
