@@ -22,7 +22,7 @@ function cloudzoom() {
     <p class="hero__subtitle"> An expert will reach out shortly to understand your requirements and get you started with your SigNoz cloud instance.
     </p>
 
-    <p class="hero__subtitle">If you are interested in booking a call right away, feel free to book an available time slot from the below calendar.
+    <p class="hero__subtitle">If you have a specific question, feel free to book an available time slot from the below calendar. During the call, we will share a quick product demo and answer any questions you might have.
     </p>
 
     <div class="calendly-inline-widget" 
