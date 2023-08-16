@@ -111,7 +111,7 @@ expose clickhouse ports even temporarily, you can go through following steps.
 
 ```bash
 kubectl -n platform run -i -t signoz-migrate --image=signoz/migrate:0.26 --restart='Never' \
-  -- -host=my-release-clickhouse -port=9000
+  -- -host=my-release-clickhouse -port=9000 -userName=admin -password=27ff0399-0d3a-4bd8-919d-17c2181e6fb9
 ```
 
 Steps to check logs:
