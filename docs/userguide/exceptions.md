@@ -59,14 +59,17 @@ span.set_status(Status(StatusCode.ERROR, "internal error"))
 ### Record Exceptions in JavaScript:
 
 ```javascript
-// Get the current span from the tracer
-const span = api.getSpan(api.context.active());
+// import relevant opentelemetry functions
+const { trace, SpanStatusCode } = require("@opentelemetry/api");
 
+// Get the current span from the tracer
+const span = trace.getActiveSpan();
+// Create a new sample error
+err = new Error("This is a sample error");
 // recordException converts the error into a span event. 
 span.recordException(err);
-
 // Update the span status to failed.
-span.setStatus({ code: api.SpanStatusCode.ERROR, message: String(err)});
+span.setStatus({ code: SpanStatusCode.ERROR, message: String(err) });
 ```
 
 ### Record Exceptions in .NET:
