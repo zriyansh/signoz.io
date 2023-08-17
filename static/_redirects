@@ -12,3 +12,4 @@
 /blog/signoz-benchmarks/            /blog/pricing-comparison-signoz-vs-datadog-vs-newrelic-vs-grafana/
 /docs/instrumentation/nodejs/       /docs/instrumentation/javascript/
 /gh                                 https://github.com/SigNoz/signoz/
+/free-trial/                        /teams/
