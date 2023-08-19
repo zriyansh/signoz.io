@@ -1,124 +1,83 @@
-import React, { useState } from "react"
-import styles from "./styles.module.css"
+import React, { useState } from "react";
+import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
 import { PlaySVG } from "../../svgs/common";
-
-
-
-
+import SubHeading from "../../components/ui/SubHeading";
+import Hero from "../../components/ui/Hero";
+import Button from "../../components/ui/Button";
+import ReactModal from "react-modal";
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 
 export const Header = () => {
+  const [showVideo, setShowVideo] = useState(false);
 
-    const [showVideo, setShowVideo] = useState(false);
-
-    return(
-
-
-<header className="hero">
-    <div className="container" style={{textAlign:'center'}}>
-
-        
-        <p className="" style={{ fontWeight: "bold", fontSize: "42px" }}>
-        OpenTelemetry-Native 
-            <span className={styles.highlight}> Traces</span>, <br></br> <span className={styles.highlight}>Logs </span>and<span className={styles.highlight}> Metrics </span>in a single pane            {/* Open-source application monitoring platform */}
-        </p>
-
-        <p className="hero__subtitle">
-        SigNoz is an open source Datadog and New Relic alternative. A single tool for all your observability
-needs - APM, logs, metrics, exceptions, alerts, and dashboards powered by a powerful query builder.        </p>
-
-        <div style={{ margin: "1rem 0" }}>
-            <Link
-              style={{
-                  margin: "6px",
-                  paddingLeft: "10px",
-                  paddingRight: "10px",
-              }}
-              className="button button--primary "
-              // onClick={setShowTrySignozModal.bind(this,true)}
-              href={"/teams/"}
-              //   onClick={getStartedClicked}
-              id="btn-get-started-homepage-hero"
-            >
-              Try SigNoz Cloud
-            </Link>
-            <Link
-              style={{
-                  margin: "6px",
-                  paddingLeft: "30px",
-                  paddingRight: "30px",
-              }}
-              className="button button--outline button--secondary "
-              href={"/docs/install/"}
-              id="btn-self-host-homepage-hero"
-              // href={"https://forms.gle/YDJ3wBFx7nhDnUbr5"}
-              //   onClick={requestDemoClicked}
-            >
-              Self Host
-            </Link>
-
-
-        </div>
-
-        <div style={{ display: "flex", alignItems: "center", marginBottom: "16px", justifyContent:'center'}}>
-            <img src={"/img/yc-logo-white.svg"} height={24}
-            alt={"YCombinator"} style={{ marginRight: 16 }}/>{" "}
-            Backed by Y Combinator
-        </div>
-
-        <div style={{display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'column'}} >
-{showVideo === false ? (
-  <div
-    id={"demo-video-cover"}
-    onClick={setShowVideo.bind(this, true)}
-    style={{
-      background: "url('/videos/demo-mar10-cover.webp')",
-      // height: 426,
-      width: "80%",
-      textAlign:'center'
-    }}
-  >
-    <div id={"demo-overlay"}></div>
-    <div id={"demo-content"}>
-      <div
-        style={{
-          fontSize: 18,
-          fontWeight: 600,
-          marginBottom: 10,
-        }}
-      >
-        SigNoz - Quick Intro
+  return (
+    <header className="my-16">
+      <div className="flex flex-col items-center mb-5 text-center px-5">
+        <Hero>
+          OpenTelemetry-Native Traces,
+          <br className="hidden lg:inline" />
+          Metrics, and Logs in a single pane
+        </Hero>
+        <SubHeading>
+          SigNoz is an open source Datadog or New Relic alternative. A single
+          tool for all your observability <br className="hidden lg:inline" />
+          needs - APM, logs, metrics, exceptions, alerts, and dashboards powered
+          by a powerful query builder.
+        </SubHeading>
       </div>
-      <PlaySVG />
-    </div>
-  </div>
-) : (
-  <div>
-    <video
-      width="100%"
-      height="480"
-      autoPlay
-      controls
-      id={"demo-video-player"}
-    >
-      <source
-        src="https://demo-video-1.s3.us-east-2.amazonaws.com/SigNoz-Demo-Sept2-2022.mp4"
-        type="video/mp4"
-      />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-)}
+      <div className="flex gap-5 justify-center mb-12">
+        <Button
+          isButton
+          className=""
+          to={"/teams/"}
+          id="btn-get-started-homepage-hero"
+        >
+          Try SigNoz Cloud
+        </Button>
+        <Button
+          isButton
+          outlined
+          className=""
+          to={"/docs/install/"}
+          id="btn-self-host-homepage-hero"
+        >
+          Self-Host
+        </Button>
+      </div>
+      <div className="container" style={{ textAlign: "center" }}>
+        <div className="flex justify-center items-center relative after:-z-[2] after:absolute after:content-[''] after:w-[300px] after:h-[300px] lg:after:w-[600px] lg:after:h-[600px] after:bg-primary-500 after:rounded-full after:opacity-50 after:blur-3xl">
+          <div className="p-2 rounded-lg flex justify-center items-center hero-figure">
+            <img
+              className="rounded-lg"
+              src="/img/landing/signoz-landing-snap.png"
+            />
+            <div
+              onClick={() => setShowVideo(true)}
+              className="cursor-pointer play-container w-16 h-16 md:w-24 md:h-24 rounded-full bg-primary-500 flex justify-center items-center focus-visible:outline-none"
+            >
+              <img
+                src="/img/landing/play-icon.png"
+                className="w-6 h-6 md:w-10 md:h-10"
+              />
+            </div>
+          </div>
         </div>
-
-    </div>
-
-</header>
-
-
-
-
-    )
-}
+      </div>
+      <ReactModal
+        isOpen={showVideo}
+        contentLabel=""
+        onRequestClose={() => setShowVideo(false)}
+        className="Modal play-video-container"
+        overlayClassName="Overlay"
+      >
+        <div>
+          <LiteYoutubeEmbed
+            id={"jD36hjfL1x0"}
+            defaultPlay={showVideo}
+          />
+        </div>
+      </ReactModal>
+    </header>
+  );
+};

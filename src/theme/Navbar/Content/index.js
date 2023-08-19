@@ -54,21 +54,21 @@ export default function NavbarContent() {
       right={
         // TODO stop hardcoding items?
         // Ask the user to add the respective navbar items => more flexible
-
         <>
-          <iframe
-            className="display--tablet"
-            src={`https://ghbtns.com/github-btn.html?user=signoz&repo=signoz&type=star&count=true&size=large`}
-            width="180"
-            height="30"
-            title="Star SigNoz on GitHub"
-          ></iframe>
+          <div className="flex justify-center items-center">
+            <iframe
+              className="display--tablet"
+              src={`https://ghbtns.com/github-btn.html?user=signoz&repo=signoz&type=star&count=true&size=large`}
+              width="180"
+              height="30"
+              title="Star SigNoz on GitHub"
+            />
+          </div>
+
           <Link
             className="button button--primary "
             //  onClick={setShowTrySignozModal.bind(this,true)}>
-            href={
-              "/teams/"
-            }
+            href={"/teams/"}
             id="btn-get-started-website-navbar"
           >
             Try SigNoz Cloud

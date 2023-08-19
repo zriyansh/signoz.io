@@ -1,12 +1,12 @@
-import React from 'react';
-import LinkItem from '@theme/Footer/LinkItem';
-function ColumnLinkItem({item}) {
+import React from "react";
+import LinkItem from "@theme/Footer/LinkItem";
+function ColumnLinkItem({ item }) {
   return item.html ? (
     <li
       className="footer__item"
       // Developer provided the HTML, so assume it's safe.
       // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{__html: item.html}}
+      dangerouslySetInnerHTML={{ __html: item.html }}
     />
   ) : (
     <li key={item.href ?? item.to} className="footer__item">
@@ -14,9 +14,9 @@ function ColumnLinkItem({item}) {
     </li>
   );
 }
-function Column({column}) {
+function Column({ column }) {
   return (
-    <div className="col footer__col">
+    <div className="flex-col justify-start items-start gap-1 inline-flex">
       <div className="footer__title">{column.title}</div>
       <ul className="footer__items clean-list">
         {column.items.map((item, i) => (
@@ -26,9 +26,9 @@ function Column({column}) {
     </div>
   );
 }
-export default function FooterLinksMultiColumn({columns}) {
+export default function FooterLinksMultiColumn({ columns }) {
   return (
-    <div className="row footer__links">
+    <div className="grid grid-cols-2 md:flex md:justify-between lg:justify-around">
       {columns.map((column, i) => (
         <Column key={i} column={column} />
       ))}

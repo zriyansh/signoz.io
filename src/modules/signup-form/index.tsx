@@ -20,15 +20,14 @@ const formStates = [INIT, SUBMITTING, ERROR, SUCCESS] as const;
 const formStyles = {
   id: "cl8osdvv7459609la3ahy4uzo",
   placeholderText: "you@example.com",
-  buttonText: "Subscribe to our newsletter",
+  buttonText: "Subscribe",
   successMessage: "Thanks! We'll be in touch!",
   userGroup: "",
 };
 
-
-export default function SignUpFormReact() {
+export default function SignUpFormReact({ className }) {
   const [email, setEmail] = useState("");
-  const [formState, setFormState] = useState<typeof formStates[number]>(INIT);
+  const [formState, setFormState] = useState<(typeof formStates)[number]>(INIT);
   const [errorMessage, setErrorMessage] = useState("");
 
   const resetForm = () => {
@@ -131,22 +130,27 @@ export default function SignUpFormReact() {
     case ERROR:
       return (
         <>
-          <SignUpFormError />
-          <BackButton />
+          <div className="flex justify-between items-center">
+            <SignUpFormError />
+            <BackButton />
+          </div>
         </>
       );
     default:
       return (
         <>
-          <form onSubmit={handleSubmit} className={styles.subscribeForm}>
+          <form
+            onSubmit={handleSubmit}
+            className={`h-10 flex flex-nowrap rounded-sm overflow-hidden gap-0 w-full sm:w-1/2 md:w-full ${className}`}
+          >
             <input
               type="text"
               name="email"
-              placeholder={formStyles.placeholderText}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required={true}
-              className={styles.newsletterInput}
+              placeholder="Type your email to sign up"
+              className="h-10 placeholder:text-gray-400 text-gray-900 text-sm px-2 pr-1 font-normal leading-loose bg-white rounded-none border-none subscribe-input w-8/12"
             />
             <SignUpFormButton />
           </form>
@@ -156,7 +160,7 @@ export default function SignUpFormReact() {
 
   function SignUpFormError() {
     return (
-      <p className={styles.errorMessage}>
+      <p className={"text-red-400 text-sm m-0"}>
         {errorMessage || "Oops! Something went wrong, please try again"}
       </p>
     );
@@ -164,7 +168,12 @@ export default function SignUpFormReact() {
 
   function BackButton() {
     return (
-      <button className={styles.backBtn} onClick={resetForm}>
+      <button
+        className={
+          "text-gray-400 text-sm bg-transparent outline-none border-none cursor-pointer"
+        }
+        onClick={resetForm}
+      >
         &larr; Back
       </button>
     );
@@ -174,7 +183,7 @@ export default function SignUpFormReact() {
     return (
       <button
         type="submit"
-        className={styles.submitBtn}
+        className="h-10 border-none outline-none text-sm rounded-none bg-primary-500 hover:bg-primary-600 cursor-pointer w-4/12"
       >
         {formState === SUBMITTING ? "Please wait..." : formStyles.buttonText}
       </button>
