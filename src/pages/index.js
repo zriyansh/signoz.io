@@ -306,7 +306,7 @@ const LatestInOpenTelementry = () => {
   const TUTORIALS_LIST = [
     {
       youtubeId: "Wzut0kjVeYI",
-      desc: "Getting started with OpenTelemetry.",
+      desc: "OpenTelemetry Webinars: Getting started with OpenTelemetry.",
     },
     {
       youtubeId: "sL6XvOOAEP0",
