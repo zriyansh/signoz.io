@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import styles from "./styles.module.css";
-import Link from "@docusaurus/Link";
-import { PlaySVG } from "../../svgs/common";
 import SubHeading from "../../components/ui/SubHeading";
 import Hero from "../../components/ui/Hero";
 import Button from "../../components/ui/Button";
@@ -45,9 +42,9 @@ export const Header = () => {
           Self-Host
         </Button>
       </div>
-      <div className="container" style={{ textAlign: "center" }}>
+      <div className="container">
         <div className="flex justify-center items-center relative after:-z-[2] after:absolute after:content-[''] after:w-[300px] after:h-[300px] lg:after:w-[600px] lg:after:h-[600px] after:bg-primary-500 after:rounded-full after:opacity-50 after:blur-3xl">
-          <div className="p-2 rounded-lg flex justify-center items-center hero-figure">
+          <div className="p-2 rounded-lg flex justify-center items-center hero-figure max-w-4xl">
             <img
               className="rounded-lg"
               src="/img/landing/signoz-landing-snap.png"
@@ -74,7 +71,9 @@ export const Header = () => {
         <div>
           <LiteYoutubeEmbed
             id={"jD36hjfL1x0"}
-            defaultPlay={showVideo}
+            defaultPlay={true}
+            mute={false}
+            params={{ autoplay: "true", mute: "false" }}
           />
         </div>
       </ReactModal>

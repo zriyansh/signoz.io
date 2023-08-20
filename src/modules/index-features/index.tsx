@@ -217,7 +217,7 @@ export const SigNozFeatures = () => {
           </SubHeading>
         </div>
 
-        <div className="max-w-6xl mx-auto hidden lg:block">
+        <div className="max-w-7xl mx-auto hidden lg:block">
           <div className={`grid grid-cols-6 feature-tabs mb-5`}>
             {FEATURES_LIST.map((feature, idx) => (
               <div
@@ -234,7 +234,9 @@ export const SigNozFeatures = () => {
                 />
                 <p
                   className={`text-sm ${
-                    tab === feature.value ? "text-gray-100" : "text-gray-400"
+                    tab === feature.value
+                      ? "text-gray-100 font-bold"
+                      : "text-gray-400"
                   }`}
                 >
                   {feature.label}
@@ -246,13 +248,13 @@ export const SigNozFeatures = () => {
             {FEATURES_LIST.map((feature, idx) => (
               <div
                 key={feature.label}
-                className={`grid grid-cols-2 ${
+                className={`grid grid-cols-5 ${
                   tab === feature.value ? "" : "hidden"
                 }`}
               >
                 <div
                   className={`
-                    rounded-md relative
+                    rounded-md relative col-span-3
                     after:absolute after:content-[''] after:w-40 after:h-40 after:bottom-[0] after:left-[10%] after:bg-primary-500 after:rounded-full after:opacity-50 after:blur-3xl  
                     before:absolute before:content-[''] before:w-28 before:h-28 before:top-[0] before:right-[10%] before:bg-bluish-400 before:rounded-full before:opacity-50 before:blur-3xl
                   `}
@@ -260,10 +262,10 @@ export const SigNozFeatures = () => {
                   <img
                     src={feature.figure}
                     alt={feature.label}
-                    className="h-full w-full object-cover relative z-[1]"
+                    className="h-full w-full object-contain relative z-[1]"
                   />
                 </div>
-                <div className="px-16 py-10 flex justify-center items-center">
+                <div className="px-12 py-10 flex justify-center items-center col-span-2">
                   {feature.content}
                 </div>
               </div>
@@ -297,7 +299,7 @@ export const SigNozFeatures = () => {
                       </Heading>
                     </div>
                     <span
-                      className={`h-5 w-5 flex justify-center items-center ${
+                      className={`h-5 w-5 flex justify-center items-center text-white ${
                         tab === feature.value ? "open" : ""
                       }`}
                     >
@@ -314,7 +316,7 @@ export const SigNozFeatures = () => {
                         <img
                           src={feature.figure}
                           alt={feature.label}
-                          className="h-full object-cover rounded-xl"
+                          className="h-full object-contain rounded-xl"
                         />
                       </div>
                       <div>{feature.content}</div>

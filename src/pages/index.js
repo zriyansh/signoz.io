@@ -703,13 +703,13 @@ function Home() {
           <TrustedByTeams />
           <SigNozFeatures />
           <WhyOpenTelemetry />
-          <LatestInOpenTelementry />
           <BuildForDevelopers />
           <DataProtection />
           <Observability />
           <Pricing />
           <Statistics />
           <Testimonials />
+          <LatestInOpenTelementry />
           {/* <Tutorials /> */}
           <CTA />
         </main>
