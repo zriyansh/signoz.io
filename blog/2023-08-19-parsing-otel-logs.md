@@ -2,7 +2,7 @@
 title: Parsing logs with the OpenTelemetry Collector
 slug: parsing-logs-with-the-opentelemetry-collector
 date: 2023-08-19
-tags: [guides]
+tags: [guides, OpenTelemetry]
 authors: nicamellifera
 description: This guide is for anyone who is getting started monitoring their application with OpenTelemetry, and is generating unstructured logs. 
 image: /img/blog/2023/08/log_parsing_cover.jpeg
@@ -14,7 +14,7 @@ keywords:
 
 This guide is for anyone who is getting started monitoring their application with OpenTelemetry, and is generating unstructured logs. As is well understood at this point, structured logs are ideal for post-hoc incident analysis and broad-range querying of your data. However, it’s not always feasible to implement highly structured logging at the code level.
 
-With SigNoz, you get some parsing automatically to identify details like timestamp, container ID, container name, and an optional body. But it’s possible to go much deeper with a relatively simple configuration. It’s also a good idea to check for attributes that may contain  Personal Identifying Information (PII) and remove them with filters. Since the SigNoz collector is a fork of the OpenTelemetry collector, this tutorial will also work for configuring a baseline OpenTelemetry collector.
+With SigNoz, you get some parsing automatically to identify details like timestamp, container ID, container name, and an optional body. But it’s possible to go much deeper with a relatively simple configuration. It’s also a good idea to check for attributes that may contain Personal Identifying Information (PII) and remove them with filters. Since the SigNoz collector is a fork of the OpenTelemetry collector, this tutorial will also work for configuring a baseline OpenTelemetry collector.
 
 <!--truncate-->
 
@@ -37,15 +37,15 @@ In Java, you also have the option of using automatic instrumentation to collect 
 
 For my example, I sent logs directly via network calls using OTLP, but this approach is specifically *not* recommended for production use. It makes sense: you wouldn’t want to maintain dozens of network calls from inside your code, nor pay for the network overhead!
 
-## Step 3: configure the SigNoz Collector
+## Step 3: Configure the SigNoz Collector
 
-If you take a look in the SigNoz repository, you’ll find the configuration for the collector in [/deploy/docker/clickhouse-setup/otel-collector-metrics-config.yaml](https://github.com/SigNoz/signoz/blob/main/deploy/docker/clickhouse-setup/otel-collector-metrics-config.yaml) (you probably grabbed this project above during the install process). You can edit this file to filter what logs are being stored after being received by the collector.
+If you take a look in the SigNoz repository, you’ll find the configuration for the collector in [/deploy/docker/clickhouse-setup/otel-collector-config.yaml](https://github.com/SigNoz/signoz/blob/main/deploy/docker/clickhouse-setup/otel-collector-config.yaml) (you probably grabbed this project above during the install process). You can edit this file to filter what logs are being stored after being received by the collector.
 
 After editing this file, you’ll need to restart the collector. If using Docker, the command would be `docker restart signoz-otel-collector`
 
 It’s worth examining some chunks of this config unedited (since it may change in the future I won’t refer to line numbers here, just pointing out relevant sections). Again, the SigNoz collector is a fork of the OpenTelemetry collector, and all this configuration is applicable to the collector in general.
 
-### batching
+### Batching to prevent unecessary network requests
 
 ```yaml
  batch:
@@ -54,21 +54,21 @@ It’s worth examining some chunks of this config unedited (since it may change 
     timeout: 10s
 ```
 
-it’s critical to include some batching configuration within the collector, as you can quickly overuse resources if you’re sending data with every single span or metric received.
+It’s critical to include some batching configuration within the collector, as you can quickly overuse resources if you’re sending data with every single span or metric received.
 
 `send_batch_size` : Number of spans, metric data points, or log records after which a batch will be sent regardless of the timeout. `send_batch_size` acts as a trigger and does not affect the size of the batch.
 `send_batch_max_size`: The upper limit of the batch size. `0` means no upper limit of the batch size.
 
 `timeout`: Time duration after which a batch will be sent regardless of size. Note that while testing you may want to reduce this, since it’s unlikely your test data will fill up the batch size, giving you 10+ seconds of latency. I set this down to `1s`
 
-### filters
+### Filter processors for unwanted logs
 
 In the `receivers:` section you’ll find this rather large expression:
 
 ```yaml
 - type: filter
-        id: signoz_logs_filter
-        expr: 'attributes.container_name matches "^signoz-(logspout|frontend|alertmanager|query-service|otel-collector|otel-collector-metrics|clickhouse|zookeeper)"'
+  id: signoz_logs_filter
+  expr: 'attributes.container_name matches "^signoz-(logspout|frontend|alertmanager|query-service|otel-collector|otel-collector-metrics|clickhouse|zookeeper)"'
 ```
 
 The filter processor allows users to filter telemetry based on `include` or `exclude` rules. Include rules are used for defining “allow lists” where anything that does *not* match include rules is dropped from the collector. Exclude rules are used for defining “deny lists” where telemetry that matches rules is dropped from the collector.
@@ -81,8 +81,8 @@ In my case, my logging was getting clogged up by docker containers I was running
 
 ```yaml
 - type: filter
-        id: signoz_logs_filter
-        expr: 'attributes.container_name matches "^(signoz-(logspout|frontend|alertmanager|query-service|otel-collector|otel-collector-metrics|clickhouse|zookeeper)|.*testkube.*)"'
+  id: signoz_logs_filter
+  expr: 'attributes.container_name matches "^(signoz-(logspout|frontend|alertmanager|query-service|otel-collector|otel-collector-metrics|clickhouse|zookeeper)|.*testkube.*)"'
 ```
 
 *I couldn’t be quite so elegant in finding testkube container logs since 'testkube' didn’t appear at the beginning.*
@@ -107,18 +107,18 @@ Adding this mapping, however, isn’t enough to add the attribute, we haven’t 
 
 ```yaml
 logs:
-      receivers: [otlp, tcplog/docker]
-      processors: [logstransform/internal, batch]
-      exporters: [clickhouselogsexporter]'
+  receivers: [otlp, tcplog/docker]
+  processors: [logstransform/internal, batch]
+  exporters: [clickhouselogsexporter]'
 ```
 
 To actually affect our data, we must add it to the pipeline. The revised version looks like this: 
 
 ```yaml
 logs:
-      receivers: [otlp, tcplog/docker]
-      processors: [logstransform/internal, attributes/clientid, batch]
-      exporters: [clickhouselogsexporter]
+  receivers: [otlp, tcplog/docker]
+  processors: [logstransform/internal, attributes/clientid, batch]
+  exporters: [clickhouselogsexporter]
 ```
 
 <figure data-zoomable align='center'>
@@ -173,7 +173,7 @@ Note that in a real-world scenario it might be worthwhile to try and filter out 
     <figcaption><i>The result is a much safer record.</i></figcaption>
 </figure>
 
-### on the criticality of ordering your pipeline
+### On the criticality of ordering your pipeline
 
 In this rather contrived example the PII was being added by a processor called `attributes/userinfo`. This is makes the ordering of the pipeline important, this collection:
 
@@ -186,7 +186,7 @@ logs:
 
 will allow the `transform` to remove the PII added by `attributes/userinfo`but if we switch their places `[logstransform/internal, transform, attributes/userinfo, batch]` the PII won’t be overwritten!
 
-### use transformation to reduce cardinality
+### Use transformation to reduce cardinality
 
 While we always want our logging data to be highly specific, there are times when we are just making things more difficult on ourselves by introducing data that is of too high cardinality. See my previous work on [high cardinality data](https://signoz.io/blog/high-cardinality-data/). Here’s an example where some metric crushing will make our lives easier later
 
@@ -235,6 +235,9 @@ Here’s an example parser to handle timestamps
 ```
 
 not every message in this example will have the `"type": "hostname"` key/value pair and will therefore not be parsed by this pattern.
+
+## More Operators for Logs Management
+See further documentation on logs [receivers and operators](https://signoz.io/docs/userguide/logs/#operators-for-parsing-and-manipulating-logs) in our docs for parsing CSV and JSON formats, syslog native parsing, and math and other functions.
 
 ## Conclusions
 
