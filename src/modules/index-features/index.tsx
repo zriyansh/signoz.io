@@ -5,15 +5,15 @@ import SubHeading from "../../components/ui/SubHeading";
 export const SigNozFeatures = () => {
   const [tab, setTab] = useState("apm");
 
-  const featureChangeHandler = (value) => {
+  const featureChangeHandler = (value: string) => {
     if (value === tab) {
       setTab("");
     } else {
       setTab(value);
     }
-    document
-      .getElementById(`accordion-${value}`)
-      .scrollIntoView({ behavior: "smooth" });
+    // document
+    //   .getElementById(`accordion-${value}`)
+    //   .scrollIntoView({ behavior: "smooth" });
   };
 
   const FEATURES_LIST = [
@@ -316,7 +316,7 @@ export const SigNozFeatures = () => {
                         <img
                           src={feature.figure}
                           alt={feature.label}
-                          className="h-full object-contain rounded-xl"
+                          className="object-contain rounded-xl"
                         />
                       </div>
                       <div>{feature.content}</div>
@@ -335,16 +335,16 @@ export const SigNozFeatures = () => {
 const DownArrow = () => {
   return (
     <svg
+      width="20px"
+      height="20px"
+      viewBox="0 0 17 17"
+      version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="currentColor"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
     >
       <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+        d="M16.354 5.075l-7.855 7.854-7.853-7.854 0.707-0.707 7.145 7.146 7.148-7.147 0.708 0.708z"
+        fill="#ffffff"
       />
     </svg>
   );
