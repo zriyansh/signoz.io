@@ -19,7 +19,7 @@ These are created by converting an interesting field. When a interesting field i
 
 ## Configuring the SigNoz Collector
 
-If you take a look in the SigNoz repository, you’ll find the configuration for the collector in [/deploy/docker/clickhouse-setup/otel-collector-metrics-config.yaml](https://github.com/SigNoz/signoz/blob/main/deploy/docker/clickhouse-setup/otel-collector-metrics-config.yaml) You can edit this file to filter what logs are being stored after being received by the collector.
+If you take a look in the SigNoz repository, you’ll find the configuration for the collector in [/deploy/docker/clickhouse-setup/otel-collector-config.yaml](https://github.com/SigNoz/signoz/blob/main/deploy/docker/clickhouse-setup/otel-collector-config.yaml) You can edit this file to filter what logs are being stored after being received by the collector.
 
 After editing this file, you’ll need to restart the collector. If using Docker, the command would be `docker restart signoz-otel-collector`
 
@@ -49,7 +49,7 @@ To actually affect our data, we must add it to the pipeline. The revised version
 ```yaml
 logs:
       receivers: [otlp, tcplog/docker]
-      processors: [logstransform/internal, attributes/clientid, batch]
+      processors: [attributes/clientid, logstransform/internal, batch]
       exporters: [clickhouselogsexporter]
 ```
 
