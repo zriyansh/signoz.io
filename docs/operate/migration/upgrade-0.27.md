@@ -13,7 +13,7 @@ This upgrade brings changes in how we index attributes in logs. From now you can
 
 ## First upgrade to v0.27
 
-Follow the platform specific instructions to upgrade to 0.10 and above.
+Follow the platform specific instructions to upgrade to 0.27 and above.
 
 Note that the past exceptions/error data will not be visible on the new application until you run the migration script.
 
