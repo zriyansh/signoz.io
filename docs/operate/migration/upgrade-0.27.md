@@ -6,7 +6,7 @@ sidebar_label: Upgrade to 0.27
 
 # Upgrade to v0.27 from earlier versions (Kubernetes)
 
-In the SigNoz version `>=0.27` i.e. SigNoz chart version `>=0.23.0`, [clickhouse][1]
+In the SigNoz version `>=0.27` i.e. SigNoz chart version `>=0.23.0`, [ClickHouse](https://clickhouse.com/)
 is upgraded from version `22.8.8` to `23.7.3`.
 
 This upgrade brings changes in how we index attributes in logs. From now you can have fields with same names but different dataType as selected(indexed) fields.
@@ -127,11 +127,21 @@ kubectl -n platform delete pod signoz-migrate
 ```
 
 
-## In case of upgradation failure
+## In case of Upgrade Failure
 
-1. Note the names of fields which were not migrated.
-2. Exec into the logs table and try deleting the corresponding index and field and then create them again.
-3. Reach out to us at [slack](https://signoz.io/slack)
+1. Note the names of fields which were not migrated. ex:- `telemetry_sdk_name`
+2. Exec into the clickhouse container and run `clickhouse client`.
+3. Check the schema of the logs table `show create table signoz_logs.logs`
+4. If `telemetry_sdk_name` column or `telemetry_sdk_name_idx` index is present you can delete them
+   
+  For deleting index 
+    * `alter table signoz_logs.logs on cluster cluster drop index telemetry_sdk_name_idx`
+  
+  For deleting column 
+    * `alter table signoz_logs.logs on cluster cluster drop column telemetry_sdk_name`
+    * `alter table signoz_logs.distributed_logs on cluster cluster drop column telemetry_sdk_name`
+5. Now from the UI, you can convert `telemetry_sdk_name` to selected field. 
+6. If you still face issue, reach out to us at [Slack](https://signoz.io/slack).
 
 ## Command-Line Interface (CLI) Flags
 
