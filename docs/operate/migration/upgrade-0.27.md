@@ -6,7 +6,7 @@ sidebar_label: Upgrade to 0.27
 
 # Upgrade to v0.27 from earlier versions (Kubernetes)
 
-In the SigNoz version `>=0.27` i.e. SigNoz chart version `>=0.19.0`, [clickhouse][1]
+In the SigNoz version `>=0.27` i.e. SigNoz chart version `>=0.23.0`, [clickhouse][1]
 is upgraded from version `22.8.8` to `23.7.3`.
 
 This upgrade brings changes in how we index attributes in logs. From now you can have fields with same names but different dataType as selected(indexed) fields.
