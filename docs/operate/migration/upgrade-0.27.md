@@ -54,18 +54,18 @@ host machine IP i.e. `172.17.0.17` for `-host` flag instead of `clickhouse`.
 If you do not want to change anything in the current signoz deployment or to
 expose clickhouse ports even temporarily, you can go through following steps.
 
-1. To download `migration-v0.27` binary:
+1. To download `migrate-v0.27` binary:
 
   ```bash
-  wget https://github.com/SigNoz/signoz-db-migrations/releases/download/v0.27/migration-v0.27-linux-amd64
+  wget https://github.com/SigNoz/signoz-db-migrations/releases/download/v0.27/migrate-v0.27-linux-amd64
 
-  chmod +x migration-v0.27-linux-amd64
+  chmod +x migrate-v0.27-linux-amd64
   ```
 
 2. To copy the binary in persistent volume path `/var/lib/clickhouse` in `clickhouse` container:
 
   ```bash
-  docker cp migration-v0.27-linux-amd64 $(docker ps -q -f name=signoz_clickhouse):/var/lib/clickhouse/migration-0.27
+  docker cp migration-v0.27-linux-amd64 $(docker ps -q -f name=signoz_clickhouse):/var/lib/clickhouse/migrate-0.27
   ```
 
 3. To exec into the `clickhouse` container:
