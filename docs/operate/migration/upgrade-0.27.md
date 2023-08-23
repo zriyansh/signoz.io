@@ -1,17 +1,17 @@
 ---
-id: upgrade-0.26
-title: Upgrade to 0.26
-sidebar_label: Upgrade to 0.26
+id: upgrade-0.27
+title: Upgrade to 0.27
+sidebar_label: Upgrade to 0.27
 ---
 
-# Upgrade to v0.26 from earlier versions (Kubernetes)
+# Upgrade to v0.27 from earlier versions (Kubernetes)
 
-In the SigNoz version `>=0.26` i.e. SigNoz chart version `>=0.19.0`, [clickhouse][1]
+In the SigNoz version `>=0.27` i.e. SigNoz chart version `>=0.19.0`, [clickhouse][1]
 is upgraded from version `22.8.8` to `23.7.3`.
 
 This upgrade brings changes in how we index attributes in logs. From now you can have fields with same names but different dataType as selected(indexed) fields.
 
-## First upgrade to v0.26
+## First upgrade to v0.27
 
 Follow the platform specific instructions to upgrade to 0.10 and above.
 
@@ -27,7 +27,7 @@ Note that the past exceptions/error data will not be visible on the new applicat
 ### For Docker
 ```bash
 docker run --name signoz-migrate --network clickhouse-setup_default \
-  -it -d signoz/migrate:0.26 -host=clickhouse -port=9000
+  -it -d signoz/migrate:0.27 -host=clickhouse -port=9000
 ```
 
 Steps to check logs:
@@ -54,18 +54,18 @@ host machine IP i.e. `172.17.0.17` for `-host` flag instead of `clickhouse`.
 If you do not want to change anything in the current signoz deployment or to
 expose clickhouse ports even temporarily, you can go through following steps.
 
-1. To download `migration-v0.26` binary:
+1. To download `migration-v0.27` binary:
 
   ```bash
-  wget https://github.com/SigNoz/signoz-db-migrations/releases/download/v0.26/migration-v0.26-linux-amd64
+  wget https://github.com/SigNoz/signoz-db-migrations/releases/download/v0.27/migration-v0.27-linux-amd64
 
-  chmod +x migration-v0.26-linux-amd64
+  chmod +x migration-v0.27-linux-amd64
   ```
 
 2. To copy the binary in persistent volume path `/var/lib/clickhouse` in `clickhouse` container:
 
   ```bash
-  docker cp migration-v0.26-linux-amd64 $(docker ps -q -f name=signoz_clickhouse):/var/lib/clickhouse/migration-0.26
+  docker cp migration-v0.27-linux-amd64 $(docker ps -q -f name=signoz_clickhouse):/var/lib/clickhouse/migration-0.27
   ```
 
 3. To exec into the `clickhouse` container:
@@ -79,7 +79,7 @@ expose clickhouse ports even temporarily, you can go through following steps.
   ```bash
   cd /var/lib/clickhouse
 
-  ./migration-0.26
+  ./migration-0.27
   ```
 
   You should see output similar to this:
@@ -103,14 +103,14 @@ expose clickhouse ports even temporarily, you can go through following steps.
 5. At last, clean up the binary:
 
   ```bash
-  rm migration-0.26
+  rm migration-0.27
   ```
 
 
 ### For Kubernetes
 
 ```bash
-kubectl -n platform run -i -t signoz-migrate --image=signoz/migrate:0.26 --restart='Never' \
+kubectl -n platform run -i -t signoz-migrate --image=signoz/migrate:0.27 --restart='Never' \
   -- -host=my-release-clickhouse -port=9000 -userName=admin -password=27ff0399-0d3a-4bd8-919d-17c2181e6fb9
 ```
 
