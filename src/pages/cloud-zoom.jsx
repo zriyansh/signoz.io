@@ -18,8 +18,11 @@ function cloudzoom() {
 
 <div class="hero shadow--lw">
   <div class="container">
-    <h1>Thanks for your interest in SigNoz Teams plan!</h1>
-    <p class="hero__subtitle"> An expert will reach out shortly to understand your requirements and get you started with your SigNoz cloud instance.
+    <h1>Thanks for your interest in SigNoz Cloud plan!</h1>
+    <p class="hero__subtitle"> 
+    We have sent you a verification email. Please verify your email by clicking on Verify Email button. 
+    <br />
+    After that, we will send you credentials to your cloud instance over email.
     </p>
 
     <p class="hero__subtitle">If you have a specific question, feel free to book an available time slot from the below calendar. During the call, we will share a quick product demo and answer any questions you might have.
