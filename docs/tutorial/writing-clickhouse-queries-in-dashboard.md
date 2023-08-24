@@ -121,7 +121,7 @@ While writing queies for logs table, if you want to use an attribute/resource at
 
 where `type` can be `attributes/resources` , `dataType` can be `int64/float64/string` and `keyname` is the name of the key.
 
-Eg: If your key name is `status` of dataType string and type attribute, it needs to be referenced as `attributes_string_value[indexOf(attributes_string_key, 'status')]`
+Eg: If your `keyname` is `status` of `dataType` `string` and `type` `attribute`, it needs to be referenced as `attributes_string_value[indexOf(attributes_string_key, 'status')]`
 
 Note:- In the above example, if `status` is an selected field, then it can be referenced as
 `attribute_string_status`
