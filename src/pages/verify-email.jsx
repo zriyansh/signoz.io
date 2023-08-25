@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "@theme/Layout";
 import Head from '@docusaurus/Head';
 
-function cloudzoom() {
+function verifyemail() {
   return (
     <Layout title="Book a Call">
     <Head>
@@ -46,4 +46,4 @@ function cloudzoom() {
   );
 }
 
-export default cloudzoom;
+export default verifyemail;
