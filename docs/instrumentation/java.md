@@ -42,11 +42,100 @@ A completely automatic and out of box experience, with minimal code changes. For
 - **Manual Instrumentation**<br></br>
 It involves writing instrumentation using OpenTelemetry SDK and API manually. You would need to get a handle to an instance of the `OpenTelemetry` interface, acquire a tracer, and create spans manually. Manual isntrumentation might also be used along with auto instrumentation.
 
-Let’s understand how to download, install, and run OpenTelemetry in Java. If you're using self-hosted SigNoz refer to this [section](#send-traces-to-self-hosted-signoz). If you're using SigNoz cloud, refer to this [section](#send-traces-to-signoz-cloud).
+Let’s understand how to download, install, and run OpenTelemetry in Java. If you're using SigNoz cloud, refer to this [section](#send-traces-to-signoz-cloud). If you're using self-hosted SigNoz refer to this [section](#send-traces-to-self-hosted-signoz).
 
 ## Requirements
 
 Java 8 or higher
+
+## Send Traces to SigNoz Cloud
+
+Based on your application environment, you can choose the setup below to send traces to SigNoz Cloud.
+
+<Tabs>
+<TabItem value="vm" label="VM" default>
+
+From VMs, there are two ways to send data to SigNoz Cloud.
+
+- [Send traces directly to SigNoz Cloud](#1-send-traces-directly-to-signoz-cloud)
+- [Send traces via OTel Collector binary](#2-send-traces-via-otel-collector-binary) (recommended)
+
+#### **1. Send traces directly to SigNoz Cloud**
+OpenTelemetry Java agent can send traces directly to SigNoz Cloud.
+  
+**Step 1. Download otel java binary agent**<br></br>
+
+```bash
+wget https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar
+```
+
+Step 2. Run your application
+
+```bash
+OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name> \
+OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=Bearer SIGNOZ_INGESTION_KEY" \
+OTEL_EXPORTER_OTLP_ENDPOINT=https://ingest.{region}.signoz.cloud:443 \
+java -javaagent:$PWD/opentelemetry-javaagent.jar -jar <my-app>.jar
+```
+- `<app_name>` is the name for your application
+- `SIGNOZ_INGESTION_KEY` is the API token provided by SigNoz (provided in verfication email)
+
+Depending on the choice of your region for SigNoz cloud, the ingest endpoint will vary according to this table.
+
+| Region | Endpoint |
+| --- | --- |
+| US |	ingest.us.signoz.cloud:443 |
+| IN |	ingest.in.signoz.cloud:443 |
+| EU | ingest.eu.signoz.cloud:443 |
+
+#### **2. Send traces via OTel Collector binary**
+
+OTel Collector binary helps to collect logs, hostmetrics, resource and infra attributes. It is recommended to install Otel Collector binary to collect and send traces to SigNoz cloud. You can correlate signals and have rich contextual data through this way.
+
+When you use OTel collector to send traces, you need to configure the endpoints for SigNoz cloud in its `config.yaml` file. You can find instructions to install OTel Collector binary [here](https://signoz.io/docs/tutorial/opentelemetry-binary-usage-in-virtual-machine/).
+
+**Step 1. Download otel java binary**<br></br>
+```bash
+wget https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar
+```
+
+**Step 2. Run your application**<br></br>
+
+```bash
+java -javaagent:$PWD/opentelemetry-javaagent.jar -jar <myapp>.jar
+```
+
+- `<myapp>` is the name of your application jar file
+- In case you download `opentelemetry-javaagent.jar` file in different directory than that of the project, replace `$PWD` with the path of the otel jar file.
+
+
+  
+</TabItem>
+<TabItem value="k8s" label="Kubernetes">
+
+If your Java application is deployed on Kubernetes, you need to deploy OTel Collector agent in your k8s infra to collect and send traces to SigNoz Cloud. You can find the instructions for deploying OTel Collector agent [here](/docs/tutorial/kubernetes-infra-metrics/). Make sure to set configure your OTel Collector agent correctly to send data to SigNoz Cloud.
+
+Once you have set up OTel Collector agent, you can proceed with OpenTelemetry java instrumentation. Make sure to dockerise your application along with OpenTelemetry instrumentation. 
+
+Steps to instrument java applicatiion with OpenTelemetry:
+
+1. **Download otel java binary**<br></br>
+
+   ```bash
+   wget https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar
+   ```
+
+2. **Run your application**<br></br>
+   
+   ```bash
+   java -javaagent:$PWD/opentelemetry-javaagent.jar -jar <myapp>.jar
+   ```
+
+   - `<myapp>` is the name of your application jar file
+   - In case you download `opentelemetry-javaagent.jar` file in different directory than that of the project, replace `$PWD` with the path of the otel jar file.
+  
+</TabItem>
+</Tabs>
 
 ## Send Traces to Self-Hosted SigNoz
 
@@ -103,49 +192,6 @@ OpenTelemetry Java auto-instrumentation supports collecting telemetry data from 
 :::note
 💡 Remember to allow incoming requests to port 4317 of the machine where SigNoz backend is hosted.
 :::
-
-## Send Traces to SigNoz Cloud
-
-1. **Download otel java binary**<br></br>
-
-   ```bash
-   wget https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar
-   ```
-
-2. **Run your application**<br></br>
-   
-   ```bash
-   java -javaagent:$PWD/opentelemetry-javaagent.jar -jar <myapp>.jar
-   ```
-
-   - `<myapp>` is the name of your application jar file
-   - In case you download `opentelemetry-javaagent.jar` file in different directory than that of the project, replace `$PWD` with the path of the otel jar file.
-
-### Application in containers
-
-The flow of data for applications running in containers can be visualized as follows:
-
-App in container ⇒ OpenTelemetry Collector in K8s-Infra (OtelAgent) ⇒ SigNoz Cloud
-
-Make sure to dockerise your application along with OpenTelemetry instrumentation. You then need to install OpenTelemetry Collectors in your Kubernetes infra. You can find the instructions [here](/docs/tutorial/kubernetes-infra-metrics/). 
-
-You must set all the OpenTelemetry environment variables correctly for data to be sent to SigNoz cloud.
-
-### Application running locally or VM
-
-The flow of data for applications running in containers can be visualized as follows:
-
-App running locally or VM ⇒ SigNoz Cloud
-
-```bash
-OTEL_RESOURCE_ATTRIBUTES=service.name=<app_name> \
-OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=Bearer SIGNOZ_ACCESS_TOKEN" \
-OTEL_EXPORTER_OTLP_ENDPOINT=https://ingest-in.signoz.io:4317 \
-java -javaagent:$PWD/opentelemetry-javaagent.jar -jar <my-app>.jar
-```
-
-- `<app_name>` is the name for your application
-- `SIGNOZ_ACCESS_TOKEN` is the API token provided by SigNoz
 
 
 ## Validating instrumentation by checking for traces
