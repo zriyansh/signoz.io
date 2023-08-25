@@ -71,7 +71,7 @@ From VMs, there are two ways to send data to SigNoz Cloud.
 
         var secureOption otlptracegrpc.Option
 
-        if strings.ToLower(insecure) == "true" || insecure == "1" || strings.ToLower(insecure) == "t" {
+        if strings.ToLower(insecure) == "false" || insecure == "0" || strings.ToLower(insecure) == "f" {
             secureOption = otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
         } else {
             secureOption = otlptracegrpc.WithInsecure()
@@ -217,7 +217,7 @@ You can find instructions to install OTel Collector binary [here](https://signoz
 
         var secureOption otlptracegrpc.Option
 
-        if strings.ToLower(insecure) == "true" || insecure == "1" || strings.ToLower(insecure) == "t" {
+        if strings.ToLower(insecure) == "false" || insecure == "0" || strings.ToLower(insecure) == "f" {
             secureOption = otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
         } else {
             secureOption = otlptracegrpc.WithInsecure()
@@ -351,7 +351,7 @@ Once you have set up OTel Collector agent, you can proceed with OpenTelemetry Go
 
         var secureOption otlptracegrpc.Option
 
-        if strings.ToLower(insecure) == "true" || insecure == "1" || strings.ToLower(insecure) == "t" {
+        if strings.ToLower(insecure) == "false" || insecure == "0" || strings.ToLower(insecure) == "f" {
             secureOption = otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
         } else {
             secureOption = otlptracegrpc.WithInsecure()
@@ -483,7 +483,7 @@ Once you have set up OTel Collector agent, you can proceed with OpenTelemetry Go
 
         var secureOption otlptracegrpc.Option
 
-        if strings.ToLower(insecure) == "true" || insecure == "1" || strings.ToLower(insecure) == "t" {
+        if strings.ToLower(insecure) == "false" || insecure == "0" || strings.ToLower(insecure) == "f" {
             secureOption = otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, ""))
         } else {
             secureOption = otlptracegrpc.WithInsecure()
