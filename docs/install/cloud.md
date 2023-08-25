@@ -32,5 +32,5 @@ Find [instructions](https://signoz.io/docs/tutorial/kubernetes-infra-metrics/) t
 
 ## Send Logs to SigNoz Cloud
 
-SigNoz provides log management with and advanced query builder to quickly search and filter logs. Here's an [overview](https://signoz.io/docs/userguide/logs/) of how to collect and send logs to SigNoz cloud.
+SigNoz provides log management with and advanced query builder to quickly search and filter logs. Here's an [overview](https://signoz.io/docs/userguide/logs/#collecting-logs-in-signoz-cloud) of how to collect and send logs to SigNoz cloud.
 
