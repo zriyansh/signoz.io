@@ -225,7 +225,7 @@ Step 4. You can validate if your application is sending traces to SigNoz cloud [
 </Tabs>
 
 
-## Send Traces to Slef-Hosted SigNoz
+## Send Traces to Self-Hosted SigNoz
 
 **Requirements**
 
