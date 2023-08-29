@@ -192,7 +192,7 @@ const config = {
             },
             {
               label: "Careers",
-              href: "https://www.ycombinator.com/companies/signoz/jobs/",
+              to: "careers/",
             },
             {
               label: "About",
