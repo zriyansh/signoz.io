@@ -24,6 +24,9 @@ function verifyemail() {
     <br />
     After that, we'll send your SigNoz cloud account login details to your email.    </p>
     <br />
+    <p style={{fontStyle:"italic"}}>
+    If you have not received the email in a few minutes, please check your spam folder.
+    </p>
     {/* <p class="hero__subtitle" style={{ fontStyle: "italic"}}>Got a question about SigNoz? 
     <br />
     Pick a time from the calendar below to set up a call. We'll walk you through the product and address any queries you have.
