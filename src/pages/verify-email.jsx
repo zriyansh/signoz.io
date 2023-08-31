@@ -36,6 +36,10 @@ function verifyemail() {
         data-url="https://calendly.com/pranay-signoz/signoz-intro-calls/" 
         style={{minWidth:'320px', height:'700px'}}>
     </div> */}
+    <br />
+    
+    <a class="button button--primary" href="mailto:cloud-support@signoz.io" > Contact Support </a>
+
 
   </div>
 </div>
