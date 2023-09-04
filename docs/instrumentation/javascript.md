@@ -50,11 +50,10 @@ const { Resource } = require('@opentelemetry/resources');
 const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
 
 // highlight-start
+// do not set headers in exporterOptions, the OTel spec recommends setting headers through ENV variables
+// https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#specifying-headers-via-environment-variables
 const exporterOptions = {
-  url: 'https://ingest.{region}.signoz.cloud:443',
-  headers: {
-    "signoz-access-token": "SIGNOZ_INGESTION_KEY"
-  }
+  url: 'https://ingest.{region}.signoz.cloud:443'
 }
 // highlight-end
 
@@ -90,8 +89,9 @@ Depending on the choice of your region for SigNoz cloud, the ingest endpoint wil
 | EU | ingest.eu.signoz.cloud:443 |
 
 Step 3. Run the application<br></br>
+Make sure you set the `OTEL_EXPORTER_OTLP_HEADERS` env as follows
 ```bash
-node -r ./tracing.js app.js
+OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=<SIGNOZ_INGESTION_KEY>" node -r ./tracing.js app.js
 ```
 
 Step 4. You can validate if your application is sending traces to SigNoz cloud [here](#validating-instrumentation-by-checking-for-traces).
