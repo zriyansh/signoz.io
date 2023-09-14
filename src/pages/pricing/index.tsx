@@ -69,6 +69,12 @@ function Pricing() {
                       <span>Metrics</span>
                       <span>$0.1 per mn samples</span>
                     </div>
+
+                    <br />
+
+                    <div>
+                      <span>Monthly cost would be higher of $199 and cost based on usage</span>
+                    </div>
                   </div>
                   <hr />
                   <p className={styles.retention}>
