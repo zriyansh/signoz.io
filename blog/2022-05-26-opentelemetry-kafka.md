@@ -120,7 +120,7 @@ services:
 Start Kafka and Zookeeper by using the following command:
 
 ```jsx
-docker-compose up -d
+docker compose up -d
 ```
 
 The containers should be visible once they are running. You can check them by running `docker ps`.

@@ -118,7 +118,7 @@ docker logs [OPTIONS] <container-id>
     ```
     
 
-Once an application starts growing, you tend to start using Docker Compose. `docker-compose logs` command shows logs from all the services running in the containerized application.
+Once an application starts growing, you tend to start using Docker Compose. `docker compose logs` command shows logs from all the services running in the containerized application.
 
 > Note that the offering from the `docker logs` command may vary based on the Docker version you are using. In case of [Docker Community](https://www.docker.com/community/), `docker logs` can only read logs created by the `json-file`, local, and `journald` drivers whereas in case of [Docker Enterprise](https://docs.docker.com/config/containers/logging/dual-logging/), `docker logs` can read logs created by any logging driver.
 > 

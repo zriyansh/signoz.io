@@ -319,14 +319,14 @@ After adding the changes, you need to restart the SigNoz Docker containers.
 
 **To stop the running SigNoz cluster:**
 ```
-sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
+sudo docker compose -f docker/clickhouse-setup/docker-compose.yaml stop
 ```
 
 
 **To start/resume the running SigNoz cluster:**
 
 ```
-sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml start
+sudo docker compose -f docker/clickhouse-setup/docker-compose.yaml start
 ```
 
 

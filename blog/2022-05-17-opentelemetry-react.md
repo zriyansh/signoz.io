@@ -137,7 +137,7 @@ Once you make the changes, you need to restart the Docker containers.
 Run it under `/signoz/deploy` folder at your terminal:
 
 ```
-sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
+sudo docker compose -f docker/clickhouse-setup/docker-compose.yaml stop
 ```
 
 **To start/resume SigNoz cluster:**
@@ -145,7 +145,7 @@ sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
 Run it under `/signoz/deploy` folder at your terminal:
 
 ```
-sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up
+sudo docker compose -f docker/clickhouse-setup/docker-compose.yaml up
 ```
 
 
