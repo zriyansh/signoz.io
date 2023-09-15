@@ -61,16 +61,16 @@ In case of docker, update `otel-collector.yaml` to include CORS configuration
 inside `deploy/docker/clickhouse-setup` folder as instructed above.
 
 Followed by clean removal of SigNoz OtelCollector to guarantee updatation of
-configuration and restart the SigNoz OtelCollector using `docker-compose`:
+configuration and restart the SigNoz OtelCollector using `docker compose`:
 
 ```bash
 # clean remove SigNoz OtelCollector
 docker stop signoz-otel-collector
 docker rm signoz-otel-collector
 
-# restart SigNoz OtelCollector using `docker-compose`
+# restart SigNoz OtelCollector using `docker compose`
 cd deploy
-docker-compose -f docker/clickhouse-setup/docker-compose.yaml up -d
+docker compose -f docker/clickhouse-setup/docker-compose.yaml up -d
 ```
 
 ### Kubernetes

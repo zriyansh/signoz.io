@@ -81,7 +81,7 @@ You can read more on how to expose Prometheus metric from <a href = "https://doc
 2. **Restart otel-collector metrics using the following command**
    
    ```jsx
-   sudo docker-compose -f docker-compose.yaml restart otel-collector-metrics
+   sudo docker compose -f docker-compose.yaml restart otel-collector-metrics
    ```
 
 3. **Go to SigNoz dashboard and plot metrics you want**
