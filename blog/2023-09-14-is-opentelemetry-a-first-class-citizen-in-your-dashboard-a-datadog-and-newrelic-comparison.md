@@ -49,7 +49,7 @@ While the message of ‘we will accept OpenTelemetry data but don’t want to en
 
 ### OpenTelemetry data in Datadog: What's working
 
-At first blush the basic integration of OpenTelemetry data looks okay within Datadog: new services are listed right along with their counterparts reporting data from the proprietary Datadog instrumentation. If both Datadog and OpenTelemetry are used with the same `[service.name](http://service.name)` the result is an integrated dashboard with traces listed together chronologically. Once we try to dive into this data, however, cracks begin to show.
+At first blush the basic integration of OpenTelemetry data looks okay within Datadog: new services are listed right along with their counterparts reporting data from the proprietary Datadog instrumentation. If both Datadog and OpenTelemetry are used with the same `service.name` the result is an integrated dashboard with traces listed together chronologically. Once we try to dive into this data, however, cracks begin to show.
 
 ## OpenTelemetry data in Datadog: roadblocks
 
