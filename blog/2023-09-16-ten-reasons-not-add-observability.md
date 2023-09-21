@@ -1,7 +1,7 @@
 ---
 title: Ten reasons not to add observability
 slug: ten-reasons-not-to-add-observability
-date: 2023-09-14
+date: 2023-09-21
 tags: [OpenTelemetry, observability, jokes]
 authors: nicamellifera
 description: With your help, we can destroy observability in our lifetime.
@@ -31,7 +31,7 @@ As long as reports of your outage are spread far and wide, people will know not 
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2023/09/ten_reasons/ten-reasons-1.webp" alt="a stock image of scissors cutting a phone cable"/>
-    <figcaption><i>Everyone’s talking about a phone detox, time to take one while your customers tell Twitter about how bad your service is!</i></figcaption>
+    <figcaption><i>"Pagerduty notification? Critical? Wow, phishing is getting so sophisticated these days. Blocked."</i></figcaption>
 </figure>
 
 ### 2. Who needs an SLA?
@@ -103,7 +103,6 @@ Tech debt leads to greater tech debt, but as long as your company’s balance sh
     <img src="/img/blog/2023/09/ten_reasons/ten-reasons-8.webp" alt="By G. Lamar - The Upper Atmosphere at 10,000 Feet, CC BY 2.0 - an image of the upper atmosphere"/>
     <figcaption><i>"I missed Christmas with my family, but it was a great chance to learn about the most comfortable benches at the Wichita airport"</i></figcaption>
 </figure>
-
 
 ### 9. Why share operations data when you could hoard?
 
