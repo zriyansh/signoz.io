@@ -63,7 +63,7 @@ How else will Jeff Bezos afford another 10-and-a-half minutes in the upper atmos
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2023/09/ten_reasons/ten-reasons-4.webp" alt="By G. Lamar - The Upper Atmosphere at 10,000 Feet, CC BY 2.0 - an image of the upper atmosphere"/>
-    <figcaption><i>Nothing more fun than hearing a billionaire refer to your heard-earned infrastructure money as his ‘winnings’!</i></figcaption>
+    <figcaption><i>Nothing more fun than hearing a billionaire refer to your hard-earned infrastructure money as his ‘winnings’!</i></figcaption>
 </figure>
 
 ### 5. We have logs at home
