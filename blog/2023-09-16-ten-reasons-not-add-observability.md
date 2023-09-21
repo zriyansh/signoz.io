@@ -97,7 +97,7 @@ We all have areas of our services that need improvement, but prioritizing tech d
 
 ### 8. What’s the worst that could happen?
 
-Tech debt leads to greater tech debt, but as long as your company’s balance sheets look good, fundamentally things must be okay. Right? Right. After all, as long as operations are working right now, albeit at 99% capacity, what’s the worst that could happen? It’s not like even a tiny spike could shut down your system, a lack of observability could make the problem impossible to diagnose, [and a quarter million people could miss Christmas as a result](https://www.forbes.com/sites/noahbarsky/2023/01/06/southwest-airlines-crisis-exposes-3-reasons-why-great-companies-stumble/?sh=35b373e3481e).
+Tech debt leads to greater tech debt, but as long as your company’s balance sheets look good, fundamentally things must be okay. Right? Right. After all, as long as operations are working right now, albeit at 99% capacity, what’s the worst that could happen? It’s not like even a tiny spike could shut down your system, a lack of observability could make the problem impossible to diagnose, <a href = "https://www.forbes.com/sites/noahbarsky/2023/01/06/southwest-airlines-crisis-exposes-3-reasons-why-great-companies-stumble/?sh=35b373e3481e" rel="noopener noreferrer nofollow" target="_blank" >and a quarter million people could miss Christmas as a result</a>.
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2023/09/ten_reasons/ten-reasons-8.webp" alt="By G. Lamar - The Upper Atmosphere at 10,000 Feet, CC BY 2.0 - an image of the upper atmosphere"/>
