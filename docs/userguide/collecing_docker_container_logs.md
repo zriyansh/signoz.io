@@ -16,19 +16,23 @@ Below are the steps to collect docker container logs.
   * Add  `config.yaml`
     ```yaml {22-26}
     receivers:
-      filelog:
-        include: [ /tmp/python.log ]
-        start_at: beginning
+      tcplog/docker:
+        listen_address: "0.0.0.0:2255"
         operators:
-          - type: json_parser
+          - type: regex_parser
+            regex: '^<([0-9]+)>[0-9]+ (?P<timestamp>[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?) (?P<container_id>\S+) (?P<container_name>\S+) [0-9]+ - -( (?P<body>.*))?'
             timestamp:
-              parse_from: attributes.time
-              layout: '%Y-%m-%d,%H:%M:%S %z'
+              parse_from: attributes.timestamp
+              layout: '%Y-%m-%dT%H:%M:%S.%LZ'
           - type: move
-            from: attributes.message
+            from: attributes["body"]
             to: body
           - type: remove
-            field: attributes.time
+            field: attributes.timestamp
+            # please remove names from below if you want to collect logs from them
+          - type: filter
+            id: signoz_logs_filter
+            expr: 'attributes.container_name matches "^signoz-(logspout|frontend|alertmanager|query-service|otel-collector|otel-collector-metrics|clickhouse|zookeeper)"'
     processors:
       batch:
         send_batch_size: 10000
@@ -44,9 +48,9 @@ Below are the steps to collect docker container logs.
     service:
       pipelines:
         logs:
-          receivers: [filelog]
+          receivers: [tcplog/docker]
           processors: [batch]
-          exporters: [ otlp/log ]
+          exporters: [ otlp ]
 
   ```
   Depending on the choice of your region for SigNoz cloud, the otlp endpoint will vary according to this table.
