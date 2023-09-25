@@ -11,48 +11,9 @@ Below are the steps to collect docker container logs.
 
 ## Collect Docker container logs in SigNoz cloud
 
-### Setup Otel Collector as agent
-
-  * Add  `config.yaml`
-    ```yaml {22-26}
-    receivers:
-      tcplog/docker:
-        listen_address: "0.0.0.0:2255"
-        operators:
-          - type: regex_parser
-            regex: '^<([0-9]+)>[0-9]+ (?P<timestamp>[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?) (?P<container_id>\S+) (?P<container_name>\S+) [0-9]+ - -( (?P<body>.*))?'
-            timestamp:
-              parse_from: attributes.timestamp
-              layout: '%Y-%m-%dT%H:%M:%S.%LZ'
-          - type: move
-            from: attributes["body"]
-            to: body
-          - type: remove
-            field: attributes.timestamp
-            # please remove names from below if you want to collect logs from them
-          - type: filter
-            id: signoz_logs_filter
-            expr: 'attributes.container_name matches "^signoz-(logspout|frontend|alertmanager|query-service|otel-collector|otel-collector-metrics|clickhouse|zookeeper)"'
-    processors:
-      batch:
-        send_batch_size: 10000
-        send_batch_max_size: 11000
-        timeout: 10s
-    exporters:
-      otlp:
-        endpoint: "ingest.{region}.signoz.cloud:443"
-        tls:
-          insecure: false
-        headers:
-          "signoz-access-token": "<SIGNOZ_INGESTION_KEY>"
-    service:
-      pipelines:
-        logs:
-          receivers: [tcplog/docker]
-          processors: [batch]
-          exporters: [ otlp ]
-
-  ```
+  * Clone this [repository](https://github.com/SigNoz/docker-container-logs)
+  * Update  `otel-collector-config.yaml` and set the values of `<SIGNOZ_INGESTION_KEY>` and `{region}`.
+  
   Depending on the choice of your region for SigNoz cloud, the otlp endpoint will vary according to this table.
 
   | Region | Endpoint                   |
@@ -61,24 +22,7 @@ Below are the steps to collect docker container logs.
   | IN     | ingest.in.signoz.cloud:443 |
   | EU     | ingest.eu.signoz.cloud:443 |
   
-* We will start our otel-collector container.
-  ```bash
-  docker run -d --name signoz-host-otel-collector -p 2255:2255 --user root -v $(pwd)/config.yaml:/etc/otel/config.yaml signoz/signoz-otel-collector:0.79.0
-  ```
-
-### Run logspout to collect docker container logs and send it to local otel collector.
-
-Logspout helps in collecting Docker logs by connecting to Docker socket.
-
-* Run logspout 
-  ```bash
-  docker run --net=host --rm --name="logspout" \
-          --volume=/var/run/docker.sock:/var/run/docker.sock \
-          gliderlabs/logspout \
-          syslog+tcp://<host>:2255
-  ```
-
-  For finding the right host for your SigNoz cluster please follow the guide [here](../install/troubleshooting.md#signoz-otel-collector-address-grid).  
+* Start the containers `docker compose up -d`
 
 * If there are no errors your logs will be exported and will be visible on the SigNoz UI.
   
