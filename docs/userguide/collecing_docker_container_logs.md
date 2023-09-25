@@ -9,7 +9,7 @@ With SigNoz you can collect all your docker container logs and perform different
 Below are the steps to collect docker container logs.
 
 
-## Collect Syslogs in SigNoz cloud
+## Collect Docker container logs in SigNoz cloud
 
 ### Setup Otel Collector as agent
 
@@ -80,7 +80,7 @@ Logspout helps in collecting Docker logs by connecting to Docker socket.
   
 
 
-## Collect Syslogs in Self-Hosted SigNoz
+## Collect Docker container logs in Self-Hosted SigNoz
 
 ###  Steps for collecting logs if SigNoz is running on the same host.
 Once you deploy SigNoz in docker, it will automatically start collecting logs of all the docker containers, except for the container logs of SigNoz. 
