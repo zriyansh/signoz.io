@@ -6,7 +6,7 @@ tags: [node, javascript, opentelemetry]
 authors: nicamellifera
 description: You Need Observability to call yourself a developer. We’ll start with explaining observability’s role in software development, and the second half of this piece is a guide to instrumenting a demo app with the open source tools OpenTelemetry and SigNoz.
 image: /img/blog/2023/09/js-otel-cover.jpeg
-hide_table_of_contents: true
+hide_table_of_contents: false
 keywords:
   - opentelemetry
   - javascript
@@ -30,7 +30,7 @@ keywords:
 How do we code now? Specifically, what’s the ratio of writing code to running it? In my grandmother’s generation, coding was something that started on a legal pad. You got at most once chance a day to run the code you’d written, and you often had several humans reading over your code before it ever touched a computer.
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2023/09/ten_reasons/js-otel-1.webp" alt="a stock image of a legal pad"/>
+    <img src="/img/blog/2023/09/js-otel-1.webp" alt="a stock image of a legal pad"/>
     <figcaption><i>You think vim was old school, imagine writing code here</i></figcaption>
 </figure>
 
@@ -296,7 +296,7 @@ exercise your application a few times by visiting [`http://localhost:8080/rolldi
 If your settings are correct you’ll be able to log into SigNoz and see your first few traces.
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2023/09/ten_reasons/js-otel-2.webp" alt="a screenshot of SigNoz"/>
+    <img src="/img/blog/2023/09/js-otel-2.webp" alt="a screenshot of SigNoz"/>
     <figcaption><i>First traces in SigNoz</i></figcaption>
 </figure>
 
