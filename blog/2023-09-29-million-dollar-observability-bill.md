@@ -143,7 +143,7 @@ In the deep mists of observability history, I remember the healthcare.gov launch
 
 > “If I hear one more person tell me I can’t use New Relic,” he said. “I’ll punch them in the face.”
 
-And that, truly, is the story of how our Datadog, New Relic, and Splunk bills got so high. After a spate of outages, failures, bugs, and other problems that users notice; some executive says ‘add observability, I don’t care what it costs.’ And the [million-dollar observability bill](https://twitter.com/kellabyte/status/1704947999414063465) was born.
+And that, truly, is the story of how our Datadog, New Relic, and Splunk bills got so high. After a spate of outages, failures, bugs, and other problems that users notice; some executive says ‘add observability, I don’t care what it costs.’ And the <a href = "https://twitter.com/kellabyte/status/1704947999414063465" rel="noopener noreferrer nofollow" target="_blank" >million-dollar observability bill</a> was born.
 
 ## Observability Shouldn’t Get a Blank Check
 
