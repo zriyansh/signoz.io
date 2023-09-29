@@ -162,7 +162,7 @@ You're almost done. In the last step, you just need to configure a few environme
 You need to put these environment variables in the below command.
 
 ```bash
-OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317" opentelemetry-instrument python3 app.py
+OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317" OTEL_EXPORTER_OTLP_PROTOCOL=grpc opentelemetry-instrument python3 app.py
 ```
 
 :::note
@@ -175,7 +175,7 @@ As we are running SigNoz on local host, `IP of SigNoz` can be replaced with `loc
 
 
 ```bash
-OTEL_RESOURCE_ATTRIBUTES=service.name=Flask_App OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" opentelemetry-instrument python3 app.py
+OTEL_RESOURCE_ATTRIBUTES=service.name=Flask_App OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" OTEL_EXPORTER_OTLP_PROTOCOL=grpc opentelemetry-instrument python3 app.py
 ```
 
 :::note

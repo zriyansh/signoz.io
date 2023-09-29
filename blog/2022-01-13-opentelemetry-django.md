@@ -185,11 +185,13 @@ Don’t run app in reloader/hot-reload mode as it breaks instrumentation. For ex
 :::
 
 ```bash
-DJANGO_SETTINGS_MODULE=<DJANGO_APP>.settings  OTEL_RESOURCE_ATTRIBUTES=service.name=<serviceName> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP OF SigNoz>:4317" opentelemetry-instrument gunicorn <DJANGO_APP>.wsgi -c gunicorn.config.py --workers 2 --threads 2 --reload
+DJANGO_SETTINGS_MODULE=<DJANGO_APP>.settings  OTEL_RESOURCE_ATTRIBUTES=service.name=<serviceName> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP OF SigNoz>:4317"
+OTEL_EXPORTER_OTLP_PROTOCOL=grpc opentelemetry-instrument gunicorn <DJANGO_APP>.wsgi -c gunicorn.config.py --workers 2 --threads 2 --reload
 ```
 As we are running SigNoz on local host, `IP of SigNoz` can be replaced with `localhost` in this case. And, for `service_name `let's use `DjangoApp`. DJANGO_SETTINGS_MODULE for this example is mysite.settings. Hence, the final command becomes:
 ```bash
-DJANGO_SETTINGS_MODULE=mysite.settings  OTEL_RESOURCE_ATTRIBUTES=service.name=DjangoApp OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" opentelemetry-instrument gunicorn mysite.wsgi -c gunicorn.config.py --workers 2 --threads 2 --reload
+DJANGO_SETTINGS_MODULE=mysite.settings  OTEL_RESOURCE_ATTRIBUTES=service.name=DjangoApp OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317"
+OTEL_EXPORTER_OTLP_PROTOCOL=grpc opentelemetry-instrument gunicorn mysite.wsgi -c gunicorn.config.py --workers 2 --threads 2 --reload
 ```
 
 `IP of SigNoz backend` is the IP of the machine where you installed SigNoz. If you have installed SigNoz on `localhost`, the endpoint will be `http://localhost:4317` for gRPC exporter and `http://localhost:4318` for HTTP exporter.
@@ -222,6 +224,7 @@ b. **If want to run docker image of django app directly**<br></br>
 docker run --env \
     --env OTEL_SERVICE_NAME=djangoApp \
     --env OTEL_EXPORTER_OTLP_ENDPOINT=http://<IP of SigNoz>:4317 \
+    --env OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
     --env DJANGO_SETTINGS_MODULE=mysite.settings \
     -p 8000:8000 \
     -t signoz/sample-django:latest1 opentelemetry-instrument gunicorn mysite.wsgi -c gunicorn.config.py --workers 2 --threads 2 --reload --bind 0.0.0.0:8000
@@ -238,6 +241,7 @@ django-app:
     environment:
     - OTEL_SERVICE_NAME=djangoApp
     - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4317
+    - OTEL_EXPORTER_OTLP_PROTOCOL=grpc
     - DJANGO_SETTINGS_MODULE=mysite.settings
 ```
 

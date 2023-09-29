@@ -47,25 +47,33 @@ From VMs, there are two ways to send data to SigNoz Cloud.
 
 #### **Send traces directly to SigNoz Cloud**
 
-Step 1. Install the OpenTelemetry dependencies
+Step 1. Create a virtual environment<br></br>
+    
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Step 2. Install the OpenTelemetry dependencies
 
 ```bash
 pip install opentelemetry-distro==0.38b0
 pip install opentelemetry-exporter-otlp==1.17.0
 ```
 
-Step 2. Add automatic instrumentation
+Step 3. Add automatic instrumentation
 
 ```bash
 opentelemetry-bootstrap --action=install
 ```
 
-Step 3. Run your application
+Step 4. Run your application
 
 ```bash
 OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> \
 OTEL_EXPORTER_OTLP_ENDPOINT="https://ingest.{region}.signoz.cloud:443" \
 OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=SIGNOZ_INGESTION_KEY" \
+OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
 opentelemetry-instrument <your_run_command>
 ```
 
@@ -109,6 +117,7 @@ Step 3. To run your application and send data to collector in same VM:
 ```bash
 OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> \
 OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" \
+OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
 opentelemetry-instrument <your_run_command>
 ```
 
@@ -146,6 +155,7 @@ Step 3. Run your application:
 ```bash
 OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> \
 OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" \
+OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
 opentelemetry-instrument <your_run_command>
 ```
 

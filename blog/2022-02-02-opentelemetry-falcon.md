@@ -155,13 +155,15 @@ Finally, you can run your Falcon app with OpenTelemetry and send data to SigNoz 
 After taking care of these environment variables, you only need to run your instrumented application. Accomplish all these by using the following command at your terminal.
 
 ```bash
-OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317" opentelemetry-instrument gunicorn src.app -b 0.0.0.0:8001
+OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317"
+OTEL_EXPORTER_OTLP_PROTOCOL=grpc opentelemetry-instrument gunicorn src.app -b 0.0.0.0:8001
 ```
 
 Naming our service as `falconApp` and replacing `Ip of SigNoz`  with `localhost`, the final command becomes:
 
 ```bash
-OTEL_RESOURCE_ATTRIBUTES=service.name=flaconApp OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" opentelemetry-instrument gunicorn src.app -b 0.0.0.0:8001
+OTEL_RESOURCE_ATTRIBUTES=service.name=flaconApp OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317"
+OTEL_EXPORTER_OTLP_PROTOCOL=grpc opentelemetry-instrument gunicorn src.app -b 0.0.0.0:8001
 ```
 
 `IP of SigNoz backend` is the IP of the machine where you installed SigNoz. If you have installed SigNoz on `localhost`, the endpoint will be `http://localhost:4317` for gRPC exporter and `http://localhost:4318` for HTTP exporter.
