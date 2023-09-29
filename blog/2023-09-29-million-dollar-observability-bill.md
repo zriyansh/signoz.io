@@ -17,7 +17,7 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/is-a-million-dollar-splunk-bill-worth-it/"/>
 </head>
 
-In a recent reddit thread, I got into a conversation about [justifying the cost of observability](https://devops.com/observability-costs-are-too-damn-high/). It got to a really basic question about running a tech company: how do you know that any cost is justified? While a small number of expenses have clear and direct business values, a bunch of other costs, I would even say *most* costs, just aren’t that clear cut.
+In a recent reddit thread, I got into a conversation about <a href = "https://devops.com/observability-costs-are-too-damn-high/" rel="noopener noreferrer nofollow" target="_blank" >justifying the cost of observability</a>. It got to a really basic question about running a tech company: how do you know that any cost is justified? While a small number of expenses have clear and direct business values, a bunch of other costs, I would even say *most* costs, just aren’t that clear cut.
 
 I’d like to write a bit about how Observability costs are significant, how these costs tend to be justified, and how precise amount a company spends on *anything* tends to be more subjective than you’d think. This article is not about how to reduce or control these costs, but rather how the costs are justified.
 
