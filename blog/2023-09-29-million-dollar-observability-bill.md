@@ -125,7 +125,7 @@ Here are some costs where the benefit is harder to quantify
 
 So, we can see that a ton of the expenses a company runs up, especially at a tech company, can’t be calculated against the exact value they produce.
 
-If this situation is hard to believe, consider that most airlines can’t specify the exact cost (and therefore the precise profit) [of a single passenger on a single flight](https://revenue-hub.com/revenue-management-hotels-learn-delta-airlines/), and you’ll see that very often businesses must make decisions heuristically rather than with precise valuations.
+If this situation is hard to believe, consider that most airlines can’t specify the exact cost (and therefore the precise profit) <a href = "https://revenue-hub.com/revenue-management-hotels-learn-delta-airlines/" rel="noopener noreferrer nofollow" target="_blank" >of a single passenger on a single flight</a>, and you’ll see that very often businesses must make decisions heuristically rather than with precise valuations.
 
 ### The real argument for observability: the cost of not having it
 
