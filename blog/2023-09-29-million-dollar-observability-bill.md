@@ -129,7 +129,7 @@ If this situation is hard to believe, consider that most airlines can’t specif
 
 ### The real argument for observability: the cost of not having it
 
-When a developer uses a cool tracing tool to find the bit of code that’s slowing down performance, the dollar benefit of that act to the company is extremely difficult to show. You might try calculating how long the developer would have spent trying to fix the problem without the tool, but that’s always going to be a *very* rough estimate since a proper observability tool [fundamentally alters the way dev teams operate](https://www.cncf.io/blog/2022/12/16/why-opentelemetry-is-taking-cloud-native-to-new-heights/) so a simple time estimate is unlikely to be accurate. 
+When a developer uses a cool tracing tool to find the bit of code that’s slowing down performance, the dollar benefit of that act to the company is extremely difficult to show. You might try calculating how long the developer would have spent trying to fix the problem without the tool, but that’s always going to be a *very* rough estimate since a proper observability tool <a href = "https://www.cncf.io/blog/2022/12/16/why-opentelemetry-is-taking-cloud-native-to-new-heights/" rel="noopener noreferrer nofollow" target="_blank" >fundamentally alters the way dev teams operate</a> so a simple time estimate is unlikely to be accurate. 
 
 No, the real way to show what observability has to offer is the cost of *not* having it. The cost of downtime, system slowdowns, and dissatisfied users is one that every exec can estimate.
 
