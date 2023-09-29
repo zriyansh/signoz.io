@@ -119,7 +119,7 @@ Okay, if these costs can be justified to the last clipped Scottish groat, can’
 Here are some costs where the benefit is harder to quantify
 
 - **Literally, everyone else who works at the office -** Not to start with a bold one, but the benefit of literally everyone else isn’t a number you can type into a spreadsheet. Some examples of people at your company who have a nebulous, hard-to-exactly define benefit:
-    - All executives - At publicly traded companies, we often give credit for all stock moves to the CEO. But everyone knows this can’t be an accurate number, and the direct benefit of all other executives is similarly hard to pin down. Again, this doesn’t mean they have zero benefit, just that it can’t be quantified as an exact figure
+    - All executives - At publicly traded companies, we often give credit for all stock moves to the CEO. But everyone knows this can’t be an accurate number, and the direct benefit of all other executives is similarly hard to pin down. Again, this doesn’t mean they have zero benefit, just that it can’t be quantified as an exact figure.
     - All Managers - If we set an arbitrary value for the contributions of a team of engineers, say (shudder) a dollar value on each line of code added, we can arrive at some vague estimate of the engineers’ contribution to value. Even this rough estimate isn’t possible with the team’s management. And as such, the benefit of management is impossible to get a perfect read on. We know that a great manager can get great things from their team. But the dollar value is quite difficult to calculate.
 - **The Office itself** - More on this in later sections. But the value of all those cubicles does not fit on a spreadsheet.
 
