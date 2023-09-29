@@ -93,7 +93,7 @@ def do_work(work_type):
     print("doing some work...")
 ```
 
-obviously a contrived example, but it’s worth noting that there were more lines involved in monitoring the app than the app doing its work. With detailed enough measurement and tracing, along with transmitting and storing that measurement, observability can easily rival the application’s footprint.
+Obviously a contrived example, but it’s worth noting that there were more lines involved in monitoring the app than the app doing its work. With detailed enough measurement and tracing, along with transmitting and storing that measurement, observability can easily rival the application’s footprint.
 
 ### Cost reductions are possible
 
