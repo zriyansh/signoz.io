@@ -1,6 +1,6 @@
 ---
 title: Is a $1 million Splunk bill worth it?
-slug: is-a-million-dollar-splunk-bill-worth-it
+slug: justifying-a-million-dollar-observability-bill
 date: 2023-09-25
 tags: [operations, observability]
 authors: nicamellifera
@@ -14,7 +14,7 @@ keywords:
 ---
 
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/is-a-million-dollar-splunk-bill-worth-it/"/>
+  <link rel="canonical" href="https://signoz.io/blog/justifying-a-million-dollar-observability-bill/"/>
 </head>
 
 In a recent reddit thread, I got into a conversation about <a href = "https://devops.com/observability-costs-are-too-damn-high/" rel="noopener noreferrer nofollow" target="_blank" >justifying the cost of observability</a>. It got to a really basic question about running a tech company: how do you know that any cost is justified? While a small number of expenses have clear and direct business values, a bunch of other costs, I would even say *most* costs, just aren’t that clear cut.
@@ -148,3 +148,11 @@ And that, truly, is the story of how our Datadog, New Relic, and Splunk bills go
 ## Observability Shouldn’t Get a Blank Check
 
 The initial rush to implement observability tools like Datadog, New Relic, and Splunk often comes with little regard for cost optimization. This urgency is understandable; system failures and outages can be catastrophic for business. However, as the dust settles, organizations begin to scrutinize those hefty monthly bills. This scrutiny often leads to a more nuanced approach to observability. Teams start to explore open-source alternatives, like Prometheus and Grafana, or build custom solutions tailored to their specific needs. The aim shifts from simply "adding observability" to achieving meaningful insights in a cost-effective manner. This evolution reflects a maturing understanding of observability, where quality and cost-efficiency are balanced to meet the organization's unique requirements.
+
+### OpenTelemetry and SigNoz can help with out-of-control-costs
+
+This piece helps explain why observability SaaS offerings have often received a blank check as long as they reduced the risk of downtime. We haven't discussed why, so often, observability bills continue to grow and often outpace the growth in infrastructure costs. To explain that, we have to admit that part of the story is lock-in. With a closed-source SaaS offering for observability, switching service providers means at least an arduous change of installed software agents. In the worst case, teams will have added thousands of custom metric calls to their application code which will all have to be changed to switch APM tools. Inevitably, this leaves customers 'stuck' and unable to do much as their observability bill grows.
+
+OpenTelemetry can solve this problem. By implementing open standards for how observability data is gathered and transmitted, OpenTelemetry makes it very easy to switch service providers. If you're using the OpenTelemetry Collector (and you should be), all you have to do is reconfigure your collection endpoint in a single place.
+
+Along with OpenTelemetry, you'll need a backend to report and chart data. The OpenTelemetry project is neutral about your data backend, but a tool like <a href = "https://github.com/signoz/signoz.io" rel="noopener noreferrer nofollow" target="_blank" >SigNoz</a> uses the power of Clickhouse to store data efficiently, and it even has a self-hosted option.
