@@ -60,7 +60,7 @@ If your signoz cluster is hosted in a different cluster then you will have to in
   ```yaml
   k8s-infra:
     presets:
-      logCollection:
+      logsCollection:
         # whether to enable log collection
         enabled: true
         blacklist:
