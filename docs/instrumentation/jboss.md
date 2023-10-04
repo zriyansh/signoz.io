@@ -102,6 +102,8 @@ Step 4. [Optional] Write the output/logs of standalone.sh script to a file nohup
 ```bash
 /opt/jboss-eap-7.1/bin/standalone.sh > /opt/jboss-eap-7.1/bin/nohup.out &
 ```
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
+
 ---
 
 #### **Send traces via OTel Collector binary**
@@ -114,7 +116,6 @@ Step 1. Download OTel java binary agent<br></br>
 ```bash
 wget https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar
 ```
-
 
 Step 2. Open the configuration file
 
@@ -132,6 +133,8 @@ JAVA_OPTS="-javaagent:/path/opentelemetry-javaagent.jar"
 
 where,
 - `path` - Update it to the path of your downloaded Java JAR agent.<br></br>
+
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
 
 </TabItem>
 <TabItem value="k8s" label="Kubernetes">
@@ -167,6 +170,8 @@ where,
 Step 4. Make sure to dockerise your application along with OpenTelemetry instrumentation.
 
 You can validate if your application is sending traces to SigNoz cloud by following the instructions [here](#validating-instrumentation-by-checking-for-traces).
+
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
   
 </TabItem>
 </Tabs>
@@ -216,6 +221,8 @@ OpenTelemetry Java auto-instrumentation supports collecting telemetry data from 
 :::note
 💡 Remember to allow incoming requests to port 4317 of the machine where SigNoz backend is hosted.
 :::
+
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
 
 ## Validating instrumentation by checking for traces
 

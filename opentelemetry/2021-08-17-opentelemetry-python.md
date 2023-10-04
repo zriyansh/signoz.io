@@ -62,7 +62,7 @@ OpenTelemetry only generates telemetry data and lets you decide where to send yo
 
 You can get started with SigNoz using just three commands at your terminal.
 
-```jsx
+```bash
 git clone -b main https://github.com/SigNoz/signoz.git
 cd signoz/deploy/
 ./install.sh
@@ -115,14 +115,18 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
 
 1. Clone sample Flask app repository and go to the root folder
 
-   ```
+   ```bash
    git clone https://github.com/SigNoz/sample-flask-app.git
    cd sample-flask-app
    ```
 
-2. Check if the app is running
-
+2. Create a virtual environment
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
    ```
+3. Check if the app is running
+   ```bash
    python3 app.py
    ```
 
@@ -149,8 +153,8 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
 1. **Opentelemetry Python instrumentation installation**<br></br>
    Your app folder contains a file called requirements.txt. This file contains all the necessary commands to set up OpenTelemetry Python instrumentation. All the mandatory packages required to start the instrumentation are installed with the help of this file. Make sure your path is updated to the root directory of your sample app and run the following command:
 
-   ```
-   pip3 install -r requirements.txt
+   ```bash
+   python -m pip install -r requirements.txt
    ```
 
    If it hangs while installing `grpcio` during **pip3 install opentelemetry-exporter-otlp** then follow below steps as suggested in <a href="https://stackoverflow.com/questions/56357794/unable-to-install-grpcio-using-pip-install-grpcio/62500932#62500932" rel="noopener noreferrer nofollow" target="_blank">this stackoverflow link</a>.
@@ -162,7 +166,7 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
 2. **Install application specific packages**<br></br>
    This step is required to install packages specific to the application. Make sure to run this command in the root directory of your installed application. This command figures out which instrumentation packages the user might want to install and installs it for them:
 
-   ```
+   ```bash
    opentelemetry-bootstrap --action=install
    ```
 
@@ -178,8 +182,9 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
    Don’t run app in reloader/hot-reload mode as it breaks instrumentation.
    :::
    
-   ```jsx
-   OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317" opentelemetry-instrument python3 app.py
+   ```bash
+   OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317"
+   OTEL_EXPORTER_OTLP_PROTOCOL=grpc opentelemetry-instrument python3 app.py
    ```
 
    As we are running SigNoz on local host, `IP of SigNoz` can be replaced with `localhost` in this case. And, for `service_name` let's use `pythonApp`. Hence, the final command becomes:
@@ -187,7 +192,8 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
    **Final Command**
 
    ```
-   OTEL_RESOURCE_ATTRIBUTES=service.name=pythonApp OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" opentelemetry-instrument python3 app.py
+   OTEL_RESOURCE_ATTRIBUTES=service.name=pythonApp OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317"
+   OTEL_EXPORTER_OTLP_PROTOCOL=grpc opentelemetry-instrument python3 app.py
    ```
 
    And, congratulations! You have instrumented your sample Python app. You can now access the SigNoz dashboard at [http://localhost:3301](http://localhost:3301/) to monitor your app for performance metrics.
@@ -254,3 +260,4 @@ If you want to read more about SigNoz 👇<br></br>
 [Golang Application Performance Monitoring with SigNoz](https://signoz.io/blog/monitoring-your-go-application-with-signoz/)
 
 [Nodejs Application Performance Monitoring with SigNoz](https://signoz.io/blog/nodejs-opensource-application-monitoring/)
+

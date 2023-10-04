@@ -14,10 +14,12 @@ const TopReasons = (props) => {
             Why do devs choose SigNoz over Grafana?
           </h4>
           <p className={styles.reasonMainPointDesc}>
-            SigNoz is loved by developers. With over 13k+ Github stars, 100+
+            SigNoz is loved by developers. With over 14k+ Github stars, 100+
             contributors, and 20k+ community members, it’s one of the top open
             source projects in the observability domain. Many of our users have
-            switched from Grafana. <br />
+            switched from Grafana. 
+            <br />
+            <br />
             Here are a few reasons why.
           </p>
           {props.reasons.map(({ reason, reasonDesc }, idx) => {
@@ -27,6 +29,7 @@ const TopReasons = (props) => {
                   {idx + 1}. {reason}
                 </h4>
                 <div className={styles.reasonDesc}>{reasonDesc}</div>
+                <br/>
               </React.Fragment>
             );
           })}

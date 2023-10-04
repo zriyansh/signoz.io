@@ -652,6 +652,12 @@ a.no-underline {
   }
 }
 
+.announcementContainer {
+  max-width: 64%;
+  margin: 0 auto;
+}
+
+
 @media screen and (max-width: 767px) {
   .self-hosted-data-protection::before {
     position: absolute;
@@ -666,4 +672,11 @@ a.no-underline {
   .plans-container {
     background-image: none;
   }
+
+  .announcementContainer {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
 }
+

@@ -88,17 +88,20 @@ git clone https://github.com/SigNoz/sample-fastAPI-app.git
 cd sample-fastapi-app/
 cd app
 ```
+It’s a good practice to create virtual environments for running Python apps, so we will using a virtual python environment for this sample fastAPI app.
 
-
-Note: We will using a virtual python environment for this sample fastAPI app. Learn how to do it [here](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/).
-
+#### Create a Virtual Environment
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 <br></br>
 
 **Step 2. Run instructions for sending data to SigNoz**<br></br>
 The `requirements.txt` file contains all the necessary OpenTelemetry Python packages needed for instrumentation. In order to install those packages, run the following command:
 
 ```bash
-pip3 install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 The dependencies included are briefly explained below:
 
@@ -144,7 +147,8 @@ Don’t run app in reloader/hot-reload mode as it breaks instrumentation. For ex
 You need to put these environment variables in the below command.
 
 ```bash
-OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317" opentelemetry-instrument uvicorn main:app --host localhost --port 5002
+OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> OTEL_EXPORTER_OTLP_ENDPOINT="http://<IP of SigNoz>:4317"
+OTEL_EXPORTER_OTLP_PROTOCOL=grpc opentelemetry-instrument uvicorn main:app --host localhost --port 5002
 ```
 
 As we are running SigNoz on local host, `IP of SigNoz` can be replaced with `localhost` in this case. And, for `service_name` let's use `fastapiApp`. Hence, the final command becomes:
@@ -163,14 +167,16 @@ The uvicorn run command with multiple workers has yet to be supported. Alternati
 In that case, the final command will be
 
 ```bash
-OTEL_RESOURCE_ATTRIBUTES=service.name=fastapiApp OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" opentelemetry-instrument gunicorn main:app --workers 2 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
+OTEL_RESOURCE_ATTRIBUTES=service.name=fastapiApp OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317"
+OTEL_EXPORTER_OTLP_PROTOCOL=grpc opentelemetry-instrument gunicorn main:app --workers 2 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
 ```
 
 
 **Final Command**
 
 ```bash
-OTEL_RESOURCE_ATTRIBUTES=service.name=fastapiApp OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" opentelemetry-instrument uvicorn main:app --host localhost --port 5002
+OTEL_RESOURCE_ATTRIBUTES=service.name=fastapiApp OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317"
+OTEL_EXPORTER_OTLP_PROTOCOL=grpc opentelemetry-instrument uvicorn main:app --host localhost --port 5002
 ```
 
 And, congratulations! You have instrumented your sample FastAPI app. You can check if your app is running or not by hitting the endpoint at [http://localhost:5002/](http://localhost:5002/).
@@ -221,6 +227,7 @@ docker run -d --name fastapi-container \
 -e OTEL_METRICS_EXPORTER='none' \
 -e OTEL_RESOURCE_ATTRIBUTES='service.name=fastapiApp' \
 -e OTEL_EXPORTER_OTLP_ENDPOINT='http://<IP of SigNoz>:4317' \
+-e OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
 -p 5002:5002 sample-fastapi-app
 ```
 <br></br>
@@ -237,6 +244,7 @@ docker run -d --name fastapi-container \
 -e OTEL_METRICS_EXPORTER='none' \
 -e OTEL_RESOURCE_ATTRIBUTES='service.name=fastapiApp' \
 -e OTEL_EXPORTER_OTLP_ENDPOINT='http://clickhouse-setup_otel-collector_1:4317' \
+-e OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
 -p 5002:5002 sample-fastapi-app
 ```
 
@@ -249,6 +257,7 @@ docker run -d --name fastapi-container \
 -e OTEL_METRICS_EXPORTER='none' \
 -e OTEL_RESOURCE_ATTRIBUTES='service.name=fastapiApp' \
 -e OTEL_EXPORTER_OTLP_ENDPOINT='http://localhost:4317' \
+-e OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
 -p 5002:5002 sample-fastapi-app
 ```
 <br></br>

@@ -83,9 +83,8 @@ If you don’t already have a SigNoz cloud account, you can sign up [here](https
             queue.type="linkedList" queue.size="10000" template="UTCTraditionalForwardFormat")
     ```
 
-    So that you have retires and queue in place to de-couple the sending from the other logging action.
-
-    The value of `target` might vary depending on where SigNoz is deployed, since it is deployed on the same host I am using `0.0.0.0` for more help you can visit [here](../install/troubleshooting.md#signoz-otel-collector-address-grid).
+    So that you have retries and queue in place to de-couple the sending from the other logging action.
+    Also we are assuming that you are running the otel binary on the same host. If not, the value of `target` might change depending on your environment.
 
 * Now restart your rsyslog service by running `sudo systemctl restart rsyslog.service`
 * You can check the status of service by running `sudo systemctl status rsyslog.service`

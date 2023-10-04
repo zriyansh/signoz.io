@@ -47,25 +47,33 @@ From VMs, there are two ways to send data to SigNoz Cloud.
 
 #### **Send traces directly to SigNoz Cloud**
 
-Step 1. Install the OpenTelemetry dependencies
+Step 1. Create a virtual environment<br></br>
+    
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Step 2. Install the OpenTelemetry dependencies
 
 ```bash
 pip install opentelemetry-distro==0.38b0
 pip install opentelemetry-exporter-otlp==1.17.0
 ```
 
-Step 2. Add automatic instrumentation
+Step 3. Add automatic instrumentation
 
 ```bash
 opentelemetry-bootstrap --action=install
 ```
 
-Step 3. Run your application
+Step 4. Run your application
 
 ```bash
 OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> \
 OTEL_EXPORTER_OTLP_ENDPOINT="https://ingest.{region}.signoz.cloud:443" \
 OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=SIGNOZ_INGESTION_KEY" \
+OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
 opentelemetry-instrument <your_run_command>
 ```
 
@@ -81,7 +89,9 @@ Depending on the choice of your region for SigNoz cloud, the ingest endpoint wil
 | IN |	ingest.in.signoz.cloud:443 |
 | EU | ingest.eu.signoz.cloud:443 |
 
-Step 4. Validate if your application is sending traces to SigNoz cloud by following the instructions [here](#validating-instrumentation-by-checking-for-traces).
+Step 5. Validate if your application is sending traces to SigNoz cloud by following the instructions [here](#validating-instrumentation-by-checking-for-traces).
+
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-signoz-installation).
 
 ---
 
@@ -109,6 +119,7 @@ Step 3. To run your application and send data to collector in same VM:
 ```bash
 OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> \
 OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" \
+OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
 opentelemetry-instrument <your_run_command>
 ```
 
@@ -120,6 +131,8 @@ where,
 In case you have OtelCollector Agent in different VM, replace localhost:4317 with `<IP Address of the VM>:4317`.
 
 Step 4. You can validate if your application is sending traces to SigNoz cloud by following the instructions [here](#validating-instrumentation-by-checking-for-traces).
+
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-signoz-installation).
 
 </TabItem>
 <TabItem value="k8s" label="Kubernetes">
@@ -146,6 +159,7 @@ Step 3. Run your application:
 ```bash
 OTEL_RESOURCE_ATTRIBUTES=service.name=<service_name> \
 OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4317" \
+OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
 opentelemetry-instrument <your_run_command>
 ```
 
@@ -158,6 +172,8 @@ where,
 Step 4. Make sure to dockerise your application along with OpenTelemetry instrumentation.
 
 You can validate if your application is sending traces to SigNoz cloud by following the instructions [here](#validating-instrumentation-by-checking-for-traces).
+
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-signoz-installation).
   
 </TabItem>
 </Tabs>
@@ -246,6 +262,7 @@ You can use OpenTelemetry Python to send your traces directly to SigNoz. OpenTel
      The port numbers are 4317 and 4318 for the gRPC and HTTP exporters respectively. Remember to allow incoming requests to port **4317**/**4318** of machine where SigNoz backend is hosted.
     :::
      
+    In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-signoz-installation).
 
 ## Validating instrumentation by checking for traces
 
@@ -265,32 +282,6 @@ You might see other dummy applications if you’re using SigNoz for the first ti
     <img src="/img/docs/opentelemetry_python_app_instrumented.webp" alt="Python Application in the list of services being monitored in SigNoz"/>
     <figcaption><i>Python Application in the list of services being monitored in SigNoz</i></figcaption></figure>
 <br></br>
-
-## Instrumenting different Python Frameworks
-
-The `opentelemetry-distro` package can initialize instrumentation for a lot of popular Python frameworks. You can find a complete list [here](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/main/instrumentation). For popular Python frameworks too, the distro provides a quick way to get started with automatic instrumentation.
-
-### Django Instrumentation
-
-It is recommended to use the [opentelemetry distro](#steps-to-auto-instrument-python-app-for-traces) for instrumenting Django applications. Though for Django, you must define `DJANGO_SETTINGS_MODULE`correctly. If your project is called `mysite`, something like following should work:
-
-```jsx
-export DJANGO_SETTINGS_MODULE=mysite.settings
-```
-
-Please refer the official [Django docs](https://docs.djangoproject.com/en/1.10/topics/settings/#designating-the-settings) for more details.
-
-### Flask Instrumentation
-
-It is recommended to use the [opentelemetry distro](#steps-to-auto-instrument-python-app-for-traces) for instrumenting Flask applications.
-
-### FastAPI Instrumentation
-
-It is recommended to use the [opentelemetry distro](#steps-to-auto-instrument-python-app-for-traces) for instrumenting FastAPI applications.
-
-### Falcon Instrumentation
-
-It is recommended to use the [opentelemetry distro](#steps-to-auto-instrument-python-app-for-traces) for instrumenting Falcon applications.
 
 ## Database Instrumentation
 
