@@ -91,6 +91,8 @@ Depending on the choice of your region for SigNoz cloud, the ingest endpoint wil
 | IN |	ingest.in.signoz.cloud:443 |
 | EU | ingest.eu.signoz.cloud:443 |
 
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
+
 ---
 
 #### **Send traces via OTel Collector binary**
@@ -116,7 +118,9 @@ export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/path/to/opentelemetry-javaagent
 ```
 
 - path/to - Update it to the path of your downloaded Java JAR agent.
-  
+
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
+
 </TabItem>
 <TabItem value="k8s" label="Kubernetes">
 
@@ -145,7 +149,9 @@ Once you have set up OTel Collector agent, you can proceed with OpenTelemetry ja
 3. Make sure to dockerise your application along with OpenTelemetry instrumentation.
 
 You can validate if your application is sending traces to SigNoz cloud by following the instructions [here](#validating-instrumentation-by-checking-for-traces).
-  
+
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
+
 </TabItem>
 </Tabs>
 
@@ -210,6 +216,8 @@ Here's a video on how to instrument Tomcat applications with SigNoz and a [blog]
 <LiteYoutubeEmbed id="4obQilMqU4E" mute={false} />
 
 <p>&nbsp;</p>
+
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
 
 ## Validating instrumentation by checking for traces
 

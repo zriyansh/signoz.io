@@ -90,6 +90,8 @@ Depending on the choice of your region for SigNoz cloud, the ingest endpoint wil
 | IN |	ingest.in.signoz.cloud:443 |
 | EU | ingest.eu.signoz.cloud:443 |
 
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
+
 ---
 
 #### **Send traces via OTel Collector binary**
@@ -112,7 +114,7 @@ java -javaagent:$PWD/opentelemetry-javaagent.jar -jar <myapp>.jar
 - `<myapp>` is the name of your application jar file
 - In case you download `opentelemetry-javaagent.jar` file in different directory than that of the project, replace `$PWD` with the path of the otel jar file.
 
-
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
   
 </TabItem>
 <TabItem value="k8s" label="Kubernetes">
@@ -139,6 +141,8 @@ Once you have set up OTel Collector agent, you can proceed with OpenTelemetry ja
 3. Make sure to dockerise your application along with OpenTelemetry instrumentation.
 
 You can validate if your application is sending traces to SigNoz cloud by following the instructions [here](#validating-instrumentation-by-checking-for-traces).
+
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
   
 </TabItem>
 </Tabs>
@@ -199,6 +203,7 @@ OpenTelemetry Java auto-instrumentation supports collecting telemetry data from 
 💡 Remember to allow incoming requests to port 4317 of the machine where SigNoz backend is hosted.
 :::
 
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
 
 ## Validating instrumentation by checking for traces
 

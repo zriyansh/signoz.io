@@ -135,6 +135,9 @@ You can now run your Nestjs application. The data captured with OpenTelemetry fr
 
 Step 6. You can validate if your application is sending traces to SigNoz cloud [here](#validating-instrumentation-by-checking-for-traces).
 
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
+
+---
 #### **Send traces via OTel Collector binary**
 
 OTel Collector binary helps to collect logs, hostmetrics, resource and infra attributes. It is recommended to install Otel Collector binary to collect and send traces to SigNoz cloud. You can correlate signals and have rich contextual data through this way.
@@ -226,6 +229,8 @@ Step 5. Run the application
 
 Step 6. You can validate if your application is sending traces to SigNoz cloud [here](#validating-instrumentation-by-checking-for-traces).
 
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
+
 </TabItem>
 <TabItem value="k8s" label="Kubernetes">
 
@@ -315,6 +320,8 @@ async function bootstrap() {
 Step 5. Run the application
 
 Step 6. You can validate if your application is sending traces to SigNoz cloud [here](#validating-instrumentation-by-checking-for-traces).
+
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
 
 </TabItem>
 </Tabs>
@@ -437,6 +444,8 @@ Internally, it calls the specific auto-instrumentation library for components us
     ```
 
     You can now run your Nestjs application. The data captured with OpenTelemetry from your application should start showing on the SigNoz dashboard.
+  
+  In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
     
 
 ### Validating instrumentation by checking for traces

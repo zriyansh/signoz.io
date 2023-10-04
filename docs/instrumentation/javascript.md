@@ -99,6 +99,10 @@ OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=<SIGNOZ_INGESTION_KEY>" node -r 
 
 Step 4. You can validate if your application is sending traces to SigNoz cloud [here](#validating-instrumentation-by-checking-for-traces).
 
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
+
+---
+
 #### **Send traces via OTel Collector binary**
 
 OTel Collector binary helps to collect logs, hostmetrics, resource and infra attributes. It is recommended to install Otel Collector binary to collect and send traces to SigNoz cloud. You can correlate signals and have rich contextual data through this way.
@@ -162,10 +166,14 @@ node -r ./tracing.js app.js
 
 Step 4. You can validate if your application is sending traces to SigNoz cloud [here](#validating-instrumentation-by-checking-for-traces).
 
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
+
 </TabItem>
 <TabItem value="k8s" label="Kubernetes">
 
 For Javascript application deployed on Kubernetes, you need to install OTel Collector agent in your k8s infra to collect and send traces to SigNoz Cloud. You can find the instructions to install OTel Collector agent [here](/docs/tutorial/kubernetes-infra-metrics/).
+
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
 
 Once you have set up OTel Collector agent, you can proceed with OpenTelemetry Javascript instrumentation by following the below steps:
 
@@ -224,9 +232,10 @@ node -r ./tracing.js app.js
 
 Step 4. You can validate if your application is sending traces to SigNoz cloud [here](#validating-instrumentation-by-checking-for-traces).
 
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
+
 </TabItem>
 </Tabs>
-
 
 ## Send Traces to Self-Hosted SigNoz
 
@@ -361,6 +370,8 @@ The instrumentation automatically identifies the following within your applicati
   :::note
   If you're running your nodejs application in PM2 cluster mode, it doesn't support node args: [Unitech/pm2#3227](https://github.com/Unitech/pm2/issues/3227). As above sample app instrumentation requires to load `tracing.js` before app load by passing node arg, so nodejs instrumentation doesn't work in PM2 cluster mode. So you need to import `tracing.js` in your main application. The `import ./tracing.js` should be the first line of your application code and initialize it before any other function. Here's the [sample github repo](https://github.com/SigNoz/sample-nodejs-app/tree/init-tracer-main) which shows the implementation.    
   :::
+
+  In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
 
 ## Validating instrumentation by checking for traces
 

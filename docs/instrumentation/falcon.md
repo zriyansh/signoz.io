@@ -99,6 +99,8 @@ Don’t run app in reloader/hot-reload mode as it breaks instrumentation.
 
 Step 5. Validate if your application is sending traces to SigNoz cloud by following the instructions [here](#validating-instrumentation-by-checking-for-traces).
 
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
+
 ---
 
 #### **Send traces via OTel Collector binary**
@@ -173,6 +175,8 @@ The port numbers are 4317 and 4318 for the gRPC and HTTP exporters respectively.
 In case you have OtelCollector Agent in different VM, replace localhost:4317 with `<IP Address of the VM>:4317`.
 
 Step 5. You can validate if your application is sending traces to SigNoz cloud by following the instructions [here](#validating-instrumentation-by-checking-for-traces).
+
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
 
 </TabItem>
 <TabItem value="k8s" label="Kubernetes">
@@ -249,6 +253,8 @@ In case you have OtelCollector Agent in different VM, replace localhost:4317 wit
 Step 5. Make sure to dockerise your application along with OpenTelemetry instrumentation.
 
 You can validate if your application is sending traces to SigNoz cloud by following the instructions [here](#validating-instrumentation-by-checking-for-traces).
+
+In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
   
 </TabItem>
 </Tabs>
@@ -346,7 +352,8 @@ You can use OpenTelemetry to send your traces directly to SigNoz. OpenTelemetry 
      The port numbers are 4317 and 4318 for the gRPC and HTTP exporters respectively. Remember to allow incoming requests to port **4317**/**4318** of machine where SigNoz backend is hosted.
     :::
      
-
+    In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
+    
 ## Validating instrumentation by checking for traces
 
 With your application running, you can verify that you’ve instrumented your application with OpenTelemetry correctly by confirming that tracing data is being reported to SigNoz.
