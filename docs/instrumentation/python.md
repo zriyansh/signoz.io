@@ -276,32 +276,6 @@ You might see other dummy applications if you’re using SigNoz for the first ti
     <figcaption><i>Python Application in the list of services being monitored in SigNoz</i></figcaption></figure>
 <br></br>
 
-## Instrumenting different Python Frameworks
-
-The `opentelemetry-distro` package can initialize instrumentation for a lot of popular Python frameworks. You can find a complete list [here](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/main/instrumentation). For popular Python frameworks too, the distro provides a quick way to get started with automatic instrumentation.
-
-### Django Instrumentation
-
-It is recommended to use the [opentelemetry distro](#steps-to-auto-instrument-python-app-for-traces) for instrumenting Django applications. Though for Django, you must define `DJANGO_SETTINGS_MODULE`correctly. If your project is called `mysite`, something like following should work:
-
-```jsx
-export DJANGO_SETTINGS_MODULE=mysite.settings
-```
-
-Please refer the official [Django docs](https://docs.djangoproject.com/en/1.10/topics/settings/#designating-the-settings) for more details.
-
-### Flask Instrumentation
-
-It is recommended to use the [opentelemetry distro](#steps-to-auto-instrument-python-app-for-traces) for instrumenting Flask applications.
-
-### FastAPI Instrumentation
-
-It is recommended to use the [opentelemetry distro](#steps-to-auto-instrument-python-app-for-traces) for instrumenting FastAPI applications.
-
-### Falcon Instrumentation
-
-It is recommended to use the [opentelemetry distro](#steps-to-auto-instrument-python-app-for-traces) for instrumenting Falcon applications.
-
 ## Database Instrumentation
 
 Make sure that the DB client library you are using has the corresponding instrumentation library, and the version of the DB client library is supported by OpenTelemetry.
