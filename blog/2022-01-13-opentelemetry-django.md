@@ -231,7 +231,7 @@ docker run --env \
 ```
 
 c. **If want to use docker image of django app in docker compose**<br></br>
-```jsx
+```bash
 django-app:
     image: "signoz/sample-django:latest"
     container_name: sample-django
