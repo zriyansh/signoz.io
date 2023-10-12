@@ -1,7 +1,7 @@
 ---
-title: Apache Kafka and the OpenTelemetry Collector for low latency and better burst handling
-slug: apache-kafka-and-opentelemetry-collector-for-better-burst-handling
-date: 2023-10-11
+title: Maximizing Scalability - Apache Kafka and OpenTelemetry
+slug: maximizing-scalability-apache-kafka-and-opentelemetry
+date: 2023-10-13
 tags: [OpenTelemetry]
 authors: nicamellifera
 description: The choice between OpenTelemetry Collector and Apache Kafka isn't a zero-sum game. Each has its unique strengths and can even complement each other in certain architectures. The OpenTelemetry Collector excels in data gathering, compression, and filtering, making it a strong candidate for reducing in-system latency and improving data quality before it reaches your backend.
@@ -13,12 +13,15 @@ keywords:
 ---
 
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/apache-kafka-and-opentelemetry-collector-for-better-burst-handling/"/>
+  <link rel="canonical" href="https://signoz.io/blog/maximizing-scalability-apache-kafka-and-opentelemetry/"/>
 </head>
 
-On a recent thread on the <a href = "https://slack.cncf.io/" rel="noopener noreferrer nofollow" target="_blank">CNCF Slack’s OTel Collector channel</a>, a user asked a question that shone a light on a topic I don’t think has been effectively discussed elsewhere: Why you may want to run more than one OpenTelemetry Collector inside your architecture
+On a recent thread on the <a href = "https://slack.cncf.io/" rel="noopener noreferrer nofollow" target="_blank">CNCF Slack’s OTel Collector channel</a>, a user asked a question that shone a light on a topic I don’t think has been effectively discussed elsewhere:
 <!--truncate-->
 ![Cover Image](/img/blog/2023/10/c2c-cover.webp)
+
+Why you may want to run more than one OpenTelemetry Collector inside your architecture. This article will discuss both mutli-collector architecture and how Apache Kafka can be useful here.
+
 <figure data-zoomable align='center'>
     <img src="/img/blog/2023/10/c2c-1.webp" alt="a user asks: Does it make sense to think about using an intermediate transport service like Kafka to get event data from the apps to move it forward to the otel-collector? If so, is there a reference implementation/article to read about it? Martin responds: what would be the goal in that as opposed to Collector -> collector tiering?"/>
     <figcaption><i>Doesn't collector tiering make more sense, generally, than using a queue?</i></figcaption>
@@ -34,8 +37,6 @@ To review: the OpenTelemetry Collector is an optional but strongly recommended p
     <img src="/img/blog/2023/10/c2c-2.webp" alt="graph of a simple distribution with a single collector"/>
     <figcaption><i>Calls from OpenTelemetry Auto-instrumentation, API calls and other code instrumented with the OpenTelemetry SDK all go to the collector running on a host</i></figcaption>
 </figure>
-
-******
 
 In more advanced cases, however, this may not be sufficient. Imagine an edge service that handles high-frequency requests, that is sending regular requests to a fairly distant collector on the same network.
 
