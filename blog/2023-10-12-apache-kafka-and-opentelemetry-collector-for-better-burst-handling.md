@@ -16,71 +16,70 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/maximizing-scalability-apache-kafka-and-opentelemetry/"/>
 </head>
 
-On a recent thread on the <a href = "https://slack.cncf.io/" rel="noopener noreferrer nofollow" target="_blank">CNCF Slack’s OTel Collector channel</a>, a user asked a question that shone a light on a topic I don’t think has been effectively discussed elsewhere:
+On a recent thread on the [CNCF Slack’s OTel Collector channel](https://slack.cncf.io/), a user asked a question that shone a light on a topic I don't think has been effectively discussed elsewhere.
 <!--truncate-->
 ![Cover Image](/img/blog/2023/10/c2c-cover.webp)
 
-Why you may want to run more than one OpenTelemetry Collector inside your architecture. This article will discuss both mutli-collector architecture and how Apache Kafka can be useful here.
+## Why You May Want to Run More Than One OpenTelemetry Collector Inside Your Architecture
+
+This article will discuss both multi-collector architecture and how Apache Kafka can be useful here.
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2023/10/c2c-1.webp" alt="a user asks: Does it make sense to think about using an intermediate transport service like Kafka to get event data from the apps to move it forward to the otel-collector? If so, is there a reference implementation/article to read about it? Martin responds: what would be the goal in that as opposed to Collector -> collector tiering?"/>
+    <img src="/img/blog/2023/10/c2c-1.webp" alt="A user asks: Does it make sense to think about using an intermediate transport service like Kafka to get event data from the apps to move it forward to the otel-collector? If so, is there a reference implementation/article to read about it? Martin responds: What would be the goal in that as opposed to Collector -> collector tiering?"/>
     <figcaption><i>Doesn't collector tiering make more sense, generally, than using a queue?</i></figcaption>
 </figure>
 
-(big thank you to <a href = "https://www.linkedin.com/in/martin-thwaites-ab445120" rel="noopener noreferrer nofollow" target="_blank">Martin</a> for always being there with a helpful answer)
+(Big thank you to [Martin](https://www.linkedin.com/in/martin-thwaites-ab445120) for always being there with a helpful answer.)
 
-## What the Collector does
+## What the Collector Does
 
-To review: the OpenTelemetry Collector is an optional but strongly recommended part of an OpenTelemetry observability deployment. The collector can gather, compress, manage and filter data sent by OpenTelemetry instrumentation before data gets sent to your observability backend. If sending data to the SigNoz backend, the system will look something like this:
+To review, the OpenTelemetry Collector is an optional but strongly recommended part of an OpenTelemetry observability deployment. The collector can gather, compress, manage, and filter data sent by OpenTelemetry instrumentation before data gets sent to your observability backend. If sending data to the SigNoz backend, the system will look something like this:
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2023/10/c2c-2.webp" alt="graph of a simple distribution with a single collector"/>
-    <figcaption><i>Calls from OpenTelemetry Auto-instrumentation, API calls and other code instrumented with the OpenTelemetry SDK all go to the collector running on a host</i></figcaption>
+    <img src="/img/blog/2023/10/c2c-2.webp" alt="Graph of a simple distribution with a single collector"/>
+    <figcaption><i>Calls from OpenTelemetry auto-instrumentation, API calls, and other code instrumented with the OpenTelemetry SDK all go to the collector running on a host.</i></figcaption>
 </figure>
 
-In more advanced cases, however, this may not be sufficient. Imagine an edge service that handles high-frequency requests, that is sending regular requests to a fairly distant collector on the same network.
-
-The result will be errors raised on the app when it fails to reach the collector for every single request.
+In more advanced cases, however, this may not be sufficient. Imagine an edge service that handles high-frequency requests, sending regular requests to a fairly distant collector on the same network. The result will be errors raised on the app when it fails to reach the collector for every single request.
 
 Again, the whole benefit of the collector is that it should be able to cache, batch, and compress data for sending, no matter how high-frequency its data ingest.
 
-## Multi-collector architecture
+## Multi-Collector Architecture
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2023/10/c2c-3.webp" alt="diagram of a multi-collector architecture"/>
-    <figcaption><i>A collector, B, running very close to the service being instrumented could collect data reliably, and batch it before sending to second, central collector, C. The C collector could gather data from multiple other ‘front-line’ collectors before sending to a data backend. </i></figcaption>
+    <img src="/img/blog/2023/10/c2c-3.webp" alt="Diagram of a multi-collector architecture"/>
+    <figcaption><i>A collector, B, running close to the service being instrumented could collect data reliably and batch it before sending to a second, central collector, C. The C collector could gather data from multiple other 'front-line' collectors before sending to a data backend.</i></figcaption>
 </figure>
 
 This has a number of advantages:
 
-**Scalability**: as mentioned above, in large-scale distributed systems, a single OpenTelemetry collector might not be sufficient to handle the volume of telemetry data generated by all the services and applications. 
+- **Scalability**: In large-scale distributed systems, a single OpenTelemetry collector might not be sufficient to handle the volume of telemetry data generated by all the services and applications.
+  
+- **Reduced Network Traffic**: For every additional step of filtering that happens within your network, you reduce the total amount of network bandwidth used for observability.
 
-**Reduced Network Traffic**: For every additional step of filtering that happens within your network, you’ll reduce the total amount of network pipe used for observability.
+- **Filtering and Sampling**: With a multi-tiered approach, you can perform data filtering, transformation, or sampling at the intermediate collector before forwarding the data to the central collector. This can be done by teams who know the microservices under instrumentation and what data is important to highlight. Alternatively, if you have an issue like PII showing up from multiple services, you can set filtering on the central collector to make sure the rules are followed everywhere.
 
-**Filtering and Sampling**: With a multi-tiered approach, you can perform data filtering, transformation, or sampling at the intermediate collector before forwarding the data to the central collector. This can be done by teams who know the microservices under instrumentation who know what data is important to highlight. Alternatively, if you have an issue like PII showing up from multiple services, you can set filtering on the central collector to make sure the rules are followed everywhere.
+### Using a Kafka Queue for OTLP Data
 
-### Using a Kafka queue for OTLP data
+In the Slack thread above, the proposed solution was to use something like a Kafka queue. This would have the advantage of ingesting events reliably and almost never raising errors. Both an internal queue and a collector-to-collector architecture are ways to improve the reliability of your observability data. The two scenarios where a Kafka Queue makes the most sense for your data are:
 
-In the Slack thread above, the proposed solution was to use something like a Kafka queue. This would have the advantage of ingesting events super-reliably and (almost) never raising errors. Both an internal queue and a collector-to-collector architecture are ways to improve reliability of your observability data. The two scenarios where a Kafka Queue makes the most sense for your data:
-
-1. Ensuring data collection during database outages - even reliable databases fail, and Kafka can ingest and store data during the outage. When the DB is up again, the consumer can start taking in data again
-2. Handling traffic bursts - observability data can spike during a usage spike, and if you’re doing deep tracing the spike can be even larger in scale than the increase in traffic. If you scale your database to handle this spike without any queueing, the DB will be over-provisioned for normal traffic. A queue will buffer the data spike so that the database can handle it when it’s ready.
+1. Ensuring data collection during database outages - even reliable databases fail, and Kafka can ingest and store data during the outage. When the DB is up again, the consumer can start taking in data again.
+2. Handling traffic bursts - observability data can spike during a usage spike, and if you're doing deep tracing, the spike can be even larger in scale than the increase in traffic. If you scale your database to handle this spike without any queuing, the DB will be over-provisioned for normal traffic. A queue will buffer the data spike so that the database can handle it when it's ready.
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2023/10/c2c-3.webp" alt="diagram with multiple collectors with an added Kafka queue"/>
-    <figcaption><i>in this new version, a Kafka queue receives data from collectors near the edge. Services could also publish directly to Kafka. Collector C reads the data from the queue, using the OTel Kafka Receiver</i></figcaption>
+    <img src="/img/blog/2023/10/c2c-4.webp" alt="Diagram with multiple collectors with an added Kafka queue"/>
+    <figcaption><i>In this new version, a Kafka queue receives data from collectors near the edge. Services could also publish directly to Kafka. Collector C reads the data from the queue, using the OTel Kafka Receiver.</i></figcaption>
 </figure>
 
-To learn more about the options for receiving data from Kafka, see the <a href = "https://cloud-native.slack.com/archives/C01N6P7KR6W/p1690203259803679" rel="noopener noreferrer nofollow" target="_blank">Kafka receiver in the OpenTelemetry Collector Contrib repository</a>.
+To learn more about the options for receiving data from Kafka, see the [Kafka receiver in the OpenTelemetry Collector Contrib repository](https://cloud-native.slack.com/archives/C01N6P7KR6W/p1690203259803679).
 
-## YAML configuration for intermediate collectors
+## YAML Configuration for Intermediate Collectors
 
-The process for implementing multiple collectors should be fairly straightforward, if doing this from scratch it would require the following config for the service A, intermediate collector B, and central collector C
+The process for implementing multiple collectors should be straightforward. If doing this from scratch, it would require the following config for Service A, Intermediate Collector B, and Central Collector C:
 
-1. **Service YAML Configuration** (to expose the intermediate collector within the cluster):
+### Service YAML Configuration
 
 ```yaml
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -102,13 +101,11 @@ spec:
           image: your-intermediate-collector-image:latest
           ports:
             - containerPort: 55678 # Replace with the appropriate port number
-          # Add any additional environment variables or volume mounts if needed
 ```
 
-1. **Intermediate Collector YAML Configuration** (intermediate-collector-config.yaml):
+### Intermediate Collector YAML Configuration
 
 ```yaml
-yamlCopy code
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -130,13 +127,11 @@ spec:
           image: your-intermediate-collector-image:latest
           ports:
             - containerPort: 55678 # Replace with the appropriate port number
-
 ```
 
-1. **Central Collector YAML Configuration** (central-collector-config.yaml):
+### Central Collector YAML Configuration
 
 ```yaml
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -151,20 +146,20 @@ spec:
   template:
     metadata:
       labels:
-        app: central-collector
+        app: central-col
+
+lector
     spec:
       containers:
         - name: central-collector
           image: your-central-collector-image:latest
           ports:
             - containerPort: 55678 # Replace with the appropriate port number
-          
-
 ```
 
 The intermediate collector will send telemetry data to the central collector using OTLP.
 
-## Conclusions: Kafka and the OpenTelemetry Collector work better together
+## Conclusions: Kafka and the OpenTelemetry Collector Work Better Together
 
 The choice between OpenTelemetry Collector and Apache Kafka isn't a zero-sum game. Each has its unique strengths and can even complement each other in certain architectures. The OpenTelemetry Collector excels in data gathering, compression, and filtering, making it a strong candidate for reducing in-system latency and improving data quality before it reaches your backend.
 
