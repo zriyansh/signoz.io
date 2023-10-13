@@ -95,12 +95,15 @@ Depending on the choice of your region for SigNoz cloud, the ingest endpoint wil
 
 
 
-Step 3. Import the tracer module where your app starts
+Step 3. On `main.ts` file or file where your app starts import tracer using below command. 
+
+:::info
+The below import should be the first line in the main file of your application (Ex -> `main.ts`)
+::: 
     
 ```jsx
 const tracer = require('./tracer')
 ```
-    
 
 Step 4. Start the tracer<br></br>
 In the `async function boostrap` section of the application code, initialize the tracer as follows: 
@@ -197,7 +200,10 @@ const sdk = new opentelemetry.NodeSDK({
   module.exports = sdk
 ```
 
-Step 3. Import the tracer module where your app starts
+Step 3. On `main.ts` file or file where your app starts import tracer using below command. 
+:::info
+The below import should be the first line in the main file of your application (Ex -> `main.ts`)
+:::
     
 ```jsx
 const tracer = require('./tracer')
@@ -289,7 +295,10 @@ const sdk = new opentelemetry.NodeSDK({
   module.exports = sdk
 ```
 
-Step 3. Import the tracer module where your app starts
+Step 3. On `main.ts` file or file where your app starts import tracer using below command. 
+:::info
+The below import should be the first line in the main file of your application (Ex -> `main.ts`)
+:::
     
 ```jsx
 const tracer = require('./tracer')
@@ -415,7 +424,10 @@ Internally, it calls the specific auto-instrumentation library for components us
     ```
     
 
-3. Import the tracer module where your app starts
+3. On `main.ts` file or file where your app starts import tracer using below command. 
+:::info
+The below import should be the first line in the main file of your application (Ex -> `main.ts`)
+:::
     
     ```jsx
     const tracer = require('./tracer')
