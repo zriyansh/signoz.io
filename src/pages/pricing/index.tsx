@@ -69,11 +69,12 @@ function Pricing() {
                       <span>Metrics</span>
                       <span>$0.1 per mn samples</span>
                     </div>
+                    <br/>
                     <div>
-                      <span>Unlimited User Seats</span>
+                      <span><li>Add as many users as you want. No user-based pricing</li></span>
                     </div>
                     <div>
-                      <span>No Host-based Pricing</span>
+                      <span> <li>No host-based pricing</li></span>
                     </div>
                     <br/>
 
