@@ -35,7 +35,14 @@ Datadog's pricing is  tied directly to the number of hosts monitored. In dynamic
 
 ### Tiny hosts? Inactive hosts? They all cost under Datadog
 
-In a microservices architecture, services are often distributed across multiple hosts for scalability and fault tolerance. Each host running a part of the service counts toward the per-host pricing, increasing the overall cost. Some users report that <a href = "https://news.ycombinator.com/item?id=35837330#35865473" rel="noopener noreferrer nofollow" target="_blank">Datadog costs more to monitor your AWS t3.medium instance than the actual instance.</a> This pricing structure tends to favor users who use larger, higher-resource instances which often don’t make sense for a proper microservice system
+In a microservices architecture, services are often distributed across multiple hosts for scalability and fault tolerance. Each host running a part of the service counts toward the per-host pricing, increasing the overall cost. Some users report that <a href = "https://news.ycombinator.com/item?id=35837330#35865473" rel="noopener noreferrer nofollow" target="_blank">Datadog costs more to monitor your AWS t3.medium instance than the actual instance.</a> This pricing structure tends to favor users who use larger, higher-resource instances which often don’t make sense for a proper microservice system. For users using straightforward, even medium sized AWS instances, you can again find observability costs outstripping infrastructure costs.
+
+<figure data-zoomable align='center'>
+    <img src="/img/blog/2023/10/dd-pricing-2.webp" alt="a hacker news comment reading Datadog costs more to monitor your AWS t3.medium instance than the actual instance.
+I asked them how them can justify that.
+They recommended I use modern infrastructure which means Docker."/>
+    <figcaption><i>It's generally not great to be changing your architecture just to make observability affordable.</i></figcaption>
+</figure>
 
 ### Dynamic Scaling can make the situation worse
 
