@@ -16,7 +16,7 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/beware-these-surprises-in-datadog-pricing/"/>
 </head>
 
-Datadog has a huge product footprint with a sophisticated user experience, but any discussion of its usefulness must include a consideration of its significant costs. 
+Datadog has a huge product footprint with a sophisticated user experience, but any discussion of its usefulness must include a consideration of its significant costs.
 <!--truncate-->
 ![Cover Image](/img/blog/2023/10/dd-pricing-cover.webp)
 It’s likely that your business isn’t at the scale that it will generate a <a href = "https://twitter.com/TurnerNovak/status/1654577231937544192" rel="noopener noreferrer nofollow" target="_blank">$65 million bill</a>, but it is possible to generate bills that <a href = "https://twitter.com/kellabyte/status/1704949192957874190" rel="noopener noreferrer nofollow" target="_blank">rival your operations bills</a>.
