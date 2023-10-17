@@ -310,14 +310,14 @@ const COMPARISON_DATA = {
         If you have concerns about whether SigNoz is a good fit or not, let us
         chat.{" "}
         <Link
-          href="https://calendly.com/ankit-nayan/signoz-demo"
+          href="mailto:support@signoz.io?subject=Question on SigNoz vs Grafana!"
           className="highlight"
           rel="noopener noreferrer nofollow"
           target="_blank"
         >
-          Book a call
+        Write to us
         </Link>{" "}
-        with an expert and discuss all your questions in a one on one call.
+        with your queries and we will get back to you.
       </>
     ),
   },
