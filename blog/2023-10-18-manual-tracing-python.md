@@ -96,7 +96,7 @@ In the <a href = "https://opentelemetry.io/docs/specs/semconv/database/database-
 2. **db.cached**: indicates whether the query result is fetched from a cache, often the culprit in intermittent latency.
 3. **db.rows_affected**: It represents the number of rows affected by the database operation. This can be crucial for monitoring the impact of write operations.
 
-Adding these attributes requires that we start a new span from the tracer object. To follow the standard your span kind should be `client`
+Adding these attributes requires that we start a new span from the tracer object. To follow the standard your span kind should be `client`.
 
 ```python
 with tracer.start_as_current_span("db_operation_span"):
@@ -111,9 +111,9 @@ with tracer.start_as_current_span("db_operation_span"):
 
 Events are even simpler than attributes, encoding a string at a particular time in span execution. These events are discrete moments or points of interest within the span's duration, such as method calls, network requests, or any significant activity. Events capture context, timestamps, and optional attributes. In my first attempt at this example I added events for `db_query_start` and `db_query_end` but this really isn’t right. Events capture points in time, but if you’re measuring the time between a start and an end, you really want a span.
 
-A better strategy with events is to find points of interest that exist at a single moment in time. In my case, I noticed that the database authentication call includes an optional verification step. Therefore I added the event `current_span.add_event("username matches blocklist, adding verification")`
+A better strategy with events is to find points of interest that exist at a single moment in time. In my case, I noticed that the database authentication call includes an optional verification step. Therefore I added the event `current_span.add_event("username matches blocklist, adding verification")`.
 
-Sure enough, when checking the traces for slowest transactions, they all include this event
+Sure enough, when checking the traces for slowest transactions, they all include this event:
 
 <figure data-zoomable align='center'>
 <img src="/img/blog/2023/10/manual-tracing/manual-tracing-python5.webp" alt="a screenshot of the SigNoz top level dashboard"/>
