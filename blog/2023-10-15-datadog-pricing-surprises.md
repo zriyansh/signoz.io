@@ -13,7 +13,7 @@ keywords:
 ---
 
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/beware-these-surprises-in-datadog-pricing/"/>
+  <link rel="canonical" href="https://signoz.io/blog/datadog-pricing/"/>
 </head>
 
 Datadog has a huge product footprint with a sophisticated user experience, but any discussion of its usefulness must include a consideration of its significant costs.
