@@ -62,7 +62,7 @@ In reality this cost can get out-of-control easily through two very common patte
 
 ### Cause #1 of huge custom metric bills: data cardinality
 
-Often we’re encouraged to start with custom metrics by manually adding calls to create metrics, which seems like an inherently limited technique. but what happens if I start sending a metric like `{user.path:status.code}`? If the key is dynamic, I can create a huge metric space very quickly. Ideally I’d limit this somewhat to make sure my data is useful, but there are plenty of reasons why we’d want to store a space of tens of thousands of possible keys. Worse, there’s no built-in system in Datadog to clamp metric explosion automatically.
+Often, we’re encouraged to start with custom metrics by manually adding calls to create metrics, which seems like an inherently limited technique. But what happens if I start sending a metric like `{user.path:status.code}`? If the key is dynamic, I can create a huge metric space very quickly. Ideally, I’d limit this somewhat to make sure my data is useful, but there are plenty of reasons why we’d want to store a space of tens of thousands of possible keys. Worse, there’s no built-in system in Datadog to clamp metric explosion automatically.
 
 This is all a significant issue since in general it’s very bad if Operations teams are looking at a big bill and the only way to improve the situation is to commit code changes to the core application. Not only is this a difficult feedback process, it’s another time when we end up punishing our coders for trying to add observability data. It would be much better if there were some way to do ops-level config to clamp cardinality, as there is with the OpenTelemetry Collector.
 
