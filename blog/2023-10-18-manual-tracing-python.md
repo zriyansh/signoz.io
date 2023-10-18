@@ -134,7 +134,7 @@ with tracer.start_as_current_span("authenticate_check_db"):
                             current_span.add_event("username matches blocklist, adding verification")
                             # do work (slower)
                         else:
-                            # do work (faster
+                            # do work (faster)
 ```
 
 Now you finally see the code that, in our contrived example, slowed things downed if the user was named ‘eddy.’ With this child span in the problem becomes a *lot* clearer.
