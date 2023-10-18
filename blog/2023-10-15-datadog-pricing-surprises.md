@@ -1,6 +1,6 @@
 ---
 title: Beware these Surprises in Datadog Pricing
-slug: beware-these-surprises-in-datadog-pricing
+slug: datadog-pricing
 date: 2023-10-16
 tags: [Observability]
 authors: nicamellifera
