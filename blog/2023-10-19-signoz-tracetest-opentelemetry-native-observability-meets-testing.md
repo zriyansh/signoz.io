@@ -1,11 +1,11 @@
 ---
 title: "SigNoz + Tracetest: OpenTelemetry-Native Observability Meets Testing"
 slug: signoz-tracetest-opentelemetry-native-observability-meets-testing
-date: 2023-10-19
+date: 2023-10-20
 tags: [OpenTelemetry]
 authors: adnanrahic
 description: What is the hidden potential of OpenTelemetry? It goes beyond just tracing and monitoring your software. The OpenTelemetry project aims to standardize performance reporting and trace data propagation in microservice architectures. This context propagation is a valuable feature for those who use OpenTelemetry tracing. Tracetest and SigNoz provide testing and insights into the capabilities of OpenTelemetry.
-image: /img/blog/2023/10/signoz-tracetest-opentelemetry-native-observability-meets-testing-cover.jpeg
+image: /img/blog/2023/10/signoz-tracetest-cover.jpeg
 hide_table_of_contents: false
 keywords:
   - opentelemetry
@@ -20,6 +20,9 @@ keywords:
 </head>
 
 What is the hidden potential of [OpenTelemetry](https://opentelemetry.io/)? It goes a lot further than the (awesome) application of tracing and monitoring your software. The OpenTelemetry project is an attempt to standardize how performance is reported **and** how trace data is passed around your microservice architecture. This context propagation is a superpower for those who adopt OpenTelemetry tracing. Tracetest promises to make this deep tracing a huge new asset in your testing landscape, and SigNoz helps all engineers get insight into what OpenTelemetry can see.
+<!--truncate-->
+![Cover Image](/img/blog/2023/10/signoz-tracetest-cover.webp)
+
 
 > _Check out this [hands-on Demo example](https://github.com/kubeshop/tracetest/tree/main/examples/tracetest-signoz-pokeshop) of how Tracetest works with SigNoz! Or, if you like watching videos more, view a [demo of Tracetest in the SigNoz Community call](https://www.youtube.com/watch?v=a4OpEPoQTaE)._
 
