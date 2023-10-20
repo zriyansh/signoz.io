@@ -3,7 +3,7 @@ title: Stream Logs from Heroku to SigNoz
 id: heroku_logs_to_signoz
 ---
 
-If you are ruining your applications on heroku, you can stream logs from Heroku to SigNoz using [httpsdrain](https://devcenter.heroku.com/articles/log-drains#https-drains).
+If you are running your applications on heroku, you can stream logs from Heroku to SigNoz using [httpsdrain](https://devcenter.heroku.com/articles/log-drains#https-drains).
 
 
 ## Stream Heroku logs to SigNoz in SigNoz cloud
@@ -39,7 +39,7 @@ If you are ruining your applications on heroku, you can stream logs from Heroku 
     ```yaml {8}
     ...
     otel-collector:
-        image: signoz/signoz-otel-collector:0.79.5
+        image: signoz/signoz-otel-collector:0.79.10
         command: ["--config=/etc/otel-collector-config.yaml"]
         volumes:
           - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
@@ -52,7 +52,7 @@ If you are ruining your applications on heroku, you can stream logs from Heroku 
     ```yaml {2-10}
     receivers:
       httpreceiver/heroku:
-        endpoint: localhost:8081
+        endpoint: 0.0.0.0:8081
         source: heroku
     ...
     ```
