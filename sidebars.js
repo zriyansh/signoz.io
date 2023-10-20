@@ -139,6 +139,7 @@ module.exports = {
         'userguide/send-metrics',
         'userguide/send-metrics-cloud',
         'userguide/navigate-user-interface',
+        'userguide/hostmetrics'
       ],
     },
     {
