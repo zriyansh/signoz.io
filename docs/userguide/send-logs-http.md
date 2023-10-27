@@ -1,6 +1,6 @@
 ---
 title: Sending Logs to SigNoz over HTTP
-id: send-logs-http.md
+id: send-logs-http
 ---
 
 You can send your logs to SigNoz over HTTP.
