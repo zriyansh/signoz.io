@@ -160,6 +160,7 @@ module.exports = {
         'userguide/collecting_syslogs',
         'userguide/collect_logs_from_file',
         'userguide/collecting_nodejs_winston_logs',
+        'userguide/send-cloudwatch-logs-to-signoz',
         {
           type: 'category',
           label: 'Collecting Application Logs Using OTEL SDK',
