@@ -1,5 +1,8 @@
-In this section, we will see how to send data from applications deployed in ECS
-to SigNoz Cloud using Daemon Service we created in the previous section.
+<div>
+In this section, we will see how to send data from applications deployed in ECS to
+SigNoz {props.name} using Daemon Service we created in the previous section.
+</div>
+<br/>
 
 ### Step 1: Add OpenTelemetry Instrumentation to your Application
 

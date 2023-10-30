@@ -48,13 +48,13 @@ send them to SigNoz.
 
 <DSConfigIntro />
 <DSConfigCloud />
-<DSSetUpVerify />
+<DSSetUpVerify name="Cloud" />
 
 ---
 
 ## Send Data from Applications
 
-<DSSendDataIntro />
+<DSSendDataIntro name="Cloud" />
 
 <Tabs groupId="launch-type">
 <TabItem value="ec2" label="EC2" default>
@@ -65,7 +65,7 @@ send them to SigNoz.
 </TabItem>
 </Tabs>
 
-<DSSendDataEnd />
+<DSSendDataEnd name="Cloud" />
 
 </TabItem>
 <TabItem value="self-host" label="Self-Host">
@@ -90,13 +90,13 @@ send them to SigNoz.
 
 <DSConfigIntro />
 <DSConfigOss />
-<DSSetUpVerify />
+<DSSetUpVerify name="OSS" />
 
 ---
 
 ## Send Data from Applications
 
-<DSSendDataIntro />
+<DSSendDataIntro name="OSS" />
 
 <Tabs groupId="launch-type">
 <TabItem value="ec2" label="EC2" default>
@@ -107,7 +107,7 @@ send them to SigNoz.
 </TabItem>
 </Tabs>
 
-<DSSendDataEnd />
+<DSSendDataEnd name="OSS" />
 
 </TabItem>
 </Tabs>

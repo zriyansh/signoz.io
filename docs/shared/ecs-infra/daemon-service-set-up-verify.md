@@ -28,10 +28,13 @@ aws ecs list-tasks --cluster ${CLUSTER_NAME} --region ${REGION}
 
 You should see the task ARN of the daemon service in the output.
 
-### Step 5: Verify Data in SigNoz Cloud
+### Step 5: Verify Data in SigNoz
 
-To verify that the data is being sent to SigNoz Cloud, you can go to the
-SigNoz Cloud dashboard page and import the dashboards below:
+<div>
+To verify that the data is being sent to SigNoz {props.name}, you can go to the
+SigNoz dashboard page and import the dashboards below:
+</div>
+<br/>
 
 - [instance-metrics.json](https://github.com/SigNoz/dashboards/raw/chore/ecs-dashboards/ecs-infra-metrics/instance-metrics.json)
 - [hostmetrics-with-variable.json](https://github.com/SigNoz/dashboards/raw/main/hostmetrics/hostmetrics-with-variable.json)
