@@ -81,10 +81,10 @@ send them to SigNoz.
 
 <Tabs groupId="launch-type">
 <TabItem value="ec2" label="EC2" default>
-<DSSendDataEc2 />
+<DSTemplateEC2 />
 </TabItem>
 <TabItem value="external" label="External">
-<DSSendDataExternal />
+<DSTemplateExternal />
 </TabItem>
 </Tabs>
 
