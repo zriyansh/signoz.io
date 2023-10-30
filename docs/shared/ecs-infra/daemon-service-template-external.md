@@ -66,7 +66,7 @@ Resources:
       NetworkMode: host
       ContainerDefinitions:
         - Name: signoz-collector
-          Image: 'signoz/signoz-otel-collector:0.79.7'
+          Image: 'signoz/signoz-otel-collector:0.79.12'
           User: root
           MountPoints:
             - ReadOnly: true
