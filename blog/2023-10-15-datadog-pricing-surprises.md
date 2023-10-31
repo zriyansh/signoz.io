@@ -1,7 +1,7 @@
 ---
 title: Datadog Pricing - Beware These Surprises in 2023
 slug: datadog-pricing
-date: 2023-10-20
+date: 2023-10-26
 tags: [Observability]
 authors: nicamellifera
 description: This piece explores two ways that Datadog’s pricing is often much larger than expected for small and mid-size engineering teams. The first is the per-host pricing that affects microservice architectures, and the second is custom metrics that can quickly get out of control and inflate your Datadog bill.
@@ -105,6 +105,12 @@ You group up route and log in so the actual metric is `{user.login-status.200-la
 All Datadog custom metrics are tagged by host. So  you were actually reporting `{hostA-user.login-status.200-latency:20}` . You have five services that are instrumented with Datadog, so instead of reporting 10 metrics for each of your endpoints, you’re actually reporting 50 metrics, ten for each host. And since you responsibly reported distribution values to make your life easier, you’re also reporting `p50`, `p75`, `p90`, `p95`, and `p99` AND `count`, `sum`, `min`, `max`, and `avg` for every combination of host and endpoint. Your single added metric is now 10 endpoints, times 5 hosts, times 10 summary metrics or 500 metrics. Without Datadog’s custom metrics SKU you just exhausted all 300 custom metrics at once.
 
 Do you have more than five hosts running your code? In this example, we always returned a status code of `200`, just a few more status codes would multiply the problem further.
+
+What would that math look like if you had just a moderately complex application, served on a few hosts? For example, we have a simple application that returns a status code of `200` or `500` depending on the request, on 25 routes, with 6 hosts in 2 reguions. We want to store distribution values for these routes as well. The result for costs in a single month:
+
+25 routes * 6 hosts * 2 regions * 10 metrics * 5 possible status codes = 15000 metrics, meaning you'll pay $15 in just the first few days of metrics collection.
+
+The story gets worse from there, the documented prices are just for *collecting* metrics, not for *indexing* them, so you can't query these metrics, and the cost of metrics indexing varies by contract and isn't published by datadog.
 
 ### Why are Datadog custom metrics so expensive?
 
