@@ -1,5 +1,5 @@
 ---
-title: "Can't-miss Kubecon Sessions for Observability"
+title: "Can't-miss Kubecon 2023 Sessions for Observability"
 slug: cant-miss-kubecon-2023
 date: 2023-11-01
 tags: [OpenTelemetry, Events]
@@ -17,7 +17,7 @@ keywords:
 <head>
   <link rel="canonical" href="https://signoz.io/blog/cant-miss-kubecon-2023/"/>
 </head>
-Kubecon 2023 is coming up in just a week in Chicago. For engnineers concerned with observability, there are a number of talks you can't miss. I wrote up this guide to the talks I'm most looking forward to.
+Kubecon North America 2023 is coming up in just a week in Chicago. For engnineers concerned with observability, there are a number of talks you can't miss. I wrote up this guide to the talks I'm most looking forward to.
 
 <!--truncate-->
 ![Cover Image](/img/blog/2023/11/kubecon-23-cover.webp)
@@ -98,4 +98,4 @@ Kubecon 2023 is coming up in just a week in Chicago. For engnineers concerned wi
 
 ## I'd love to meet you at Kubecon!
 
-If you're going to attend Kubecon in Chicago next week, I'd love to meet you and talk about OpenTelemetry, Observability, and how you can understand your systems in production. I'll buy the coffee if you'll share your stories about making a black box system more understandable. Find me on the <a href = "https://signoz.io/slack" rel="noopener noreferrer nofollow" target="_blank">SigNoz Slack</a> and <a href = "https://twitter.com/signozio" rel="noopener noreferrer nofollow" target="_blank">Twitter</a>.
+If you're going to attend Kubecon in Chicago next week, I'd love to meet you and talk about OpenTelemetry, Observability, and how you can understand your systems in production. I'll buy the coffee if you'll share your stories about making a black box system more understandable. Find me on the <a href = "https://signoz.io/slack" rel="noopener noreferrer nofollow" target="_blank">SigNoz Slack</a>, on my <a href = "https://twitter.com/Serverless_Mom" rel="noopener noreferrer nofollow" target="_blank">Twitter</a> (DM's are open!), and on my <a href = "www.linkedin.com/in/otel-mom" rel="noopener noreferrer nofollow" target="_blank">LinkedIn</a>.
