@@ -106,7 +106,7 @@ All Datadog custom metrics are tagged by host. So  you were actually reporting `
 
 Do you have more than five hosts running your code? In this example, we always returned a status code of `200`, just a few more status codes would multiply the problem further.
 
-What would that math look like if you had just a moderately complex application, served on a few hosts? For example, we have a simple application that returns a status code of `200` or `500` depending on the request, on 25 routes, with 6 hosts in 2 reguions. We want to store distribution values for these routes as well. The result for costs in a single month:
+What would that math look like if you had just a moderately complex application, served on a few hosts? For example, we have a simple application that returns a status code of `200` or `500` depending on the request, on 25 routes, with 6 hosts in 2 regions. We want to store distribution values for these routes as well. The result for costs in a single month:
 
 25 routes * 6 hosts * 2 regions * 10 metrics * 5 possible status codes = 15000 metrics, meaning you'll pay $15 in just the first few days of metrics collection.
 
