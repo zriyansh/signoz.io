@@ -108,7 +108,7 @@ Note :-
     ```yaml {8}
     ...
     otel-collector:
-        image: signoz/signoz-otel-collector:0.79.12
+        image: signoz/signoz-otel-collector:0.79.13
         command: ["--config=/etc/otel-collector-config.yaml"]
         volumes:
           - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
@@ -117,10 +117,10 @@ Note :-
     ...
     ```
 
-* Add the httpreceiver reciever to `otel-collector-config.yaml` which is present inside `deploy/docker/clickhouse-setup`:
+* Add the httplogreceiver reciever to `otel-collector-config.yaml` which is present inside `deploy/docker/clickhouse-setup`:
     ```yaml {2-10}
     receivers:
-      httpreceiver/json:
+      httplogreceiver/json:
         endpoint: 0.0.0.0:8082
         source: json
     ...
@@ -131,7 +131,7 @@ Note :-
     service:
         ....
         logs:
-            receivers: [otlp, httpreceiver/json]
+            receivers: [otlp, httplogreceiver/json]
             processors: [batch]
             exporters: [clickhouselogsexporter]
     ```
