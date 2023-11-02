@@ -39,7 +39,7 @@ If you are running your applications on heroku, you can stream logs from Heroku 
     ```yaml {8}
     ...
     otel-collector:
-        image: signoz/signoz-otel-collector:0.79.10
+        image: signoz/signoz-otel-collector:0.79.13
         command: ["--config=/etc/otel-collector-config.yaml"]
         volumes:
           - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
@@ -48,10 +48,10 @@ If you are running your applications on heroku, you can stream logs from Heroku 
     ...
     ```
 
-* Add the httpreceiver reciever to `otel-collector-config.yaml` which is present inside `deploy/docker/clickhouse-setup`
+* Add the httplogreceiver reciever to `otel-collector-config.yaml` which is present inside `deploy/docker/clickhouse-setup`
     ```yaml {2-10}
     receivers:
-      httpreceiver/heroku:
+      httplogreceiver/heroku:
         endpoint: 0.0.0.0:8081
         source: heroku
     ...
@@ -62,7 +62,7 @@ If you are running your applications on heroku, you can stream logs from Heroku 
     service:
         ....
         logs:
-            receivers: [otlp, httpreceiver/heroku]
+            receivers: [otlp, httplogreceiver/heroku]
             processors: [batch]
             exporters: [clickhouselogsexporter]
     ```
