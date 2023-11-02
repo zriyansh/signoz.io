@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 
 function careers() {
     return (
-      <Layout title="SigNoz Plans">
+      <Layout title="SigNoz Careers">
         <section>
         <div className="container" style={{marginTop: '2rem', marginBottom:'4rem'}}>
           
