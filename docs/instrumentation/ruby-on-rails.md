@@ -143,7 +143,7 @@ rails server
 
 - `<service_name>` : Name of service. For example, `sampleRailsApp`
 
-In case you have OtelCollector Agent in different VM, replace localhost:4317 with `<IP Address of the VM>:4317`.
+In case you have OtelCollector Agent in different VM, replace localhost:4318 with `<IP Address of the VM>:4318`.
 
 </TabItem>
 
@@ -268,19 +268,15 @@ rails server
 
 - `<service_name>` : Name of service. For example, `sampleRailsApp`
 
-In case you have OtelCollector Agent in different VM, replace localhost:4317 with `<IP Address of the VM>:4317`.
+In case you have OtelCollector Agent in different VM, replace localhost:4318 with `<IP Address of the VM>:4318`.
 
 
 ## Tutorials
 Here's a [tutorial](https://signoz.io/blog/opentelemetry-ruby/) with step by step guide on how to install SigNoz and start monitoring a sample Ruby on Rails app. 
 
-
-Here's a <a href = "https://medium.com/@leunardus.vederis714/monitor-your-ruby-on-rails-app-using-signoz-opentelemetry-b59578f3b252" rel="noopener noreferrer nofollow" target="_blank" >detailed guide</a> published by our community member Vederis on how to monitor your Ruby on Rails application with OpenTelemetry and SigNoz.
-
 ## Sample Ruby on Rails application
 We have included a sample Ruby on Rails application with README.md at [Sample Rails App Github Repo.](https://github.com/SigNoz/sample-rails-app)
 
 Feel free to use this repo to test out OpenTelemetry instrumentation and how to send telemetry data to SigNoz.
-
 
 <InstrumentationFAQ />
