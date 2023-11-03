@@ -74,7 +74,7 @@ rails server
 ```
 
 - `<service_name>` : Name of service. For example, `sampleRailsApp`
-- `SIGNOZ_INGESTION_KEY` : The Ingestion key sent by SigNoz over email. It can also be found in the `settings` section of your SigNoz Cloud UI.
+- `SIGNOZ_INGESTION_KEY` : The ingestion key sent by SigNoz over email. It can also be found in the `settings` section of your SigNoz Cloud UI.
 
 Depending on the choice of your region for SigNoz cloud, the ingest endpoint will vary according to this table.
 
