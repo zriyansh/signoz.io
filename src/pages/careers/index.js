@@ -12,22 +12,13 @@ function careers() {
           <p style={{textAlign: "center"}}>  Join us to democratise great observability for all teams</p>
   
           <div className={"row"}>
-              <div className={"col col--6 margin-vert--md"}>
+            
+              {/* <div className={"col col--6 margin-vert--md"}>
                   <div class="card">
                       <div class="card__header">
                           <h3> Product Designer (Remote) (India) </h3>
                       </div>
-                      {/* <div class="card__image">
-                        <img
-                            src="/img/case_study/Instasafe-summary.png"
-                            alt="InstaSafe"
-                         />
-                      </div>
-                      <div class="card__body">
-                          <p>
 
-                          </p>
-                      </div> */}
                       <div class="card__footer">
                       <Link
                         className="button button--primary"
@@ -45,28 +36,14 @@ function careers() {
                           <h3>DevRel Engineers (Remote) (India)</h3>
                           
                       </div>
-                      {/* <div class="card__image">
-                        <img
-                            src="/img/case_study/BlipBillBoards-summary.png"
-                            alt="Blip"
-                             />
-                      </div>
-                      <div class="card__body">
-                          <p>
-  
-                
-  
-                          
-  
-                          </p>
-                      </div> */}
+
                       <div class="card__footer">
                       <a class="button button--primary"
                        href="/careers/devrel-engineer-in/" 
                        >Read more</a>
                       </div>
                   </div>
-              </div>
+              </div> */}
               <div className={"col col--6 margin-vert--md"}>
                   <div class="card">
                       <div class="card__header">
@@ -88,7 +65,7 @@ function careers() {
                       <a class="button button--primary" href="/careers/technical-content-writer-in/" >Read more</a>
                       </div>
                   </div>
-              </div>
+              </div> 
               <div className={"col col--6 margin-vert--md"}>
                   <div class="card">
                       <div class="card__header">
