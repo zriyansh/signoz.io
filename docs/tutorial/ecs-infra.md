@@ -24,6 +24,8 @@ using a daemon service. The daemon service will run a container in each nodes of
 your ECS cluster. The container will collect metrics and logs from the instance and
 send them to SigNoz.
 
+Select the type of SigNoz instance you are running: **SigNoz Cloud** or **Self-Hosted**.
+
 <Tabs>
 <TabItem value="cloud" label="SigNoz Cloud" default>
 
@@ -32,10 +34,14 @@ send them to SigNoz.
 - An ECS cluster running with at least one task definition
 - SigNoz Cloud account - [Sign up for SigNoz Cloud](https://signoz.io/teams/)
 - Access Token and ingest URL, provided for your SigNoz Cloud account
+- ECS cluster must be either of launch type **EC2** or **External**
+- ECS Fargate is not supported yet. We are working on it and will be available soon.
 
 ## Setting up Daemon Service
 
 <DSTemplateIntro name="Cloud" />
+
+Select the type of ECS cluster you are running: **EC2** or **External**.
 
 <Tabs groupId="launch-type">
 <TabItem value="ec2" label="EC2" default>
@@ -74,6 +80,8 @@ send them to SigNoz.
 
 - An ECS cluster running with at least one task definition
 - Running SigNoz instance - [Install SigNoz](/docs/install)
+- ECS cluster must be either of launch type **EC2** or **External**
+- ECS Fargate is not supported yet. We are working on it and will be available soon.
 
 ## Setting up Daemon Service
 
@@ -111,3 +119,5 @@ send them to SigNoz.
 
 </TabItem>
 </Tabs>
+
+---

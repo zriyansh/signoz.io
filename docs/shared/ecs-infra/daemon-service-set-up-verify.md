@@ -1,19 +1,28 @@
 ### Step 3: Configure Daemon Service
 
-To configure the daemon service, you need to run the following command with the proper values for the parameters.
+To configure the daemon service, you need to run the commands below.
 
 ```bash
-export CLUSTER_NAME=<your-ecs-cluster-name>
-export REGION=<your-ecs-region>
+export CLUSTER_NAME=<YOUR-ECS-CLUSTER-NAME>
+export REGION=<YOUR-ECS-REGION>
 export COMMAND=--config=env:SIGNOZ_CONFIG_CONTENT
-export SIGNOZ_CONFIG=/ecs/signoz/otelcol-daemon.yaml
+export SIGNOZ_CONFIG_PATH=/ecs/signoz/otelcol-daemon.yaml
+```
 
+:::info
+Make sure you have `CLUSTER_NAME` and `REGION` environment variables set to
+the proper values before running any `aws` commands.
+:::
+
+Now, you can run the following command to create the daemon service.
+
+```bash
 aws cloudformation create-stack --stack-name AOCECS-daemon-${CLUSTER_NAME}-${REGION} \
     --template-body file://daemon-template.yaml \
     --parameters ParameterKey=ClusterName,ParameterValue=${CLUSTER_NAME} \
     ParameterKey=CreateIAMRoles,ParameterValue=True \
 		ParameterKey=command,ParameterValue=${COMMAND} \
-		ParameterKey=SigNozConfig,ParameterValue=${SIGNOZ_CONFIG} \
+		ParameterKey=SigNozConfigPath,ParameterValue=${SIGNOZ_CONFIG_PATH} \
     --capabilities CAPABILITY_NAMED_IAM \
     --region ${REGION}
 ```
@@ -40,3 +49,11 @@ SigNoz dashboard page and import the dashboards below:
 - [hostmetrics-with-variable.json](https://github.com/SigNoz/dashboards/raw/main/hostmetrics/hostmetrics-with-variable.json)
 
 You should see the metrics for your ECS cluster in the dashboard.
+
+### (Optional) Step 6: Clean Up
+
+To clean up the daemon service, you can run the following command.
+
+```bash
+aws cloudformation delete-stack --stack-name AOCECS-daemon-${CLUSTER_NAME}-${REGION} --region ${REGION}
+```

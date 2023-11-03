@@ -1,5 +1,10 @@
 **Method 1: Updating entrypoint in task definition**
 
+We need to obtain the endpoint or IP address of the instance on which the task
+is running. This can be done by multiple ways depending on the network mode and cloud provider.
+
+The `entryPoint` will look like the following based on your network mode and cloud provider:
+
 - Using default networking mode i.e. **Bridge**:
     
     ```json
@@ -76,5 +81,7 @@
     			...
     }
     ```
-    
-    Ref: https://www.baeldung.com/linux/cloud-ip-meaning
+
+**NOTES:**
+- Replace `<Application Startup Commands>` with the commands to start your application.
+- For more information about the metadata server, refer https://www.baeldung.com/linux/cloud-ip-meaning

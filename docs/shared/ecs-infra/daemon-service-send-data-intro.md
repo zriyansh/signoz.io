@@ -9,9 +9,11 @@ SigNoz {props.name} using Daemon Service we created in the previous section.
 To add OpenTelemetry instrumentation to your application, you can follow the
 docs [here](https://signoz.io/docs/instrumentation/).
 
-This step can also include adding the OpenTelemetry SDK as well as the
-initialization code to your application codebase and rebuilding the application
-container.
+:::note
+This step include adding the [OpenTelemetry SDK](https://opentelemetry.io/docs/instrumentation/)
+as well as the initialization code to your application codebase and rebuilding the application
+container image.
+:::
 
 ### Step 2: Add Entrypoint to your Application Container
 
