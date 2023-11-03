@@ -1,5 +1,5 @@
 ---
-id: ecs-infra
+id: collecting-ecs-logs-and-metrics
 title: ECS Infra Metrics and Logs Collection using Daemon Service
 description: View metrics and logs for your ECS infrastructure
 hide_table_of_contents: true

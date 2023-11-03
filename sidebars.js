@@ -139,7 +139,8 @@ module.exports = {
         'userguide/send-metrics',
         'userguide/send-metrics-cloud',
         'userguide/navigate-user-interface',
-        'userguide/hostmetrics'
+        'userguide/hostmetrics',
+        'userguide/collecting-ecs-logs-and-metrics',
       ],
     },
     {
@@ -251,7 +252,6 @@ module.exports = {
         'tutorial/setting-up-sso-saml-with-keycloak',
         'tutorial/writing-clickhouse-queries-in-dashboard',
         'tutorial/traefik-observability',
-        'tutorial/ecs-infra',
       ],
     },
     {
