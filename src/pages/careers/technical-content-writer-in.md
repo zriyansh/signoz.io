@@ -1,5 +1,5 @@
 ---
-title:  Technical Content Writer/Marketeer (Remote) (India)
+title:  Technical Content Writer (Remote) (India)
 slug: technical-content-writer-in
 #image: /img/case_study/BlipBillBoards.png
 #authors: [pranay]
@@ -11,12 +11,12 @@ slug: technical-content-writer-in
 
 </head>
 
-## Technical Content Writer/Marketeer (Remote) (India)
+## Technical Content Writer (Remote) (India)
 
 
 SigNoz is a global open source project with users in 30+ countries. We are building an open-source application monitoring which helps developers monitor their applications and troubleshoot problems, quickly.
 
-In less than a year of our launch, we have reached 14000+ [Github stars](https://github.com/signoz/signoz), 3000+ members in the slack community and 100+ contributors. 
+In less than a year of our launch, we have reached 15000+ [Github stars](https://github.com/signoz/signoz), 3000+ members in the slack community and 100+ contributors. 
 
 
 **Company Vision**

@@ -47,7 +47,7 @@ function careers() {
               <div className={"col col--6 margin-vert--md"}>
                   <div class="card">
                       <div class="card__header">
-                          <h3>Technical Content Writer/Marketer (Remote) (India)</h3>
+                          <h3>Technical Content Writer (Remote) (India)</h3>
                       </div>
                       {/* <div class="card__image">
                         <img
@@ -87,7 +87,21 @@ function careers() {
                       <a class="button button--primary" href="/careers/senior-frontend-engineer-in/" >Read more</a>
                       </div>
                   </div>
-              </div>        
+              </div>  
+              <div className={"col col--6 margin-vert--md"}>
+                  <div class="card">
+                      <div class="card__header">
+                          <h3>Site Reliability Engineer (Remote)</h3>
+                          
+                      </div>
+
+                      <div class="card__footer">
+                      <a class="button button--primary"
+                       href="/careers/site-reliability-engineer/" 
+                       >Read more</a>
+                      </div>
+                  </div>
+              </div>      
           </div>
         </div>  
         </section>
