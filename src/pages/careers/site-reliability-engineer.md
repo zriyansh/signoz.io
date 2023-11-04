@@ -1,6 +1,8 @@
 ---
 title:  Site Reliability Engineer (Remote) 
 slug: site-reliability-engineer
+image: /img/careers/sre.jpg
+
 
 ---
 <head>
