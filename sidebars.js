@@ -153,6 +153,7 @@ module.exports = {
       },
       items: [
         'userguide/logs_query_builder',
+        'userguide/logs_clickhouse_queries',
         'userguide/logs_fields',
         'userguide/collect_kubernetes_pod_logs',
         'userguide/collect_docker_logs',
