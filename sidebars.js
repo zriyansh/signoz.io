@@ -185,6 +185,16 @@ module.exports = {
         },
         'userguide/logs_query_builder',
         'userguide/logs_fields',
+        {
+          type: "category",
+          label: "Transform Logs with Pipelines",
+          link: {
+            type: "doc",
+            id: "logs-pipelines/introduction",
+          }, items: [
+            "logs-pipelines/introduction"
+          ]
+        },
         'userguide/logs_troubleshooting',
       ],
     },
