@@ -3,11 +3,11 @@ title: Logs Schema and Writing ClickHouse Queries for Building Dashboard Panels.
 id: logs_clickhouse_queries
 ---
 
-At SigNoz we store our data on ClickHouse. In this documentation we will go throught the schema of the logs table and how we can write clickhouse queries to create different dashboard panels from Logs Data.
+At SigNoz we store our data on ClickHouse. In this documentation we will go throught the schema of the logs table and see how we can write clickhouse queries to create different dashboard panels from Logs Data.
 
-# Logs Schmea
+## Logs Schema
 
-If we check the schema of logs table in clickhouse this is what it looks like. Now this table was created with respect to the [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/)
+If we check the schema of logs table in clickhouse this is what it looks like. The table was created with respect to the [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/)
 
 ```
 CREATE TABLE signoz_logs.logs
@@ -44,12 +44,15 @@ TTL toDateTime(timestamp / 1000000000) + toIntervalSecond(1296000)
 SETTINGS index_granularity = 8192, ttl_only_drop_parts = 1
 ```
 
-There is a distributed logs table which is references the above table table in each shard. The name of the table is `distributed_logs`. The schema is same as above.
-Note:- Any queries that we write will be written for the `distributed_logs` table.
+There is a distributed logs table which references the above table in each shard. The name of the table is `distributed_logs`. The schema is same as above.
+
+**Note:- Any query that we write will be written for the `distributed_logs` table.**
+
+## Columns in the Logs Table
 
 **timestamp** : Time when the log line was generated at the source. The default value is the time at which it is received and it can be changed using the [time parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/time_parser.md).
 
-**observed_timestamp** : Time when the log line as observed at the collection system. It is automatically added by the collector.
+**observed_timestamp** : Time when the log line is observed at the collection system. It is automatically added by the collector.
 
 **id**: It is a [ksuid](https://github.com/segmentio/ksuid), it helps us in pagniating and sorting log lines. It is automatically added by the collector.
 
@@ -61,34 +64,34 @@ Note:- Any queries that we write will be written for the `distributed_logs` tabl
 
 **severity_text** : It is the log level. eg:- `info` . It can be filled using [severity parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/severity_parser.md)
 
-**severity_number** : Numerical value of the severity text. [more](https://opentelemetry.io/docs/specs/otel/logs/data-model/#field-severitynumber). It can be filled using [severity parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/severity_parser.md)
+**severity_number** : Numerical value of the [severity_text](https://opentelemetry.io/docs/specs/otel/logs/data-model/#field-severitynumber). It can be filled using [severity parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/severity_parser.md)
 
 **body** : The body/message of the log record. 
 
-**resources_string_key** : If we have a resource named `source: nginx` . Then `source` is stored in this column in an array.
+**resources_string_key** : If we have a resource named `source: nginx` . Then `source` is stored in this column as an array value.
 
-**resource_string_value** : If we have a resource named `source: nginx` . Then `nginx` is stored in this column in an array.
+**resource_string_value** : If we have a resource named `source: nginx` . Then `nginx` is stored in this column as an array value.
 
-**attributes_string_key** : If we have a string attribute named `method: GET` . Then `method` is stored in this column in an array.
+**attributes_string_key** : If we have a string attribute named `method: GET` . Then `method` is stored in this column as an array value.
 
-**attributes_string_value** : If we have a string attribute named `method: GET` . Then `GET` is stored in this column in an array.
+**attributes_string_value** : If we have a string attribute named `method: GET` . Then `GET` is stored in this column as an array value.
 
-**attributes_int64_key** : If we have a integer attribute named `bytes: 100` . Then `bytes` is stored in this column in an array.
+**attributes_int64_key** : If we have a integer attribute named `bytes: 100` . Then `bytes` is stored in this column as an array value.
 
-**attributes_int64_value** : If we have a integer attribute named `bytes: 100` . Then `100` is stored in this column in an array.
+**attributes_int64_value** : If we have a integer attribute named `bytes: 100` . Then `100` is stored in this column as an array value.
 
-**attributes_float64_key** : If we have a floating attribute named `delay: 10.0` . Then `delay` is stored in this column in an array.
+**attributes_float64_key** : If we have a floating attribute named `delay: 10.0` . Then `delay` is stored in this column as an array value.
 
-**attributes_float64_value** : If we have a floating attribute named `dealy: 10.0` . Then `10.0` is stored in this column in an array.
+**attributes_float64_value** : If we have a floating attribute named `dealy: 10.0` . Then `10.0` is stored in this column as an array value.
 
-**attributes_bool_key** : If we have a boolean attribute named `success: true` . Then `success` is stored in this column in an array.
+**attributes_bool_key** : If we have a boolean attribute named `success: true` . Then `success` is stored in this column as an array value.
 
-**attributes_bool_value** : If we have a boolean attribute named `success: true` . Then `true` is stored in this column in an array.
+**attributes_bool_value** : If we have a boolean attribute named `success: true` . Then `true` is stored in this column as an array value.
 
 The attributes and resources can be added transformed using different processors and operators. You can read more about them [here](/docs/userguide/logs/#operators-for-parsing-and-manipulating-logs)
 
 
-## Writing Clickhouse Queries Dashboard Panels with examples.
+## Writing Clickhouse Queries for Dashboard Panels.
 
 While writing queies for logs table, if you want to use an attribute/resource attribute in your query you will have to reference it in the following format
 `<type>_<dataType>_value[indexOf(<type>_<dataType>_key, <keyname>)]` 
@@ -102,43 +105,180 @@ Note:- In the above example, if `status` is an [selected(indexed) field](/docs/u
 
 ### Timeseries
 
-Show count of log lines per minute
+This panel is used when you want to view your aggregated data in a timeseries.
 
-```
-SELECT toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS interval, 
-toFloat64(count()) AS value 
-FROM signoz_logs.logs  
-WHERE (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0)))   
-GROUP BY interval 
-ORDER BY interval ASC;
-```
+#### Examples
 
-Show count of log lines per minute where `severity_text = 'INFO'``
+#### Count of log lines per minute
 ```
-toFloat64(count()) AS value 
-FROM signoz_logs.logs  
-WHERE (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0)))   
-AND severity_text='INFO'
-GROUP BY interval 
-ORDER BY interval ASC;
+SELECT 
+    toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts,
+    toFloat64(count()) AS value 
+FROM 
+    signoz_logs.distributed_logs  
+WHERE 
+    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0)))
+GROUP BY ts 
+ORDER BY ts ASC;
 ```
 
-Show count of log lines per minute where `severity_text = 'INFO'` ,  `method = 'GET'` , `service_name = 'demo'`. Here `method` is an attribute while `service_name` is a resource attribute.
+#### Count of log lines per minute group by container name
 ```
-toFloat64(count()) AS value 
-FROM signoz_logs.logs  
-WHERE (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0)))   
-AND severity_text='INFO' AND attributes_string_value[indexOf(attributes_string_key, 'method')] = 'GET' AND resources_string_value[indexOf(resources_string_key, 'service_name')] = 'demo'
-GROUP BY interval 
-ORDER BY interval ASC;
+SELECT 
+    toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts,
+    attributes_string_value[indexOf(attributes_string_key, 'container_name')] as container_name,
+    toFloat64(count()) AS value 
+FROM 
+    signoz_logs.distributed_logs  
+WHERE 
+    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND 
+    indexOf(attributes_string_key, 'container_name') > 0
+GROUP BY container_name, ts
+ORDER BY ts ASC;
 ```
 
-Show count of log lines per minute where `severity_text = 'INFO'` ,  `method = 'GET'` , `service_name = 'demo'`. Here `method` is an attribute while `service_name` is a resource attribute and both `method` and `service_name` is [selected(indexed)](/docs/userguide/logs_fields/#selected-log-fields).
+#### Count of log lines per minute where `severity_text = 'INFO'``
 ```
-toFloat64(count()) AS value 
-FROM signoz_logs.logs  
-WHERE (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0)))   
-AND severity_text='INFO' AND attribute_string_method = 'GET' AND resource_string_service_name = 'demo'
-GROUP BY interval 
-ORDER BY interval ASC;
+SELECT 
+    toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts, 
+    toFloat64(count()) AS value 
+FROM 
+    signoz_logs.distributed_logs  
+WHERE 
+    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND 
+    severity_text='INFO'
+GROUP BY ts 
+ORDER BY ts ASC;
 ```
+
+#### Count of log lines per minute where `severity_text = 'INFO'` ,  `method = 'GET'` , `service_name = 'demo'`. Here `method` is an attribute while `service_name` is a resource attribute.
+```
+SELECT 
+    toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts, 
+    toFloat64(count()) AS value 
+FROM 
+    signoz_logs.distributed_logs  
+WHERE 
+    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND
+    severity_text='INFO' AND
+    attributes_string_value[indexOf(attributes_string_key, 'method')] = 'GET' AND 
+    resources_string_value[indexOf(resources_string_key, 'service_name')] = 'demo'
+GROUP BY ts 
+ORDER BY ts ASC;
+```
+
+#### Count of log lines per minute where `severity_text = 'INFO'` ,  `method = 'GET'` , `service_name = 'demo'`. Here `method` is an attribute while `service_name` is a resource attribute and both `method` and `service_name` is [selected(indexed)](/docs/userguide/logs_fields/#selected-log-fields).
+```
+SELECT 
+    toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts, 
+    toFloat64(count()) AS value 
+FROM 
+    signoz_logs.distributed_logs  
+WHERE 
+    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND 
+    severity_text='INFO' AND 
+    attribute_string_method = 'GET' AND 
+    resource_string_service_name = 'demo'
+GROUP BY ts 
+ORDER BY ts ASC;
+```
+
+### Value
+
+For value type panel, the overall query will be similar to timeseries, just that you will have to get the absolute value at the end.
+
+#### Examples
+
+#### Average count of log lines per minute where `severity_text = 'INFO'` ,  `method = 'GET'` , `service_name = 'demo'`. Here `method` is an attribute while `service_name` is a resource attribute.
+```
+SELECT 
+    avg(value) as value, 
+    any(ts) as ts FROM (
+        SELECT 
+            toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS interval, 
+            toFloat64(count()) AS value 
+        FROM 
+            signoz_logs.distributed_logs  
+        WHERE 
+            (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND
+            severity_text='INFO' AND
+            attributes_string_value[indexOf(attributes_string_key, 'method')] = 'GET' AND 
+            resources_string_value[indexOf(resources_string_key, 'service_name')] = 'demo'
+        GROUP BY interval 
+        ORDER BY interval ASC;
+    )
+```
+Note :- `attributes_string_value[indexOf(attributes_string_key, 'method')]` will change to `attribute_string_method` if `method` is a selected field and `resources_string_value[indexOf(resources_string_key, 'service_name')]` will change to `resource_string_service_name` if `service_name` is a selected field.
+
+### Table
+
+This is used when you want to view the timeseries data in a tabular format.
+
+The query is similar to timeseries query but instead of using time interval we use just use `now() as ts` in select.
+
+#### Examples
+
+#### Count of log lines where `severity_text = 'INFO'` ,  `method = 'GET'`  group by  `service_name`. Here `method` is an attribute while `service_name` is a resource attribute.
+```
+SELECT 
+    now() as ts,
+    resources_string_value[indexOf(resources_string_key, 'service_name')] as service_name,
+    toFloat64(count()) AS value 
+FROM 
+    signoz_logs.distributed_logs  
+WHERE 
+    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND
+    severity_text='INFO' AND
+    attributes_string_value[indexOf(attributes_string_key, 'method')] = 'GET' 
+GROUP BY service_name, ts 
+ORDER BY ts ASC;
+```
+
+Note :- `attributes_string_value[indexOf(attributes_string_key, 'method')]` will change to `attribute_string_method` if `method` is a selected field and `resources_string_value[indexOf(resources_string_key, 'service_name')]` will change to `resource_string_service_name` if `service_name` is a selected field.
+
+## Real Life Use Cases Example
+
+### Number of log lines generated by each kubernetes cluser.
+
+```
+SELECT 
+    toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts,
+    resources_string_value[indexOf(resources_string_key, 'k8s_cluster_name')] as k8s_cluster_name,
+    toFloat64(count()) AS value 
+FROM 
+    signoz_logs.distributed_logs  
+WHERE 
+    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND 
+    indexOf(resources_string_key, 'k8s_cluster_name') > 0
+GROUP BY k8s_cluster_name, ts
+ORDER BY ts ASC;
+```
+
+Note:- `resources_string_value[indexOf(resources_string_key, 'k8s_cluster_name')]` will change to `resource_string_k8s_cluster_name` if `k8s_cluster_name` is a selected field and
+`indexOf(resources_string_key, 'k8s_cluster_name') > 0` will change to `resource_string_k8s_cluster_name_exists = true`
+
+### Number of error logs generated by each service.
+
+```
+SELECT 
+    toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts,
+    resources_string_value[indexOf(resources_string_key, 'service_name')] as service_name,
+    toFloat64(count()) AS value 
+FROM 
+    signoz_logs.distributed_logs  
+WHERE 
+    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND 
+    severity_text='ERROR' AND
+    indexOf(resources_string_key, 'service_name') > 0
+GROUP BY service_name,ts 
+ORDER BY ts ASC;
+```
+
+Note:- `resources_string_value[indexOf(resources_string_key, 'service_name')]` will change to `resource_string_service_name` if `service_name` is a selected field and
+`indexOf(resources_string_key, 'service_name') > 0` will change to `resource_string_service_name_exists = true`
+
+
+## Panel Time preference.
+
+Using the `Panel Time Preference` present on the right you can select a custom time range for your panel. When you open the dashboard the specific panel will render for the time
+specified for that panel. 
