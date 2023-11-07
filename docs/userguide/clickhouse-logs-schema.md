@@ -186,16 +186,18 @@ ORDER BY ts ASC;
 ### Value
 
 For value type panel, the overall query will be similar to timeseries, just that you will have to get the absolute value at the end.
+You can reduce your end result to either of average, latest, sum, min, max.
 
 #### Examples
 
-#### Average count of log lines per minute where `severity_text = 'INFO'` ,  `method = 'GET'` , `service_name = 'demo'`. Here `method` is an attribute while `service_name` is a resource attribute.
+#### Average count of log lines where `severity_text = 'INFO'` ,  `method = 'GET'` , `service_name = 'demo'`. Here `method` is an attribute while `service_name` is a resource attribute.
+
 ```
 SELECT 
     avg(value) as value, 
     any(ts) as ts FROM (
         SELECT 
-            toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS interval, 
+            toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts, 
             toFloat64(count()) AS value 
         FROM 
             signoz_logs.distributed_logs  
@@ -204,8 +206,8 @@ SELECT
             severity_text='INFO' AND
             attributes_string_value[indexOf(attributes_string_key, 'method')] = 'GET' AND 
             resources_string_value[indexOf(resources_string_key, 'service_name')] = 'demo'
-        GROUP BY interval 
-        ORDER BY interval ASC;
+        GROUP BY ts 
+        ORDER BY ts ASC
     )
 ```
 Note :- `attributes_string_value[indexOf(attributes_string_key, 'method')]` will change to `attribute_string_method` if `method` is a selected field and `resources_string_value[indexOf(resources_string_key, 'service_name')]` will change to `resource_string_service_name` if `service_name` is a selected field.
