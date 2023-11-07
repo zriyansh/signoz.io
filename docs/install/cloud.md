@@ -21,6 +21,7 @@ You can also visualize user requests in their entirety as it travels across comp
 - [Python](https://signoz.io/docs/instrumentation/python/#send-traces-to-signoz-cloud)
 - [Nodejs](https://signoz.io/docs/instrumentation/javascript/)
 - [Golang](https://signoz.io/docs/instrumentation/golang/#send-traces-to-signoz-cloud)
+- [Ruby on Rails](https://signoz.io/docs/instrumentation/ruby-on-rails/)
 
 ## Collect Hostmetrics from VM
 
