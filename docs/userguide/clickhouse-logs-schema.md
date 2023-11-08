@@ -3,11 +3,11 @@ title: Logs Schema and Writing ClickHouse Queries for Building Dashboard Panels.
 id: logs_clickhouse_queries
 ---
 
-At SigNoz we store our data on ClickHouse. In this documentation we will go throught the schema of the logs table and see how we can write clickhouse queries to create different dashboard panels from Logs Data.
+At SigNoz we store our data on ClickHouse. In this documentation, we will go through the schema of the logs table and see how we can write clickhouse queries to create different dashboard panels from Logs Data.
 
 ## Logs Schema
 
-If we check the schema of logs table in clickhouse this is what it looks like. The table was created with respect to the [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/)
+If we check the schema of the logs table in clickhouse this is what it looks like. The table was created with respect to the [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/)
 
 ```
 CREATE TABLE signoz_logs.logs
@@ -54,11 +54,11 @@ There is a distributed logs table which references the above table in each shard
 
 **observed_timestamp** : Time when the log line is observed at the collection system. It is automatically added by the collector.
 
-**id**: It is a [ksuid](https://github.com/segmentio/ksuid), it helps us in pagniating and sorting log lines. It is automatically added by the collector.
+**id**: It is a [ksuid](https://github.com/segmentio/ksuid), it helps us in paginating and sorting log lines. It is automatically added by the collector.
 
 **trace_id** : Trace ID of the log line. [W3C Trace Context](https://www.w3.org/TR/trace-context/#trace-id). It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).
 
-**span_id** : Span ID for the log line or set of log line that are part of a particular processing span. It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).
+**span_id** : Span ID for the log line or set of log lines that are part of a particular processing span. It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).
 
 **trace_flags** : Trace Flag of the log line.  [W3C Trace Context](https://www.w3.org/TR/trace-context/#trace-flags). It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).
 
@@ -88,7 +88,7 @@ There is a distributed logs table which references the above table in each shard
 
 **attributes_bool_value** : If we have a boolean attribute named `success: true` . Then `true` is stored in this column as an array value and the index will be same as the corresponding key in `attributes_bool_key`.
 
-The attributes and resources can be added transformed using different processors and operators. You can read more about them [here](/docs/userguide/logs/#operators-for-parsing-and-manipulating-logs)
+The attributes and resources can be added and transformed using different processors and operators. You can read more about them [here](/docs/userguide/logs/#operators-for-parsing-and-manipulating-logs)
 
 ## Selected Attributes/Resources:- 
 When a attribute/resource field is converted to [selected(indexed) field](/docs/userguide/logs_fields/#selected-log-fields). Then two new columns are added. 
@@ -102,8 +102,8 @@ Ex: if our attribute name is `method`  which is present in `attributes_string_ke
 
 ## Writing Clickhouse Queries for Dashboard Panels.
 
-While writing queies for logs table, if you want to use an attribute/resource attribute in your query you will have to reference it in the following format
-`<type>_<dataType>_value[indexOf(<type>_<dataType>_key, <keyname>)]` . This is done to get the value out from the same index as they key.
+While writing queries for logs table, if you want to use an attribute/resource attribute in your query you will have to reference it in the following format
+`<type>_<dataType>_value[indexOf(<type>_<dataType>_key, <keyname>)]` 
 
 where `type` can be `attributes/resources` , `dataType` can be `int64/float64/string` and `keyname` is the name of the key.
 
@@ -194,8 +194,8 @@ ORDER BY ts ASC;
 
 ### Value
 
-For value type panel, the overall query will be similar to timeseries, just that you will have to get the absolute value at the end.
-You can reduce your end result to either of average, latest, sum, min, max.
+For the value type panel, the overall query will be similar to timeseries, just that you will have to get the absolute value at the end.
+You can reduce your end result to either average, latest, sum, min, or max.
 
 #### Examples
 
@@ -249,7 +249,7 @@ Note :- `attributes_string_value[indexOf(attributes_string_key, 'method')]` will
 
 ## Real Life Use Cases Example
 
-### Number of log lines generated by each kubernetes cluser.
+### Number of log lines generated by each kubernetes cluster.
 
 ```
 SELECT 
