@@ -100,7 +100,7 @@ Ex: if our attribute name is `method`  which is present in `attributes_string_ke
 ```
 
 
-## Writing Clickhouse Queries for Dashboard Panels.
+## Writing Clickhouse Queries for Dashboard Panels
 
 While writing queries for logs table, if you want to use an attribute/resource attribute in your query you will have to reference it in the following format
 `<type>_<dataType>_value[indexOf(<type>_<dataType>_key, <keyname>)]` 
