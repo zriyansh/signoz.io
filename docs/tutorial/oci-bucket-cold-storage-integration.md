@@ -21,8 +21,9 @@ Given that [OCI buckets are S3-compatible](https://docs.oracle.com/en-us/iaas/Co
 Instruction to set retention period with cold storage (S3) can be found
 in the [rention period userguide](https://signoz.io/docs/userguide/retention-period/).
 
-### Steps To Integrate OCI Bucket As Cold Storage
-1. Create OCI Bucket.
+## Steps To Integrate OCI Bucket As Cold Storage
+1. ### Create OCI Bucket.
+   <br></br>
    a. Login to OCI cloud and Menu –> Storage–>Object Storage.
    <figure data-zoomable align='center'>
     <img src="/img/docs/oci-bucket-cold-storage/oci-bucket-storage.webp" alt="OCI Bucket Menu Navigation"/>
@@ -42,7 +43,7 @@ in the [rention period userguide](https://signoz.io/docs/userguide/retention-per
       </figure>
       <br></br>      
 
-2. Generate customer OCI IAM secret key that will be utilized for accessing the Object Storage.
+2. #### Generate customer OCI IAM secret key that will be utilized for accessing the Object Storage.
    a. Login to OCI cloud and go to the IAM user profile.
       <figure data-zoomable align='center'>
        <img src="/img/docs/oci-bucket-cold-storage/oci-iam-profile.webp" alt="OCI IAM Profile"/>
@@ -56,7 +57,7 @@ in the [rention period userguide](https://signoz.io/docs/userguide/retention-per
       </figure>
       <br></br>        
 
-3. Update the helm **overwrite-values.yaml** to configure OCI bucket as cold storage
+3. ### Update the helm **overwrite-values.yaml** to configure OCI bucket as cold storage
 
 ```yaml
 clickhouse:
@@ -81,7 +82,7 @@ clickhouse:
 ```
 `endpoint` would look something like `https://<OCI-NAMESPACE>.compat.objectstorage.<OCI REGION>.oraclecloud.com/<OCI BUCKET NAME>/data`
 
-4. Upgrade the helm deployment.
+4. ### Upgrade the helm deployment.
 
 ```bash
 helm --namespace platform upgrade my-release signoz/signoz -f overwrite-values.yaml    
