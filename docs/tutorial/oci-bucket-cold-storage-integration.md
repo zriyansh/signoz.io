@@ -24,17 +24,17 @@ in the [rention period userguide](https://signoz.io/docs/userguide/retention-per
 ### Steps To Integrate OCI Bucket As Cold Storage
 1. Create OCI Bucket.
    a. Login to OCI cloud and Menu –> Storage–>Object Storage.
-      ![OCI BUCKET](../../static/img/docs/oci-bucket-cold-storage/oci-bucket-storage.png)
+      ![OCI BUCKET](../../static/img/docs/oci-bucket-cold-storage/oci-bucket-storage.webp)
    b. Select the OCI compartment and click on **Create Bucket**.
-      ![OCI BUCKET COMPARTMENT](../../static/img/docs/oci-bucket-cold-storage/oci-bucket-compartment.png)
+      ![OCI BUCKET COMPARTMENT](../../static/img/docs/oci-bucket-cold-storage/oci-bucket-compartment.webp)
    c. On the OCI bucket create page, give a meaningful name like signoz-archive-data. I have also selected Auto Tiering to bring down the costs of my bucket for OCI to move infrequently used objects to lower-tiered storage.
-      ![OCI CREATE BUCKET](../../static/img/docs/oci-bucket-cold-storage/oci-create-bucket.png)
+      ![OCI CREATE BUCKET](../../static/img/docs/oci-bucket-cold-storage/oci-create-bucket.webp)
 
 2. Generate custome OCI IAM secret key that will be utilized for accessing the Object Storage.
    a. Login to OCI cloud and go to the IAM user profile.
-      ![OCI IAM PROFILE](../../static/img/docs/oci-bucket-cold-storage/oci-iam-profile.png)
+      ![OCI IAM PROFILE](../../static/img/docs/oci-bucket-cold-storage/oci-iam-profile.webp)
    b. Click on Customer Secret Keys and then Generate Secret Key. Copy the access key and secret key.
-      ![OCI CUSTOM SECRET KEYS](../../static/img/docs/oci-bucket-cold-storage/oci-custom-secret-keys.png)
+      ![OCI CUSTOM SECRET KEYS](../../static/img/docs/oci-bucket-cold-storage/oci-custom-secret-keys.webp)
 
 3. Update the helm **overwrite-values.yaml** to configure OCI bucket as cold storage
 
