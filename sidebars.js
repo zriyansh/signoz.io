@@ -184,6 +184,7 @@ module.exports = {
           ],
         },
         'userguide/logs_query_builder',
+        'userguide/logs_clickhouse_queries',
         'userguide/logs_fields',
         'userguide/logs_troubleshooting',
       ],
