@@ -3,7 +3,7 @@ title: Logs Schema and Writing ClickHouse Queries for Building Dashboard Panels.
 id: logs_clickhouse_queries
 ---
 
-At SigNoz we store our data on ClickHouse. In this documentation we will go throught the schema of the logs table and see how we can write clickhouse queries to create different dashboard panels from Logs Data.
+At SigNoz we store our data on ClickHouse. In this documentation, we will go through the schema of the logs table and see how we can write clickhouse queries to create different dashboard panels from Logs Data.
 
 ## Logs Schema
 
