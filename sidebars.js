@@ -46,6 +46,7 @@ module.exports = {
       items: [
         'instrumentation/overview',
         'userguide/metrics',
+        'userguide/writing-clickhouse-traces-query',
         {
           type: 'category',
           label: 'View Traces',
