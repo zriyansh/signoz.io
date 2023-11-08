@@ -252,6 +252,7 @@ module.exports = {
         'tutorial/mongodb-metrics',
         'tutorial/instrumenting-angular-frontend',
         'tutorial/s3-integration-iam-role-eks',
+        'tutorial/oci-bucket-cold-storage-integration',
         'tutorial/opentelemetry-operator-usage',
         'tutorial/opentelemetry-binary-usage-in-virtual-machine',
         'tutorial/setting-up-tls-for-signoz',
