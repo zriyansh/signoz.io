@@ -58,7 +58,7 @@ There is a distributed logs table which references the above table in each shard
 
 **trace_id** : Trace ID of the log line. [W3C Trace Context](https://www.w3.org/TR/trace-context/#trace-id). It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).
 
-**span_id** : Span ID for the log line or set of log line that are part of a particular processing span. It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).
+**span_id** : Span ID for the log line or set of log lines that are part of a particular processing span. It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).
 
 **trace_flags** : Trace Flag of the log line.  [W3C Trace Context](https://www.w3.org/TR/trace-context/#trace-flags). It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).
 
