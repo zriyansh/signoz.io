@@ -291,7 +291,7 @@ Note:- `resources_string_value[indexOf(resources_string_key, 'service_name')]` w
 `indexOf(resources_string_key, 'service_name') > 0` will change to `resource_string_service_name_exists = true`
 
 
-## Panel Time preference.
+## Panel Time preference
 
 Using the `Panel Time Preference` present on the right you can select a custom time range for your panel. When you open the dashboard the specific panel will render for the time
 specified for that panel. 
