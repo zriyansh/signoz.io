@@ -7,7 +7,7 @@ At SigNoz we store our data on ClickHouse. In this documentation, we will go thr
 
 ## Logs Schema
 
-If we check the schema of logs table in clickhouse this is what it looks like. The table was created with respect to the [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/)
+If we check the schema of the logs table in clickhouse this is what it looks like. The table was created with respect to the [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/)
 
 ```
 CREATE TABLE signoz_logs.logs
