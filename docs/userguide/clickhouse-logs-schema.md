@@ -148,7 +148,7 @@ GROUP BY container_name, ts
 ORDER BY ts ASC;
 ```
 
-#### Count of log lines per minute where `severity_text = 'INFO'``
+#### Count of log lines per minute where `severity_text = 'INFO'`
 ```sql
 SELECT 
     toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts, 
