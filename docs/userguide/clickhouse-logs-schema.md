@@ -93,7 +93,7 @@ The attributes and resources can be added and transformed using different proces
 
 ## Writing Clickhouse Queries for Dashboard Panels.
 
-While writing queies for logs table, if you want to use an attribute/resource attribute in your query you will have to reference it in the following format
+While writing queries for logs table, if you want to use an attribute/resource attribute in your query you will have to reference it in the following format
 `<type>_<dataType>_value[indexOf(<type>_<dataType>_key, <keyname>)]` 
 
 where `type` can be `attributes/resources` , `dataType` can be `int64/float64/string` and `keyname` is the name of the key.
