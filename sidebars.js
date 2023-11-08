@@ -192,7 +192,8 @@ module.exports = {
             type: "doc",
             id: "logs-pipelines/introduction",
           }, items: [
-            "logs-pipelines/concepts"
+            "logs-pipelines/concepts",
+            "logs-pipelines/processors",
           ]
         },
         'userguide/logs_troubleshooting',
