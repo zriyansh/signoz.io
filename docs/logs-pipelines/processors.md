@@ -1,9 +1,9 @@
 ---
 id: processors
-title: Logs Processors
+title: Log Processors
 ---
 
-# Logs Processors
+# Log Processors
 
 Log transformation logic for a pipeline is configured as a chain of Processors.
 When a log matches a pipeline's filter, it is transformed by each processor
