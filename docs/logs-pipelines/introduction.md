@@ -3,9 +3,17 @@ id: introduction
 title: Introduction
 ---
 
+import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 import Screenshot from "@theme/Screenshot"
 
 # Unleash the Potential of Your Logs with Pre-processing
+
+With Logs Pipelines, you can transform logs to suit your querying
+and aggregation needs before they get stored in the database.
+
+<LiteYoutubeEmbed id="OneENGNmLd0" mute={false} />
+
+<br/>
 
 Once you start sending logs to SigNoz, you can start searching their text
 and create basic reports based on standard fields. For example, you can find logs
@@ -15,9 +23,9 @@ and it can be inefficient or outright impossible to query and aggregate on
 that information.
 
 Logs pipelines enable you to unleash the full potential of your logs by
-pre-processing them to suit your needs before they get stored, unlocking
+pre-processing them to suit your needs before they get stored. This unlocks
 valuable logs based queries and dashboards that wouldn't be possible otherwise.  
-You can also use logs pre-processing to achieve other goals like cleaning sensitive
+You can also use logs preprocessing to achieve other goals like cleaning sensitive
 information in your logs or normalizing names of fields across services.
 
 <Screenshot
