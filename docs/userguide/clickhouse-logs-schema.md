@@ -9,7 +9,7 @@ At SigNoz we store our data on ClickHouse. In this documentation, we will go thr
 
 If we check the schema of the logs table in clickhouse this is what it looks like. The table was created with respect to the [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/)
 
-```
+```sql
 CREATE TABLE signoz_logs.logs
 (
     `timestamp` UInt64 CODEC(DoubleDelta, LZ4),
@@ -94,7 +94,7 @@ The attributes and resources can be added and transformed using different proces
 When an attribute/resource field is converted to [selected(indexed) field](/docs/userguide/logs_fields/#selected-log-fields). Then two new columns are added. 
 
 Ex: if our attribute name is `method`  which is present in `attributes_string_key` and it's value is present in `attributes_string_value` then the corresponding columns that will be created are `attribute_string_method` and `attribute_string_method_exists`. It will look like following in the logs schema.
-```
+```sql
 `attribute_string_method` String MATERIALIZED attributes_string_value[indexOf(attributes_string_key, 'xyz')] CODEC(ZSTD(1)),
 `attribute_string_method_exists` Bool MATERIALIZED if(indexOf(attributes_string_key, 'xyz') != 0, true, false) CODEC(ZSTD(1)),
 ```
@@ -112,6 +112,8 @@ Eg: If your `keyname` is `status` of `dataType` `string` and `type` `attribute`,
 Note:- In the above example, if `status` is an [selected field](#selected-attributesresources-) , then it can be referenced as
 `attribute_string_status`
 
+We will use two variables i.e `{{.start_timestamp_nano}}` and  `{{.end_timestamp_nano}}` while writing our queries to specify the time range. 
+
 ### Timeseries
 
 This panel is used when you want to view your aggregated data in a timeseries.
@@ -119,20 +121,20 @@ This panel is used when you want to view your aggregated data in a timeseries.
 #### Examples
 
 #### Count of log lines per minute
-```
+```sql
 SELECT 
     toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts,
     toFloat64(count()) AS value 
 FROM 
     signoz_logs.distributed_logs  
 WHERE 
-    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0)))
+    (timestamp >= {{.start_timestamp_nano}} AND timestamp <= {{.end_timestamp_nano}})
 GROUP BY ts 
 ORDER BY ts ASC;
 ```
 
 #### Count of log lines per minute group by container name
-```
+```sql
 SELECT 
     toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts,
     attributes_string_value[indexOf(attributes_string_key, 'container_name')] as container_name,
@@ -140,35 +142,35 @@ SELECT
 FROM 
     signoz_logs.distributed_logs  
 WHERE 
-    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND 
+    (timestamp >= {{.start_timestamp_nano}} AND timestamp <= {{.end_timestamp_nano}}) AND 
     indexOf(attributes_string_key, 'container_name') > 0
 GROUP BY container_name, ts
 ORDER BY ts ASC;
 ```
 
 #### Count of log lines per minute where `severity_text = 'INFO'``
-```
+```sql
 SELECT 
     toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts, 
     toFloat64(count()) AS value 
 FROM 
     signoz_logs.distributed_logs  
 WHERE 
-    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND 
+    (timestamp >= {{.start_timestamp_nano}} AND timestamp <= {{.end_timestamp_nano}}) AND 
     severity_text='INFO'
 GROUP BY ts 
 ORDER BY ts ASC;
 ```
 
 #### Count of log lines per minute where `severity_text = 'INFO'` ,  `method = 'GET'` , `service_name = 'demo'`. Here `method` is an attribute while `service_name` is a resource attribute.
-```
+```sql
 SELECT 
     toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts, 
     toFloat64(count()) AS value 
 FROM 
     signoz_logs.distributed_logs  
 WHERE 
-    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND
+    (timestamp >= {{.start_timestamp_nano}} AND timestamp <= {{.end_timestamp_nano}}) AND
     severity_text='INFO' AND
     attributes_string_value[indexOf(attributes_string_key, 'method')] = 'GET' AND 
     resources_string_value[indexOf(resources_string_key, 'service_name')] = 'demo'
@@ -177,14 +179,14 @@ ORDER BY ts ASC;
 ```
 
 #### Count of log lines per minute where `severity_text = 'INFO'` ,  `method = 'GET'` , `service_name = 'demo'`. Here `method` is an attribute while `service_name` is a resource attribute and both `method` and `service_name` is [selected field](#selected-attributesresources-).
-```
+```sql
 SELECT 
     toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts, 
     toFloat64(count()) AS value 
 FROM 
     signoz_logs.distributed_logs  
 WHERE 
-    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND 
+    (timestamp >= {{.start_timestamp_nano}} AND timestamp <= {{.end_timestamp_nano}}) AND 
     severity_text='INFO' AND 
     attribute_string_method = 'GET' AND 
     resource_string_service_name = 'demo'
@@ -201,7 +203,7 @@ You can reduce your end result to either average, latest, sum, min, or max.
 
 #### Average count of log lines where `severity_text = 'INFO'` ,  `method = 'GET'` , `service_name = 'demo'`. Here `method` is an attribute while `service_name` is a resource attribute.
 
-```
+```sql
 SELECT 
     avg(value) as value, 
     any(ts) as ts FROM (
@@ -211,7 +213,7 @@ SELECT
         FROM 
             signoz_logs.distributed_logs  
         WHERE 
-            (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND
+            (timestamp >= {{.start_timestamp_nano}} AND timestamp <= {{.end_timestamp_nano}}) AND
             severity_text='INFO' AND
             attributes_string_value[indexOf(attributes_string_key, 'method')] = 'GET' AND 
             resources_string_value[indexOf(resources_string_key, 'service_name')] = 'demo'
@@ -230,7 +232,7 @@ The query is similar to timeseries query but instead of using time interval we u
 #### Examples
 
 #### Count of log lines where `severity_text = 'INFO'` ,  `method = 'GET'`  group by  `service_name`. Here `method` is an attribute while `service_name` is a resource attribute.
-```
+```sql
 SELECT 
     now() as ts,
     resources_string_value[indexOf(resources_string_key, 'service_name')] as service_name,
@@ -238,7 +240,7 @@ SELECT
 FROM 
     signoz_logs.distributed_logs  
 WHERE 
-    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND
+    (timestamp >= {{.start_timestamp_nano}} AND timestamp <= {{.end_timestamp_nano}}) AND
     severity_text='INFO' AND
     attributes_string_value[indexOf(attributes_string_key, 'method')] = 'GET' 
 GROUP BY service_name, ts 
@@ -251,7 +253,7 @@ Note :- `attributes_string_value[indexOf(attributes_string_key, 'method')]` will
 
 ### Number of log lines generated by each kubernetes cluster.
 
-```
+```sql
 SELECT 
     toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts,
     resources_string_value[indexOf(resources_string_key, 'k8s_cluster_name')] as k8s_cluster_name,
@@ -259,7 +261,7 @@ SELECT
 FROM 
     signoz_logs.distributed_logs  
 WHERE 
-    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND 
+    (timestamp >= {{.start_timestamp_nano}} AND timestamp <= {{.end_timestamp_nano}}) AND 
     indexOf(resources_string_key, 'k8s_cluster_name') > 0
 GROUP BY k8s_cluster_name, ts
 ORDER BY ts ASC;
@@ -270,7 +272,7 @@ Note:- `resources_string_value[indexOf(resources_string_key, 'k8s_cluster_name')
 
 ### Number of error logs generated by each service.
 
-```
+```sql
 SELECT 
     toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts,
     resources_string_value[indexOf(resources_string_key, 'service_name')] as service_name,
@@ -278,7 +280,7 @@ SELECT
 FROM 
     signoz_logs.distributed_logs  
 WHERE 
-    (timestamp >= toUnixTimestamp64Nano(toDateTime64({{.start_datetime}}, 0)) AND timestamp <= toUnixTimestamp64Nano(toDateTime64({{.end_datetime}}, 0))) AND 
+    (timestamp >= {{.start_timestamp_nano}} AND timestamp <= {{.end_timestamp_nano}}) AND 
     severity_text='ERROR' AND
     indexOf(resources_string_key, 'service_name') > 0
 GROUP BY service_name,ts 
