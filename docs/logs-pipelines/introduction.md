@@ -31,13 +31,19 @@ information in your logs or normalizing names of fields across services.
 <Screenshot
     alt="Raw Nginx Log"
     src="/img/logs/pipelines/raw-nginx-log.png "
-    title="A raw nginx log"
+    title="A raw Nginx log"
 />
 
 <Screenshot
     alt="Parsed Nginx Log"
     src="/img/logs/pipelines/parsed-nginx-log.png "
-    title="A parsed nginx log"
+    title="A parsed Nginx log"
+/>
+
+<Screenshot
+    alt="Nginx Requests Count by User Agent"
+    src="/img/logs/pipelines/nginx-requests-by-user-agent.png"
+    title="A Report for Requests by User Agent, made possible by preprocessing logs to extract User Agent from Nginx text logs"
 />
 
 
