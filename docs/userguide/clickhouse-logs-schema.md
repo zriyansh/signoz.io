@@ -91,7 +91,7 @@ There is a distributed logs table which references the above table in each shard
 The attributes and resources can be added and transformed using different processors and operators. You can read more about them [here](/docs/userguide/logs/#operators-for-parsing-and-manipulating-logs)
 
 ## Selected Attributes/Resources:- 
-When a attribute/resource field is converted to [selected(indexed) field](/docs/userguide/logs_fields/#selected-log-fields). Then two new columns are added. 
+When an attribute/resource field is converted to [selected(indexed) field](/docs/userguide/logs_fields/#selected-log-fields). Then two new columns are added. 
 
 Ex: if our attribute name is `method`  which is present in `attributes_string_key` and it's value is present in `attributes_string_value` then the corresponding columns that will be created are `attribute_string_method` and `attribute_string_method_exists`. It will look like following in the logs schema.
 ```
