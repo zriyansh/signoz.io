@@ -88,7 +88,7 @@ There is a distributed logs table which references the above table in each shard
 
 **attributes_bool_value** : If we have a boolean attribute named `success: true` . Then `true` is stored in this column as an array value.
 
-The attributes and resources can be added transformed using different processors and operators. You can read more about them [here](/docs/userguide/logs/#operators-for-parsing-and-manipulating-logs)
+The attributes and resources can be added and transformed using different processors and operators. You can read more about them [here](/docs/userguide/logs/#operators-for-parsing-and-manipulating-logs)
 
 
 ## Writing Clickhouse Queries for Dashboard Panels.
