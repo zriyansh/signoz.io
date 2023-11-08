@@ -50,43 +50,27 @@ There is a distributed logs table which references the above table in each shard
 
 ## Columns in the Logs Table
 
-**timestamp** : Time when the log line was generated at the source. The default value is the time at which it is received and it can be changed using the [time parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/time_parser.md).
-
-**observed_timestamp** : Time when the log line is observed at the collection system. It is automatically added by the collector.
-
-**id**: It is a [ksuid](https://github.com/segmentio/ksuid), it helps us in paginating and sorting log lines. It is automatically added by the collector.
-
-**trace_id** : Trace ID of the log line. [W3C Trace Context](https://www.w3.org/TR/trace-context/#trace-id). It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).
-
-**span_id** : Span ID for the log line or set of log lines that are part of a particular processing span. It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).
-
-**trace_flags** : Trace Flag of the log line.  [W3C Trace Context](https://www.w3.org/TR/trace-context/#trace-flags). It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).
-
-**severity_text** : It is the log level. eg:- `info` . It can be filled using [severity parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/severity_parser.md)
-
-**severity_number** : Numerical value of the [severity_text](https://opentelemetry.io/docs/specs/otel/logs/data-model/#field-severitynumber). It can be filled using [severity parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/severity_parser.md)
-
-**body** : The body/message of the log record. 
-
-**resources_string_key** : If we have a resource named `source: nginx` . Then `source` is stored in this column as an array value.
-
-**resource_string_value** : If we have a resource named `source: nginx` . Then `nginx` is stored in this column as an array value and the index will be same as the corresponding key in `resources_string_key`
-
-**attributes_string_key** : If we have a string attribute named `method: GET` . Then `method` is stored in this column as an array value.
-
-**attributes_string_value** : If we have a string attribute named `method: GET` . Then `GET` is stored in this column as an array value and the index will be same as the corresponding key in `attributes_string_key`
-
-**attributes_int64_key** : If we have a integer attribute named `bytes: 100` . Then `bytes` is stored in this column as an array value.
-
-**attributes_int64_value** : If we have a integer attribute named `bytes: 100` . Then `100` is stored in this column as an array value and the index will be same as the corresponding key in `attributes_int64_key`
-
-**attributes_float64_key** : If we have a floating attribute named `delay: 10.0` . Then `delay` is stored in this column as an array value.
-
-**attributes_float64_value** : If we have a floating attribute named `dealy: 10.0` . Then `10.0` is stored in this column as an array value and the index will be same as the corresponding key in `attributes_float64_key`
-
-**attributes_bool_key** : If we have a boolean attribute named `success: true` . Then `success` is stored in this column as an array value.
-
-**attributes_bool_value** : If we have a boolean attribute named `success: true` . Then `true` is stored in this column as an array value and the index will be same as the corresponding key in `attributes_bool_key`.
+|  NAME  | DESCRIPTION  |
+|---|---|
+|**timestamp** | Time when the log line was generated at the source. The default value is the time at which it is received and it can be changed using the [time parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/time_parser.md).|
+|**observed_timestamp** | Time when the log line is observed at the collection system. It is automatically added by the collector. |
+|**id** | It is a [ksuid](https://github.com/segmentio/ksuid), it helps us in paginating and sorting log lines. It is automatically added by the collector.|
+|**trace_id** | Trace ID of the log line. [W3C Trace Context](https://www.w3.org/TR/trace-context/#trace-id). It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).|
+|**span_id** | Span ID for the log line or set of log lines that are part of a particular processing span. It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).|
+|**trace_flags** | Trace Flag of the log line.  [W3C Trace Context](https://www.w3.org/TR/trace-context/#trace-flags). It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).|
+|**severity_text** | It is the log level. eg:- `info` . It can be filled using [severity parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/severity_parser.md).|
+|**severity_number** | Numerical value of the [severity_text](https://opentelemetry.io/docs/specs/otel/logs/data-model/#field-severitynumber). It can be filled using [severity parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/severity_parser.md).|
+|**body** | The body/message of the log record.|
+|**resources_string_key** | If we have a resource named `source: nginx` . Then `source` is stored in this column as an array value.|
+|**resource_string_value** | If we have a resource named `source: nginx` . Then `nginx` is stored in this column as an array value and the index will be same as the corresponding key in `resources_string_key`. |
+|**attributes_string_key** | If we have a string attribute named `method: GET` . Then `method` is stored in this column as an array value.|
+|**attributes_string_value** | If we have a string attribute named `method: GET` . Then `GET` is stored in this column as an array value and the index will be same as the corresponding key in `attributes_string_key`.|
+|**attributes_int64_key** | If we have a integer attribute named `bytes: 100` . Then `bytes` is stored in this column as an array value.|
+|**attributes_int64_value** | If we have a integer attribute named `bytes: 100` . Then `100` is stored in this column as an array value and the index will be same as the corresponding key in `attributes_int64_key`.|
+|**attributes_float64_key** | If we have a floating attribute named `delay: 10.0` . Then `delay` is stored in this column as an array value.|
+|**attributes_float64_value** | If we have a floating attribute named `dealy: 10.0` . Then `10.0` is stored in this column as an array value and the index will be same as the corresponding key in `attributes_float64_key`.|
+|**attributes_bool_key** | If we have a boolean attribute named `success: true` . Then `success` is stored in this column as an array value.|
+|**attributes_bool_value** | If we have a boolean attribute named `success: true` . Then `true` is stored in this column as an array value and the index will be same as the corresponding key in `attributes_bool_key`.|
 
 The attributes and resources can be added and transformed using different processors and operators. You can read more about them [here](/docs/userguide/logs/#operators-for-parsing-and-manipulating-logs)
 
