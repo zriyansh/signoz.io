@@ -70,37 +70,46 @@ There is a distributed logs table which references the above table in each shard
 
 **resources_string_key** : If we have a resource named `source: nginx` . Then `source` is stored in this column as an array value.
 
-**resource_string_value** : If we have a resource named `source: nginx` . Then `nginx` is stored in this column as an array value.
+**resource_string_value** : If we have a resource named `source: nginx` . Then `nginx` is stored in this column as an array value and the index will be same as the corresponding key in `resources_string_key`
 
 **attributes_string_key** : If we have a string attribute named `method: GET` . Then `method` is stored in this column as an array value.
 
-**attributes_string_value** : If we have a string attribute named `method: GET` . Then `GET` is stored in this column as an array value.
+**attributes_string_value** : If we have a string attribute named `method: GET` . Then `GET` is stored in this column as an array value and the index will be same as the corresponding key in `attributes_string_key`
 
 **attributes_int64_key** : If we have a integer attribute named `bytes: 100` . Then `bytes` is stored in this column as an array value.
 
-**attributes_int64_value** : If we have a integer attribute named `bytes: 100` . Then `100` is stored in this column as an array value.
+**attributes_int64_value** : If we have a integer attribute named `bytes: 100` . Then `100` is stored in this column as an array value and the index will be same as the corresponding key in `attributes_int64_key`
 
 **attributes_float64_key** : If we have a floating attribute named `delay: 10.0` . Then `delay` is stored in this column as an array value.
 
-**attributes_float64_value** : If we have a floating attribute named `dealy: 10.0` . Then `10.0` is stored in this column as an array value.
+**attributes_float64_value** : If we have a floating attribute named `dealy: 10.0` . Then `10.0` is stored in this column as an array value and the index will be same as the corresponding key in `attributes_float64_key`
 
 **attributes_bool_key** : If we have a boolean attribute named `success: true` . Then `success` is stored in this column as an array value.
 
-**attributes_bool_value** : If we have a boolean attribute named `success: true` . Then `true` is stored in this column as an array value.
+**attributes_bool_value** : If we have a boolean attribute named `success: true` . Then `true` is stored in this column as an array value and the index will be same as the corresponding key in `attributes_bool_key`.
 
 The attributes and resources can be added transformed using different processors and operators. You can read more about them [here](/docs/userguide/logs/#operators-for-parsing-and-manipulating-logs)
+
+## Selected Attributes/Resources:- 
+When a attribute/resource field is converted to [selected(indexed) field](/docs/userguide/logs_fields/#selected-log-fields). Then two new columns are added. 
+
+Ex: if our attribute name is `method`  which is present in `attributes_string_key` and it's value is present in `attributes_string_value` then the corresponding columns that will be created are `attribute_string_method` and `attribute_string_method_exists`. It will look like following in the logs schema.
+```
+`attribute_string_method` String MATERIALIZED attributes_string_value[indexOf(attributes_string_key, 'xyz')] CODEC(ZSTD(1)),
+`attribute_string_method_exists` Bool MATERIALIZED if(indexOf(attributes_string_key, 'xyz') != 0, true, false) CODEC(ZSTD(1)),
+```
 
 
 ## Writing Clickhouse Queries for Dashboard Panels.
 
 While writing queies for logs table, if you want to use an attribute/resource attribute in your query you will have to reference it in the following format
-`<type>_<dataType>_value[indexOf(<type>_<dataType>_key, <keyname>)]` 
+`<type>_<dataType>_value[indexOf(<type>_<dataType>_key, <keyname>)]` . This is done to get the value out from the same index as they key.
 
 where `type` can be `attributes/resources` , `dataType` can be `int64/float64/string` and `keyname` is the name of the key.
 
 Eg: If your `keyname` is `status` of `dataType` `string` and `type` `attribute`, it needs to be referenced as `attributes_string_value[indexOf(attributes_string_key, 'status')]`
 
-Note:- In the above example, if `status` is an [selected(indexed) field](/docs/userguide/logs_fields/#selected-log-fields), then it can be referenced as
+Note:- In the above example, if `status` is an [selected field](#selected-attributesresources-) , then it can be referenced as
 `attribute_string_status`
 
 ### Timeseries
@@ -167,7 +176,7 @@ GROUP BY ts
 ORDER BY ts ASC;
 ```
 
-#### Count of log lines per minute where `severity_text = 'INFO'` ,  `method = 'GET'` , `service_name = 'demo'`. Here `method` is an attribute while `service_name` is a resource attribute and both `method` and `service_name` is [selected(indexed)](/docs/userguide/logs_fields/#selected-log-fields).
+#### Count of log lines per minute where `severity_text = 'INFO'` ,  `method = 'GET'` , `service_name = 'demo'`. Here `method` is an attribute while `service_name` is a resource attribute and both `method` and `service_name` is [selected field](#selected-attributesresources-).
 ```
 SELECT 
     toStartOfInterval(fromUnixTimestamp64Nano(timestamp), INTERVAL 1 MINUTE) AS ts, 
@@ -210,7 +219,7 @@ SELECT
         ORDER BY ts ASC
     )
 ```
-Note :- `attributes_string_value[indexOf(attributes_string_key, 'method')]` will change to `attribute_string_method` if `method` is a selected field and `resources_string_value[indexOf(resources_string_key, 'service_name')]` will change to `resource_string_service_name` if `service_name` is a selected field.
+Note :- `attributes_string_value[indexOf(attributes_string_key, 'method')]` will change to `attribute_string_method` if `method` is a [selected field](#selected-attributesresources-) and `resources_string_value[indexOf(resources_string_key, 'service_name')]` will change to `resource_string_service_name` if `service_name` is a [selected field](#selected-attributesresources-).
 
 ### Table
 
@@ -236,7 +245,7 @@ GROUP BY service_name, ts
 ORDER BY ts ASC;
 ```
 
-Note :- `attributes_string_value[indexOf(attributes_string_key, 'method')]` will change to `attribute_string_method` if `method` is a selected field and `resources_string_value[indexOf(resources_string_key, 'service_name')]` will change to `resource_string_service_name` if `service_name` is a selected field.
+Note :- `attributes_string_value[indexOf(attributes_string_key, 'method')]` will change to `attribute_string_method` if `method` is a [selected field](#selected-attributesresources-) and `resources_string_value[indexOf(resources_string_key, 'service_name')]` will change to `resource_string_service_name` if `service_name` is a [selected field](#selected-attributesresources-).
 
 ## Real Life Use Cases Example
 
@@ -256,7 +265,7 @@ GROUP BY k8s_cluster_name, ts
 ORDER BY ts ASC;
 ```
 
-Note:- `resources_string_value[indexOf(resources_string_key, 'k8s_cluster_name')]` will change to `resource_string_k8s_cluster_name` if `k8s_cluster_name` is a selected field and
+Note:- `resources_string_value[indexOf(resources_string_key, 'k8s_cluster_name')]` will change to `resource_string_k8s_cluster_name` if `k8s_cluster_name` is a [selected field](#selected-attributesresources-) and
 `indexOf(resources_string_key, 'k8s_cluster_name') > 0` will change to `resource_string_k8s_cluster_name_exists = true`
 
 ### Number of error logs generated by each service.
@@ -276,7 +285,7 @@ GROUP BY service_name,ts
 ORDER BY ts ASC;
 ```
 
-Note:- `resources_string_value[indexOf(resources_string_key, 'service_name')]` will change to `resource_string_service_name` if `service_name` is a selected field and
+Note:- `resources_string_value[indexOf(resources_string_key, 'service_name')]` will change to `resource_string_service_name` if `service_name` is a [selected field](#selected-attributesresources-) and
 `indexOf(resources_string_key, 'service_name') > 0` will change to `resource_string_service_name_exists = true`
 
 
