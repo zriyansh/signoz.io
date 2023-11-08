@@ -186,7 +186,7 @@ ORDER BY ts ASC;
 ### Value
 
 For the value type panel, the overall query will be similar to timeseries, just that you will have to get the absolute value at the end.
-You can reduce your end result to either of average, latest, sum, min, max.
+You can reduce your end result to either average, latest, sum, min, or max.
 
 #### Examples
 
