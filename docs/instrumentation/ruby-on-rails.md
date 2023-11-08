@@ -149,8 +149,6 @@ In case you have OtelCollector Agent in different VM, replace localhost:4318 wit
 
 <TabItem value="k8s" label="Kubernetes" default>
 
-From VMs, there are two ways to send data to SigNoz Cloud.
-
 For Ruby on Rails application deployed on Kubernetes, you need to install OTel Collector agent in your k8s infra to collect and send traces to SigNoz Cloud. You can find the instructions to install OTel Collector agent [here](https://signoz.io/docs/tutorial/kubernetes-infra-metrics/).
 
 
