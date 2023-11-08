@@ -25,19 +25,19 @@ in the [rention period userguide](https://signoz.io/docs/userguide/retention-per
 1. Create OCI Bucket.
    a. Login to OCI cloud and Menu –> Storage–>Object Storage.
    <figure data-zoomable align='center'>
-    <img src="../../static/img/docs/oci-bucket-cold-storage/oci-bucket-storage.webp" alt="OCI Bucket Menu Navigation"/>
+    <img src="/img/docs/oci-bucket-cold-storage/oci-bucket-storage.webp" alt="OCI Bucket Menu Navigation"/>
     <figcaption><i>OCI Bucket Menu Navigation</i></figcaption>
    </figure>
    <br></br>
    b. Select the OCI compartment and click on **Create Bucket**.
       <figure data-zoomable align='center'>
-       <img src="../../static/img/docs/oci-bucket-cold-storage/oci-bucket-compartment.webp" alt="OCI Bucket Compartment"/>
+       <img src="/img/docs/oci-bucket-cold-storage/oci-bucket-compartment.webp" alt="OCI Bucket Compartment"/>
        <figcaption><i>OCI Bucket Compartment</i></figcaption>
       </figure>
       <br></br>
    c. On the OCI bucket create page, give a meaningful name like signoz-archive-data. I have also selected Auto Tiering to bring down the costs of my bucket for OCI to move infrequently used objects to lower-tiered storage.
       <figure data-zoomable align='center'>
-       <img src="../../static/img/docs/oci-bucket-cold-storage/oci-create-bucket.webp" alt="OCI Create Bucket"/>
+       <img src="/img/docs/oci-bucket-cold-storage/oci-create-bucket.webp" alt="OCI Create Bucket"/>
        <figcaption><i>OCI Create Bucket</i></figcaption>
       </figure>
       <br></br>      
@@ -45,13 +45,13 @@ in the [rention period userguide](https://signoz.io/docs/userguide/retention-per
 2. Generate customer OCI IAM secret key that will be utilized for accessing the Object Storage.
    a. Login to OCI cloud and go to the IAM user profile.
       <figure data-zoomable align='center'>
-       <img src="../../static/img/docs/oci-bucket-cold-storage/oci-iam-profile.webp" alt="OCI IAM Profile"/>
+       <img src="/img/docs/oci-bucket-cold-storage/oci-iam-profile.webp" alt="OCI IAM Profile"/>
        <figcaption><i>OCI IAM Profile</i></figcaption>
       </figure>
       <br></br>      
    b. Click on Customer Secret Keys and then Generate Secret Key. Copy the access key and secret key.
       <figure data-zoomable align='center'>
-       <img src="../../static/img/docs/oci-bucket-cold-storage/oci-custom-secret-keys.webp" alt="OCI Customer Secret Keys"/>
+       <img src="/img/docs/oci-bucket-cold-storage/oci-custom-secret-keys.webp" alt="OCI Customer Secret Keys"/>
        <figcaption><i>OCI Customer Secret Keys</i></figcaption>
       </figure>
       <br></br>        
