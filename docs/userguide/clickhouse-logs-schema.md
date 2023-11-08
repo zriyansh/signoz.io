@@ -54,7 +54,7 @@ There is a distributed logs table which references the above table in each shard
 
 **observed_timestamp** : Time when the log line is observed at the collection system. It is automatically added by the collector.
 
-**id**: It is a [ksuid](https://github.com/segmentio/ksuid), it helps us in pagniating and sorting log lines. It is automatically added by the collector.
+**id**: It is a [ksuid](https://github.com/segmentio/ksuid), it helps us in paginating and sorting log lines. It is automatically added by the collector.
 
 **trace_id** : Trace ID of the log line. [W3C Trace Context](https://www.w3.org/TR/trace-context/#trace-id). It can be filled using [trace parser](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/trace_parser.md).
 
