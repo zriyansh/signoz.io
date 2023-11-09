@@ -49,20 +49,20 @@ The JSON parsing processor can be used to parse serialized JSON text into log at
 |---------------|-----------------|
 |     Name      | A descriptive name. Must be unique across all processors in the pipeline |
 |     Parse&#160;From      | The log field containing serialized JSON text. Eg: `body` or `attributes.sessionInfo` |
-|     Parse&#160;To      | The path to parse to. Eg: If set to `attributes`, parsing from JSON `{ "userId": 8888 }` would set `attributes.userId` to `8888` |
+|     Parse&#160;To      | The path to parse to. Eg: If set to `attributes`, parsing the JSON text `'{ "userId": 8888 }'` would set `attributes.userId` to `8888` |
 
 
 ## Trace
 The trace processor can be used to populate trace id, span id and trace flags for a log.  
-Populating trace identifiers in logs allows navigation from logs to corresponding traces for correlation.
+Populating trace identifiers in logs allows navigation to and from corresponding traces for correlation.
 
 #### Processor Fields
 |     Field     |   Description   |
 |---------------|-----------------|
 |     Name      | A descriptive name. Must be unique across all processors in the pipeline |
-|     Parse&#160;Trace&#160;Id&#160;From   | The log field containing otel Trace Id. Value at specified path must be an even length string of hex characters |
-|     Parse&#160;Span&#160;Id&#160;From    | The log field containing otel Span Id. Value at specified path must be an even length string of hex characters |
-|     Parse&#160;Trace&#160;Flags&#160;From    | The log field containing otel Trace Flags. Value at specified path must be an unsigned int |
+|     Parse&#160;Trace&#160;Id&#160;From   | The log field containing otel Trace Id. Eg: `attributes.myTraceId` <br/> Value at the specified path must be an even length string of hex characters |
+|     Parse&#160;Span&#160;Id&#160;From    | The log field containing otel Span Id.  Eg: `attributes.mySpanId` <br/> Value at the specified path must be an even length string of hex characters |
+|     Parse&#160;Trace&#160;Flags&#160;From    | The log field containing otel Trace Flags. Eg: `attributes.myTraceFlags` <br/> Value at the specified path must be an unsigned int |
 
 At least one field among `Parse Trace Id From`, `Parse Span Id From` and `Parse Trace Flags From` must be specified.
 
