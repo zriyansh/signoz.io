@@ -53,7 +53,8 @@ The JSON parsing processor can be used to parse serialized JSON text into log at
 
 
 ## Trace
-The trace processor can be used to populate trace id, span id and trace flags for a log.
+The trace processor can be used to populate trace id, span id and trace flags for a log.  
+Populating trace identifiers in logs allows navigation from logs to corresponding traces for correlation.
 
 #### Processor Fields
 |     Field     |   Description   |
