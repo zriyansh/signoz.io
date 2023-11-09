@@ -52,6 +52,16 @@ The JSON parsing processor can be used to parse serialized JSON text into log at
 ## Trace
 The trace processor can be used to populate trace id, span id and trace flags for a log.
 
+#### Processor Fields
+|     Field     |   Description   |
+|---------------|-----------------|
+|     Name      | A descriptive name. Must be unique across all processors in the pipeline |
+|     Parse&#160;Trace&#160;Id&#160;From   | The log field containing otel Trace Id. Value must be an even length string of hex characters |
+|     Parse&#160;Span&#160;Id&#160;From    | The log field containing otel Span Id. Value must be an even length string of hex characters |
+|     Parse&#160;Trace&#160;Flags&#160;From    | The log field containing otel Trace Flags. Value must be an unsigned int |
+
+At least one field among `Parse Trace Id From`, `Parse Span Id From` and `Parse Trace Flags From` must be specified.
+
 ## Add
 The add processor can be used to add a field to the log.
 
