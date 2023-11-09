@@ -5,15 +5,26 @@ title: Log Processors
 
 # Log Processors
 
-Log transformation logic for a pipeline is configured as a chain of Processors.
-When a log matches a pipeline's filter, it is transformed by each processor
-in the pipeline one by one.
+Log transformation to be done by a pipeline is configured as a
+chain of Processors.  
+When a log matches a pipeline's filter, it is transformed by each
+processor in the pipeline one by one.
 
-The following log transformation processors are available for creating pipelines.
+The following log transformation processors are available for 
+defining pipelines.
 
 ## Grok
-Grok processor helps in parsing text using grok expressions.  
-A grok processor typically parses from the log body text but it can be used to target any attribute.
+The Grok processor can be used to extract information out of text 
+logs using grok expressions.  
+
+#### Fields
+|     Field     |   Description   |
+|---------------|-----------------|
+|     Name      | A descriptive name, must be unique across all processors in the pipeline |
+|     Pattern      | The grok pattern to be used |
+|     Parse From      | The log text field to parse from. Eg `body` or `attributes.sessionInfo` |
+|     Parse To      | The path to parse to. <br/> Eg: If set to `attributes`, a capture group named `%{WORD:userId}` <br/> in the grok pattern would get stored in `attributes.userId` |
+|     On Error     | What to do if the processor fails. Options are to `drop` the log or `send` it to the next processor  |
 
 ## Regex
 Regex processor helps in parsing text using regular expressions.  
