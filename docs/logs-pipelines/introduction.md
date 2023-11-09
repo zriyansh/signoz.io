@@ -50,17 +50,3 @@ information in your logs or normalizing names of fields across services.
 While you can achieve these goals by changing your application code or by changing config
 for your otel collectors, logs pipelines allow you to do it in SigNoz UI without having to ship changes
 or redeploy your applications and collectors.
-
-Some common examples of logs pre-processing are  
-- Parse your JSON logs into attributes for app specific querying and aggregation
-  - Eg: <TODO: Add application specific report example>
-- Extract attributes out of your text logs for generating aggregated reports and running efficient queries
-  - Eg: you can parse details out of your nginx logs to plot traffic by endpoints or user agent.
-- Extract trace details for correlating your logs with traces.
-- Remove sensitive fields and data from your logs
-- Normalize field names across your services.
-
-
-## Read on for more details.
-- Concepts
-- Quickstart and guides.
