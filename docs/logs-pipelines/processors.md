@@ -56,17 +56,31 @@ The trace processor can be used to populate trace id, span id and trace flags fo
 |     Field     |   Description   |
 |---------------|-----------------|
 |     Name      | A descriptive name. Must be unique across all processors in the pipeline |
-|     Parse&#160;Trace&#160;Id&#160;From   | The log field containing otel Trace Id. Value must be an even length string of hex characters |
-|     Parse&#160;Span&#160;Id&#160;From    | The log field containing otel Span Id. Value must be an even length string of hex characters |
-|     Parse&#160;Trace&#160;Flags&#160;From    | The log field containing otel Trace Flags. Value must be an unsigned int |
+|     Parse&#160;Trace&#160;Id&#160;From   | The log field containing otel Trace Id. Value at specified path must be an even length string of hex characters |
+|     Parse&#160;Span&#160;Id&#160;From    | The log field containing otel Span Id. Value at specified path must be an even length string of hex characters |
+|     Parse&#160;Trace&#160;Flags&#160;From    | The log field containing otel Trace Flags. Value at specified path must be an unsigned int |
 
 At least one field among `Parse Trace Id From`, `Parse Span Id From` and `Parse Trace Flags From` must be specified.
 
 ## Add
 The add processor can be used to add a field to the log.
 
+#### Processor Fields
+|     Field     |   Description   |
+|---------------|-----------------|
+|     Name      | A descriptive name. Must be unique across all processors in the pipeline |
+|     Field     | Path of the field to be added. Must be of the form `attributes.*` or `resource.*`  |
+|     Value     | The value to be set in the specified field |
+
 ## Move
-The move processor can be used to rename or move log attributes.
+The move processor can be used to move or rename a log field.
+
+#### Processor Fields
+|     Field     |   Description   |
+|---------------|-----------------|
+|     Name      | A descriptive name. Must be unique across all processors in the pipeline |
+|     From      | Path of the field to be moved. Must be of the form `attributes.*` or `resource.*` |
+|     To        | New path for the field to be moved. Must be of the form `attributes.*` or `resource.*` |
 
 ## Copy
 The copy processor can be used to copy log attribute values.
