@@ -21,8 +21,8 @@ using grok expressions.
 |---------------|-----------------|
 |     Name      | A descriptive name. Must be unique across all processors in the pipeline |
 |     Pattern      | The [grok pattern](https://grokdebugger.com/) to be used. Must include atleast one named capture group |
-|     Parse&#160;From      | The log text field to parse from. Eg `body` or `attributes.sessionInfo` |
-|     Parse&#160;To      | The path to parse to. <br/> Eg: If set to `attributes`, a capture group like `%{WORD:userId}` in the grok pattern would get stored in `attributes.userId` |
+|     Parse&#160;From      | The log text field to parse from. Eg: `body` or `attributes.sessionInfo` |
+|     Parse&#160;To      | The path to parse to. Eg: If set to `attributes`, a capture group like `%{WORD:userId}` in the grok pattern would get stored in `attributes.userId` |
 |     On&#160;Error     | What to do if the processor fails. Options are to `drop` the log or `send` it to the next processor  |
 
 ## Regex
@@ -34,13 +34,20 @@ using regular expressions.
 |---------------|-----------------|
 |     Name      | A descriptive name. Must be unique across all processors in the pipeline |
 |     Pattern      | The regex pattern to be used. Must include atleast one named capture group |
-|     Parse&#160;From      | The log text field to parse from. Eg `body` or `attributes.sessionInfo` |
-|     Parse&#160;To      | The path to parse to. <br/> Eg: If set to `attributes`, a capture group like `(?P<userId>.+)` in the regex pattern would get stored in `attributes.userId` |
+|     Parse&#160;From      | The log text field to parse from. Eg: `body` or `attributes.sessionInfo` |
+|     Parse&#160;To      | The path to parse to. Eg: If set to `attributes`, a capture group like `(?P<userId>.+)` in the regex pattern would get stored in `attributes.userId` |
 |     On&#160;Error     | What to do if the processor fails. Options are to `drop` the log or `send` it to the next processor  |
 
 
 ## JSON
 The JSON parsing processor can be used to parse serialized JSON text into log attributes.
+
+#### Processor Fields
+|     Field     |   Description   |
+|---------------|-----------------|
+|     Name      | A descriptive name. Must be unique across all processors in the pipeline |
+|     Parse&#160;From      | The log field containing serialized JSON text. Eg: `body` or `attributes.sessionInfo` |
+|     Parse&#160;To      | The path to parse to. Eg: If set to `attributes`, parsing from JSON `{ "userId": 8888 }` would set `attributes.userId` to `8888` |
 
 ## Trace
 The trace processor can be used to populate trace id, span id and trace flags for a log.
