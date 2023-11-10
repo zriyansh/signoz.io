@@ -135,7 +135,7 @@ Step 5. Run the application
 OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=<SIGNOZ_INGESTION_KEY>" nest start
 ```
 
-You can now run your Nestjs application. The data captured with OpenTelemetry from your application should start showing on the SigNoz dashboard.
+The data captured with OpenTelemetry from your application should start showing on the SigNoz dashboard.
 
 `SIGNOZ_INGESTION_KEY` is the API token provided by SigNoz. You can find your ingestion key from SigNoz cloud account details sent on your email.
 
@@ -238,6 +238,9 @@ async function bootstrap() {
 ```
 
 Step 5. Run the application
+```bash
+  nest start
+```
 
 Step 6. You can validate if your application is sending traces to SigNoz cloud [here](#validating-instrumentation-by-checking-for-traces).
 
@@ -336,6 +339,9 @@ async function bootstrap() {
 ```
 
 Step 5. Run the application
+```bash
+  nest start
+```
 
 Step 6. You can validate if your application is sending traces to SigNoz cloud [here](#validating-instrumentation-by-checking-for-traces).
 
@@ -467,8 +473,11 @@ The below import should be the first line in the main file of your application (
       }
       bootstrap();
     ```
-
-    You can now run your Nestjs application. The data captured with OpenTelemetry from your application should start showing on the SigNoz dashboard.
+5. Run the application
+  ```bash
+    nest start
+  ```
+     The data captured with OpenTelemetry from your application should start showing on the SigNoz dashboard.
   
   In case you encounter an issue where all applications do not get listed in the services section then please refer to the [troubleshooting section](#troubleshooting-your-installation).
     
