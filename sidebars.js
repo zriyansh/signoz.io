@@ -155,7 +155,7 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'Collecting Logs',
+          label: 'Send Logs to SigNoz',
           items: [
             'userguide/collect_kubernetes_pod_logs',
             'userguide/collect_docker_logs',
@@ -187,6 +187,17 @@ module.exports = {
         'userguide/logs_query_builder',
         'userguide/logs_clickhouse_queries',
         'userguide/logs_fields',
+        {
+          type: "category",
+          label: "Preprocess Logs",
+          link: {
+            type: "doc",
+            id: "logs-pipelines/introduction",
+          }, items: [
+            "logs-pipelines/concepts",
+            "logs-pipelines/processors",
+          ]
+        },
         'userguide/logs_troubleshooting',
       ],
     },
