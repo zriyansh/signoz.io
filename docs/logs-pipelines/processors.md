@@ -64,8 +64,11 @@ Populating trace identifiers in logs allows navigation to and from corresponding
 |     Parse&#160;Span&#160;Id&#160;From    | The log field containing otel Span Id.  Eg: `attributes.mySpanId` <br/> Value at the specified path must be an even length string of hex characters |
 |     Parse&#160;Trace&#160;Flags&#160;From    | The log field containing otel Trace Flags. Eg: `attributes.myTraceFlags` <br/> Value at the specified path must be an unsigned int |
 
+:::note
+
 At least one field among `Parse Trace Id From`, `Parse Span Id From` and `Parse Trace Flags From` must be specified.
 
+:::
 
 ## Add
 The add processor can be used to add a field to the log.

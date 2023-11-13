@@ -6,13 +6,13 @@ title: Introduction
 import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 import Screenshot from "@theme/Screenshot"
 
-# Unleash the Potential of Your Logs with Pre-processing
+# Unleash the Potential of Your Logs with Logs Pipelines
 
 With Logs Pipelines, you can transform logs to suit your querying
 and aggregation needs before they get stored in the database.
 
+<br/>
 <LiteYoutubeEmbed id="OneENGNmLd0" mute={false} />
-
 <br/>
 
 Once you start sending logs to SigNoz, you can start searching their text
@@ -28,23 +28,44 @@ valuable logs based queries and dashboards that wouldn't be possible otherwise.
 You can also use logs preprocessing to achieve other goals like cleaning sensitive
 information in your logs or normalizing names of fields across services.
 
-<Screenshot
+<figure data-zoomable align="center">
+  <img
     alt="Raw Nginx Log"
     src="/img/logs/pipelines/raw-nginx-log.png "
-    title="A raw Nginx log"
-/>
+  />
+  <figcaption>
+    <i>
+      A raw Nginx log
+    </i>
+  </figcaption>
+</figure>
 
-<Screenshot
+<br/>
+<figure data-zoomable align="center">
+  <img
     alt="Parsed Nginx Log"
     src="/img/logs/pipelines/parsed-nginx-log.png "
-    title="A parsed Nginx log"
-/>
+  />
+  <figcaption>
+    <i>
+      A parsed Nginx log
+    </i>
+  </figcaption>
+</figure>
 
-<Screenshot
+<br/>
+<figure data-zoomable align="center">
+  <img
     alt="Nginx Requests Count by User Agent"
     src="/img/logs/pipelines/nginx-requests-by-user-agent.png"
-    title="A Report for Requests by User Agent, made possible by preprocessing logs to extract User Agent from Nginx text logs"
-/>
+  />
+  <figcaption>
+    <i>
+      A Report for Requests by User Agent, made possible by a pipeline that extracts User Agent from Nginx text logs
+    </i>
+  </figcaption>
+</figure>
+<br/>
 
 
 While you can achieve these goals by changing your application code or by changing config
