@@ -28,9 +28,11 @@ logs and yet another for dropping PII fields from log attributes.
 </figure>
 <br/>
 
-Logs get preprocessed by passing them through the chain of logs processing pipelines one by one.  
-If a log matches a pipeline’s filter, it gets processed (transformed) by
-that pipeline, before moving on to test the log against the next pipeline’s filter and so on.
+Logs get preprocessed by passing them through the chain of logs  pipelines one by one. If a log matches a pipeline’s filter, it gets processed (transformed) by
+that pipeline, before moving on to test the log against the next pipeline’s filter and so on.  
+
+In the example above, each incoming log would first get tested for "nginx logs parser" pipeline's filter, and if it is a match, it will be transformed by that pipeline. The transformed log will then be tested for a match with the "Application Logs Parser" pipeline, followed by other pipelines in the chain one by one.
+
 
 ## Processors
 Apart from specifying a filter to identify the logs it can process,

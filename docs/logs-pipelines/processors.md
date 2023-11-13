@@ -13,23 +13,9 @@ The following log transformation processors are available for
 defining pipelines.
 
 
-## Grok
-The Grok processor can be used to extract information out of text 
-using grok expressions.  
-
-#### Processor Fields
-|     Field     |   Description   |
-|---------------|-----------------|
-|     Name      | A descriptive name. Must be unique across all processors in the pipeline |
-|     Pattern      | The [grok pattern](https://grokdebugger.com/) to be used. Must include atleast one named capture group |
-|     Parse&#160;From      | The log text field to parse from. Eg: `body` or `attributes.sessionInfo` |
-|     Parse&#160;To      | The path to parse to. Eg: If set to `attributes`, a capture group like `%{WORD:userId}` in the grok pattern would get stored in `attributes.userId` |
-|     On&#160;Error     | What to do if the processor fails. Options are to `drop` the log or `send` it to the next processor  |
-
-
 ## Regex
 The Regex processor can be used to extract information out of text
-using regular expressions.
+using [regular expressions](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html).
 
 #### Processor Fields
 |     Field     |   Description   |
@@ -38,6 +24,21 @@ using regular expressions.
 |     Pattern      | The regex pattern to be used. Must include atleast one named capture group |
 |     Parse&#160;From      | The log text field to parse from. Eg: `body` or `attributes.sessionInfo` |
 |     Parse&#160;To      | The path to parse to. Eg: If set to `attributes`, a capture group like `(?P<userId>.+)` in the regex pattern would get stored in `attributes.userId` |
+|     On&#160;Error     | What to do if the processor fails. Options are to `drop` the log or `send` it to the next processor  |
+
+
+## Grok
+The Grok processor can be used to extract information out of text 
+using grok patterns.  
+[Grok](https://www.elastic.co/guide/en/elasticsearch/reference/current/grok.html) is a regular expression dialect with convenient [aliases](https://github.com/vjeantet/grok/blob/master/patterns.go) for commonly used expressions.   
+
+#### Processor Fields
+|     Field     |   Description   |
+|---------------|-----------------|
+|     Name      | A descriptive name. Must be unique across all processors in the pipeline |
+|     Pattern      | The [grok pattern](https://grokdebugger.com/) to be used. Must include atleast one named capture group |
+|     Parse&#160;From      | The log text field to parse from. Eg: `body` or `attributes.sessionInfo` |
+|     Parse&#160;To      | The path to parse to. Eg: If set to `attributes`, a capture group like `%{WORD:userId}` in the grok pattern would get stored in `attributes.userId` |
 |     On&#160;Error     | What to do if the processor fails. Options are to `drop` the log or `send` it to the next processor  |
 
 
