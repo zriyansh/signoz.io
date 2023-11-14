@@ -16,7 +16,7 @@ Log Drains are only supported in Vercel Pro and Enterprise accounts.
 * Enter the endpoint.
     It will be 
     ```
-    https://ingest.<REGION>.signoz.cloud:443/logs/heroku
+    https://ingest.<REGION>.signoz.cloud:443/logs/json
     ```
 
   Depending on the choice of your region for SigNoz cloud, the otlp endpoint will vary according to this table.
