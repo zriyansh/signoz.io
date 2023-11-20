@@ -230,7 +230,7 @@ docker run --env \
     -t signoz/sample-django:latest1 opentelemetry-instrument gunicorn mysite.wsgi -c gunicorn.config.py --workers 2 --threads 2 --reload --bind 0.0.0.0:8000
 ```
 
-c. **If want to use docker image of django app in docker-compose**<br></br>
+c. **If want to use docker image of django app in docker compose**<br></br>
 ```bash
 django-app:
     image: "signoz/sample-django:latest"

@@ -141,14 +141,14 @@ Once you make the changes, you need to restart the Docker containers.
 **To stop running the SigNoz cluster:**
 
 ```
-sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
+sudo docker compose -f docker/clickhouse-setup/docker-compose.yaml stop
 
 ```
 
 **To start/resume the running SigNoz cluster:**
 
 ```
-sudo docker-compose -f docker/clickhouse-setup/docker-compose.yaml up
+sudo docker compose -f docker/clickhouse-setup/docker-compose.yaml up
 
 ```
 

@@ -282,13 +282,13 @@ Once the `yaml` configuration is done, you must restart your Docker containers t
 In the `deploy` folder, run the following command at your terminal to stop Docker containers:
 
 ```bash
-docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
+docker compose -f docker/clickhouse-setup/docker-compose.yaml stop
 ```
 
 Then use the following command to restart the Docker containers:
 
 ```bash
-docker-compose -f docker/clickhouse-setup/docker-compose.yaml up
+docker compose -f docker/clickhouse-setup/docker-compose.yaml up
 ```
 
 Once the containers are running again, you can use the `Dashboards` tab of SigNoz to create customized charts for monitoring your Redis instance.

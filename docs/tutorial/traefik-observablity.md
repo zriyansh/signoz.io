@@ -170,7 +170,7 @@ with the IP address of the host running SigNoz.
 To start the services, run the following command:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 We will visit the `hello-app` service to generate some traffic.

@@ -232,10 +232,10 @@ docker run -d --name fastapi-container \
 ```
 <br></br>
 
-If you're using docker-compose setup:
+If you're using docker compose setup:
 
 ```bash
-# If you are running signoz through official docker-compose setup, run `docker network ls` and find clickhouse network id. It will be something like this clickhouse-setup_default 
+# If you are running signoz through official docker compose setup, run `docker network ls` and find clickhouse network id. It will be something like this clickhouse-setup_default 
 # and pass network id by using --net <network ID>
 
 docker run -d --name fastapi-container \ 

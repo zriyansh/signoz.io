@@ -19,13 +19,13 @@ Once you have successfully installed SigNoz on Docker Standalone, the following 
 To stop SigNoz cluster:
 
 ```bash
-docker-compose -f docker/clickhouse-setup/docker-compose.yaml stop
+docker compose -f docker/clickhouse-setup/docker-compose.yaml stop
 ```
 
 To start/resume SigNoz cluster:
 
 ```bash
-docker-compose -f docker/clickhouse-setup/docker-compose.yaml up -d
+docker compose -f docker/clickhouse-setup/docker-compose.yaml up -d
 ```
 
 _*Note: The stopped SigNoz cluster should resume and mount to the existing docker volumes._
@@ -68,7 +68,7 @@ cd deploy && ./install.sh
 Enter the following command to uninstall SigNoz:
 
 ```bash
-docker-compose -f docker/clickhouse-setup/docker-compose.yaml down -v
+docker compose -f docker/clickhouse-setup/docker-compose.yaml down -v
 ```
 
 ## Remove the Sample Application from SigNoz Dashboard

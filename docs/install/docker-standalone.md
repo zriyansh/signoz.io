@@ -59,12 +59,12 @@ Before you install Signoz, ensure that [Docker Compose](https://docs.docker.com/
 
 1. <CloneRepo />
 
-2. To install SigNoz, enter the `docker-compose up` command, specifying the following:
+2. To install SigNoz, enter the `docker compose up` command, specifying the following:
     - `-f` and the path to your configuration file
     - `-d` to run containers in the background
 
   ```bash
-  docker-compose -f docker/clickhouse-setup/docker-compose.yaml up -d
+  docker compose -f docker/clickhouse-setup/docker-compose.yaml up -d
   ```
 
 ## Verify the Installation
