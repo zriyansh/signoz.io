@@ -1,6 +1,6 @@
 Once we are done with the above configurations, we can now run the collector service with the following command:
 
-From the `otelcol-contrib`, run the following command :
+From the `otelcol-contrib`, run the following command:
 
 ```bash
 ./otelcol-contrib --config ./config.yaml
