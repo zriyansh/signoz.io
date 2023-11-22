@@ -12,11 +12,11 @@ display bodies in a parsed, easy to use structure. You can also
 <figure data-zoomable align="center">
   <img
     src="/img/logs/pipelines/json-log-body-filter.png"
-    alt="Structured display of a log body containing serialized JSON"
+    alt="Structured display of a log body containing serialized JSON for an e-commerce Order"
   />
   <figcaption>
     <i>
-      Structured display of a log body containing serialized JSON
+      Structured display of a log body containing serialized JSON for an e-commerce Order
     </i>
   </figcaption>
 </figure>
@@ -29,11 +29,11 @@ JSON bodies into log attributes.
 <figure data-zoomable align="center">
   <img
     src="/img/logs/pipelines/attributes-parsed-from-json-body.png"
-    alt="Log attributes for country code and order total parsed out of JSON body" 
+    alt="Log attributes for Country Code and Order Total parsed out of JSON body containing Order details"
   />
   <figcaption>
     <i>
-      Log attributes for country code and order total parsed out of JSON body
+      Log attributes for Country Code and Order Total parsed out of JSON body containing Order details
     </i>
   </figcaption>
 </figure>
@@ -45,11 +45,11 @@ efficient and this also unlocks aggregations based on fields in your JSON data.
 <figure data-zoomable align="center">
   <img
     src="/img/logs/pipelines/avg-order-value-by-country.png"
-    alt="Average Order Value by Country based on log attributes parsed out of JSON body"
+    alt="Average Order Value by Country based on log attributes parsed from JSON bodies containing Order details"
   />
   <figcaption>
     <i>
-      Average Order Value by Country based on log attributes for total and country parsed from the body
+      Average Order Value by Country based on log attributes parsed from JSON bodies containing Order details
     </i>
   </figcaption>
 </figure>
@@ -85,12 +85,13 @@ Hover over the **Logs** menu in the sidebar and click on the **Logs Pipeline** s
 
  ## Step 2: Create a New Pipeline
 - Open the "Create New Pipeline" dialog.
-    - If you do not have existing pipelines, press the "**New Pipeline**" button
+    - If you do not have existing pipelines, press the "**New Pipeline**" button.
     - If you already have some pipelines, press the "**Enter Edit Mode**" button and then click the "**Add a New Pipeline**" button at the bottom of the list of pipelines.
-- Provide details about the pipeline in the Create Pipeline Dialog
-    - Name your pipeline and add a description
-    - Pick a filter for the source of your logs.
-    - Verify the logs you want will be selected by the pipeline. Note that while it is not ideal, it is ok if your filter selects other non JSON logs too
+- Provide details about the pipeline in the Create Pipeline Dialog.
+    - Use the **Name** field to give your pipeline a descriptive short name.
+    - Use the **Description** field to add a detailed long description for your pipleine.
+    - Use the **Filter** field to select the logs you want to process with this pipeline.<br/> Typically, these are filters identifying the source of the logs you want to process.
+    - Use the **Filtered Logs Preview** to verify that the logs you want to process will be selected by the pipeline. <br/> Note that while it is not ideal, it is ok if your filter selects other non JSON logs too.
 
 
 <figure data-zoomable align="center">
@@ -107,17 +108,84 @@ Hover over the **Logs** menu in the sidebar and click on the **Logs Pipeline** s
 <br/>
 
 
-
 - Press the "**Create**" button if everything looks right.
 
 
-## Step 3: Add Processors for parsing desired fields into log attributes
-Each added attribute increases the size of your log records in the database. So it is often desirable to only parse a few fields of interest out of the JSON body into their own attributes.  
+## Step 3: Add Processors for Parsing Desired Fields into Log Attributes
+Each added attribute increases the size of your log records in the database. So it is often desirable to parse only a few fields of interest out of the JSON body into their own log attributes.  
 To achieve this, we will first use a JSON processor to parse the log body into a temporary attribute, then we will move the desired fields from the temporary attribute into their own log attributes, and finally remove the temporary log attribute. 
 
- - Add a JSON parser to parse body into temp attribute
- - Add move processors to get desired fields out of temp attribute into their own log attributes.
- - Remove temporary attribute used for storied entire parsed body.
+- Expand the new Pipeline to add processors to it.
+<figure data-zoomable align="center">
+  <img
+    src="/img/logs/pipelines/newly-created-json-parsing-pipeline.png"
+    alt="Clicking Create Pipeline adds a new Pipeline at the end of Pipelines List. It can be expanded by clicking the highlighted icon."
+  />
+  <figcaption>
+    <i>
+      Clicking "Create Pipeline" adds a new Pipeline at the end of Pipelines List. It can be expanded by clicking the highlighted icon.
+    </i>
+  </figcaption>
+</figure>
+<br/>
+<figure data-zoomable align="center">
+  <img
+    src="/img/logs/pipelines/json-pipeline-add-processor-button.png"
+    alt="Expanding a pipeline shows the Add Processor button"
+  />
+  <figcaption>
+    <i>
+      Expanding a pipeline shows the Add Processor button
+    </i>
+  </figcaption>
+</figure>
+<br/>
+
+- Add a processor to parse the JSON log body into a temporary attribute.
+  - Click the **Add Processor** Button to bring up the Dialog for adding a new processor.
+  - Select `Json Parser` in the **Select Processor Type** field.
+  - Use the **Name of Json Parser Processor** field to set a short descriptive name for the processor.
+  - Set the **Parse From** field to `body` <br/>
+  - Use **Parse To** field to define the attribute where the parsed JSON body should be stored temporarily. For example `attributes.temp_parsed_body`.
+  <figure data-zoomable align="center">
+    <img
+      src="/img/logs/pipelines/add-json-parsing-processor-dialog.png"
+      alt="Add New Processor Dialog"
+    />
+    <figcaption>
+      <i>
+        Add New Processor Dialog
+      </i>
+    </figcaption>
+  </figure>
+  - Press the **Create** button to finish adding the processor.
+
+<br/>
+
+- Add **Move** processors to get desired fields out of the temporary attribute containing parsed JSON into their own log attributes.
+  - Click the **Add Processor** Button to bring up the Dialog for adding a new processor.
+  - Select `Move` in the **Select Processor Type** field.
+  - Use the **Name of Move Processor** field to set a short descriptive name for the processor.
+  - Set the **From** field to the path of the JSON field to be extracted into its own attribute. For example `attributes.temp_parsed_body.country`
+  - Use **To** field to define the attribute where the JSON field should be stored.
+<br/>
+<figure data-zoomable align="center">
+  <img
+    src="/img/logs/pipelines/add-move-processor-for-country.png"
+    alt="Add Move Processor Dialog"
+  />
+  <figcaption>
+    <i>
+      Add Move Processor Dialog
+    </i>
+  </figcaption>
+</figure>
+  - Press the **Create** button to finish adding the processor.
+  - Repeat these steps to create a **Move** processor for moving each desired JSON field into its own log attribute.
+
+<br/>
+
+- Remove temporary attribute used for storied entire parsed body.
 
 ## Step 4: Preview and Validate Pipeline Processing 
 
