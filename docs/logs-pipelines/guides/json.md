@@ -84,13 +84,27 @@ Hover over the **Logs** menu in the sidebar and click on the **Logs Pipeline** s
 
 
  ### Step 2 - Create a New Pipeline
-- Open the "Create New Pipeline" dialogue.
+- Open the "Create New Pipeline" dialog.
     - If you do not have existing pipelines, press the "**New Pipeline**" button
     - If you already have some pipelines, press the "**Enter Edit Mode**" button and then click the "**Add a New Pipeline**" button at the bottom of the list of pipelines.
-- Provide details about the pipeline
+- Provide details about the pipeline in the Create Pipeline Dialog
     - Name your pipeline and add a description
     - Pick a filter for the source of your logs.
     - Verify the logs you want will be selected by the pipeline. Note that while it is not ideal, it is ok if your filter selects other non JSON logs too
+
+
+<figure data-zoomable align="center">
+  <img
+    src="/img/logs/pipelines/add-new-pipeline-modal.png"
+    alt="Create New Pipeline dialog"
+  />
+  <figcaption>
+    <i>
+      Create New Pipeline dialog
+    </i>
+  </figcaption>
+</figure>
+<br/>
 
 
 
