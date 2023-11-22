@@ -1,5 +1,5 @@
 
-If you want to see the output of the logs you’ve just set up for the background process, you may look it up with :
+If you want to see the output of the logs you’ve just set up for the background process, you may look it up with:
 
 ```bash
 tail -f -n 50 otelcol-output.log
