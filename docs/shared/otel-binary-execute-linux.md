@@ -7,7 +7,7 @@ From the `otelcol-contrib`, run the following command:
 ```
 
 ### Run in background 
-If you want to run otel collector process in the background :
+If you want to run otel collector process in the background:
 
 ```bash
 ./otelcol-contrib --config ./config.yaml &> otelcol-output.log & echo "$!" > otel-pid
