@@ -65,7 +65,7 @@ In this guide, you will see how to parse data from serialized JSON bodies into l
  - Your logs contain serialized JSON data in the body.
 
 
- ### Step 1 - Navigate to Logs Pipelines Page
+## Step 1: Navigate to Logs Pipelines Page
 
 Hover over the **Logs** menu in the sidebar and click on the **Logs Pipeline** submenu item.
 
@@ -83,7 +83,7 @@ Hover over the **Logs** menu in the sidebar and click on the **Logs Pipeline** s
 <br/>
 
 
- ### Step 2 - Create a New Pipeline
+ ## Step 2: Create a New Pipeline
 - Open the "Create New Pipeline" dialog.
     - If you do not have existing pipelines, press the "**New Pipeline**" button
     - If you already have some pipelines, press the "**Enter Edit Mode**" button and then click the "**Add a New Pipeline**" button at the bottom of the list of pipelines.
@@ -111,14 +111,19 @@ Hover over the **Logs** menu in the sidebar and click on the **Logs Pipeline** s
 - Press the "**Create**" button if everything looks right.
 
 
-### Step 3 - Add a JSON parsing processor
- - Add a JSON parser.
- - Parse into attributes
- - Preview and verify it works.
+## Step 3: Add Processors for parsing desired fields into log attributes
+Each added attribute increases the size of your log records in the database. So it is often desirable to only parse a few fields of interest out of the JSON body into their own attributes.  
+To achieve this, we will first use a JSON processor to parse the log body into a temporary attribute, then we will move the desired fields from the temporary attribute into their own log attributes, and finally remove the temporary log attribute. 
 
-### Step 4 - Save Pipelines and Verify
+ - Add a JSON parser to parse body into temp attribute
+ - Add move processors to get desired fields out of temp attribute into their own log attributes.
+ - Remove temporary attribute used for storied entire parsed body.
 
-### Recap
+## Step 4: Preview and Validate Pipeline Processing 
+
+## Step 5: Save Pipelines and Verify
+
+## Recap
 
 <!---
 TODO(Raj): Add these sections after relevant guides are in place.
