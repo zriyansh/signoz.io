@@ -62,9 +62,9 @@ Here are the steps to set up OpenTelemetry binary as an agent.
 
 4. <OtelExecuteLinux />
 
-5. <TailLogs />
+   <TailLogs />
 
-6. <OtelStop />
+   <OtelStop />
 
 </TabItem>
 <TabItem value="linux-arm" label="Linux (arm64)">
@@ -77,9 +77,9 @@ Here are the steps to set up OpenTelemetry binary as an agent.
 
 4. <OtelExecuteLinux />
 
-5. <TailLogs />
+   <TailLogs />
 
-6. <OtelStop />
+   <OtelStop />
 
 </TabItem>
 <TabItem value="macos-amd" label="MacOS (amd64)">
@@ -92,9 +92,9 @@ Here are the steps to set up OpenTelemetry binary as an agent.
 
 4. <OtelExecuteMacos />
 
-5. <TailLogs />
+   <TailLogs />
 
-6. <OtelStop />
+   <OtelStop />
 
 </TabItem>
 <TabItem value="macos-arm" label="MacOS (arm64)">
@@ -107,9 +107,9 @@ Here are the steps to set up OpenTelemetry binary as an agent.
 
 4. <OtelExecuteMacos />
 
-5. <TailLogs />
+   <TailLogs />
 
-6. <OtelStop />
+  <OtelStop />
 
 </TabItem>
 </Tabs>
