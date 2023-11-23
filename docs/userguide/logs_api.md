@@ -26,8 +26,8 @@ The top-level model looks like this and is broken down into further tables
 |---|---|
 |start| Epoch timestamp start in ms/ns |
 |end | Epoch timestamp end in ms/ns |
-|step | Step size |
-|compositeQuery | This contains the [**compositeQuery**](#compositequery) which is explaied below |
+|step | Step size for the query in seconds |
+|compositeQuery | This contains the [**compositeQuery**](#compositequery) which is explained below |
 
 ### compositeQuery
 
@@ -39,7 +39,7 @@ This table explains what a compositeQuery consists of
 |panelType| Type of panel i.e list/graph/table |
 |offset| Offset used in pagination |
 |pageSize| Number of items to be fetched, used in list view |
-|limit| Maximum number of items to be paginate, i.e offset + pageSize cannot exceed limit |
+|limit| For list: - Maximum number of items to be paginate, i.e offset + pageSize cannot exceed limit, For aggreation:- limit on the results  |
 |builderQueries | Map of [**builderQuery**](#builderquery) |
 
 ### builderQuery
@@ -52,11 +52,11 @@ This table explains what a builderQuery consists of
 |queryName| Name of the query, should be same as the key to this map value | 
 |dataSource| Source of data i.e metrics/traces/logs. We will use logs in this case |
 |aggregateOperator| Type of aggreation - noop, count, count_distinct, sum, avg, min, max, p05, p10, p20, p25, p50, p75, p90, p95, p99, rate, sum_rate, avg_rate, min_rate, max_rate, rate_sum, rate_avg, rate_min, rate_max|
-|aggregateAttribute| The [**attribute**](#attribute) aginst which the aggregateOperator is to be applied |
+|aggregateAttribute| The [**attribute**](#attribute) against which the aggregateOperator is to be applied |
 |filters| Array of [**filter**](#filter) used for filtering data|
-|groupBy| Array  of [**attribute**](#attribute) which is used for group By|
+|groupBy| Array  of [**attribute**](#attribute) used for group By|
 |expression| Expression which will be same as query name but different in case of formulas|
-|disabled| Specified if the query should be run|
+|disabled| Specified if the query is disabled |
 
 
 ### filter
@@ -66,7 +66,7 @@ This table explains what a filter looks like
 |  NAME  | DESCRIPTION  |
 |---|---|
 |items| Array of [**filterItem**](#filteritem)|
-|op| How the final items are JOINED i.e AND|
+|op| How the final items are joined i.e AND|
 
 ### filterItem
 
@@ -395,16 +395,21 @@ Start and end timestamps will vary according to your use case.
 </TabItem>
 </Tabs>
 
+&nbsp; 
+---
+
+---
+
 ## Creating Logs URL For Explorer Page
 
-We will go through how we can generate the URL for the explorer page through which we will land directly to the explorer page on the browser. 
+We will go through how we can generate the URL for the explorer page through which we can directly land on the explorer page with filters and custom timerange. 
 
-
-### Params for the URL
 
 ```
 /logs-explorer?
 ```
+
+### Params for the URL
 
 The `URI encoded` column describes how many times the value has to be [URI encoded](https://meyerweb.com/eric/tools/dencoder/)
 
@@ -412,8 +417,8 @@ The `URI encoded` column describes how many times the value has to be [URI encod
 |---|---|---|
 |panelTypes| "list"/"graph"/"table"| once |
 |compositeQuery| It's a JSON structure consisting of `builderQueries` |twice |
-|startTime| timestamp start in ns| no |
-|endTime| timestamp end in ns| no |
+|startTime| Timestamp start in ms| no |
+|endTime| Timestamp end in ms| no |
 
 
 
