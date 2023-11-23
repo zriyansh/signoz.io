@@ -199,6 +199,7 @@ module.exports = {
             "logs-pipelines/processors",
           ]
         },
+        'userguide/logs_api',
         'userguide/logs_troubleshooting',
       ],
     },
