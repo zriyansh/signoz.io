@@ -5,8 +5,8 @@ title: Parse JSON Logs
 
 # Parse JSON logs with Pipelines
 
-If your logs contain serialized JSON in their bodies, log details in Signoz UI will
-display bodies in a parsed, easy to use structure. You can also
+If your logs contain serialized JSON in their bodies, the log detail view in Signoz UI will
+display the body in a parsed, easy to use structure. You can also
 [filter your logs based on JSON data in the body](/docs/userguide/logs_query_builder/#writing-json-filters-in-the-new-logs-explorer).  
 
 <figure data-zoomable align="center">
@@ -23,8 +23,8 @@ display bodies in a parsed, easy to use structure. You can also
 <br/>
 
 While these powerful features work out of the box, you can take things
-up a notch by pre-processing your log records to parse data out of
-JSON bodies into log attributes.
+up a notch by pre-processing your log records to parse interesting fields out of
+JSON bodies into their own log attributes.
 
 <figure data-zoomable align="center">
   <img
@@ -40,7 +40,7 @@ JSON bodies into log attributes.
 <br/>
 
 Filtering by log attributes is more
-efficient and this also unlocks aggregations based on fields in your JSON data.  
+efficient and this also unlocks aggregations based on fields extracted from your JSON data.  
 
 <figure data-zoomable align="center">
   <img
@@ -58,7 +58,7 @@ efficient and this also unlocks aggregations based on fields in your JSON data.
 The parsed attributes can also be used to further enrich your log records. For example, if the serialized JSON contained trace information, you could
 [populate trace details](/docs/logs-pipelines/guides/trace.md) in your log records from the parsed attributes, enabling correlation of your logs to and from corresponding traces.  
 
-In this guide, you will see how to parse data from serialized JSON bodies into log attributes.
+In this guide, you will see how to parse interesting fields out of serialized JSON bodies into their own log attributes.
 
  ## Prerequisites
  - You are sending logs to SigNoz.
@@ -90,7 +90,7 @@ Hover over the **Logs** menu in the sidebar and click on the **Logs Pipeline** s
 - Provide details about the pipeline in the Create Pipeline Dialog.
     - Use the **Name** field to give your pipeline a descriptive short name.
     - Use the **Description** field to add a detailed long description for your pipleine.
-    - Use the **Filter** field to select the logs you want to process with this pipeline.<br/> Typically, these are filters identifying the source of the logs you want to process.
+    - Use the **Filter** field to select the logs you want to process with this pipeline.<br/> Typically, these are filters identifying the source of the logs you want to process. `service = checkout` for example.
     - Use the **Filtered Logs Preview** to verify that the logs you want to process will be selected by the pipeline. <br/> Note that while it is not ideal, it is ok if your filter selects other non JSON logs too.
 
 
@@ -166,7 +166,7 @@ To achieve this, we will first use a JSON processor to parse the log body into a
   - Click the **Add Processor** Button to bring up the Dialog for adding a new processor.
   - Select `Move` in the **Select Processor Type** field.
   - Use the **Name of Move Processor** field to set a short descriptive name for the processor.
-  - Set the **From** field to the path of the JSON field to be extracted into its own attribute. For example `attributes.temp_parsed_body.country`
+  - Set the **From** field to the path of the parsed JSON field to be extracted. For example `attributes.temp_parsed_body.country`
   - Use **To** field to define the attribute where the JSON field should be stored.
 <br/>
 <figure data-zoomable align="center">
@@ -189,7 +189,7 @@ To achieve this, we will first use a JSON processor to parse the log body into a
   - Click the **Add Processor** Button to bring up the Dialog for adding a new processor.
   - Select `Remove` in the **Select Processor Type** field.
   - Use the **Name of Remove Processor** field to set a short descriptive name for the processor.
-  - Set **Field** input to the path of the attribute we used for storing parsed JSON body temporarily. For example `attributes.temp_parsed_body`
+  - Set **Field** input to path of the attribute we used for storing parsed JSON body temporarily. For example `attributes.temp_parsed_body`
 <br/>
 <figure data-zoomable align="center">
   <img
@@ -220,7 +220,7 @@ At this point you should have the pipeline ready with all necessary processors.
 </figure>
 <br/>
 
-Before we save and deploy the pipeline, it is best to simulate processing on some sample logs to validate that the pipeline is working as expected.  
+Before we save and deploy the pipeline, it is best to simulate processing on some sample logs to validate that the pipeline will work as expected.  
 Click the "eye" icon in the actions column for the pipeline to bring up the Pipeline Preview Dialog
 
 <figure data-zoomable align="center">
@@ -260,10 +260,8 @@ If you see any issues, you can close the preview, edit your processors as needed
 
 ## Step 5: Save Pipelines and Verify
 
-Once you have previewed your pipeline and verified that it works as expected, press the **Save Configuration** button at the bottom of the pipelines list to save pipelines. This will store the latest state of your pipelines and will deploy them for pre-processing.
+Once you have previewed your pipeline and verified that it will work as expected, press the **Save Configuration** button at the bottom of the pipelines list to save pipelines. This will store the latest state of your pipelines and will deploy them for pre-processing.
 
 You can track the deployment status of your pipelines using the **Change History** tab at the top of the pipelines page.
-Wait for a few minutes to let the pipelines deploy and for the latest batches of logs to get stored in the database. Then you can head over to the logs explorer to verify that your logs are getting pre-processed as expected.  
+Wait for a few minutes to let the pipelines deploy and for latest batches of logs to get pre-processed and stored in the database. Then you can head over to the logs explorer to verify that your logs are getting pre-processed as expected.  
 You can now start using the new log attributes you have extracted for more efficient filtering and aggregations.
-
-## Recap
