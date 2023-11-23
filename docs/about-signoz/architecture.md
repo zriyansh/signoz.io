@@ -3,7 +3,7 @@ id: architecture
 title: Technical Architecture
 ---
 
-![acrhitecture-diagram-clickhouse](../static/img/architecture-signoz-clickhouse.svg)
+![acrhitecture-diagram-clickhouse](../../static/img/architecture-signoz-clickhouse.svg)
 
 ### Architecture Components
 
