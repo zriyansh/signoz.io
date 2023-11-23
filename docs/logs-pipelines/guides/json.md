@@ -185,7 +185,25 @@ To achieve this, we will first use a JSON processor to parse the log body into a
 
 <br/>
 
-- Remove temporary attribute used for storied entire parsed body.
+- Add processor for removing attribute used for temporarily storing the parsed JSON log body.
+  - Click the **Add Processor** Button to bring up the Dialog for adding a new processor.
+  - Select `Remove` in the **Select Processor Type** field.
+  - Use the **Name of Remove Processor** field to set a short descriptive name for the processor.
+  - Set **Field** input to the path of the attribute we used for storing parsed JSON body temporarily. For example `attributes.temp_parsed_body`
+<br/>
+<figure data-zoomable align="center">
+  <img
+    src="/img/logs/pipelines/json-parser-remove-temp-attribute.png"
+    alt="Remove Processor Dialog"
+  />
+  <figcaption>
+    <i>
+      Remove Processor Dialog
+    </i>
+  </figcaption>
+</figure>
+  - Press the **Create** button to finish adding the processor.
+<br/>
 
 ## Step 4: Preview and Validate Pipeline Processing 
 
