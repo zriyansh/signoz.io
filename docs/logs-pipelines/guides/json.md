@@ -206,16 +206,64 @@ To achieve this, we will first use a JSON processor to parse the log body into a
 <br/>
 
 ## Step 4: Preview and Validate Pipeline Processing 
+At this point you should have the pipeline ready with all necessary processors.
+<figure data-zoomable align="center">
+  <img
+    src="/img/logs/pipelines/json-parsing-pipeline-expanded.png"
+    alt="Expanded Pipeline with Processors for parsing desired fields out of JSON body into their own log attributes"
+  />
+  <figcaption>
+    <i>
+      Expanded Pipeline with Processors for parsing desired fields out of JSON body into their own log attributes
+    </i>
+  </figcaption>
+</figure>
+<br/>
+
+Before we save and deploy the pipeline, it is best to simulate processing on some sample logs to validate that the pipeline is working as expected.  
+Click the "eye" icon in the actions column for the pipeline to bring up the Pipeline Preview Dialog
+
+<figure data-zoomable align="center">
+  <img
+    src="/img/logs/pipelines/json-parsing-pipeline-preview-init.png"
+    alt="Pipeline Preview with Sample Logs"
+  />
+  <figcaption>
+    <i>
+      Pipeline Preview with Sample Logs
+    </i>
+  </figcaption>
+</figure>
+<br/>
+
+The preview Dialog will start out with sample logs queried from the database. You can adjust the sample logs search duration if there are no recent samples available.  
+To simulate pipeline processing, press the **Simulate Processing** button in the bottom section of the Pipeline Preview Dialog.  
+This will simulate pipeline processing on the sample logs and show the output.  
+
+<br/>
+<figure data-zoomable align="center">
+  <img
+    src="/img/logs/pipelines/json-parsing-pipeline-preview.png"
+    alt="Pipeline Preview with Processed Output"
+  />
+  <figcaption>
+    <i>
+      Pipeline Preview with Processed Output
+    </i>
+  </figcaption>
+</figure>
+<br/>
+
+You can click on the *expand icon* on the right end of each processed log to open the detailed view for that log. Expand some of the processed logs to verify that your desired log attributes were extracted as expected.  
+If you see any issues, you can close the preview, edit your processors as needed and preview again to verify. Iterate on your pipeline and processor config until it all works just the way you want it.
+
 
 ## Step 5: Save Pipelines and Verify
 
+Once you have previewed your pipeline and verified that it works as expected, press the **Save Configuration** button at the bottom of the pipelines list to save pipelines. This will store the latest state of your pipelines and will deploy them for pre-processing.
+
+You can track the deployment status of your pipelines using the **Change History** tab at the top of the pipelines page.
+Wait for a few minutes to let the pipelines deploy and for the latest batches of logs to get stored in the database. Then you can head over to the logs explorer to verify that your logs are getting pre-processed as expected.  
+You can now start using the new log attributes you have extracted for more efficient filtering and aggregations.
+
 ## Recap
-
-<!---
-TODO(Raj): Add these sections after relevant guides are in place.
-
-You can also [parse serialized JSON data out of fields other than the log body](/docs/logs-pipelines/parse-json-from-non-body-fields.md).
-
-Adding log attributes increases the size of your log records. You can
-keep costs in check by [retaining only a portion of the parsed JSON data](/docs/logs-pipelines/retain-only-a-portion-of-parsed-json.md).
---> 
