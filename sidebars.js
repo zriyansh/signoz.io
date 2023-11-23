@@ -341,7 +341,7 @@ module.exports = {
               },
               items: [
                 "logs-pipelines/guides/json",
-                "logs-pipelines/guides/nginx"
+                "logs-pipelines/guides/trace"
               ]
             }
           ]

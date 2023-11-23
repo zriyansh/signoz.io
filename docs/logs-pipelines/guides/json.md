@@ -56,7 +56,7 @@ efficient and this also unlocks aggregations based on fields extracted from your
 <br/>
 
 The parsed attributes can also be used to further enrich your log records. For example, if the serialized JSON contained trace information, you could
-[populate trace details](/docs/logs-pipelines/guides/trace.md) in your log records from the parsed attributes, enabling correlation of your logs to and from corresponding traces.  
+[populate trace details](/docs/logs-pipelines/guides/trace) in your log records from the parsed attributes, enabling correlation of your logs to and from corresponding traces.  
 
 In this guide, you will see how to parse interesting fields out of serialized JSON bodies into their own log attributes.
 
