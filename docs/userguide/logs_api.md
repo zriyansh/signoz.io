@@ -26,7 +26,7 @@ The top-level model looks like this and is broken down into further tables
 |---|---|
 |start| Epoch timestamp start in ms/ns |
 |end | Epoch timestamp end in ms/ns |
-|step | Step size for the query in seconds |
+|step | Aggreagtion interval for the query in seconds |
 |compositeQuery | This contains the [**compositeQuery**](#compositequery) which is explained below |
 
 ### compositeQuery
@@ -48,7 +48,7 @@ This table explains what a builderQuery consists of
 
 |  NAME  | DESCRIPTION  |
 |---|---|
-|stepInterval| Step interval for the query in seconds |
+|stepInterval| Aggreagtion interval for the query in seconds |
 |queryName| Name of the query, should be same as the key to this map value | 
 |dataSource| Source of data i.e metrics/traces/logs. We will use logs in this case |
 |aggregateOperator| Type of aggreation - noop, count, count_distinct, sum, avg, min, max, p05, p10, p20, p25, p50, p75, p90, p95, p99, rate, sum_rate, avg_rate, min_rate, max_rate, rate_sum, rate_avg, rate_min, rate_max|
