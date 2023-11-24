@@ -12,14 +12,14 @@ With SigNoz, you can monitor the health of the HTTP endpoints and set up an aler
 
 <TabItem value="cloud" label="SigNoz Cloud" default>
 
-  * Add the httpcheck receiver to `config.yaml` and setup the collector OTLP exporter to send data to SigNoz Cloud.
+  * Add the httpcheck receiver to the config and setup the collector OTLP exporter to send data to SigNoz Cloud.
 
-    ```yaml {2-5,8-13}
+    ```yaml {2-6,9-14}
     receivers:
       httpcheck:
         targets:
-          endpoint: http://example.com
-          method: GET
+          - endpoint: http://example.com
+            method: GET
         collection_interval: 10s
     ...
     exporters:
@@ -53,17 +53,17 @@ With SigNoz, you can monitor the health of the HTTP endpoints and set up an aler
             exporters: [otlp]
       ```
 
-  * We can restart the otel collector container so that new changes are applied and see the metrics generated for synthetic checks.
+  * We can restart the otel collector container/processor so that new changes are applied and see the metrics generated for synthetic checks.
 
   * This receiver creates a metric name `httpcheck_status` with value 1 if the check resulted in status_code matching the status_class, otherwise 0. For more info on the additional metrics and attributes available, please read the documentation [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/httpcheckreceiver/documentation.md).
 
 
 #### Monitoring Health of Multiple Endpoints
 
-  You can configure `targets` for the httpcheck receiver to monitor the health of multiple endpoints. Following is the sample config that monitors two endpoints.
+  You can configure `targets` for the httpcheck receiver to monitor the health of one or more endpoints. Following is the sample config that monitors two endpoints.
   
 
-  ```yaml {2-9,12-17,22,24}
+  ```yaml {2-8,11-16,21,23}
   receivers:
     httpcheck:
       targets:
@@ -93,13 +93,13 @@ With SigNoz, you can monitor the health of the HTTP endpoints and set up an aler
 
 <TabItem value="self-host" label="Self-Host" default>
 
-* Add the httpcheck receiver to `otel-collector-config.yaml` 
+* Add the httpcheck receiver to the config file
   ```yaml {2-10}
   receivers:
     httpcheck:
       targets:
-        endpoint: http://example.com
-        method: GET
+        - endpoint: http://example.com
+          method: GET
       collection_interval: 10s
   ```
   The HTTP Check Receiver can be used for synthetic checks against HTTP endpoints. This receiver will make a request to the specified endpoint using the configured method. This scraper generates a metric labelled for each HTTP response status class with a value of 1 if the status code matches the class.
@@ -114,7 +114,7 @@ With SigNoz, you can monitor the health of the HTTP endpoints and set up an aler
           exporters: [clickhousemetricswrite]
     ```
 
-* We can restart the otel collector container so that new changes are applied and see the metrics generated for synthetic checks.
+* We can restart the otel collector container/processor so that new changes are applied and see the metrics generated for synthetic checks.
 
 * This receiver creates a metric name `httpcheck_status` with value 1 if the check resulted in status_code matching the status_class, otherwise 0. For more info on the additional metrics and attributes available, please read the documentation [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/httpcheckreceiver/documentation.md).
 
@@ -122,7 +122,7 @@ With SigNoz, you can monitor the health of the HTTP endpoints and set up an aler
 
   You can configure `targets` for the httpcheck receiver to monitor the health of multiple endpoints. Following is the sample config that monitors two endpoints.
 
-  ```yaml {2-10}
+  ```yaml {2-8}
   receivers:
     httpcheck:
       targets:
