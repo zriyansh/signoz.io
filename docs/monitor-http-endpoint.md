@@ -12,13 +12,14 @@ With SigNoz, you can monitor the health of the HTTP endpoints and set up an aler
 
 <TabItem value="cloud" label="SigNoz Cloud" default>
 
-  * Add the httpcheck receiver to `otel-collector-config.yaml` and setup the collector OTLP exporter to send data to SigNoz Cloud.
+  * Add the httpcheck receiver to `config.yaml` and setup the collector OTLP exporter to send data to SigNoz Cloud.
 
     ```yaml {2-5,8-13}
     receivers:
       httpcheck:
-        endpoint: http://example.com
-        method: GET
+        targets:
+          endpoint: http://example.com
+          method: GET
         collection_interval: 10s
     ...
     exporters:
@@ -59,20 +60,19 @@ With SigNoz, you can monitor the health of the HTTP endpoints and set up an aler
 
 #### Monitoring Health of Multiple Endpoints
 
-  If you want to monitor the health of multiple endpoints with this receiver, then you need to add one instance of receiver for each endpoint since it currently supports only one endpoint. Following is the sample config that monitors two endpoints.
+  You can configure `targets` for the httpcheck receiver to monitor the health of multiple endpoints. Following is the sample config that monitors two endpoints.
   
 
   ```yaml {2-9,12-17,22,24}
   receivers:
-    httpcheck/example:
-      endpoint: http://example.com
-      method: GET
+    httpcheck:
+      targets:
+        - endpoint: http://example.com
+          method: GET
+        - endpoint: http://my-app.com
+          method: GET
       collection_interval: 10s
-    httpcheck/my-app:
-      endpoint: http://my-app.com
-      method: GET
-      collection_interval: 1s
-  ...
+...
   exporters:
     otlp:
       endpoint: "ingest.{region}.signoz.cloud:443"
@@ -84,7 +84,7 @@ With SigNoz, you can monitor the health of the HTTP endpoints and set up an aler
     service:
         ....
         metrics:
-          receivers: [otlp, httpcheck/example, httpcheck/my-app]
+          receivers: [otlp, httpcheck]
           processors: [batch]
           exporters: [otlp]
   ```
@@ -97,8 +97,9 @@ With SigNoz, you can monitor the health of the HTTP endpoints and set up an aler
   ```yaml {2-10}
   receivers:
     httpcheck:
-      endpoint: http://example.com
-      method: GET
+      targets:
+        endpoint: http://example.com
+        method: GET
       collection_interval: 10s
   ```
   The HTTP Check Receiver can be used for synthetic checks against HTTP endpoints. This receiver will make a request to the specified endpoint using the configured method. This scraper generates a metric labelled for each HTTP response status class with a value of 1 if the status code matches the class.
@@ -119,25 +120,24 @@ With SigNoz, you can monitor the health of the HTTP endpoints and set up an aler
 
 #### Monitoring Health of Multiple Endpoints
 
-If you want to monitor the health of multiple endpoints with this receiver, then you need to add one instance of receiver for each endpoint since it currently supports only one endpoint. Following is the sample config that monitors two endpoints.
+  You can configure `targets` for the httpcheck receiver to monitor the health of multiple endpoints. Following is the sample config that monitors two endpoints.
 
   ```yaml {2-10}
   receivers:
-    httpcheck/example:
-      endpoint: http://example.com
-      method: GET
+    httpcheck:
+      targets:
+        - endpoint: http://example.com
+          method: GET
+        - endpoint: http://my-app.com
+          method: GET
       collection_interval: 10s
-    httpcheck/my-app:
-      endpoint: http://my-app.com
-      method: GET
-      collection_interval: 1s
-  ...
+...
   ...
 
     service:
         ....
         metrics:
-          receivers: [otlp, httpcheck/example, httpcheck/my-app]
+          receivers: [otlp, httpcheck]
           processors: [batch]
           exporters: [clickhousemetricswrite]
   ```
