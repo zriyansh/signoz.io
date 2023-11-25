@@ -957,7 +957,7 @@ const ExploreAllFeature = () => {
         section: "Data Pipelines",
         features: [
           {
-            feature: "Support for S3/Google Cloud Storage archival",
+            feature: "Support for Cold Storage for long term data archival",
             inCommunity: <RightIcon />,
             inTeams: <RightIcon />,
             inEnterprise: <RightIcon />,
