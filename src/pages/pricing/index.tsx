@@ -219,7 +219,7 @@ const PricingPlans = () => {
                 Tired of unpredictable pricing and complex billing structure?
                 Save up to{" "}
                 <Link href="/blog/pricing-comparison-signoz-vs-datadog-vs-newrelic-vs-grafana/">
-                  <u>90% on your Datadog bill</u>
+                  <u>80% on your Datadog bill</u>
                 </Link>{" "}
                 with SigNoz. No user-based and host-based pricing.
               </SubHeading>
@@ -960,8 +960,18 @@ const ExploreAllFeature = () => {
           {
             feature: "Support for Cold Storage for long term data archival",
             inCommunity: <RightIcon />,
-            inTeams: <RightIcon />,
-            inEnterprise: <RightIcon />,
+            inTeams: (
+              <div className="flex flex-col justify-center items-center">
+                <LoadingIcon />
+                <small>Early Access</small>
+              </div>
+            ),
+            inEnterprise: (
+              <div className="flex flex-col justify-center items-center">
+                <LoadingIcon />
+                <small>Early Access</small>
+              </div>
+            ),
           },
         ],
       },
