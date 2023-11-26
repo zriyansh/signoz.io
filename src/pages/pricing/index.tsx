@@ -366,7 +366,6 @@ const PricingPlans = () => {
                     Metrics
                     <br />
                     <br />
-
                     <i>Reach out to us for higher retention period</i>
                   </p>
                   <Divider isDashed />
@@ -423,7 +422,6 @@ const PricingPlans = () => {
                       <li>Dashboard locking</li>
                       <li>Visualize very large traces (&gt;10K spans)</li>
                       <li>Data centers available in the US, EU & India</li>
-
                     </ul>
                   </div>
                   <Divider isDashed />
@@ -600,7 +598,8 @@ const PricingPlans = () => {
               <Heading type={1}>Run SigNoz within your infrastructure</Heading>
               <SubHeading>
                 Get started with Community Edition and upgrade for
-                enterprise-ready features or get it managed by SigNoz in your cloud (BYOC)
+                enterprise-ready features or get it managed by SigNoz in your
+                cloud (BYOC)
               </SubHeading>
             </div>
 
@@ -955,6 +954,8 @@ const ExploreAllFeature = () => {
       },
       {
         section: "Data Pipelines",
+        sectionNote:
+          "* There will be extra charge for s3 storage for cloud and enterprise plan. Reach out to us for more details. ",
         features: [
           {
             feature: "Support for Cold Storage for long term data archival",
@@ -1236,6 +1237,7 @@ const ExploreAllFeature = () => {
                             </div>
                           );
                         })}
+                        {row?.sectionNote ? <div className="italic text-sm m-0 my-2">{row.sectionNote}</div> : null}
                       </div>
                     </div>
                   );
