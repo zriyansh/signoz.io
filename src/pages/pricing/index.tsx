@@ -955,7 +955,7 @@ const ExploreAllFeature = () => {
       {
         section: "Data Pipelines",
         sectionNote:
-          "* There will be extra charges for cold storage for cloud and enterprise plan. Reach out to us on our support email for more details. ",
+          "* Reach out to us on our support email for pricing details and getting access. ",
         features: [
           {
             feature: "Support for Cold Storage for long term data archival",
@@ -963,13 +963,13 @@ const ExploreAllFeature = () => {
             inTeams: (
               <div className="flex flex-col justify-center items-center">
                 <LoadingIcon />
-                <small>Early Access</small>
+                <small>Early Access*</small>
               </div>
             ),
             inEnterprise: (
               <div className="flex flex-col justify-center items-center">
                 <LoadingIcon />
-                <small>Early Access</small>
+                <small>Early Access*</small>
               </div>
             ),
           },
