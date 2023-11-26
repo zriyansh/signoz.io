@@ -955,7 +955,7 @@ const ExploreAllFeature = () => {
       {
         section: "Data Pipelines",
         sectionNote:
-          "* There will be extra charge for s3 storage for cloud and enterprise plan. Reach out to us for more details. ",
+          "* There will be extra charges for cold storage for cloud and enterprise plan. Reach out to us on our support email for more details. ",
         features: [
           {
             feature: "Support for Cold Storage for long term data archival",
