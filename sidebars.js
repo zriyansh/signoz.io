@@ -165,7 +165,7 @@ module.exports = {
         },
         {
           type: "category",
-          label: "APM UI",
+          label: "APM Product Overview",
           items: [
             {
               type: 'doc',
@@ -201,7 +201,12 @@ module.exports = {
             },
           ]
         },
-        'instrumentation/troubleshoot-instrumentation',
+        {
+          type: 'doc',
+          id: 'instrumentation/troubleshoot-instrumentation',
+          label: 'Troubleshooting',
+        },
+        
       ],
     },
     {
@@ -346,6 +351,11 @@ module.exports = {
         'userguide/create-a-custom-query',
         {
           type: 'doc',
+          id: 'userguide/query-builder',
+    
+        },
+        {
+          type: 'doc',
           id: 'userguide/write-a-metrics-clickhouse-query',
           label: 'ClickHouse Query for Metrics',
         }, 
@@ -366,11 +376,6 @@ module.exports = {
       type: 'doc',
       id: 'userguide/exceptions',
       label: 'Monitroing Exceptions',
-    },
-    {
-      type: 'doc',
-      id: 'userguide/query-builder',
-
     },
     {
       label: "Security & Compliance",
@@ -483,9 +488,21 @@ module.exports = {
       type: "category",
       label: "About SigNoz",
       items: [
-        'about-signoz/architecture',
-        'about-signoz/contributing',
-        'about-signoz/roadmap',
+        {
+          id: "architecture",
+          type: "doc",
+        },
+        {
+          id: "contributing",
+          type: "doc",
+        },
+        {
+          id: "roadmap",
+          type: "doc",
+        },
+        // 'about-signoz/architecture',
+        // 'about-signoz/contributing',
+        // 'about-signoz/roadmap',
       ]
     },
     {
