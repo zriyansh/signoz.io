@@ -183,6 +183,11 @@ module.exports = {
                 'userguide/span-details',
               ]
             },
+            {
+              type: 'doc',
+              id: 'userguide/service-map',
+        
+            },
           ]
         },
         {
@@ -365,11 +370,6 @@ module.exports = {
     {
       type: 'doc',
       id: 'userguide/alerts-management',
-
-    },
-    {
-      type: 'doc',
-      id: 'userguide/service-map',
 
     },
     {
