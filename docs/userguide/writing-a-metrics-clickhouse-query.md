@@ -1,7 +1,6 @@
 ---
 id: write-a-metrics-clickhouse-query
 title: Writing a Metrics ClickHouse Query
-sidebar_label: Writing a Metrics ClickHouse Query
 ---
 
 
