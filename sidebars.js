@@ -338,6 +338,7 @@ module.exports = {
           label: 'ClickHouse Queries for Logs',
 
         },
+        'logs-management/logs-api/overview',
         'userguide/logs_troubleshooting',
       ],
     },
