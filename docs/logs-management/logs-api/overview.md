@@ -1,19 +1,28 @@
 ---
 title: Logs API Documentation
-id: logs_api
+id: overview
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-In this doc, we will go through the logs API through which you can fetch logs and run different kinds of aggregation.
+## Overview
 
-```
-POST /api/v3/query_range
-```
+In this doc, we will go through the logs query API through which you can 
+* search logs
+* paginate logs
+* aggregate logs
+
+
+The endpoint for the logs query API is 
+
+`POST` `https://{URL}/api/v3/query_range`
+
+`{URL}` can be replaced with your instance url ex:- example.signoz.io
 
 ## Logs API Payload Model
-The payload looks like this
+The logs API accepts a json payload which has different fields and nested fields.
+Each field and nested field is explained below.
 <Tabs>
 <TabItem value="Model" label="Model" default>
 
