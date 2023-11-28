@@ -842,7 +842,7 @@ const ExploreAllFeature = () => {
             inEnterprise: <RightIcon />,
           },
           {
-            feature: "Visualize very large traces (>10K spans)",
+            feature: "Advanced visualization for very large traces (>10K spans)",
             inCommunity: (
               <div className="flex flex-col justify-center items-center">
                 <CrossIcon />
