@@ -20,49 +20,59 @@ module.exports = {
         slug: '/install',
       },
       items: [
-        'install/cloud',
-        "install/docker-standalone",
-        'install/docker-swarm',
-        {
-          type: 'category',
-          label: 'Kubernetes',
-          link: {
-            type: 'generated-index',
-            title: 'Kubernetes',
-            description: 'Learn how to install SigNoz on Kubernetes with Helm',
-            slug: '/install/kubernetes',
-          },
-          items: [
-            'install/kubernetes/aws',
-            'install/kubernetes/gcp',
-            {
-              id: 'install/kubernetes/others',
-              type: 'doc',
-              label: 'Other Platform',
-            },
-          ]
+              {
+                type: 'doc',
+                id: 'install/cloud',
+                label: 'Setup SigNoz Cloud',
+              },
+              {
+                type: 'category',
+                label: 'Self-Host SigNoz',
+                items:[
+                  "install/docker-standalone",
+                  'install/docker-swarm',
+                  {
+                    type: 'category',
+                    label: 'Kubernetes',
+                    link: {
+                      type: 'generated-index',
+                      title: 'Kubernetes',
+                      description: 'Learn how to install SigNoz on Kubernetes with Helm',
+                      slug: '/install/kubernetes',
+                    },
+                    items: [
+                      'install/kubernetes/aws',
+                      'install/kubernetes/gcp',
+                      {
+                        id: 'install/kubernetes/others',
+                        type: 'doc',
+                        label: 'Other Platform',
+                      },
+                    ]
+                  },
+                  'install/troubleshooting',
+                ],
+              },
+              {
+                type: 'category',
+                label: 'Install OTel collector',
+                items: [
+                  {
+                    id: 'tutorial/opentelemetry-binary-usage-in-virtual-machine',
+                    type: 'doc',
+                    label: 'VM',
+                  },
+                  {
+                    id: 'tutorial/kubernetes-infra-metrics',
+                    type: 'doc',
+                    label: 'Kubernetes',
+                  },
+                ]
+              },
+            ],
         },
-        {
-          type: 'category',
-          label: 'Install OTel collector',
-          items: [
-            {
-              id: 'tutorial/opentelemetry-binary-usage-in-virtual-machine',
-              type: 'doc',
-              label: 'VM',
-            },
-            {
-              id: 'tutorial/kubernetes-infra-metrics',
-              type: 'doc',
-              label: 'Kubernetes',
-            },
-          ]
-        },
-        'install/troubleshooting',
       ],
     },
-  ],
-  },
     {
       label: "APM & Distributed Tracing",
       type: "category",
@@ -218,8 +228,8 @@ module.exports = {
       label: "Infrastructure Monitoring",
       type: "category",
       items: [
-        'userguide/send-metrics',
         'userguide/send-metrics-cloud',
+        'userguide/send-metrics',
         'userguide/navigate-user-interface',
         'userguide/hostmetrics',
         {
@@ -375,6 +385,11 @@ module.exports = {
     },
     {
       type: 'doc',
+      id: 'monitor-http-endpoints',
+      label: 'Monitor HTTP Endpoints',
+    },
+    {
+      type: 'doc',
       id: 'userguide/exceptions',
       label: 'Monitroing Exceptions',
     },
@@ -409,10 +424,6 @@ module.exports = {
         'tutorial/setting-up-sso-saml-with-keycloak',
         'tutorial/writing-clickhouse-queries-in-dashboard',
         'tutorial/traefik-observability',
-        {
-          type: 'doc',
-          id: 'monitor-http-endpoints',
-        },
       ],
     },
     {
@@ -479,11 +490,11 @@ module.exports = {
           ]
         },
         'operate/feature-flags',
+        {
+          id: "production-readiness",
+          type: "doc",
+        },
       ],
-    },
-    {
-      id: "production-readiness",
-      type: "doc",
     },
     {
       type: "category",
