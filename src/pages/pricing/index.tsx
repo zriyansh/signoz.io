@@ -554,10 +554,11 @@ const PricingPlans = () => {
                   <Divider isDashed />
                   <div className={styles.packageDetailBlock}>
                     <h4 className={styles.packageDetailTitle}>Features</h4>
-                    <p className={styles.featureBlur}>
+                    {/* <p className={styles.featureBlur}>
                       Includes all features in Team
-                    </p>
+                    </p> */}
                     <ul className="list-icon-right">
+                      <li>Includes all features in Teams plan</li>
                       <li>Custom integration for metrics and logs</li>
                       <li>AWS Private Link</li>
                       <li>VPC Peering</li>
