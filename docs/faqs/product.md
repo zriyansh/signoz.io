@@ -65,11 +65,6 @@ Trace data is also visualized with Flamegraphs and Gantt charts.
 
 With SigNoz, you get metrics, traces and logs in a single application unlike Jaeger which primarily focuses on distributed tracing.
 
-### What will be your paid plan like?
-
-SigNoz will be always open-source and free to self-host for smaller
-teams. You can find more details about our pricing plans [here](https://signoz.io/pricing/).
-
 
 ### What is unique about SigNoz as an observability tool?
 
