@@ -346,9 +346,36 @@ module.exports = {
           type: 'doc',
           id: 'userguide/logs_clickhouse_queries',
           label: 'ClickHouse Queries for Logs',
-
         },
-        'logs-management/logs-api/overview',
+        {
+          type: "category",
+          label: "Logs API",
+          link: {
+            type: "doc",
+            id: 'logs-management/logs-api/overview',
+          }, items: [
+            {
+              type: 'doc',
+              id: "logs-management/logs-api/payload-model",
+              label: 'Payload Model',
+            },
+            {
+              type: 'doc',
+              id: "logs-management/logs-api/search-logs",
+              label: 'Search Logs',
+            },
+            {
+              type: 'doc',
+              id: "logs-management/logs-api/aggregate-logs",
+              label: 'Aggregate Logs',
+            },
+            {
+              type: 'doc',
+              id: "logs-management/logs-api/logs-url-for-explorer-page",
+              label: 'Logs URL for Explorer',
+            },  
+          ]
+        },
         'userguide/logs_troubleshooting',
       ],
     },
