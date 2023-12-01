@@ -278,7 +278,7 @@ First we need to create an integration in Opsgenie, and obtain an API key. Follo
 
 You have to provide a name, API Key to configure a notification channel. You may use [go templates](https://prometheus.io/docs/alerting/latest/notifications/) for the message, description, and priority.
 
-![new-notification-channel](../../static/img/docs/opsgenie-new-channel.png)
+![new-notification-channel](../../static/img/docs/opsgenie-new-channel.webp)
 
 You can also verify the configuration by using the _Test_ button. When you click _Test_, a test alert will be sent. The purpose of this feature is to confirm that signoz alert manager can talk to your opsgenie.
 
@@ -293,7 +293,7 @@ Once everything is set up correctly, you should see the alerts in the opsgenie A
 
 Now you can stay relaxed that SigNoz will promptly alert you whenever something goes wrong in any of your applications or infra components.
 
-![alert-in-opsgenie](../../static/img/docs/alert-in-opsgenie.png)
+![alert-in-opsgenie](../../static/img/docs/alert-in-opsgenie.webp)
 
 
 ### 5. Configure MS Teams Channel
@@ -306,7 +306,7 @@ First we need to create an incoming webhook in MS Teams, and obtain a webhook UR
 
 You have to provide a name, webhook URL to configure a notification channel. You may use [go templates](https://prometheus.io/docs/alerting/latest/notifications/) for the title and description.
 
-![new-notification-channel](../../static/img/docs/ms-teams-new-channel.png)
+![new-notification-channel](../../static/img/docs/ms-teams-new-channel.webp)
 
 You can also verify the configuration by using the _Test_ button. When you click _Test_, a test alert will be sent. The purpose of this feature is to confirm that signoz alert manager can talk to your MS Teams.
 
@@ -321,7 +321,7 @@ Once everything is set up correctly, you should see the alerts in the MS Teams A
 
 Now you can stay relaxed that SigNoz will promptly alert you whenever something goes wrong in any of your applications or infra components.
 
-![alert-in-ms-teams](../../static/img/docs/alert-in-ms-teams.png)
+![alert-in-ms-teams](../../static/img/docs/alert-in-ms-teams.webp)
 
 :::note
 
