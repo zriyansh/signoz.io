@@ -37,7 +37,7 @@ A `builderQuery` consists of:
 |---|---|
 |stepInterval| Aggreagtion interval for query in seconds |
 |queryName| Name of the query, should match the key to this map value | 
-|dataSource| Source of data (e.g., metrics, traces, logs). This documentation uses 'logs'. |
+|dataSource| Source of data, e.g., logs |
 |aggregateOperator| Type of aggreation - noop, count, count_distinct, sum, avg, min, max, p05, p10, p20, p25, p50, p75, p90, p95, p99, rate, sum_rate, avg_rate, min_rate, max_rate, rate_sum, rate_avg, rate_min, rate_max|
 |aggregateAttribute| The [**attribute**](#attribute) against which the aggregateOperator is applied |
 |filters| Array of [**filter**](#filter) used for filtering data|
@@ -53,7 +53,7 @@ A `filter` consists of:
 |  NAME  | DESCRIPTION  |
 |---|---|
 |items| Array of [**filterItem**](#filter-item)|
-|op| Operator defining how final items are joined (e.g., AND, =).
+|op| Operator defining how filter items are joined (e.g., AND, =).
 
 ### Filter Item
 
@@ -64,6 +64,8 @@ The `filterItem` includes:
 |key | Corresponding [**attribute**](#attribute) |
 |op| Operators -  =, !=, >, >=, <, <=, in, nin, contains, ncontains, regex, nregex, like, nlike, exists, nexists, has, nhas |
 |value | Value for the filter, can be empty for some **op** |
+
+**Note:** The `value` parameter will be empty for `exists` and `nexists`.
 
 ### Attribute 
 
@@ -78,30 +80,52 @@ An `attribute` consists of:
 |isJson| Specifies if the key is a JSON key |
 
 ## Sample Payload
-This sample payload contains the different fields that we looked at above. It queries the SigNoz Logs API for a count of 'error' events, grouped by 'service', over a specified time range.
+
+This sample payload contains the different fields that we looked at above. It queries the SigNoz Logs API and illustrates how to count distinct `component` values and group them by `container_id`.
 
 ```json
 {
-  "start": 1633046400000,
-  "end": 1633132800000,
-  "step": 60,
-  "compositeQuery": {
+    "start": 1700734490000,
+    "end": 1700738090000,
+    "step": 60,
+    "variables": {},
+    "compositeQuery": {
         "queryType": "builder",
-        "panelType": "list",
-        "offset": 0,
-        "pageSize": 10,
-        "limit": 100,
+        "panelType": "table",
         "builderQueries": {
-            "sampleQuery": {
-                "stepInterval": 60,
-                "queryName": "errorCount",
+            "A": {
                 "dataSource": "logs",
-                "aggregateOperator": "count",
-                "aggregateAttribute": "error",
-                "filters": [...],
-                "groupBy": ["service"],
-                "expression": "errorCount",
-                "disabled": false
+                "queryName": "A",
+                "aggregateOperator": "count_distinct",
+                "aggregateAttribute": {
+                    "key": "component",
+                    "dataType": "string",
+                    "type": "tag",
+                    "isColumn": false
+                },
+                "filters": {
+                    "items": [],
+                    "op": "AND"
+                },
+                "expression": "A",
+                "disabled": false,
+                "stepInterval": 60,
+                "orderBy": [
+                    {
+                        "columnName": "timestamp",
+                        "order": "desc"
+                    }
+                ],
+                "groupBy": [
+                    {
+                        "key": "container_id",
+                        "dataType": "string",
+                        "type": "tag",
+                        "isColumn": true,
+                        "isJSON": false
+                    }
+                ],
+                "offset": 0
             }
         }
     }

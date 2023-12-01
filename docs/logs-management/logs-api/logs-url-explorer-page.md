@@ -8,7 +8,7 @@ This section explains how to generate a URL for the SigNoz Explorer page. This U
 
 ### Params for URL
 
-The generation of the final URL involves appending certain parameters to the base URL of the Explorer page. The base URL for explorer page looks like:
+The generation of the final URL involves appending certain parameters to the base URL of the Explorer page. The base URL route for explorer page looks like:
 ```
 /logs-explorer?
 ```
@@ -81,7 +81,7 @@ You can use this [tool](https://meyerweb.com/eric/tools/dencoder/) to encode you
   "id": "af9df71b-b6eb-48e5-b889-f4d0946c6eaa"
 }
 ```
-In the above query, the `builderQueries` map is represented as an array inside `queryData` field.
+In the above query, the `builderQueries` map is structured as an array within the `queryData` field to align with the frontend's state management format.
 
 
 ### Generating the URL
