@@ -2,10 +2,15 @@
 title: Search Logs
 id: search-logs
 ---
+This section provides example of how to search logs using the SigNoz Logs API. The example demonstrates querying logs with specific attributes and using pagination to navigate through the results.
 
-In this example, we are going to search logs where `deployment_name=hotrod, method=get, severity_text=info`, where `deployment_name` is a resource attribute, `method` is a 
-tag attribute and `severity_text` is a top-level field.
-Start and end timestamps will vary according to your use case. 
+## Example Query
+
+The following example searches for logs where `deployment_name=hotrod`, `method=get`, and `severity_text=info`. Here, `deployment_name` is a resource attribute, `method` is a tag attribute, and `severity_text` is a top-level field.
+You can choose the start and end timestamp according to your use case.
+
+### Sample Payload 
+This is the JSON payload for the example query described above for Searching Logs.
 
 ```json
 {
@@ -72,12 +77,17 @@ Start and end timestamps will vary according to your use case.
     }
 }
 ```
+## Pagination in Log Search
+Pagination is crucial for efficiently navigating through large sets of log data. The SigNoz Logs API supports pagination, allowing you to retrieve logs in manageable batches. 
+Below are examples demonstrating how to implement pagination in your log search queries.
 
-## Pagination while Ordering by Timestamp
+### Ordering by Timestamp
 
 If we are ordering by `timestamp`, then we will use `id` and `pageSize` for pagination.
 
-### Latest 10 logs
+#### Fetching the Latest 10 logs
+To retrieve the most recent 10 logs, you set the `pageSize` to 10 and order the results by `timestamp` in descending order. This ensures that you get the latest logs first.
+
 ```json
 {
     "start": 1700734490000,
@@ -113,9 +123,9 @@ If we are ordering by `timestamp`, then we will use `id` and `pageSize` for pagi
 }
 ```
 
-### Previous 10 logs
+#### Fetching the Previous 10 logs
+To fetch the 10 logs preceding the most recent batch, add a filter for the log ID using the `<` operator with the value set to the ID of the last log received in the previous request.
 
-Here we are adding an `id` filter and saying that `id < (id of log last line received in the previous request)` 
 ```json
 {
     "start": 1700734490000,
@@ -160,11 +170,13 @@ Here we are adding an `id` filter and saying that `id < (id of log last line rec
 }
 ```
 
-## Pagination while Ordering by Any Other Key
+### Ordering by Any Other Key
 
-This might be faster or slower depending on the key that you are using
+In addition to fetching logs based on timestamps, the SigNoz Logs API allows you to paginate through logs using other keys. This method can be faster or slower depending on the key used.
+#### Fetching the Latest 10 logs
 
-### Latest 10 logs
+To fetch the latest 10 logs based on a specific key (e.g., `response_time`), set the pageSize to 10 and order by that key in descending order. This retrieves the most recent logs according to the specified key.
+
 ```json
 {
     "start": 1700734490000,
@@ -201,9 +213,10 @@ This might be faster or slower depending on the key that you are using
 }
 ```
 
-### Previous 10 logs
+#### Fetching the Previous 10 logs
 
-Here we are adding `offset=10` since we fetched the first 10 logs in the previous request. 
+To fetch the previous 10 logs, you can use the `offset` parameter. For example, if you have already fetched the first 10 logs, set `offset` to 10 to retrieve the next 10 logs based on the specified key.
+
 ```json
 {
     "start": 1700734490000,

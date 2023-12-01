@@ -3,18 +3,17 @@ title: Create Logs URL for Explorer page
 id: logs-url-for-explorer-page
 ---
 
-## Creating Logs URL For Explorer Page
 
-We will go through how we can generate the URL for the explorer page through which we can directly land on the explorer page with filters and custom timerange. 
+This section explains how to generate a URL for the SigNoz Explorer page. This URL allows users to directly access the Explorer page with predefined filters and a custom time range, facilitating quick and efficient log analysis. 
 
+### Params for URL
 
+The generation of the final URL involves appending certain parameters to the base URL of the Explorer page. The base URL for explorer page looks like:
 ```
 /logs-explorer?
 ```
 
-### Params for the URL
-
-The `URI encoded` column describes how many times the value has to be [URI encoded](https://meyerweb.com/eric/tools/dencoder/)
+The parameters includes:
 
 |  NAME  | DESCRIPTION  | URI encoded |
 |---|---|---|
@@ -23,9 +22,15 @@ The `URI encoded` column describes how many times the value has to be [URI encod
 |startTime| Timestamp start in ms| no |
 |endTime| Timestamp end in ms| no |
 
+These parameters have to be encoded before being appended to the base URL. 
+The `URI encoded` column describes the **number of times** the parameter has to be URI encoded. `no`indicates that these parameters don't have to be encoded.
 
+You can use this [tool](https://meyerweb.com/eric/tools/dencoder/) to encode your paramaters.
 
-Example of `compositeQuery` . Here we can see the `builderQueries` map is represented as an array inside `queryData`
+### Example of Composite Query 
+
+`compositeQuery` is one of the parameter that is used to create the final URL. Here's an example composite query that is configured to fetch logs from a specified data source where the `container_name` equals "hotrod":
+
 ```json
 {
   "queryType": "builder",
@@ -76,4 +81,22 @@ Example of `compositeQuery` . Here we can see the `builderQueries` map is repres
   "id": "af9df71b-b6eb-48e5-b889-f4d0946c6eaa"
 }
 ```
+In the above query, the `builderQueries` map is represented as an array inside `queryData` field.
 
+
+### Generating the URL
+
+Once you have all the parameters defined and encoded as mentioned in the [Param for URL](#params-for-url) section, we can append them to the base URL of the SigNoz Explorer page.
+
+This creates a direct link that pre-loads the Explorer page with the specified query parameters.
+
+#### Sample Final URL
+
+After appending the encoded parameters to the base URL, this is how a complete URL would look like:
+
+```
+https://[Your-SigNoz-Domain]/logs-explorer?startTime=[start-time]&endTime=[end-time]&panelTypes=[encoded-panelTypes]&compositeQuery=[encoded-compositeQuery]
+
+```
+
+The complete URL when visited, will open the Explorer page with the log query and time range already set up as per the parameters. This feature is particularly useful for bookmarking specific log views or sharing them with others.

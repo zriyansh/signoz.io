@@ -350,10 +350,12 @@ module.exports = {
         {
           type: "category",
           label: "Logs API",
-          link: {
-            type: "doc",
-            id: 'logs-management/logs-api/overview',
-          }, items: [
+          items: [
+            {
+              type: "doc",
+              id: 'logs-management/logs-api/overview',
+              label: 'Overview',
+            },
             {
               type: 'doc',
               id: "logs-management/logs-api/payload-model",
