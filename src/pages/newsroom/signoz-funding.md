@@ -14,7 +14,7 @@ keywords:
 ---
 
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/signoz-funding/"/>
+  <link rel="canonical" href="https://signoz.io/newsroom/signoz-funding/"/>
    <meta property="og:image" content="https://signoz.io/img/blog/2023/09/Hero-Image.webp"/>
   <meta name ="twitter:image" content="https://signoz.io/img/blog/2023/09/A-Twitter-HeroImage.webp"/>
 </head>
