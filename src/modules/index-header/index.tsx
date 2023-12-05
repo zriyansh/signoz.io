@@ -17,10 +17,9 @@ export const Header = () => {
           Metrics, and Logs in a single pane
         </Hero>
         <SubHeading>
-          SigNoz is an open source Datadog or New Relic alternative. A single
-          tool for all your observability <br className="hidden lg:inline" />
-          needs - APM, logs, metrics, exceptions, alerts, and dashboards powered
-          by a powerful query builder.
+          A single tool for all your observability 
+          needs - APM, logs, metrics, exceptions, <br className="hidden lg:inline" /> alerts, and dashboards powered
+          by a powerful query builder. 
         </SubHeading>
       </div>
       <div className="flex flex-col md:flex-row gap-5 justify-center mb-12 mx-5">
