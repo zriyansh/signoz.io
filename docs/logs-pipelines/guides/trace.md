@@ -130,17 +130,16 @@ Hover over the **Logs** menu in the sidebar and click on the **Logs Pipeline** s
 - Press the "**Create**" button if everything looks right.
 <br/>
 
-
 ### Step 3: Add Processors for Parsing Trace Information
 - Expand the new Pipeline to add processors to it.
 <figure data-zoomable align="center">
   <img
     src="/img/logs/pipelines/post-create-trace-parsing-pipeline.png"
-    alt="Clicking Create Pipeline adds a new Pipeline at the end of Pipelines List. It can be expanded by clicking the highlighted icon."
+    alt="Creating a Pipeline adds it to the end of the Pipelines List. It can be expanded by clicking the highlighted icon."
   />
   <figcaption>
     <i>
-      Clicking "Create Pipeline" adds a new Pipeline at the end of Pipelines List. It can be expanded by clicking the highlighted icon.
+      Creating a Pipeline adds it to the end of the Pipelines List. It can be expanded by clicking the highlighted icon.
     </i>
   </figcaption>
 </figure>
@@ -206,6 +205,90 @@ Hover over the **Logs** menu in the sidebar and click on the **Logs Pipeline** s
 
   - Press the **Create** button to finish adding the processor.
   - Repeat these steps to create a **Remove** processor for removing each log attribute whose data has been parsed into trace fields.
-  <br/><br/>
 
 <br/>
+
+### Step 4: Preview and Validate Pipeline Processing 
+At this point you should have the pipeline ready with all necessary processors.
+<figure data-zoomable align="center">
+  <img
+    src="/img/logs/pipelines/trace-parsing-pipeline-expanded.png"
+    alt="Expanded Pipeline with Processors for parsing desired fields out of JSON body into their own log attributes"
+  />
+  <figcaption>
+    <i>
+      Expanded Pipeline with Processors for parsing trace information out of log attributes.
+    </i>
+  </figcaption>
+</figure>
+<br/>
+
+Before we save and deploy the pipeline, it is best to simulate processing on some sample logs to validate that the pipeline will work as expected.  
+Click the "eye" icon in the actions column for the pipeline to bring up the Pipeline Preview Dialog
+
+<figure data-zoomable align="center">
+  <img
+    src="/img/logs/pipelines/pipeline-preview-init.png"
+    alt="Pipeline Preview with Sample Logs"
+  />
+  <figcaption>
+    <i>
+      Pipeline Preview with Sample Logs
+    </i>
+  </figcaption>
+</figure>
+<br/>
+
+The preview Dialog will start out with sample logs queried from the database. You can adjust the sample logs search duration if there are no recent samples available.  
+To simulate pipeline processing, press the **Simulate Processing** button in the bottom section of the Pipeline Preview Dialog.  
+This will simulate pipeline processing on the sample logs and show the output.  
+
+<br/>
+<figure data-zoomable align="center">
+  <img
+    src="/img/logs/pipelines/pipeline-preview-processed.png"
+    alt="Pipeline Preview with Processed Output"
+  />
+  <figcaption>
+    <i>
+      Pipeline Preview with Processed Output
+    </i>
+  </figcaption>
+</figure>
+<br/>
+
+You can click on the *expand icon* on the right end of each processed log to open the detailed view for that log. Expand some of the processed logs to verify that trace information was populated as expected.  
+If you see any issues, you can close the preview, edit your processors as needed and preview again to verify. Iterate on your pipeline and processor config until it all works just the way you want it.
+<br/>
+
+### Step 5: Save Pipelines and Verify
+
+Once you have previewed your pipeline and verified that it will work as expected, press the **Save Configuration** button at the bottom of the pipelines list to save pipelines. This will store the latest state of your pipelines and will deploy them for pre-processing.
+<figure data-zoomable align="center">
+  <img
+    src="/img/logs/pipelines/save-trace-parsing-pipeline.png"
+    alt="Save Configuration Button"
+  />
+  <figcaption>
+    <i>
+      Save Configuration Button
+    </i>
+  </figcaption>
+</figure>
+<br/>
+
+You can track the deployment status of your pipelines using the **Change History** tab at the top of the pipelines page.
+<figure data-zoomable align="center">
+  <img
+    src="/img/logs/pipelines/change-history.png"
+    alt="Pipelines Change History"
+  />
+  <figcaption>
+    <i>
+      Pipelines Change History
+    </i>
+  </figcaption>
+</figure>
+<br/>
+
+Wait for a few minutes to let the pipelines deploy and for the latest batches of logs to get pre-processed and stored in the database. Then you can head over to the logs explorer to verify that your logs are getting pre-processed as expected.  

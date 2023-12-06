@@ -162,11 +162,11 @@ To achieve this, we will first use a JSON parsing processor to parse the log bod
 <figure data-zoomable align="center">
   <img
     src="/img/logs/pipelines/newly-created-json-parsing-pipeline.png"
-    alt="Clicking Create Pipeline adds a new Pipeline at the end of Pipelines List. It can be expanded by clicking the highlighted icon."
+    alt="Creating a Pipeline adds it to the end of the Pipelines List. It can be expanded by clicking the highlighted icon."
   />
   <figcaption>
     <i>
-      Clicking "Create Pipeline" adds a new Pipeline at the end of Pipelines List. It can be expanded by clicking the highlighted icon.
+      Creating a Pipeline adds it to the end of the Pipelines List. It can be expanded by clicking the highlighted icon.
     </i>
   </figcaption>
 </figure>
@@ -315,10 +315,10 @@ If you see any issues, you can close the preview, edit your processors as needed
 
 ### Step 5: Save Pipelines and Verify
 
-Once you have previewed your pipeline and verified that it will work as expected, press the **Save Configuration** button at the bottom of the pipelines list to save pipelines. This will store the latest state of your pipelines and will deploy them for pre-processing.  
+Once you have previewed your pipeline and verified that it will work as expected, press the **Save Configuration** button at the bottom of the pipelines list to save pipelines. This will store the latest state of your pipelines and will deploy them for pre-processing.
 <figure data-zoomable align="center">
   <img
-    src="/img/logs/pipelines/save-configuration-button.png"
+    src="/img/logs/pipelines/save-json-parsing-pipeline.png"
     alt="Save Configuration Button"
   />
   <figcaption>
@@ -343,5 +343,5 @@ You can track the deployment status of your pipelines using the **Change History
 </figure>
 <br/>
 
-Wait for a few minutes to let the pipelines deploy and for latest batches of logs to get pre-processed and stored in the database. Then you can head over to the logs explorer to verify that your logs are getting pre-processed as expected.  
+Wait for a few minutes to let the pipelines deploy and for the latest batches of logs to get pre-processed and stored in the database. Then you can head over to the logs explorer to verify that your logs are getting pre-processed as expected.  
 You can now start using the new log attributes you have extracted for more efficient filtering and aggregations.
