@@ -337,7 +337,8 @@ module.exports = {
               label: "Guides",
               link: {
                 type: "generated-index",
-                title: "Logs Pipeline Guides"
+                title: "Logs Pipeline Guides",
+                description: 'See these guides for detailed walkthroughs on creating Log Pipelines for specific purposes.',
               },
               items: [
                 "logs-pipelines/guides/json",
