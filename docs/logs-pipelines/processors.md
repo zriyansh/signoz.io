@@ -20,7 +20,7 @@ using [regular expressions](https://www3.ntu.edu.sg/home/ehchua/programming/howt
 #### Processor Fields
 |     Field     |   Description   |
 |---------------|-----------------|
-|     Name      | A descriptive name. Must be unique across all processors in the pipeline |
+|     Name      | A descriptive name for the processor. |
 |     Pattern      | The regex pattern to be used. Must include atleast one named capture group |
 |     Parse&#160;From      | The log text field to parse from. Eg: `body` or `attributes.sessionInfo` |
 |     Parse&#160;To      | The path to parse to. Eg: If set to `attributes`, a capture group like `(?P<userId>.+)` in the regex pattern would get stored in `attributes.userId` |
@@ -35,32 +35,32 @@ using grok patterns.
 #### Processor Fields
 |     Field     |   Description   |
 |---------------|-----------------|
-|     Name      | A descriptive name. Must be unique across all processors in the pipeline |
+|     Name      | A descriptive name for the processor. |
 |     Pattern      | The [grok pattern](https://grokdebugger.com/) to be used. Must include atleast one named capture group |
 |     Parse&#160;From      | The log text field to parse from. Eg: `body` or `attributes.sessionInfo` |
 |     Parse&#160;To      | The path to parse to. Eg: If set to `attributes`, a capture group like `%{WORD:userId}` in the grok pattern would get stored in `attributes.userId` |
 |     On&#160;Error     | What to do if the processor fails. Options are to `drop` the log or `send` it to the next processor  |
 
 
-## JSON
+## JSON Parser
 The JSON parsing processor can be used to parse serialized JSON text into log attributes.
 
 #### Processor Fields
 |     Field     |   Description   |
 |---------------|-----------------|
-|     Name      | A descriptive name. Must be unique across all processors in the pipeline |
+|     Name      | A descriptive name for the processor. |
 |     Parse&#160;From      | The log field containing serialized JSON text. Eg: `body` or `attributes.sessionInfo` |
 |     Parse&#160;To      | The path to parse to. Eg: If set to `attributes`, parsing the JSON text `'{ "userId": 8888 }'` would set `attributes.userId` to `8888` |
 
 
-## Trace
+## Trace Parser
 The trace processor can be used to populate trace id, span id and trace flags for a log.  
 Populating trace identifiers in logs allows navigation to and from corresponding traces for correlation.
 
 #### Processor Fields
 |     Field     |   Description   |
 |---------------|-----------------|
-|     Name      | A descriptive name. Must be unique across all processors in the pipeline |
+|     Name      | A descriptive name for the processor. |
 |     Parse&#160;Trace&#160;Id&#160;From   | The log field containing otel Trace Id. Eg: `attributes.myTraceId` <br/> Value at the specified path must be an even length string of hex characters |
 |     Parse&#160;Span&#160;Id&#160;From    | The log field containing otel Span Id.  Eg: `attributes.mySpanId` <br/> Value at the specified path must be an even length string of hex characters |
 |     Parse&#160;Trace&#160;Flags&#160;From    | The log field containing otel Trace Flags. Eg: `attributes.myTraceFlags` <br/> Value at the specified path must be an unsigned int |
@@ -71,13 +71,50 @@ At least one field among `Parse Trace Id From`, `Parse Span Id From` and `Parse 
 
 :::
 
+
+## Timestamp Parser
+The timestamp parsing processor can be used to parse log timestamp out of a log field.
+
+#### Processor Fields
+|     Field     |   Description   |
+|---------------|-----------------|
+|     Name&#160;of&#160;Timestamp&#160;Parsing&#160;Processor     | A descriptive name for the processor. |
+|     Parse&#160;Timestamp&#160;Value&#160;From     | The log field containing timestamp value. Eg: `attributes.timestamp` |
+|     Timestamp&#160;Format&#160;Type     | Type of timestamp value to be parsed. <br/> `epoch` can be used for parsing [unix time](https://en.wikipedia.org/wiki/Unix_time) and `strptime` can be used for parsing human readable values using [ctime-like directives](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/internal/coreinternal/timeutils/internal/ctimefmt/ctimefmt.go#L68) such as %Y (4-digit year) and %H (2-digit hour).  |
+|     Timestamp&#160;Format     | Format for parsing timestamp value. <br/> For example `%Y-%m-%d` can be used for parsing values like `2023-12-06` when Timestamp Format Type is `strptime`, or `seconds.milliseconds` can be used for parsing unix time values like `1701869406.245` when Timestamp Format Type is `epoch` |
+
+
+## Severity Parser
+The severity parsing processor can be used to parse log severity out of a log field.
+
+#### Processor Fields
+|     Field     |   Description   |
+|---------------|-----------------|
+|     Name&#160;of&#160;Severity&#160;Parsing&#160;Processor     | A descriptive name for the processor. |
+|     Parse&#160;Severity&#160;Value&#160;From     | The log field to parse severity from. For example `attributes.log_level` |
+|     Values&#160;for&#160;level&#160;TRACE     | Comma separated list of values that should be mapped to level TRACE. For example `0, trace` |
+|     Values&#160;for&#160;level&#160;DEBUG     | Comma separated list of values that should be mapped to level DEBUG. For example `debug, 2xx` |
+|     Values&#160;for&#160;level&#160;INFO     | Comma separated list of values that should be mapped to level INFO. For example `info, 3xx` |
+|     Values&#160;for&#160;level&#160;WARN     | Comma separated list of values that should be mapped to level WARN. For example `warning, 4xx` |
+|     Values&#160;for&#160;level&#160;ERROR     | Comma separated list of values that should be mapped to level ERROR. For example `error, 5xx` |
+|     Values&#160;for&#160;level&#160;FATAL     | Comma separated list of values that should be mapped to level FATAL. For example `panic, -1` |
+
+
+:::note
+
+Severity level values are case insensitive.<br/>
+As a special case, 2xx, 3xx, 4xx and 5xx can be used to map number ranges to severity levels. This can be useful for mapping HTTP status codes. For example `5xx` can be used to parse numbers between 500-599 into level `ERROR`.
+
+:::
+
+
 ## Add
 The add processor can be used to add a field to the log.
 
 #### Processor Fields
 |     Field     |   Description   |
 |---------------|-----------------|
-|     Name      | A descriptive name. Must be unique across all processors in the pipeline |
+|     Name      | A descriptive name for the processor. |
 |     Field     | Path of the field to be added. Must be of the form `attributes.*` or `resource.*`  |
 |     Value     | The value to be set in the specified field |
 
@@ -88,7 +125,7 @@ The remove processor can be used for removing unwanted log fields such as PII.
 #### Processor Fields
 |     Field     |   Description   |
 |---------------|-----------------|
-|     Name      | A descriptive name. Must be unique across all processors in the pipeline |
+|     Name      | A descriptive name for the processor. |
 |     Field     | Path of the field to be removed. Must be of the form `attributes.*` or `resource.*`  |
 
 
@@ -98,7 +135,7 @@ The move processor can be used to move or rename a log field.
 #### Processor Fields
 |     Field     |   Description   |
 |---------------|-----------------|
-|     Name      | A descriptive name. Must be unique across all processors in the pipeline |
+|     Name      | A descriptive name for the processor. |
 |     From      | Path of the field to be moved. Must be of the form `attributes.*` or `resource.*` |
 |     To        | Path to move the field to. Must be of the form `attributes.*` or `resource.*` |
 
@@ -109,6 +146,6 @@ The copy processor can be used to copy log fields.
 #### Processor Fields
 |     Field     |   Description   |
 |---------------|-----------------|
-|     Name      | A descriptive name. Must be unique across all processors in the pipeline |
+|     Name      | A descriptive name for the processor. |
 |     From      | Path of the field to be copied. Must be of the form `attributes.*` or `resource.*` |
 |     To        | Path to copy the field to. Must be of the form `attributes.*` or `resource.*` |
