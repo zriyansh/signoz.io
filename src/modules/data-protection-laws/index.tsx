@@ -9,7 +9,7 @@ const DataProtectionLaws = () => {
       <div className="container mt-5 mb-24">
         <div className="flex flex-col items-center mb-1 text-center">
           <Heading type={1}>
-            Worried about data protection laws?
+            Worried about data protection laws?&nbsp;
             <br className="hidden lg:inline" />
             We can help.
           </Heading>

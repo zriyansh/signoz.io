@@ -35,7 +35,7 @@ export const WhyOpenTelemetry = () => {
             <Heading type={4}>SigNoz is OpenTelemetry-Native</Heading>
             <Heading type={1}>But why OpenTelemetry</Heading>
             <SubHeading>
-              OpenTelemetry is the second most active project in the CNCF,
+              OpenTelemetry is the second most active project in the CNCF,&nbsp;
               <br className="hidden lg:inline" />
                with only Kubernetes being more active.
             </SubHeading>

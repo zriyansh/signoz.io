@@ -12,7 +12,7 @@ export const Header = () => {
     <header className="my-16">
       <div className="flex flex-col items-center mb-5 text-center px-5">
         <Hero>
-          OpenTelemetry-Native Traces,
+          OpenTelemetry-Native Traces,&nbsp;
           <br className="hidden lg:inline" />
           Metrics, and Logs in a single pane
         </Hero>
