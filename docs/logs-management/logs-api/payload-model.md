@@ -26,7 +26,7 @@ The `compositeQuery` field consists of:
 |panelType| Type of panel (e.g., list, graph, table) |
 |offset| Offset used in pagination |
 |pageSize| Number of items to fetch, used in list view |
-|limit| For list view: - Maximum number of items to be paginate, i.e., offset + pageSize cannot exceed limit, For aggreation:- limit on the results  |
+|limit| For list view: - Maximum number of items to be paginate, i.e., offset + pageSize cannot exceed limit, For aggregation:- limit on the results  |
 |builderQueries | Map of [**builderQuery**](#builder-query) |
 
 ### Builder Query
@@ -35,10 +35,10 @@ A `builderQuery` consists of:
 
 |  NAME  | DESCRIPTION  |
 |---|---|
-|stepInterval| Aggreagtion interval for query in seconds |
+|stepInterval| Aggregation interval for query in seconds |
 |queryName| Name of the query, should match the key to this map value | 
 |dataSource| Source of data, e.g., logs |
-|aggregateOperator| Type of aggreation - noop, count, count_distinct, sum, avg, min, max, p05, p10, p20, p25, p50, p75, p90, p95, p99, rate, sum_rate, avg_rate, min_rate, max_rate, rate_sum, rate_avg, rate_min, rate_max|
+|aggregateOperator| Type of aggregation - noop, count, count_distinct, sum, avg, min, max, p05, p10, p20, p25, p50, p75, p90, p95, p99, rate, sum_rate, avg_rate, min_rate, max_rate, rate_sum, rate_avg, rate_min, rate_max|
 |aggregateAttribute| The [**attribute**](#attribute) against which the aggregateOperator is applied |
 |filters| Array of [**filter**](#filter) used for filtering data|
 |groupBy| Array  of [**attribute**](#attribute) used for groupBy|
@@ -53,7 +53,7 @@ A `filter` consists of:
 |  NAME  | DESCRIPTION  |
 |---|---|
 |items| Array of [**filterItem**](#filter-item)|
-|op| Operator defining how filter items are joined (e.g., AND, =).
+|op| Operator defining how filter items are joined (e.g., AND).
 
 ### Filter Item
 
