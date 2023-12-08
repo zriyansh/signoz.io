@@ -6,16 +6,16 @@ title: Parse Trace Information
 # Parse Trace Information for your Logs
 
 ## Overview
-If your logs contain trace information outside the standard opentelemetry fields, you can use log pipelines to parse that information into the right fields and enable correlation of your logs to and from corresponding traces.  
+If your logs contain trace information outside the [standard OpenTelemetry fields](https://opentelemetry.io/docs/specs/otel/logs/data-model/#log-and-event-record-definition), you can use log pipelines to parse that information into the right fields and enable correlation of your logs to and from corresponding traces.  
 
 <figure data-zoomable align="center">
   <img
     src="/img/logs/pipelines/log-before-trace-parsing.png"
-    alt="A log with trace information in attributes."
+    alt="A log with trace information in log attributes named traceId and spanId, while span_id and trace_id fields are empty"
   />
   <figcaption>
     <i>
-      A log with trace information in attributes.
+      A log with trace information in log attributes named traceId and spanId, while span_id and trace_id fields are empty
     </i>
   </figcaption>
 </figure>
@@ -24,22 +24,27 @@ If your logs contain trace information outside the standard opentelemetry fields
 <figure data-zoomable align="center">
   <img
     src="/img/logs/pipelines/log-after-trace-parsing.png"
-    alt="Log with trace information parsed out of log attributes."
+    alt="A log with span_id and trace_id fields populated based on log attributes, with trace_id linking to corresponding trace"
   />
   <figcaption>
     <i>
-      Log with trace information parsed out of log attributes.
+      A log with span_id and trace_id fields populated based on log attributes, with trace_id linking to corresponding trace
     </i>
   </figcaption>
 </figure>
 <br/>
 
+In this guide, you will see how to parse values from log attributes into the trace_id, span_id and trace_flags fields.
 
  ## Prerequisites
  - You are [sending logs to SigNoz](/docs/userguide/logs).
  - Your logs contain trace information in log attributes.
-    - Note: If your logs contain trace information in the body, you can
-    [parse them](/docs/logs-pipelines/guides/json) out into their own attributes before populating trace information based on them.
+
+:::note
+
+If your logs contain trace information in the body, you can [parse them](/docs/logs-pipelines/guides/json) out into their own attributes before populating trace information based on them.
+
+:::
 
 <!-- TODO(Raj): Add link for regex parsing text logs too -->
 
@@ -111,7 +116,7 @@ Hover over the **Logs** menu in the sidebar and click on the **Logs Pipeline** s
 
 - Provide details about the pipeline in the Create Pipeline Dialog.
     - Use the **Name** field to give your pipeline a descriptive short name.
-    - Use the **Description** field to add a detailed long description for your pipleine.
+    - Use the **Description** field to add a detailed description for your pipeline.
     - Use the **Filter** field to select the logs you want to process with this pipeline.<br/> Typically, these are filters identifying the source of the logs you want to process. `service = checkout` for example.
     - Use the **Filtered Logs Preview** to verify that the logs you want to process will be selected by the pipeline.
     <br/><br/>
@@ -131,7 +136,7 @@ Hover over the **Logs** menu in the sidebar and click on the **Logs Pipeline** s
 <br/>
 
 ### Step 3: Add Processors for Parsing Trace Information
-- Expand the new Pipeline to add processors to it.
+- Expand the new Pipeline to [add processors](https://signoz.io/docs/logs-pipelines/processors/) to it.
 <figure data-zoomable align="center">
   <img
     src="/img/logs/pipelines/post-create-trace-parsing-pipeline.png"
@@ -164,7 +169,6 @@ Hover over the **Logs** menu in the sidebar and click on the **Logs Pipeline** s
   - Use the **Parse Trace Id From** field to specify the log attribute containing trace id.
   - Use the **Parse Span Id From** field to specify the log attribute containing span id.
   - Use the **Parse Trace Flags From** field to specify the log attribute containing trace flags.
-  - Note: Atleast one of the *Parse From* fields must be specified.
 
   <br/>
   <figure data-zoomable align="center">
@@ -180,6 +184,9 @@ Hover over the **Logs** menu in the sidebar and click on the **Logs Pipeline** s
   </figure>
   <br/>
 
+  :::note
+  At least one of the Parse From fields (`Parse Trace Id From`, `Parse Span Id From` and `Parse Trace Flags From`) must be specified.
+  :::
   - Press the **Create** button to finish adding the processor.
   <br/><br/>
 
@@ -291,4 +298,4 @@ You can track the deployment status of your pipelines using the **Change History
 </figure>
 <br/>
 
-Wait for a few minutes to let the pipelines deploy and for the latest batches of logs to get pre-processed and stored in the database. Then you can head over to the logs explorer to verify that your logs are getting pre-processed as expected.  
+Wait for a few minutes to let the pipelines deploy and for the latest batches of logs to get pre-processed and stored in the database. Then you can head over to the logs explorer to verify that trace fields (trace_id, span_id and trace_flags) are being populated in your logs as expected.

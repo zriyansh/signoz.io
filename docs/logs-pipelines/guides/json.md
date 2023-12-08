@@ -134,7 +134,7 @@ Hover over the **Logs** menu in the sidebar and click on the **Logs Pipeline** s
 
 - Provide details about the pipeline in the Create Pipeline Dialog.
     - Use the **Name** field to give your pipeline a descriptive short name.
-    - Use the **Description** field to add a detailed long description for your pipleine.
+    - Use the **Description** field to add a detailed description for your pipeline.
     - Use the **Filter** field to select the logs you want to process with this pipeline.<br/> Typically, these are filters identifying the source of the logs you want to process. `service = checkout` for example.
     - Use the **Filtered Logs Preview** to verify that the logs you want to process will be selected by the pipeline. <br/> Note that while it is not ideal, it is ok if your filter selects other non JSON logs too.
     <br/><br/>
@@ -343,5 +343,5 @@ You can track the deployment status of your pipelines using the **Change History
 </figure>
 <br/>
 
-Wait for a few minutes to let the pipelines deploy and for the latest batches of logs to get pre-processed and stored in the database. Then you can head over to the logs explorer to verify that your logs are getting pre-processed as expected.  
+Wait for a few minutes to let the pipelines deploy and for the latest batches of logs to get pre-processed and stored in the database. Then you can head over to the logs explorer to verify that log attributes are getting parsed out of serialized JSON in log bodies as expected.  
 You can now start using the new log attributes you have extracted for more efficient filtering and aggregations.
