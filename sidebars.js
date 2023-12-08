@@ -4,72 +4,72 @@ module.exports = {
     {
       type: 'category',
       label: 'Get Started',
-      items : [
-    {
-      id: "introduction",
-      type: "doc",
-      label: 'What is SigNoz ?'
-    },
-    {
-      type: 'category',
-      label: 'Installation',
-      link: {
-        type: 'generated-index',
-        title: 'Install SigNoz',
-        description: 'To install SigNoz, follow the instructions in the sections below. If you don\'t want to self-host, try SigNoz Cloud.',
-        slug: '/install',
-      },
       items: [
-              {
-                type: 'doc',
-                id: 'install/cloud',
-                label: 'Setup SigNoz Cloud',
-              },
-              {
-                type: 'category',
-                label: 'Self-Host SigNoz',
-                items:[
-                  "install/docker-standalone",
-                  'install/docker-swarm',
-                  {
-                    type: 'category',
-                    label: 'Kubernetes',
-                    link: {
-                      type: 'generated-index',
-                      title: 'Kubernetes',
-                      description: 'Learn how to install SigNoz on Kubernetes with Helm',
-                      slug: '/install/kubernetes',
+        {
+          id: "introduction",
+          type: "doc",
+          label: 'What is SigNoz ?'
+        },
+        {
+          type: 'category',
+          label: 'Installation',
+          link: {
+            type: 'generated-index',
+            title: 'Install SigNoz',
+            description: 'To install SigNoz, follow the instructions in the sections below. If you don\'t want to self-host, try SigNoz Cloud.',
+            slug: '/install',
+          },
+          items: [
+            {
+              type: 'doc',
+              id: 'install/cloud',
+              label: 'Setup SigNoz Cloud',
+            },
+            {
+              type: 'category',
+              label: 'Self-Host SigNoz',
+              items: [
+                "install/docker-standalone",
+                'install/docker-swarm',
+                {
+                  type: 'category',
+                  label: 'Kubernetes',
+                  link: {
+                    type: 'generated-index',
+                    title: 'Kubernetes',
+                    description: 'Learn how to install SigNoz on Kubernetes with Helm',
+                    slug: '/install/kubernetes',
+                  },
+                  items: [
+                    'install/kubernetes/aws',
+                    'install/kubernetes/gcp',
+                    {
+                      id: 'install/kubernetes/others',
+                      type: 'doc',
+                      label: 'Other Platform',
                     },
-                    items: [
-                      'install/kubernetes/aws',
-                      'install/kubernetes/gcp',
-                      {
-                        id: 'install/kubernetes/others',
-                        type: 'doc',
-                        label: 'Other Platform',
-                      },
-                    ]
-                  },
-                  'install/troubleshooting',
-                ],
-              },
-              {
-                type: 'category',
-                label: 'Install OTel collector',
-                items: [
-                  {
-                    id: 'tutorial/opentelemetry-binary-usage-in-virtual-machine',
-                    type: 'doc',
-                    label: 'VM',
-                  },
-                  {
-                    id: 'tutorial/kubernetes-infra-metrics',
-                    type: 'doc',
-                    label: 'Kubernetes',
-                  },
-                ]
-              },
-            ],
+                  ]
+                },
+                'install/troubleshooting',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Install OTel collector',
+              items: [
+                {
+                  id: 'tutorial/opentelemetry-binary-usage-in-virtual-machine',
+                  type: 'doc',
+                  label: 'VM',
+                },
+                {
+                  id: 'tutorial/kubernetes-infra-metrics',
+                  type: 'doc',
+                  label: 'Kubernetes',
+                },
+              ]
+            },
+          ],
         },
       ],
     },
@@ -149,27 +149,27 @@ module.exports = {
             {
               type: 'doc',
               label: 'PHP',
-              id:'instrumentation/php',
+              id: 'instrumentation/php',
             },
             {
               type: 'doc',
               label: '.NET',
-              id:'instrumentation/dotnet',
+              id: 'instrumentation/dotnet',
             },
             {
               type: 'doc',
               label: 'Ruby on Rails',
-              id:'instrumentation/ruby-on-rails',
+              id: 'instrumentation/ruby-on-rails',
             },
             {
               type: 'doc',
               label: 'Elixir',
-              id:'instrumentation/elixir',
+              id: 'instrumentation/elixir',
             },
             {
               type: 'doc',
               label: 'Rust',
-              id:'instrumentation/rust',
+              id: 'instrumentation/rust',
             },
           ],
         },
@@ -180,7 +180,7 @@ module.exports = {
             {
               type: 'doc',
               label: 'ClickHouse Queries for Traces',
-              id:'userguide/metrics',
+              id: 'userguide/metrics',
             },
             {
               type: 'category',
@@ -196,7 +196,33 @@ module.exports = {
             {
               type: 'doc',
               id: 'userguide/service-map',
-        
+
+            },
+          ]
+        },
+        {
+          type: "category",
+          label: "Traces API",
+          items: [
+            {
+              type: "doc",
+              id: 'traces-management/traces-api/overview',
+              label: 'Overview',
+            },
+            {
+              type: 'doc',
+              id: "traces-management/traces-api/payload-model",
+              label: 'Payload Model',
+            },
+            {
+              type: 'doc',
+              id: "traces-management/traces-api/search-traces",
+              label: 'Search Traces',
+            },
+            {
+              type: 'doc',
+              id: "traces-management/traces-api/aggregate-traces",
+              label: 'Aggregate Traces',
             },
           ]
         },
@@ -207,7 +233,7 @@ module.exports = {
             {
               type: 'doc',
               label: 'ClickHouse Queries for Traces',
-              id:'userguide/writing-clickhouse-traces-query',
+              id: 'userguide/writing-clickhouse-traces-query',
             },
             {
               type: 'doc',
@@ -221,7 +247,7 @@ module.exports = {
           id: 'instrumentation/troubleshoot-instrumentation',
           label: 'Troubleshooting',
         },
-        
+
       ],
     },
     {
@@ -237,7 +263,7 @@ module.exports = {
           id: 'userguide/collecting-ecs-logs-and-metrics',
           label: 'ECS Infra Mertics & Logs',
         },
-        
+
       ],
     },
     {
@@ -257,11 +283,11 @@ module.exports = {
               type: 'doc',
               id: 'userguide/collect_kubernetes_pod_logs',
               label: 'Kubernetes pod logs',
-            },{
+            }, {
               type: 'doc',
               id: 'userguide/collect_docker_logs',
               label: 'Docker logs',
-            },{
+            }, {
               type: 'doc',
               id: 'userguide/heroku_logs_to_signoz',
               label: 'Heroku logs',
@@ -375,7 +401,7 @@ module.exports = {
               type: 'doc',
               id: "logs-management/logs-api/logs-url-for-explorer-page",
               label: 'Logs URL for Explorer',
-            },  
+            },
           ]
         },
         'userguide/logs_troubleshooting',
@@ -397,16 +423,16 @@ module.exports = {
         {
           type: 'doc',
           id: 'userguide/query-builder',
-    
+
         },
         {
           type: 'doc',
           id: 'userguide/write-a-metrics-clickhouse-query',
           label: 'ClickHouse Query for Metrics',
-        }, 
+        },
       ]
     },
-    
+
     {
       type: 'doc',
       id: 'userguide/alerts-management',
