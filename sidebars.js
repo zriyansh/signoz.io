@@ -332,6 +332,19 @@ module.exports = {
           }, items: [
             "logs-pipelines/concepts",
             "logs-pipelines/processors",
+            {
+              type: "category",
+              label: "Guides",
+              link: {
+                type: "generated-index",
+                title: "Logs Pipeline Guides",
+                description: 'See these guides for detailed walkthroughs on creating Log Pipelines for specific purposes.',
+              },
+              items: [
+                "logs-pipelines/guides/json",
+                "logs-pipelines/guides/trace"
+              ]
+            }
           ]
         },
         {
