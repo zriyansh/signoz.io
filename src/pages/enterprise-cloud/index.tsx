@@ -6,10 +6,10 @@ import { DiscussYourProject } from "../../modules/discuss-your-project";
 import { HubspotProvider } from "@aaronhayes/react-use-hubspot-form";
 
 const ENTERPRISE_DATA = {
-  TITLE: "Enterprise-Grade Observability in your own infrastructure",
+  TITLE: "Enterprise-Grade Cloud Observability at any scale",
   DESC: "Observability at any scale with advanced security and compliance. Our experts will connect to give a brief demo and answer any questions.",
   PORTAL_ID: "22308423",
-  FORM_ID: "7c13fa9f-29bd-4a2b-96c6-10c5846b556a",
+  FORM_ID: "25bb31e3-ee97-46bb-b1d9-cf926e8d5122",
   FEATURE_POINTS: [
     {
       title: "Three Signals in a Single Pane of Glass",
@@ -28,7 +28,7 @@ const ENTERPRISE_DATA = {
     },
     {
       title: "Advanced Security & Compliance",
-      desc: "SigNoz enterprise comes with advanced security & compliance features.",
+      desc: "SigNoz enterprise comes with advanced security & compliance features. We also have data centers in EU, US and India region to help you comply with data privacy regulation.",
       imageUrl: "/svgs/icons/your-data-in-your-boundary-light.svg",
     },
   ],
