@@ -583,7 +583,7 @@ const PricingPlans = () => {
                   <Link
                     id="btn-pricing-signoz-enterprise-2"
                     className={`button button--primary ${styles.pricingCtaBtn}`}
-                    href={"/enterprise/"}
+                    href={"/enterprise-cloud/"}
                   >
                     Contact Us
                   </Link>
