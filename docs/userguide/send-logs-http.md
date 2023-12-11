@@ -66,7 +66,6 @@ Note :-
   --header 'signoz-access-token: <SIGNOZ_INGESTION_KEY>' \
   --data '[
       {
-          "timestamp": 1698310066000000000,
           "trace_id": "000000000000000018c51935df0b93b9",
           "span_id": "18c51935df0b93b9",
           "trace_flags": 0,
@@ -85,7 +84,21 @@ Note :-
   ]'
   ```
 
-  `<SIGNOZ_INGESTION_KEY>` is the ingestion key.
+  :::note
+  To include a specific timestamp in your log, be sure to incorporate the `timestamp` field in your cURL request. For instance:
+
+  ```bash
+    curl --location 'https://ingest.<REGION>.signoz.cloud:443/logs/json/' \
+    --header 'Content-Type: application/json' \
+    --header 'signoz-access-token: <SIGNOZ_INGESTION_KEY>' \
+    --data '[
+        {
+        "timestamp": 1698310066000000000, 
+        "trace_id": "000000000000000018c51935df0b93b9", 
+        ...
+  ```
+
+  :::
 
   `<REGION>` is the name of the region.
   
@@ -144,7 +157,6 @@ Note :-
   --header 'Content-Type: application/json' \
   --data '[
     {
-        "timestamp": 1698310066000000000,
         "trace_id": "000000000000000018c51935df0b93b9",
         "span_id": "18c51935df0b93b9",
         "trace_flags": 0,
@@ -162,7 +174,26 @@ Note :-
     }
   ]'
   ```
+
   Replace IP with IP of the system where your collector is running.
   For more info check [troubleshooting](../install/troubleshooting.md#signoz-otel-collector-address-grid). 
+
+  :::note
+
+  To include a specific timestamp in your log, be sure to incorporate the `timestamp` field in your cURL request. For instance:
+
+  ```bash
+    curl --location 'https://ingest.<REGION>.signoz.cloud:443/logs/json/' \
+    --header 'Content-Type: application/json' \
+    --header 'signoz-access-token: <SIGNOZ_INGESTION_KEY>' \
+    --data '[
+        {
+        "timestamp": 1698310066000000000, 
+        "trace_id": "000000000000000018c51935df0b93b9", 
+        ...
+  ```
+
+  :::
+
 * Once added you can verify by going to the SigNoz UI.
   ![test](../../static/img/logs/http-log.webp)
