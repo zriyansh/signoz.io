@@ -112,7 +112,7 @@ This is the JSON payload for the example query described above for fetching span
 }
 ```
 
-## Example Query 2
+## Searching Root Spans
 
 The following example searches for root spans where `deployment_name=hotrod` and `httpMethod=GET`. Here, `deployment_name` is a resource attribute, `httpMethod` is a tag attribute which is also a column.
 Selected columns are `serviceName`, `httpMethod`, `responseStatusCode`, and `some_custom_tag`.
