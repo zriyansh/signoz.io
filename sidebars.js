@@ -429,7 +429,7 @@ module.exports = {
           label: 'Set Alert Rules',
         },
         {
-          label: "Setup Notification Channel",
+          label: "Setup Alerts Notification",
           type: "category",
           link: {
             type: "generated-index",
