@@ -2,7 +2,7 @@
 title: Search Traces
 id: search-traces
 ---
-This section provides example of how to search traces using the SigNoz traces API. The example demonstrates querying traces with specific attributes and filters.
+This section provides detailed examples of searching traces using the SigNoz Traces API. The example queries demonstrate querying traces with specific attributes and filters.
 
 ## Example Query 1
 
