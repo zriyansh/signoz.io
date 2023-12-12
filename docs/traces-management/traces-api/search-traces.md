@@ -4,7 +4,7 @@ id: search-traces
 ---
 This section provides detailed examples of searching traces using the SigNoz Traces API. The example queries demonstrate querying traces with specific attributes and filters.
 
-## Example Query 1
+## Searching All Spans
 
 The following example searches for all spans where `deployment_name=hotrod`, `httpMethod=GET`, and `hasError=true`. Here, `deployment_name` is a resource attribute, `httpMethod` and `hasError` is a tag attribute which is also a column.
 Selected columns are `serviceName`, `httpMethod`, `responseStatusCode`, and `httpUrl`.
