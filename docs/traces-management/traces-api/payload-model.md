@@ -1,9 +1,9 @@
 ---
-title: Traces API Payload Model
+title: Trace API Payload Model
 id: payload-model
 ---
 
-The SigNoz Traces API uses a JSON payload for queries, which includes various fields and nested fields. This document provides a detailed explanation of each field to help users construct effective queries.
+The SigNoz Trace API uses a JSON payload for queries, which includes various fields and nested fields. This document provides a detailed explanation of each field to help users construct effective queries.
 
 ### Top-level  
 
@@ -100,7 +100,7 @@ A `having` consists of:
 
 ## Sample Payload
 
-This sample payload contains the different fields that we looked at above. It queries the SigNoz Traces API and illustrates how to count distinct `hasError` values and group them by `serviceName` where `hasError` is `true`.
+This sample payload contains the different fields that we looked at above. It queries the SigNoz Trace API and illustrates how to count distinct `hasError` values and group them by `serviceName` where `hasError` is `true`.
 
 ```json
 {

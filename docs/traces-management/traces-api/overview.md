@@ -1,5 +1,5 @@
 ---
-title: Traces API 
+title: Trace API 
 id: overview
 ---
 
@@ -8,7 +8,7 @@ import TabItem from "@theme/TabItem";
 
 ## Overview
 
-The SigNoz Traces API is a robust interface which enables developers to manage and analyze trace data efficiently. This API facilitates various operations:
+The SigNoz Trace API is a robust interface which enables developers to manage and analyze trace data efficiently. This API facilitates various operations:
 
 - **Searching Traces:** Allows users to search for traces based on specific filters. For example, searching for traces based on the error code.
 
@@ -16,7 +16,7 @@ The SigNoz Traces API is a robust interface which enables developers to manage a
 
 ## API Endpoint
 
-Endpoint for Traces API: 
+Endpoint for Trace API: 
 
 `POST` `https://{URL}/api/v3/query_range`
 

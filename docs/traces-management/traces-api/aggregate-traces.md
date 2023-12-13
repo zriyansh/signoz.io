@@ -3,11 +3,18 @@ title: Aggregate Traces
 id: aggregate-traces
 ---
 
-This section demonstrates how to perform aggregation operations on trace data using the SigNoz Traces API.
+This section demonstrates how to perform aggregation operations on trace data using the SigNoz Trace API.
 
 ## Aggregation Example
 
-The following example illustrates how to count `customer` values and group them by `serviceName`. 
+This example is useful for scenarios where you need to count occurrences of specific values (e.g., customer) and group them by another attribute (e.g., serviceName).
+
+#### Query Description
+
+- **Objective**: Count customer values and group them by serviceName
+- **Attributes**:
+  - **aggregateAttribute**: `customer`
+  - **groupBy**: `serviceName`
 
 ### Sample Payload
 

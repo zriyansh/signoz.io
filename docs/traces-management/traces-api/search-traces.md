@@ -2,13 +2,27 @@
 title: Search Traces
 id: search-traces
 ---
-This section provides detailed examples of searching traces using the SigNoz Traces API. The example queries demonstrate querying traces with specific attributes and filters.
+This section provides detailed examples of searching traces using the SigNoz Trace API. The example queries demonstrate querying traces with specific attributes and filters.
 
 ## Searching All Spans
 
-The following example searches for all spans where `deployment_name=hotrod`, `httpMethod=GET`, and `hasError=true`. Here, `deployment_name` is a resource attribute, `httpMethod` and `hasError` is a tag attribute which is also a column.
-Selected columns are `serviceName`, `httpMethod`, `responseStatusCode`, and `httpUrl`.
-You can choose the start and end timestamp in unix format (milliseconds) according to your use case.
+This query is useful when identifying all spans with specific characteristics, such as method type or error status.
+
+#### Query Description
+
+This query searches for all spans where:
+
+- `deployment_name`= hotrod
+- `httpMethod`= GET
+- `hasError` = true
+
+#### Attributes and Columns
+
+- Resource Attribute: `deployment_name`
+- Tag Attributes + Columns: `httpMethod`, `hasError`
+- Selected Columns: `serviceName`, `httpMethod`, `responseStatusCode`, `httpUrl`
+
+You can specify the start and end timestamps in Unix format (milliseconds).
 
 ### Sample Payload 
 
@@ -114,10 +128,28 @@ This is the JSON payload for the example query described above for fetching span
 
 ## Searching Root Spans
 
-The following example searches for root spans where `deployment_name=hotrod` and `httpMethod=GET`. Here, `deployment_name` is a resource attribute, `httpMethod` is a tag attribute which is also a column.
-Selected columns are `serviceName`, `httpMethod`, `responseStatusCode`, and `some_custom_tag`.
-You can choose the start and end timestamp in unix format (milliseconds) according to your use case.
-To search for root spans, you need to add `parentSpanID=''` in the filters.
+This type of query can be useful to find the initial operation or root spans in a set of traces, which can be crucial for tracing the origin of an issue.
+
+### Query Description
+
+This query searches for  root spans with:
+
+- `deployment_name`= hotrod
+- `httpMethod`= GET
+
+### Attributes and Columns
+
+- Resource Attribute: `deployment_name`
+- Tag Attributes + Columns: `httpMethod`
+- Selected Columns: `serviceName`, `httpMethod`, `responseStatusCode`, `some_custom_tag`
+
+You can specify the start and end timestamps in Unix format (milliseconds).
+
+::: note
+
+To search for root spans, you need to add `parentSpanID` value to `""` in filters
+
+:::
 
 ### Sample Payload 
 
