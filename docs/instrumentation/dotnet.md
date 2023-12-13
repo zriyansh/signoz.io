@@ -80,7 +80,7 @@ builder.Services.AddOpenTelemetry()
         .AddAspNetCoreInstrumentation()
         .AddOtlpExporter(otlpOptions =>
         {
-						//sigNoz Cloud Endpoint 
+						//SigNoz Cloud Endpoint 
             otlpOptions.Endpoint = new Uri("https://ingest.{region}.signoz.cloud:443");
 
             otlpOptions.Protocol = OtlpExportProtocol.Grpc;
@@ -194,7 +194,6 @@ builder.Services.AddOpenTelemetry()
         .AddAspNetCoreInstrumentation()
         .AddOtlpExporter(otlpOptions =>
         {
-						//sigNoz Cloud Endpoint 
             otlpOptions.Endpoint = new Uri("http://localhost:4317");
 
             otlpOptions.Protocol = OtlpExportProtocol.Grpc;
@@ -282,7 +281,6 @@ builder.Services.AddOpenTelemetry()
         .AddAspNetCoreInstrumentation()
         .AddOtlpExporter(otlpOptions =>
         {
-						//sigNoz Cloud Endpoint 
             otlpOptions.Endpoint = new Uri("http://localhost:4317");
 
             otlpOptions.Protocol = OtlpExportProtocol.Grpc;
@@ -361,7 +359,7 @@ builder.Services.AddOpenTelemetry()
         .AddAspNetCoreInstrumentation()
         .AddOtlpExporter(otlpOptions =>
         {
-						//sigNoz Cloud Endpoint 
+						//SigNoz Cloud Endpoint 
             otlpOptions.Endpoint = new Uri("https://ingest.{region}.signoz.cloud:443");
 
             otlpOptions.Protocol = OtlpExportProtocol.Grpc;

@@ -424,13 +424,13 @@ const PricingPlans = () => {
                       <li>Data centers available in the US, EU & India</li>
                     </ul>
                   </div>
-                  <Divider isDashed />
+                  {/* <Divider isDashed />
                   <div className={styles.packageDetailBlock}>
                     <h4 className={styles.packageDetailTitle}>Upcoming</h4>
                     <ul className="list-icon-right">
                       <li>AWS Cloudwatch Integration</li>
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
                 <Divider isDashed />
                 <div className={`__card__footer ${styles.card__footer}`}>
@@ -462,7 +462,7 @@ const PricingPlans = () => {
                       <Link
                         id="btn-pricing-signoz-enterprise-1"
                         className={`button button--primary ${styles.pricingCtaBtn}`}
-                        href={"/enterprise/"}
+                        href={"/enterprise-cloud/"}
                       >
                         Contact Us
                       </Link>
@@ -583,7 +583,7 @@ const PricingPlans = () => {
                   <Link
                     id="btn-pricing-signoz-enterprise-2"
                     className={`button button--primary ${styles.pricingCtaBtn}`}
-                    href={"/enterprise/"}
+                    href={"/enterprise-cloud/"}
                   >
                     Contact Us
                   </Link>
@@ -668,11 +668,27 @@ const PricingPlans = () => {
                   <h3 className="font-heading text-2xl font-bold ">
                     Enterprise Edition
                   </h3>
+                  <p className="leading-relaxed text-base mb-4 text-gray-400">
+                    For at-scale orgs who want to host SigNoz in their own infra.
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <p className="m-0">Custom Pricing for scale</p>
+
+                    <div>
+                      <Link
+                        id="btn-pricing-signoz-enterprise-1"
+                        className={`button button--primary ${styles.pricingCtaBtn}`}
+                        href={"/enterprise/"}
+                      >
+                        Contact Us
+                      </Link>
+                    </div>
+                  </div>
                   <p className="leading-relaxed text-base mb-4 text-gray-400"></p>
                 </div>
                 <Divider isDashed />
                 <div className="__card__body">
-                  <div
+                  {/* <div
                     className={`${styles.pricingDetails} ${styles.packageDetailBlock}`}
                   >
                     <h4 className={styles.packageDetailTitle}>Pricing</h4>
@@ -684,7 +700,7 @@ const PricingPlans = () => {
                       </span>
                     </div>
                   </div>
-                  <Divider isDashed />
+                  <Divider isDashed /> */}
                   <div
                     className={`${styles.deploymentOptions} ${styles.packageDetailBlock}`}
                   >

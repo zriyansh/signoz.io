@@ -1,11 +1,11 @@
 ---
-title: Top 13 open source APM tools in 2023
+title: Top 13 open source APM tools in 2024
 slug: open-source-apm-tools
 date: 2023-06-05
 tags: [Tech Resources]
 authors: ankit_anand
 description: Looking for an open source APM tool? Latest top open source APM tool list - 1.SigNoz 2.Graphite 3.Pinpoint 4.Prometheus 5.JavaMelody 6.StageMonitor 7.Scouter 8.Zipkin 9.Jaeger 10.Skywalking...
-image: /img/blog/2023/01/open_source_apm_tools_cover-min.jpg
+image: /img/blog/2023/01/open-source-apm-tools-cover.jpeg
 hide_table_of_contents: true
 keywords:
   - Open Source
@@ -21,7 +21,7 @@ Choosing the right APM tool is critical. How do you know which is the right one 
 
 <!--truncate-->
 
-![Cover Image](/img/blog/2023/01/open_source_apm_tools_cover.webp)
+![Cover Image](/img/blog/2023/01/open-source-apm-tools-cover.webp)
 
 > **What is an open source APM tool?**<br></br>
 > APM stands for Application Performance Monitoring. APM tools help you to monitor your application for any performance issues. When you opt for an open source APM tool, you get the added advantage of having access to the tool's source code. 
@@ -66,7 +66,7 @@ A few essential APM benefits in solving performance issues are as follows:
 - **Increase revenue** by protecting against downtime and user churn
 - **Saves engineering bandwidth** in debugging and troubleshooting
 
-**List of top 13 open source APM tools in 2023**
+**List of top 13 open source APM tools in 2024**
 
  - [SigNoz](#signoz)
  - [Graphite](#graphite)
@@ -84,7 +84,7 @@ A few essential APM benefits in solving performance issues are as follows:
 
 ## Top Open Source APM Tools
 
-Now let's explore the top 13 open source APM tools in 2023.
+Now let's explore the top 13 open source APM tools in 2024.
 
 ### SigNoz
 

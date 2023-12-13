@@ -358,6 +358,19 @@ module.exports = {
           }, items: [
             "logs-pipelines/concepts",
             "logs-pipelines/processors",
+            {
+              type: "category",
+              label: "Guides",
+              link: {
+                type: "generated-index",
+                title: "Logs Pipeline Guides",
+                description: 'See these guides for detailed walkthroughs on creating Log Pipelines for specific purposes.',
+              },
+              items: [
+                "logs-pipelines/guides/json",
+                "logs-pipelines/guides/trace"
+              ]
+            }
           ]
         },
         {
@@ -432,11 +445,52 @@ module.exports = {
         },
       ]
     },
-
     {
-      type: 'doc',
-      id: 'userguide/alerts-management',
-
+      label: "Alerts",
+      type: "category",
+      items: [
+        {
+          type: 'doc',
+          id: 'userguide/alerts-management',
+          label: 'Set Alert Rules',
+        },
+        {
+          label: "Setup Alerts Notification",
+          type: "category",
+          link: {
+            type: "generated-index",
+            title: "Setup Alerts Notifications Channel",
+            description: 'You can setup notification channel for sending the generated alerts to other applications. Currently, the following channels are supported.',
+          },
+          items: [
+            {
+              type: 'doc',
+              id: 'alerts-management/notification-channel/slack',
+              label: 'Slack',
+            },
+            {
+              type: 'doc',
+              id: 'alerts-management/notification-channel/webhook',
+              label: 'Webhook',
+            },
+            {
+              type: 'doc',
+              id: 'alerts-management/notification-channel/pagerduty',
+              label: 'PagerDuty',
+            },
+            {
+              type: 'doc',
+              id: 'alerts-management/notification-channel/opsgenie',
+              label: 'Opsgenie',
+            },
+            {
+              type: 'doc',
+              id: 'alerts-management/notification-channel/ms-teams',
+              label: 'MS Teams',
+            },
+          ],
+        },
+      ],
     },
     {
       type: 'doc',
