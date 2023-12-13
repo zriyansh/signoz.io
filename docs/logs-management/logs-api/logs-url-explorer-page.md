@@ -25,7 +25,7 @@ The parameters includes:
 These parameters have to be encoded before being appended to the base URL. 
 The `URI encoded` column describes the **number of times** the parameter has to be URI encoded. `no`indicates that these parameters don't have to be encoded.
 
-You can use this [tool](https://meyerweb.com/eric/tools/dencoder/) to encode your paramaters.
+You can use this [tool](https://meyerweb.com/eric/tools/dencoder/) to encode your parameters.
 
 ### Example of Composite Query 
 

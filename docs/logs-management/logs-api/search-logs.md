@@ -34,27 +34,27 @@ This is the JSON payload for the example query described above for Searching Log
                                 "key": "deployment_name",
                                 "dataType": "string",
                                 "type": "resource",
-                                "isColumn": false,
+                                "isColumn": false
                             },
                             "op": "=",
                             "value": "hotrod"
-                        }
+                        },
                         {
                             "key": {
                                 "key": "method",
                                 "dataType": "string",
                                 "type": "tag",
-                                "isColumn": false,
+                                "isColumn": false
                             },
                             "op": "=",
                             "value": "get"
-                        }
+                        },
                         {
                             "key": {
                                 "key": "severity_text",
                                 "dataType": "string",
                                 "type": "",
-                                "isColumn": true,
+                                "isColumn": true
                             },
                             "op": "=",
                             "value": "info"
