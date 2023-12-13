@@ -8,7 +8,7 @@ This section provides detailed examples of searching traces using the SigNoz Tra
 
 This query is useful when identifying all spans with specific characteristics, such as method type or error status.
 
-#### Query Description
+### Query Description
 
 This query searches for all spans where:
 
@@ -16,7 +16,7 @@ This query searches for all spans where:
 - `httpMethod`= GET
 - `hasError` = true
 
-#### Attributes and Columns
+### Attributes and Columns
 
 - Resource Attribute: `deployment_name`
 - Tag Attributes + Columns: `httpMethod`, `hasError`
@@ -26,7 +26,7 @@ You can specify the start and end timestamps in Unix format (milliseconds).
 
 ### Sample Payload 
 
-This is the JSON payload for the example query described above for fetching spans.
+This is the JSON payload for the example query.
 
 ```json
 {
@@ -145,7 +145,7 @@ This query searches for  root spans with:
 
 You can specify the start and end timestamps in Unix format (milliseconds).
 
-::: note
+:::note
 
 To search for root spans, you need to add `parentSpanID` value to `""` in filters
 
@@ -153,7 +153,7 @@ To search for root spans, you need to add `parentSpanID` value to `""` in filter
 
 ### Sample Payload 
 
-This is the JSON payload for the example query described above for fetching spans.
+This is the JSON payload for the example query.
 
 ```json
 {

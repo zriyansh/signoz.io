@@ -9,7 +9,7 @@ This section demonstrates how to perform aggregation operations on trace data us
 
 This example is useful for scenarios where you need to count occurrences of specific values (e.g., customer) and group them by another attribute (e.g., serviceName).
 
-#### Query Description
+### Query Description
 
 - **Objective**: Count customer values and group them by serviceName
 - **Attributes**:
@@ -18,7 +18,7 @@ This example is useful for scenarios where you need to count occurrences of spec
 
 ### Sample Payload
 
-This is the JSON payload for the example described above for Aggregating spans
+This is the JSON payload for the example query.
 
 ```json
 {
