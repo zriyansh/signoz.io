@@ -44,13 +44,13 @@ using grok patterns.
 :::note
 
 By default, values extracted using grok patterns are strings.  
-For example, parsing `status: 202` with the pattern `status: %{INT:status_code}` will extract `status_code` with value `"202"`.
+For example, parsing `status: 202` with the pattern `status: %{INT:status_code}` will extract `status_code` as a string with value `"202"`.
 
 
 However, it is possible to extract `float` or `int` typed values by adding a 3rd part to grok capture groups.  
-For example, parsing `status: 202` with the pattern `status: %{INT:status_code:int}` will extract `status_code` with value `202`.  
+For example, parsing `status: 202` with the pattern `status: %{INT:status_code:int}` will extract `status_code` as an integer with value `202`.  
 
-This can enable the use of numeric operators on the extracted values and unlock features like using the values as metrics in dashboards.
+This can enable the use of numeric operators (`>`, `<` etc) on the extracted values and unlock features like using the values as metrics in dashboards.
 
 :::
 
