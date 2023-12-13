@@ -41,6 +41,19 @@ using grok patterns.
 |     Parse&#160;To      | The path to parse to. Eg: If set to `attributes`, a capture group like `%{WORD:userId}` in the grok pattern would get stored in `attributes.userId` |
 |     On&#160;Error     | What to do if the processor fails. Options are to `drop` the log or `send` it to the next processor  |
 
+:::note
+
+By default, values extracted using grok patterns are strings.  
+For example, parsing `status: 202` with the pattern `status: %{INT:status_code}` will extract `status_code` as a string with value `"202"`.
+
+
+However, it is possible to extract `float` or `int` typed values by adding a 3rd part to grok capture groups.  
+For example, parsing `status: 202` with the pattern `status: %{INT:status_code:int}` will extract `status_code` as an integer with value `202`.  
+
+This can enable the use of numeric operators (`>`, `<` etc) on the extracted values and unlock features like using the values as metrics in dashboards.
+
+:::
+
 
 ## JSON Parser
 The JSON parsing processor can be used to parse serialized JSON text into log attributes.
