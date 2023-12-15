@@ -9,6 +9,14 @@ Before configuring Slack as a notification channel in SigNoz, ensure that you ha
 - **Incoming Webhook**: Follow the steps outlined in [ Microsoft Teams documentation](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook) to create an incoming webhook and obtain the necessary webhook URL.
 - **SigNoz Version**: [v0.26.0](https://github.com/SigNoz/signoz/releases/tag/v0.26.0) or later.
 
+:::info
+
+Please note that the MS Teams notification option is only available for **SigNoz paid plans**. 
+Feel free to explore the available plans and their features [here](https://signoz.io/pricing/).
+
+
+:::
+
 ## Accessing Alert Channels
 
 To manage your alert channels in SigNoz:
