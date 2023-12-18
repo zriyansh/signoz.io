@@ -848,7 +848,7 @@ const ExploreAllFeature = () => {
             inEnterprise: <RightIcon />,
           },
           {
-            feature: "Unlimited dashboards & alerts from traces",
+            feature: "Unlimited dashboards & alerts based on traces",
             inCommunity: (
               <div className="flex flex-col justify-center items-center">
                 <CrossIcon />
@@ -899,7 +899,7 @@ const ExploreAllFeature = () => {
             inEnterprise: <RightIcon />,
           },
           {
-            feature: "Unlimited dashboards & alerts for logs",
+            feature: "Unlimited dashboards & alerts based on logs",
             inCommunity: (
               <div className="flex flex-col justify-center items-center">
                 <CrossIcon />
@@ -928,6 +928,12 @@ const ExploreAllFeature = () => {
           },
           {
             feature: "Container Monitoring",
+            inCommunity: <RightIcon />,
+            inTeams: <RightIcon />,
+            inEnterprise: <RightIcon />,
+          },
+          {
+            feature: "Unlimited dashboards & alerts based on metrics",
             inCommunity: <RightIcon />,
             inTeams: <RightIcon />,
             inEnterprise: <RightIcon />,
