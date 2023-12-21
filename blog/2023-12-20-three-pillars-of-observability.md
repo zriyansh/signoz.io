@@ -52,7 +52,7 @@ The popular three pillars of observability are metrics, traces, and logs.
 When examining metrics, they typically represent the state of a specific measure at a given moment. This is crucial for understanding changes over time, as seen in time-series graphs like CPU utilization.
 
 <figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/blog/2023/12/loki_creating_the_pipeline.webp" alt="SigNoz dashboard with K8s Pod CPU utilization"/>
+    <img className="box-shadowed-image" src="/img/blog/2023/12/k8s_pods_cpu_util.webp" alt="SigNoz dashboard with K8s Pod CPU utilization"/>
     <figcaption><i>SigNoz dashboard with K8s Pod CPU utilization</i></figcaption>
 </figure>
 <br/>
