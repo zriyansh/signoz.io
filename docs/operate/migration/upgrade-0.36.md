@@ -151,6 +151,6 @@ If you've been using the SigNoz Query API, Dashboards, or Alerts with attributes
 
 Ex:- 
 * `service.name` was previously shown and stored as `service_name` . Now you can update it to use `service.name`
-* `k8s.namespace.name` was previously shown and stored as `k8s_namespace_name` . Now you can update it to use `k8s_namespace_name`
+* `k8s.namespace.name` was previously shown and stored as `k8s_namespace_name` . Now you can update it to use `k8s.namespace.name`
 
 For assistance in making these updates, please reach out to us via Intercom support or at cloud-support@signoz.io
