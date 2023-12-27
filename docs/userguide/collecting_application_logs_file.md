@@ -29,10 +29,16 @@ If you don’t already have a SigNoz cloud account, you can sign up [here](https
       ...
       filelog/app:
         include: [ /tmp/app.log ]
-        start_at: beginning
+        start_at: end
     ...
     ```
-    `start_at: beginning` can be removed once you are done testing.
+    `start_at: end` can be removed once you are done testing.
+
+  :::note
+
+  The `start_at: end` configuration ensures that only newly added logs are transmitted. If you wish to include historical logs from the file, remember to modify `start_at` to `beginning`.
+
+  :::
 
     For parsing logs of different formats you will have to use operators, you can read more about operators [here](https://signoz.io/docs/userguide/logs/#operators-for-parsing-and-manipulating-logs).
 
@@ -81,14 +87,20 @@ If you don’t already have a SigNoz cloud account, you can sign up [here](https
       ...
       filelog:
         include: [ /tmp/app.log ]
-        start_at: beginning
+        start_at: end
     ...
     ```
-    `start_at: beginning` can be removed once you are done testing.
+    `start_at: end` can be removed once you are done testing.
 
-    For parsing logs of different formats you will have to use operators, you can read more about operators [here](./logs.md#operators-for-parsing-and-manipulating-logs)
+  :::note
 
-    For more configurations that are available for filelog receiver please check [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+  The `start_at: end` configuration ensures that only newly added logs are transmitted. If you wish to include historical logs from the file, remember to modify `start_at` to `beginning`.
+
+  :::
+
+  For parsing logs of different formats you will have to use operators, you can read more about operators [here](./logs.md#operators-for-parsing-and-manipulating-logs)
+
+  For more configurations that are available for filelog receiver please check [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 * Next we will modify our pipeline inside `otel-collector-config.yaml` to include the receiver we have created above.
     ```yaml {4}
@@ -118,7 +130,7 @@ If you have a signoz running on a different host then you will have to run a ote
   receivers:
     filelog:
       include: [ /tmp/app.log ]
-      start_at: beginning
+      start_at: end
   processors:
     batch:
       send_batch_size: 10000
