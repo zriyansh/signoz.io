@@ -96,8 +96,14 @@ expose clickhouse ports even temporarily, you can go through following steps.
 ### For Kubernetes
 
 ```bash
+RELEASE=my-release
+ADMIN_PASSWORD=$(
+  kubectl -n platform get clickhouseinstallations.clickhouse.altinity.com $RELEASE-clickhouse \
+  -o jsonpath --template '{.spec.configuration.users.admin/password}'
+)
+
 kubectl -n platform run -i -t signoz-migrate --image=signoz/migrate:0.36 --restart='Never' \
-  -- -host=my-release-clickhouse -port=9000 -userName=admin -password=27ff0399-0d3a-4bd8-919d-17c2181e6fb9
+  -- -host=$RELEASE-clickhouse -port=9000 -userName=admin -password=$ADMIN_PASSWORD
 ```
 
 Steps to check logs:
@@ -151,6 +157,6 @@ If you've been using the SigNoz Query API, Dashboards, or Alerts with attributes
 
 Ex:- 
 * `service.name` was previously shown and stored as `service_name` . Now you can update it to use `service.name`
-* `k8s.namespace.name` was previously shown and stored as `k8s_namespace_name` . Now you can update it to use `k8s_namespace_name`
+* `k8s.namespace.name` was previously shown and stored as `k8s_namespace_name` . Now you can update it to use `k8s.namespace.name`
 
 For assistance in making these updates, please reach out to us via Intercom support or at cloud-support@signoz.io
