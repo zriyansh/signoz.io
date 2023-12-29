@@ -3,12 +3,15 @@ title: Sending Logs to SigNoz over HTTP
 id: send-logs-http
 ---
 
-You can send your logs to SigNoz over HTTP.
+### Overview
 
-The payload is an array of JSON logs. It follows the same structure as
-[OTEL Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/).
+This guide provides detailed instructions on how to send logs to SigNoz using HTTP. Sending logs over HTTP offers flexibility, allowing users to create custom wrappers, directly transmit logs, or integrate existing loggers, making it a versatile choice for diverse use-cases.
 
-Here is how the payload looks like:
+### Payload Structure
+
+The payload is an array of logs in JSON format. It follows a structure similar to [OTEL Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/).
+
+Below is how the payload would look like:
 ```
 [
   {
@@ -24,12 +27,34 @@ Here is how the payload looks like:
   }
 ]
 ```
+Here's a brief description of each field in the log record:
 
-Note :- 
-* `timestamp` is int64 nanoseconds since Unix epoch
-* You can use `message` instead of `body`.
-* Any other keys present apart from the ones mentioned above will be moved to the attributes map.
-  Ex:- 
+Field Name     |Description
+---------------|--------------------------------------------
+timestamp      |Time when the event occurred
+trace_id        |Request trace id
+span_id         |Request span id
+trace_flags     |[W3C](https://www.w3.org/TR/trace-context/#trace-flags) trace flag
+severity_text   |The severity text (also known as log level)
+severity_number |Numerical value of the severity
+attributes     |Additional information about the event
+resources       |Describes the source of the log
+body           |The body of the log record
+
+To know more details about the different fields in a log record, you can check [this documentation](https://opentelemetry.io/docs/specs/otel/logs/data-model/#log-and-event-record-definition).
+
+:::note
+
+- `timestamp` is an uint64 showing time in **nanoseconds** since Unix epoch.
+- You can use `message` instead of `body` to represent the body of a log record.
+
+:::
+
+<br></br>
+
+Any additional keys present in the log record, apart from the ones mentioned in the above payload structure will be moved to the `attributes` map.
+
+For example, if the JSON payload has fields like `host`, `method` etc which are not a part of the standard payload structure,
   
   ```json
   [
@@ -41,7 +66,7 @@ Note :-
   ]
   ```
 
-  Will be finally treated as:
+  Then they will be moved to `attributes` and the log record will be finally treated as: 
 
   ```json
   [
@@ -56,9 +81,13 @@ Note :-
   ```
 
 
-## Send logs to SigNoz in SigNoz cloud
+## Send logs to SigNoz Cloud
 
-* Here is a sample curl request:
+**Step1:** Construct the cURL request 
+
+You can use cURL to send your logs. Below is a sample cURL request which is used to send a JSON-formatted log record to a Signoz cloud ingestion endpoint for logging:
+
+<!--- What other methods can we use apart from cURL ? --->
 
   ```bash
   curl --location 'https://ingest.<REGION>.signoz.cloud:443/logs/json/' \
@@ -84,21 +113,23 @@ Note :-
   ]'
   ```
 
-  :::note
-  To include a specific timestamp in your log, be sure to incorporate the `timestamp` field in your cURL request. For instance:
 
-  ```bash
-    curl --location 'https://ingest.<REGION>.signoz.cloud:443/logs/json/' \
-    --header 'Content-Type: application/json' \
-    --header 'signoz-access-token: <SIGNOZ_INGESTION_KEY>' \
-    --data '[
-        {
-        "timestamp": 1698310066000000000, 
-        "trace_id": "000000000000000018c51935df0b93b9", 
-        ...
-  ```
+:::note
 
-  :::
+To include a specific timestamp in your log, be sure to incorporate the `timestamp` field in your cURL request. For instance:
+
+```bash
+  curl --location 'https://ingest.<REGION>.signoz.cloud:443/logs/json/' \
+  --header 'Content-Type: application/json' \
+  --header 'signoz-access-token: <SIGNOZ_INGESTION_KEY>' \
+  --data '[
+      {
+      "timestamp": 1698310066000000000, 
+      "trace_id": "000000000000000018c51935df0b93b9", 
+      ...
+```
+
+:::
 
   `<REGION>` is the name of the region.
   
@@ -115,7 +146,7 @@ Note :-
   
 
 
-## Send logs to SigNoz in Self-Hosted SigNoz
+## Send logs to Self-Hosted SigNoz
 
 * Modify the `docker-compose.yaml` file present inside `deploy/docker/clickhouse-setup` to expose a port, in this case `8082`.
     ```yaml {8}
