@@ -131,6 +131,13 @@ The add processor can be used to add a field to the log.
 |     Field     | Path of the field to be added. Must be of the form `attributes.*` or `resource.*`  |
 |     Value     | The value to be set in the specified field |
 
+:::note
+
+The value field can be set to an [expression](https://github.com/open-telemetry/opentelemetry-log-collection/blob/main/docs/types/expression.md) which will get evaluated for each entry to set the value.  
+For example the value can be set to `EXPR(attributes.subtotal + attributes.taxes)` to add a new field for total.  
+Value expressions are also useful for accessing array items that can't be referenced with field paths in operators like `COPY` and `MOVE`, for example `EXPR(attributes.locale[0])`.
+
+:::
 
 ## Remove
 The remove processor can be used for removing unwanted log fields such as PII.
