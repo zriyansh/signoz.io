@@ -131,7 +131,7 @@ clickhouse:
       role:
          enabled: true
          annotations:
-            eks.amazonaws.com/role-arn:arn:aws:iam::1234056789:role/demo-cold-storage-role
+            eks.amazonaws.com/role-arn: arn:aws:iam::1234056789:role/demo-cold-storage-role
 ```
 8. Upgrade the helm deployment.
 
