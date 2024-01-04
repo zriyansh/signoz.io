@@ -3,11 +3,11 @@ title: Sending Logs to SigNoz over HTTP
 id: send-logs-http
 ---
 
-### Overview
+## Overview
 
 This guide provides detailed instructions on how to send logs to SigNoz using HTTP. Sending logs over HTTP offers flexibility, allowing users to create custom wrappers, directly transmit logs, or integrate existing loggers, making it a versatile choice for diverse use-cases.
 
-### Payload Structure
+## Payload Structure
 
 The payload is an array of logs in JSON format. It follows a structure similar to [OTEL Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/).
 
@@ -52,9 +52,11 @@ To know more details about the different fields in a log record, you can check [
 
 <br></br>
 
-Any additional keys present in the log record, apart from the ones mentioned in the above payload structure will be moved to the `attributes` map.
+## Additional Keys
 
-For example, if the JSON payload has fields like `host`, `method` etc which are not a part of the standard payload structure,
+Any additional keys present in the log record, apart from the ones mentioned in the above **payload structure** will be moved to the `attributes` map.
+
+For example, if the JSON payload has fields like `host`, `method` etc. which are not a part of the standard payload structure,
   
   ```json
   [
@@ -83,7 +85,7 @@ For example, if the JSON payload has fields like `host`, `method` etc which are 
 
 ## Send logs to SigNoz Cloud
 
-**Step1:** Construct the cURL request 
+### Construct the cURL request 
 
 You can use cURL to send your logs. Below is a sample cURL request which is used to send a JSON-formatted log record to a Signoz cloud ingestion endpoint for logging:
 
@@ -113,10 +115,21 @@ You can use cURL to send your logs. Below is a sample cURL request which is used
   ]'
   ```
 
+`<SIGNOZ_INGESTION_KEY>` is the API token provided by SigNoz. You can find your ingestion key from SigNoz cloud account details sent on your email.
+
+`<REGION>` is the name of the region.
+    
+  Depending on the choice of your region for SigNoz Cloud, the OTLP endpoint will vary according to the table below:
+
+  | Region | Endpoint                   |
+  | ------ | -------------------------- |
+  | US     | ingest.us.signoz.cloud:443 |
+  | IN     | ingest.in.signoz.cloud:443 |
+  | EU     | ingest.eu.signoz.cloud:443 |
 
 :::note
 
-To include a specific timestamp in your log, be sure to incorporate the `timestamp` field in your cURL request. For instance:
+To include a specific timestamp in your log, be sure to incorporate the `timestamp` field in your cURL request. If timestamp field is not mentioned, then it will take the timestamp when the log record was sent. For instance:
 
 ```bash
   curl --location 'https://ingest.<REGION>.signoz.cloud:443/logs/json/' \
@@ -131,24 +144,26 @@ To include a specific timestamp in your log, be sure to incorporate the `timesta
 
 :::
 
-  `<REGION>` is the name of the region.
-  
-  Depending on the choice of your region for SigNoz Cloud, the OTLP endpoint will vary according to the table below:
+### Verfiy your request
 
-  | Region | Endpoint                   |
-  | ------ | -------------------------- |
-  | US     | ingest.us.signoz.cloud:443 |
-  | IN     | ingest.in.signoz.cloud:443 |
-  | EU     | ingest.eu.signoz.cloud:443 |
+Once you run the above cURL request, you should be able to see it in SigNoz UI.
 
-* Once you run the above curl, you can open your SigNoz UI to verify it.
-  ![JSON Data in log body](../../static/img/logs/http-log.webp)
+![JSON Data in log body](../../static/img/logs/http-log.webp)
   
 
 
 ## Send logs to Self-Hosted SigNoz
 
-* Modify the `docker-compose.yaml` file present inside `deploy/docker/clickhouse-setup` to expose a port, in this case `8082`.
+### Install SigNoz
+
+Follow [this link](http://localhost:3000/docs/install/) for instructions on how to install self-hosted signoz.
+Once you're done installing SigNoz, follow the steps below.
+
+### Expose Port
+
+Inside the `deploy/docker/clickhouse-setup` directory of your SigNoz self-hosted installation, you will find `docker-compose.yaml` file which you should modify to expose a port, in this case `8082`. Below is a code snippet of the modified file.
+
+
     ```yaml {8}
     ...
     otel-collector:
@@ -160,8 +175,10 @@ To include a specific timestamp in your log, be sure to incorporate the `timesta
           - "8082:8082"
     ...
     ```
+### Add and include receiver
 
-* Add the httplogreceiver reciever to `otel-collector-config.yaml` which is present inside `deploy/docker/clickhouse-setup`:
+Inside the `deploy/docker/clickhouse-setup` directory of your SigNoz self-hosted installation, you will find `otel-collector-config.yaml` file which you should modify to add `httplogreceiver`.
+
     ```yaml {2-10}
     receivers:
       httplogreceiver/json:
@@ -170,7 +187,8 @@ To include a specific timestamp in your log, be sure to incorporate the `timesta
     ...
     ```
 
-* Next we will modify our pipeline inside `otel-collector-config.yaml` to include the receiver we have created above.
+Next modify the pipeline section inside `otel-collector-config.yaml` to include the `httplogreceiver` we have created above.
+
     ```yaml {4}
     service:
         ....
@@ -180,9 +198,12 @@ To include a specific timestamp in your log, be sure to incorporate the `timesta
             exporters: [clickhouselogsexporter]
     ```
 
-* Now we can restart the otel collector container so that new changes are applied and we can send our logs to port `8082`.
+Now we can restart the **otel collector container** so that new changes are applied and we can send our logs to port `8082`.
 
-* Sample curl
+### Construct the cURL request
+
+You can use cURL to send your logs. Below is a sample cURL request which is used to send a JSON-formatted log record to SigNoz for logging:
+
   ```bash
   curl --location 'http://<IP>:8082' \
   --header 'Content-Type: application/json' \
@@ -206,25 +227,30 @@ To include a specific timestamp in your log, be sure to incorporate the `timesta
   ]'
   ```
 
-  Replace IP with IP of the system where your collector is running.
-  For more info check [troubleshooting](../install/troubleshooting.md#signoz-otel-collector-address-grid). 
+ `<IP>` is the IP of the system where your collector is running.
 
-  :::note
+  To know more details about `<IP>`, checkout this [troubleshooting](../install/troubleshooting.md#signoz-otel-collector-address-grid). 
 
-  To include a specific timestamp in your log, be sure to incorporate the `timestamp` field in your cURL request. For instance:
 
-  ```bash
-    curl --location 'https://ingest.<REGION>.signoz.cloud:443/logs/json/' \
-    --header 'Content-Type: application/json' \
-    --header 'signoz-access-token: <SIGNOZ_INGESTION_KEY>' \
-    --data '[
-        {
-        "timestamp": 1698310066000000000, 
-        "trace_id": "000000000000000018c51935df0b93b9", 
-        ...
-  ```
+:::note
 
-  :::
+To include a specific timestamp in your log, be sure to incorporate the `timestamp` field in your cURL request. If timestamp field is not mentioned, then it will take the timestamp when the log record was sent. For instance:
 
-* Once added you can verify by going to the SigNoz UI.
+```bash
+  curl --location 'https://ingest.<REGION>.signoz.cloud:443/logs/json/' \
+  --header 'Content-Type: application/json' \
+  --header 'signoz-access-token: <SIGNOZ_INGESTION_KEY>' \
+  --data '[
+      {
+      "timestamp": 1698310066000000000, 
+      "trace_id": "000000000000000018c51935df0b93b9", 
+      ...
+```
+
+:::
+
+### Verfiy your request
+
+Once you run the above cURL request, you should be able to see it in SigNoz UI.
+
   ![test](../../static/img/logs/http-log.webp)
