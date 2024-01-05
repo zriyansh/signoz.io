@@ -96,8 +96,14 @@ expose clickhouse ports even temporarily, you can go through following steps.
 ### For Kubernetes
 
 ```bash
+RELEASE=my-release
+ADMIN_PASSWORD=$(
+  kubectl -n platform get clickhouseinstallations.clickhouse.altinity.com $RELEASE-clickhouse \
+  -o jsonpath --template '{.spec.configuration.users.admin/password}'
+)
+
 kubectl -n platform run -i -t signoz-migrate --image=signoz/migrate:0.36 --restart='Never' \
-  -- -host=my-release-clickhouse -port=9000 -userName=admin -password=27ff0399-0d3a-4bd8-919d-17c2181e6fb9
+  -- -host=$RELEASE-clickhouse -port=9000 -userName=admin -password=$ADMIN_PASSWORD
 ```
 
 Steps to check logs:
