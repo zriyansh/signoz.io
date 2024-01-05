@@ -67,8 +67,8 @@ clickhouse:
 
 externalClickhouse:
   host: <clickhouse-endpoint>
-  httpPort: 8123
-  tcpPort: 9000
+  httpPort: "8123"
+  tcpPort: "9000"
   cluster: cluster
   secure: false
   user: <ch-user>
