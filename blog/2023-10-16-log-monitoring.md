@@ -238,7 +238,7 @@ The easiest way to get started with logs monitoring in SigNoz is to use [SigNoz 
 ### Mezmo
 
 <figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/blog/2024/01/log-monitoring-centralized-logging.webp" alt="Log Monitoring in Mezmo"/>
+    <img className="box-shadowed-image" src="/img/blog/2024/01/log-monitoring-mezmo.webp" alt="Log Monitoring in Mezmo"/>
     <figcaption><i>Log Monitoring in Mezmo (Source: Mezmo website)</i></figcaption>
 </figure>
 
