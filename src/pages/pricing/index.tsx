@@ -672,7 +672,11 @@ const PricingPlans = () => {
                     For at-scale orgs who want to host SigNoz in their own infra.
                   </p>
                   <div className="flex justify-between items-center">
-                    <p className="m-0">Custom Pricing for scale</p>
+                    <p className="m-0">Custom Pricing for scale 
+                    <br />
+                      <span>
+                      (starts at $2500/month)
+                      </span></p>
 
                     <div>
                       <Link
