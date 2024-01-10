@@ -438,7 +438,7 @@ use tonic::metadata::{MetadataMap, MetadataValue};
 
 **Step 2: Initialize the tracer and create env file**
 
-Add this function in main.rs file, `init_tracer` is initializing an OpenTelemetry tracer with the OpenTelemetry OTLP exporter which is sending data to Self-Hosted SigNoz. 
+Add this function in main.rs file, `init_tracer` is initializing an OpenTelemetry tracer with the OpenTelemetry OTLP exporter which is sending data to your Self-Hosted SigNoz. 
 
 ```rust
 fn init_tracer() -> Result<sdktrace::Tracer, TraceError> {
@@ -498,7 +498,7 @@ Now comes the most interesting part, Sending data to SigNoz to get sense of your
 
 | Variable                        | Description                                                                                                                                                                 |
 |---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| OTEL_EXPORTER_OTLP_ENDPOINT     | This is the url where you have self hosted SigNoz  |
+| OTEL_EXPORTER_OTLP_ENDPOINT     | This is the url where you have hosted SigNoz  |
 | OTEL_RESOURCE_ATTRIBUTES=service.name        | Specify  as the value. This will be the name of your Rust application on SigNoz services page, allowing you to uniquely identify the application traces.        |
 
 
