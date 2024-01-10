@@ -36,15 +36,15 @@ From VMs, there are two ways to send data to SigNoz Cloud.
 
 ### Send traces directly to SigNoz cloud
 
-Here we will be sending traces to SigNoz cloud in 4 easy steps, if you want to send traces to self hosted SigNoz , you can refer to [this](https://signoz.io/docs/instrumentation/rust/) article. 
+Here we will be sending traces to SigNoz cloud in 4 easy steps, if you want to send traces to self hosted SigNoz , you can refer to [this](https://signoz.io/docs/instrumentation/rust/#send-traces-to-self-hosted-signoz). 
 
 :::info
-If you are using the [sample Rust application](https://github.com/anukulpandey/sample-rust-otel) as base app, then you just need to update .env file and you are good to go!
+If you are using the [sample Rust application](https://github.com/anukulpandey/sample-rust-otel), then you just need to update .env file and you are good to go!
 :::
 
 **Step 1 : Instrument your application with OpenTelemetry**
 
-If you don't have a Rust application you can use our [sample Rust application](https://github.com/anukulpandey/sample-rust-otel), To configure our Rust application to send data we need to initialize OpenTelemetry, Otel has already created some crates which you need to add into your `Cargo.toml` file, just below `[dependencies]` section.
+To configure our Rust application to send data we need to initialize OpenTelemetry, Otel has already created some crates which you need to add into your `Cargo.toml` file, just below `[dependencies]` section.
 
 ```
 opentelemetry = { version = "0.18.0", features = ["rt-tokio", "metrics", "trace"] }
@@ -197,7 +197,7 @@ You can find instructions to install OTel Collector binary [here](https://signoz
 
 **Step 1 : Instrument your application with OpenTelemetry**
 
-If you don't have a Rust application you can use our [sample Rust application](https://github.com/anukulpandey/sample-rust-otel), To configure our Rust application to send traces we need to initialize OpenTelemetry, Otel has already created some crates which you need to add into your `Cargo.toml` file, just below `[dependencies]` section.
+To configure our Rust application to send traces we need to initialize OpenTelemetry, Otel has already created some crates which you need to add into your `Cargo.toml` file, just below `[dependencies]` section.
 
 ```
 opentelemetry = { version = "0.18.0", features = ["rt-tokio", "metrics", "trace"] }
@@ -411,7 +411,7 @@ in terminal to start the application!
 
 **Step 1 : Instrument your application with OpenTelemetry**
 
-If you don't have a Rust application you can use our [sample Rust application](https://github.com/anukulpandey/sample-rust-otel), To configure our Rust application to send traces we need to initialize OpenTelemetry, Otel has already created some crates which you need to add into your `Cargo.toml` file, just below `[dependencies]` section.
+To configure our Rust application to send traces we need to initialize OpenTelemetry, Otel has already created some crates which you need to add into your `Cargo.toml` file, just below `[dependencies]` section.
 
 ```
 opentelemetry = { version = "0.18.0", features = ["rt-tokio", "metrics", "trace"] }
@@ -508,6 +508,9 @@ OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317 OTEL_RESOURCE_ATTRIBUTES=servi
 ```
 in terminal to start the application!
 
+## Sample Rust Application
+
+We have included a sample Rust application at [Sample Rust App Github Repo](https://github.com/anukulpandey/sample-rust-otel), 
 
 ## Tutorial 
 
