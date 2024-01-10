@@ -456,7 +456,7 @@ const PricingPlans = () => {
                     support needs.
                   </p>
                   <div className="flex justify-between items-center">
-                    <p className="m-0">Flexible Pricing for scale</p>
+                    <p className="m-0">Flexible Pricing for scale and long term commitments</p>
 
                     <div>
                       <Link
