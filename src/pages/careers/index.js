@@ -47,7 +47,7 @@ function careers() {
               <div className={"col col--6 margin-vert--md"}>
                   <div class="card">
                       <div class="card__header">
-                          <h3>Technical Content Writer (Remote) (India)</h3>
+                          <h3>Technical Content Writer (Remote)</h3>
                       </div>
                       {/* <div class="card__image">
                         <img
@@ -69,28 +69,6 @@ function careers() {
               <div className={"col col--6 margin-vert--md"}>
                   <div class="card">
                       <div class="card__header">
-                          <h3>Senior Frontend Engineer (Remote) (India)</h3>
-                      </div>
-                      {/* <div class="card__image">
-                        <img
-                            src="/img/case_study/outplay-list.webp"
-                            alt="Image alt text"
-                            title="Logo Title Text 1" />
-                      </div>
-                      <div class="card__body">
-                          <p>
-  
-  
-                          </p>
-                      </div> */}
-                      <div class="card__footer">
-                      <a class="button button--primary" href="/careers/senior-frontend-engineer-in/" >Read more</a>
-                      </div>
-                  </div>
-              </div>  
-              <div className={"col col--6 margin-vert--md"}>
-                  <div class="card">
-                      <div class="card__header">
                           <h3>Site Reliability Engineer (Remote)</h3>
                           
                       </div>
@@ -101,7 +79,21 @@ function careers() {
                        >Read more</a>
                       </div>
                   </div>
-              </div>      
+              </div>  
+              <div className={"col col--6 margin-vert--md"}>
+                  <div class="card">
+                      <div class="card__header">
+                          <h3>Community Engineer (Remote)</h3>
+                          
+                      </div>
+
+                      <div class="card__footer">
+                      <a class="button button--primary"
+                       href="/careers/community-engineer-in/" 
+                       >Read more</a>
+                      </div>
+                  </div>
+              </div>     
           </div>
         </div>  
         </section>
