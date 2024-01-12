@@ -1,5 +1,5 @@
 ---
-title: OpenTelemetry in 2023 - What we learnt from the community and our users
+title: Did OpenTelemetry deliver on its promise in 2023?
 slug: opentelemetry-roundup-2023
 date: 2024-01-06
 tags: [OpenTelemetry, Observability]
