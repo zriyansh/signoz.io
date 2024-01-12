@@ -13,3 +13,5 @@
 /docs/instrumentation/nodejs/       /docs/instrumentation/javascript/
 /gh                                 https://github.com/SigNoz/signoz/
 /free-trial/                        /teams/
+/opentelemetry-2023/                /blog/opentelemetry-roundup-2023/
+
