@@ -552,6 +552,12 @@ module.exports = {
               label: 'Application/Server logs'
     
             },
+            {
+              type: 'doc',
+              id: 'aws/ec2-infra',
+              label: 'Infrastructure Metrics'
+    
+            },
           ]
         },
         
