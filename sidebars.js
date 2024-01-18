@@ -538,6 +538,26 @@ module.exports = {
       ],
     },
     {
+      label: "AWS",
+      type: "category",
+      items: [
+        //'aws/getting-started',
+        {
+          type: 'category',
+          label: 'EC2',
+          items: [
+            {
+              type: 'doc',
+              id: 'aws/ec2-logs',
+              label: 'Application/Server logs'
+    
+            },
+          ]
+        },
+        
+      ],
+    },
+    {
       type: 'category',
       label: 'Operate Self-Hosted SigNoz',
       link: {
