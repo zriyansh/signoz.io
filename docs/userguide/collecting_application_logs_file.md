@@ -17,7 +17,13 @@ This file represents a log file of your application. You can choose any file whi
 
 ## Collect Logs in SigNoz Cloud
 
-As a pre-requisite, if you don’t have a SigNoz cloud account, you can sign up [here](https://signoz.io/teams/).
+### Prerequisite
+
+- SigNoz [cloud]((https://signoz.io/teams/)) account.
+
+Sending logs to SigNoz cloud can be achieved by following these simple steps:
+- Installing OpenTelemetry Collector
+- Configuring filelog receiver
 
 ### Install OpenTelemetry Collector 
 
@@ -28,7 +34,7 @@ You can install OpenTelemetry collector as an agent on your Virtual Machine by f
 
 ### Configure filelog receiver
 
-Modify the `config.yaml` file that you created while installing OTel collector in the previos step to include the filelog receiver. This involves specifying the path to your `app.log` file and setting the `start_at` parameter. For more fields that are available for filelog receiver please check [this link](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+Modify the `config.yaml` file that you created while installing OTel collector in the previous step to include the filelog receiver. This involves specifying the path to your `app.log` file and setting the `start_at` parameter, which specifies where to start reading logs from the log file. For more fields that are available for filelog receiver please check [this link](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 ```yaml 
 receivers:
@@ -38,8 +44,6 @@ receivers:
     start_at: end
 ...
 ```
-`start_at: end` can be removed once you are done testing.
-
 
 :::note
 
@@ -70,9 +74,16 @@ Now restart the OTel collector so that new changes are applied. The steps to run
 
 The logs will be exported to SigNoz UI. If you add more entries to your `app.log` file they will also be visible in SigNoz UI.
 
-<!---Add an output image--->
+<figure data-zoomable align='center'>
+    <img src="/img/docs/application-logs-output.webp" alt="Logs of the dummy app.log file visible in SigNoz"/>
+    <figcaption><i>Sample log file data shown in SigNoz Logs Explorer</i></figcaption>
+</figure>
 
 ## Collecting Logs in self-hosted SigNoz
+
+Collecting logs in Self-Hosted SigNoz can have two scenarios:
+- SigNoz running on the same host
+- SigNoz running on different host
 
 ### Running on the same host
 
@@ -111,9 +122,6 @@ Add the filelog reciever to `otel-collector-config.yaml` which is present inside
   ...
   ```
 
-  `start_at: end` can be removed once you are done testing.
-
-
 :::note
 
 The `start_at: end` configuration ensures that only newly added logs are transmitted. If you wish to include historical logs from the file, remember to modify `start_at` to `beginning`.
@@ -145,7 +153,11 @@ Now, restart the OTel collector so that new changes are applied. You can find in
 
 The logs will be exported to SigNoz UI if there are no errors. If you add more entries to your `app.log` file they will also be visible in SigNoz.
 
-<!--- Add a screenshot of the final output --->
+<figure data-zoomable align='center'>
+    <img src="/img/docs/application-logs-output.webp" alt="Logs of the dummy app.log file visible in SigNoz"/>
+    <figcaption><i>Sample log file data shown in SigNoz Logs Explorer</i></figcaption>
+</figure>
+
 
 
 ### Running on a different host
