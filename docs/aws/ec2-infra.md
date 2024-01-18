@@ -1,6 +1,6 @@
 ---
 id: ec2-infrastructure
-title: See Infrastructure metrics of EC2 instance
+title: Infrastructure metrics of EC2 instance
 ---
 
 This document details about how to monitor your infrastructure metrics, which are referred to as hostmetrics in OpenTelemetry.
