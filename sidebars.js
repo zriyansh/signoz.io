@@ -538,7 +538,7 @@ module.exports = {
       ],
     },
     {
-      label: "AWS",
+      label: "AWS Monitoring",
       type: "category",
       items: [
         //'aws/getting-started',
