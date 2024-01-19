@@ -19,7 +19,7 @@ This file represents a log file of your application. You can choose any file whi
 
 ### Prerequisite
 
-- SigNoz [cloud]((https://signoz.io/teams/)) account.
+- SigNoz [cloud](https://signoz.io/teams/) account
 
 Sending logs to SigNoz cloud can be achieved by following these simple steps:
 - Installing OpenTelemetry Collector
