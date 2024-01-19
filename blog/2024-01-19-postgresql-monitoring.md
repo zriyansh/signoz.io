@@ -18,7 +18,7 @@ keywords:
 import { LiteYoutubeEmbed } from "react-lite-yt-embed";
 
 <head>
-  <link rel="canonical" href="https://signoz.io/blog/mongodb-monitoring-tools/"/>
+  <link rel="canonical" href="https://signoz.io/blog/postgresql-monitoring/"/>
 </head>
 
 import GetStartedSigNoz from '../docs/shared/get-started-signoz.md';
