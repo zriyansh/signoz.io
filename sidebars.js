@@ -548,13 +548,13 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              id: 'aws/ec2-logs',
+              id: 'aws-monitoring/ec2-logs',
               label: 'Application/Server logs'
     
             },
             {
               type: 'doc',
-              id: 'aws/ec2-infrastructure',
+              id: 'aws-monitoring/ec2-infrastructure',
               label: 'Infrastructure Metrics'
     
             },
