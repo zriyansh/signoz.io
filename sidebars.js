@@ -538,6 +538,37 @@ module.exports = {
       ],
     },
     {
+      label: "AWS Monitoring",
+      type: "category",
+      items: [
+        //'aws/getting-started',
+        {
+          type: 'category',
+          label: 'EC2',
+          link: {
+            type: 'generated-index',
+            title: 'EC2 Monitoring',
+            slug: '/ec2-monitoring',
+          },
+          items: [
+            {
+              type: 'doc',
+              id: 'aws-monitoring/ec2-logs',
+              label: 'Application/Server logs'
+    
+            },
+            {
+              type: 'doc',
+              id: 'aws-monitoring/ec2-infra-metrics',
+              label: 'Infrastructure Metrics'
+    
+            },
+          ]
+        },
+        
+      ],
+    },
+    {
       type: 'category',
       label: 'Operate Self-Hosted SigNoz',
       link: {
