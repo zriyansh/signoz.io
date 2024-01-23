@@ -7,6 +7,32 @@ title: Infrastructure metrics of EC2 instance
 
 This documentation guides you through integrating AWS EC2 infrastructure metrics into SigNoz using the Hostmetrics receiver in OpenTelemetry. The Hostmetrics receiver is designed to collect metrics about the host system from various sources. It supports various scrapers for collecting different metrics, including CPU, disk, load, filesystem, memory, network, paging, and process metrics.
 
+### Prerequisites
+
+- A running EC2 instance
+- A [SigNoz Cloud](https://signoz.io/teams/) account
+
+### Configuring Hostmetrics Receiver
+
+To see your infrastructure metrics in SigNoz, you need to configure the hostmetrics receiver and create a HostMetrics Dashboard. Follow [this documentation](https://signoz.io/docs/userguide/hostmetrics/) to configure hostmetrics receiver and creating the Hostmetrics Dashboard.
+
+
+### Final Output
+
+After setting up your Hostmetrics Dashboard, here's what it might look like:
+
+<figure data-zoomable align="center">
+    <img
+      src="/img/ec2-infra.webp"
+      alt="Hostmetrics Dashboard for EC2 instance"
+    />
+    <figcaption>
+      <i>
+        Hostmetrics Dashboard for AWS EC2 instance
+      </i>
+    </figcaption>
+</figure>
+
 
 <!---
 Overview of HostMetrics
