@@ -171,6 +171,11 @@ module.exports = {
               label: 'Rust',
               id: 'instrumentation/rust',
             },
+            {
+              type: 'doc',
+              label: 'Swift',
+              id: 'instrumentation/swift',
+            },
           ],
         },
         {
