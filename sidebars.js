@@ -545,6 +545,11 @@ module.exports = {
         {
           type: 'category',
           label: 'EC2',
+          link: {
+            type: 'generated-index',
+            title: 'EC2 Monitoring',
+            slug: '/ec2-monitoring',
+          },
           items: [
             {
               type: 'doc',
