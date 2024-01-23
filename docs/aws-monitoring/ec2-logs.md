@@ -8,11 +8,11 @@ This guide provides detailed instructions on how to send application and server 
 
 ## Prerequisites
 
-- A Linux based running EC2 instance 
+- A Linux-based EC2 instance 
 - An active [SigNoz Cloud](http://localhost:3000/teams/) account
 
 Sending your server/application logs to SigNoz Cloud broadly involves these two simple steps:
-- Install OpenTelemetry Collector
+- Install OpenTelemetry Collector(OTel collector)
 - Configure filelog receiver
 
 
@@ -37,6 +37,7 @@ This file represents a log file of your application/server.
 
 ## Configure filelog receiver
 
+Receivers are used to get data into the collector. A filelog receiver collects logs from files. 
 Modify the `config.yaml` file that you created while installing OTel collector in the previous step to include the filelog receiver. This involves specifying the path to your `app.log` file (or your log file) and setting the `start_at` parameter. For more fields that are available for filelog receiver please check [this link](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 
@@ -57,7 +58,7 @@ The `start_at: end` configuration ensures that only newly added logs are transmi
 
 ## Update pipeline configuration
 
-In the same `config.yaml` file, update the pipeline settings to include the new filelog receiver. This step is crucial for ensuring that the logs are correctly processed and sent to SigNoz.
+Receivers must be enabled via pipelines within the service section of the collector config file. In the same `config.yaml` file mentioned above, update the pipeline settings to include the new filelog receiver. This step is crucial for ensuring that the logs are correctly processed and sent to SigNoz.
 
 ```yaml {4}
     service:

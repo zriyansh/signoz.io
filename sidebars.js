@@ -559,7 +559,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              id: 'aws-monitoring/ec2-infrastructure',
+              id: 'aws-monitoring/ec2-infra-metrics',
               label: 'Infrastructure Metrics'
     
             },
