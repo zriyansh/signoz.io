@@ -14,11 +14,11 @@ const config = {
   projectName: "signoz", // Usually your repo name.
   themeConfig: {
     announcementBar: {
-      id: 'funding',
+      id: "funding",
       content:
         '🚀 We\'ve raised $6.5mn to build the future of open source observability. <a target="_blank" rel="noopener noreferrer" href="/newsroom/signoz-funding/">Read more</a>',
-      backgroundColor: '#FAF9F6',
-      textColor: '#091E42',
+      backgroundColor: "#FAF9F6",
+      textColor: "#091E42",
       isCloseable: false,
     },
     colorMode: {
@@ -195,12 +195,10 @@ const config = {
             {
               label: "SigNoz vs Grafana",
               to: "comparisons/signoz-vs-grafana/",
-
             },
             {
               label: "SigNoz vs Dynatrace",
               to: "comparisons/signoz-vs-dynatrace/",
-
             },
             {
               label: "Careers",
@@ -240,6 +238,7 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          blogSidebarCount: 0,
           // Please change this to your repo.
           // editUrl:
           //   'https://github.com/facebook/docusaurus/edit/master/website/blog/',
@@ -268,19 +267,19 @@ const config = {
     ],
     // Redocusaurus config
     [
-      'redocusaurus',
+      "redocusaurus",
       {
         // Plugin Options for loading OpenAPI files
         specs: [
           {
-            spec: 'openapi/alerts.yaml',
-            route: '/api_reference',
+            spec: "openapi/alerts.yaml",
+            route: "/api_reference",
           },
         ],
         // Theme Options for modifying how redoc renders them
         theme: {
           // Change with your site colors
-          primaryColor: '#1890ff',
+          primaryColor: "#1890ff",
         },
       },
     ],
@@ -305,6 +304,7 @@ const config = {
          */
         path: "./opentelemetry",
         blogTitle: "OpenTelemetry",
+        blogSidebarCount: 0,
       },
     ],
     [

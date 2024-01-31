@@ -50,7 +50,7 @@ Before we deep-dive into key differences between Elasticsearch and MongoDB, let'
 
 ## An overview of Elasticsearch
 
-<a href = "https://www.elastic.co/guide/index.html" rel="noopener noreferrer nofollow" target="_blank" > Elasticsearch </a> is an open-source full-text search engine built on Apache Lucene and developed in Java. Indexing and data analysis are its major capabilities. Along with  <a href = "https://www.elastic.co/kibana/" rel="noopener noreferrer nofollow" target="_blank" > Kibana </a>  and <a href = "https://www.elastic.co/logstash/" rel="noopener noreferrer nofollow" target="_blank" > Logstash </a>, it functions as part of the <a href = "https://www.elastic.co/elastic-stack/" rel="noopener noreferrer nofollow" target="_blank" > Elastic Stack </a> for data analysis.
+<a href = "https://www.elastic.co/guide/index.html" rel="noopener noreferrer nofollow" target="_blank" > Elasticsearch </a> is an open-source full-text search engine built on Apache Lucene and developed in Java. Indexing and data analysis are its major capabilities. Along with <a href = "https://www.elastic.co/kibana/" rel="noopener noreferrer nofollow" target="_blank" > Kibana </a> and <a href = "https://www.elastic.co/logstash/" rel="noopener noreferrer nofollow" target="_blank" > Logstash </a>, it functions as part of the <a href = "https://www.elastic.co/elastic-stack/" rel="noopener noreferrer nofollow" target="_blank" > Elastic Stack </a> for data analysis.
 
 Elasticsearch allows you to store, search, index, and analyze huge volumes of data easily. Also, It provides real-time search and analytics of all data types. The ability to get search responses quickly is because it searches an index instead of a text.
 
@@ -72,7 +72,6 @@ Data in Elasticsearch is stored in schema-less JSON and use REST APIs for storin
 <a href = "https://www.mongodb.com/docs/manual/introduction/" rel="noopener noreferrer nofollow" target="_blank" > MongoDB </a> is an open-source NoSQL database that uses a document-oriented data model for large-volume data storage. MongoDB allows you to store, manage, and retrieve document-oriented data. Unlike traditional relational databases, which store data in tables and rows, MongoDB uses collections and documents to store data.
 
 A database in MongoDB is a container of collections. Documents are stored in collections, which MongoDB uses to keep track of related data. The conventional <a href = "https://www.mongodb.com/docs/manual/core/databases-and-collections/" rel="noopener noreferrer nofollow" target="_blank" > database structure of MongoDB </a> is shown in the figure below.
-
 
 <figure data-zoomable align='center'>
     <img src="/img/blog/2023/01/mongodb-database.webp" alt="How data is stored in MongoDB databases"/>
@@ -160,7 +159,7 @@ Finance and e-commerce organizations frequently use MongoDB to store product inf
 
 ## Elasticsearch vs. MongoDB:
 
-### Elasticsearch Advantages 
+### Elasticsearch Advantages
 
 - Elasticsearch carries out searches for both structured and unstructured data.
 - In Elasticsearch, data can be accessed using a query in any format.
@@ -173,7 +172,7 @@ Finance and e-commerce organizations frequently use MongoDB to store product inf
 - Elasticsearch is not a good alternative for data storage compared to MongoDB.
 - Although it is a strong and adaptable distributed database search engine, it can be challenging to understand.
 
-### MongoDB Advantages 
+### MongoDB Advantages
 
 - Flexibility to store various data types.
 - High speed and performance.
@@ -189,9 +188,9 @@ Finance and e-commerce organizations frequently use MongoDB to store product inf
 
 ## Choosing between Elasticsearch and MongoDB
 
- Both Elasticsearch and MongoDB are popular and established data stores. As we have explained the use-cases, you can choose between Elasticsearch and MongoDB based on your use-case. Elasticsearch is a distributed, document-oriented database best suited for search and analytics use cases. On the other hand, MongoDB is a popular choice of data store for unstructured data.
+Both Elasticsearch and MongoDB are popular and established data stores. As we have explained the use-cases, you can choose between Elasticsearch and MongoDB based on your use-case. Elasticsearch is a distributed, document-oriented database best suited for search and analytics use cases. On the other hand, MongoDB is a popular choice of data store for unstructured data.
 
-If you are looking at setting up analytics on your data, Elasticsearch can be a good choice. For example, Elasticsearch combined with Logstash and Kibana is used for Log analytics. But recently, big companies like <a href = "https://www.uber.com/en-IN/blog/logging/" rel="noopener noreferrer nofollow" target="_blank" > Uber   </a> and <a href = "https://blog.cloudflare.com/log-analytics-using-clickhouse/" rel="noopener noreferrer nofollow" target="_blank" > Cloudflare </a> have shifted their log analytics from Elastic search to ClickHouse, a columnar database much more suited to store telemetry data like logs.
+If you are looking at setting up analytics on your data, Elasticsearch can be a good choice. For example, Elasticsearch combined with Logstash and Kibana is used for Log analytics. But recently, big companies like <a href = "https://www.uber.com/en-IN/blog/logging/" rel="noopener noreferrer nofollow" target="_blank" > Uber </a> and <a href = "https://blog.cloudflare.com/log-analytics-using-clickhouse/" rel="noopener noreferrer nofollow" target="_blank" > Cloudflare </a> have shifted their log analytics from Elastic search to ClickHouse, a columnar database much more suited to store telemetry data like logs.
 
 If your use case is log analytics than [SigNoz](https://signoz.io/), an open-source log management tool based on ClickHouse can be a better choice. It provides logs, metrics, and traces under a single pane of glass, thus serving as a one-stop observability solution.
 
