@@ -66,8 +66,8 @@ source .venv/bin/activate
 Step 2. Install the OpenTelemetry dependencies
 
 ```bash
-pip install opentelemetry-distro==0.38b0
-pip install opentelemetry-exporter-otlp==1.17.0
+pip install opentelemetry-distro==0.43b0
+pip install opentelemetry-exporter-otlp==1.22.0
 ```
 
 The dependencies included are briefly explained below:
@@ -145,8 +145,8 @@ source .venv/bin/activate
 Step 2. Install the OpenTelemetry dependencies
 
 ```bash
-pip install opentelemetry-distro==0.38b0
-pip install opentelemetry-exporter-otlp==1.17.0
+pip install opentelemetry-distro==0.43b0
+pip install opentelemetry-exporter-otlp==1.22.0
 ```
 
 Step 3. Add automatic instrumentation
@@ -196,8 +196,8 @@ source .venv/bin/activate
 Step 2. Install the OpenTelemetry dependencies
 
 ```bash
-pip install opentelemetry-distro==0.38b0
-pip install opentelemetry-exporter-otlp==1.17.0
+pip install opentelemetry-distro==0.43b0
+pip install opentelemetry-exporter-otlp==1.22.0
 ```
 
 Step 3. Add automatic instrumentation
@@ -251,8 +251,8 @@ You can use OpenTelemetry to send your traces directly to SigNoz. OpenTelemetry 
 2. **Install the OpenTelemetry dependencies**<br></br>
     
     ```bash
-    pip install opentelemetry-distro
-    pip install opentelemetry-exporter-otlp
+    pip install opentelemetry-distro==0.43b0
+    pip install opentelemetry-exporter-otlp==1.22.0
     ```
     
     The dependencies included are briefly explained below:
@@ -272,7 +272,7 @@ You can use OpenTelemetry to send your traces directly to SigNoz. OpenTelemetry 
     The `opentelemetry-exporter-otlp-proto-grpc` package installs the gRPC exporter which depends on the `grpcio` package. The installation of `grpcio` may fail on some platforms for various reasons. If you run into such issues, or you don't want to use gRPC, you can install the HTTP exporter instead by installing the `opentelemetry-exporter-otlp-proto-http` package. You need to set the `OTEL_EXPORTER_OTLP_PROTOCOL` environment variable to `http/protobuf` to use the HTTP exporter.
     :::
     
-3. **Add automatic instrumentation**<br></br>
+1. **Add automatic instrumentation**<br></br>
      The below command inspects the dependencies of your application and installs the instrumentation packages relevant for your Django application.
     
     ```bash
@@ -283,7 +283,7 @@ You can use OpenTelemetry to send your traces directly to SigNoz. OpenTelemetry 
      Please make sure that you have installed all the dependencies of your application before running the above command. The command will not install instrumentation for the dependencies which are not installed.
     :::
 
-4. **Run your application**<br></br>
+2. **Run your application**<br></br>
      In the final run command, you can configure environment variables and flags. Flags for exporters:<br></br>
      
      For running your application, there are a few things that you need to keep in mind. Below are the notes:
