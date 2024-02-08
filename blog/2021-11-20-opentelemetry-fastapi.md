@@ -35,7 +35,7 @@ Instrumentation is the biggest challenge engineering teams face when starting ou
 
 It is a set of tools, APIs, and SDKs used to instrument applications to create and manage telemetry data(Logs, metrics, and traces). It aims to make telemetry data(logs, metrics, and traces) a built-in feature of cloud-native software applications.
 
- One of the biggest advantages of using OpenTelemetry is that it is vendor-agnostic. It can export data in multiple formats which you can send to a backend of your choice.
+One of the biggest advantages of using OpenTelemetry is that it is vendor-agnostic. It can export data in multiple formats which you can send to a backend of your choice.
 
 In this article, we will use [SigNoz](https://signoz.io/) as a backend. SigNoz is an open-source APM tool that can be used for both metrics and distributed tracing.
 
@@ -86,7 +86,7 @@ The application list shown in the dashboard is from a sample app called HOT R.O.
 ### Instrumenting a sample FastAPI application with OpenTelemetry
 
 **Prerequisites**<br></br>
-Python 3.8 or newer
+- Python 3.8 or newer
 
 Download the <a href = "https://www.python.org/downloads/" rel="noopener noreferrer nofollow" target="_blank" >latest version</a> of Python.
 
@@ -113,6 +113,7 @@ The `requirements.txt` file contains all the necessary OpenTelemetry Python pack
 ```bash
 python -m pip install -r requirements.txt
 ```
+
 The dependencies included are briefly explained below:
 
 opentelemetry-distro - The distro provides a mechanism to automatically configure some of the more common options for users. It helps to get started with OpenTelemetry auto-instrumentation quickly.
