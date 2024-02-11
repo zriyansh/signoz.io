@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import styles from "./styles.module.css";
 
 interface ErrorsProps {
@@ -67,13 +66,16 @@ export default function SignozCloudSignUpForm() {
 
   const handleSignUp = async () => {
     setIsSubmitting(true);
+
     try {
-      // Actual API call using Axios
-      const response = await axios.post(
-        "https://signoz.io/v1/register",
-        formData
-      );
-      if (response.status === 200) {
+      const response = await fetch("https://api.example.com/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
         setSubmitSuccess(true);
         setFormData({
           fullName: "",
@@ -82,9 +84,13 @@ export default function SignozCloudSignUpForm() {
           dataRegion: "in",
           source: "",
         });
+      } else {
+        console.error("Signup failed:", response.statusText);
+        // Handle other error cases, like server errors or network issues
       }
     } catch (error) {
-      console.error("Signup failed:", error);
+      console.error("Signup failed:", error.message);
+      // Handle other error cases, like network errors
     } finally {
       setIsSubmitting(false);
     }
