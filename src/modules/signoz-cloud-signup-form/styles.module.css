@@ -35,3 +35,10 @@
 .formInput {
   border: 1px solid rgb(209 213 219);
 }
+
+.errorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
