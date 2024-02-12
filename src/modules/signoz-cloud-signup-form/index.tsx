@@ -67,13 +67,21 @@ export default function SignozCloudSignUpForm() {
   const handleSignUp = async () => {
     setIsSubmitting(true);
 
+    const payload = {
+      name: formData.fullName,
+      email: formData.workEmail,
+      company_name: formData.companyName,
+      data_region: formData.dataRegion,
+      source: formData.source,
+    };
+
     try {
-      const response = await fetch("https://api.example.com/signup", {
+      const response = await fetch("https://signup.signoz.cloud/api/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
       if (response.ok) {
         setSubmitSuccess(true);
@@ -118,10 +126,10 @@ export default function SignozCloudSignUpForm() {
           disabled={isSubmitting}
           id="fullName"
           name="fullName"
-          className={`bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-sm block w-full p-2.5 ${
-            errors?.fullName ? styles.hasError : ""
-          }`}
-          placeholder="name@flowbite.com"
+          className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm block w-full p-2.5 ${
+            styles.formInput
+          } ${errors?.fullName ? styles.hasError : ""}`}
+          placeholder=""
           onChange={handleInputChange}
           required
         />
@@ -142,9 +150,9 @@ export default function SignozCloudSignUpForm() {
           disabled={isSubmitting}
           id="workEmail"
           name="workEmail"
-          className={`bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-sm block w-full p-2.5 ${
-            errors?.fullName ? styles.hasError : ""
-          }`}
+          className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm block w-full p-2.5 ${
+            styles.formInput
+          } ${errors?.fullName ? styles.hasError : ""}`}
           onChange={handleInputChange}
           required
         />
@@ -167,8 +175,8 @@ export default function SignozCloudSignUpForm() {
           disabled={isSubmitting}
           name="companyName"
           className={`bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-sm block w-full p-2.5 ${
-            errors?.fullName ? styles.hasError : ""
-          }`}
+            styles.formInput
+          } ${errors?.fullName ? styles.hasError : ""}`}
           onChange={handleInputChange}
           required
         />
