@@ -94,14 +94,7 @@ You can also install and self-host SigNoz yourself. Check out the [docs](https:/
    <a href = "https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/" rel="noopener noreferrer nofollow" target="_blank" >Windows</a><br></br>
    <a href = "https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/" rel="noopener noreferrer nofollow" target="_blank" >Ubuntu</a><br></br>
 
-   On MacOS the installation is done using Homebrew's brew package manager. Once the installation is done, don't forget to start MongoDB services using `brew services start mongodb/brew/mongodb-community@4.4`  on your macOS terminal.
-
-   <figure data-zoomable align='center'>
-       <img src="/img/blog/2021/08/opentelemetry_python_start_mongodb.webp" alt="starting mongoDB services from mac terminal"/>
-      <figcaption><i>starting mongoDB services from mac terminal</i></figcaption>
-   </figure>
-
-<br></br>
+   On MacOS the installation is done using Homebrew's brew package manager. Once the installation is done, don't forget to start MongoDB services using `brew services start mongodb/brew/mongodb-community@x.x`  on your macOS terminal where x being the mongodb version.
 
 
 **Step 1. Running sample Flask app**<br></br>
