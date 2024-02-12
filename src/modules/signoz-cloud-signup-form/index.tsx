@@ -155,7 +155,6 @@ export default function SignozCloudSignUpForm() {
             className="block bg-white-300  text-center border border-red-400 text-orange-400 px-4 py-3 my-4 rounded"
             role="alert"
           >
-            {/* <div className="font-bold text-center">Holy smokes!</div> */}
             <div className="block my-4">
               We're sorry, it looks like something didn't go as planned. Please
               reach out to us for assistance.
@@ -166,8 +165,7 @@ export default function SignozCloudSignUpForm() {
             className="button button--primary"
             href="mailto:cloud-support@signoz.io"
           >
-            {" "}
-            Contact Support{" "}
+            Contact Support
           </a>
         </div>
       ) : (
