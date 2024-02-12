@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
+import { Spin } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 
 interface ErrorsProps {
   fullName?: string;
@@ -12,7 +14,7 @@ export default function SignozCloudSignUpForm() {
     fullName: "",
     workEmail: "",
     companyName: "",
-    dataRegion: "in",
+    dataRegion: "us",
     source: "",
   });
 
@@ -119,15 +121,18 @@ export default function SignozCloudSignUpForm() {
           fullName: "",
           workEmail: "",
           companyName: "",
-          dataRegion: "in",
+          dataRegion: "us",
           source: "",
         });
 
         window.location.href = "https://signoz.io/verify-email";
       } else {
-        console.error("Signup Failed:", response.statusText);
-
-        handleError();
+        // To do, handle other errors apart from invalid email
+        if (response.status === 400) {
+          setErrors({
+            workEmail: "Please enter a valid work email.",
+          });
+        }
       }
     } catch (error) {
       handleError();
@@ -253,14 +258,14 @@ export default function SignozCloudSignUpForm() {
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm block w-full p-2.5"
               onChange={handleInputChange}
             >
-              <option value="in" className={styles.dataRegionOption}>
-                India
-              </option>
               <option value="us" className={styles.dataRegionOption}>
                 United States
               </option>
               <option value="eu" className={styles.dataRegionOption}>
                 Europe
+              </option>
+              <option value="in" className={styles.dataRegionOption}>
+                India
               </option>
             </select>
           </div>
@@ -287,7 +292,16 @@ export default function SignozCloudSignUpForm() {
             disabled={isSubmitting}
             onClick={handleSubmit}
           >
-            Get Started
+            {isSubmitting ? (
+              <div className={styles.submittingForm}>
+                <Spin
+                  indicator={<LoadingOutlined style={{ fontSize: 18 }} spin />}
+                />
+                Submitting
+              </div>
+            ) : (
+              "Get Started"
+            )}
           </button>
         </form>
       )}
