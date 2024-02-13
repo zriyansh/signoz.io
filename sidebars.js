@@ -268,7 +268,11 @@ module.exports = {
           id: 'userguide/collecting-ecs-logs-and-metrics',
           label: 'ECS Infra Metrics & Logs',
         },
-
+        {
+          type: 'doc',
+          id: 'userguide/collecting-ecs-sidecar-infra',
+          label: 'ECS Infra Sidecar',
+        }
       ],
     },
     {
