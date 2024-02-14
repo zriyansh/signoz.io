@@ -91,7 +91,7 @@ Check if the app is running
 You can now access the UI of the app on your local host: http://localhost:5002/
 
 <figure data-zoomable align='center'>
-    <img src="/img/blog/2021/11/sample_flask_app.webp" alt="SigNoz dashboard showing application list"/>
+    <img src="/img/blog/2024/02/list_of_apps_flask.webp" alt="SigNoz dashboard showing application list"/>
     <figcaption><i>Sample flask application running on local host</i></figcaption>
 </figure>
 
