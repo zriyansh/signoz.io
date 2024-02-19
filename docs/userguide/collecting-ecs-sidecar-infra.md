@@ -285,6 +285,15 @@ To verify that your sidecar container is running, go to the Dashboard
 section of SigNoz and import the dashboard `ECS - Container Metrics` Dashboard from
 [here](https://github.com/SigNoz/dashboards/raw/main/ecs-infra-metrics/container-metrics.json).
 
+
+<figure data-zoomable align='center'>
+    <img src="/img/docs/ecs-docs/ecs-daemon-hostmetrics-output.webp" alt="ECS Container Metrics Dashboard showing data for ECS cluster"/>
+    <figcaption><i>ECS Container Metrics Dashboard showing data for ECS cluster </i></figcaption>
+</figure>
+
+<br></br>
+
+
 ---
 
 ## Send Data from Applications

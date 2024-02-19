@@ -183,14 +183,20 @@ You should see the task ARN of the daemon service in the output.
 ### Step 5: Verify Data in SigNoz
 
 <div>
-To verify that the data is being sent to SigNoz Cloud, you can go to the dashboard section of SigNoz and import one of the follwing dashboards below:
+To verify that the data is being sent to SigNoz Cloud, you can go to the dashboard section of SigNoz and import one of the following dashboards below:
 </div>
 <br/>
 
 - [instance-metrics.json](https://github.com/SigNoz/dashboards/raw/chore/ecs-dashboards/ecs-infra-metrics/instance-metrics.json)
 - [hostmetrics-with-variable.json](https://github.com/SigNoz/dashboards/raw/main/hostmetrics/hostmetrics-with-variable.json)
 
-Now, you should see the metrics for your ECS cluster in the dashboard.
+<figure data-zoomable align='center'>
+    <img src="/img/docs/ecs-docs/ecs-daemon-hostmetrics-output.webp" alt="Hostmetrics Dashboard showing data for ECS cluster"/>
+    <figcaption><i>Hostmetrics Dashboard showing data for ECS cluster </i></figcaption>
+</figure>
+
+<br></br>
+
 
 ### (Optional) Step 6: Clean Up
 
