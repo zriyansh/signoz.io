@@ -27,6 +27,17 @@ Select the type of SigNoz instance you are running: **SigNoz Cloud** or **Self-H
 <Tabs>
 <TabItem value="cloud" label="SigNoz Cloud" default>
 
+Below are the steps to collect your metrics and logs from ECS infrastructure:
+
+- [Prerequisites](#prerequisites)
+- [Create OpenTelemetry Collector Config file](#step-1-create-signoz-otelcollector-config)
+- [Create Sidecar Collector Container](#step-2-create-sidecar-collector-container)
+- [Deploy Task Definition](#step-3-deploy-the-task-definition)
+- [Verify Data in SigNoz](#step-4-verify-data-in-signoz)
+
+Send Data from your Application deployed on ECS:
+- [Send Data from your application](#send-data-from-applications)
+
 ### Prerequisites
 
 - An ECS cluster running with at least one task definition
@@ -86,6 +97,16 @@ It also acts as a gateway to send any telemetry data from your application conta
 </TabItem>
 <TabItem value="self-host" label="Self-Host">
 
+Below are the steps to collect your metrics and logs from ECS infrastructure:
+
+- [Prerequisites](#prerequisites-1)
+- [Create OpenTelemetry Collector Config file](#step-1-create-signoz-otelcollector-config)
+- [Create Sidecar Collector Container](#step-2-create-sidecar-collector-container)
+- [Deploy Task Definition](#step-3-deploy-the-task-definition)
+- [Verify Data in SigNoz](#step-4-verify-data-in-signoz)
+
+Send Data from your Application deployed on ECS:
+- [Send Data from your application](#send-data-from-applications)
 
 ### Prerequisites
 
@@ -271,7 +292,7 @@ To update the ECS Task Role, follow these steps:
     }
     ```
 
-### Deploy the task definition
+### Step 3: Deploy the task definition
 
 If your application runs as an ECS service, you update the service to use the new revision of your task definition. This tells ECS to start new tasks based on this updated definition and gracefully replace the old tasks with the new ones, ensuring minimal disruption to your application.
 
@@ -279,7 +300,7 @@ If you're not using a service and instead run tasks directly, you manually start
 
 **NOTE:** Once the task is running, you should be able to see SigNoz sidecar container logs in CloudWatch Logs because we have set the `logDriver` parameter to be `awslogs` in our task definition.
 
-### Verify data in SigNoz
+### Step 4: Verify data in SigNoz
 
 To verify that your sidecar container is running, go to the Dashboard
 section of SigNoz and import the dashboard `ECS - Container Metrics` Dashboard from

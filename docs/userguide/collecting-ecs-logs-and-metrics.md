@@ -48,6 +48,18 @@ Select the type of ECS cluster you are running: **EC2** or **External**.
 <Tabs groupId="launch-type">
 <TabItem value="ec2" label="EC2" default>
 
+Below are the steps to collect your metrics and logs from ECS infrastructure:
+
+- [Create a Daemon Service Template](#step-1-daemon-service-template)
+- [Create OpenTelemetry Collector Config file](#step-2-create-signoz-otelcollector-config)
+- [Create Daemon Service](#step-3-create-daemon-service)
+- [Verify Daemon Service](#step-4-verify-daemon-service)
+- [Verify Data in SigNoz](#step-5-verify-data-in-signoz)
+- [Clean Up (Optional) ](#optional-step-6-clean-up)
+
+Send Data from your Application deployed on ECS:
+- [Send Data from your application](#send-data-from-applications)
+
 ## Setting up Daemon Service
 
 <br></br>
@@ -72,6 +84,18 @@ wget https://github.com/SigNoz/benchmark/raw/main/ecs/ec2/daemon-template.yaml
 </TabItem>
 
 <TabItem value="external" label="External">
+
+Below are the steps to collect your metrics and logs from ECS infrastructure:
+
+- [Create a Daemon Service Template](#step-1-daemon-service-template-1)
+- [Create OpenTelemetry Collector Config file](#step-2-create-signoz-otelcollector-config)
+- [Create Daemon Service](#step-3-create-daemon-service)
+- [Verify Daemon Service](#step-4-verify-daemon-service)
+- [Verify Data in SigNoz](#step-5-verify-data-in-signoz)
+- [Clean Up (Optional) ](#optional-step-6-clean-up)
+
+Send Data from your Application deployed on ECS:
+- [Send Data from your application](#send-data-from-applications)
 
 ## Setting up Daemon Service
 
