@@ -1,7 +1,7 @@
 ---
 id: collecting-ecs-sidecar-infra
 title: Collecting Data from ECS using Sidecar
-description: View metrics and logs for your ECS infrastructure
+description: View metrics, traces and logs for your ECS infrastructure
 hide_table_of_contents: true
 ---
 
@@ -34,9 +34,8 @@ Below are the steps to collect your metrics and logs from ECS infrastructure:
 - [Create Sidecar Collector Container](#step-2-create-sidecar-collector-container)
 - [Deploy Task Definition](#step-3-deploy-the-task-definition)
 - [Verify Data in SigNoz](#step-4-verify-data-in-signoz)
-
-Send Data from your Application deployed on ECS:
-- [Send Data from your application](#send-data-from-applications)
+- [Send Traces Data from your application](#send-traces-data-from-applications)
+- [Send Logs Data from your application](#send-logs-data-from-applications)
 
 ### Prerequisites
 
@@ -100,13 +99,12 @@ It also acts as a gateway to send any telemetry data from your application conta
 Below are the steps to collect your metrics and logs from ECS infrastructure:
 
 - [Prerequisites](#prerequisites-1)
-- [Create OpenTelemetry Collector Config file](#step-1-create-signoz-otelcollector-config)
-- [Create Sidecar Collector Container](#step-2-create-sidecar-collector-container)
+- [Create OpenTelemetry Collector Config file](#step-1-create-signoz-otelcollector-config-1)
+- [Create Sidecar Collector Container](#step-2-create-sidecar-collector-container-1)
 - [Deploy Task Definition](#step-3-deploy-the-task-definition)
 - [Verify Data in SigNoz](#step-4-verify-data-in-signoz)
-
-Send Data from your Application deployed on ECS:
-- [Send Data from your application](#send-data-from-applications)
+- [Send Traces Data from your application](#send-traces-data-from-applications)
+- [Send Logs Data from your application](#send-logs-data-from-applications)
 
 ### Prerequisites
 
@@ -170,7 +168,7 @@ In your ECS [task definition](https://docs.aws.amazon.com/AmazonECS/latest/devel
         ...,
         {
             "name": "signoz-collector",
-            "image": "signoz/signoz-otel-collector:0.88.7",
+            "image": "signoz/signoz-otel-collector:0.88.13",
             "user": "root",
             "command": [
                 "--config=env:SIGNOZ_CONFIG_CONTENT"
@@ -192,6 +190,10 @@ In your ECS [task definition](https://docs.aws.amazon.com/AmazonECS/latest/devel
                 {
                     "protocol": "tcp",
                     "containerPort": 4318
+                },
+                {
+                    "containerPort": 8006,
+                    "protocol": "tcp"
                 }
             ],
             "healthCheck": {
@@ -223,7 +225,7 @@ The sidecar container will run the SigNoz collector and includes essential compo
 
 ### Update ECS Task Execution Role
 
-The ECS Task Execution Role is an AWS IAM role that grants permissions to the ECS agent to make AWS API calls on behalf of the user. When integrating SigNoz as a sidecar container, the task execution role needs additional permissions to access the AWS Systems Manager Parameter Store, where the SigNoz configuration is stored.
+The ECS Task Execution Role is an AWS IAM role that grants permissions to the ECS agent to make AWS API calls on behalf of the user. When integrating SigNoz as a sidecar container, the task execution role needs additional permissions to access the AWS Systems Manager Parameter Store, where the SigNoz configuration is stored and to access CloudWatch Logs for log management of the sidecar containers.
 
 To modify the ECS Task Execution Role, follow these steps:
 
@@ -236,7 +238,9 @@ To modify the ECS Task Execution Role, follow these steps:
 
     There are two ways to grant access to the Parameter store: 
 
-    - **Attach AWS Managed Policies:** If the role doesn't already have the `AmazonSSMReadOnlyAccess` policy attached, you can attach this managed policy to grant read-only access to the Systems Manager Parameter Store. This access is necessary for the task to retrieve the SigNoz configuration.
+    - **Attach AWS Managed Policies:** If the role doesn't already have the following policies, attach them:
+        - `AmazonSSMReadOnlyAccess`
+        - `CloudWatchLogsFullAccess`
 
     - **Add Inline Policy:** Alternatively, for more granular control, you can create an inline policy that specifically grants access to only the necessary resources in the Parameter Store. The JSON for the inline policy will be:
 
@@ -252,10 +256,23 @@ To modify the ECS Task Execution Role, follow these steps:
                     "arn:aws:ssm:<aws-region>:<aws-account-id>:parameter/ecs/signoz/otelcol-sidecar.yaml"
                 ],
                 "Effect": "Allow"
+            },
+            {
+                "Effect": "Allow",
+                "Action": [
+                    "logs:CreateLogStream",
+                    "logs:CreateLogGroup",
+                    "logs:PutLogEvents",
+                    "logs:DescribeLogStreams",
+                    "logs:DescribeLogGroups"
+                ],
+                "Resource": "*"
             }
         ]
     }
     ```
+
+Alternatively, you can add the policy `AmazonSSMReadOnlyAccess` and `CloudWatchLogsFullAccess` to the ECS Task Execution Role.
 
 ### Update ECS Task Role
 
@@ -271,7 +288,9 @@ To update the ECS Task Role, follow these steps:
 
     There are two ways to grant access to the Parameter store: 
 
-    - **Attach AWS Managed Policies:** If the role doesn't already have the `AmazonSSMReadOnlyAccess` policy attached, you can attach this managed policy to grant read-only access to the Systems Manager Parameter Store. 
+    - **Attach AWS Managed Policies:** If the role doesn't already have the following policies, attach them:
+        - `AmazonSSMReadOnlyAccess`
+        - `CloudWatchLogsFullAccess`
 
     - **Add Inline Policy for Granular Access:** For tighter security, you might opt to create an inline policy that specifies exactly which resources the tasks can access and what actions they can perform on those resources. This is particularly important for accessing specific resources like the Parameter Store parameters used by the SigNoz sidecar. The JSON for the inline policy will be:
 
@@ -287,6 +306,17 @@ To update the ECS Task Role, follow these steps:
                     "arn:aws:ssm:<aws-region>:<aws-account-id>:parameter/ecs/signoz/otelcol-sidecar.yaml"
                 ],
                 "Effect": "Allow"
+            },
+            {
+                "Effect": "Allow",
+                "Action": [
+                    "logs:CreateLogStream",
+                    "logs:CreateLogGroup",
+                    "logs:PutLogEvents",
+                    "logs:DescribeLogStreams",
+                    "logs:DescribeLogGroups"
+                ],
+                "Resource": "*"
             }
         ]
     }
@@ -317,7 +347,7 @@ section of SigNoz and import the dashboard `ECS - Container Metrics` Dashboard f
 
 ---
 
-## Send Data from Applications
+## Send Traces Data from Applications
 
 In this section, we will see how to send traces data from applications deployed in ECS
 to SigNoz using sidecar container that we deployed in the previous section.
@@ -332,7 +362,9 @@ To add OpenTelemetry instrumentation to your application, follow the docs [here]
 
 ### Configure OTLP Endpoint
 
-Once your application is instrumented to generate telemetry data, you need to configure it to send this data to the SigNoz collector sidecar container. For this, you need to set the OTLP endpoint to the endpoint of the sidecar container. This can be done by setting theenvironment variable `OTEL_EXPORTER_OTLP_ENDPOINT` to the endpoint of
+In your application task definition, you need to set the OTLP endpoint to the
+endpoint of the sidecar container. This can be done by setting the
+environment variable `OTEL_EXPORTER_OTLP_ENDPOINT` to the endpoint of
 the sidecar container.
 
 Select the network mode of your ECS task definition:
@@ -402,5 +434,143 @@ After instrumenting your application and configuring the OTLP endpoint, you'll n
 To verify that the data is being sent to SigNoz, you will need to
 generate some traffic to your application. Now go to the
 **Services** section of SigNoz and you should be able to see your application in the services list.
+
+---
+
+## Send Logs Data from Applications
+
+In this section, we will see how to send logs data from applications deployed in ECS
+to SigNoz using sidecar container that we deployed in the previous section.
+
+### Configure Log Router
+
+In your application code, you need to configure the Fluent Bit log router to
+your application to the sidecar otel-collector container.
+
+```json
+{
+    ...
+    {
+        "name": "signoz-log-router",
+        "image": "906394416424.dkr.ecr.us-west-2.amazonaws.com/aws-for-fluent-bit:stable",
+        "cpu": 250,
+        "memory": 512,
+        "essential": true,
+        "dependsOn": [
+            {
+                "containerName": "signoz-collector",
+                "condition": "HEALTHY"
+            }
+        ],
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-create-group": "True",
+                "awslogs-group": "/ecs/ecs-signoz-log-router",
+                "awslogs-region": "us-east-1",
+                "awslogs-stream-prefix": "ecs"
+            }
+        },
+        "firelensConfiguration": {
+            "type": "fluentbit",
+            "options": {
+                "enable-ecs-log-metadata": "true"
+            }
+        }
+    }
+}
+```
+
+:::info
+When collecting logs from multiple applications, it is recommended to use
+`<application-name>-log-router` pattern instead of `signoz-log-router` for container
+name and `awslogs-group`. It helps to separate log router of different application.
+:::
+
+### Send Logs to Sidecar Container
+
+In your application task definition, you need to use `awsfirelens` log driver
+to send logs to the sidecar otel-collector container via Fluent Bit log router.
+
+<Tabs>
+<TabItem value="bridge" label="Bridge" default>
+
+```json
+{
+    ...
+    "containerDefinitions": [
+        {
+            "name": "<your-container-name>",
+            "dependsOn": [
+                {
+                    "containerName": "signoz-log-router",
+                    "condition": "START"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awsfirelens",
+                "options": {
+                    "Name": "forward",
+                    "Match": "*",
+                    "Host": "signoz-collector",
+                    "Port": "8006",
+                    "tls": "off",
+                    "tls.verify": "off"
+                }
+            },
+            "links": [
+                "signoz-collector"
+            ],
+            ...
+        }
+    ]
+}
+```
+
+</TabItem>
+<TabItem value="awsvpc" label="AWS VPC">
+
+```json
+{
+    ...
+    "containerDefinitions": [
+        {
+            "name": "<your-container-name>",
+            "dependsOn": [
+                {
+                    "containerName": "signoz-log-router",
+                    "condition": "START"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awsfirelens",
+                "options": {
+                    "Name": "forward",
+                    "Match": "*",
+                    "Host": "localhost",
+                    "Port": "8006",
+                    "tls": "off",
+                    "tls.verify": "off"
+                }
+            }
+            ...
+        }
+    ]
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Rebuild and Deploy Application Container
+
+Now you can rebuild your application container and deploy it to ECS cluster
+using the same task definition that we updated in the previous section.
+
+### Verify data in SigNoz
+
+To verify that the logs are being sent to SigNoz, you will need to
+generate some logs from your application. After which you can go to the
+Logs page in SigNoz UI and you should see logs from your application.
 
 ---
