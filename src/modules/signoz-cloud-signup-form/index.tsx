@@ -38,8 +38,8 @@ export default function SignozCloudSignUpForm() {
 
     if (!formData.workEmail.trim()) {
       errors["workEmail"] = "Work Email is required";
-    } else if (!isValidEmail(formData.workEmail)) {
-      errors["workEmail"] = "Invalid email format";
+    } else if (!isValidCompanyEmail(formData.workEmail)) {
+      errors["workEmail"] = "Please enter a valid company email";
     }
 
     if (!formData.companyName.trim()) {
@@ -56,6 +56,15 @@ export default function SignozCloudSignUpForm() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
+
+  function isValidCompanyEmail(email) {
+    // Regular expression pattern to match valid company email domains
+    var companyEmailPattern = /@(?!gmail|yahoo|hotmail|outlook|live|icloud)[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+    // Check if the email matches the email format and the company email pattern
+    return isValidEmail(email) && companyEmailPattern.test(email);
+}
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
