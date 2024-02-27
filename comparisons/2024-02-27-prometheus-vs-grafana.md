@@ -115,14 +115,14 @@ Prometheus has limited visualization capabilities. The built-in expression brows
 
 
 <figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/blog/2024/02/prometheus-vs-grafana-table-visualization.webp" alt="Table visualization"/>
+    <img className="box-shadowed-image" src="/img/blog/2024/02/prometheus-vs-grafana-table-visualization.webp" alt="Table visualization in Prometheus"/>
     <figcaption><i>Table visualization</i></figcaption>
 </figure>
 <br/>
 
 
 <figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/blog/2024/02/prometheus-vs-grafana-graph-visualisation.webp" alt="Graph visualization"/>
+    <img className="box-shadowed-image" src="/img/blog/2024/02/prometheus-vs-grafana-graph-visualisation.webp" alt="Graph visualization in Prometheus"/>
     <figcaption><i>Graph visualization</i></figcaption>
 </figure>
 <br/>
@@ -135,7 +135,7 @@ Grafana is known for its excellent visualization capabilities. It offers a wide 
 It can also suggest visualization types based on the queries or data available. This feature presents a preview to users, aiding them in making an informed choice about the type of visualization that best represents their data.
 
 <figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/blog/2024/02/prometheus-vs-grafana-visualization-suggestion.webp" alt="Visualization suggestion"/>
+    <img className="box-shadowed-image" src="/img/blog/2024/02/prometheus-vs-grafana-visualization-suggestion.webp" alt="Visualization suggestion in Grafana"/>
     <figcaption><i>Visualization suggestion</i></figcaption>
 </figure>
 <br/>
@@ -219,7 +219,7 @@ Users define alerting rules using PromQL, setting conditions based on the collec
 These instances are then forwarded to Alertmanager, which handles deduplication, grouping, and routing for prompt notification to email, Slack, PagerDuty, OpsGenie, etc.
 
 <figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/blog/2024/02/prometheus-vs-grafana-alertmanager.webp" alt="Triggered alerts sent to Alertmanager"/>
+    <img className="box-shadowed-image" src="/img/blog/2024/02/prometheus-vs-grafana-alertmanager.webp" alt="Triggered alerts sent to Alertmanager from Prometheus"/>
     <figcaption><i>Triggered alerts sent to Alertmanager</i></figcaption>
 </figure>
 <br/>
