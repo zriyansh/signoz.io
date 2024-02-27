@@ -81,13 +81,16 @@ Features that will take observability experience in SigNoz to the next level! �
 
 And, of course, where there is SigNoz, there is OpenTelemetry. We will share lots of insights, best practices, and tidbits about OpenTelemetry.
 
-We don’t want to spoil the fun, so stay tuned for more info. And expect a fun week of hacking! 👩🏻‍💻
+Subscribe to our upcoming Linkedin event:
 
-First feature to go live soon, subscribe to our Youtube event:
+[![Upcoming Linkedin Live Event](/img/events/launch-week-1/linkedin-live.webp)](https://www.linkedin.com/events/7168128891910377472/)
+
+
+Subscribe to our upcoming Youtube event:
 
 <p>&nbsp;</p>
 
-<LiteYoutubeEmbed id="4_uVfiNB4oY" mute={false} />
+<LiteYoutubeEmbed id="fl-z1YoSB_w" mute={false} />
 
 <p>&nbsp;</p>
 
@@ -203,12 +206,6 @@ First feature to go live soon, subscribe to our Youtube event:
 </div>
 </div>
 </div>
-
-<br></br>
-
-Subscribe to our Linkedin launch event:
-
-[![SigNoz Launch Week Linkedin Event](/img/events/launch-week-1/signoz-launch-week-linkedin-cta.png)](https://www.linkedin.com/events/signozlaunchweek1-07159457438146985984/)
 
 <br></br>
 
