@@ -56,17 +56,20 @@ Please be advised that all logs will undergo conversion to JSON format before tr
 
 If you don’t already have a S3 bucket, here’s how to make one.
 
+<br />
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-create_bucket_1.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-create_bucket_1.webp" alt=""/>
+    <figcaption><i>Click on Create bucket button by going to AWS S3 service</i></figcaption>
 </figure>
+<br />
 
-Give you bucket a name and keep the settings to default, works for most of the parts.
+Give your bucket a name and keep the settings to default, works for most of the parts.
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-create_bucket_2.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-create_bucket_2.webp" alt=""/>
+    <figcaption><i>Fill up bucket details</i></figcaption>
 </figure>
+<br />
 
 Upon the successful creation of your S3 bucket, proceed to utilize the user interface (UI) to initiate the upload process. Select the "Upload" option and proceed to upload your files directly to the designated bucket.
 
@@ -94,7 +97,7 @@ elb_headers= ["type","time","elb","client_port","target_port",
 ```
 
 :::info
-Note that these headers are just for name sake, you can change them if you wish to, but it is not advisable. You might have noticed in the `elb_headers`, I have mentioned `trace_idd` with 2 dd's and not `trace_id`. This is not a typo, by default, ELB logs have `trace_id` as the header name but payload structure SigNoz recommends is shown below:
+Note that these headers are just for name sake, you can change them if you wish to, but it is not advisable. You might have noticed in the `elb_headers`, We have mentioned `trace_idd` with 2 dd's and not `trace_id`. This is not a typo, by default, ELB logs have `trace_id` as the header name but payload structure SigNoz recommends is shown below:
 :::
 
 ```jsx
@@ -128,30 +131,35 @@ Follow along to create a Lambda Function:-
 **Step 1:** Go to your AWS console and search for AWS Lambda, go to `Functions` as shown in the screenshot below and click on `Create Function`. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-lambda_1.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image"  src="/img/docs/elb/elb-logs-lambda_1.webp" alt=""/>
+    <figcaption><i>Create Lambda function from AWS Console</i></figcaption>
 </figure>
+<br />
 
 **Step 2:** Choose the `Author from scratch` checkbox and proceed to fill in the function name. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-lambda_2.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_2.webp" alt=""/>
+    <figcaption><i>Choose the Author from scratch and fill up other details</i></figcaption>
 </figure>
+<br />
+
 
 **Step 3:** Choose `Python 3.x` as the Runtime version, `x86_64` as Architecture (mostly), and keep other settings as default. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-lambda_3.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_3.webp" alt=""/>
+    <figcaption><i>Choose Create a new role here</i></figcaption>
 </figure>
+<br />
 
 **Step 4:** Select `Create a new role with basic Lambda permissions`for now, we’ll requiring more permissions down the lane. So for now, select this option. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-lambda_4.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_4.webp" alt=""/>
+    <figcaption><i>Your barebones Lambda function is created now</i></figcaption>
 </figure>
+<br />
 
 Once you are done configuring the lambda function, you’ll see it get created here. Feel free to move around and see what all things AWS Lambda offers. 
 
@@ -159,37 +167,41 @@ Once you are done configuring the lambda function, you’ll see it get created h
 
 As said in Step 4 previously, we need extra permissions in order to access the S3 Bucket for execution of our Lambda code, follow along to set it up. 
 
-**Step 1:** Scroll down from your Lambda page, you’ll a few tabs there. Go to `Configurations` and select `Permissions` from the left sidebar. 
+**Step 1:** Scroll down from your Lambda page, you’ll see a few tabs there. Go to `Configurations` and select `Permissions` from the left sidebar. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-lambda_5.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_5.webp" alt=""/>
+    <figcaption><i>Choosing execution role from Configurations tab</i></figcaption>
 </figure>
+<br />
 
 **Step 2:** Click on the `Execution Role name`'s link, it will take us to AWS IAM page. Here, we’ll be a policy to get full S3 access.
 
 **Step 3:** Once here, click on the `Add permissions` button and select `Attach policies` from the drop down list. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-lambda_6.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_6.webp" alt=""/>
+    <figcaption><i>Attach policies to your Lambda function</i></figcaption>
 </figure>
+<br />
 
 **Step 4:** Search “S3” and you’ll a policy named `AmazonS3FullAccess`select that and proceed. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-lambda_7.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_7.webp" alt=""/>
+    <figcaption><i>Policies you'll need to run your Lambda function</i></figcaption>
 </figure>
+<br />
 
 :::caution
 It's advisable to proceed with caution when granting full S3 access, particularly in a production environment. Before deploying your Lambda function with such extensive permissions, it's essential to consult with your system administrator or designated authority to ensure compliance with security protocols and best practices. This step helps mitigate potential risks and ensures that access permissions align with organizational guidelines and requirements.
 :::
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-policies-used.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-policies-used.webp" alt=""/>
+    <figcaption><i>Extra policies you might require to execute your Lambda function</i></figcaption>
 </figure>
+<br />
 
 Please refer to the image above as a comprehensive guide to the policy names that you may consider adding to your Lambda function. Failure to include these policies could result in insufficient privileges, potentially hindering the function's ability to perform necessary operations within the AWS environment.
 
@@ -206,18 +218,20 @@ To setup our trigger, follow along:-
 **Step 1:** Click on the `+ Add trigger`button from the Lambda console. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-lambda_8.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_8.webp" alt=""/>
+    <figcaption><i>Add a trigger to the function.</i></figcaption>
 </figure>
+<br />
 
 **Step 2:** Select `S3` from the first drop down of AWS services list. Pick you S3 bucket for the second field. 
 
 **Step 3:** For the Event types field, you can select any number of options you wish. The trigger will occur depending upon what option(s) you choose here. By default, the `All object create events` will be selected. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-lambda_9.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_9.webp" alt=""/>
+    <figcaption><i>Choose event types from the drop down menu</i></figcaption>
 </figure>
+<br />
 
 Verify the settings and click on `Add` button at bottom right to add this trigger. You could add more than one trigger, but we’ll stick to just one for now. 
 
@@ -226,18 +240,20 @@ Verify the settings and click on `Add` button at bottom right to add this trigge
 We will be using python’s `request` module and by default, you do not get ‘requests’ module by default in the Lambda. Why? See the attached image and [this link](https://aws.amazon.com/blogs/compute/upcoming-changes-to-the-python-sdk-in-aws-lambda/). 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-upcoming-changes.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-upcoming-changes.webp" alt=""/>
+    <figcaption><i>AWS Lambda changes for Python SDK</i></figcaption>
 </figure>
+<br />
 
 To utilize Python's `requests` module within a Lambda function, it's necessary to explicitly add it as a layer. While there may be alternative approaches, it's advisable to adhere to established practices that have been thoroughly tested and proven effective. Therefore, we will proceed with adding `requests` as a layer to ensure reliable functionality within the Lambda environment.
 
 Anyways, refer to the below attached steps to create a zip of the request module and add it as a layer to make it work on AWS lambda. Steps for which are described ahead. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-layer_1.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-layer_1.webp" alt=""/>
+    <figcaption><i>Stackoverflow's workaround to create and add a layer</i></figcaption>
 </figure>
+<br />
 
 The commands you’d need:
 
@@ -253,39 +269,44 @@ zip -r dependencies.zip ../python
 Here’s the screenshot of the dependencies.zip file which we’ll be uploading to AWS soon. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-layer_2.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-layer_2.webp" alt=""/>
+    <figcaption><i>dependencies.zip file</i></figcaption>
 </figure>
+<br />
 
 **Step 1:** To upload your zip file, go to AWS Lambda > Layers and click on `Create Layer`. [Not inside your specific Lambda function, just the landing page of AWS Lambda]. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-layer_3.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-layer_3.webp" alt=""/>
+    <figcaption><i>Creating a new Layer</i></figcaption>
 </figure>
+<br />
 
 **Step 2:** You’ll be redirected to Layer configurations page, here, give a name to your layer, an optional description, select `Upload a .zip file` , click on `Upload` and locate the requirements.zip file. 
 
 **Step 3:** Select your desired architecture and pick `Python 3.x` as your runtime. Hit `Create`. You layer as now been created. Now lets connect it to our Lambda function which we created to send logs to SigNoz. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-layer_4.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-layer_4.webp" alt=""/>
+    <figcaption><i>Uploading the requirements.zip file to later add it as a layer </i></figcaption>
 </figure>
+<br />
 
 **Step 4:** Go to your Lambda function, scroll down to Layers section and on the right of it, you’ll find a button that says `Add a layer` to click on. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-layer_5.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-layer_5.webp" alt=""/>
+    <figcaption><i>Add a layer to your Lambda function</i></figcaption>
 </figure>
+<br />
 
 **Step 5:** Pick `Custom layers` from the checkbox and select your custom layer from the given drop down below and then click on the button `Add`. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-layer_6.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-layer_6.webp" alt=""/>
+    <figcaption><i>Choose your layer name</i></figcaption>
 </figure>
+<br />
 
 Congratulations, the `requests` module has been successfully integrated into your code area. By adding this layer, you have resolved the 'request module not found error' that would have otherwise occurred.
 
@@ -444,35 +465,21 @@ import shlex
 def convert_log_line_to_json(line):
     headers= ["type","time","elb","client_port","target_port","request_processing_time","target_processing_time","response_processing_time","elb_status_code","target_status_code","received_bytes","sent_bytes","request","user_agent","ssl_cipher","ssl_protocol","target_group_arn","trace_idd","domain_name","chosen_cert_arn","matched_rule_priority","request_creation_time","actions_executed","redirect_url","error_reason","target_port_list","target_status_code_list","classification","classification_reason"]
     res = shlex.split(line, posix = False)
-    
-    # data = line.strip().split()
     return dict(zip(headers, res))
 
 def process_log_file(file_path):
     with gzip.open(file_path, 'r') as f:
         log_data = f.read().decode('utf-8') 
-        # print(log_data)
-        
         lines = log_data.strip().split('\n')
         result = json.dumps(lines, indent=2)
-        
         list_of_strings = json.loads(result)
-        # print(log_data)
-        
         json_data = [convert_log_line_to_json(line) for line in list_of_strings]
-        # print(json_data)    
-        
-        print(json.dumps(json_data, indent=2))
-        # print(json_data[0]["time"])
         req_headers = {
                      'signoz-access-token': '<SIGNOZ_INGESTION_KEY>',
                      'Content-Type': 'application/json'
                 }
-
         http_url = 'https://ingest.in.signoz.cloud:443/logs/json/'  # Replace with your actual URL
         response = requests.post(http_url, json=json_data, headers=req_headers)
-        
-        print(f"Sent data to {http_url}. Response: {response.status_code}")
 
 def main():
     root_folder = '<folder_name>'
@@ -488,61 +495,71 @@ if __name__ == '__main__':
 ```
 
 :::info
-Add some log files to the folder, it can be nested as well, the code will checks all sub-folders and find for log files that end with extension `.log.gz`. You can change it to match whichever file you want. 
+To incorporate log files into the folder, including nested directories, the code systematically examines all sub-folders to identify files ending with the `.log.gz` extension. Should you wish to target different file types, you have the flexibility to modify the code accordingly.
 :::
 
 
 Here’s some local testing results: 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-local_setup_json.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-local_setup_json.webp" alt=""/>
+    <figcaption><i>Test output run on local system</i></figcaption>
 </figure>
+<br />
 
 ### Testing your Lambda function
 
-After you are done writing your code, its time to deploy it and test if its actually works. It will be good to uncomment the `print(...)` lines I added in the code as comment to see at each point how the logs are getting formatted. 
+Once you've finished writing your code, it's crucial to deploy it and conduct thorough testing to ensure its functionality. Before proceeding with deployment and testing, it's important to consider adjusting the timeout setting for your Lambda function. This adjustment is necessary because the process of transferring data from S3 to an external endpoint may take several minutes, exceeding the default Lambda timeout of 3 seconds.
 
-But before that, you might want to increase the timeout setting for your lambda function as this data transfer from S3 to external endpoint can take a few minutes and by default, lambda function times out in 3 seconds. 
+To extend the timeout duration, follow these steps:
 
-To increase the timeout time, go to `Configuration` → `General Configuration` → Edit button and set it under 10 mins. Usually the code executes between 1-4 minutes at max. 
+1. Navigate to the Lambda function configuration.
+2. Access the "General Configuration" section.
+3. Click on the "Edit" button to modify settings.
+4. Increase the timeout value to a duration exceeding 10 minutes. Typically, the code execution completes within 1-4 minutes at most.
 
-<figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-timeout_increase.webp" alt=""/>
-    <figcaption><i></i></figcaption>
-</figure>
+By adjusting the timeout setting, you ensure that your Lambda function has sufficient time to complete the data transfer process without encountering timeouts. This proactive measure enhances the reliability and effectiveness of your deployed solution.
 
-After you are done with increasing the timeout setting, go to your lambda code editor and click on the `test` button dropdown option,. Configure a new test case (new event) as S3 PUT and click save. 
-
-<figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-lambda_test_event.webp" alt=""/>
-    <figcaption><i></i></figcaption>
-</figure>
-
-Now you are all set. Whenever you make any change in the code and want to test it out, deploy the code first (works as Save button) and then click on test button after its fully deployed. 
-
-Attached below is a screenshot of sending VPC logs (not ELB) to SigNoz endpoint. 
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-lambda_10.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-timeout_increase.webp" alt=""/>
+    <figcaption><i>Configuring execution timeout of Lambda function</i></figcaption>
 </figure>
+<br />
+
+Once you've finished adjusting the timeout setting, navigate to the code editor for your Lambda function. Locate the 'test' button, and from the dropdown menu, select the option labeled 'Configure test events.' Create a new test case by specifying it as an S3 PUT event, then save your configuration.
+
+<figure data-zoomable align='center'>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_test_event.webp" alt=""/>
+    <figcaption><i>Creating Sample event</i></figcaption>
+</figure>
+
+You're now prepared to proceed. Whenever you make alterations to the code and wish to evaluate them, follow these steps: Deploy the code first (equivalent to pressing 'Save'), and once it's fully deployed, proceed to click on the 'Test' button.
+
+Below is an image showing the process of transmitting VPC logs (excluding ELB logs) to the SigNoz endpoint.
+
+<figure data-zoomable align='center'>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_10.webp" alt=""/>
+    <figcaption><i>Visual representation of code in Lambda function</i></figcaption>
+</figure>
+<br />
 
 ### Test Case and OUTPUT
 
-If you are able to successfully send the logs, this is how they’ll get sent (ps - this is the output as I have printed the json formatted data just to see what gets sent). 
+If the logs are sent successfully, here's how they'll be transmitted. The following output displays the JSON-formatted data as we've printed it to visualize the sent information.
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-lambda_output.webp" alt=""/>
-    <figcaption><i></i></figcaption>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_output.webp" alt=""/>
+    <figcaption><i>Visual representation of code output of Lambda function</i></figcaption>
 </figure>
+<br />
 
 ## Visualize the logs in SigNoz
 
-You’ll immediately see a flood of logs in SigNoz logs section. You can even switch to Live monitoring of Logs. Just click on any log line to see the details. 
+Upon accessing the SigNoz logs section, you will notice a considerable influx of logs. You have the option to seamlessly transition to live monitoring of logs as well. Simply click on any log line to view its detailed information.
 
 <figure data-zoomable align='center'>
-    <img src="/img/docs/elb/elb-logs-lambda_12.webp" alt="A sample log line of the logs sent from AWS Lambda"/>
+    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_12.webp" alt="A sample log line of the logs sent from AWS Lambda"/>
     <figcaption><i>A sample log line of the logs sent from AWS Lambda</i></figcaption>
 </figure>
-
+<br />
