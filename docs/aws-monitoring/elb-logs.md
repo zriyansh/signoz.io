@@ -3,30 +3,56 @@ id: elb-logs
 title: Send your ELB logs to SigNoz
 ---
 
-If you happen to have your Load Balancer logs getting collected in your AWS S3 and you want a unified platform to visualize them?, In this tutorial, you will configure how you can send any kind of logs to SigNoz otel collector endpoint from your S3 bucket using Lambda function.
+## Overview
+
+This documentation provides a detailed walkthrough on how to set up an AWS Lambda function to collect Elastic Load Balancer (ELB) logs stored in an AWS S3 bucket and forward them to SigNoz. By the end of this guide, you will have a setup that automatically sends your ELB logs to SigNoz, enabling you to visualize and monitor your application's load balancing performance and health.
 
 **Here’s a quick summary of what we’ll be doing in this detailed article.** 
 
-1. Have some data in your S3 bucket.
-2. Make a lambda function in AWS.
-3. Add trigger to the lamba function (your S3 bucket, set trigger as PUT/All object creation).
-4. Add required policy so you can run the function.
-5. Load the objects from S3.
-6. Perform log parsing and convert them to JSON dictionary. 
-7. Send them to SigNoz otel-collector endpoint.
+- [Creating / Configuring your S3 bucket](#creating--configuring-your-s3-bucket)
+- [Understanding how lambda function work](#understanding-how-lambda-function-work)
+- [Creating a lambda function](#creating-a-lambda-function)
+- [Configuring Policies for Lambda function](#configuring-policies-for-lambda-function)
+- [Adding Triggers](#adding-triggers)
+- [Adding Request Layer](#adding-request-layer)
+- [The Lambda Function](#the-lambda-function)
+- [Running the code locally.](#running-the-code-locally)
+- [Testing your Lambda function](#testing-your-lambda-function)
+- [Test Case and OUTPUT](#test-case-and-output)
+- [Visualize the logs in SigNoz](#visualize-the-logs-in-signoz)
 
 
-## Assumptions
+## Prerequisites
 
-1. You are using SigNoz cloud edition. 
-2. You have an AWS account with admin privileges.
+- AWS account with administrative privilege.
+- [SigNoz Cloud Account](https://signoz.io/teams/)
 
 
 ## Creating / Configuring your S3 bucket
 
-Create an S3 bucket if you don’t already have one and upload some data to it. It’s fairly easy to do this, just create a S3 bucket and upload some .json, .csv, .log, or any format you wish (even .gz and .zip). By default, the ELB logs are automatically saved in .gzip format in your S3 bucket (if you have configured automatic logs collection). Refer to [this link](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/enable-access-logging.html#enable-access-logs) to know more. 
+To accomplish the task described, please follow these steps:
 
-Keep in mind, we’ll be converting all logs to json before sending so you might need to do some additional preprocessing of logs. 
+1. **Creating an S3 Bucket:**
+   - Sign in to the AWS Management Console.
+   - Navigate to the Amazon S3 service.
+   - Click on "Create bucket".
+   - Enter a unique bucket name, select the region, and configure any additional settings if needed (such as versioning, logging, etc.).
+   - Click "Create bucket" to finalize the creation process.
+
+2. **Uploading Data to the S3 Bucket:**
+   - After creating the bucket, navigate to it in the S3 Management Console.
+   - Click on the "Upload" button.
+   - Select the files you wish to upload from your local machine.
+   - Optionally, configure settings like encryption, permissions, etc.
+   - Click "Upload" to upload the selected files to the bucket.
+
+3. **File Formats:**
+   - You can upload files in various formats such as .json, .csv, .log, .gz, .zip, etc.
+   - If you have configured Elastic Load Balancer (ELB) logging, ELB logs are automatically saved in .gzip format in your S3 bucket.
+
+Please ensure that you have appropriate permissions and follow AWS best practices for security and cost optimization when creating and using S3 buckets. Refer to [this link](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/enable-access-logging.html#enable-access-logs) to know more. 
+
+Please be advised that all logs will undergo conversion to JSON format before transmission. Consequently, it may be necessary to perform supplementary preprocessing of the logs as part of this conversion process.
 
 If you don’t already have a S3 bucket, here’s how to make one.
 
@@ -42,13 +68,17 @@ Give you bucket a name and keep the settings to default, works for most of the p
     <figcaption><i></i></figcaption>
 </figure>
 
-When your S3 bucket get’s created, click on upload from the UI and upload your files to the bucket.
+Upon the successful creation of your S3 bucket, proceed to utilize the user interface (UI) to initiate the upload process. Select the "Upload" option and proceed to upload your files directly to the designated bucket.
 
 In this tutorial, I’ll be assuming you already have some data in your S3 bucket to start with. 
 
-**Note:** Since we’ll parsing out data from s3, we assume all the data is of same format. 
+:::info
+Since we’ll parsing out data from s3, we assume all the data is of same format. 
+:::
 
-Example - We have a s3 bucket for ELB logs then all the data inside a bucket will be of that same format only (eg, if a file is .csv, all files will be .csv only, why? Can’t I have different file formats? Sure you can have, its just adds a couple of extra steps and different parsing function). 
+Consider this clarification: 
+
+"If we have an S3 bucket designated for ELB logs, it's important to note that all data contained within the bucket will be of the same format. For instance, if one file is in .csv format, then all files within the bucket will be in .csv format. However, it's possible to have different file formats if desired. This merely means incorporating a few additional steps and using different parsing functions or modifying the existing one according to need."
 
 The general header(table) format of ELB logs are:
 
@@ -63,7 +93,9 @@ elb_headers= ["type","time","elb","client_port","target_port",
 "classification","classification_reason"]
 ```
 
-Note that these headers are just for name sake, you can change them if you wish to but it is not advisable. You might have noticed in `elb_headers`, I have mentioned `trace_idd` and not `trace_id`. This is not a typo, ELB logs have `trace_id` as the header name but payload structure SigNoz recommends is shown below:
+:::info
+Note that these headers are just for name sake, you can change them if you wish to, but it is not advisable. You might have noticed in the `elb_headers`, I have mentioned `trace_idd` with 2 dd's and not `trace_id`. This is not a typo, by default, ELB logs have `trace_id` as the header name but payload structure SigNoz recommends is shown below:
+:::
 
 ```jsx
 [
@@ -83,7 +115,7 @@ Note that these headers are just for name sake, you can change them if you wish 
 
 Source - https://signoz.io/docs/userguide/send-logs-http/
 
-`trace_id` here is of the format `<hex string>` but we’ll sending everything as string json for simplicity and less data processing and parsing, hence the change in field name from trace_id to trace_idd. [If you use `trace_id` and send the trace_id as a string, you’ll get 400 error, this can resolved by further logs formatting]
+`trace_id` here is of the format `<hex string>` and because we’ll sending everything as string json for simplicity and less data processing and parsing, hence the change in field name from trace_id to trace_idd. [If you use `trace_id` and send the trace_id as a string, you’ll get 400 error, this can resolved by further logs formatting]
 
 ## Understanding how lambda function work
 
@@ -150,14 +182,16 @@ As said in Step 4 previously, we need extra permissions in order to access the S
     <figcaption><i></i></figcaption>
 </figure>
 
-**Note:** Giving full S3 access might be okay for testing purposes, do consult with you admin before running your lambda function with full S3 access permission in production. 
+:::caution
+It's advisable to proceed with caution when granting full S3 access, particularly in a production environment. Before deploying your Lambda function with such extensive permissions, it's essential to consult with your system administrator or designated authority to ensure compliance with security protocols and best practices. This step helps mitigate potential risks and ensures that access permissions align with organizational guidelines and requirements.
+:::
 
 <figure data-zoomable align='center'>
     <img src="/img/docs/elb/elb-logs-policies-used.webp" alt=""/>
     <figcaption><i></i></figcaption>
 </figure>
 
-Refer to the above image as a reference to all the policy names you might want to add to your lambda function. There can be a possibility of insufficuent priviledges if these policies are not added. 
+Please refer to the image above as a comprehensive guide to the policy names that you may consider adding to your Lambda function. Failure to include these policies could result in insufficient privileges, potentially hindering the function's ability to perform necessary operations within the AWS environment.
 
 Congrats, you are just done with one of the major hurdle in running your code. Now, let’s add a trigger. 
 
@@ -196,7 +230,7 @@ We will be using python’s `request` module and by default, you do not get ‘r
     <figcaption><i></i></figcaption>
 </figure>
 
-So, in order to use the requests module, we need to add it explicitly as a layer and then only we can use it. There might be some alternatives, but we’ll stick with what works and tested. 
+To utilize Python's `requests` module within a Lambda function, it's necessary to explicitly add it as a layer. While there may be alternative approaches, it's advisable to adhere to established practices that have been thoroughly tested and proven effective. Therefore, we will proceed with adding `requests` as a layer to ensure reliable functionality within the Lambda environment.
 
 Anyways, refer to the below attached steps to create a zip of the request module and add it as a layer to make it work on AWS lambda. Steps for which are described ahead. 
 
@@ -253,154 +287,17 @@ Here’s the screenshot of the dependencies.zip file which we’ll be uploading 
     <figcaption><i></i></figcaption>
 </figure>
 
-Well, that’s it. You have successfully added requests module to run in your code area. Without adding this layer, you’d get a ‘request module not found error’.
+Congratulations, the `requests` module has been successfully integrated into your code area. By adding this layer, you have resolved the 'request module not found error' that would have otherwise occurred.
+
+---
 
 ### The Lambda Function
 
-Now finally we arrive at the most important section of this article, the code. 
+Now, we come to the pivotal section of this document: the code implementation. 
 
-Lets break down the code in smaller chunks to make you understand. 
+The Python script's primary function revolves around retrieving gzipped log files stored within an Amazon S3 bucket. Subsequently, it decompresses these files, transforms individual log entries into JSON objects, and transmits the resultant JSON data to a predetermined HTTP endpoint.
 
-1. **Import Required Modules:**
-    
-    ```python
-    import json
-    import gzip
-    import boto3
-    import requests
-    import shlex
-    ```
-    
-    - Import necessary Python modules:
-        - `json`: for JSON encoding and decoding.
-        - `gzip`: for decompressing gzipped content.
-        - `boto3`: AWS SDK for Python, used for interacting with AWS services.
-        - `requests`: for making HTTP requests.
-        - `shlex`: for splitting shell-like syntax.
-2. **Create S3 Client:**
-    
-    ```python
-    s3 = boto3.client('s3')
-    ```
-    
-    - Create an S3 client using the AWS SDK (boto3).
-3. **Define Function to Convert Log Line to JSON:**
-    
-    ```python
-    def convert_log_line_to_json(line):
-        # ...
-    ```
-    
-    - Define a function `convert_log_line_to_json` that takes a log line as input and converts it into a dictionary with predefined headers.
-4. **Lambda Function Handler:**
-    
-    ```python
-    def lambda_handler(event, context):
-        # ...
-    ```
-    
-    - Define the Lambda function handler, which is the entry point for AWS Lambda execution.
-5. **Specify S3 Bucket Name:**
-    
-    ```python
-    bucket_name = '<name_of_your_bucket>'
-    ```
-    
-    - Set the S3 bucket name where the log files are stored.
-6. **List Objects in the S3 Bucket:**
-    
-    ```python
-    response = s3.list_objects_v2(Bucket=bucket_name)
-    ```
-    
-    - Use the S3 client to list all objects in the specified bucket.
-7. **Iterate Through Objects:**
-    
-    ```python
-    for obj in response['Contents']:
-        # ...
-    ```
-    
-    - Iterate through each object in the S3 bucket.
-8. **Check if Object is a Log File:**
-    
-    ```python
-    if obj['Key'].endswith('.log.gz'):
-        # ...
-    ```
-    
-    - Check if the object is a gzipped log file based on its file extension.
-9. **Download and Decompress Log File:**
-    
-    ```python
-    file_key = obj['Key']
-    file_obj = s3.get_object(Bucket=bucket_name, Key=file_key)
-    file_content = file_obj['Body'].read()
-    decompressed_content = gzip.decompress(file_content)
-    ```
-    
-    - Retrieve the gzipped log file from S3, read its content, and decompress it.
-10. **Convert Bytes to String:**
-    
-    ```python
-    json_data = str(decompressed_content, encoding='utf-8')
-    ```
-    
-    - Convert the decompressed content from bytes to a UTF-8 encoded string.
-11. **Split String into Lines:**
-    
-    ```python
-    lines = json_data.strip().split('\\n')
-    ```
-    
-    - Split the string into a list of lines based on the newline character.
-12. **Convert List of Strings to JSON-formatted String:**
-    
-    ```python
-    result = json.dumps(lines, indent=2)
-    ```
-    
-    - Convert the list of strings into a nicely formatted JSON string.
-13. **Load JSON-formatted String into List of Strings:**
-    
-    ```python
-    list_of_strings = json.loads(result)
-    ```
-    
-    - Load the JSON-formatted string back into a list of strings.
-14. **Convert Each Log Line to JSON Object:**
-    
-    ```python
-    json_data = [convert_log_line_to_json(line) for line in list_of_strings]
-    ```
-    
-    - Use the `convert_log_line_to_json` function to convert each log line string into a JSON object.
-15. **Specify HTTP Endpoint:**
-    
-    ```python
-    http_url = 'https://ingest.in.signoz.cloud:443/logs/json/'
-    
-    ```
-    
-    - Set the HTTP endpoint where the JSON data will be sent.
-16. **Send JSON Data to HTTP Endpoint:**
-    
-    ```python
-    response = requests.post(http_url, json=json_data, headers=req_headers)
-    ```
-    
-    - Use the `requests` library to send a POST request to the specified HTTP endpoint with the JSON data.
-17. **Print Information about the Sent Data:**
-    
-    ```python
-    print(f"Sent data to {http_url}. Response: {response.status_code}")
-    ```
-    
-    - Print information about the sent data and the received HTTP response status code.
-
-This code essentially downloads gzipped log files from an S3 bucket, decompresses them, converts the log lines into JSON objects, and sends the resulting JSON data to a specified HTTP endpoint.
-
-Here’s the complete code with comments:
+Below is the comprehensive code along with detailed comments for clarity:
 
 ```python
 import json
@@ -479,18 +376,19 @@ Here’s how a raw, unprocessed ELB log line looks like:
 https 2024-01-01T23:58:03.391277Z app/abc-prod-alb/0b46e552ds5b44da 35.244.22.76:41802 192.1.0.114:80 0.000 1.077 0.000 200 200 1430 923 "POST https://api.abcs.com:4463/suporodv2/v1/get-result/ HTTP/1.1" "SFDC-Callout/59.0" ECDHE-RSA-AES128-GCM-SHA256 TLSv1.2 arn:aws:elasticloadbalancing:ap-south-1:8429181216651:targetgroup/ecs-Sabc-P-Private-SU-API/02f1623fsddec2691ce "Root=1-65343518a-72123e913f71cb2e20213a3ea9" "api.example-sabcs.com" "session-reused" 98 2024-01-01T23:58:02.313000Z "forward" "-" "-" "192.1.1.114:80” "200" "-" "-"
 ```
 
-You can match each field with corresponding header in the code. 
+In the code, each field corresponds to a header. The purpose of the code above is to transmit Elastic Load Balancer (ELB) logs to the SigNoz endpoint.
 
-The above code is to send ELB logs to SigNoz endpoint. 
+:::caution
+The provided code is functional, but exercise caution when copying and pasting it in its entirety. Incorrect configuration could result in the unintentional ingestion of a large volume of data.
+:::
 
-**Note:** This is a working code but be careful copy pasting the entire code, it might lead to ingestion of huge amount to data if not configured correctly. 
 
 Other than the above explanation and the code comments, in a nutshell, what the this code does is: 
 
 Sends the parsable content of **ENTIRE** S3 bucket whenever the lambda function gets triggered. It gets triggered by the condition you set above. Let’s mention that again here. 
 
 > **Step 3:** For the Event types field, you can select any number of options you wish. The trigger will occur depending upon what option(s) you choose here. By default, the `All object create events` will be selected.
-> 
+
 
 Lets say you add something to your S3 bucket, it may / may not trigger this lambda function or if you have setup your s3 as if it automatically stores all your ELB/VPC logs, segregated in different folders, so whenever any new log gets added, the function will get triggered and send all the S3 data. 
 
@@ -498,7 +396,7 @@ This is obviously not what everyone expects, ideal case would be to have a mass 
 
 To achieve this functionality, you need to add few conditions to the code. 
 
-1. Assuming all standard log lines have a timestamp field
+1. Assuming all standard log lines have a timestamp field.
 2. Parse and select the timestamp field from the log line and add it before the `response = requests.post(http_url, json=json_data)` line as a if else condition to only send logs which are x days older (say 3 days). 
 
 So, the function now will first check the log timestamp and only send those logs which are 3 days older (say) or even a few hours old. 
@@ -529,6 +427,8 @@ Let’s consider the below pseudo code for better understanding:
 ```
 
 Feel free to modify any part of the code if you wish to. 
+
+---
 
 ### Running the code locally.
 
@@ -587,7 +487,10 @@ if __name__ == '__main__':
     main()
 ```
 
-**Note:** Add some log files to the folder, it can be nested as well, the code will checks all subfolders and find for log files that end with extension `.log.gz`. You can change it to match whichever file you want. 
+:::info
+Add some log files to the folder, it can be nested as well, the code will checks all sub-folders and find for log files that end with extension `.log.gz`. You can change it to match whichever file you want. 
+:::
+
 
 Here’s some local testing results: 
 
