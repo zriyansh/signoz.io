@@ -12,13 +12,7 @@ This documentation provides a detailed walkthrough on how to set up an AWS Lambd
 - [Creating / Configuring your S3 bucket](#creating--configuring-your-s3-bucket)
 - [Understanding how lambda function work](#understanding-how-lambda-function-work)
 - [Creating a lambda function](#creating-a-lambda-function)
-- [Configuring Policies for Lambda function](#configuring-policies-for-lambda-function)
-- [Adding Triggers](#adding-triggers)
-- [Adding Request Layer](#adding-request-layer)
-- [The Lambda Function](#the-lambda-function)
-- [Running the code locally.](#running-the-code-locally)
-- [Testing your Lambda function](#testing-your-lambda-function)
-- [Test Case and OUTPUT](#test-case-and-output)
+- [The Lambda Function Code](#the-lambda-function)
 - [Visualize the logs in SigNoz](#visualize-the-logs-in-signoz)
 
 
