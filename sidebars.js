@@ -597,6 +597,11 @@ module.exports = {
             },
           ]
         },
+        {
+          type: 'doc',
+          id: 'aws-monitoring/elb-logs',
+          label: 'ELB',
+        },
         
       ],
     },
