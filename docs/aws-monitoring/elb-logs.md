@@ -29,35 +29,9 @@ To accomplish the task described, please follow these steps:
 1. **Creating an S3 Bucket:**
    - Sign in to the AWS Management Console.
    - Navigate to the Amazon S3 service.
-   - Click on "Create bucket".
+   - Click on **Create bucket**.
    - Enter a unique bucket name, select the region, and configure any additional settings if needed (such as versioning, logging, etc.).
-   - Click "Create bucket" to finalize the creation process.
-
-2. **Uploading Data to the S3 Bucket:**
-   - After creating the bucket, navigate to it in the S3 Management Console.
-   - Click on the "Upload" button.
-   - Select the files you wish to upload from your local machine.
-   - Optionally, configure settings like encryption, permissions, etc.
-   - Click "Upload" to upload the selected files to the bucket.
-
-3. **File Formats:**
-   - You can upload files in various formats such as .json, .csv, .log, .gz, .zip, etc.
-   - If you have configured Elastic Load Balancer (ELB) logging, ELB logs are automatically saved in .gzip format in your S3 bucket.
-
-Please ensure that you have appropriate permissions and follow AWS best practices for security and cost optimization when creating and using S3 buckets. Refer to [this link](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/enable-access-logging.html#enable-access-logs) to know more. 
-
-Please be advised that all logs will undergo conversion to JSON format before transmission. Consequently, it may be necessary to perform supplementary preprocessing of the logs as part of this conversion process.
-
-If you don’t already have a S3 bucket, here’s how to make one.
-
-<br />
-<figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-create_bucket_1.webp" alt=""/>
-    <figcaption><i>Click on Create bucket button by going to AWS S3 service</i></figcaption>
-</figure>
-<br />
-
-Give your bucket a name and keep the settings to default, works for most of the parts.
+   - Click **Create bucket** to finalize the creation process.
 
 <figure data-zoomable align='center'>
     <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-create_bucket_2.webp" alt=""/>
@@ -65,17 +39,32 @@ Give your bucket a name and keep the settings to default, works for most of the 
 </figure>
 <br />
 
-Upon the successful creation of your S3 bucket, proceed to utilize the user interface (UI) to initiate the upload process. Select the "Upload" option and proceed to upload your files directly to the designated bucket.
 
-In this tutorial, I’ll be assuming you already have some data in your S3 bucket to start with. 
+2. **Uploading Data to the S3 Bucket:**
+   - After creating the bucket, navigate to the S3 Management Console.
+   - Click on the **Upload** button.
+   - Select the files you wish to upload from your local machine.
+   - Optionally, configure settings like encryption, permissions, etc.
+   - Click **Upload** to upload the selected files to the bucket.
+
+3. **File Formats:**
+   - You can upload files in various formats such as .json, .csv, .log, .gz, .zip, etc.
+   - If you have configured Elastic Load Balancer (ELB) logging, ELB logs are automatically saved in `.gzip` format in your S3 bucket.
 
 :::info
-Since we’ll parsing out data from s3, we assume all the data is of same format. 
+Ensure that you have appropriate permissions and follow AWS best practices for security and cost optimization when creating and using S3 buckets. Refer to [this link](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/enable-access-logging.html#enable-access-logs) to know more. 
 :::
 
-Consider this clarification: 
+:::note
+Please be advised that all logs will undergo conversion to JSON format before transmission. Consequently, it may be necessary to perform supplementary preprocessing of the logs as part of this conversion process. Here preprocessing of the logs means getting them from S3 bucket bucket, separating each log line based on the delimiter ("," or based on quotes) and assigning them to respective keys. Thus making a key, value pair before sending to SigNoz. 
+:::
 
-"If we have an S3 bucket designated for ELB logs, it's important to note that all data contained within the bucket will be of the same format. For instance, if one file is in .csv format, then all files within the bucket will be in .csv format. However, it's possible to have different file formats if desired. This merely means incorporating a few additional steps and using different parsing functions or modifying the existing one according to need."
+To move forward, we assume that you already have some data in your S3 bucket.
+
+:::info
+For the scope of this documentation, we assume that all the data in S3 bucket is in the same format. For example, if one file is in `.csv` format, then all files within the bucket will be in `.csv` format.  For files in different formats, you will have to use different parsing functions for each format or update the existing function accordingly.
+:::
+
 
 The general header(table) format of ELB logs are:
 
@@ -116,13 +105,13 @@ Source - https://signoz.io/docs/userguide/send-logs-http/
 
 ## Understanding how lambda function work
 
-For the scope of this article, understand that if you successfully attach your lambda function with the s3 bucket and configure it correctly (we’ll talk about that in a bit), any new additions / deletion / copy / PUT, etc requests made to the s3 bucket will trigger the lambda function the code written in the lambda function will get executed. 
+When you successfully attach your lambda function with the S3 bucket and configure it correctly, any new additions / deletion / copy / PUT etc, requests made to the S3 bucket will trigger the lambda function and the code written in the lambda function will get executed.
 
 ### Creating a lambda function
 
-Follow along to create a Lambda Function:-
+Follow these steps to create the lambda function:-
 
-**Step 1:** Go to your AWS console and search for AWS Lambda, go to `Functions` as shown in the screenshot below and click on `Create Function`. 
+**Step 1:** Go to your AWS console and search for AWS Lambda, go to **Functions** and click on **Create Function**. 
 
 <figure data-zoomable align='center'>
     <img className="box-shadowed-image"  src="/img/docs/elb/elb-logs-lambda_1.webp" alt=""/>
@@ -207,7 +196,7 @@ You need to use the Lambda console to build a trigger so that your function can 
 
 A function may have more than one trigger. Every trigger functions as a client, independently calling your method, and Lambda transfers data from a single trigger to each event it passes to your function.
 
-To setup our trigger, follow along:-
+To setup the trigger, follow these steps:
 
 **Step 1:** Click on the `+ Add trigger`button from the Lambda console. 
 
@@ -243,30 +232,21 @@ To utilize Python's `requests` module within a Lambda function, it's necessary t
 
 Anyways, refer to the below attached steps to create a zip of the request module and add it as a layer to make it work on AWS lambda. Steps for which are described ahead. 
 
-<figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-layer_1.webp" alt=""/>
-    <figcaption><i>Stackoverflow's workaround to create and add a layer</i></figcaption>
-</figure>
-<br />
 
 The commands you’d need:
 
-```jsx
+```py
+# make a new directory
 mkdir python
+# move into that directory
 cd python
 
+# install requests module
 pip install --target . requests
+# zip the contents under the name dependencies.zip
 zip -r dependencies.zip ../python 
 
 ```
-
-Here’s the screenshot of the dependencies.zip file which we’ll be uploading to AWS soon. 
-
-<figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-layer_2.webp" alt=""/>
-    <figcaption><i>dependencies.zip file</i></figcaption>
-</figure>
-<br />
 
 **Step 1:** To upload your zip file, go to AWS Lambda > Layers and click on `Create Layer`. [Not inside your specific Lambda function, just the landing page of AWS Lambda]. 
 
@@ -538,7 +518,7 @@ Below is an image showing the process of transmitting VPC logs (excluding ELB lo
 </figure>
 <br />
 
-### Test Case and OUTPUT
+### Test Case and Output
 
 If the logs are sent successfully, here's how they'll be transmitted. The following output displays the JSON-formatted data as we've printed it to visualize the sent information.
 
