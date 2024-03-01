@@ -30,7 +30,7 @@ Aggregation is a method of reducing the amount of data that SigNoz displays, and
 
 ### Temporal Aggregation
 
-SigNoz re-aggregates into longer intervals the metrics you collect at a high frequency, allowing low-resolution time series to be pre-calculated or used in place of the original metric data. SigNoz auto-adjusts this interval based on the time range selected to limit the number of points it plots on the chart. The following example diagram shows the aggregation of data into ten seconds intervals:
+SigNoz re-aggregates into longer intervals the metrics you collect at a high frequency, allowing low-resolution time series to be pre-calculated or used in place of the original metric data. SigNoz auto-adjusts this interval based on the time range selected to limit the number of points it plots on the chart. The following example diagram shows the aggregation of data into ten second intervals:
 
 ![Temporal Aggregation](/img/docs/temporal_aggregation.webp)
 
@@ -64,11 +64,11 @@ SigNoz supports the following aggregation functions:
 - SUM_RATE (Sum of the rate of change of each time series)
 - RATE_SUM (Rate of change on sum aggregated values)
 - RATE_AVG (Rate of change on avg aggregated values)
-- RATE_MAX (Rate of change on maa aggregated values)
+- RATE_MAX (Rate of change on max aggregated values)
 - RATE_MIN (Rate of change on min aggregated values)
 
 
-### How Metrics work in SigNoz?
+### How do Metrics work in SigNoz?
 
 <MetricsDefinition />
 
@@ -136,7 +136,7 @@ Use host metrics to monitor the resource utilization of the hosts on which your 
 8. To preview your query, select the **Stage & Run Query** button. SigNoz will plot a graph similar to the following one:
   ![](/img/docs/preview-cpu-utilization.webp)
 
-9. _(Optional)_ To further drill down, you can plot the a separate graph for each state by specifying `state` in the **Group By** drop-down and selecting the **Stage & Run Query** button. SigNoz will plot a graph similar to the following one:
+9. _(Optional)_ To further drill down, you can plot a separate graph for each state by specifying `state` in the **Group By** drop-down and selecting the **Stage & Run Query** button. SigNoz will plot a graph similar to the following one:
   ![](/img/docs/group-by-specify-state.webp)
 
 10. <SaveGraph />
@@ -164,7 +164,7 @@ Disk saturation means the disk is often accessed, and applications usually must 
 6. To preview your query, select the **Stage & Run Query** button. SigNoz will plot a graph similar to the following one:
   ![](/img/docs/preview-disk-saturation.webp)
 
-7. (Optional) To further drill down, you can plot the a separate graph for each host name by specifying host_name in the **Group By** drop-down and selecting the **Stage & Run Query** button.
+7. (Optional) To further drill down, you can plot a separate graph for each hostname by specifying host_name in the **Group By** drop-down and selecting the **Stage & Run Query** button.
 
 8. <SaveGraph />
 
@@ -196,18 +196,18 @@ Disk saturation means the disk is often accessed, and applications usually must 
 
   ![](/img/docs/preview-network-errors.webp)
 
-7. _(Optional)_ To further drill down, you can plot the a separate graph for sending and receiving data by specifying `direction` in the **Group By** drop-down and selecting the **Stage & Run Query** button.
+7. _(Optional)_ To further drill down, you can plot a separate graph for sending and receiving data by specifying `direction` in the **Group By** drop-down and selecting the **Stage & Run Query** button.
 
 8. <SaveGraph />
 
 ### Steps to Configure Application Metrics
 
-Use application metrics to monitor the performance of your applications and identify any potential problems. Examples of applications metrics are percentile response time, error rates, request rates, memory and cpu usage.
+Use application metrics to monitor the performance of your applications and identify any potential problems. Examples of application metrics are percentile response time, error rates, request rates, memory, and cpu usage.
 
 
 #### Request Rate per Service
 
-The example in this section calculates the request rate per service for the SigNoz application, but the steps you’ll learn will help you calculate this metric for your own application.
+The example in this section calculates the request rate per service for the SigNoz application, but the steps you’ll learn will help you calculate this metric for your application.
 
 1. <AddPanelTimeSeries />
 
@@ -221,7 +221,7 @@ The example in this section calculates the request rate per service for the SigN
 
     <SeeAggregateFunctions />
 
-4. Use the **Metrics** drop-down to specify that you want to plot the total number requests made to your application. The example screenshot below plots the total number of requests made to SigNoz:
+4. Use the **Metrics** drop-down to specify that you want to plot the total number of requests made to your application. The example screenshot below plots the total number of requests made to SigNoz:
 
   ![](/img/docs/signoz-total-calls.webp)
 
@@ -259,7 +259,7 @@ This example plots the average latency per service using a formula based on two 
   3.2 Use the **Metrics** drop-down to specify that you want to plot the latency of your application’s requests. The example screenshot below plots the total latency for SigNoz:
     ![](/img/docs/total-latency-for-signoz.webp)
 
-  3.3 Indicate that you want to plot the a separate graph each service, by specifying `service_name` in the **Group By** drop-down:
+  3.3 Indicate that you want to plot a separate graph for each service, by specifying `service_name` in the **Group By** drop-down:
     ![](/img/docs/specify-service-name.webp)
 
   3.4 To preview your query, select the **Stage & Run Query** button. SigNoz will plot a graph similar to the following one:
@@ -275,7 +275,7 @@ This example plots the average latency per service using a formula based on two 
     ![](/img/docs/choose-sum-rate-under-b.webp)
     <SeeAggregateFunctions />
 
-  4.4 Indicate that you want to plot the a separate graph each service, by specifying `service_name` in the **Group By** drop-down:
+  4.4 Indicate that you want to plot a separate graph for each service, by specifying `service_name` in the **Group By** drop-down:
     ![](/img/docs/latency-per-svc-specify-svc-name.webp)
 
 5. Hide **A** and **B** by selecting the corresponding eye icons:
@@ -306,10 +306,10 @@ This example plots the error rate per service using a formula based on two queri
     ![](/img/docs/error-rate-choose-sum-rate.webp)
     <SeeAggregateFunctions />
   
-  3.2 Use the **Metrics** drop-down to specify that you want to plot the total number calls for your application. The example screenshot below plots the total number of calls for SigNoz:
+  3.2 Use the **Metrics** drop-down to specify that you want to plot the total number of calls for your application. The example screenshot below plots the total number of calls for SigNoz:
     ![](/img/docs/plot-total-number-of-calls.webp)
 
-  3.3 Specify that the you want to plot only the calls that failed by adding a filtering condition as shown below:
+  3.3 Specify that you want to plot only the calls that failed by adding a filtering condition as shown below:
     ![](/img/docs/plot-the-calls-that-failed.webp)
 
   3.4 To plot a particular service add a new `WHERE clause`. The following example plots a service named `redis`:
@@ -322,7 +322,7 @@ This example plots the error rate per service using a formula based on two queri
   4.2 Choose `SUM_RATE` as the aggregate function:
     ![](/img/docs/error-rate-choose-sum-rate-b.webp)
 
-  4.3 Use the **Metrics** drop-down to specify that you want to plot the total number calls for your application. The example screenshot below plots the total number of calls for SigNoz:
+  4.3 Use the **Metrics** drop-down to specify that you want to plot the total number of calls for your application. The example screenshot below plots the total number of calls for SigNoz:
     ![](/img/docs/plot-the-total-number-of-calls.webp)
 
   4.4 Indicate that the you do not want to plot the calls for the service you’ve previously specified (`redis`):
