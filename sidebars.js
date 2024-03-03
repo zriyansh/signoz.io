@@ -602,6 +602,11 @@ module.exports = {
           id: 'aws-monitoring/elb-logs',
           label: 'ELB',
         },
+        {
+          type: 'doc',
+          id: 'aws-monitoring/vpc-logs',
+          label: 'VPC',
+        },
         
       ],
     },

@@ -1,11 +1,11 @@
 ---
-id: elb-logs
-title: Send your ELB logs to SigNoz
+id: vpc-logs
+title: Send your VPC logs to SigNoz
 ---
 
 ## Overview
 
-This documentation provides a detailed walkthrough on how to set up an AWS Lambda function to collect Elastic Load Balancer (ELB) logs stored in an AWS S3 bucket and forward them to SigNoz. By the end of this guide, you will have a setup that automatically sends your ELB logs to SigNoz, enabling you to visualize and monitor your application's load balancing performance and health.
+This documentation provides a detailed walkthrough on how to set up an AWS Lambda function to collect Virtual Private Cloud (VPC) logs stored in an AWS S3 bucket and forward them to SigNoz. By the end of this guide, you will have a setup that automatically sends your VPC logs to SigNoz, enabling you to visualize and monitor your application's load balancing performance and health.
 
 **Here’s a quick summary of what we’ll be doing in this detailed article.** 
 
@@ -49,10 +49,10 @@ To accomplish the task described, please follow these steps:
 
 3. **File Formats:**
    - You can upload files in various formats such as .json, .csv, .log, .gz, .zip, etc.
-   - If you have configured Elastic Load Balancer (ELB) logging, ELB logs are automatically saved in `.gzip` format in your S3 bucket.
+   - If you have configured Virtual Private Cloud (VPC) logging, VPC logs are automatically saved in `.gzip` format in your S3 bucket.
 
 :::info
-Ensure that you have appropriate permissions and follow AWS best practices for security and cost optimization when creating and using S3 buckets. Refer to [this link](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/enable-access-logging.html#enable-access-logs) to know more about setting up your S3 bucket to automatically collect ELB logs. 
+Ensure that you have appropriate permissions and follow AWS best practices for security and cost optimization when creating and using S3 buckets. Refer to [this link](https://docs.aws.amazon.com/vpc/latest/tgw/flow-logs-s3.html) to know more about setting automatic VPC flowlogs collection to S3 bucket. 
 :::
 
 :::note
@@ -66,42 +66,16 @@ For the scope of this documentation, we assume that all the data in S3 bucket is
 :::
 
 
-The general header(table) format of ELB logs are:
+The general header(table) format of VPC logs are:
 
 ```jsx
-elb_headers= ["type","time","elb","client_port","target_port",
-"request_processing_time","target_processing_time","response_processing_time",
-"elb_status_code","target_status_code","received_bytes","sent_bytes","request",
-"user_agent","ssl_cipher","ssl_protocol","target_group_arn","trace_idd",
-"domain_name","chosen_cert_arn","matched_rule_priority",
-"request_creation_time","actions_executed","redirect_url",
-"error_reason","target_port_list","target_status_code_list",
-"classification","classification_reason"]
+vpc_headers= ["version","account-id","interface-id","srcaddr","dstaddr","srcport",
+"dstport","protocol","packets","bytes","start","end","action","log-status"]
 ```
 
 :::info
-Note that these headers are just for name sake, you can change them if you wish to, but it is not advisable. You might have noticed in the `elb_headers`, We have mentioned `trace_idd` with 2 dd's and not `trace_id`. This is not a typo, by default, ELB logs have `trace_id` as the header name but payload structure SigNoz recommends is shown below:
+Note that these headers are just for name sake, you can change them if you wish to, but it is not advisable. 
 :::
-
-```jsx
-[
-	{
-		"timestamp": <uint64>,
-		"trace_id": <hex string>,
-		"span_id": <hex string>,
-		"trace_flags": <int>
-		"severity_text": <string>,
-		"severity_number": <int>,
-		"attributes": <map>,
-		"resources": <map>,
-		"body": <string>,
-	}
-]
-```
-
-Source - https://signoz.io/docs/userguide/send-logs-http/
-
-`trace_id` here is of the format `<hex string>` and because we’ll sending everything as string json for simplicity and less data processing and parsing, hence the change in field name from trace_id to trace_idd. [If you use `trace_id` and send the trace_id as a string, you’ll get 400 error, this can resolved by further logs formatting]
 
 ## Understanding how lambda function work
 
@@ -307,7 +281,7 @@ s3 = boto3.client('s3')
 # Function to convert a log line into a JSON object
 def convert_log_line_to_json(line):
     # Define the headers to be used for the JSON keys
-    headers = ["type", "time", "elb", "client:port", "target:port", "request_processing_time", "target_processing_time", "response_processing_time", "elb_status_code", "target_status_code", "received_bytes", "sent_bytes", "request","user_agent", "ssl_cipher", "ssl_protocol", "target_group_arn", "trace_idd", "domain_name", "chosen_cert_arn", "matched_rule_priority", "request_creation_time", "actions_executed", "redirect_url", "error_reason", "target:port_list", "target_status_code_list", "classification", "classification_reason"]
+    headers = ["version","account-id","interface-id","srcaddr","dstaddr","srcport","dstport","protocol","packets","bytes","start","end","action","log-status"]
 
     # Split the log line using shell-like syntax (keeping quotes, etc.)
     res = shlex.split(line, posix=False)
@@ -365,13 +339,13 @@ def lambda_handler(event, context):
             print(f"Sent data to {http_url}. Response: {response.status_code}")
 ```
 
-Here’s how a raw, unprocessed ELB log line looks like:
+Here’s how a raw, unprocessed VPC log line looks like:
 
 ```python
-https 2024-01-01T23:58:03.391277Z app/abc-prod-alb/0b46e552ds5b44da 35.244.22.76:41802 192.1.0.114:80 0.000 1.077 0.000 200 200 1430 923 "POST https://api.abcs.com:4463/suporodv2/v1/get-result/ HTTP/1.1" "SFDC-Callout/59.0" ECDHE-RSA-AES128-GCM-SHA256 TLSv1.2 arn:aws:elasticloadbalancing:ap-south-1:8429181216651:targetgroup/ecs-Sabc-P-Private-SU-API/02f1623fsddec2691ce "Root=1-65343518a-72123e913f71cb2e20213a3ea9" "api.example-sabcs.com" "session-reused" 98 2024-01-01T23:58:02.313000Z "forward" "-" "-" "192.1.1.114:80” "200" "-" "-"
+2 842928376651 eni-0660f9815e9e8d140 192.3.0.225 192.3.0.154 43276 6319 6 1 52 1701285848 1701215902 ACCEPT OK
 ```
 
-In the code, each field corresponds to a header. The purpose of the code above is to transmit Elastic Load Balancer (ELB) logs to the SigNoz endpoint.
+In the code, each field corresponds to a header. The purpose of the code above is to transmit Virtual Private Cloud (VPC) logs to the SigNoz endpoint.
 
 :::caution
 The provided code is functional, but exercise caution when copying and pasting it in its entirety. Incorrect configuration could result in the unintentional ingestion of a large volume of data.
@@ -437,7 +411,7 @@ import requests
 import shlex
 
 def convert_log_line_to_json(line):
-    headers= ["type","time","elb","client_port","target_port","request_processing_time","target_processing_time","response_processing_time","elb_status_code","target_status_code","received_bytes","sent_bytes","request","user_agent","ssl_cipher","ssl_protocol","target_group_arn","trace_idd","domain_name","chosen_cert_arn","matched_rule_priority","request_creation_time","actions_executed","redirect_url","error_reason","target_port_list","target_status_code_list","classification","classification_reason"]
+    headers= ["version","account-id","interface-id","srcaddr","dstaddr","srcport","dstport","protocol","packets","bytes","start","end","action","log-status"]
     res = shlex.split(line, posix = False)
     return dict(zip(headers, res))
 
@@ -501,7 +475,7 @@ Once you've finished adjusting the timeout setting, navigate to the code editor 
 
 You're now prepared to proceed. Whenever you make alterations to the code and wish to evaluate them, follow these steps: Deploy the code first (equivalent to pressing 'Save'), and once it's fully deployed, proceed to click on the 'Test' button.
 
-Below is an image showing the process of transmitting VPC logs (excluding ELB logs) to the SigNoz endpoint.
+Below is an image showing the process of transmitting VPC logs to the SigNoz endpoint.
 
 <figure data-zoomable align='center'>
     <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_10.webp" alt=""/>
