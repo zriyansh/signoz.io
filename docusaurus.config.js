@@ -208,7 +208,7 @@ const config = {
             },
             {
               label: "Careers",
-              to: "careers/",
+              to: "https://jobs.gem.com/signoz/",
             },
             {
               label: "About",
