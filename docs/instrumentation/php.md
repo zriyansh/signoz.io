@@ -26,7 +26,7 @@ In this documentation, we will instrument a PHP application for traces and send 
 
 - [PECL](https://pecl.php.net/)
 
-[composer](https://getcomposer.org/)
+- [Composer](https://getcomposer.org/)
 
 ## Send traces to SigNoz Cloud
 Based on your application environment, you can choose the setup below to send traces to SigNoz Cloud.
