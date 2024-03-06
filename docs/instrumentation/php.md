@@ -24,7 +24,7 @@ In this documentation, we will instrument a PHP application for traces and send 
 
 - [PHP 8.0+](https://www.php.net/)
 
-[PECL](https://pecl.php.net/)
+- [PECL](https://pecl.php.net/)
 
 [composer](https://getcomposer.org/)
 
