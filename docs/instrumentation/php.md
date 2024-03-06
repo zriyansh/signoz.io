@@ -8,7 +8,7 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import InstrumentationFAQ from '../shared/instrumentation-faq.md'
 
-This doc contains instructions on how to set up OpenTelemetry(OTel) instrumentation in your PHP application. OpenTelemetry, also known as OTel for short, is an open-source observability framework that can help you generate and collect telemetry data - traces, metrics, and logs from your PHP application.
+This doc contains instructions about how to set up OpenTelemetry(OTel) instrumentation in your PHP application. OpenTelemetry, also known as OTel for short, is an open-source observability framework that can help you generate and collect telemetry data - traces, metrics, and logs from your PHP application.
 
 Once the telemetry data is generated, you can configure an exporter to send the data to SigNoz for monitoring and visualization.
 
