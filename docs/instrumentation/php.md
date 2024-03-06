@@ -44,7 +44,7 @@ Here we will be sending traces to SigNoz cloud in 4 easy steps, if you want to s
 
 **Step 1: Setup Development Environment**
 
-To configure our PHP application to send data, we need to use OpenTelemetry PHP extension, since the extension is built from source. Install the build tools as follows :
+To configure our PHP application to send data, you need to use OpenTelemetry PHP extension. Since the extension is built from the source, you need to have the build tools, which can be installed using the following command:
 
 <Tabs>
 <TabItem value="linux" label="Linux (apt)" default>
@@ -66,26 +66,26 @@ brew install gcc make autoconf
 
 **Step 2: Build the extension**
 
-With our environment set up we can install the extension using PECL.
+With our environment set up we can install the extension using [PECL](https://pecl.php.net/):
 
 ```bash
 pecl install opentelemetry
 ```
 
-after successfully installing this, add the extension to `php.ini` file of your project.
+After successfully installing the OpenTelemetry extension, add the extension to `php.ini` file of your project:
 
 ```php
 [opentelemetry]
 extension=opentelemetry.so
 ```
 
-verify that the extension is enabled or not by running
+Verify that the extension is enabled by running:
 
 ```
 php -m | grep opentelemetry
 ```
 
-The expected output is
+This should output:
 
 ```
 opentelemetry
@@ -93,11 +93,7 @@ opentelemetry
 
 **Step 3: Add the dependencies**
 
-Add additional dependencies required for OpenTelemetry SDK for PHP to perform automatic instrumentation using this command :
-
-:::info
-You can install the additional dependencies by OpenTelemetry from [here](https://packagist.org/explore/?query=open-telemetry) for the PHP framework you are using!
-:::
+Add dependencies required for OpenTelemetry SDK for PHP to perform automatic instrumentation using this command :
 
 ```
 composer config allow-plugins.php-http/discovery false
@@ -107,6 +103,11 @@ composer require \
   php-http/guzzle7-adapter \
   open-telemetry/transport-grpc
 ```
+
+:::info
+You can install the additional dependencies provided by OpenTelemetry for different PHP frameworks from [here](https://packagist.org/explore/?query=open-telemetry).
+:::
+
 
 **Step 4: Set environment variables and run app**
 
@@ -145,15 +146,17 @@ You can change the env vars value by referencing values from the following looku
 
 ### Send traces via OTel Collector binary
 
+**Step 1: Install OTel Collector**
+
 OTel Collector binary helps to collect logs, hostmetrics, resource and infra attributes. It is recommended to install Otel Collector binary to collect and send traces to SigNoz cloud. You can correlate signals and have rich contextual data through this way.
 
 :::note
 You can find instructions to install OTel Collector binary [here](https://signoz.io/docs/tutorial/opentelemetry-binary-usage-in-virtual-machine/) in your VM. Once you are done setting up your OTel Collector binary, you can follow the below steps for instrumenting your PHP application.
 :::
 
-**Step 1: Setup Development Environment**
+**Step 2: Setup Development Environment**
 
-To configure our PHP application to send data, we need to use OpenTelemetry PHP extension, since the extension is built from source. Install the build tools as follows :
+To configure our PHP application to send data, you need to use OpenTelemetry PHP extension. Since the extension is built from the source, you need to have the build tools, which can be installed using the following command:
 
 <Tabs>
 <TabItem value="linux" label="Linux (apt)" default>
@@ -173,40 +176,36 @@ brew install gcc make autoconf
 </Tabs>
 
 
-**Step 2: Build the extension**
+**Step 3: Build the extension**
 
-With our environment set up we can install the extension using PECL.
+With our environment set up we can install the extension using [PECL](https://pecl.php.net/):
 
 ```bash
 pecl install opentelemetry
 ```
 
-after successfully installing this, add the extension to `php.ini` file of your project.
+After successfully installing the OpenTelemetry extension, add the extension to `php.ini` file of your project:
 
 ```php
 [opentelemetry]
 extension=opentelemetry.so
 ```
 
-verify that the extension is enabled or not by running
+Verify that the extension is enabled by running:
 
 ```
 php -m | grep opentelemetry
 ```
 
-The expected output is
+This should output:
 
 ```
 opentelemetry
 ```
 
-**Step 3: Add the dependencies**
+**Step 4: Add the dependencies**
 
-Add additional dependencies required for OpenTelemetry SDK for PHP to perform automatic instrumentation using this command :
-
-:::info
-You can install the additional dependencies by OpenTelemetry from [here](https://packagist.org/explore/?query=open-telemetry) for the PHP framework you are using!
-:::
+Add dependencies required for OpenTelemetry SDK for PHP to perform automatic instrumentation using this command :
 
 ```
 composer config allow-plugins.php-http/discovery false
@@ -217,7 +216,11 @@ composer require \
   open-telemetry/transport-grpc
 ```
 
-**Step 4: Set environment variables and run app**
+:::info
+You can install the additional dependencies provided by OpenTelemetry for different PHP frameworks from [here](https://packagist.org/explore/?query=open-telemetry).
+:::
+
+**Step 5: Set environment variables and run app**
 
 We are passing the environment variables on run time and this way we don't have to change anything in code.
 Run your application using:
@@ -258,7 +261,7 @@ For PHP application deployed on Kubernetes, you need to install OTel Collector a
 
 **Step 2: Setup Development Environment**
 
-To configure our PHP application to send data, we need to use OpenTelemetry PHP extension, since the extension is built from source. Install the build tools as follows :
+To configure our PHP application to send data, you need to use OpenTelemetry PHP extension. Since the extension is built from the source, you need to have the build tools, which can be installed using the following command:
 
 <Tabs>
 <TabItem value="linux" label="Linux (apt)" default>
@@ -280,26 +283,26 @@ brew install gcc make autoconf
 
 **Step 3: Build the extension**
 
-With our environment set up we can install the extension using PECL.
+With our environment set up we can install the extension using [PECL](https://pecl.php.net/):
 
 ```bash
 pecl install opentelemetry
 ```
 
-after successfully installing this, add the extension to `php.ini` file of your project.
+After successfully installing the OpenTelemetry extension, add the extension to `php.ini` file of your project:
 
 ```php
 [opentelemetry]
 extension=opentelemetry.so
 ```
 
-verify that the extension is enabled or not by running
+Verify that the extension is enabled by running:
 
 ```
 php -m | grep opentelemetry
 ```
 
-The expected output is
+This should output:
 
 ```
 opentelemetry
@@ -307,11 +310,7 @@ opentelemetry
 
 **Step 4: Add the dependencies**
 
-Add additional dependencies required for OpenTelemetry SDK for PHP to perform automatic instrumentation using this command :
-
-:::info
-You can install the additional dependencies by OpenTelemetry from [here](https://packagist.org/explore/?query=open-telemetry) for the PHP framework you are using!
-:::
+Add dependencies required for OpenTelemetry SDK for PHP to perform automatic instrumentation using this command :
 
 ```
 composer config allow-plugins.php-http/discovery false
@@ -321,6 +320,10 @@ composer require \
   php-http/guzzle7-adapter \
   open-telemetry/transport-grpc
 ```
+
+:::info
+You can install the additional dependencies provided by OpenTelemetry for different PHP frameworks from [here](https://packagist.org/explore/?query=open-telemetry).
+:::
 
 **Step 5: Set environment variables and run app**
 
@@ -359,7 +362,7 @@ You can change the env vars value by referencing values from the following looku
 
 **Step 1: Setup Development Environment**
 
-To configure our PHP application to send data, we need to use OpenTelemetry PHP extension, since the extension is built from source. Install the build tools as follows :
+To configure our PHP application to send data, you need to use OpenTelemetry PHP extension. Since the extension is built from the source, you need to have the build tools, which can be installed using the following command:
 
 <Tabs>
 <TabItem value="linux" label="Linux (apt)" default>
@@ -381,26 +384,26 @@ brew install gcc make autoconf
 
 **Step 2: Build the extension**
 
-With our environment set up we can install the extension using PECL.
+With our environment set up we can install the extension using [PECL](https://pecl.php.net/):
 
 ```bash
 pecl install opentelemetry
 ```
 
-after successfully installing this, add the extension to `php.ini` file of your project.
+After successfully installing the OpenTelemetry extension, add the extension to `php.ini` file of your project:
 
 ```php
 [opentelemetry]
 extension=opentelemetry.so
 ```
 
-verify that the extension is enabled or not by running
+Verify that the extension is enabled by running:
 
 ```
 php -m | grep opentelemetry
 ```
 
-The expected output is
+This should output:
 
 ```
 opentelemetry
@@ -408,11 +411,7 @@ opentelemetry
 
 **Step 3: Add the dependencies**
 
-Add additional dependencies required for OpenTelemetry SDK for PHP to perform automatic instrumentation using this command :
-
-:::info
-You can install the additional dependencies by OpenTelemetry from [here](https://packagist.org/explore/?query=open-telemetry) for the PHP framework you are using!
-:::
+Add dependencies required for OpenTelemetry SDK for PHP to perform automatic instrumentation using this command :
 
 ```
 composer config allow-plugins.php-http/discovery false
@@ -422,6 +421,10 @@ composer require \
   php-http/guzzle7-adapter \
   open-telemetry/transport-grpc
 ```
+
+:::info
+You can install the additional dependencies provided by OpenTelemetry for different PHP frameworks from [here](https://packagist.org/explore/?query=open-telemetry).
+:::
 
 **Step 4: Set environment variables and run app**
 
