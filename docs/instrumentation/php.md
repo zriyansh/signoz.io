@@ -18,7 +18,7 @@ There are three major steps to using OpenTelemetry:
 - Configuring the exporter to send data to SigNoz
 - Validating that configuration to ensure that data is being sent as expected.
 
-In this tutorial, we will instrument a PHP application for traces and send it to SigNoz.
+In this documentation, we will instrument a PHP application for traces and send it to SigNoz.
 
 ## Requirements
 
