@@ -22,7 +22,7 @@ In this documentation, we will instrument a PHP application for traces and send 
 
 ## Requirements
 
-[PHP 8.0+](https://www.php.net/)
+- [PHP 8.0+](https://www.php.net/)
 
 [PECL](https://pecl.php.net/)
 
