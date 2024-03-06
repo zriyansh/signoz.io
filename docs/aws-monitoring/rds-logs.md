@@ -30,7 +30,7 @@ Amazon Web Services (AWS) Relational Database Service (RDS) offers a managed dat
 
 ### Supported Database Engines
 
-AWS RDS supports a wide range of relational database engines, including:- 
+AWS RDS supports a wide range of relational database engines, including:
 - PostgreSQL, 
 - Oracle, 
 - MySQL, 
@@ -41,7 +41,7 @@ Each of these database engines comes with its strengths and capabilities, tailor
 
 
 #### PostgreSQL:
-PostgreSQL provides comprehensive logging capabilities covering various aspects of database operation. They include:-
+PostgreSQL provides comprehensive logging capabilities covering various aspects of database operation. They include:
 - Startup Logs
 - Server Logs
 - Query Logs
@@ -64,7 +64,7 @@ PostgreSQL provides comprehensive logging capabilities covering various aspects 
 [Know More](https://www.postgresql.org/docs/current/runtime-config-logging.html)
 
 #### Oracle:
-Oracle databases offer several log types catering to different aspects of database management. They include:-
+Oracle databases offer several log types catering to different aspects of database management. They include:
 - Alert Logs
 - Audit Files
 - Trace Files
@@ -79,7 +79,7 @@ Oracle databases offer several log types catering to different aspects of databa
 [Know more](https://docs.oracle.com/cd/E19681-01/820-3740/adrdp/index.html)
 
 #### MySQL:
-MySQL databases support various log types to aid in monitoring and troubleshooting. They include:-
+MySQL databases support various log types to aid in monitoring and troubleshooting. They include:
 - Error Log
 - Slow Query Log
 - General Query Log
@@ -116,7 +116,7 @@ MySQL databases support various log types to aid in monitoring and troubleshooti
 
 
 #### MS SQL Server:
-MS SQL Server databases maintain several types of logs to facilitate monitoring and troubleshooting. They include:-
+MS SQL Server databases maintain several types of logs to facilitate monitoring and troubleshooting. They include:
 - Error Logs
 - Agent Logs
 - Trace Files
@@ -131,7 +131,7 @@ MS SQL Server databases maintain several types of logs to facilitate monitoring 
 [Know more](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.SQLServer.html)
 
 #### MariaDB:
-MariaDB databases offer logging capabilities covering error handling and query performance monitoring. They include:-
+MariaDB databases offer logging capabilities covering error handling and query performance monitoring. They include:
 - Error Log
 - Slow Query Log
 - General Log
@@ -193,7 +193,7 @@ To accomplish the task described, please follow these steps:
 
 
 :::note
-Please be advised that all logs will undergo conversion to JSON format before transmission. Consequently, it may be necessary to perform supplementary preprocessing of the logs as part of this conversion process. Here preprocessing of the logs means getting them from S3 bucket bucket, separating each log line based on the delimiter ("," or based on quotes or whitespaces) and assigning them to respective keys. Thus making a key, value pair before sending to SigNoz. 
+Please be advised that all logs will undergo conversion to JSON format before transmission. Consequently, it may be necessary to perform supplementary preprocessing of the logs as part of this conversion process. Here preprocessing of the logs means getting them from S3 bucket, separating each log line based on the delimiter ("," or based on quotes or whitespaces) and assigning them to respective keys. Thus making a key, value pair before sending to SigNoz. 
 :::
 
 To move forward, we assume that you already have some data in your S3 bucket.
@@ -211,11 +211,11 @@ Note that these headers are just for name sake to represent the log row values, 
 
 ## Understanding how lambda function work
 
-When you successfully attach your lambda function with the S3 bucket and configure it correctly, any new additions / deletion / copy / PUT etc, requests made to the S3 bucket will trigger the lambda function and the code written in the lambda function will get executed.
+When you successfully attach your lambda function with the S3 bucket and configure it correctly, any new addition / deletion / copy / PUT etc, requests made to the S3 bucket will trigger the lambda function and the code written in the lambda function will get executed.
 
 ### Creating a lambda function
 
-Follow these steps to create the lambda function:-
+Follow these steps to create the lambda function:
 
 **Step 1:** Go to your AWS console and search for AWS Lambda, go to **Functions** and click on **Create Function**. 
 
@@ -234,7 +234,7 @@ Follow these steps to create the lambda function:-
 <br />
 
 
-**Step 3:** Choose `Python 3.x` as the Runtime version, `x86_64` as Architecture (mostly), and keep other settings as default. 
+**Step 3:** Choose `Python 3.x` as the Runtime version, `x86_64` as Architecture (preferably), and keep other settings as default. Select `Create a new role with basic Lambda permissions`for now, we’ll requiring more permissions down the lane. So for now, select this option. 
 
 <figure data-zoomable align='center'>
     <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_3.webp" alt=""/>
@@ -242,7 +242,7 @@ Follow these steps to create the lambda function:-
 </figure>
 <br />
 
-**Step 4:** Select `Create a new role with basic Lambda permissions`for now, we’ll requiring more permissions down the lane. So for now, select this option. 
+**Step 4:** Once you are done configuring the lambda function, the function will get created.
 
 <figure data-zoomable align='center'>
     <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_4.webp" alt=""/>
@@ -250,11 +250,11 @@ Follow these steps to create the lambda function:-
 </figure>
 <br />
 
-Once you are done configuring the lambda function, you’ll see it get created here. Feel free to move around and see what all things AWS Lambda offers. 
+
 
 ### Configuring Policies for Lambda function
 
-As said in Step 4 previously, we need extra permissions in order to access the S3 Bucket for execution of our Lambda code, follow along to set it up. 
+As said in Step 3 previously, we need extra permissions in order to access the S3 Bucket for execution of our Lambda code, follow along to set it up. 
 
 **Step 1:** Scroll down from your Lambda page, you’ll see a few tabs there. Go to `Configurations` and select `Permissions` from the left sidebar. 
 
@@ -264,9 +264,7 @@ As said in Step 4 previously, we need extra permissions in order to access the S
 </figure>
 <br />
 
-**Step 2:** Click on the `Execution Role name`'s link, it will take us to AWS IAM page. Here, we’ll be a policy to get full S3 access.
-
-**Step 3:** Once here, click on the `Add permissions` button and select `Attach policies` from the drop down list. 
+**Step 2:** Click on the `Execution Role name` link just under Role name, it will take us to AWS IAM page. Here we will add policies to get full S3 access. Once here, click on the `Add permissions` button and select `Attach policies` from the drop down list. 
 
 <figure data-zoomable align='center'>
     <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_6.webp" alt=""/>
@@ -274,7 +272,7 @@ As said in Step 4 previously, we need extra permissions in order to access the S
 </figure>
 <br />
 
-**Step 4:** Search “S3” and you’ll a policy named `AmazonS3FullAccess`select that and proceed. 
+**Step 3:** Search “S3” and you’ll a policy named `AmazonS3FullAccess` select that and proceed. 
 
 <figure data-zoomable align='center'>
     <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_7.webp" alt=""/>
@@ -304,7 +302,7 @@ A function may have more than one trigger. Every trigger functions as a client, 
 
 To setup the trigger, follow these steps:
 
-**Step 1:** Click on the `+ Add trigger`button from the Lambda console. 
+**Step 1:** Click on the `+ Add trigger` button from the Lambda console. 
 
 <figure data-zoomable align='center'>
     <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_8.webp" alt=""/>
@@ -312,7 +310,7 @@ To setup the trigger, follow these steps:
 </figure>
 <br />
 
-**Step 2:** Select `S3` from the first drop down of AWS services list. Pick you S3 bucket for the second field. 
+**Step 2:** Select `S3` from the first drop down of AWS services list. Pick your S3 bucket for the second field. 
 
 **Step 3:** For the Event types field, you can select any number of options you wish. The trigger will occur depending upon what option(s) you choose here. By default, the `All object create events` will be selected. 
 
@@ -322,22 +320,15 @@ To setup the trigger, follow these steps:
 </figure>
 <br />
 
-Verify the settings and click on `Add` button at bottom right to add this trigger. You could add more than one trigger, but we’ll stick to just one for now. 
+Verify the settings and click on `Add` button at bottom right to add this trigger.
 
 ### Adding Request Layer
 
-We will be using python’s `request` module and by default, you do not get ‘requests’ module by default in the Lambda. Why? See the attached image and [this link](https://aws.amazon.com/blogs/compute/upcoming-changes-to-the-python-sdk-in-aws-lambda/). 
-
-<figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-upcoming-changes.webp" alt=""/>
-    <figcaption><i>AWS Lambda changes for Python SDK</i></figcaption>
-</figure>
-<br />
+We will be using python's `request` module which is [not included by default](https://aws.amazon.com/blogs/compute/upcoming-changes-to-the-python-sdk-in-aws-lambda/) in Lambda.
 
 To utilize Python's `requests` module within a Lambda function, it's necessary to explicitly add it as a layer. While there may be alternative approaches, it's advisable to adhere to established practices that have been thoroughly tested and proven effective. Therefore, we will proceed with adding `requests` as a layer to ensure reliable functionality within the Lambda environment.
 
-Anyways, refer to the below attached steps to create a zip of the request module and add it as a layer to make it work on AWS lambda. Steps for which are described ahead. 
-
+**Step 1:** Follow the steps below to create a zip of the request module and add it as a layer to make it work on AWS lambda.
 
 The commands you’d need:
 
@@ -354,7 +345,7 @@ zip -r dependencies.zip ../python
 
 ```
 
-**Step 1:** To upload your zip file, go to AWS Lambda > Layers and click on `Create Layer`. [Not inside your specific Lambda function, just the landing page of AWS Lambda]. 
+**Step 2:** To upload your zip file, go to AWS Lambda > Layers and click on `Create Layer`. [Not inside your specific Lambda function, just the landing page of AWS Lambda]. 
 
 <figure data-zoomable align='center'>
     <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-layer_3.webp" alt=""/>
@@ -362,9 +353,9 @@ zip -r dependencies.zip ../python
 </figure>
 <br />
 
-**Step 2:** You’ll be redirected to Layer configurations page, here, give a name to your layer, an optional description, select `Upload a .zip file` , click on `Upload` and locate the requirements.zip file. 
+**Step 3:** You’ll be redirected to Layer configurations page, here, give a name to your layer, an optional description, select `Upload a .zip file` , click on `Upload` and locate the requirements.zip file. 
 
-**Step 3:** Select your desired architecture and pick `Python 3.x` as your runtime. Hit `Create`. You layer as now been created. Now lets connect it to our Lambda function which we created to send logs to SigNoz. 
+**Step 4:** Select your desired architecture and pick `Python 3.x` as your runtime. Hit `Create`. Your layer has now been created. Now lets connect it to our Lambda function which we created to send logs to SigNoz. 
 
 <figure data-zoomable align='center'>
     <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-layer_4.webp" alt=""/>
@@ -372,7 +363,7 @@ zip -r dependencies.zip ../python
 </figure>
 <br />
 
-**Step 4:** Go to your Lambda function, scroll down to Layers section and on the right of it, you’ll find a button that says `Add a layer` to click on. 
+**Step 5:** Go to your Lambda function, scroll down to Layers section and on the right of it, you’ll find a button that says `Add a layer` to click on. 
 
 <figure data-zoomable align='center'>
     <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-layer_5.webp" alt=""/>
@@ -380,7 +371,7 @@ zip -r dependencies.zip ../python
 </figure>
 <br />
 
-**Step 5:** Pick `Custom layers` from the checkbox and select your custom layer from the given drop down below and then click on the button `Add`. 
+**Step 6:** Pick `Custom layers` from the checkbox and select your custom layer from the given drop down below and then click on the button `Add`. 
 
 <figure data-zoomable align='center'>
     <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-layer_6.webp" alt=""/>
@@ -532,7 +523,7 @@ Let’s consider the below pseudo code for better understanding:
        print("Time difference exceeds 3 days. Function will not run.")
 ```
 
-Feel free to modify any part of the code if you wish to. 
+Feel free to modify any part of the code according to your requirements.
 
 ---
 
