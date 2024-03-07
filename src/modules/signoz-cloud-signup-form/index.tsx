@@ -123,6 +123,7 @@ export default function SignozCloudSignUpForm() {
         },
         body: JSON.stringify(payload),
       });
+
       if (response.ok) {
         setSubmitSuccess(true);
         handleGTMCustomEventTrigger(payload);
@@ -135,7 +136,7 @@ export default function SignozCloudSignUpForm() {
           source: "",
         });
 
-        // window.location.href = "https://signoz.io/verify-email";
+        window.location.href = "https://signoz.io/verify-email";
       } else {
         // To do, handle other errors apart from invalid email
         if (response.status === 400) {
