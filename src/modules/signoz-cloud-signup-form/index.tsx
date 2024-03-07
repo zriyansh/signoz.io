@@ -3,6 +3,9 @@ import styles from "./styles.module.css";
 import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 
+import ReactGA from "react-ga4";
+ReactGA.initialize("G-6NFJ2Y6NQN");
+
 interface ErrorsProps {
   fullName?: string;
   workEmail?: string;
@@ -59,12 +62,12 @@ export default function SignozCloudSignUpForm() {
 
   function isValidCompanyEmail(email) {
     // Regular expression pattern to match valid company email domains
-    var companyEmailPattern = /@(?!gmail|yahoo|hotmail|outlook|live|icloud)[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    
+    var companyEmailPattern =
+      /@(?!gmail|yahoo|hotmail|outlook|live|icloud)[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
     // Check if the email matches the email format and the company email pattern
     return isValidEmail(email) && companyEmailPattern.test(email);
-}
-
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -79,17 +82,17 @@ export default function SignozCloudSignUpForm() {
   };
 
   const handleGTMCustomEventTrigger = (payload) => {
-    try {
-      if (window && window?.dataLayer && Array.isArray(window.dataLayer)) {
-        window.dataLayer.push({
-          event: "signoz-cloud-signup-form-submit",
-          ...payload,
-        });
+    ReactGA.event(
+      {
+        category: "SigNozCloudUserSignUp",
+        action: "SignupSubmitted",
+        label: "Get Started",
+        value: 1,
+      },
+      {
+        formData: JSON.stringify(payload),
       }
-    } catch (error) {
-      console.error("GTM Event Failed:", error.message);
-      // Handle other error cases, like network errors
-    }
+    );
   };
 
   const handleError = () => {
@@ -112,8 +115,6 @@ export default function SignozCloudSignUpForm() {
       source: formData.source,
     };
 
-    handleGTMCustomEventTrigger(payload);
-
     try {
       const response = await fetch("https://signup.signoz.cloud/api/register", {
         method: "POST",
@@ -134,7 +135,7 @@ export default function SignozCloudSignUpForm() {
           source: "",
         });
 
-        window.location.href = "https://signoz.io/verify-email";
+        // window.location.href = "https://signoz.io/verify-email";
       } else {
         // To do, handle other errors apart from invalid email
         if (response.status === 400) {
