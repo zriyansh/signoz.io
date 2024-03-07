@@ -38,7 +38,7 @@ From VMs, there are two ways to send data to SigNoz Cloud.
 - [Send traces directly to SigNoz Cloud](#send-traces-directly-to-signoz-cloud)
 - [Send traces via OTel Collector binary](#send-traces-via-otel-collector-binary) (recommended)
 
-### Send traces directly to SigNoz cloud
+#### Send traces directly to SigNoz cloud
 
 Here we will be sending traces to SigNoz cloud in 4 easy steps, if you want to send traces to self hosted SigNoz , you can refer to [this](https://signoz.io/docs/instrumentation/PHP/#send-traces-to-self-hosted-signoz). We will be using Zero-code configuration for Automatic Instrumentation.
 
@@ -118,8 +118,6 @@ Run your application using:
 env OTEL_PHP_AUTOLOAD_ENABLED=true \
     OTEL_SERVICE_NAME=<SERVICE_NAME> \
     OTEL_TRACES_EXPORTER=otlp \
-    OTEL_METRICS_EXPORTER=none \
-    OTEL_LOGS_EXPORTER=none \
     OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf \
     OTEL_EXPORTER_OTLP_ENDPOINT=<SIGNOZ_ENDPOINT> \
     OTEL_EXPORTER_OTLP_HEADERS=signoz-access-token=<INGESTION_KEY> \
@@ -131,20 +129,14 @@ You can change the env vars value by referencing values from the following looku
 
 | Environment Variable                  | Value                                        |
 |-------------------------------|----------------------------------------------|
-| OTEL_PHP_AUTOLOAD_ENABLED     | true                                         |
 | OTEL_SERVICE_NAME              | `<SERVICE_NAME>` replace it with name of your app                         |
-| OTEL_TRACES_EXPORTER           | otlp                                         |
-| OTEL_METRICS_EXPORTER          | none                                         |
-| OTEL_LOGS_EXPORTER             | none                                         |
-| OTEL_EXPORTER_OTLP_PROTOCOL    | http/protobuf                                |
 | OTEL_EXPORTER_OTLP_ENDPOINT    | `<SIGNOZ_ENDPOINT>` replace this with SigNoz cloud endpoint                       |
 | OTEL_EXPORTER_OTLP_HEADERS     | signoz-access-token=`<INGESTION_KEY>` replace this with the ingestion key which you must have received in mail        |
-| OTEL_PROPAGATORS              | baggage,tracecontext                         |
 | php -S localhost:8080 app.php             | you can replace this with the run command of your PHP application                        |
 
 
 
-### Send traces via OTel Collector binary
+#### Send traces via OTel Collector binary
 
 **Step 1: Install OTel Collector**
 
@@ -229,8 +221,6 @@ Run your application using:
 env OTEL_PHP_AUTOLOAD_ENABLED=true \
     OTEL_SERVICE_NAME=<SERVICE_NAME> \
     OTEL_TRACES_EXPORTER=otlp \
-    OTEL_METRICS_EXPORTER=none \
-    OTEL_LOGS_EXPORTER=none \
     OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf \
     OTEL_EXPORTER_OTLP_ENDPOINT=<COLLECTOR_ENDPOINT> \
     OTEL_PROPAGATORS=baggage,tracecontext \
@@ -241,14 +231,8 @@ You can change the env vars value by referencing values from the following looku
 
 | Environment Variable                  | Value                                        |
 |-------------------------------|----------------------------------------------|
-| OTEL_PHP_AUTOLOAD_ENABLED     | true                                         |
 | OTEL_SERVICE_NAME              | `<SERVICE_NAME>` replace it with name of your app                         |
-| OTEL_TRACES_EXPORTER           | otlp                                         |
-| OTEL_METRICS_EXPORTER          | none                                         |
-| OTEL_LOGS_EXPORTER             | none                                         |
-| OTEL_EXPORTER_OTLP_PROTOCOL    | http/protobuf                                |
 | OTEL_EXPORTER_OTLP_ENDPOINT    | `<COLLECTOR_ENDPOINT>` replace this with the Otel Collector Endpoint. If you have hosted it somewhere, provide the URL. Otherwise, the default is `http://localhost:4317`, if you have followed our guide.                       |
-| OTEL_PROPAGATORS              | baggage,tracecontext                         |
 | php -S localhost:8080 app.php             | you can replace this with the run command of your PHP application                        |
 
 </TabItem>
@@ -334,8 +318,6 @@ Run your application using:
 env OTEL_PHP_AUTOLOAD_ENABLED=true \
     OTEL_SERVICE_NAME=<SERVICE_NAME> \
     OTEL_TRACES_EXPORTER=otlp \
-    OTEL_METRICS_EXPORTER=none \
-    OTEL_LOGS_EXPORTER=none \
     OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf \
     OTEL_EXPORTER_OTLP_ENDPOINT=<COLLECTOR_ENDPOINT> \
     OTEL_PROPAGATORS=baggage,tracecontext \
@@ -346,19 +328,13 @@ You can change the env vars value by referencing values from the following looku
 
 | Environment Variable                  | Value                                        |
 |-------------------------------|----------------------------------------------|
-| OTEL_PHP_AUTOLOAD_ENABLED     | true                                         |
 | OTEL_SERVICE_NAME              | `<SERVICE_NAME>` replace it with name of your app                         |
-| OTEL_TRACES_EXPORTER           | otlp                                         |
-| OTEL_METRICS_EXPORTER          | none                                         |
-| OTEL_LOGS_EXPORTER             | none                                         |
-| OTEL_EXPORTER_OTLP_PROTOCOL    | http/protobuf                                |
 | OTEL_EXPORTER_OTLP_ENDPOINT    | `<COLLECTOR_ENDPOINT>` replace this with the Otel Collector Endpoint. If you have hosted it somewhere, provide the URL. Otherwise, the default is `http://localhost:4317`, if you have followed our guide.                       |
-| OTEL_PROPAGATORS              | baggage,tracecontext                         |
 | php -S localhost:8080 app.php             | you can replace this with the run command of your PHP application                        |
 </TabItem>
 </Tabs>
 
-## Send Traces to Self-Hosted SigNoz
+#### Send Traces to Self-Hosted SigNoz
 
 **Step 1: Setup Development Environment**
 
@@ -435,8 +411,6 @@ Run your application using:
 env OTEL_PHP_AUTOLOAD_ENABLED=true \
     OTEL_SERVICE_NAME=<SERVICE_NAME> \
     OTEL_TRACES_EXPORTER=otlp \
-    OTEL_METRICS_EXPORTER=none \
-    OTEL_LOGS_EXPORTER=none \
     OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf \
     OTEL_EXPORTER_OTLP_ENDPOINT=<SIGNOZ_ENDPOINT> \
     OTEL_PROPAGATORS=baggage,tracecontext \
@@ -447,17 +421,11 @@ You can change the env vars value by referencing values from the following looku
 
 | Environment Variable                  | Value                                        |
 |-------------------------------|----------------------------------------------|
-| OTEL_PHP_AUTOLOAD_ENABLED     | true                                         |
 | OTEL_SERVICE_NAME              | `<SERVICE_NAME>` replace it with name of your app                         |
-| OTEL_TRACES_EXPORTER           | otlp                                         |
-| OTEL_METRICS_EXPORTER          | none                                         |
-| OTEL_LOGS_EXPORTER             | none                                         |
-| OTEL_EXPORTER_OTLP_PROTOCOL    | http/protobuf                                |
 | OTEL_EXPORTER_OTLP_ENDPOINT    | `<SIGNOZ_ENDPOINT>` replace this with the url where you have hosted SigNoz                     |
-| OTEL_PROPAGATORS              | baggage,tracecontext                         |
 | php -S localhost:8080 app.php             | you can replace this with the run command of your PHP application                        |
 
-## Sample PHP Application
+#### Sample PHP Application
 
 We have included a sample PHP application at [Sample PHP App Github Repo](https://github.com/SigNoz/OpenTelemetry-PHP-example), 
 
