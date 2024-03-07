@@ -54,7 +54,7 @@ sudo apt-get install gcc make autoconf
 ```
 
 </TabItem>
-<TabItem value="mac" label="Mac (apt)">
+<TabItem value="mac" label="Mac (Homebrew)">
 
 ```
 brew install gcc make autoconf
@@ -166,7 +166,7 @@ sudo apt-get install gcc make autoconf
 ```
 
 </TabItem>
-<TabItem value="mac" label="Mac (apt)">
+<TabItem value="mac" label="Mac (Homebrew)">
 
 ```
 brew install gcc make autoconf
@@ -271,7 +271,7 @@ sudo apt-get install gcc make autoconf
 ```
 
 </TabItem>
-<TabItem value="mac" label="Mac (apt)">
+<TabItem value="mac" label="Mac (Homebrew)">
 
 ```
 brew install gcc make autoconf
@@ -372,7 +372,7 @@ sudo apt-get install gcc make autoconf
 ```
 
 </TabItem>
-<TabItem value="mac" label="Mac (apt)">
+<TabItem value="mac" label="Mac (Homebrew)">
 
 ```
 brew install gcc make autoconf
