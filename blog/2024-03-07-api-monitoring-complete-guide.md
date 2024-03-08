@@ -5,7 +5,7 @@ date: 2024-03-07
 tags: [Tech Resources]
 authors: harish
 description: API monitoring is critical because it ensures that APIs, which are integral to connecting and enabling functionalities across different software applications, operate reliably and...
-image: /img/blog/2024/03/api-monitoring-complete-guide-cover.jpeg
+image: /img/blog/2024/03/api-monitoring-complete-guide-cover.webp
 hide_table_of_contents: false
 toc_min_heading_level: 2
 toc_max_heading_level: 2
