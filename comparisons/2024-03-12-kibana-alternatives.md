@@ -8,7 +8,7 @@ description: Here are top 9 Kibana alternatives that you can use for data visual
 image: /img/blog/2024/03/kibana-alternatives-cover.webp
 hide_table_of_contents: false
 toc_min_heading_level: 2
-toc_max_heading_level: 2
+toc_max_heading_level: 3
 keywords:
   - kibana-alternatives
   - kibana
