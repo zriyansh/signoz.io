@@ -6,6 +6,7 @@ tags: [OpenTelemetry]
 authors: priyansh
 description: Join Nica and Ankit as they discuss discuss the relationship between OpenTelemetry and ApacheKafka....
 image: /img/blog/2023/11/otel-webinar-kafka-otlp-cover.jpeg
+hide_table_of_contents: true
 keywords:
   - opentelemetry
   - webinar
@@ -30,8 +31,6 @@ Below is the recording and an edited transcript of the conversation.
 
 
 ## Summary of the Talk
-
-[Nica's part ]
 
 <LiteYoutubeEmbed id="ncOu44NtAec" mute={false} />
 
@@ -180,4 +179,4 @@ Thank you for taking out the time to read this transcript :) If you have any fee
 
 Feel free to join our Slack community and say hi! 👋 
 
-[![SigNoz Slack community](/img/blog/common/join_slack_cta.png)](https://signoz.io/slack)
+[![SigNoz Slack community](/img/blog/common/join_slack_cta.webp)](https://signoz.io/slack)
