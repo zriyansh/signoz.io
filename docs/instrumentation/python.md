@@ -176,57 +176,53 @@ Step 4. Dockerize your application
 
 To dockerize your application, you **don't need to follow Step 2 and Step 3** mentioned above as they are part of the dockerfile.
 
-To make sure that you Dockerize your application along with the OpenTelemetry instructions, you can update/create your Dockerfile like below:
+To make sure that you Dockerize your application along with the OpenTelemetry instructions, update your Dockerfile like below:
 
 ```bash
-# Use an official Python runtime as a parent image
-FROM python:3.8
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the current directory contents into the container at /app
-COPY . /app
+...
 
 # Install any needed packages specified in requirements.txt
-# Make sure to include opentelemetry-distro and opentelemetry-exporter-otlp 
-#packages in your requirements.txt file
-RUN python -m pip install -r requirements.txt
+# And install OpenTelemetry packages
+RUN pip install --no-cache-dir -r requirements.txt 
 
 RUN opentelemetry-bootstrap --action=install
 
-# Run app.py with OpenTelemetry instrumentation when the container launches
-# This is the run command to start your application. Change it according to your need.
-CMD ["opentelemetry-instrument", "python", "app.py"]
-
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
+
+# Set environment variables for OpenTelemetry
+ENV OTEL_RESOURCE_ATTRIBUTES=service.name=<service-name>
+ENV OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317
+ENV OTEL_EXPORTER_OTLP_HEADERS=signoz-access-token=<SIGNOZ-INGESTION-KEY>
+ENV OTEL_EXPORTER_OTLP_PROTOCOL=grpc
+
+# Run app.py with OpenTelemetry instrumentation when the container launches
+CMD ["opentelemetry-instrument", "python", "app.py"]
+...
+
 ```
 
-The Dockerfile sets up a Python environment for applications using OpenTelemetry instrumentation. It starts with Python 3.8, installs required packages from 'requirements.txt', including OpenTelemetry components. The container executes 'app.py' with OpenTelemetry tracing, exposing port 5000. 
+This updated Dockerfile instructions will install required packages from `requirements.txt`, including OpenTelemetry components. It sets the environment variable for OpenTelemetry configuration specifying the service name, OTLP exporter endpoint, and protocol. The container executes 'app.py' with OpenTelemetry tracing, exposing port 5000. 
 
-Once you are done updating/creating your Dockerfile, you can build and run your docker image using the commands below:
+Once you are done updating your Dockerfile, you can build and run your docker image using the commands below:
 
 Build your docker image
 ```bash
 docker build -t <your-image-name> .
 ```
 
-It is a good practices to setup your environment variables at runtime using `docker run`. Here's how you can run your docker container:
+Here's how you can run your docker container:
 
 ```bash
-docker run -d -p 5000:5000 \
-  -e OTEL_RESOURCE_ATTRIBUTES=service.name=<service-name> \
-  -e OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317 \
-  -e OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
-  <your-image-name>
+docker run -p 5000:5000 <your-image-name>
+
 ```
 
-The Docker run command starts a container in detached mode (-d) and maps port 5000 of the host to port 5000 of the container. It sets environment variables for OpenTelemetry configuration, specifying the service name, OTLP exporter endpoint, and protocol. 
+The Docker run command starts a container in detached mode (-d) and maps port 5000 of the host to port 5000 of the container. 
 
-- *`<service_name>`* is the name of your service
-- *`<your_image_name>`* is the name of your docker image
-
+- *`<service-name>`* is name of your service or application
+- *`<your-image-name>`* is the name of your docker image
+- Replace `<SIGNOZ_INGESTION_KEY>` with the ingestion key provided by SigNoz. You can find it in the email sent by SigNoz with your cloud account details.
 
 You can validate if your application is sending traces to SigNoz cloud by following the instructions [here](#validating-instrumentation-by-checking-for-traces).
 
@@ -239,8 +235,8 @@ In case you encounter an issue where all applications do not get listed in the s
 
 There are two ways to send data to SigNoz Cloud. You can containerize the images in both the cases.
 
-- [Send traces directly to SigNoz Cloud](#send-traces-directly-to-signoz-cloud)
-- [Send traces via OTel Collector binary](#send-traces-via-otel-collector-binary) (recommended)
+- Send traces directly to SigNoz Cloud
+- Send traces via OTel Collector binary **(recommended)**
 
 #### **Send traces directly to SigNoz Cloud**
 
@@ -259,57 +255,40 @@ Step 2. Dockerize and Build your application
 To make sure that you Dockerize your application along with the OpenTelemetry instructions, you can update/create your Dockerfile like below:
 
 ```bash
-# Use an official Python runtime as a parent image
-FROM python:3.8
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the current directory contents into the container at /app
-COPY . /app
+...
 
 # Install any needed packages specified in requirements.txt
-# Make sure to include opentelemetry-distro and opentelemetry-exporter-otlp 
-#packages in your requirements.txt file
-RUN python -m pip install -r requirements.txt
+# And install OpenTelemetry packages
+RUN pip install --no-cache-dir -r requirements.txt 
 
 RUN opentelemetry-bootstrap --action=install
 
-# Run app.py with OpenTelemetry instrumentation when the container launches
-# This is the run command to start your application. Change it according to your need.
-CMD ["opentelemetry-instrument", "python", "app.py"]
-
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
+
+# Set environment variables for OpenTelemetry
+ENV OTEL_RESOURCE_ATTRIBUTES=service.name=<service-name>
+ENV OTEL_EXPORTER_OTLP_ENDPOINT=https://ingest.{REGION}.signoz.cloud:443
+ENV OTEL_EXPORTER_OTLP_HEADERS=signoz-access-token=<SIGNOZ-INGESTION-KEY>
+ENV OTEL_EXPORTER_OTLP_PROTOCOL=grpc
+
+# Run app.py with OpenTelemetry instrumentation when the container launches
+CMD ["opentelemetry-instrument", "python", "app.py"]
+...
 ```
 
-The Dockerfile sets up a Python environment for applications using OpenTelemetry instrumentation. It starts with Python 3.8, installs required packages from 'requirements.txt', including OpenTelemetry components. The container executes 'app.py' with OpenTelemetry tracing, exposing port 5000. 
+This updated Dockerfile instructions will install required packages from `requirements.txt`, including OpenTelemetry components. It sets the environment variable for OpenTelemetry configuration specifying the service name, OTLP exporter endpoint, and protocol. The container executes 'app.py' with OpenTelemetry tracing, exposing port 5000. 
 
-Once you are done updating/creating your Dockerfile, you can build your docker image using the commands below:
+Once you are done updating your Dockerfile, you can build your docker image using the commands below:
 
 Build your docker image
 ```bash
 docker build -t <your-image-name> .
 ```
 
-Step 3. Run your Docker container
-
-It is a good practices to setup your environment variables at runtime using `docker run`. Here's how you can run your docker container:
-
-```bash
-docker run -d -p 5000:5000 \
-  -e OTEL_RESOURCE_ATTRIBUTES=service.name=<service-name> \
-  -e OTEL_EXPORTER_OTLP_ENDPOINT="https://ingest.{region}.signoz.cloud:443" \
-  -e OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token=SIGNOZ_INGESTION_KEY" \
-  -e OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
-  <your-image-name>
-```
-
-The Docker run command starts a container in detached mode (-d) and maps port 5000 of the host to port 5000 of the container. It sets environment variables for OpenTelemetry configuration, specifying the service name, OTLP exporter endpoint, and protocol. 
-
-- *`<service_name>`* is the name of your service
-- *`<your_image_name>`* is the name of your docker image
-- Replace `SIGNOZ_INGESTION_KEY` with the ingestion key provided by SigNoz. You can find it in the email sent by SigNoz with your cloud account details.
+- *`<service-name>`* is name of your service or application
+- *`<your-image-name>`* is the name of your docker image
+- Replace `<SIGNOZ_INGESTION_KEY>` with the ingestion key provided by SigNoz. You can find it in the email sent by SigNoz with your cloud account details.
 
 Depending on the choice of your region for SigNoz cloud, the ingest endpoint will vary according to this table.
 
@@ -318,6 +297,17 @@ Depending on the choice of your region for SigNoz cloud, the ingest endpoint wil
 | US |	ingest.us.signoz.cloud:443 |
 | IN |	ingest.in.signoz.cloud:443 |
 | EU | ingest.eu.signoz.cloud:443 |
+
+Step 3. Run your Docker container
+
+Here's how you can run your docker container:
+
+```bash
+docker run -d -p 5000:5000 <your-image-name>
+```
+
+The Docker run command starts a container in detached mode (-d) and maps port 5000 of the host to port 5000 of the container.
+
 
 Step 4. Validate if your application is sending traces to SigNoz cloud by following the instructions [here](#validating-instrumentation-by-checking-for-traces).
 
@@ -348,57 +338,53 @@ To dockerize your application, you **don't need to follow Step 2 and Step 3** me
 To make sure that you Dockerize your application along with the OpenTelemetry instructions, you can update/create your Dockerfile like below:
 
 ```bash
-# Use an official Python runtime as a parent image
-FROM python:3.8
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the current directory contents into the container at /app
-COPY . /app
+...
 
 # Install any needed packages specified in requirements.txt
-# Make sure to include opentelemetry-distro and opentelemetry-exporter-otlp 
-#packages in your requirements.txt file
-RUN python -m pip install -r requirements.txt
+# And install OpenTelemetry packages
+RUN pip install --no-cache-dir -r requirements.txt 
 
 RUN opentelemetry-bootstrap --action=install
 
-# Run app.py with OpenTelemetry instrumentation when the container launches
-# This is the run command to start your application. Change it according to your need.
-CMD ["opentelemetry-instrument", "python", "app.py"]
-
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
+
+# Set environment variables for OpenTelemetry
+ENV OTEL_RESOURCE_ATTRIBUTES=service.name=<service-name>
+ENV OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317
+ENV OTEL_EXPORTER_OTLP_HEADERS=signoz-access-token=<SIGNOZ-INGESTION-KEY>
+ENV OTEL_EXPORTER_OTLP_PROTOCOL=grpc
+
+# Run app.py with OpenTelemetry instrumentation when the container launches
+CMD ["opentelemetry-instrument", "python", "app.py"]
+...
 ```
 
-The Dockerfile sets up a Python environment for applications using OpenTelemetry instrumentation. It starts with Python 3.8, installs required packages from 'requirements.txt', including OpenTelemetry components. The container executes 'app.py' with OpenTelemetry tracing, exposing port 5000. 
+**NOTE:** In case you have OtelCollector Agent in different VM, replace `localhost:4317` with `<IP Address of the VM>:4317`.
 
-Once you are done updating/creating your Dockerfile, you can build and run your docker image using the commands below:
+
+This updated Dockerfile instructions will install required packages from `requirements.txt`, including OpenTelemetry components. It sets the environment variable for OpenTelemetry configuration specifying the service name, OTLP exporter endpoint, and protocol. The container executes 'app.py' with OpenTelemetry tracing, exposing port 5000. 
+
+Once you are done updating your Dockerfile, you can build and run your docker image using the commands below:
 
 Build your docker image
 ```bash
 docker build -t <your-image-name> .
 ```
+
+- *`<service-name>`* is name of your service or application
+- *`<your-image-name>`* is the name of your docker image
+- Replace `<SIGNOZ_INGESTION_KEY>` with the ingestion key provided by SigNoz. You can find it in the email sent by SigNoz with your cloud account details.
+
 Step 3. Run your Docker container
 
-It is a good practices to setup your environment variables at runtime using `docker run`. Here's how you can run your docker container:
+Here's how you can run your docker container:
 
 ```bash
-docker run -d -p 5000:5000 \
-  -e OTEL_RESOURCE_ATTRIBUTES=service.name=<service-name> \
-  -e OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317 \
-  -e OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
-  <your-image-name>
+docker run -d -p 5000:5000 <your-image-name>
 ```
 
-The Docker run command starts a container in detached mode (-d) and maps port 5000 of the host to port 5000 of the container. It sets environment variables for OpenTelemetry configuration, specifying the service name, OTLP exporter endpoint, and protocol. 
-
-- *`<service_name>`* is the name of your service
-- *`<your_image_name>`* is the name of your docker image
-
-
-In case you have OtelCollector Agent in different VM, replace `localhost:4317` with `<IP Address of the VM>:4317`.
+The Docker run command starts a container in detached mode (-d) and maps port 5000 of the host to port 5000 of the container. 
 
 Step 4. You can validate if your application is sending traces to SigNoz cloud by following the instructions [here](#validating-instrumentation-by-checking-for-traces).
 
