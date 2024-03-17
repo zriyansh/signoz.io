@@ -375,7 +375,7 @@ Feel free to modify any part of the code according to your requirements.
 
 ---
 
-### Running the code locally.
+### Running the code locally
 
 If you want to run the entire setup locally in your laptop for testing purposes. Here’s the reference code for you: 
 
@@ -392,7 +392,7 @@ def send_log(file_path, url):
     requests.post(url, data=log_data, headers=headers)
 
 def main():
-    root_folder = 'elb'
+    root_folder = 'lambda'
     url = 'http://example.com/upload'  # Replace with your actual URL
 
     for root, _, files in os.walk(root_folder):
