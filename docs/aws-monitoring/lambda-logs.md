@@ -116,7 +116,7 @@ Follow these steps to create the lambda function:
 **Step 2:** Choose the `Author from scratch` checkbox and proceed to fill in the function name. 
 
 <figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_2.webp" alt=""/>
+    <img className="box-shadowed-image" src="/img/docs/lambda-docs/create_function.webp" alt=""/>
     <figcaption><i>Choose the Author from scratch and fill up other details</i></figcaption>
 </figure>
 <br />
@@ -133,7 +133,7 @@ Follow these steps to create the lambda function:
 **Step 4:** Once you are done configuring the lambda function, you Lambda function is created.
 
 <figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_4.webp" alt=""/>
+    <img className="box-shadowed-image" src="/img/docs/lambda-docs/lambda_logs_page.webp" alt=""/>
     <figcaption><i>Your barebones Lambda function is created now</i></figcaption>
 </figure>
 <br />
@@ -146,7 +146,7 @@ As said in Step 3 previously, we need extra permissions in order to access the S
 **Step 1:** Scroll down from your Lambda page, you’ll see a few tabs there. Go to `Configurations` and select `Permissions` from the left sidebar. 
 
 <figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_5.webp" alt=""/>
+    <img className="box-shadowed-image" src="/img/docs/lambda-docs/execution_role.webp" alt=""/>
     <figcaption><i>Choosing execution role from Configurations tab</i></figcaption>
 </figure>
 <br />
@@ -154,7 +154,7 @@ As said in Step 3 previously, we need extra permissions in order to access the S
 **Step 2:** Click on the `Execution Role name` link just under Role name, it will take us to AWS IAM page. Here we will add policies to get full S3 access. Once here, click on the `Add permissions` button and select `Attach policies` from the drop down list. 
 
 <figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_6.webp" alt=""/>
+    <img className="box-shadowed-image" src="/img/docs/lambda-docs/lamba_roles.webp" alt=""/>
     <figcaption><i>Attach policies to your Lambda function</i></figcaption>
 </figure>
 <br />
@@ -196,7 +196,7 @@ To setup the trigger, follow these steps:
 **Step 1:** Click on the `+ Add trigger` button from the Lambda console. 
 
 <figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_8.webp" alt=""/>
+    <img className="box-shadowed-image" src="/img/docs/lambda-docs/add_trigger.webp" alt=""/>
     <figcaption><i>Add a trigger to the function.</i></figcaption>
 </figure>
 <br />
@@ -206,7 +206,7 @@ To setup the trigger, follow these steps:
 **Step 3:** For the Event types field, you can select any number of options you wish. The trigger will occur depending upon what option(s) you choose here. By default, the `All object create events` will be selected. 
 
 <figure data-zoomable align='center'>
-    <img className="box-shadowed-image" src="/img/docs/elb/elb-logs-lambda_9.webp" alt=""/>
+    <img className="box-shadowed-image" src="/img/docs/lambda-docs/add_trigger_2.webp" alt=""/>
     <figcaption><i>Choose event types from the drop down menu</i></figcaption>
 </figure>
 <br />
