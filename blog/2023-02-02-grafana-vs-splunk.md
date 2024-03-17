@@ -275,7 +275,7 @@ In summary, choose Splunk if you need a versatile platform for comprehensive dat
 
 ## SigNoz - an alternative to Grafana and Splunk
 
-SigNoz is an open source APM that provides metrics, logs, and traces under a single pane of glass. It uses OpenTelemetry for application instrumentation. OpenTelemetry is quietly becoming the world standard for instrumenting cloud-native applications. SigNoz can be a great alternative to Grafana and Splunk.
+SigNoz is an open source APM that provides metrics, logs, and traces under a [single pane of glass](https://signoz.io/blog/single-pane-of-glass-monitoring/). It uses OpenTelemetry for application instrumentation. OpenTelemetry is quietly becoming the world standard for instrumenting cloud-native applications. SigNoz can be a great alternative to Grafana and Splunk.
 
 
 It is available both as an [open-source software](https://github.com/SigNoz/signoz) and a [cloud offering](https://signoz.io/teams/).
