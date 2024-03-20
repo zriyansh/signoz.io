@@ -613,11 +613,6 @@ module.exports = {
           id: 'aws-monitoring/rds-logs',
           label: 'RDS',
         },
-        {
-          type: 'doc',
-          id: 'aws-monitoring/lambda-logs',
-          label: 'AWS Lambda',
-        },
       ],
     },
     {
