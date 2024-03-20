@@ -607,11 +607,16 @@ module.exports = {
           id: 'aws-monitoring/vpc-logs',
           label: 'VPC',
         },
-        
+
         {
           type: 'doc',
           id: 'aws-monitoring/rds-logs',
           label: 'RDS',
+        },
+        {
+          type: 'doc',
+          id: 'aws-monitoring/lambda-logs',
+          label: 'AWS Lambda',
         },
       ],
     },
