@@ -604,6 +604,11 @@ module.exports = {
         },
         {
           type: 'doc',
+          id: 'aws-monitoring/vpc-logs',
+          label: 'VPC',
+        },
+        {
+          type: 'doc',
           id: 'aws-monitoring/rds-logs',
           label: 'RDS',
         },
