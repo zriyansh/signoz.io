@@ -43,7 +43,7 @@ Jaeger was originally built by teams at Uber and then open-sourced. It is used f
   One of the challenges of distributed systems is to have a standard format for passing context across process boundaries and services. Jaeger provides client libraries that support code instrumentation in multiple languages to propagate context across services
 
 - **Distributed transaction monitoring**<br></br>
-  Jaeger comes with a web UI written in Javascript. The dashboard can be used to see traces and spans across services.
+  Jaeger comes with a web UI written in Javascript. The dashboard can be used to see traces and [spans](https://signoz.io/blog/distributed-tracing-span/) across services.
 
 - **Root Cause Analysis**<br></br>
   Using traces you can drill down to services causing latency in particular user request.
@@ -176,7 +176,7 @@ SigNoz comes with out of box visualization of things like RED metrics.
     width={700}
 />
 
-You can also use flamegraphs to visualize spans from your trace data. All of this comes out of the box with SigNoz.
+You can also use [flamegraphs](https://signoz.io/blog/flamegraphs/) to visualize spans from your trace data. All of this comes out of the box with SigNoz.
 
 <Screenshot
     alt="Flamegraphs used to visualize spans of distributed tracing in SigNoz UI"

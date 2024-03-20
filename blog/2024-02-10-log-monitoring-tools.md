@@ -358,7 +358,7 @@ You can centralize all logs from on-premise systems or cloud-based systems. You 
 
 | Pros | Cons |
 | --- | --- |
-| You can automatically parse syslog and Apache logs and NGINX logs. | Rest API is in beta, so still needs improvement. |
+| You can automatically parse syslog and Apache logs and [NGINX logs](https://signoz.io/blog/nginx-logging/). | Rest API is in beta, so still needs improvement. |
 | Has an intuitive UI for search and alert processing. | Data retention is usually available for 30 days. |
 | It can deal with spikes faster and more effectively. |  |
 
