@@ -34,7 +34,7 @@ In this article, we will explore the differences between DataDog and Prometheus 
 We will also explore the key features of DataDog and Prometheus.
 
 > While DataDog and Prometheus are great monitoring tools, they have their limitations. DataDog is an enterprise SaaS tool with complex pricing tiers. Prometheus is an open-source metrics monitoring tool with limited UI and requires effort to set up and scale.<br></br>
-> You can check out [SigNoz](https://signoz.io/) - an open-source APM tool that provides metrics, traces, and logs under a single pane of glass.
+> You can check out [SigNoz](https://signoz.io/) - an open-source APM tool that provides metrics, traces, and logs under a [single pane of glass](https://signoz.io/blog/single-pane-of-glass-monitoring/).
 
 ## Comparing DataDog and Prometheus
 
@@ -80,7 +80,7 @@ Some of the key differences between DataDog and Prometheus at a glance:
 
 **Data Visualization:** Offers a plethora of visualization tools, including dashboards, graphs, and maps. Custom visualizations are also supported.
 
-**Real-time Monitoring:** Provides real-time monitoring through metrics, logs, and traces. Distributed tracing is available to track individual request performance.
+**Real-time Monitoring:** Provides real-time monitoring through metrics, logs, and traces. [Distributed tracing](https://signoz.io/blog/distributed-tracing-in-microservices/) is available to track individual request performance.
 
 **Search Capabilities:** A robust search interface with various filters and operators. Anomaly detection using machine learning identifies unusual data patterns.
 
@@ -230,7 +230,7 @@ SigNoz comes with out of box visualization of things like RED metrics.
     width={700}
 />
 
-You can also use flamegraphs to visualize spans from your trace data. All of this comes out of the box with SigNoz.
+You can also use [flamegraphs](https://signoz.io/blog/flamegraphs/) to visualize spans from your trace data. All of this comes out of the box with SigNoz.
 
 <Screenshot
     alt="Flamegraphs used to visualize spans of distributed tracing in SigNoz UI"

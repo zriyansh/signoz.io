@@ -90,7 +90,7 @@ In Datadog, I had a hard time figuring out whether my setup was complete or not,
 
 The good thing about Datadog is it gives you a lot of control. You can set up things like collecting custom metrics (which might be [expensive](https://signoz.io/blog/datadog-pricing/)), sampling rate, and telemetry correlation between traces and logs right from the beginning.
 
-Once the setup is done, you can see your list of spans and corresponding flamegraphs for your traces. Datadog does a good job of correlating different types of signals. You can relate info from infrastructure, metrics, network, etc., right from trace data if you have those products enabled.
+Once the setup is done, you can see your list of [spans](https://signoz.io/blog/distributed-tracing-span/) and corresponding [flamegraphs](https://signoz.io/blog/flamegraphs/) for your traces. Datadog does a good job of correlating different types of signals. You can relate info from infrastructure, metrics, network, etc., right from trace data if you have those products enabled.
 
 <br></br>
 
@@ -226,7 +226,7 @@ OpenTelemetry is quietly emerging as the open-source standard for collecting all
 
 Both Datadog’s and New Relic’s support for OpenTelemetry is [not up to the mark](https://signoz.io/blog/is-opentelemetry-a-first-class-citizen-in-your-dashboard-a-datadog-and-newrelic-comparison/), which seems reasonable as their entire product is anchored around their specific agents. 
 
-For example, Datadog cannot link traces and logs automatically with the DataDog OpenTelemetry tools. New Relic’s documentation is better for using OpenTelemetry, but once the data gets reported, you can see the difference again.
+For example, Datadog cannot link traces and logs automatically with the [DataDog OpenTelemetry](https://signoz.io/blog/opentelemetry-vs-datadog/) tools. New Relic’s documentation is better for using OpenTelemetry, but once the data gets reported, you can see the difference again.
 
 <br></br>
 
