@@ -115,7 +115,7 @@ Users who are getting started with OpenTelemetry sometimes get confused with so 
     These are specific implementations of the OpenTelemetry API and SDK for different programming languages. They are the actual packages or modules that developers integrate into their software applications to collect, process, and export telemetry data (metrics, logs, and traces).
 
 - **OpenTelemetry Collector**<br></br>
-    The OpenTelemetry Collector is a standalone service or agent that can collect, process, and export telemetry data (metrics, traces, and logs). It plays a crucial role in the OpenTelemetry architecture by acting as a central component that can receive data from various sources, process and enrich this data, and then send it to multiple backends for analysis and monitoring.
+    The OpenTelemetry Collector is a standalone service or agent that can collect, process, and export telemetry data (metrics, traces, and logs). It plays a crucial role in the [OpenTelemetry architecture](https://signoz.io/blog/opentelemetry-architecture/) by acting as a central component that can receive data from various sources, process and enrich this data, and then send it to multiple backends for analysis and monitoring.
 
 [OpenTelemetry Collector - architecture and configuration guide](https://signoz.io/blog/opentelemetry-collector-complete-guide/)
 
@@ -248,7 +248,7 @@ Whereas Prometheus provides a time-series database and basic web visualization l
 
 ## Interoperability between OpenTelemetry and Prometheus
 
-Prometheus supports OpenTelemetry metrics. On the other hand, you can configure OpenTelemetry Collector to collect metrics from Prometheus targets. This interoperability means you can use both the tools to monitor your software systems based on your use case.
+Prometheus supports [OpenTelemetry metrics](https://signoz.io/blog/introduction-to-opentelemetry-metrics/). On the other hand, you can configure OpenTelemetry Collector to collect metrics from Prometheus targets. This interoperability means you can use both the tools to monitor your software systems based on your use case.
 
 OpenTelemetry Collector provides various receivers including a receiver for Prometheus which you can use to collect Prometheus metrics. The data flow for this setup will look like below:
 
@@ -348,7 +348,7 @@ Both OpenTelemetry and Prometheus are open-source projects, implying that they a
 
 ## Future-proofing your Observability with OpenTelemetry
 
-With Prometheus, you can monitor metrics. But your engineering teams will never be able to identify the root cause of issues in your application using just metrics. For that, you also need distributed tracing and logs.
+With Prometheus, you can monitor metrics. But your engineering teams will never be able to identify the root cause of issues in your application using just metrics. For that, you also need [distributed tracing](https://signoz.io/blog/distributed-tracing-in-microservices/) and logs.
 
 OpenTelemetry is becoming the world standard for instrumenting application code due to its multi-language support and ease of use. But OpenTelemetry helps only to generate and collect telemetry data. You need to export the telemetry data to a backend analysis tool so that your teams can store, query, and visualize the collected data.
 
