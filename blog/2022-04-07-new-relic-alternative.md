@@ -91,7 +91,7 @@ Some of our key features which makes SigNoz vastly superior to current open-sour
 
 - Visualise Traces, Metrics, and Logs in a single pane of glass
 - Monitor application metrics like p99 latency, error rates for your services, external API calls, and individual endpoints.
-- Find the root cause of the problem by going to the exact traces which are causing the problem and see detailed flamegraphs of individual request traces.
+- Find the root cause of the problem by going to the exact traces which are causing the problem and see detailed [flamegraphs](https://signoz.io/blog/flamegraphs/) of individual request traces.
 - Run aggregates on trace data to get business-relevant metrics
 - Filter and query logs, build dashboards and alerts based on attributes in logs
 - Monitor infrastructure metrics such as CPU utilization or memory usage
