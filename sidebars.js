@@ -612,7 +612,6 @@ module.exports = {
           id: 'aws-monitoring/rds-logs',
           label: 'RDS',
         },
-        
       ],
     },
     {
