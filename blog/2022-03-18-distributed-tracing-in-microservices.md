@@ -73,7 +73,7 @@ The two most important data points collected with distributed tracing are:
 - time taken to traverse each component in a distributed system
 - the sequential flow of the request from its start to the end
 
-The tracing data can then be visualized in various formats like Flamegraphs and Gantt charts to show the journey of the entire user request.
+The tracing data can then be visualized in various formats like [Flamegraphs and Gantt charts](https://signoz.io/blog/flamegraphs/) to show the journey of the entire user request.
 
 <Screenshot
     alt="Flamegraphs and Gantt charts"
