@@ -99,7 +99,7 @@ Now let's explore the top 13 open source APM tools in 2024.
 - **Alternative to:** Datadog, New Relic, Dynatrace
 - [SigNoz on GitHub](https://github.com/SigNoz/signoz)
 
-[SigNoz](https://signoz.io/) is a full-stack open source APM and observability tool. It provides logs, metrics, and traces under a single pane of glass. It is built to support OpenTelemetry natively, and uses Clickhouse - a powerful OLAP database for faster ingestion and aggregations.
+[SigNoz](https://signoz.io/) is a full-stack open source APM and observability tool. It provides logs, metrics, and traces under a [single pane of glass](https://signoz.io/blog/single-pane-of-glass-monitoring/). It is built to support OpenTelemetry natively, and uses Clickhouse - a powerful OLAP database for faster ingestion and aggregations.
 
 <!-- - User requests per second
 - 50th, 90th, and 99th percentile latencies of microservices in your application
@@ -118,7 +118,7 @@ import Screenshot from "@theme/Screenshot"
 
 SigNoz has most features that vendors like Datadog offers. The feature set covers capabilities across the three telemetry signals: logs, metrics, and traces. You can monitor APM metrics like user requests for each of your applications, error rate, app latencies, etc.
 
-Using distributed tracing, you can identify the root cause of performance issues. The logs tab in SigNoz comes with advanced query builder, multiple compact views, and live tail logging.
+Using [distributed tracing](https://signoz.io/blog/distributed-tracing-in-microservices/), you can identify the root cause of performance issues. The logs tab in SigNoz comes with advanced query builder, multiple compact views, and live tail logging.
 
 #### Open Source license and Cloud Option
 
