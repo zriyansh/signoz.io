@@ -86,7 +86,7 @@ Some of the key differences between DataDog and Prometheus at a glance:
 
 **Machine Learning:** Features like anomaly detection and forecasting are driven by machine learning. Custom ML models can also be built.
 
-<!-- import Screenshot from "@theme/Screenshot" -->
+import Screenshot from "@theme/Screenshot"
 
 <!-- <Screenshot
     alt="DataDog dashboard"

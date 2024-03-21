@@ -55,6 +55,8 @@ When you are done installing SigNoz, you can access the UI at: [http://localhos
 
 The application list shown in the dashboard is from a sample app called HOT R.O.D that comes bundled with the SigNoz installation package.
 
+import Screenshot from "@theme/Screenshot"
+
 <Screenshot
   alt="SigNoz dashboard"
   height={500}

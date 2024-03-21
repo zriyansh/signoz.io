@@ -22,8 +22,6 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/log-monitoring-tools/"/>
 </head>
 
-import GetStartedSigNoz from '../docs/shared/get-started-signoz.md';
-
 For any software company, a log monitoring tool is a must for collecting, storing, and providing a centralized view of all logs from different applications and hosts for faster anomaly detection, incident resolution, and troubleshooting.
 
 <!--truncate-->
