@@ -17,7 +17,7 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/jaeger-vs-zipkin/"/>
 </head>
 
-Distributed tracing is becoming a critical component of any application's performance monitoring stack. However, setting it up in-house is an arduous task, and that's why many companies prefer outside tools. Jaeger and Zipkin are two popular open-source projects used for end-to-end distributed tracing. Let us explore their key differences in this article.
+[Distributed tracing](https://signoz.io/blog/distributed-tracing-in-microservices/) is becoming a critical component of any application's performance monitoring stack. However, setting it up in-house is an arduous task, and that's why many companies prefer outside tools. [Jaeger](https://signoz.io/blog/distributed-tracing-jaeger/) and Zipkin are two popular open-source projects used for end-to-end distributed tracing. Let us explore their key differences in this article.
 
 <!--truncate-->
 
@@ -41,7 +41,7 @@ import Screenshot from "@theme/Screenshot"
     width={700}
 />
 
-Distributed tracing gives you insight into how a particular service is performing as part of the whole in a distributed software system. There are two important concepts involved in distributed tracing: **Spans** and **trace context**.
+Distributed tracing gives you insight into how a particular service is performing as part of the whole in a distributed software system. There are two important concepts involved in distributed tracing: **[Spans](https://signoz.io/blog/distributed-tracing-span/)** and **[trace context](https://signoz.io/blog/context-propagation-in-distributed-tracing/)**.
 
 User requests are broken down into spans.
 
@@ -151,7 +151,7 @@ Summarizing the key differences between Jaeger and Zipkin:
 - **Community Support**<br></br>
     Despite being newer, Jaeger has caught up to Zipkin in terms of community support. Zipkin is a standalone project which came into existence before containerization went mainstream. Jaeger, as part of CNCF, is a recognized project in cloud-native architectures.
 
-Both Jaeger and Zipkin are strong contenders when it comes to a distributed tracing tool. But are traces enough to solve all performance issues of a modern distributed application? The answer is no. You also need metrics and a way to correlate metrics with traces with a single dashboard. Most SaaS vendors provide both metrics and traces under a single pane of glass. But the beauty of Jaeger and Zipkin is that they are open-source. What if an open-source solution does both and comes with a great web UI with actionable insights for your engineering teams?
+Both Jaeger and Zipkin are strong contenders when it comes to a distributed tracing tool. But are traces enough to solve all performance issues of a modern distributed application? The answer is no. You also need metrics and a way to correlate metrics with traces with a single dashboard. Most SaaS vendors provide both metrics and traces under a [single pane of glass](https://signoz.io/blog/single-pane-of-glass-monitoring/). But the beauty of Jaeger and Zipkin is that they are open-source. What if an open-source solution does both and comes with a great web UI with actionable insights for your engineering teams?
 
 That's where [SigNoz](https://signoz.io/) comes into the picture.
 
