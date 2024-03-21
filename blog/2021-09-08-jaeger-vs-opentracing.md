@@ -18,7 +18,7 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/jaeger-vs-opentracing/"/>
 </head>
 
-Jaeger and OpenTracing are both open-source projects. Jaeger was originally built by teams at Uber and then open-sourced. The OpenTracing project was also started by teams at Uber, and hence they are compatible with each other. While Jaeger is an end-to-end distributed tracing tool, OpenTracing is a set of APIs and libraries that can be used to instrument your application.
+Jaeger and OpenTracing are both open-source projects. Jaeger was originally built by teams at Uber and then open-sourced. The OpenTracing project was also started by teams at Uber, and hence they are compatible with each other. While Jaeger is an end-to-end [distributed tracing](https://signoz.io/blog/distributed-tracing-in-microservices/) tool, OpenTracing is a set of APIs and libraries that can be used to instrument your application.
 
 <!--truncate-->
 
@@ -32,7 +32,7 @@ Both projects aimed to solve the pain point of distributed tracing in microservi
 Let's see how Jaeger and OpenTracing play a role in implementing distributed tracing for your application.
 
 ## What is Jaeger?
-Jaeger is a popular open-source distributed tracing tool that was originally built by teams at Uber and then open-sourced. It is used to monitor and troubleshoot applications based on microservices architecture.
+[Jaeger](https://signoz.io/blog/jaeger-microservices/) is a popular open-source distributed tracing tool that was originally built by teams at Uber and then open-sourced. It is used to monitor and troubleshoot applications based on microservices architecture.
 
 It provides instrumentation libraries that were built on OpenTracing standard. For storing trace data, it supports two storage backends:
 
@@ -97,7 +97,7 @@ As already mentioned, OpenTracing merged with OpenCensus into a single project c
 
 The data collected with OpenTelemetry can also be sent to Jaeger's backend. But Jaeger is limited in terms of its UI and does only distributed tracing. For a robust monitoring and observability framework, you need a unified UI for both metrics and traces. And that's where SigNoz is far [more suited](https://signoz.io/blog/jaeger-vs-signoz/) than Jaeger as a distributed tracing tool.
 
-SigNoz is a full-stack open-source application performance monitoring and observability tool which can be used in place of Jaeger. SigNoz is built to support OpenTelemetry natively. SigNoz provides logs, metrics, and traces under a single pane of glass. 
+SigNoz is a full-stack open-source application performance monitoring and observability tool which can be used in place of Jaeger. SigNoz is built to support OpenTelemetry natively. SigNoz provides logs, metrics, and traces under a [single pane of glass](https://signoz.io/blog/single-pane-of-glass-monitoring/). 
 
 <Screenshot
     alt="Architecture of SigNoz with OpenTelemetry and ClickHouse"
@@ -154,7 +154,7 @@ OpenTracing is used for instrumenting application code for distributed tracing. 
 ___
 
 #### How to get started with OpenTracing?
-As OpenTracing is no longer maintained, the best option out there is OpenTelemetry, which is backed by all major cloud vendors like Google and Microsoft. The easiest way to get started with OpenTelemetry is to use [SigNoz](https://signoz.io/docs/architecture/) - an open-source APM and observability tool. It uses OpenTelemetry natively to instrument application.
+As OpenTracing is no longer maintained, the best option out there is OpenTelemetry, which is backed by all major cloud vendors like Google and Microsoft. The easiest way to get started with OpenTelemetry is to use [SigNoz](https://signoz.io/docs/architecture/) - an open-source APM and observability tool. It uses OpenTelemetry natively to [instrument application](https://signoz.io/docs/instrumentation/).
 
 ___
 
