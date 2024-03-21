@@ -38,7 +38,7 @@ import Screenshot from "@theme/Screenshot"
     width={700}
 />
 
-Distributed tracing gives insights into how a particular service is performing as part of the whole in a distributed software system. It involves passing a trace context with each user request which is then passed across hosts, services, and protocols to track the user request.
+Distributed tracing gives insights into how a particular service is performing as part of the whole in a distributed software system. It involves passing a [trace context](https://signoz.io/blog/context-propagation-in-distributed-tracing/) with each user request which is then passed across hosts, services, and protocols to track the user request.
 
 These requests are broken down into spans, and the entire request is represented by a trace.
 
