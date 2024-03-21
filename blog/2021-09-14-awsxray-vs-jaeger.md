@@ -48,7 +48,7 @@ User requests are broken down into spans.
 > What are spans?<br></br>
 > Spans represent a single operation within a trace. Thus, it represents work done by a single service which can be broken down further depending on the use case.
 
-A **trace context** is passed along when requests travel between services, which tracks a user request across services. Thus, you can see how a user request performs across services and identify what exactly needs your attention without manually shifting through multiple dashboards.
+A [trace context](https://signoz.io/blog/context-propagation-in-distributed-tracing/) is passed along when requests travel between services, which tracks a user request across services. Thus, you can see how a user request performs across services and identify what exactly needs your attention without manually shifting through multiple dashboards.
 
 <Screenshot
     alt="Trace context is passed to track user requests across services"
