@@ -17,8 +17,6 @@ keywords:
   <link rel="canonical" href="https://signoz.io/blog/cloud-strategy/"/>
 </head>
 
-import GetStartedSigNoz from '../docs/shared/get-started-signoz.md';
-
 In today’s digital world, performance and agility are essential for running a successful business, and in the technology arena, there is no exception. Over the past few years, there has been a significant rise in the use of cloud computing technology as more companies prefer scalability of resources, flexibility in experimenting with new technologies, reducing cost by eliminating the need to invest in on-premises hardware, etc.
 
 <!--truncate-->
