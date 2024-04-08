@@ -621,6 +621,76 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Azure Monitoring',
+      items: [
+        {
+          type: 'category',
+          label: 'Bootstrapping',
+          link: {
+            type: 'generated-index',
+            title: 'bootstrapping',
+            slug: '/azure-monitoring/bootstrapping',
+          },
+          items: [
+            {
+              type: 'doc',
+              id: 'azure-monitoring/bootstrapping/strategy',
+              label: 'Strategy',
+            },
+            {
+              type: 'doc',
+              id: 'azure-monitoring/bootstrapping/collector-setup',
+              label: 'Centralized Collector Setup',
+            },
+            {
+              type: 'doc',
+              id: 'azure-monitoring/bootstrapping/data-ingestion',
+              label: 'EventHub Streaming Ingestion',
+            }
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Virtual Machines',
+          link: {
+            type: 'generated-index',
+            title: 'Virtual Machines',
+            slug: '/azure-monitoring/virtual-machines',
+          },
+          items: [
+            {
+              type: 'doc',
+              id: 'azure-monitoring/virtual-machines/vm-metrics',
+              label: 'VM Host Metrics & Logging',
+            }
+          ]
+        },
+        {
+          type: 'category',
+          label: 'App Service',
+          link: {
+            type: 'generated-index',
+            title: 'App Service',
+            slug: '/azure-monitoring/app-service',
+          },
+          items: [
+            {
+              type: 'doc',
+              id: 'azure-monitoring/app-service/metrics',
+              label: 'Logging',
+            },
+            {
+              type: 'doc',
+              id: 'azure-monitoring/app-service/logging',
+              label: 'Metrics',
+            }
+          ]
+        }
+      ]
+
+    },
+    {
+      type: 'category',
       label: 'Operate Self-Hosted SigNoz',
       link: {
         type: 'generated-index',
