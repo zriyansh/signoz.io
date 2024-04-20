@@ -632,11 +632,11 @@ module.exports = {
             slug: '/azure-monitoring/bootstrapping',
           },
           items: [
-            {
-              type: 'doc',
-              id: 'azure-monitoring/bootstrapping/strategy',
-              label: 'Strategy',
-            },
+            // {
+            //   type: 'doc',
+            //   id: 'azure-monitoring/bootstrapping/strategy',
+            //   label: 'Strategy',
+            // },
             {
               type: 'doc',
               id: 'azure-monitoring/bootstrapping/collector-setup',
