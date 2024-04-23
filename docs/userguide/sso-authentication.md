@@ -87,6 +87,12 @@ For more details on the metadata page, click [here](https://learn.microsoft.com/
 
 #### Steps to be performed in Okta
 
+<figure data-zoomable align='center'>
+    <img src="/img/docs/okta-sso-saml-integration.gif" alt="Okta SSO SAML Integration"/>
+    <figcaption><i>Okta SSO SAML Integration</i></figcaption>
+</figure>
+<br></br>
+
 1. Log in to **Okta**
 2. From the **Admin** page, go to **Applications** > **Applications** > **Create App Integration**
 3. Select **SAML 2.0**, and hit **Next**
