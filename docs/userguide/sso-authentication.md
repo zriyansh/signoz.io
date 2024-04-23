@@ -124,6 +124,12 @@ For more details on the metadata page, click [here](https://learn.microsoft.com/
 
 #### Steps to be performed in SigNoz
 
+<figure data-zoomable align='center'>
+    <img src="/img/docs/signoz-okta-sso-enable.gif" alt="Enable Okta SSO SAML in SigNoz"/>
+    <figcaption><i>Enable Okta SSO SAML in SigNoz</i></figcaption>
+</figure>
+<br></br>
+
 1. Go to `Settings`. Click on `Organization Settings` tab and locate `Authenticated Domains` in the page
 2. Click `Add Domain`
 3. Enter the domain that your users would login with. For example, if your user names or emails are in format such as *john@example.com* then you would have to enter *example.com* here.
