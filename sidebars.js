@@ -81,6 +81,7 @@ module.exports = {
           type: 'doc',
           id: 'product-features/saved-view',
           label: 'Saved View',
+          className: 'new-doc', // Add this line
         },
       ]
     },
