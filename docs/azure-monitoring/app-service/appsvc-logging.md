@@ -3,10 +3,6 @@ id: logging
 title: App Service Logging
 ---
 
-:::note
-WIP: This documentation is a work in progress.
-:::
-
 ## Overview
 The following categories of App Service Logs are available to export to Storage Account or EventHub. 
 
@@ -35,9 +31,9 @@ Although, the application logs could be sent directly in the Application Level u
         alt="App Service Diagnostic Settings"
     />
     <figcaption>
-        <i>
-        App Service Diagnostic Settings
-        </i>
+    <i>
+    App Service Diagnostic Settings
+    </i>
     </figcaption>
     </figure>
 4. Select the desired log categories to export:
@@ -53,9 +49,9 @@ Although, the application logs could be sent directly in the Application Level u
         alt="App Service Diagnostic Configuration"
     />
     <figcaption>
-        <i>
-        App Service Diagnostic Configuration
-        </i>
+    <i>
+    App Service Diagnostic Configuration
+    </i>
     </figcaption>
     </figure>
 5. Configure the destination as the Event Hub namespace and Event Hub name created earlier

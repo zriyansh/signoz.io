@@ -17,7 +17,7 @@ To quickly get started, run the following commands on your Azure VM:
 
 ```bash
 sudo apt update && sudo apt -y install wget systemctl
-curl -o /tmp/otel.deb -L https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.96.0/otelcol_0.96.0_linux_amd64.deb && sudo dpkg -i /tmp/otel.deb
+curl -o /tmp/otel.deb -L https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.96.0/otelcol-contrib_0.96.0_linux_amd64.deb && sudo dpkg -i /tmp/otel.deb
 ```
 </TabItem>
 <TabItem value="rhel" label="Red Hat, CentOS">
@@ -25,7 +25,7 @@ curl -o /tmp/otel.deb -L https://github.com/open-telemetry/opentelemetry-collect
 ```bash
 sudo yum update
 sudo yum -y install wget systemctl
-curl -o /tmp/otel.rpm -L https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.96.0/otelcol_0.96.0_linux_amd64.rpm && sudo rpm -ivh /tmp/otel.rpm
+curl -o /tmp/otel.rpm -L https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.96.0/otelcol-contrib_0.96.0_linux_amd64.rpm && sudo rpm -ivh /tmp/otel.rpm
 ```
 </TabItem>
 <TabItem value="fedora" label="Fedora">
@@ -33,7 +33,7 @@ curl -o /tmp/otel.rpm -L https://github.com/open-telemetry/opentelemetry-collect
 ```bash
 sudo dnf update
 sudo dnf -y install wget systemctl
-curl -o /tmp/otel.rpm -L https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.96.0/otelcol_0.96.0_linux_amd64.rpm && sudo rpm -ivh /tmp/otel.rpm
+curl -o /tmp/otel.rpm -L https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.96.0/otelcol-contrib_0.96.0_linux_amd64.rpm && sudo rpm -ivh /tmp/otel.rpm
 ```
 
 </TabItem>
@@ -41,7 +41,7 @@ curl -o /tmp/otel.rpm -L https://github.com/open-telemetry/opentelemetry-collect
 
 ```bash
 apk update && apk add wget shadow
-curl -o /tmp/otel.apk -L https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.96.0/otelcol_0.96.0_linux_amd64.apk && apk add --allow-untrusted /tmp/otel.apk
+curl -o /tmp/otel.apk -L https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.96.0/otelcol-contrib_0.96.0_linux_amd64.apk && apk add --allow-untrusted /tmp/otel.apk
 ```
 </TabItem>
 </Tabs>
@@ -54,7 +54,7 @@ For more platforms like ARM64 or i386, read the official [OpenTelemetry installa
 
 ```bash
 
-cat > /etc/otelcol/config.yaml << EOF
+cat > /etc/otelcol-contrib/config.yaml << EOF
 receivers:
   filelog:
     include: [ <file paths> ] # /var/log/myservice/*.json 
@@ -109,11 +109,7 @@ extensions:
   zpages: {}
 exporters:
   otlp:
-    endpoint: "ingest.{region}.signoz.cloud:443"
-    tls:
-      insecure: false
-    headers:
-      "signoz-access-token": "<SIGNOZ_INGESTION_KEY>"
+    endpoint: "<Central Collector DNS Name>:4318"
   logging:
     verbosity: normal
 service:
@@ -162,8 +158,7 @@ Follow these steps to set up your Azure VM to send logs, traces and metrics to S
 3. SSH into your Azure VM: 
 `ssh -i ~/.ssh/id_rsa azureuser@<public-ip>` 
 4. Download and install the OpenTelemetry Collector in Quick Start
-5. Configure the OpenTelemetry Collector: There is a sample config in Quick Start
-Make sure to replace `{region}` with your SigNoz region and `<SIGNOZ_INGESTION_KEY>` with your actual SigNoz ingestion key. Also, the file paths are configured with all the necessary logs that need to be streamed to SigNoz.
+5. Configure the OpenTelemetry Collector: There is a sample config in Quick Start. Also, the file paths are configured with all the necessary logs that need to be streamed to SigNoz.
 6. Verify that the OpenTelemetry Collector is running:You should see the service status as "active (running)".
     
     ```bash
@@ -176,11 +171,11 @@ Make sure to replace `{region}` with your SigNoz region and `<SIGNOZ_INGESTIO
 
 If you encounter any issues during the setup process, here are a few troubleshooting steps:
 
-- Ensure that you have replaced `{region}` and `<SIGNOZ_INGESTION_KEY>` with the correct values in the OpenTelemetry Collector configuration.
+- Ensure that you have replaced `{region}` and `<SIGNOZ_INGESTION_KEY>` with the correct values in the Central Collector configuration.
 - Check the OpenTelemetry Collector logs for any errors:
     
     ```bash
-    sudo journalctl -u otelcol
+    sudo journalctl -u otelcol-contrib
     ```
     
 - Verify that the necessary ports (4317 for gRPC, 4318 for HTTP) are open in the Azure VM's network security group.

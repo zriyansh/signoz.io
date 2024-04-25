@@ -11,7 +11,7 @@ By creating an Event Hubs namespace and an event hub, you can stream logs from v
 
 SigNoz, an open-source application performance monitoring and observability tool, can be integrated with Azure Event Hubs to provide a powerful log management solution. By streaming logs to SigNoz via Event Hubs, you can leverage SigNoz's features for log aggregation, querying, visualization, and alerting.
 
-To learn more about the general strategy for monitoring Azure resources, see [this documentation](../strategy).
+<!-- To learn more about the general strategy for monitoring Azure resources, see [this documentation](../strategy). -->
 
 ## Prerequisites
 

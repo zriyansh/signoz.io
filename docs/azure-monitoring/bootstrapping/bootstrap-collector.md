@@ -9,7 +9,7 @@ Setting up a centralised OpenTelemetry Collector offers several benefits for man
 
  This guide will walk you through the process of creating a centralized OpenTelemetry Collector using Azure Kubernetes Service (AKS) or an Azure Virtual Machine (VM). 
 
-To learn more about the general strategy for monitoring Azure resources, see [this documentation](../strategy).
+<!-- To learn more about the general strategy for monitoring Azure resources, see [this documentation](../strategy). -->
 
 ## Prerequisites
 
@@ -49,10 +49,31 @@ Below is an example targeting the SigNoz backend with Azure Monitor receivers co
 ```yaml
 service:
   pipelines:
-    metrics:
+    metrics/am:
       receivers: [azuremonitor]
       exporters: [otlp]
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp]
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp]
+    logs:
+      receivers: [otlp, azureeventhub]
+      processors: [batch]
+      exporters: [otlp]
 receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+  azureeventhub:
+    connection: Endpoint=sb://namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=superSecret1234=;EntityPath=hubName
+    format: "azure"
   azuremonitor:
     subscription_id: "<Subscription ID>"
     tenant_id: "<AD Tenant ID>"
@@ -60,6 +81,8 @@ receivers:
     client_secret: "<Client Secret>"
     resource_groups: ["<rg-1>"]
     collection_interval: 60s
+processors:
+  batch: {}
 exporters:
   otlp:
     endpoint: "ingest.<region>.signoz.cloud:443"
@@ -67,7 +90,6 @@ exporters:
       insecure: false
     headers:
       "signoz-access-token": "<ingestion-key>"
-
 ```
 
 1. **Deploy the OpenTelemetry Collector to your Kubernetes cluster:**
@@ -101,25 +123,47 @@ If you're not using Kubernetes, setting up the OpenTelemetry Collector on a Virt
     ```yaml
     service:
       pipelines:
-        metrics:
+        metrics/am:
           receivers: [azuremonitor]
           exporters: [otlp]
-    receivers:
-      azuremonitor:
-        subscription_id: "<Subscription ID>"
-        tenant_id: "<AD Tenant ID>"
-        client_id: "<Client ID>"
-        client_secret: "<Client Secret>"
-        resource_groups: ["<rg-1>"]
-        collection_interval: 60s
-    exporters:
-      otlp:
-        endpoint: "ingest.<region>.signoz.cloud:443"
-        tls:
-          insecure: false
-        headers:
-          "signoz-access-token": "<ingestion-key>"
-    
+        traces:
+          receivers: [otlp]
+          processors: [batch]
+          exporters: [otlp]
+        metrics:
+          receivers: [otlp]
+          processors: [batch]
+          exporters: [otlp]
+        logs:
+          receivers: [otlp, azureeventhub]
+          processors: [batch]
+          exporters: [otlp]
+      receivers:
+        otlp:
+          protocols:
+            grpc:
+              endpoint: 0.0.0.0:4317
+            http:
+              endpoint: 0.0.0.0:4318
+        azureeventhub:
+          connection: Endpoint=sb://namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=superSecret1234=;EntityPath=hubName
+          format: "azure"
+        azuremonitor:
+          subscription_id: "<Subscription ID>"
+          tenant_id: "<AD Tenant ID>"
+          client_id: "<Client ID>"
+          client_secret: "<Client Secret>"
+          resource_groups: ["<rg-1>"]
+          collection_interval: 60s
+      processors:
+        batch: {}
+      exporters:
+        otlp:
+          endpoint: "ingest.<region>.signoz.cloud:443"
+          tls:
+            insecure: false
+          headers:
+            "signoz-access-token": "<ingestion-key>"
     ```
     
     Ensure you replace the placeholders `<region>` and `<ingestion-key>` with the appropriate values for your observability backend.
@@ -133,11 +177,48 @@ If you're not using Kubernetes, setting up the OpenTelemetry Collector on a Virt
     ./otelcol-contrib --config ./otel-collector-config.yaml &> otelcol-output.log & echo "$!" > otel-pid 
     
     ```
+4. **Open Ports:**
     
-4. **Validating the Deployment:**
+    You will need to open the following ports on your Azure VM:
+    - 4317 for gRPC
+    - 4318 for HTTP
+
+    You can do this by navigating to the Azure VM's Networking section and adding a new inbound rule for the ports.
+    
+5. **Validating the Deployment:**
     
     Once the Collector is running, ensure that telemetry data is being successfully sent and received. Use the logging exporter as defined in your configuration file, or check the logs for any startup errors.
-    
+
+
+## Configure DNS label For Collector
+
+To the IP address of the collector, you can add a DNS label to the Public IP address. This will make it easier to refer to the centralized collector from other services. You can do this by following these steps:
+
+1. Go to the Public IP address of the collector. This would be the IP address of the VM or Load Balancer in case of Kubernetes or Load Balanced collector.
+2. Click on the "Configuration" tab.
+3. Enter the DNS label you want to use for the collector.
+4. Click on "Save".
+
+<figure data-zoomable align="center">
+    <img
+        src="/img/docs/azure-monitoring/ip-address-dns-label.webp"
+        alt="DNS label for collector"
+    />
+    <figcaption>
+        <i>
+          DNS label for collector
+        </i>
+    </figcaption>
+</figure>
+
+:::note
+Please take note of the DNS label you have entered. You will need to configure this for your other services as well.
+In this example, the *Central Collector DNS Name* is `signoz-demo-central-collector.eastus.cloudapp.azure.com`.
+:::
+
+
+If you're using kubernetes, you probably have ExternalDNS configured and you can use that to set up DNS name for your collector as well.
+
 
 ## Troubleshooting
 
