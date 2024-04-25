@@ -18,7 +18,7 @@ Although, the application logs could be sent directly in the Application Level u
 ### Prerequisites
 
 - [EventHub Setup](../../bootstrapping/data-ingestion)
-- [Centralized Collector Setup](../../bootstrapping/collector-setup)
+- [Central Collector Setup](../../bootstrapping/collector-setup)
 
 ## Setup
 

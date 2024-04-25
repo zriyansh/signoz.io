@@ -18,7 +18,7 @@ For application-level traces and metrics, you can use the DNS name of the OpenTe
 Before you can monitor your Azure App Service with SigNoz, you need to ensure the following prerequisites are met:
 
 1. You have an Azure subscription and an Azure App Service instance running.
-2. You have set up the OpenTelemetry Collector with the Azure Monitor exporter. If you haven't set it up yet, follow the instructions in the [OpenTelemetry Collector with Azure Monitor Exporter Setup Guide](https://www.notion.so/signoz/link-to-setup-guide).
+2. You have set up the Central Collector with the Azure Monitor exporter. If you haven't set it up yet, follow the instructions in the [Central Collector Setup](../../bootstrapping/collector-setup)
 
 # Setup
 
