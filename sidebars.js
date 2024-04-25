@@ -640,7 +640,7 @@ module.exports = {
             {
               type: 'doc',
               id: 'azure-monitoring/bootstrapping/collector-setup',
-              label: 'Centralized Collector Setup',
+              label: 'Central Collector Setup',
             },
             {
               type: 'doc',

@@ -1,6 +1,6 @@
 ---
 id: collector-setup
-title: Centralized Collector Setup
+title: Central Collector Setup
 ---
 
 ## Overview
