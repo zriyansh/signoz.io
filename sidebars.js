@@ -677,12 +677,12 @@ module.exports = {
             {
               type: 'doc',
               id: 'azure-monitoring/app-service/metrics',
-              label: 'Logging',
+              label: 'Metrics',
             },
             {
               type: 'doc',
               id: 'azure-monitoring/app-service/logging',
-              label: 'Metrics',
+              label: 'Logging',
             }
           ]
         }
