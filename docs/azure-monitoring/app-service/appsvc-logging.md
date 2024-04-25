@@ -56,3 +56,5 @@ Although, the application logs could be sent directly in the Application Level u
     </figure>
 5. Configure the destination as the Event Hub namespace and Event Hub name created earlier
 6. Save the diagnostic settings
+
+That's it! You have successfully set up logging for your Azure App Service. 
