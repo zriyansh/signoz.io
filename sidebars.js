@@ -717,6 +717,27 @@ module.exports = {
           id: 'azure-monitoring/db-metrics',
           label: 'SQL Database Metrics',
         },
+        {
+          type: 'category',
+          label: 'Azure Blob Storage',
+          link: {
+            type: 'generated-index',
+            title: 'Azure Blob Storage',
+            slug: '/azure-monitoring/az-blob-storage',
+          },
+          items: [
+            {
+              type: 'doc',
+              id: 'azure-monitoring/az-blob-storage/metrics',
+              label: 'Metrics',
+            },
+            {
+              type: 'doc',
+              id: 'azure-monitoring/az-blob-storage/logging',
+              label: 'Logging',
+            }
+          ]
+        }
       ]
 
     },
