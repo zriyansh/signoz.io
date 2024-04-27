@@ -685,6 +685,11 @@ module.exports = {
               label: 'Logging',
             }
           ]
+        },
+        {
+          type: 'doc',
+          id: 'azure-monitoring/aks',
+          label: 'AKS',
         }
       ]
 
