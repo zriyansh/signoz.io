@@ -711,7 +711,12 @@ module.exports = {
               label: 'Logging',
             }
           ]
-        }
+        },
+        {
+          type: 'doc',
+          id: 'azure-monitoring/db-metrics',
+          label: 'SQL Database Metrics',
+        },
       ]
 
     },
