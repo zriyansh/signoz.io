@@ -690,6 +690,27 @@ module.exports = {
           type: 'doc',
           id: 'azure-monitoring/aks',
           label: 'AKS',
+        },
+        {
+          type: 'category',
+          label: 'Azure Functions',
+          link: {
+            type: 'generated-index',
+            title: 'Azure Functions',
+            slug: '/azure-monitoring/az-fns',
+          },
+          items: [
+            {
+              type: 'doc',
+              id: 'azure-monitoring/az-fns/metrics',
+              label: 'Metrics',
+            },
+            {
+              type: 'doc',
+              id: 'azure-monitoring/az-fns/logging',
+              label: 'Logging',
+            }
+          ]
         }
       ]
 
