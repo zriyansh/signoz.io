@@ -657,6 +657,7 @@ module.exports = {
             slug: '/operate/migration',
           },
           items: [
+            'operate/migration/upgrade-0.45',
             'operate/migration/upgrade-0.38',
             'operate/migration/upgrade-0.36',
             'operate/migration/upgrade-0.27',
