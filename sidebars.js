@@ -83,42 +83,12 @@ module.exports = {
           label: 'Saved View',
           className: 'new-doc', // Add this line
         },
-        // {
-        //   type: 'doc',
-        //   id: 'product-features/alert-management',
-        //   label: 'Alert Management',
-        // },
-        // {
-        //   type: 'category',
-        //   label: 'Alerts',
-        //   items: [
-        //     // {
-        //     //   type: 'doc',
-        //     //   id: 'product-features/alerts/alerts-notification-channel',
-        //     //   label: 'Notification Channel',
-        //     // },
-        //     // {
-        //     //   type: 'doc',
-        //     //   id: 'product-features/alerts/metrics-based-alerts',
-        //     //   label: 'Metrics based Alert',
-        //     // },
-        //     // {
-        //     //   type: 'doc',
-        //     //   id: 'product-features/alerts/log-based-alerts',
-        //     //   label: 'Log based Alert',
-        //     // },
-        //     // {
-        //     //   type: 'doc',
-        //     //   id: 'product-features/alerts/trace-based-alerts',
-        //     //   label: 'Trace based Alert',
-        //     // },
-        //     // {
-        //     //   type: 'doc',
-        //     //   id: 'product-features/alerts/exceptions-based-alerts',
-        //     //   label: 'Exceptions based Alert',
-        //     // },
-        //   ],
-        // },
+        {
+          type: 'doc',
+          id: 'product-features/query-builder',
+          label: 'Query Builder',
+        },
+
       ]
     },
     {
