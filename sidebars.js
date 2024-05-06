@@ -79,8 +79,8 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          id: 'product-features/trace-explorer',
-          label: 'Traces Explorer',
+          id: 'product-features/alert-management',
+          label: 'Alert Management',
         },
         {
           type: 'doc',
