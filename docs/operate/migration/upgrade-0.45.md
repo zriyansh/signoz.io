@@ -134,12 +134,8 @@ Reach out to us at [Slack][4].
 
 ## Command-Line Interface (CLI) Flags
 
-There are some custom flags which can be enabled based on different use-cases.
-All the flags below are `optional`.
-
-Flags:
-
-- `-dataSource`: Data Source path of sqlite db. `default="signoz.db"`
+There is a `-dataSource` flag to specify the path of SQLite database file.
+It defaults to `signoz.db`.
 
 ---
 
