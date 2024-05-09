@@ -90,10 +90,9 @@ module.exports = {
         },
         {
           type: 'doc',
-          id: 'product-features/query-builder',
-          label: 'Query Builder',
+          id: 'product-features/logs-explorer',
+          label: 'Logs Explorer',
         },
-
       ]
     },
     {
