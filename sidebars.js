@@ -101,7 +101,7 @@ module.exports = {
           type: 'doc',
           id: 'product-features/saved-view',
           label: 'Saved View',
-          className: 'new-doc', // Add this line
+          className: 'new-doc', // Add this if you want to add a new tag in sidebar
         },
       ]
     },
@@ -786,9 +786,36 @@ module.exports = {
         // 'about-signoz/roadmap',
       ]
     },
+    // {
+    //   id: "community",
+    //   type: "category",
+    //   items: [
+    //     'faqs/product',
+    //     'faqs/troubleshooting',
+    //     'faqs/instrumentation',
+    //     'faqs/installation',
+    //   ],
+    // },
     {
-      id: "community",
+      id: "community/llm-monitoring",
       type: "doc",
+      className: 'new-doc',
+    },
+    {
+      label: "Community",
+      type: "category",
+      items: [
+        {
+          id: "community/community-integrations",
+          type: "doc",
+          className: 'new-doc', 
+        },
+        {
+          label: "Community Channels",
+          id: "community",
+          type: "doc",
+        },
+      ],
     },
     {
       label: "FAQ",
