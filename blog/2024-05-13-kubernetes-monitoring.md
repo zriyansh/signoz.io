@@ -4,7 +4,7 @@ slug: kubernetes-monitoring
 date: 2024-05-13
 tags: [Tech Tutorial]
 authors: [daniel, ankit_anand]
-description: Kubernetes monitoring is crucial for maintaining the health, performance, and reliability of containerized applications. In this guide we cover what to monitor for Kubernetes performance, 
+description: Kubernetes monitoring is crucial for maintaining the health, performance, and reliability of containerized applications. In this guide we cover what to monitor for Kubernetes performance
 image: /img/blog/2024/05/kubernetes-monitoring-cover.webp
 hide_table_of_contents: false
 keywords:
