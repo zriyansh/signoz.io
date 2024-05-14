@@ -1,10 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
-import Player from "@vimeo/player";
+import React from "react";
 import SubHeading from "../../components/ui/SubHeading";
 import Hero from "../../components/ui/Hero";
 import Button from "../../components/ui/Button";
-import ReactModal from "react-modal";
-import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+import VimeoPlayer from "../../components/VimeoPlayer/VimeoPlayer";
 
 export const Header = () => {
   return (
@@ -44,14 +42,7 @@ export const Header = () => {
         <div className="w-100 mx-auto">
           <div className="product-explainer-video hero-figure p-3 rounded-lg">
             <div className="embed-container">
-              <iframe
-                className="product-explainer-video-frame"
-                src="https://player.vimeo.com/video/944340217"
-                frameborder="0"
-                webkitAllowFullScreen
-                mozallowfullscreen
-                allowFullScreen
-              ></iframe>
+              <VimeoPlayer videoId="944340217" />
             </div>
           </div>
         </div>
