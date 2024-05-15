@@ -5,7 +5,7 @@ title: Metrics based alerts
 
 A Metric-based alert in SigNoz allows you to define conditions based on metric data and trigger alerts when these conditions are met. Here's a breakdown of the various sections and options available when configuring a Metric-based alert:
 
-### Step 1: Define the Metric
+## Step 1: Define the Metric
 In this step, you use the [Metrics Query Builder](https://signoz.io/docs/userguide/query-builder/#metrics-query-builder)
 to choose the metric to monitor. Some of the fields that are available in Metrics Query Builder includes:
 
@@ -25,7 +25,7 @@ to choose the metric to monitor. Some of the fields that are available in Metric
 
 To know more about the functionalities of the Query Builder, checkout the [documentation](https://signoz.io/docs/userguide/query-builder/).
 
-### Step 2: Define Alert Conditions
+## Step 2: Define Alert Conditions
 In this step, you define the specific conditions that trigger the alert and the notification frequency. The following fields are available:
 
 - **Send a notification when [A] is [above/below] the threshold at least once during the last [X] mins**: A condition template to set the threshold for the alert, with options to define when and how often the condition should be checked.
@@ -44,7 +44,7 @@ In this step, you define the specific conditions that trigger the alert and the 
 </figure>
 <br></br>
 
-### Step 3: Alert Configuration
+## Step 3: Alert Configuration
 This step focuses on setting alert properties like severity, description, and other metadata. The following fields are available:
 
 - **Severity**: Set the severity level for the alert (e.g., "Warning", "Critical" etc.).
@@ -65,7 +65,16 @@ This step focuses on setting alert properties like severity, description, and ot
 </figure>
 <br></br>
 
-### Example
+### Result labels in alert description
+
+You can incorporate result labels in the alert descriptions to make the alerts more informative:
+
+**Syntax**: Use `{{.Labels.<label-name>}}` to insert label values. 
+
+**Example**: If you have a query that returns the label `service_name` then to use it in the alert description, you will use `{{.Labels.service_name}}`which creates an alert that is specific to the particular service.
+
+
+## Example
 
 An example Metrics-based alert could be set to trigger when errors go above a certain percentage:
 

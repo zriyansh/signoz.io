@@ -5,7 +5,7 @@ title: Log based alerts
 
 A Log-based alert allows you to define conditions based on log data, triggering alerts when these conditions are met. Here's a breakdown of the various sections and options available when configuring a Log-based alert:
 
-### Step 1: Define the Log Metric
+## Step 1: Define the Log Metric
 
 In this step, you use the [Logs Query Builder](https://signoz.io/docs/userguide/query-builder/#logs-and-traces-query-builder)
 to apply filters and operations on your logs to define conditions which triggers log based alert Some of the fields that are available in Logs Query Builder includes:
@@ -26,7 +26,7 @@ to apply filters and operations on your logs to define conditions which triggers
 </figure>
 <br></br>
 
-### Step 2: Define Alert Conditions
+## Step 2: Define Alert Conditions
 In this step, you define the specific conditions for triggering the alert, as well as the frequency of checking those conditions:
 
 - **Send a notification when [A] is [above/below] the threshold [in total] during the last [X mins]**: A template to set the threshold and define when the alert condition should be checked.
@@ -45,7 +45,7 @@ In this step, you define the specific conditions for triggering the alert, as we
 </figure>
 <br></br>
 
-### Step 3: Alert Configuration
+## Step 3: Alert Configuration
 This step is for setting alert metadata like severity, description, and additional details:
 
 - **Severity**: Choose the severity of the alert (e.g., "Warning," "Critical").
@@ -66,7 +66,15 @@ This step is for setting alert metadata like severity, description, and addition
 </figure>
 <br></br>
 
-### Example
+### Result labels in alert description
+
+You can incorporate result labels in the alert descriptions to make the alerts more informative:
+
+**Syntax**: Use `{{.Labels.<label-name>}}` to insert label values. 
+
+**Example**: If you have a query that returns the label `service_name` then to use it in the alert description, you will use `{{.Labels.service_name}}`which creates an alert that is specific to the particular service.
+
+## Example
 An example Log-based alert could be set to trigger when a specific error message appears in the log data:
 
 - **Y-axis unit**: Percent(0 - 100)

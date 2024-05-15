@@ -5,7 +5,7 @@ title: Exceptions based alerts
 
 An Exceptions-based alert in SigNoz allows you to define conditions based on exception data, triggering alerts when these conditions are met. Here's a breakdown of the various sections and options available when configuring an Exceptions-based alert:
 
-### Step 1: Define the Metric Using Clickhouse Query
+## Step 1: Define the Metric Using Clickhouse Query
 In this step, you define the Clickhouse query to retrieve the exception data and set conditions for triggering the alert. The following elements are available:
 
 - **Clickhouse Query**: A field to write a Clickhouse SQL query that selects and aggregates exception data. The query should define the exception type, time range, and other necessary conditions.
@@ -20,7 +20,7 @@ In this step, you define the Clickhouse query to retrieve the exception data and
 </figure>
 <br></br>
 
-### Step 2: Define Alert Conditions
+## Step 2: Define Alert Conditions
 This step is for setting the specific conditions for triggering the alert and determining the frequency of checking those conditions:
 
 - **Send a notification when [A] is [above/below] the threshold in total during the last [X] mins**: A template to set the threshold and define when the alert condition should be checked.
@@ -39,7 +39,7 @@ This step is for setting the specific conditions for triggering the alert and de
 </figure>
 <br></br>
 
-### Step 3: Alert Configuration
+## Step 3: Alert Configuration
 In this step, you set the alert's metadata, including severity, name, and description:
 
 - **Severity**: Set the severity level for the alert (e.g., "Warning" or "Critical").
@@ -60,7 +60,15 @@ In this step, you set the alert's metadata, including severity, name, and descri
 </figure>
 <br></br>
 
-### Example
+### Result labels in alert description
+
+You can incorporate result labels in the alert descriptions to make the alerts more informative:
+
+**Syntax**: Use `{{.Labels.<label-name>}}` to insert label values. 
+
+**Example**: If you have a query that returns the label `service_name` then to use it in the alert description, you will use `{{.Labels.service_name}}`which creates an alert that is specific to the particular service.
+
+## Example
 An example Exceptions-based alert could be set to trigger when a specific exception type appears:
 
 - **ClickHouse Query**: Counts occurrences of 'ConnectionError' exceptions within one-minute intervals, grouped by service name.

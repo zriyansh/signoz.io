@@ -5,7 +5,7 @@ title: Trace based alerts
 
 A Trace-based alert in SigNoz allows you to define conditions based on trace data, triggering alerts when these conditions are met. Here's a breakdown of the various sections and options available when configuring a Trace-based alert:
 
-### Step 1: Define the Trace Metric
+## Step 1: Define the Trace Metric
 
 In this step, you use the [Traces Query Builder](https://signoz.io/docs/userguide/query-builder/#logs-and-traces-query-builder)
 to perform operations on your Traces to define conditions based on traces data. Some of the fields that are available in Traces Query Builder includes
@@ -26,7 +26,7 @@ to perform operations on your Traces to define conditions based on traces data. 
 </figure>
 <br></br>
 
-### Step 2: Define Alert Conditions
+## Step 2: Define Alert Conditions
 In this step, you set specific conditions for triggering the alert and determine the frequency of checking these conditions:
 
 - **Send a notification when [A] is [above/below] the threshold in total during the last [X] mins**: A template to set the threshold for the alert, allowing you to define when the alert condition should be checked.
@@ -45,7 +45,7 @@ In this step, you set specific conditions for triggering the alert and determine
 </figure>
 <br></br>
 
-### Step 3: Alert Configuration
+## Step 3: Alert Configuration
 This step is for setting the alert's severity, name, and other descriptive details:
 
 - **Severity**: Set the severity level for the alert, like "Warning" or "Critical."
@@ -66,7 +66,15 @@ This step is for setting the alert's severity, name, and other descriptive detai
 </figure>
 <br></br>
 
-### Example
+### Result labels in alert description
+
+You can incorporate result labels in the alert descriptions to make the alerts more informative:
+
+**Syntax**: Use `{{.Labels.<label-name>}}` to insert label values. 
+
+**Example**: If you have a query that returns the label `service_name` then to use it in the alert description, you will use `{{.Labels.service_name}}`which creates an alert that is specific to the particular service.
+
+## Example
 An example Trace-based alert could be set to trigger when a specific operation exceeds a latency threshold:
 - **Y-axis unit**: "nanoseconds(ns)"
 - **Aggregate attribute**: "durationNano"
