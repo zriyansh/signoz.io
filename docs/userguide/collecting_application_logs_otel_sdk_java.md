@@ -49,7 +49,7 @@ ex:- `-Dotel.instrumentation.logback-appender.experimental-log-attributes=true`
 | `otel.instrumentation.logback-appender.experimental.capture-marker-attribute`          | Boolean | `false` | Enable the capture of Logback markers as attributes.                                                                                          |
 | `otel.instrumentation.logback-appender.experimental.capture-key-value-pair-attributes` | Boolean | `false` | Enable the capture of Logback key value pairs as attributes.                                                                                  |
 | `otel.instrumentation.logback-appender.experimental.capture-logger-context-attributes` | Boolean | `false` | Enable the capture of Logback logger context properties as attributes.                                                                        |
-| `otel.instrumentation.logback-appender.experimental.capture-mdc-attributes`            | String  |         | Comma separated list of MDC attributes to capture. Use the wildcard character `*` to capture all attributes.    
+| `otel.instrumentation.logback-appender.experimental.capture-mdc-attributes`            | String  |    NA     | Comma separated list of MDC attributes to capture. Use the wildcard character `*` to capture all attributes.    
 
 ### [Log4j](https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/main/instrumentation/log4j/log4j-appender-2.17/javaagent)
 | System property                                                                   | Type    | Default | Description                                                                                                           |
