@@ -92,7 +92,7 @@ In the below example we will configure a java application to send logs to SigNoz
   OTEL_LOGS_EXPORTER=otlp OTEL_EXPORTER_OTLP_ENDPOINT="https://ingest.{region}.signoz.cloud:443" OTEL_EXPORTER_OTLP_HEADERS=signoz-access-token=<SIGNOZ_INGESTION_KEY> OTEL_RESOURCE_ATTRIBUTES=service.name=myapp java -javaagent:/path/opentelemetry-javaagent.jar -Dotel.instrumentation.logback-appender.experimental-log-attributes=true -jar target/*.jar
   ```
   
-  You will have to replace the value of `{region}` according to region of your cloud account and also add `<SIGNOZ_INGESTION_KEY>`
+  You will have to replace the value of `{region}` according to the region of your cloud account and also replace `<SIGNOZ_INGESTION_KEY>` with your SigNoz Cloud Ingestion key.
 
   **For SigNoz Hosted Locally**
   ```
