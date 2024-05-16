@@ -42,7 +42,7 @@ You can use appender settings by passing it as an argument in the  `-D<property>
 ex:- `-Dotel.instrumentation.logback-appender.experimental-log-attributes=true`
 
 ### [Logback](https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/main/instrumentation/logback/logback-appender-1.0/javaagent)
-| System property                                                                        | Type    | Default | Description                                                                                                                                   |
+| System property                                                                        | Type    | Default Value | Description                                                                                                                                   |
 |----------------------------------------------------------------------------------------|---------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------|
 | `otel.instrumentation.logback-appender.experimental-log-attributes`                    | Boolean | `false` | Enable the capture of experimental log attributes `thread.name` and `thread.id`.                                                              |
 | `otel.instrumentation.logback-appender.experimental.capture-code-attributes`           | Boolean | `false` | Enable the capture of [source code attributes]. Note that capturing source code attributes at logging sites might add a performance overhead. |
