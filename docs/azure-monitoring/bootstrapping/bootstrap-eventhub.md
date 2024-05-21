@@ -18,7 +18,7 @@ SigNoz, an open-source application performance monitoring and observability tool
 Before proceeding with the setup, ensure you have the following:
 
 - An Azure subscription
-- SigNoz Cloud
+- [SigNoz Cloud Account](https://signoz.io/teams/)
 
 ## Setup
 

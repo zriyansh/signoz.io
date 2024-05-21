@@ -18,7 +18,7 @@ Before proceeding with the setup, ensure you have the following prerequisites:
 1. An active Azure subscription
 2. Azure CLI installed on your local machine
 3. [EventHub Setup](../../bootstrapping/data-ingestion)
-4. A SigNoz account for observability data visualization and analysis
+4. [SigNoz Cloud Account](https://signoz.io/teams/)
 
 ## Setting Up the OpenTelemetry Collector
 

@@ -3,57 +3,35 @@ id: vm-metrics
 title: VM Host Metrics & Logging
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+## Overview
 
-## Quickstart
+In this guide, we'll walk you through the process of setting up an Azure Virtual Machine to send  logs, traces and metrics to SigNoz, an open-source observability platform. By following these steps, you'll be able to monitor your Azure VM's performance and troubleshoot issues using SigNoz.
 
-To quickly get started, run the following commands on your Azure VM:
+## Prerequisites
 
-### Install Collector
+Before you begin, ensure that you have the following:
 
-<Tabs>
-<TabItem value="debian" label="Debian" default>
+1. [SigNoz Cloud Account](https://signoz.io/teams/)
+2. An Azure subscription with permissions to create and manage Virtual Machines.
+3. [Central Collector Setup](../../bootstrapping/collector-setup)
+4. Azure Linux VM with SSH access enabled. Follow [SSH Keys Guide](https://learn.microsoft.com/en-us/azure/virtual-machines/ssh-keys-portal) to enable SSH access.
 
-```bash
-sudo apt update && sudo apt -y install wget systemctl
-curl -o /tmp/otel.deb -L https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.96.0/otelcol-contrib_0.96.0_linux_amd64.deb && sudo dpkg -i /tmp/otel.deb
-```
-</TabItem>
-<TabItem value="rhel" label="Red Hat, CentOS">
+## Setup
 
-```bash
-sudo yum update
-sudo yum -y install wget systemctl
-curl -o /tmp/otel.rpm -L https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.96.0/otelcol-contrib_0.96.0_linux_amd64.rpm && sudo rpm -ivh /tmp/otel.rpm
-```
-</TabItem>
-<TabItem value="fedora" label="Fedora">
+This document assumes that you have already set up your Azure VM and have SSH access to it. If not, follow the steps outlined in the [Azure VM Guide](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu#create-virtual-machine) and [SSH Keys Guide](https://learn.microsoft.com/en-us/azure/virtual-machines/ssh-keys-portal) to create VM and enable SSH access.
 
-```bash
-sudo dnf update
-sudo dnf -y install wget systemctl
-curl -o /tmp/otel.rpm -L https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.96.0/otelcol-contrib_0.96.0_linux_amd64.rpm && sudo rpm -ivh /tmp/otel.rpm
-```
+### Connect to the VM
+The [SSH Keys Guide](https://learn.microsoft.com/en-us/azure/virtual-machines/ssh-keys-portal#connect-to-the-vm) has steps on how to connect to your VM via SSH.
 
-</TabItem>
-<TabItem value="alpine" label="Alpine">
+### Install OpenTelemetry Collector
 
-```bash
-apk update && apk add wget shadow
-curl -o /tmp/otel.apk -L https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.96.0/otelcol-contrib_0.96.0_linux_amd64.apk && apk add --allow-untrusted /tmp/otel.apk
-```
-</TabItem>
-</Tabs>
-
-These commands update the package list, install necessary dependencies, download the OpenTelemetry Collector binary, and install it on your system.
-
-For more platforms like ARM64 or i386, read the official [OpenTelemetry installation guide](https://opentelemetry.io/docs/collector/installation/)
+Follow the [OpenTelemetry SigNoz Guide](https://signoz.io/docs/tutorial/opentelemetry-binary-usage-in-virtual-machine/) to install the OpenTelemetry Collector. 
 
 ### Configure Collector
 
-```bash
+The configuration file for the OpenTelemetry Collector is located at `/etc/otelcol-contrib/config.yaml`. We send the logs, traces and metrics to the central collector instead of SigNoz directly, in order to adopt a scalable architecture pattern. We recommend to our users to use the same pattern in your Azure subscription.
 
+```bash
 cat > /etc/otelcol-contrib/config.yaml << EOF
 receivers:
   filelog:
@@ -137,48 +115,32 @@ service:
 EOF
 ```
 
-# Overview
+#### OLTP Exporter Configuration
+Make sure to replace `<Central Collector DNS Name>` with the DNS name of your central collector. If you don't have a central collector yet, follow the [Central Collector Setup](../../bootstrapping/collector-setup) guide to set one up.
 
-In this guide, we'll walk you through the process of setting up an Azure Virtual Machine to send  logs, traces and metrics to SigNoz, an open-source observability platform. By following these steps, you'll be able to monitor your Azure VM's performance and troubleshoot issues using SigNoz.
+#### File Logs Receiver Configuration
+The file logs receiver needs to be configured with the paths to the log files that you want to stream to SigNoz. You can specify multiple paths by separating them as a array.
 
-# Prerequisites
+You can also specify globed path patterns to match multiple log files. For example, `/var/log/myservice/*.json` will match all log files in the `/var/log/myservice` directory with a `.json` extension.
 
-Before you begin, ensure that you have the following:
+### Start the OpenTelemetry Collector
 
-1. [SigNoz Cloud Account](https://signoz.io/teams/)
-2. An Azure subscription with permissions to create and manage Virtual Machines.
-3. Azure VM with SSH access enabled.  Azure Docs 
+Once we are done with the above configurations, we can now run the collector service with the following command:
 
-# Setup
-
-Follow these steps to set up your Azure VM to send logs, traces and metrics to SigNoz:
-
-1. Create an Azure Virtual Machine if you don't have one already.  [Azure Docs](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu#create-virtual-machine) has steps on creating a VM via Portal, CLI or PowerShell.
-2. Ensure SSH port 22 is open in the network security group.
-3. SSH into your Azure VM: 
-`ssh -i ~/.ssh/id_rsa azureuser@<public-ip>` 
-4. Download and install the OpenTelemetry Collector in Quick Start
-5. Configure the OpenTelemetry Collector: There is a sample config in Quick Start. Also, the file paths are configured with all the necessary logs that need to be streamed to SigNoz.
-6. Verify that the OpenTelemetry Collector is running:You should see the service status as "active (running)".
-    
-    ```bash
-    sudo systemctl status otelcol
-    ```
-    
-7. Log in to your SigNoz Cloud account and navigate to the Dashboards section. You should start seeing metrics, traces, and logs from your Azure VM.
+```bash
+./otelcol-contrib --config ./config.yaml &> otelcol-output.log & echo "$!" > otel-pid
+```
 
 ## Troubleshooting
 
 If you encounter any issues during the setup process, here are a few troubleshooting steps:
 
-- Ensure that you have replaced `{region}` and `<SIGNOZ_INGESTION_KEY>` with the correct values in the Central Collector configuration.
 - Check the OpenTelemetry Collector logs for any errors:
     
     ```bash
-    sudo journalctl -u otelcol-contrib
+    tail -f -n 50 otelcol-output.log 
     ```
-    
-- Verify that the necessary ports (4317 for gRPC, 4318 for HTTP) are open in the Azure VM's network security group.
-- Double-check that you have the correct permissions to create and manage Azure Virtual Machines.
+- Verify that the necessary outbound ports (4317 for gRPC, 4318 for HTTP) are open in the Azure VM's out network security group.
+- Verify that the central collector is running and configured correctly.
 
-That's it! You have now successfully set up your Azure Virtual Machine to send logs, traces, and metrics to SigNoz. You can start monitoring your VM's performance and troubleshooting any issues using the SigNoz dashboard.
+That's it! You have now successfully set up your Azure Virtual Machine to send logs and metrics to SigNoz. You can start monitoring your VM's performance and troubleshooting any issues using the SigNoz dashboard.
