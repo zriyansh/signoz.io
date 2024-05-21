@@ -131,6 +131,13 @@ Once we are done with the above configurations, we can now run the collector ser
 ./otelcol-contrib --config ./config.yaml &> otelcol-output.log & echo "$!" > otel-pid
 ```
 
+### SigNoz Dashboard
+
+Once the collector is running, you can access the SigNoz dashboard to view the logs and metrics from your Azure VM.
+
+Please refer to the [Hostmetrics Dashboard](https://signoz.io/docs/userguide/hostmetrics/) for information on how to import and use the dashboard.
+
+
 ## Troubleshooting
 
 If you encounter any issues during the setup process, here are a few troubleshooting steps:
