@@ -23,7 +23,7 @@ Although, the application logs could be sent directly in the Application Level u
 ## Setup
 
 1. Navigate to your App Service in the Azure portal
-2. Go to the "Diagnostic settings" section
+2. Search for "Diagnostic settings" in the left navigation menu
 3. Click on "Add Diagnostic Setting"
     <figure data-zoomable align="left">
     <img
@@ -54,7 +54,7 @@ Although, the application logs could be sent directly in the Application Level u
     </i>
     </figcaption>
     </figure>
-5. Configure the destination as the Event Hub namespace and Event Hub name created earlier
+5. Configure the destination details as "**Stream to an Event Hub**" and select the Event Hub namespace and Event Hub name created during the [EventHub Setup](../../bootstrapping/data-ingestion)
 6. Save the diagnostic settings
 
 That's it! You have successfully set up logging for your Azure App Service. 

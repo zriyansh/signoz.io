@@ -33,6 +33,8 @@ You might want to repeat these steps for other regions.
         - Resource group: Choose an existing resource group in the same region as the resources you want to monitor or create a new one.
         - Namespace name: Enter a unique name for your namespace, such as `<orgName>-obs-signoz`.
         - Pricing tier: Choose the appropriate pricing tier based on your logging requirements.
+        - Region: Ideally should be the same region as the resources you want to monitor.
+        - Throughput units: The throughput units determine the maximum number of events that can be processed per second. You need to choose a value that is appropriate for your logging requirements.
     - Click "Review + create" and then "Create" to provision the Event Hubs namespace.
 2. **Create an event hub:**
     - Once the Event Hubs namespace is created, navigate to it in the Azure portal.
@@ -40,8 +42,17 @@ You might want to repeat these steps for other regions.
     - Click on "+ Event Hub" to create a new event hub.
     - Enter a name for your event hub, such as `logs`.
     - Click "Create" to create the event hub.
+3. **Create a SAS policy for the event hub and copy the connection string:**
+    - Navigate to the Event Hubs namespace in the Azure portal.
+    - Search for "Event Hubs" in the left menu and click on it.
+    - Click on the event hub you created.
+    - Click on "Shared access policies" in the left menu.
+    - Click on "Add" to create a new policy, name the policy as `signozListen`
+    - Select the "Listen" permission and specify the expiration time for the policy.
+    - Click "Save" to create the policy.
+    - Now, click on the created policy to copy the *Connection string–primary key*. Note this connection string as you will need it to configure the Central Collector.
 3. **Configure OpenTelemetry integration:**
-    - Add a new receiver to [Centralized Collector Setup](../collector-setup)
+    - Add a new receiver to [Central Collector Setup](../collector-setup)
     - Configure the receiver to receive logs from Azure Event Hubs.
     - Provide the necessary connection details, such as the Event Hubs namespace connection string and the event hub name.
 4. **Stream logs to Event Hubs:**

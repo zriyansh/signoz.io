@@ -20,7 +20,7 @@ Before you can monitor your Azure Function with SigNoz, you need to ensure the f
 1. You have an Azure subscription and an Azure Function instance running.
 2. You have set up the Central Collector with the Azure Monitor exporter. If you haven't set it up yet, follow the instructions in the [Central Collector Setup](../../bootstrapping/collector-setup)
 
-# Setup
+# Dashboard Example
 
 Once you have completed the prerequisites, you can start monitoring your Azure Function's system metrics with SigNoz. Here's how you can do it:
 
@@ -29,16 +29,16 @@ Once you have completed the prerequisites, you can start monitoring your Azure F
 3. Add a Timeseries Panel
 4. In *Metrics*, select `azure_requests_total`  and *Avg By* select tag `location`
 5. In Filter say `name = <function-name>`
-6. Hit “Save Changes” You now have Memory Usage of your Azure Function in a Dashboard for reporting and alerting 
+6. Hit “Save Changes” You now have Total Requests of your Azure Function in a Dashboard for reporting and alerting 
 
 <figure data-zoomable align="center">
     <img
         src="/img/docs/azure-monitoring/azure-fns-metrics-signoz.webp"
-        alt="Signoz Dashboard"
+        alt="Time Series Panel for Function's Total Requests"
     />
     <figcaption>
         <i>
-        Signoz Dashboard
+        Time Series Panel for Function's Total Requests
         </i>
     </figcaption>
 </figure>

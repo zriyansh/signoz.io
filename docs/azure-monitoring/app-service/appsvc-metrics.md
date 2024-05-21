@@ -20,7 +20,7 @@ Before you can monitor your Azure App Service with SigNoz, you need to ensure th
 1. You have an Azure subscription and an Azure App Service instance running.
 2. You have set up the Central Collector with the Azure Monitor exporter. If you haven't set it up yet, follow the instructions in the [Central Collector Setup](../../bootstrapping/collector-setup)
 
-# Setup
+# Dashboard Example
 
 Once you have completed the prerequisites, you can start monitoring your Azure App Service's system metrics with SigNoz. Here's how you can do it:
 
@@ -28,17 +28,17 @@ Once you have completed the prerequisites, you can start monitoring your Azure A
 2. Navigate to the Dashboards, and add an dashboard
 3. Add a Timeseries Panel
 4. In *Metrics*, select `azure_memorypercentage_total`  and *Avg By* select tag `location`
-5. In Filter say `name = <app-svc-name>`
+5. In Filter say `name = <app-svc-plan-name>`
 6. Hit “Save Changes” You now have Memory Usage of your App Service in a Dashboard for reporting and alerting 
 
 <figure data-zoomable align="center">
     <img
         src="/img/docs/azure-monitoring/app-svc-metrics-signoz.webp"
-        alt="Signoz Dashboard"
+        alt="Time Series Panel for App Service Memory Usage"
     />
     <figcaption>
         <i>
-        Signoz Dashboard
+        Time Series Panel for App Service Memory Usage
         </i>
     </figcaption>
 </figure>

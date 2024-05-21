@@ -17,7 +17,8 @@ Before proceeding with the setup, ensure you have the following prerequisites:
 
 1. An active Azure subscription
 2. Azure CLI installed on your local machine
-3. A SigNoz account for observability data visualization and analysis
+3. [EventHub Setup](../../bootstrapping/data-ingestion)
+4. A SigNoz account for observability data visualization and analysis
 
 ## Setting Up the OpenTelemetry Collector
 
@@ -38,11 +39,46 @@ Prior to installation, you must ensure your Kubernetes cluster is ready and that
 helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
 ```
 
-1. **Prepare the `otel-collector-values.yaml` Configuration**
+2. **Prepare the `otel-collector-values.yaml` Configuration**
 
-Your configuration file should include the necessary details for your setup. This includes updating placeholers such as `<ingestion-key>`, `<region>`, and connection-specific credentials for your observability backend. 
+  #### Azure Event Hub Receiver Configuration
+    If you haven't created the logs Event Hub, you can create one by following the steps in the [Azure Event Hubs documentation](../../bootstrapping/data-ingestion).
 
-Make sure to replace the placeholders with actual data corresponding to your setup. For Azure Monitor, set up a [service principal](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal) or utilize a [pod-managed identity](https://learn.microsoft.com/en-us/azure/aks/use-azure-ad-pod-identity) with `Read` permissions to  your Azure subscription.
+    and replace the placeholders `<Primary Connection String>` with the primary connection string for your Event Hub, it should look something like this:
+
+    ```yaml
+    connection: Endpoint=sb://namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=superSecret1234=;EntityPath=hubName
+    ```
+    The Event Hub docs have a step to create a SAS policy for the event hub and copy the connection string.
+
+  #### Azure Monitor Receiver Configuration
+
+    You will need to set up a [service principal](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal) with Read permissions to receive data from Azure Monitor.
+
+    1. Follow the steps in the [Create a service principal Azure Doc](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#register-an-application-with-microsoft-entra-id-and-create-a-service-principal) documentation to create a service principal. 
+    You can name it `signoz-central-collector-app` the redirect URI can be empty.
+    2. To add read permissions to Azure Monitor, Follow the [Assign Role](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#assign-a-role-to-the-application) documentation. The read acess can be given to the full subscription.
+    3. There are multiple ways to authenticate the service principal, we will use the client secret option, follow [Creating a client secret](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#option-3-create-a-new-client-secret) and don't forget to copy the client secret. The secret is used in the configuration file as `client_secret`.
+
+    4. To find `client_id` and `tenant_id`, go to the [Azure Portal](https://portal.azure.com/) and search for the `Application` you created. You would see the `Application (client) ID` and `Directory (tenant) ID` in the Overview section.
+
+    <figure data-zoomable align="center">
+        <img
+            src="/img/docs/azure-monitoring/service-principal-app-overview.webp"
+            alt="Application Overview"
+        />
+        <figcaption>
+            <i>
+              Application Overview
+            </i>
+        </figcaption>
+    </figure>
+
+    5. To find `subscription_id`, follow steps in [Find Your Subscription](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id#find-your-azure-subscription) and populate them in the configuration file.
+    
+    6. Ensure you replace the placeholders `<region>` and `<ingestion-key>` with the appropriate values for your signoz cloud instance.
+
+
 
 Below is an example targeting the SigNoz backend with Azure Monitor receivers configured:
 
@@ -92,7 +128,7 @@ exporters:
       "signoz-access-token": "<ingestion-key>"
 ```
 
-1. **Deploy the OpenTelemetry Collector to your Kubernetes cluster:**
+3. **Deploy the OpenTelemetry Collector to your Kubernetes cluster:**
 
 You'll need to prepare a custom configuration file, say `otel-collector-values.yaml`, that matches your environment's specific needs. Replace `<namespace>` with the Kubernetes namespace where you wish to install the Collector.
 
@@ -116,7 +152,7 @@ If you're not using Kubernetes, setting up the OpenTelemetry Collector on a Virt
     
 2. **Configure the OpenTelemetry Collector:**
     
-    The Collector requires configuration before it can start receiving Azure Monitor data. Create a file named `otel-collector-config.yaml` and populate it with the necessary configuration details. This file should be configured to fit your specific environment's requirements. For instance, you may want to setup receivers for the telemetry data you expect to collect and processors to handle that data appropriately, as well as exporters to send the data to your desired backend, like SigNoz, Jaeger, or Prometheus.
+    The Collector requires configuration before it can start receiving Azure Monitor data. Create a file named `config.yaml` and populate it with the necessary configuration details. This file should be configured to fit your specific environment's requirements. For instance, you may want to setup receivers for the telemetry data you expect to collect and processors to handle that data appropriately, as well as exporters to send the data to your desired backend, like SigNoz, Jaeger, or Prometheus.
     
     Below is a basic configuration example:
     
@@ -146,7 +182,7 @@ If you're not using Kubernetes, setting up the OpenTelemetry Collector on a Virt
             http:
               endpoint: 0.0.0.0:4318
         azureeventhub:
-          connection: Endpoint=sb://namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=superSecret1234=;EntityPath=hubName
+          connection: <Primary Connection String>
           format: "azure"
         azuremonitor:
           subscription_id: "<Subscription ID>"
@@ -165,8 +201,44 @@ If you're not using Kubernetes, setting up the OpenTelemetry Collector on a Virt
           headers:
             "signoz-access-token": "<ingestion-key>"
     ```
+
+    #### Azure Event Hub Receiver Configuration
+    If you haven't created the logs Event Hub, you can create one by following the steps in the [Azure Event Hubs documentation](../../bootstrapping/data-ingestion).
+
+    and replace the placeholders `<Primary Connection String>` with the primary connection string for your Event Hub, it should look something like this:
+
+    ```yaml
+    connection: Endpoint=sb://namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=superSecret1234=;EntityPath=hubName
+    ```
+
+    The Event Hub docs have a step to create a SAS policy for the event hub and copy the connection string.
+
+    #### Azure Monitor Receiver Configuration
+
+    You will need to set up a [service principal](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal) with Read permissions to receive data from Azure Monitor.
+
+    1. Follow the steps in the [Create a service principal Azure Doc](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#register-an-application-with-microsoft-entra-id-and-create-a-service-principal) documentation to create a service principal. 
+    You can name it `signoz-central-collector-app` the redirect URI can be empty.
+    2. To add read permissions to Azure Monitor, Follow the [Assign Role](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#assign-a-role-to-the-application) documentation. The read acess can be given to the full subscription.
+    3. There are multiple ways to authenticate the service principal, we will use the client secret option, follow [Creating a client secret](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#option-3-create-a-new-client-secret) and don't forget to copy the client secret. The secret is used in the configuration file as `client_secret`.
+
+    4. To find `client_id` and `tenant_id`, go to the [Azure Portal](https://portal.azure.com/) and search for the `Application` you created. You would see the `Application (client) ID` and `Directory (tenant) ID` in the Overview section.
+
+    <figure data-zoomable align="center">
+        <img
+            src="/img/docs/azure-monitoring/service-principal-app-overview.webp"
+            alt="Application Overview"
+        />
+        <figcaption>
+            <i>
+              Application Overview
+            </i>
+        </figcaption>
+    </figure>
+
+    5. To find `subscription_id`, follow steps in [Find Your Subscription](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id#find-your-azure-subscription) and populate them in the configuration file.
     
-    Ensure you replace the placeholders `<region>` and `<ingestion-key>` with the appropriate values for your observability backend.
+    6. Ensure you replace the placeholders `<region>` and `<ingestion-key>` with the appropriate values for your signoz cloud instance.
     
 3. **Run the Collector:**
     
@@ -174,7 +246,7 @@ If you're not using Kubernetes, setting up the OpenTelemetry Collector on a Virt
     
     ```bash
     # Runs in background with the configuration we just created
-    ./otelcol-contrib --config ./otel-collector-config.yaml &> otelcol-output.log & echo "$!" > otel-pid 
+    ./otelcol-contrib --config ./config.yaml &> otelcol-output.log & echo "$!" > otel-pid 
     
     ```
 4. **Open Ports:**

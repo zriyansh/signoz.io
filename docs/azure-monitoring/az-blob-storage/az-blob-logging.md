@@ -21,14 +21,14 @@ The following categories of Logs are available to export to Storage Account or E
 ## Setup
 
 1. Navigate to the relevant Storage Account in the Azure portal
-2. Go to the "Diagnostic settings" section
+2. Search for "Diagnostic settings" in the left navigation menu
 3. Click on `blob` under the storage account
 4. Click on "Add Diagnostic Setting"
 5. Select the desired log categories to export:
     - Storage Read
     - Storage Write
     - Storage Delete
-5. Configure the destination as the Event Hub namespace and Event Hub name created in the [EventHub Setup](../../bootstrapping/data-ingestion)
+5. Configure the destination details as "**Stream to an Event Hub**" and select the Event Hub namespace and Event Hub name created during the [EventHub Setup](../../bootstrapping/data-ingestion)
 6. Save the diagnostic settings
 
 That's it! You have successfully set up logging for your Azure Blob Storage.

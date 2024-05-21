@@ -21,7 +21,7 @@ Before you can monitor your Azure Blob Storage with SigNoz, you need to ensure t
 1. You have an Azure subscription and an Azure Blob Storage instance running.
 2. You have set up the Central Collector with the Azure Monitor exporter. If you haven't set it up yet, follow the instructions in the [Central Collector Setup](../../bootstrapping/collector-setup)
 
-# Setup
+# Dashboard Example
 
 Once you have completed the prerequisites, you can start monitoring your Azure Blob Storage's system metrics with SigNoz.
 
@@ -30,16 +30,16 @@ Once you have completed the prerequisites, you can start monitoring your Azure B
 3. Add a Timeseries Panel
 4. In *Metrics*, select `azure_ingress_total`  and *Avg By* select tag `location`
 5. In Filter say `name = <storage-account-name>`
-6. Hit “Save Changes” You now have Memory Usage of your Azure Blob Storage in a Dashboard for reporting and alerting
+6. Hit “Save Changes” You now have Total Ingress  of your Azure Blob Storage in a Dashboard for reporting and alerting
 
 <figure data-zoomable align="center">
     <img
         src="/img/docs/azure-monitoring/blob-store-metrics-signoz.webp"
-        alt="Signoz Dashboard"
+        alt="Time Series Panel for Blob Storage Total Ingress"
     />
     <figcaption>
         <i>
-        Signoz Dashboard
+        Time Series Panel for Blob Storage Total Ingress
         </i>
     </figcaption>
 </figure>

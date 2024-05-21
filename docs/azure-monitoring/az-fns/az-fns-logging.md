@@ -19,11 +19,11 @@ Although, the application logs could be sent directly in the Application Level u
 ## Setup
 
 1. Navigate to your Azure Function in the Azure portal
-2. Go to the "Diagnostic settings" section
+2. Search for "Diagnostic settings" in the left navigation menu
 3. Click on "Add Diagnostic Setting"
 4. Select the desired log categories to export:
     - Function App logs
-5. Configure the destination as the Event Hub namespace and Event Hub name created in the [EventHub Setup](../../bootstrapping/data-ingestion)
+5. Configure the destination details as "**Stream to an Event Hub**" and select the Event Hub namespace and Event Hub name created during the [EventHub Setup](../../bootstrapping/data-ingestion)
 6. Save the diagnostic settings
 
 That's it! You have successfully set up logging for your Azure Function.
